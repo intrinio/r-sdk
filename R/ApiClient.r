@@ -36,7 +36,7 @@ ApiClient  <- R6::R6Class(
             self$configuration <- configuration
         }
         else {
-            self$configuration <- ClientConfiguration$new()
+            self$configuration <- Configuration$new()
         }
 
         if (!missing(defaultHeaders)) {
