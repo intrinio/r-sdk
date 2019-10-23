@@ -60,6 +60,7 @@ identifier <- "AAPL" # Character | An identifier for an entity such as a Company
 tag <- "marketcap" # Character | An Intrinio data tag ID or code (<a href='https://data.intrinio.com/data-tags'>reference</a>)
 
 response <- DataPointApi$get_data_point_number(identifier, tag)
+
 print(response)
 print(response$content)
 ```
@@ -73,12 +74,11 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| An identifier for an entity such as a Company, Security, Index, etc (Ticker, FIGI, ISIN, CUSIP, CIK, LEI, Intrinio ID) | 
- **tag** | **Character**| An Intrinio data tag ID or code (&lt;a href&#x3D;&#39;https://data.intrinio.com/data-tags&#39;&gt;reference&lt;/a&gt;) | 
+ **identifier** | Character| An identifier for an entity such as a Company, Security, Index, etc (Ticker, FIGI, ISIN, CUSIP, CIK, LEI, Intrinio ID) |  &nbsp;
+ **tag** | Character| An Intrinio data tag ID or code (&lt;a href&#x3D;&#39;https://data.intrinio.com/data-tags&#39;&gt;reference&lt;/a&gt;) |  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -140,6 +140,7 @@ identifier <- "AAPL" # Character | An identifier for an entity such as a Company
 tag <- "ceo" # Character | An Intrinio data tag ID or code (<a href='https://data.intrinio.com/data-tags'>reference</a>)
 
 response <- DataPointApi$get_data_point_text(identifier, tag)
+
 print(response)
 print(response$content)
 ```
@@ -153,12 +154,11 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| An identifier for an entity such as a Company, Security, Index, etc (Ticker, FIGI, ISIN, CUSIP, CIK, LEI, Intrinio ID) | 
- **tag** | **Character**| An Intrinio data tag ID or code (&lt;a href&#x3D;&#39;https://data.intrinio.com/data-tags&#39;&gt;reference&lt;/a&gt;) | 
+ **identifier** | Character| An identifier for an entity such as a Company, Security, Index, etc (Ticker, FIGI, ISIN, CUSIP, CIK, LEI, Intrinio ID) |  &nbsp;
+ **tag** | Character| An Intrinio data tag ID or code (&lt;a href&#x3D;&#39;https://data.intrinio.com/data-tags&#39;&gt;reference&lt;/a&gt;) |  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 

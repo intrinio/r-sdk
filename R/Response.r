@@ -5,7 +5,7 @@
 Response  <- R6::R6Class(
   'Response',
   public = list(
-    content = NULL,
+    content= NULL,
     response = NULL,
     initialize = function(content, response){
       self$content <- content

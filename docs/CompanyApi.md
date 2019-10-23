@@ -26,7 +26,7 @@ Method | HTTP request | Description
 
 [//]: # (METHOD:get_all_companies)
 
-[//]: # (RETURN_TYPE:::ApiResponseCompanies)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseCompanies)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -81,6 +81,7 @@ opts <- list(
 )
 
 response <- CompanyApi$get_all_companies(opts)
+
 print(response)
 print(response$content)
 ```
@@ -94,20 +95,19 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **latest_filing_date** | **Date**| Last filing date | 
- **sic** | **Character**| Return companies with the given Standard Industrial Classification code | 
- **template** | **Character**| Return companies with the given financial statement template | 
- **sector** | **Character**| Return companies in the given industry sector | 
- **industry_category** | **Character**| Return companies in the given industry category | 
- **industry_group** | **Character**| Return companies in the given industry group | 
- **has_fundamentals** | **Logical**| Return only companies that have fundamentals when TRUE | 
- **has_stock_prices** | **Logical**| Return only companies that have stock prices when TRUE | 
- **page_size** | **Integer**| The number of results to return | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **latest_filing_date** | Date| Last filing date | [optional]  &nbsp;
+ **sic** | Character| Return companies with the given Standard Industrial Classification code | [optional]  &nbsp;
+ **template** | Character| Return companies with the given financial statement template | [optional]  &nbsp;
+ **sector** | Character| Return companies in the given industry sector | [optional]  &nbsp;
+ **industry_category** | Character| Return companies in the given industry category | [optional]  &nbsp;
+ **industry_group** | Character| Return companies in the given industry group | [optional]  &nbsp;
+ **has_fundamentals** | Logical| Return only companies that have fundamentals when TRUE | [optional]  &nbsp;
+ **has_stock_prices** | Logical| Return only companies that have stock prices when TRUE | [optional]  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -124,7 +124,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_all_company_news)
 
-[//]: # (RETURN_TYPE:::ApiResponseNews)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseNews)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -171,6 +171,7 @@ opts <- list(
 )
 
 response <- CompanyApi$get_all_company_news(opts)
+
 print(response)
 print(response$content)
 ```
@@ -184,12 +185,11 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page_size** | **Integer**| The number of results to return | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -206,7 +206,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_company)
 
-[//]: # (RETURN_TYPE:::Company)
+[//]: # (RETURN_TYPE:IntrinioSDK::Company)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -250,6 +250,7 @@ CompanyApi <- IntrinioSDK::CompanyApi$new(client)
 identifier <- "AAPL" # Character | A Company identifier (Ticker, CIK, LEI, Intrinio ID)
 
 response <- CompanyApi$get_company(identifier)
+
 print(response)
 print(response$content)
 ```
@@ -263,11 +264,10 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| A Company identifier (Ticker, CIK, LEI, Intrinio ID) | 
+ **identifier** | Character| A Company identifier (Ticker, CIK, LEI, Intrinio ID) |  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -329,6 +329,7 @@ identifier <- "AAPL" # Character | A Company identifier (Ticker, CIK, LEI, Intri
 tag <- "marketcap" # Character | An Intrinio data tag ID or code (<a href='https://data.intrinio.com/data-tags'>reference</a>)
 
 response <- CompanyApi$get_company_data_point_number(identifier, tag)
+
 print(response)
 print(response$content)
 ```
@@ -342,12 +343,11 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| A Company identifier (Ticker, CIK, LEI, Intrinio ID) | 
- **tag** | **Character**| An Intrinio data tag ID or code (&lt;a href&#x3D;&#39;https://data.intrinio.com/data-tags&#39;&gt;reference&lt;/a&gt;) | 
+ **identifier** | Character| A Company identifier (Ticker, CIK, LEI, Intrinio ID) |  &nbsp;
+ **tag** | Character| An Intrinio data tag ID or code (&lt;a href&#x3D;&#39;https://data.intrinio.com/data-tags&#39;&gt;reference&lt;/a&gt;) |  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -409,6 +409,7 @@ identifier <- "AAPL" # Character | A Company identifier (Ticker, CIK, LEI, Intri
 tag <- "ceo" # Character | An Intrinio data tag ID or code (<a href='https://data.intrinio.com/data-tags'>reference</a>)
 
 response <- CompanyApi$get_company_data_point_text(identifier, tag)
+
 print(response)
 print(response$content)
 ```
@@ -422,12 +423,11 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| A Company identifier (Ticker, CIK, LEI, Intrinio ID) | 
- **tag** | **Character**| An Intrinio data tag ID or code (&lt;a href&#x3D;&#39;https://data.intrinio.com/data-tags&#39;&gt;reference&lt;/a&gt;) | 
+ **identifier** | Character| A Company identifier (Ticker, CIK, LEI, Intrinio ID) |  &nbsp;
+ **tag** | Character| An Intrinio data tag ID or code (&lt;a href&#x3D;&#39;https://data.intrinio.com/data-tags&#39;&gt;reference&lt;/a&gt;) |  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -444,7 +444,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_company_filings)
 
-[//]: # (RETURN_TYPE:::ApiResponseCompanyFilings)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseCompanyFilings)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -489,7 +489,7 @@ identifier <- "AAPL" # Character | A Company identifier (Ticker, CIK, LEI, Intri
 
 # Optional params
 opts <- list(
-  report_type = NULL, # Character | Filter by <a href=\"/documentation/sec_filing_report_types\" target=\"_blank\">report type</a>. Separate values with commas to return multiple report types.
+  report_type = NULL, # Character | Filter by <a href=\"https://docs.intrinio.com/documentation/sec_filing_report_types\" target=\"_blank\">report type</a>. Separate values with commas to return multiple report types.
   start_date = as.Date("2015-01-01"), # Date | Filed on or after the given date
   end_date = NULL, # Date | Filed before or after the given date
   page_size = 100, # Integer | The number of results to return
@@ -497,6 +497,7 @@ opts <- list(
 )
 
 response <- CompanyApi$get_company_filings(identifier, opts)
+
 print(response)
 print(response$content)
 ```
@@ -510,16 +511,15 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| A Company identifier (Ticker, CIK, LEI, Intrinio ID) | 
- **report_type** | **Character**| Filter by &lt;a href&#x3D;\&quot;/documentation/sec_filing_report_types\&quot; target&#x3D;\&quot;_blank\&quot;&gt;report type&lt;/a&gt;. Separate values with commas to return multiple report types. | 
- **start_date** | **Date**| Filed on or after the given date | 
- **end_date** | **Date**| Filed before or after the given date | 
- **page_size** | **Integer**| The number of results to return | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **identifier** | Character| A Company identifier (Ticker, CIK, LEI, Intrinio ID) |  &nbsp;
+ **report_type** | Character| Filter by &lt;a href&#x3D;\&quot;https://docs.intrinio.com/documentation/sec_filing_report_types\&quot; target&#x3D;\&quot;_blank\&quot;&gt;report type&lt;/a&gt;. Separate values with commas to return multiple report types. | [optional]  &nbsp;
+ **start_date** | Date| Filed on or after the given date | [optional]  &nbsp;
+ **end_date** | Date| Filed before or after the given date | [optional]  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -536,7 +536,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_company_fundamentals)
 
-[//]: # (RETURN_TYPE:::ApiResponseCompanyFundamentals)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseCompanyFundamentals)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -594,6 +594,7 @@ opts <- list(
 )
 
 response <- CompanyApi$get_company_fundamentals(identifier, opts)
+
 print(response)
 print(response$content)
 ```
@@ -607,21 +608,20 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| A Company identifier (Ticker, CIK, LEI, Intrinio ID) | 
- **filed_after** | **Date**| Filed on or after this date | 
- **filed_before** | **Date**| Filed on or before this date | 
- **reported_only** | **Logical**| Only as-reported fundamentals | 
- **fiscal_year** | **Integer**| Only for the given fiscal year | 
- **statement_code** | **Character**| Only of the given statement code | 
- **type** | **Character**| Only of the given type | 
- **start_date** | **Date**| Only on or after the given date | 
- **end_date** | **Date**| Only on or before the given date | 
- **page_size** | **Integer**| The number of results to return | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **identifier** | Character| A Company identifier (Ticker, CIK, LEI, Intrinio ID) |  &nbsp;
+ **filed_after** | Date| Filed on or after this date | [optional]  &nbsp;
+ **filed_before** | Date| Filed on or before this date | [optional]  &nbsp;
+ **reported_only** | Logical| Only as-reported fundamentals | [optional]  &nbsp;
+ **fiscal_year** | Integer| Only for the given fiscal year | [optional]  &nbsp;
+ **statement_code** | Character| Only of the given statement code | [optional]  &nbsp;
+ **type** | Character| Only of the given type | [optional]  &nbsp;
+ **start_date** | Date| Only on or after the given date | [optional]  &nbsp;
+ **end_date** | Date| Only on or before the given date | [optional]  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -638,7 +638,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_company_historical_data)
 
-[//]: # (RETURN_TYPE:::ApiResponseCompanyHistoricalData)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseCompanyHistoricalData)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -694,6 +694,7 @@ opts <- list(
 )
 
 response <- CompanyApi$get_company_historical_data(identifier, tag, opts)
+
 print(response)
 print(response$content)
 ```
@@ -707,19 +708,18 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| A Company identifier (Ticker, CIK, LEI, Intrinio ID) | 
- **tag** | **Character**| An Intrinio data tag ID or code (&lt;a href&#x3D;&#39;https://data.intrinio.com/data-tags&#39;&gt;reference&lt;/a&gt;) | 
- **frequency** | **Character**| Return historical data in the given frequency | [default to daily]
- **type** | **Character**| Return historical data for given fiscal period type | 
- **start_date** | **Date**| Return historical data on or after this date | 
- **end_date** | **Date**| Return historical data on or before this date | 
- **sort_order** | **Character**| Sort by date &#x60;asc&#x60; or &#x60;desc&#x60; | [default to desc]
- **page_size** | **Integer**| The number of results to return | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **identifier** | Character| A Company identifier (Ticker, CIK, LEI, Intrinio ID) |  &nbsp;
+ **tag** | Character| An Intrinio data tag ID or code (&lt;a href&#x3D;&#39;https://data.intrinio.com/data-tags&#39;&gt;reference&lt;/a&gt;) |  &nbsp;
+ **frequency** | Character| Return historical data in the given frequency | [optional] [default to daily] &nbsp;
+ **type** | Character| Return historical data for given fiscal period type | [optional]  &nbsp;
+ **start_date** | Date| Return historical data on or after this date | [optional]  &nbsp;
+ **end_date** | Date| Return historical data on or before this date | [optional]  &nbsp;
+ **sort_order** | Character| Sort by date &#x60;asc&#x60; or &#x60;desc&#x60; | [optional] [default to desc] &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -736,7 +736,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_company_ipos)
 
-[//]: # (RETURN_TYPE:::ApiResponseInitialPublicOfferings)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseInitialPublicOfferings)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -789,6 +789,7 @@ opts <- list(
 )
 
 response <- CompanyApi$get_company_ipos(opts)
+
 print(response)
 print(response$content)
 ```
@@ -802,18 +803,17 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ticker** | **Character**| Return IPOs with the given ticker (typically the IPO for the company) | 
- **status** | **Character**| Return IPOs with the given status. Upcoming IPOs are scheduled to occur in the future. Priced IPOs have occured and the company should be trading publicly. Withdrawn IPOs were planned to occurr but were withdrawn beforehand | 
- **start_date** | **Date**| Return IPOs on or after the given date | 
- **end_date** | **Date**| Return IPOs on or before the given date | 
- **offer_amount_greater_than** | **Integer**| Return IPOs with an offer dollar amount greater than the given amount | 
- **offer_amount_less_than** | **Integer**| Return IPOs with an offer dollar amount less than the given amount | 
- **page_size** | **Integer**| The number of results to return | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **ticker** | Character| Return IPOs with the given ticker (typically the IPO for the company) | [optional]  &nbsp;
+ **status** | Character| Return IPOs with the given status. Upcoming IPOs are scheduled to occur in the future. Priced IPOs have occured and the company should be trading publicly. Withdrawn IPOs were planned to occurr but were withdrawn beforehand | [optional]  &nbsp;
+ **start_date** | Date| Return IPOs on or after the given date | [optional]  &nbsp;
+ **end_date** | Date| Return IPOs on or before the given date | [optional]  &nbsp;
+ **offer_amount_greater_than** | Integer| Return IPOs with an offer dollar amount greater than the given amount | [optional]  &nbsp;
+ **offer_amount_less_than** | Integer| Return IPOs with an offer dollar amount less than the given amount | [optional]  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -830,7 +830,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_company_news)
 
-[//]: # (RETURN_TYPE:::ApiResponseCompanyNews)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseCompanyNews)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -880,6 +880,7 @@ opts <- list(
 )
 
 response <- CompanyApi$get_company_news(identifier, opts)
+
 print(response)
 print(response$content)
 ```
@@ -893,13 +894,12 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| A Company identifier (Ticker, CIK, LEI, Intrinio ID) | 
- **page_size** | **Integer**| The number of results to return | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **identifier** | Character| A Company identifier (Ticker, CIK, LEI, Intrinio ID) |  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -916,7 +916,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_company_securities)
 
-[//]: # (RETURN_TYPE:::ApiResponseCompanySecurities)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseCompanySecurities)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -965,6 +965,7 @@ opts <- list(
 )
 
 response <- CompanyApi$get_company_securities(identifier, opts)
+
 print(response)
 print(response$content)
 ```
@@ -978,12 +979,11 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| A Company identifier (Ticker, CIK, LEI, Intrinio ID) | 
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **identifier** | Character| A Company identifier (Ticker, CIK, LEI, Intrinio ID) |  &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -1000,7 +1000,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:lookup_company_fundamental)
 
-[//]: # (RETURN_TYPE:::Fundamental)
+[//]: # (RETURN_TYPE:IntrinioSDK::Fundamental)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -1047,6 +1047,7 @@ fiscal_period <- "FY" # Character | The fiscal period
 fiscal_year <- 2017 # Integer | The fiscal year
 
 response <- CompanyApi$lookup_company_fundamental(identifier, statement_code, fiscal_period, fiscal_year)
+
 print(response)
 print(response$content)
 ```
@@ -1060,14 +1061,13 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| A Company identifier (Ticker, CIK, LEI, Intrinio ID) | 
- **statement_code** | **Character**| The statement code | 
- **fiscal_period** | **Character**| The fiscal period | 
- **fiscal_year** | **Integer**| The fiscal year | 
+ **identifier** | Character| A Company identifier (Ticker, CIK, LEI, Intrinio ID) |  &nbsp;
+ **statement_code** | Character| The statement code |  &nbsp;
+ **fiscal_period** | Character| The fiscal period |  &nbsp;
+ **fiscal_year** | Integer| The fiscal year |  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -1084,7 +1084,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:search_companies)
 
-[//]: # (RETURN_TYPE:::ApiResponseCompaniesSearch)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseCompaniesSearch)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -1133,6 +1133,7 @@ opts <- list(
 )
 
 response <- CompanyApi$search_companies(query, opts)
+
 print(response)
 print(response$content)
 ```
@@ -1146,12 +1147,11 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **query** | **Character**| Search parameters | 
- **page_size** | **Integer**| The number of results to return | [default to 100]
+ **query** | Character| Search parameters |  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 

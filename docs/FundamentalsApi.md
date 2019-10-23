@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 [//]: # (METHOD:get_fundamental_by_id)
 
-[//]: # (RETURN_TYPE:::Fundamental)
+[//]: # (RETURN_TYPE:IntrinioSDK::Fundamental)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -61,6 +61,7 @@ FundamentalsApi <- IntrinioSDK::FundamentalsApi$new(client)
 id <- "fun_ge9LlE" # Character | The Intrinio ID for the Fundamental
 
 response <- FundamentalsApi$get_fundamental_by_id(id)
+
 print(response)
 print(response$content)
 ```
@@ -74,11 +75,10 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **Character**| The Intrinio ID for the Fundamental | 
+ **id** | Character| The Intrinio ID for the Fundamental |  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -95,7 +95,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_fundamental_reported_financials)
 
-[//]: # (RETURN_TYPE:::ApiResponseReportedFinancials)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseReportedFinancials)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -139,6 +139,7 @@ FundamentalsApi <- IntrinioSDK::FundamentalsApi$new(client)
 id <- "AAPL-income_statement-2018-Q1" # Character | The Intrinio ID or lookup code (ticker-statement-year-period) for the Fundamental
 
 response <- FundamentalsApi$get_fundamental_reported_financials(id)
+
 print(response)
 print(response$content)
 ```
@@ -152,11 +153,10 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **Character**| The Intrinio ID or lookup code (ticker-statement-year-period) for the Fundamental | 
+ **id** | Character| The Intrinio ID or lookup code (ticker-statement-year-period) for the Fundamental |  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -173,7 +173,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_fundamental_standardized_financials)
 
-[//]: # (RETURN_TYPE:::ApiResponseStandardizedFinancials)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseStandardizedFinancials)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -217,6 +217,7 @@ FundamentalsApi <- IntrinioSDK::FundamentalsApi$new(client)
 id <- "AAPL-income_statement-2018-Q1" # Character | The Intrinio ID or lookup code (ticker-statement-year-period) for the Fundamental
 
 response <- FundamentalsApi$get_fundamental_standardized_financials(id)
+
 print(response)
 print(response$content)
 ```
@@ -230,11 +231,10 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **Character**| The Intrinio ID or lookup code (ticker-statement-year-period) for the Fundamental | 
+ **id** | Character| The Intrinio ID or lookup code (ticker-statement-year-period) for the Fundamental |  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -251,7 +251,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:lookup_fundamental)
 
-[//]: # (RETURN_TYPE:::Fundamental)
+[//]: # (RETURN_TYPE:IntrinioSDK::Fundamental)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -298,6 +298,7 @@ fiscal_year <- 2017 # Integer | The fiscal year
 fiscal_period <- "FY" # Character | The fiscal period
 
 response <- FundamentalsApi$lookup_fundamental(identifier, statement_code, fiscal_year, fiscal_period)
+
 print(response)
 print(response$content)
 ```
@@ -311,14 +312,13 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| A Company identifier (Ticker, CIK, LEI, Intrinio ID) | 
- **statement_code** | **Character**| The statement code | 
- **fiscal_year** | **Integer**| The fiscal year | 
- **fiscal_period** | **Character**| The fiscal period | 
+ **identifier** | Character| A Company identifier (Ticker, CIK, LEI, Intrinio ID) |  &nbsp;
+ **statement_code** | Character| The statement code |  &nbsp;
+ **fiscal_year** | Integer| The fiscal year |  &nbsp;
+ **fiscal_period** | Character| The fiscal period |  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 

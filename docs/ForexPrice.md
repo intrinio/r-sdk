@@ -1,18 +1,28 @@
 # ForexPrice
 
+[//]: # (CLASS:IntrinioSDK::ForexPrice)
+
+[//]: # (KIND:object)
+
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**occurred_at** | **Character** | The timestamp of the beginning of the timeframe. The open prices would be at this time, while close prices would be at this time plus the timeframe. | [optional] [default to null]
-**open_bid** | **Numeric** | Open bid | [optional] [default to null]
-**high_bid** | **Numeric** | High bid | [optional] [default to null]
-**low_bid** | **Numeric** | Low bid | [optional] [default to null]
-**close_bid** | **Numeric** | Close bid | [optional] [default to null]
-**open_ask** | **Numeric** | Open ask | [optional] [default to null]
-**high_ask** | **Numeric** | High ask | [optional] [default to null]
-**low_ask** | **Numeric** | Low ask | [optional] [default to null]
-**close_ask** | **Numeric** | Close ask | [optional] [default to null]
-**total_ticks** | **Integer** | Total ticks | [optional] [default to null]
+
+[//]: # (START_DEFINITION)
+
+Name | Type | Description
+------------ | ------------- | -------------
+**occurred_at** | **Character** | The timestamp of the beginning of the timeframe. The open prices would be at this time, while close prices would be at this time plus the timeframe. &nbsp;
+**open_bid** | **Numeric** | Open bid &nbsp;
+**high_bid** | **Numeric** | High bid &nbsp;
+**low_bid** | **Numeric** | Low bid &nbsp;
+**close_bid** | **Numeric** | Close bid &nbsp;
+**open_ask** | **Numeric** | Open ask &nbsp;
+**high_ask** | **Numeric** | High ask &nbsp;
+**low_ask** | **Numeric** | Low ask &nbsp;
+**close_ask** | **Numeric** | Close ask &nbsp;
+**total_ticks** | **Integer** | Total ticks &nbsp;
+
+[//]: # (END_DEFINITION)
+
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 [//]: # (METHOD:get_forex_currencies)
 
-[//]: # (RETURN_TYPE:::ApiResponseForexCurrencies)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseForexCurrencies)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -56,6 +56,7 @@ client$configuration$apiKey <- "YOUR_API_KEY"
 # Setup API with client
 ForexApi <- IntrinioSDK::ForexApi$new(client)
 response <- ForexApi$get_forex_currencies()
+
 print(response)
 print(response$content)
 ```
@@ -69,8 +70,7 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 This endpoint does not need any parameter.
-
-
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -87,7 +87,7 @@ This endpoint does not need any parameter.
 
 [//]: # (METHOD:get_forex_pairs)
 
-[//]: # (RETURN_TYPE:::ApiResponseForexPairs)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseForexPairs)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -127,6 +127,7 @@ client$configuration$apiKey <- "YOUR_API_KEY"
 # Setup API with client
 ForexApi <- IntrinioSDK::ForexApi$new(client)
 response <- ForexApi$get_forex_pairs()
+
 print(response)
 print(response$content)
 ```
@@ -140,8 +141,7 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 This endpoint does not need any parameter.
-
-
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -158,7 +158,7 @@ This endpoint does not need any parameter.
 
 [//]: # (METHOD:get_forex_prices)
 
-[//]: # (RETURN_TYPE:::ApiResponseForexPrices)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseForexPrices)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -214,6 +214,7 @@ opts <- list(
 )
 
 response <- ForexApi$get_forex_prices(pair, timeframe, opts)
+
 print(response)
 print(response$content)
 ```
@@ -227,19 +228,18 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pair** | **Character**| The Forex Currency Pair code | 
- **timeframe** | **Character**| The time interval for the quotes | 
- **timezone** | **Character**| Returns trading times in this timezone | [default to UTC]
- **start_date** | **Date**| Return Forex Prices on or after this date | 
- **start_time** | **Character**| Return Forex Prices at or after this time (24-hour) | 
- **end_date** | **Date**| Return Forex Prices on or before this date | 
- **end_time** | **Character**| Return Forex Prices at or before this time (24-hour) | 
- **page_size** | **Integer**| The number of results to return | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **pair** | Character| The Forex Currency Pair code |  &nbsp;
+ **timeframe** | Character| The time interval for the quotes |  &nbsp;
+ **timezone** | Character| Returns trading times in this timezone | [optional] [default to UTC] &nbsp;
+ **start_date** | Date| Return Forex Prices on or after this date | [optional]  &nbsp;
+ **start_time** | Character| Return Forex Prices at or after this time (24-hour) | [optional]  &nbsp;
+ **end_date** | Date| Return Forex Prices on or before this date | [optional]  &nbsp;
+ **end_time** | Character| Return Forex Prices at or before this time (24-hour) | [optional]  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 

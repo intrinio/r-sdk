@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 [//]: # (METHOD:get_all_data_tags)
 
-[//]: # (RETURN_TYPE:::ApiResponseDataTags)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseDataTags)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -68,6 +68,7 @@ opts <- list(
 )
 
 response <- DataTagApi$get_all_data_tags(opts)
+
 print(response)
 print(response$content)
 ```
@@ -81,17 +82,16 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tag** | **Character**| Tag | 
- **type** | **Character**| Type | 
- **parent** | **Character**| ID of tag parent | 
- **statement_code** | **Character**| Statement Code | 
- **fs_template** | **Character**| Template | [default to industrial]
- **page_size** | **Integer**| The number of results to return | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **tag** | Character| Tag | [optional]  &nbsp;
+ **type** | Character| Type | [optional]  &nbsp;
+ **parent** | Character| ID of tag parent | [optional]  &nbsp;
+ **statement_code** | Character| Statement Code | [optional]  &nbsp;
+ **fs_template** | Character| Template | [optional] [default to industrial] &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -108,7 +108,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_data_tag_by_id)
 
-[//]: # (RETURN_TYPE:::DataTag)
+[//]: # (RETURN_TYPE:IntrinioSDK::DataTag)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -152,6 +152,7 @@ DataTagApi <- IntrinioSDK::DataTagApi$new(client)
 identifier <- "marketcap" # Character | The Intrinio ID or the code-name of the Data Tag
 
 response <- DataTagApi$get_data_tag_by_id(identifier)
+
 print(response)
 print(response$content)
 ```
@@ -165,11 +166,10 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| The Intrinio ID or the code-name of the Data Tag | 
+ **identifier** | Character| The Intrinio ID or the code-name of the Data Tag |  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -186,7 +186,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:search_data_tags)
 
-[//]: # (RETURN_TYPE:::ApiResponseDataTagsSearch)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseDataTagsSearch)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -235,6 +235,7 @@ opts <- list(
 )
 
 response <- DataTagApi$search_data_tags(query, opts)
+
 print(response)
 print(response$content)
 ```
@@ -248,12 +249,11 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **query** | **Character**|  | 
- **page_size** | **Integer**| The number of results to return | [default to 100]
+ **query** | Character|  |  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 

@@ -61,7 +61,7 @@ Method | HTTP request | Description
 
 [//]: # (METHOD:get_all_securities)
 
-[//]: # (RETURN_TYPE:::ApiResponseSecurities)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseSecurities)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -105,7 +105,7 @@ SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 opts <- list(
   active = TRUE, # Logical | When TRUE, return securities that are active. When FALSE, return securities that are not active. A security is considered active if it has traded or has had a corporate action in the past 30 days, and has not been merged into another security (such as due to ticker changes or corporate restructurings).
   delisted = FALSE, # Logical | When TRUE, return securities that have been delisted from their exchange. Note that there may be a newer security for the same company that has been relisted on a differente exchange. When FALSE, return securities that have not been delisted.
-  code = NULL, # Character | Return securities classified with the given code (<a href=\"/documentation/security_codes\" target=\"_blank\">reference</a>).
+  code = NULL, # Character | Return securities classified with the given code (<a href=\"https://docs.intrinio.com/documentation/security_codes\" target=\"_blank\">reference</a>).
   currency = NULL, # Character | Return securities traded in the given 3-digit ISO 4217 currency code (<a href=\"https://en.wikipedia.org/wiki/ISO_4217\" target=\"_blank\">reference</a>).
   ticker = NULL, # Character | Return securities traded with the given ticker. Note that securities across the world (and through time) may trade with the same ticker but represent different companies. Use this in conjuction with other parameters for more specificity.
   name = NULL, # Character | Return securities with the given text in their name (not case sensitive).
@@ -124,6 +124,7 @@ opts <- list(
 )
 
 response <- SecurityApi$get_all_securities(opts)
+
 print(response)
 print(response$content)
 ```
@@ -137,28 +138,27 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **active** | **Logical**| When TRUE, return securities that are active. When FALSE, return securities that are not active. A security is considered active if it has traded or has had a corporate action in the past 30 days, and has not been merged into another security (such as due to ticker changes or corporate restructurings). | 
- **delisted** | **Logical**| When TRUE, return securities that have been delisted from their exchange. Note that there may be a newer security for the same company that has been relisted on a differente exchange. When FALSE, return securities that have not been delisted. | 
- **code** | **Character**| Return securities classified with the given code (&lt;a href&#x3D;\&quot;/documentation/security_codes\&quot; target&#x3D;\&quot;_blank\&quot;&gt;reference&lt;/a&gt;). | 
- **currency** | **Character**| Return securities traded in the given 3-digit ISO 4217 currency code (&lt;a href&#x3D;\&quot;https://en.wikipedia.org/wiki/ISO_4217\&quot; target&#x3D;\&quot;_blank\&quot;&gt;reference&lt;/a&gt;). | 
- **ticker** | **Character**| Return securities traded with the given ticker. Note that securities across the world (and through time) may trade with the same ticker but represent different companies. Use this in conjuction with other parameters for more specificity. | 
- **name** | **Character**| Return securities with the given text in their name (not case sensitive). | 
- **composite_mic** | **Character**| Return securities classified under the composite exchange with the given Market Identification Code (MIC). A composite exchange may or may not be a real exchange.  For example, the USCOMP exchange (our only composite exchange to date) is a combination of exchanges with the following MICs: ARCX, XASE, XPOR, FINR, XCIS, XNAS, XNYS, BATS.  This composite grouping is done for user convenience.  At this time, all US securities are classified under the composite exchange with MIC USCOMP.  To query for specific US exchanges, use the exchange_mic parameter below.  | 
- **exchange_mic** | **Character**| The MIC code of the exchange where the security is actually traded. | 
- **stock_prices_after** | **Date**| Return securities with end-of-day stock prices on or after this date. | 
- **stock_prices_before** | **Date**| Return securities with end-of-day stock prices on or before this date. | 
- **cik** | **Character**| Return securities belonging to the company with the given Central Index Key (CIK). | 
- **figi** | **Character**| Return securities with the given Exchange Level FIGI (&lt;a href&#x3D;\&quot;https://www.openfigi.com/about\&quot; target&#x3D;\&quot;_blank\&quot;&gt;reference&lt;/a&gt;). | 
- **composite_figi** | **Character**| Return securities with the given Country Composite FIGI (&lt;a href&#x3D;\&quot;https://www.openfigi.com/about\&quot; target&#x3D;\&quot;_blank\&quot;&gt;reference&lt;/a&gt;). | 
- **share_class_figi** | **Character**| Return securities with the given Global Share Class FIGI (&lt;a href&#x3D;\&quot;https://www.openfigi.com/about\&quot; target&#x3D;\&quot;_blank\&quot;&gt;reference&lt;/a&gt;). | 
- **figi_unique_id** | **Character**| Return securities with the given FIGI Unique ID (&lt;a href&#x3D;\&quot;https://www.openfigi.com/about\&quot; target&#x3D;\&quot;_blank\&quot;&gt;reference&lt;/a&gt;). | 
- **include_non_figi** | **Logical**| When TRUE, include securities that do not have a FIGI. By default, this is FALSE. If this parameter is not specified, only securities with a FIGI are returned. | [default to FALSE]
- **page_size** | **Integer**| The number of results to return | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **active** | Logical| When TRUE, return securities that are active. When FALSE, return securities that are not active. A security is considered active if it has traded or has had a corporate action in the past 30 days, and has not been merged into another security (such as due to ticker changes or corporate restructurings). | [optional]  &nbsp;
+ **delisted** | Logical| When TRUE, return securities that have been delisted from their exchange. Note that there may be a newer security for the same company that has been relisted on a differente exchange. When FALSE, return securities that have not been delisted. | [optional]  &nbsp;
+ **code** | Character| Return securities classified with the given code (&lt;a href&#x3D;\&quot;https://docs.intrinio.com/documentation/security_codes\&quot; target&#x3D;\&quot;_blank\&quot;&gt;reference&lt;/a&gt;). | [optional]  &nbsp;
+ **currency** | Character| Return securities traded in the given 3-digit ISO 4217 currency code (&lt;a href&#x3D;\&quot;https://en.wikipedia.org/wiki/ISO_4217\&quot; target&#x3D;\&quot;_blank\&quot;&gt;reference&lt;/a&gt;). | [optional]  &nbsp;
+ **ticker** | Character| Return securities traded with the given ticker. Note that securities across the world (and through time) may trade with the same ticker but represent different companies. Use this in conjuction with other parameters for more specificity. | [optional]  &nbsp;
+ **name** | Character| Return securities with the given text in their name (not case sensitive). | [optional]  &nbsp;
+ **composite_mic** | Character| Return securities classified under the composite exchange with the given Market Identification Code (MIC). A composite exchange may or may not be a real exchange.  For example, the USCOMP exchange (our only composite exchange to date) is a combination of exchanges with the following MICs: ARCX, XASE, XPOR, FINR, XCIS, XNAS, XNYS, BATS.  This composite grouping is done for user convenience.  At this time, all US securities are classified under the composite exchange with MIC USCOMP.  To query for specific US exchanges, use the exchange_mic parameter below.  | [optional]  &nbsp;
+ **exchange_mic** | Character| The MIC code of the exchange where the security is actually traded. | [optional]  &nbsp;
+ **stock_prices_after** | Date| Return securities with end-of-day stock prices on or after this date. | [optional]  &nbsp;
+ **stock_prices_before** | Date| Return securities with end-of-day stock prices on or before this date. | [optional]  &nbsp;
+ **cik** | Character| Return securities belonging to the company with the given Central Index Key (CIK). | [optional]  &nbsp;
+ **figi** | Character| Return securities with the given Exchange Level FIGI (&lt;a href&#x3D;\&quot;https://www.openfigi.com/about\&quot; target&#x3D;\&quot;_blank\&quot;&gt;reference&lt;/a&gt;). | [optional]  &nbsp;
+ **composite_figi** | Character| Return securities with the given Country Composite FIGI (&lt;a href&#x3D;\&quot;https://www.openfigi.com/about\&quot; target&#x3D;\&quot;_blank\&quot;&gt;reference&lt;/a&gt;). | [optional]  &nbsp;
+ **share_class_figi** | Character| Return securities with the given Global Share Class FIGI (&lt;a href&#x3D;\&quot;https://www.openfigi.com/about\&quot; target&#x3D;\&quot;_blank\&quot;&gt;reference&lt;/a&gt;). | [optional]  &nbsp;
+ **figi_unique_id** | Character| Return securities with the given FIGI Unique ID (&lt;a href&#x3D;\&quot;https://www.openfigi.com/about\&quot; target&#x3D;\&quot;_blank\&quot;&gt;reference&lt;/a&gt;). | [optional]  &nbsp;
+ **include_non_figi** | Logical| When TRUE, include securities that do not have a FIGI. By default, this is FALSE. If this parameter is not specified, only securities with a FIGI are returned. | [optional] [default to FALSE] &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -175,7 +175,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_security_by_id)
 
-[//]: # (RETURN_TYPE:::Security)
+[//]: # (RETURN_TYPE:IntrinioSDK::Security)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -219,6 +219,7 @@ SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 identifier <- "AAPL" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 
 response <- SecurityApi$get_security_by_id(identifier)
+
 print(response)
 print(response$content)
 ```
@@ -232,11 +233,10 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) | 
+ **identifier** | Character| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) |  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -298,6 +298,7 @@ identifier <- "AAPL" # Character | A Security identifier (Ticker, FIGI, ISIN, CU
 tag <- "close_price" # Character | An Intrinio data tag ID or code (<a href='https://data.intrinio.com/data-tags'>reference</a>)
 
 response <- SecurityApi$get_security_data_point_number(identifier, tag)
+
 print(response)
 print(response$content)
 ```
@@ -311,12 +312,11 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) | 
- **tag** | **Character**| An Intrinio data tag ID or code (&lt;a href&#x3D;&#39;https://data.intrinio.com/data-tags&#39;&gt;reference&lt;/a&gt;) | 
+ **identifier** | Character| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) |  &nbsp;
+ **tag** | Character| An Intrinio data tag ID or code (&lt;a href&#x3D;&#39;https://data.intrinio.com/data-tags&#39;&gt;reference&lt;/a&gt;) |  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -378,6 +378,7 @@ identifier <- "AAPL" # Character | A Security identifier (Ticker, FIGI, ISIN, CU
 tag <- "figi" # Character | An Intrinio data tag ID or code-name
 
 response <- SecurityApi$get_security_data_point_text(identifier, tag)
+
 print(response)
 print(response$content)
 ```
@@ -391,12 +392,11 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) | 
- **tag** | **Character**| An Intrinio data tag ID or code-name | 
+ **identifier** | Character| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) |  &nbsp;
+ **tag** | Character| An Intrinio data tag ID or code-name |  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -413,7 +413,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_security_historical_data)
 
-[//]: # (RETURN_TYPE:::ApiResponseSecurityHistoricalData)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseSecurityHistoricalData)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -469,6 +469,7 @@ opts <- list(
 )
 
 response <- SecurityApi$get_security_historical_data(identifier, tag, opts)
+
 print(response)
 print(response$content)
 ```
@@ -482,19 +483,18 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) | 
- **tag** | **Character**| An Intrinio data tag ID or code (&lt;a href&#x3D;&#39;https://data.intrinio.com/data-tags&#39;&gt;reference&lt;/a&gt;) | 
- **frequency** | **Character**| Return historical data in the given frequency | [default to daily]
- **type** | **Character**| Filter by type, when applicable | 
- **start_date** | **Date**| Get historical data on or after this date | 
- **end_date** | **Date**| Get historical date on or before this date | 
- **sort_order** | **Character**| Sort by date &#x60;asc&#x60; or &#x60;desc&#x60; | [default to desc]
- **page_size** | **Integer**| The number of results to return | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **identifier** | Character| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) |  &nbsp;
+ **tag** | Character| An Intrinio data tag ID or code (&lt;a href&#x3D;&#39;https://data.intrinio.com/data-tags&#39;&gt;reference&lt;/a&gt;) |  &nbsp;
+ **frequency** | Character| Return historical data in the given frequency | [optional] [default to daily] &nbsp;
+ **type** | Character| Filter by type, when applicable | [optional]  &nbsp;
+ **start_date** | Date| Get historical data on or after this date | [optional]  &nbsp;
+ **end_date** | Date| Get historical date on or before this date | [optional]  &nbsp;
+ **sort_order** | Character| Sort by date &#x60;asc&#x60; or &#x60;desc&#x60; | [optional] [default to desc] &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -511,7 +511,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_security_intraday_prices)
 
-[//]: # (RETURN_TYPE:::ApiResponseSecurityIntradayPrices)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseSecurityIntradayPrices)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -560,10 +560,13 @@ opts <- list(
   start_date = NULL, # Date | Return intraday prices starting at the specified date
   start_time = NULL, # Character | Return intraday prices starting at the specified time on the `start_date` (timezone is UTC)
   end_date = NULL, # Date | Return intraday prices stopping at the specified date
-  end_time = NULL # Character | Return intraday prices stopping at the specified time on the `end_date` (timezone is UTC)
+  end_time = NULL, # Character | Return intraday prices stopping at the specified time on the `end_date` (timezone is UTC)
+  page_size = 100, # Integer | The number of results to return
+  next_page = NULL # Character | Gets the next page of data from a previous API call
 )
 
 response <- SecurityApi$get_security_intraday_prices(identifier, opts)
+
 print(response)
 print(response$content)
 ```
@@ -577,16 +580,17 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) | 
- **source** | **Character**| Return intraday prices from the specified data source | 
- **start_date** | **Date**| Return intraday prices starting at the specified date | 
- **start_time** | **Character**| Return intraday prices starting at the specified time on the &#x60;start_date&#x60; (timezone is UTC) | 
- **end_date** | **Date**| Return intraday prices stopping at the specified date | 
- **end_time** | **Character**| Return intraday prices stopping at the specified time on the &#x60;end_date&#x60; (timezone is UTC) | 
+ **identifier** | Character| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) |  &nbsp;
+ **source** | Character| Return intraday prices from the specified data source | [optional]  &nbsp;
+ **start_date** | Date| Return intraday prices starting at the specified date | [optional]  &nbsp;
+ **start_time** | Character| Return intraday prices starting at the specified time on the &#x60;start_date&#x60; (timezone is UTC) | [optional]  &nbsp;
+ **end_date** | Date| Return intraday prices stopping at the specified date | [optional]  &nbsp;
+ **end_time** | Character| Return intraday prices stopping at the specified time on the &#x60;end_date&#x60; (timezone is UTC) | [optional]  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -603,7 +607,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_security_latest_dividend_record)
 
-[//]: # (RETURN_TYPE:::DividendRecord)
+[//]: # (RETURN_TYPE:IntrinioSDK::DividendRecord)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -647,6 +651,7 @@ SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 identifier <- "AAPL" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 
 response <- SecurityApi$get_security_latest_dividend_record(identifier)
+
 print(response)
 print(response$content)
 ```
@@ -660,11 +665,10 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) | 
+ **identifier** | Character| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) |  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -681,7 +685,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_security_latest_earnings_record)
 
-[//]: # (RETURN_TYPE:::EarningsRecord)
+[//]: # (RETURN_TYPE:IntrinioSDK::EarningsRecord)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -725,6 +729,7 @@ SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 identifier <- "AAPL" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 
 response <- SecurityApi$get_security_latest_earnings_record(identifier)
+
 print(response)
 print(response$content)
 ```
@@ -738,11 +743,10 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) | 
+ **identifier** | Character| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) |  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -759,7 +763,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_security_price_technicals_adi)
 
-[//]: # (RETURN_TYPE:::ApiResponseSecurityAccumulationDistributionIndex)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseSecurityAccumulationDistributionIndex)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -811,6 +815,7 @@ opts <- list(
 )
 
 response <- SecurityApi$get_security_price_technicals_adi(identifier, opts)
+
 print(response)
 print(response$content)
 ```
@@ -824,15 +829,14 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) | 
- **start_date** | **Character**| Return technical indicator values on or after the date | 
- **end_date** | **Character**| Return technical indicator values on or before the date | 
- **page_size** | **Integer**| The number of results to return | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **identifier** | Character| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) |  &nbsp;
+ **start_date** | Character| Return technical indicator values on or after the date | [optional]  &nbsp;
+ **end_date** | Character| Return technical indicator values on or before the date | [optional]  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -849,7 +853,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_security_price_technicals_adtv)
 
-[//]: # (RETURN_TYPE:::ApiResponseSecurityAverageDailyTradingVolume)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseSecurityAverageDailyTradingVolume)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -902,6 +906,7 @@ opts <- list(
 )
 
 response <- SecurityApi$get_security_price_technicals_adtv(identifier, opts)
+
 print(response)
 print(response$content)
 ```
@@ -915,16 +920,15 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) | 
- **period** | **Integer**| The number of observations, per period, to calculate Average Daily Trading Volume | [default to 22]
- **start_date** | **Character**| Return technical indicator values on or after the date | 
- **end_date** | **Character**| Return technical indicator values on or before the date | 
- **page_size** | **Integer**| The number of results to return | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **identifier** | Character| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) |  &nbsp;
+ **period** | Integer| The number of observations, per period, to calculate Average Daily Trading Volume | [optional] [default to 22] &nbsp;
+ **start_date** | Character| Return technical indicator values on or after the date | [optional]  &nbsp;
+ **end_date** | Character| Return technical indicator values on or before the date | [optional]  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -941,7 +945,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_security_price_technicals_adx)
 
-[//]: # (RETURN_TYPE:::ApiResponseSecurityAverageDirectionalIndex)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseSecurityAverageDirectionalIndex)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -994,6 +998,7 @@ opts <- list(
 )
 
 response <- SecurityApi$get_security_price_technicals_adx(identifier, opts)
+
 print(response)
 print(response$content)
 ```
@@ -1007,16 +1012,15 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) | 
- **period** | **Integer**| The number of observations, per period, to calculate Average Directional Index | [default to 14]
- **start_date** | **Character**| Return technical indicator values on or after the date | 
- **end_date** | **Character**| Return technical indicator values on or before the date | 
- **page_size** | **Integer**| The number of results to return | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **identifier** | Character| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) |  &nbsp;
+ **period** | Integer| The number of observations, per period, to calculate Average Directional Index | [optional] [default to 14] &nbsp;
+ **start_date** | Character| Return technical indicator values on or after the date | [optional]  &nbsp;
+ **end_date** | Character| Return technical indicator values on or before the date | [optional]  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -1033,7 +1037,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_security_price_technicals_ao)
 
-[//]: # (RETURN_TYPE:::ApiResponseSecurityAwesomeOscillator)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseSecurityAwesomeOscillator)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -1087,6 +1091,7 @@ opts <- list(
 )
 
 response <- SecurityApi$get_security_price_technicals_ao(identifier, opts)
+
 print(response)
 print(response$content)
 ```
@@ -1100,17 +1105,16 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) | 
- **short_period** | **Integer**| The number of observations, per period, to calculate short period Simple Moving Average of the Awesome Oscillator | [default to 5]
- **long_period** | **Integer**| The number of observations, per period, to calculate long period Simple Moving Average of the Awesome Oscillator | [default to 34]
- **start_date** | **Character**| Return technical indicator values on or after the date | 
- **end_date** | **Character**| Return technical indicator values on or before the date | 
- **page_size** | **Integer**| The number of results to return | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **identifier** | Character| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) |  &nbsp;
+ **short_period** | Integer| The number of observations, per period, to calculate short period Simple Moving Average of the Awesome Oscillator | [optional] [default to 5] &nbsp;
+ **long_period** | Integer| The number of observations, per period, to calculate long period Simple Moving Average of the Awesome Oscillator | [optional] [default to 34] &nbsp;
+ **start_date** | Character| Return technical indicator values on or after the date | [optional]  &nbsp;
+ **end_date** | Character| Return technical indicator values on or before the date | [optional]  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -1127,7 +1131,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_security_price_technicals_atr)
 
-[//]: # (RETURN_TYPE:::ApiResponseSecurityAverageTrueRange)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseSecurityAverageTrueRange)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -1180,6 +1184,7 @@ opts <- list(
 )
 
 response <- SecurityApi$get_security_price_technicals_atr(identifier, opts)
+
 print(response)
 print(response$content)
 ```
@@ -1193,16 +1198,15 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) | 
- **period** | **Integer**| The number of observations, per period, to calculate Average True Range | [default to 14]
- **start_date** | **Character**| Return technical indicator values on or after the date | 
- **end_date** | **Character**| Return technical indicator values on or before the date | 
- **page_size** | **Integer**| The number of results to return | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **identifier** | Character| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) |  &nbsp;
+ **period** | Integer| The number of observations, per period, to calculate Average True Range | [optional] [default to 14] &nbsp;
+ **start_date** | Character| Return technical indicator values on or after the date | [optional]  &nbsp;
+ **end_date** | Character| Return technical indicator values on or before the date | [optional]  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -1219,7 +1223,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_security_price_technicals_bb)
 
-[//]: # (RETURN_TYPE:::ApiResponseSecurityBollingerBands)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseSecurityBollingerBands)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -1274,6 +1278,7 @@ opts <- list(
 )
 
 response <- SecurityApi$get_security_price_technicals_bb(identifier, opts)
+
 print(response)
 print(response$content)
 ```
@@ -1287,18 +1292,17 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) | 
- **period** | **Integer**| The number of observations, per period, to calculate Bollinger Bands | [default to 20]
- **standard_deviations** | **Numeric**| The number of standard deviations to calculate the upper and lower bands of the Bollinger Bands | [default to 2.0]
- **price_key** | **Character**| The Stock Price field to use when calculating Bollinger Bands | [default to close]
- **start_date** | **Character**| Return technical indicator values on or after the date | 
- **end_date** | **Character**| Return technical indicator values on or before the date | 
- **page_size** | **Integer**| The number of results to return | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **identifier** | Character| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) |  &nbsp;
+ **period** | Integer| The number of observations, per period, to calculate Bollinger Bands | [optional] [default to 20] &nbsp;
+ **standard_deviations** | Numeric| The number of standard deviations to calculate the upper and lower bands of the Bollinger Bands | [optional] [default to 2.0] &nbsp;
+ **price_key** | Character| The Stock Price field to use when calculating Bollinger Bands | [optional] [default to close] &nbsp;
+ **start_date** | Character| Return technical indicator values on or after the date | [optional]  &nbsp;
+ **end_date** | Character| Return technical indicator values on or before the date | [optional]  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -1315,7 +1319,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_security_price_technicals_cci)
 
-[//]: # (RETURN_TYPE:::ApiResponseSecurityCommodityChannelIndex)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseSecurityCommodityChannelIndex)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -1369,6 +1373,7 @@ opts <- list(
 )
 
 response <- SecurityApi$get_security_price_technicals_cci(identifier, opts)
+
 print(response)
 print(response$content)
 ```
@@ -1382,17 +1387,16 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) | 
- **period** | **Integer**| The number of observations, per period, to calculate Commodity Channel Index | [default to 20]
- **constant** | **Numeric**| The number of observations, per period, to calculate Commodity Channel Index | [default to 0.015]
- **start_date** | **Character**| Return technical indicator values on or after the date | 
- **end_date** | **Character**| Return technical indicator values on or before the date | 
- **page_size** | **Integer**| The number of results to return | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **identifier** | Character| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) |  &nbsp;
+ **period** | Integer| The number of observations, per period, to calculate Commodity Channel Index | [optional] [default to 20] &nbsp;
+ **constant** | Numeric| The number of observations, per period, to calculate Commodity Channel Index | [optional] [default to 0.015] &nbsp;
+ **start_date** | Character| Return technical indicator values on or after the date | [optional]  &nbsp;
+ **end_date** | Character| Return technical indicator values on or before the date | [optional]  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -1409,7 +1413,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_security_price_technicals_cmf)
 
-[//]: # (RETURN_TYPE:::ApiResponseSecurityChaikinMoneyFlow)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseSecurityChaikinMoneyFlow)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -1462,6 +1466,7 @@ opts <- list(
 )
 
 response <- SecurityApi$get_security_price_technicals_cmf(identifier, opts)
+
 print(response)
 print(response$content)
 ```
@@ -1475,16 +1480,15 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) | 
- **period** | **Integer**| The number of observations, per period, to calculate Chaikin Money Flow | [default to 20]
- **start_date** | **Character**| Return technical indicator values on or after the date | 
- **end_date** | **Character**| Return technical indicator values on or before the date | 
- **page_size** | **Integer**| The number of results to return | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **identifier** | Character| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) |  &nbsp;
+ **period** | Integer| The number of observations, per period, to calculate Chaikin Money Flow | [optional] [default to 20] &nbsp;
+ **start_date** | Character| Return technical indicator values on or after the date | [optional]  &nbsp;
+ **end_date** | Character| Return technical indicator values on or before the date | [optional]  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -1501,7 +1505,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_security_price_technicals_dc)
 
-[//]: # (RETURN_TYPE:::ApiResponseSecurityDonchianChannel)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseSecurityDonchianChannel)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -1555,6 +1559,7 @@ opts <- list(
 )
 
 response <- SecurityApi$get_security_price_technicals_dc(identifier, opts)
+
 print(response)
 print(response$content)
 ```
@@ -1568,17 +1573,16 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) | 
- **period** | **Integer**| The number of observations, per period, to calculate Donchian Channel | [default to 20]
- **price_key** | **Character**| The Stock Price field to use when calculating Donchian Channel | [default to close]
- **start_date** | **Character**| Return technical indicator values on or after the date | 
- **end_date** | **Character**| Return technical indicator values on or before the date | 
- **page_size** | **Integer**| The number of results to return | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **identifier** | Character| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) |  &nbsp;
+ **period** | Integer| The number of observations, per period, to calculate Donchian Channel | [optional] [default to 20] &nbsp;
+ **price_key** | Character| The Stock Price field to use when calculating Donchian Channel | [optional] [default to close] &nbsp;
+ **start_date** | Character| Return technical indicator values on or after the date | [optional]  &nbsp;
+ **end_date** | Character| Return technical indicator values on or before the date | [optional]  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -1595,7 +1599,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_security_price_technicals_dpo)
 
-[//]: # (RETURN_TYPE:::ApiResponseSecurityDetrendedPriceOscillator)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseSecurityDetrendedPriceOscillator)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -1649,6 +1653,7 @@ opts <- list(
 )
 
 response <- SecurityApi$get_security_price_technicals_dpo(identifier, opts)
+
 print(response)
 print(response$content)
 ```
@@ -1662,17 +1667,16 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) | 
- **period** | **Integer**| The number of observations, per period, to calculate Detrended Price Oscillator | [default to 20]
- **price_key** | **Character**| The Stock Price field to use when calculating Detrended Price Oscillator | [default to close]
- **start_date** | **Character**| Return technical indicator values on or after the date | 
- **end_date** | **Character**| Return technical indicator values on or before the date | 
- **page_size** | **Integer**| The number of results to return | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **identifier** | Character| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) |  &nbsp;
+ **period** | Integer| The number of observations, per period, to calculate Detrended Price Oscillator | [optional] [default to 20] &nbsp;
+ **price_key** | Character| The Stock Price field to use when calculating Detrended Price Oscillator | [optional] [default to close] &nbsp;
+ **start_date** | Character| Return technical indicator values on or after the date | [optional]  &nbsp;
+ **end_date** | Character| Return technical indicator values on or before the date | [optional]  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -1689,7 +1693,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_security_price_technicals_eom)
 
-[//]: # (RETURN_TYPE:::ApiResponseSecurityEaseOfMovement)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseSecurityEaseOfMovement)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -1742,6 +1746,7 @@ opts <- list(
 )
 
 response <- SecurityApi$get_security_price_technicals_eom(identifier, opts)
+
 print(response)
 print(response$content)
 ```
@@ -1755,16 +1760,15 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) | 
- **period** | **Integer**| The number of observations, per period, to calculate Ease of Movement | [default to 20]
- **start_date** | **Character**| Return technical indicator values on or after the date | 
- **end_date** | **Character**| Return technical indicator values on or before the date | 
- **page_size** | **Integer**| The number of results to return | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **identifier** | Character| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) |  &nbsp;
+ **period** | Integer| The number of observations, per period, to calculate Ease of Movement | [optional] [default to 20] &nbsp;
+ **start_date** | Character| Return technical indicator values on or after the date | [optional]  &nbsp;
+ **end_date** | Character| Return technical indicator values on or before the date | [optional]  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -1781,7 +1785,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_security_price_technicals_fi)
 
-[//]: # (RETURN_TYPE:::ApiResponseSecurityForceIndex)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseSecurityForceIndex)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -1833,6 +1837,7 @@ opts <- list(
 )
 
 response <- SecurityApi$get_security_price_technicals_fi(identifier, opts)
+
 print(response)
 print(response$content)
 ```
@@ -1846,15 +1851,14 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) | 
- **start_date** | **Character**| Return technical indicator values on or after the date | 
- **end_date** | **Character**| Return technical indicator values on or before the date | 
- **page_size** | **Integer**| The number of results to return | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **identifier** | Character| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) |  &nbsp;
+ **start_date** | Character| Return technical indicator values on or after the date | [optional]  &nbsp;
+ **end_date** | Character| Return technical indicator values on or before the date | [optional]  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -1871,7 +1875,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_security_price_technicals_ichimoku)
 
-[//]: # (RETURN_TYPE:::ApiResponseSecurityIchimokuKinkoHyo)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseSecurityIchimokuKinkoHyo)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -1926,6 +1930,7 @@ opts <- list(
 )
 
 response <- SecurityApi$get_security_price_technicals_ichimoku(identifier, opts)
+
 print(response)
 print(response$content)
 ```
@@ -1939,18 +1944,17 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) | 
- **low_period** | **Integer**| The number of observations, per period, to calculate Tenkan Sen (Conversion Line) of Ichimoku Kinko Hyo | [default to 9]
- **medium_period** | **Integer**| The number of observations, per period, to calculate Kijun Sen (Base Line), Senkou Span A (Leading Span A), and Chikou Span (Lagging Span) of Ichimoku Kinko Hyo | [default to 26]
- **high_period** | **Integer**| The number of observations, per period, to calculate Senkou Span B (Leading Span B) of Ichimoku Kinko Hyo | [default to 52]
- **start_date** | **Character**| Return technical indicator values on or after the date | 
- **end_date** | **Character**| Return technical indicator values on or before the date | 
- **page_size** | **Integer**| The number of results to return | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **identifier** | Character| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) |  &nbsp;
+ **low_period** | Integer| The number of observations, per period, to calculate Tenkan Sen (Conversion Line) of Ichimoku Kinko Hyo | [optional] [default to 9] &nbsp;
+ **medium_period** | Integer| The number of observations, per period, to calculate Kijun Sen (Base Line), Senkou Span A (Leading Span A), and Chikou Span (Lagging Span) of Ichimoku Kinko Hyo | [optional] [default to 26] &nbsp;
+ **high_period** | Integer| The number of observations, per period, to calculate Senkou Span B (Leading Span B) of Ichimoku Kinko Hyo | [optional] [default to 52] &nbsp;
+ **start_date** | Character| Return technical indicator values on or after the date | [optional]  &nbsp;
+ **end_date** | Character| Return technical indicator values on or before the date | [optional]  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -1967,7 +1971,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_security_price_technicals_kc)
 
-[//]: # (RETURN_TYPE:::ApiResponseSecurityKeltnerChannel)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseSecurityKeltnerChannel)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -2020,6 +2024,7 @@ opts <- list(
 )
 
 response <- SecurityApi$get_security_price_technicals_kc(identifier, opts)
+
 print(response)
 print(response$content)
 ```
@@ -2033,16 +2038,15 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) | 
- **period** | **Integer**| The number of observations, per period, to calculate Kelter Channel | [default to 10]
- **start_date** | **Character**| Return technical indicator values on or after the date | 
- **end_date** | **Character**| Return technical indicator values on or before the date | 
- **page_size** | **Integer**| The number of results to return | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **identifier** | Character| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) |  &nbsp;
+ **period** | Integer| The number of observations, per period, to calculate Kelter Channel | [optional] [default to 10] &nbsp;
+ **start_date** | Character| Return technical indicator values on or after the date | [optional]  &nbsp;
+ **end_date** | Character| Return technical indicator values on or before the date | [optional]  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -2059,7 +2063,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_security_price_technicals_kst)
 
-[//]: # (RETURN_TYPE:::ApiResponseSecurityKnowSureThing)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseSecurityKnowSureThing)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -2120,6 +2124,7 @@ opts <- list(
 )
 
 response <- SecurityApi$get_security_price_technicals_kst(identifier, opts)
+
 print(response)
 print(response$content)
 ```
@@ -2133,24 +2138,23 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) | 
- **roc1** | **Integer**| The number of observations, per period, to calculate the rate-of-change for RCMA1 | [default to 10]
- **roc2** | **Integer**| The number of observations, per period, to calculate the rate-of-change for RCMA2 | [default to 15]
- **roc3** | **Integer**| The number of observations, per period, to calculate the rate-of-change for RCMA3 | [default to 20]
- **roc4** | **Integer**| The number of observations, per period, to calculate the rate-of-change for RCMA4 | [default to 30]
- **sma1** | **Integer**| The number of observations, per period, to calculate the Simple Moving Average of the rate-of-change for RCMA1 | [default to 10]
- **sma2** | **Integer**| The number of observations, per period, to calculate the Simple Moving Average of the rate-of-change for RCMA2 | [default to 10]
- **sma3** | **Integer**| The number of observations, per period, to calculate the Simple Moving Average of the rate-of-change for RCMA3 | [default to 10]
- **sma4** | **Integer**| The number of observations, per period, to calculate the Simple Moving Average of the rate-of-change for RCMA4 | [default to 15]
- **price_key** | **Character**| The Stock Price field to use when calculating Know Sure Thing | [default to close]
- **start_date** | **Character**| Return technical indicator values on or after the date | 
- **end_date** | **Character**| Return technical indicator values on or before the date | 
- **page_size** | **Integer**| The number of results to return | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **identifier** | Character| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) |  &nbsp;
+ **roc1** | Integer| The number of observations, per period, to calculate the rate-of-change for RCMA1 | [optional] [default to 10] &nbsp;
+ **roc2** | Integer| The number of observations, per period, to calculate the rate-of-change for RCMA2 | [optional] [default to 15] &nbsp;
+ **roc3** | Integer| The number of observations, per period, to calculate the rate-of-change for RCMA3 | [optional] [default to 20] &nbsp;
+ **roc4** | Integer| The number of observations, per period, to calculate the rate-of-change for RCMA4 | [optional] [default to 30] &nbsp;
+ **sma1** | Integer| The number of observations, per period, to calculate the Simple Moving Average of the rate-of-change for RCMA1 | [optional] [default to 10] &nbsp;
+ **sma2** | Integer| The number of observations, per period, to calculate the Simple Moving Average of the rate-of-change for RCMA2 | [optional] [default to 10] &nbsp;
+ **sma3** | Integer| The number of observations, per period, to calculate the Simple Moving Average of the rate-of-change for RCMA3 | [optional] [default to 10] &nbsp;
+ **sma4** | Integer| The number of observations, per period, to calculate the Simple Moving Average of the rate-of-change for RCMA4 | [optional] [default to 15] &nbsp;
+ **price_key** | Character| The Stock Price field to use when calculating Know Sure Thing | [optional] [default to close] &nbsp;
+ **start_date** | Character| Return technical indicator values on or after the date | [optional]  &nbsp;
+ **end_date** | Character| Return technical indicator values on or before the date | [optional]  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -2167,7 +2171,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_security_price_technicals_macd)
 
-[//]: # (RETURN_TYPE:::ApiResponseSecurityMovingAverageConvergenceDivergence)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseSecurityMovingAverageConvergenceDivergence)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -2223,6 +2227,7 @@ opts <- list(
 )
 
 response <- SecurityApi$get_security_price_technicals_macd(identifier, opts)
+
 print(response)
 print(response$content)
 ```
@@ -2236,19 +2241,18 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) | 
- **fast_period** | **Integer**| The number of observations, per period, to calculate the fast moving Exponential Moving Average for Moving Average Convergence Divergence | [default to 12]
- **slow_period** | **Integer**| The number of observations, per period, to calculate the slow moving Exponential Moving Average for Moving Average Convergence Divergence | [default to 26]
- **signal_period** | **Integer**| The number of observations, per period, to calculate the signal line for Moving Average Convergence Divergence | [default to 9]
- **price_key** | **Character**| The Stock Price field to use when calculating Moving Average Convergence Divergence | [default to close]
- **start_date** | **Character**| Return technical indicator values on or after the date | 
- **end_date** | **Character**| Return technical indicator values on or before the date | 
- **page_size** | **Integer**| The number of results to return | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **identifier** | Character| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) |  &nbsp;
+ **fast_period** | Integer| The number of observations, per period, to calculate the fast moving Exponential Moving Average for Moving Average Convergence Divergence | [optional] [default to 12] &nbsp;
+ **slow_period** | Integer| The number of observations, per period, to calculate the slow moving Exponential Moving Average for Moving Average Convergence Divergence | [optional] [default to 26] &nbsp;
+ **signal_period** | Integer| The number of observations, per period, to calculate the signal line for Moving Average Convergence Divergence | [optional] [default to 9] &nbsp;
+ **price_key** | Character| The Stock Price field to use when calculating Moving Average Convergence Divergence | [optional] [default to close] &nbsp;
+ **start_date** | Character| Return technical indicator values on or after the date | [optional]  &nbsp;
+ **end_date** | Character| Return technical indicator values on or before the date | [optional]  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -2265,7 +2269,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_security_price_technicals_mfi)
 
-[//]: # (RETURN_TYPE:::ApiResponseSecurityMoneyFlowIndex)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseSecurityMoneyFlowIndex)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -2318,6 +2322,7 @@ opts <- list(
 )
 
 response <- SecurityApi$get_security_price_technicals_mfi(identifier, opts)
+
 print(response)
 print(response$content)
 ```
@@ -2331,16 +2336,15 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) | 
- **period** | **Integer**| The number of observations, per period, to calculate Money Flow Index | [default to 14]
- **start_date** | **Character**| Return technical indicator values on or after the date | 
- **end_date** | **Character**| Return technical indicator values on or before the date | 
- **page_size** | **Integer**| The number of results to return | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **identifier** | Character| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) |  &nbsp;
+ **period** | Integer| The number of observations, per period, to calculate Money Flow Index | [optional] [default to 14] &nbsp;
+ **start_date** | Character| Return technical indicator values on or after the date | [optional]  &nbsp;
+ **end_date** | Character| Return technical indicator values on or before the date | [optional]  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -2357,7 +2361,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_security_price_technicals_mi)
 
-[//]: # (RETURN_TYPE:::ApiResponseSecurityMassIndex)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseSecurityMassIndex)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -2411,6 +2415,7 @@ opts <- list(
 )
 
 response <- SecurityApi$get_security_price_technicals_mi(identifier, opts)
+
 print(response)
 print(response$content)
 ```
@@ -2424,17 +2429,16 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) | 
- **ema_period** | **Integer**| The number of observations, per period, to calculate the single Exponential Moving Average and the Double Exponential Moving Average for Mass Index | [default to 9]
- **sum_period** | **Integer**| The number of observations, per period, to calculate the sum of the Exponetinal Moving Average Ratios for Mass Index | [default to 25]
- **start_date** | **Character**| Return technical indicator values on or after the date | 
- **end_date** | **Character**| Return technical indicator values on or before the date | 
- **page_size** | **Integer**| The number of results to return | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **identifier** | Character| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) |  &nbsp;
+ **ema_period** | Integer| The number of observations, per period, to calculate the single Exponential Moving Average and the Double Exponential Moving Average for Mass Index | [optional] [default to 9] &nbsp;
+ **sum_period** | Integer| The number of observations, per period, to calculate the sum of the Exponetinal Moving Average Ratios for Mass Index | [optional] [default to 25] &nbsp;
+ **start_date** | Character| Return technical indicator values on or after the date | [optional]  &nbsp;
+ **end_date** | Character| Return technical indicator values on or before the date | [optional]  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -2451,7 +2455,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_security_price_technicals_nvi)
 
-[//]: # (RETURN_TYPE:::ApiResponseSecurityNegativeVolumeIndex)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseSecurityNegativeVolumeIndex)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -2503,6 +2507,7 @@ opts <- list(
 )
 
 response <- SecurityApi$get_security_price_technicals_nvi(identifier, opts)
+
 print(response)
 print(response$content)
 ```
@@ -2516,15 +2521,14 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) | 
- **start_date** | **Character**| Return technical indicator values on or after the date | 
- **end_date** | **Character**| Return technical indicator values on or before the date | 
- **page_size** | **Integer**| The number of results to return | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **identifier** | Character| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) |  &nbsp;
+ **start_date** | Character| Return technical indicator values on or after the date | [optional]  &nbsp;
+ **end_date** | Character| Return technical indicator values on or before the date | [optional]  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -2541,7 +2545,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_security_price_technicals_obv)
 
-[//]: # (RETURN_TYPE:::ApiResponseSecurityOnBalanceVolume)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseSecurityOnBalanceVolume)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -2593,6 +2597,7 @@ opts <- list(
 )
 
 response <- SecurityApi$get_security_price_technicals_obv(identifier, opts)
+
 print(response)
 print(response$content)
 ```
@@ -2606,15 +2611,14 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) | 
- **start_date** | **Character**| Return technical indicator values on or after the date | 
- **end_date** | **Character**| Return technical indicator values on or before the date | 
- **page_size** | **Integer**| The number of results to return | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **identifier** | Character| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) |  &nbsp;
+ **start_date** | Character| Return technical indicator values on or after the date | [optional]  &nbsp;
+ **end_date** | Character| Return technical indicator values on or before the date | [optional]  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -2631,7 +2635,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_security_price_technicals_obv_mean)
 
-[//]: # (RETURN_TYPE:::ApiResponseSecurityOnBalanceVolumeMean)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseSecurityOnBalanceVolumeMean)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -2684,6 +2688,7 @@ opts <- list(
 )
 
 response <- SecurityApi$get_security_price_technicals_obv_mean(identifier, opts)
+
 print(response)
 print(response$content)
 ```
@@ -2697,16 +2702,15 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) | 
- **period** | **Integer**| The number of observations, per period, to calculate On-balance Volume Mean | [default to 10]
- **start_date** | **Character**| Return technical indicator values on or after the date | 
- **end_date** | **Character**| Return technical indicator values on or before the date | 
- **page_size** | **Integer**| The number of results to return | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **identifier** | Character| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) |  &nbsp;
+ **period** | Integer| The number of observations, per period, to calculate On-balance Volume Mean | [optional] [default to 10] &nbsp;
+ **start_date** | Character| Return technical indicator values on or after the date | [optional]  &nbsp;
+ **end_date** | Character| Return technical indicator values on or before the date | [optional]  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -2723,7 +2727,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_security_price_technicals_rsi)
 
-[//]: # (RETURN_TYPE:::ApiResponseSecurityRelativeStrengthIndex)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseSecurityRelativeStrengthIndex)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -2777,6 +2781,7 @@ opts <- list(
 )
 
 response <- SecurityApi$get_security_price_technicals_rsi(identifier, opts)
+
 print(response)
 print(response$content)
 ```
@@ -2790,17 +2795,16 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) | 
- **period** | **Integer**| The number of observations, per period, to calculate Relative Strength Index | [default to 14]
- **price_key** | **Character**| The Stock Price field to use when calculating Relative Strength Index | [default to close]
- **start_date** | **Character**| Return technical indicator values on or after the date | 
- **end_date** | **Character**| Return technical indicator values on or before the date | 
- **page_size** | **Integer**| The number of results to return | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **identifier** | Character| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) |  &nbsp;
+ **period** | Integer| The number of observations, per period, to calculate Relative Strength Index | [optional] [default to 14] &nbsp;
+ **price_key** | Character| The Stock Price field to use when calculating Relative Strength Index | [optional] [default to close] &nbsp;
+ **start_date** | Character| Return technical indicator values on or after the date | [optional]  &nbsp;
+ **end_date** | Character| Return technical indicator values on or before the date | [optional]  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -2817,7 +2821,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_security_price_technicals_sma)
 
-[//]: # (RETURN_TYPE:::ApiResponseSecuritySimpleMovingAverage)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseSecuritySimpleMovingAverage)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -2871,6 +2875,7 @@ opts <- list(
 )
 
 response <- SecurityApi$get_security_price_technicals_sma(identifier, opts)
+
 print(response)
 print(response$content)
 ```
@@ -2884,17 +2889,16 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) | 
- **period** | **Integer**| The number of observations, per period, to calculate Simple Moving Average | [default to 20]
- **price_key** | **Character**| The Stock Price field to use when calculating Simple Moving Average | [default to close]
- **start_date** | **Character**| Return technical indicator values on or after the date | 
- **end_date** | **Character**| Return technical indicator values on or before the date | 
- **page_size** | **Integer**| The number of results to return | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **identifier** | Character| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) |  &nbsp;
+ **period** | Integer| The number of observations, per period, to calculate Simple Moving Average | [optional] [default to 20] &nbsp;
+ **price_key** | Character| The Stock Price field to use when calculating Simple Moving Average | [optional] [default to close] &nbsp;
+ **start_date** | Character| Return technical indicator values on or after the date | [optional]  &nbsp;
+ **end_date** | Character| Return technical indicator values on or before the date | [optional]  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -2911,7 +2915,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_security_price_technicals_sr)
 
-[//]: # (RETURN_TYPE:::ApiResponseSecurityStochasticOscillator)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseSecurityStochasticOscillator)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -2965,6 +2969,7 @@ opts <- list(
 )
 
 response <- SecurityApi$get_security_price_technicals_sr(identifier, opts)
+
 print(response)
 print(response$content)
 ```
@@ -2978,17 +2983,16 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) | 
- **period** | **Integer**| The number of observations, per period, to calculate %K of Stochastic Oscillator | [default to 14]
- **signal_period** | **Integer**| The number of observations, per period, to calculate the %D (the Simple Moving Average of %K) as a signal line for Stochastic Oscillator | [default to 3]
- **start_date** | **Character**| Return technical indicator values on or after the date | 
- **end_date** | **Character**| Return technical indicator values on or before the date | 
- **page_size** | **Integer**| The number of results to return | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **identifier** | Character| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) |  &nbsp;
+ **period** | Integer| The number of observations, per period, to calculate %K of Stochastic Oscillator | [optional] [default to 14] &nbsp;
+ **signal_period** | Integer| The number of observations, per period, to calculate the %D (the Simple Moving Average of %K) as a signal line for Stochastic Oscillator | [optional] [default to 3] &nbsp;
+ **start_date** | Character| Return technical indicator values on or after the date | [optional]  &nbsp;
+ **end_date** | Character| Return technical indicator values on or before the date | [optional]  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -3005,7 +3009,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_security_price_technicals_trix)
 
-[//]: # (RETURN_TYPE:::ApiResponseSecurityTripleExponentialAverage)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseSecurityTripleExponentialAverage)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -3058,6 +3062,7 @@ opts <- list(
 )
 
 response <- SecurityApi$get_security_price_technicals_trix(identifier, opts)
+
 print(response)
 print(response$content)
 ```
@@ -3071,16 +3076,15 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) | 
- **period** | **Integer**| The number of observations, per period, to calculate Exponential Moving Average for Triple Exponential Average | [default to 15]
- **start_date** | **Character**| Return technical indicator values on or after the date | 
- **end_date** | **Character**| Return technical indicator values on or before the date | 
- **page_size** | **Integer**| The number of results to return | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **identifier** | Character| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) |  &nbsp;
+ **period** | Integer| The number of observations, per period, to calculate Exponential Moving Average for Triple Exponential Average | [optional] [default to 15] &nbsp;
+ **start_date** | Character| Return technical indicator values on or after the date | [optional]  &nbsp;
+ **end_date** | Character| Return technical indicator values on or before the date | [optional]  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -3097,7 +3101,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_security_price_technicals_tsi)
 
-[//]: # (RETURN_TYPE:::ApiResponseSecurityTrueStrengthIndex)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseSecurityTrueStrengthIndex)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -3152,6 +3156,7 @@ opts <- list(
 )
 
 response <- SecurityApi$get_security_price_technicals_tsi(identifier, opts)
+
 print(response)
 print(response$content)
 ```
@@ -3165,18 +3170,17 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) | 
- **low_period** | **Integer**| The number of observations, per period, to calculate low period Exponential Moving Average for smoothing in True Strength Index | [default to 13]
- **high_period** | **Integer**| The number of observations, per period, to calculate high period Exponential Moving Average for smoothing in True Strength Index | [default to 25]
- **price_key** | **Character**| The Stock Price field to use when calculating True Strength Index | [default to close]
- **start_date** | **Character**| Return technical indicator values on or after the date | 
- **end_date** | **Character**| Return technical indicator values on or before the date | 
- **page_size** | **Integer**| The number of results to return | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **identifier** | Character| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) |  &nbsp;
+ **low_period** | Integer| The number of observations, per period, to calculate low period Exponential Moving Average for smoothing in True Strength Index | [optional] [default to 13] &nbsp;
+ **high_period** | Integer| The number of observations, per period, to calculate high period Exponential Moving Average for smoothing in True Strength Index | [optional] [default to 25] &nbsp;
+ **price_key** | Character| The Stock Price field to use when calculating True Strength Index | [optional] [default to close] &nbsp;
+ **start_date** | Character| Return technical indicator values on or after the date | [optional]  &nbsp;
+ **end_date** | Character| Return technical indicator values on or before the date | [optional]  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -3193,7 +3197,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_security_price_technicals_uo)
 
-[//]: # (RETURN_TYPE:::ApiResponseSecurityUltimateOscillator)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseSecurityUltimateOscillator)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -3251,6 +3255,7 @@ opts <- list(
 )
 
 response <- SecurityApi$get_security_price_technicals_uo(identifier, opts)
+
 print(response)
 print(response$content)
 ```
@@ -3264,21 +3269,20 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) | 
- **short_period** | **Integer**| The number of observations, per period, to calculate the short period for Ultimate Oscillator | [default to 7]
- **medium_period** | **Integer**| The number of observations, per period, to calculate the medium period for Ultimate Oscillator | [default to 14]
- **long_period** | **Integer**| The number of observations, per period, to calculate the long period for Ultimate Oscillator | [default to 28]
- **short_weight** | **Numeric**| The weight of short Buying Pressure average for Ultimate Oscillator | [default to 4.0]
- **medium_weight** | **Numeric**| The weight of medium Buying Pressure average for Ultimate Oscillator | [default to 2.0]
- **long_weight** | **Numeric**| The weight of long Buying Pressure average for Ultimate Oscillator | [default to 1.0]
- **start_date** | **Character**| Return technical indicator values on or after the date | 
- **end_date** | **Character**| Return technical indicator values on or before the date | 
- **page_size** | **Integer**| The number of results to return | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **identifier** | Character| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) |  &nbsp;
+ **short_period** | Integer| The number of observations, per period, to calculate the short period for Ultimate Oscillator | [optional] [default to 7] &nbsp;
+ **medium_period** | Integer| The number of observations, per period, to calculate the medium period for Ultimate Oscillator | [optional] [default to 14] &nbsp;
+ **long_period** | Integer| The number of observations, per period, to calculate the long period for Ultimate Oscillator | [optional] [default to 28] &nbsp;
+ **short_weight** | Numeric| The weight of short Buying Pressure average for Ultimate Oscillator | [optional] [default to 4.0] &nbsp;
+ **medium_weight** | Numeric| The weight of medium Buying Pressure average for Ultimate Oscillator | [optional] [default to 2.0] &nbsp;
+ **long_weight** | Numeric| The weight of long Buying Pressure average for Ultimate Oscillator | [optional] [default to 1.0] &nbsp;
+ **start_date** | Character| Return technical indicator values on or after the date | [optional]  &nbsp;
+ **end_date** | Character| Return technical indicator values on or before the date | [optional]  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -3295,7 +3299,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_security_price_technicals_vi)
 
-[//]: # (RETURN_TYPE:::ApiResponseSecurityVortexIndicator)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseSecurityVortexIndicator)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -3348,6 +3352,7 @@ opts <- list(
 )
 
 response <- SecurityApi$get_security_price_technicals_vi(identifier, opts)
+
 print(response)
 print(response$content)
 ```
@@ -3361,16 +3366,15 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) | 
- **period** | **Integer**| The number of observations, per period, to calculate Vortex Indicator | [default to 14]
- **start_date** | **Character**| Return technical indicator values on or after the date | 
- **end_date** | **Character**| Return technical indicator values on or before the date | 
- **page_size** | **Integer**| The number of results to return | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **identifier** | Character| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) |  &nbsp;
+ **period** | Integer| The number of observations, per period, to calculate Vortex Indicator | [optional] [default to 14] &nbsp;
+ **start_date** | Character| Return technical indicator values on or after the date | [optional]  &nbsp;
+ **end_date** | Character| Return technical indicator values on or before the date | [optional]  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -3387,7 +3391,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_security_price_technicals_vpt)
 
-[//]: # (RETURN_TYPE:::ApiResponseSecurityVolumePriceTrend)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseSecurityVolumePriceTrend)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -3439,6 +3443,7 @@ opts <- list(
 )
 
 response <- SecurityApi$get_security_price_technicals_vpt(identifier, opts)
+
 print(response)
 print(response$content)
 ```
@@ -3452,15 +3457,14 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) | 
- **start_date** | **Character**| Return technical indicator values on or after the date | 
- **end_date** | **Character**| Return technical indicator values on or before the date | 
- **page_size** | **Integer**| The number of results to return | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **identifier** | Character| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) |  &nbsp;
+ **start_date** | Character| Return technical indicator values on or after the date | [optional]  &nbsp;
+ **end_date** | Character| Return technical indicator values on or before the date | [optional]  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -3477,7 +3481,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_security_price_technicals_vwap)
 
-[//]: # (RETURN_TYPE:::ApiResponseSecurityVolumeWeightedAveragePrice)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseSecurityVolumeWeightedAveragePrice)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -3529,6 +3533,7 @@ opts <- list(
 )
 
 response <- SecurityApi$get_security_price_technicals_vwap(identifier, opts)
+
 print(response)
 print(response$content)
 ```
@@ -3542,15 +3547,14 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) | 
- **start_date** | **Character**| Return technical indicator values on or after the date | 
- **end_date** | **Character**| Return technical indicator values on or before the date | 
- **page_size** | **Integer**| The number of results to return | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **identifier** | Character| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) |  &nbsp;
+ **start_date** | Character| Return technical indicator values on or after the date | [optional]  &nbsp;
+ **end_date** | Character| Return technical indicator values on or before the date | [optional]  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -3567,7 +3571,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_security_price_technicals_wr)
 
-[//]: # (RETURN_TYPE:::ApiResponseSecurityWilliamsR)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseSecurityWilliamsR)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -3620,6 +3624,7 @@ opts <- list(
 )
 
 response <- SecurityApi$get_security_price_technicals_wr(identifier, opts)
+
 print(response)
 print(response$content)
 ```
@@ -3633,16 +3638,15 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) | 
- **period** | **Integer**| The number of observations, per period, to look-back when calculating Williams %R | [default to 14]
- **start_date** | **Character**| Return technical indicator values on or after the date | 
- **end_date** | **Character**| Return technical indicator values on or before the date | 
- **page_size** | **Numeric**| The number of results to return | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **identifier** | Character| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) |  &nbsp;
+ **period** | Integer| The number of observations, per period, to look-back when calculating Williams %R | [optional] [default to 14] &nbsp;
+ **start_date** | Character| Return technical indicator values on or after the date | [optional]  &nbsp;
+ **end_date** | Character| Return technical indicator values on or before the date | [optional]  &nbsp;
+ **page_size** | Numeric| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -3659,7 +3663,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_security_realtime_price)
 
-[//]: # (RETURN_TYPE:::RealtimeStockPrice)
+[//]: # (RETURN_TYPE:IntrinioSDK::RealtimeStockPrice)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -3708,6 +3712,7 @@ opts <- list(
 )
 
 response <- SecurityApi$get_security_realtime_price(identifier, opts)
+
 print(response)
 print(response$content)
 ```
@@ -3721,12 +3726,11 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) | 
- **source** | **Character**| Return the realtime price from the specified data source. If no source is specified, the best source available is used. | 
+ **identifier** | Character| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) |  &nbsp;
+ **source** | Character| Return the realtime price from the specified data source. If no source is specified, the best source available is used. | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -3743,7 +3747,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_security_stock_price_adjustments)
 
-[//]: # (RETURN_TYPE:::ApiResponseSecurityStockPriceAdjustments)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseSecurityStockPriceAdjustments)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -3795,6 +3799,7 @@ opts <- list(
 )
 
 response <- SecurityApi$get_security_stock_price_adjustments(identifier, opts)
+
 print(response)
 print(response$content)
 ```
@@ -3808,15 +3813,14 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) | 
- **start_date** | **Date**| Return price adjustments on or after the date | 
- **end_date** | **Date**| Return price adjustments on or before the date | 
- **page_size** | **Integer**| The number of results to return | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **identifier** | Character| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) |  &nbsp;
+ **start_date** | Date| Return price adjustments on or after the date | [optional]  &nbsp;
+ **end_date** | Date| Return price adjustments on or before the date | [optional]  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -3833,7 +3837,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_security_stock_prices)
 
-[//]: # (RETURN_TYPE:::ApiResponseSecurityStockPrices)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseSecurityStockPrices)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -3886,6 +3890,7 @@ opts <- list(
 )
 
 response <- SecurityApi$get_security_stock_prices(identifier, opts)
+
 print(response)
 print(response$content)
 ```
@@ -3899,16 +3904,15 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) | 
- **start_date** | **Date**| Return prices on or after the date | 
- **end_date** | **Date**| Return prices on or before the date | 
- **frequency** | **Character**| Return stock prices in the given frequency | [default to daily]
- **page_size** | **Integer**| The number of results to return | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **identifier** | Character| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) |  &nbsp;
+ **start_date** | Date| Return prices on or after the date | [optional]  &nbsp;
+ **end_date** | Date| Return prices on or before the date | [optional]  &nbsp;
+ **frequency** | Character| Return stock prices in the given frequency | [optional] [default to daily] &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -3925,7 +3929,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_security_zacks_analyst_ratings)
 
-[//]: # (RETURN_TYPE:::ApiResponseSecurityZacksAnalystRatings)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseSecurityZacksAnalystRatings)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -3990,6 +3994,7 @@ opts <- list(
 )
 
 response <- SecurityApi$get_security_zacks_analyst_ratings(identifier, opts)
+
 print(response)
 print(response$content)
 ```
@@ -4003,28 +4008,27 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) | 
- **start_date** | **Character**| Limit ratings to those on or after this date | 
- **end_date** | **Character**| Limit ratings to those on or before this date | 
- **mean_greater** | **Numeric**| Return only records with a mean (average) higher than this value | 
- **mean_less** | **Numeric**| Return only records with a mean (average) lower than this value | 
- **strong_buys_greater** | **Integer**| Return only records with more than this many Strong Buy recommendations | 
- **strong_buys_less** | **Integer**| Return only records with fewer than this many Strong Buy recommendations | 
- **buys_greater** | **Integer**| Return only records with more than this many Buy recommendations | 
- **buys_less** | **Integer**| Return only records with fewer than this many Buy recommendations | 
- **holds_greater** | **Integer**| Return only records with more than this many Hold recommendations | 
- **holds_less** | **Integer**| Return only records with fewer than this many Hold recommendations | 
- **sells_greater** | **Integer**| Return only records with more than this many Sell recommendations | 
- **sells_less** | **Integer**| Return only records with fewer than this many Sell recommendations | 
- **strong_sells_greater** | **Integer**| Return only records with more than this many Strong Sell recommendations | 
- **strong_sells_less** | **Integer**| Return only records with fewer than this many Strong Sell recommendations | 
- **total_greater** | **Integer**| Return only records with more than this many recommendations, regardless of type | 
- **total_less** | **Integer**| Return only records with fewer than this many recommendations, regardless of type | 
- **page_size** | **Integer**| The number of results to return | [default to 100]
+ **identifier** | Character| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) |  &nbsp;
+ **start_date** | Character| Limit ratings to those on or after this date | [optional]  &nbsp;
+ **end_date** | Character| Limit ratings to those on or before this date | [optional]  &nbsp;
+ **mean_greater** | Numeric| Return only records with a mean (average) higher than this value | [optional]  &nbsp;
+ **mean_less** | Numeric| Return only records with a mean (average) lower than this value | [optional]  &nbsp;
+ **strong_buys_greater** | Integer| Return only records with more than this many Strong Buy recommendations | [optional]  &nbsp;
+ **strong_buys_less** | Integer| Return only records with fewer than this many Strong Buy recommendations | [optional]  &nbsp;
+ **buys_greater** | Integer| Return only records with more than this many Buy recommendations | [optional]  &nbsp;
+ **buys_less** | Integer| Return only records with fewer than this many Buy recommendations | [optional]  &nbsp;
+ **holds_greater** | Integer| Return only records with more than this many Hold recommendations | [optional]  &nbsp;
+ **holds_less** | Integer| Return only records with fewer than this many Hold recommendations | [optional]  &nbsp;
+ **sells_greater** | Integer| Return only records with more than this many Sell recommendations | [optional]  &nbsp;
+ **sells_less** | Integer| Return only records with fewer than this many Sell recommendations | [optional]  &nbsp;
+ **strong_sells_greater** | Integer| Return only records with more than this many Strong Sell recommendations | [optional]  &nbsp;
+ **strong_sells_less** | Integer| Return only records with fewer than this many Strong Sell recommendations | [optional]  &nbsp;
+ **total_greater** | Integer| Return only records with more than this many recommendations, regardless of type | [optional]  &nbsp;
+ **total_less** | Integer| Return only records with fewer than this many recommendations, regardless of type | [optional]  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -4041,7 +4045,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_security_zacks_analyst_ratings_snapshot)
 
-[//]: # (RETURN_TYPE:::ApiResponseSecurityZacksAnalystRatingsSnapshot)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseSecurityZacksAnalystRatingsSnapshot)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -4090,6 +4094,7 @@ opts <- list(
 )
 
 response <- SecurityApi$get_security_zacks_analyst_ratings_snapshot(identifier, opts)
+
 print(response)
 print(response$content)
 ```
@@ -4103,12 +4108,11 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) | 
- **date** | **Character**| Lookup a historical snapshot on the given date | 
+ **identifier** | Character| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) |  &nbsp;
+ **date** | Character| Lookup a historical snapshot on the given date | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -4125,7 +4129,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_security_zacks_eps_surprises)
 
-[//]: # (RETURN_TYPE:::ApiResponseSecurityZacksEPSSurprises)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseSecurityZacksEPSSurprises)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -4175,6 +4179,7 @@ opts <- list(
 )
 
 response <- SecurityApi$get_security_zacks_eps_surprises(identifier, opts)
+
 print(response)
 print(response$content)
 ```
@@ -4188,13 +4193,12 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) | 
- **page_size** | **Integer**| The number of results to return | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **identifier** | Character| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) |  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -4211,7 +4215,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_security_zacks_sales_surprises)
 
-[//]: # (RETURN_TYPE:::ApiResponseSecurityZacksSalesSurprises)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseSecurityZacksSalesSurprises)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -4261,6 +4265,7 @@ opts <- list(
 )
 
 response <- SecurityApi$get_security_zacks_sales_surprises(identifier, opts)
+
 print(response)
 print(response$content)
 ```
@@ -4274,13 +4279,12 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) | 
- **page_size** | **Integer**| The number of results to return | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **identifier** | Character| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) |  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -4297,7 +4301,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:screen_securities)
 
-[//]: # (RETURN_TYPE:::SecurityScreenResult)
+[//]: # (RETURN_TYPE:IntrinioSDK::SecurityScreenResult)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -4339,7 +4343,7 @@ SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Optional params
 opts <- list(
-  logic = IntrinioSDK::SecurityScreenGroup$new(), # SecurityScreenGroup | The logic to screen with, consisting of operators, clauses, and nested groups.<br/> See <a href=\"/documentation/screener_v2\" target=\"_blank\">screener documentation</a> for details on how to construct conditions.
+  logic = IntrinioSDK::SecurityScreenGroup$new(), # SecurityScreenGroup | The logic to screen with, consisting of operators, clauses, and nested groups.<br/> See <a href=\"https://docs.intrinio.com/documentation/screener_v2\" target=\"_blank\">screener documentation</a> for details on how to construct conditions.
   order_column = "marketcap", # Character | Results returned sorted by this column
   order_direction = "asc", # Character | Sort order to use with the order_column
   primary_only = FALSE, # Logical | Return only primary securities
@@ -4347,6 +4351,7 @@ opts <- list(
 )
 
 response <- SecurityApi$screen_securities(opts)
+
 print(response)
 print(response$content)
 ```
@@ -4360,15 +4365,14 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **logic** | [**SecurityScreenGroup**](SecurityScreenGroup.md)| The logic to screen with, consisting of operators, clauses, and nested groups.&lt;br/&gt; See &lt;a href&#x3D;\&quot;/documentation/screener_v2\&quot; target&#x3D;\&quot;_blank\&quot;&gt;screener documentation&lt;/a&gt; for details on how to construct conditions. | 
- **order_column** | **Character**| Results returned sorted by this column | 
- **order_direction** | **Character**| Sort order to use with the order_column | [default to asc]
- **primary_only** | **Logical**| Return only primary securities | [default to FALSE]
- **page_size** | **Integer**| The number of results to return. Maximum for this endpoint is 50000. | [default to 100]
+ **logic** | [**SecurityScreenGroup**](SecurityScreenGroup.md)| The logic to screen with, consisting of operators, clauses, and nested groups.&lt;br/&gt; See &lt;a href&#x3D;\&quot;https://docs.intrinio.com/documentation/screener_v2\&quot; target&#x3D;\&quot;_blank\&quot;&gt;screener documentation&lt;/a&gt; for details on how to construct conditions. | [optional]  &nbsp;
+ **order_column** | Character| Results returned sorted by this column | [optional]  &nbsp;
+ **order_direction** | Character| Sort order to use with the order_column | [optional] [default to asc] &nbsp;
+ **primary_only** | Logical| Return only primary securities | [optional] [default to FALSE] &nbsp;
+ **page_size** | Integer| The number of results to return. Maximum for this endpoint is 50000. | [optional] [default to 100] &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -4385,7 +4389,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:search_securities)
 
-[//]: # (RETURN_TYPE:::ApiResponseSecuritiesSearch)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseSecuritiesSearch)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -4434,6 +4438,7 @@ opts <- list(
 )
 
 response <- SecurityApi$search_securities(query, opts)
+
 print(response)
 print(response$content)
 ```
@@ -4447,12 +4452,11 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **query** | **Character**|  | 
- **page_size** | **Integer**| The number of results to return | [default to 100]
+ **query** | Character|  |  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 

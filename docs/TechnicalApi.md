@@ -75,7 +75,7 @@ Method | HTTP request | Description
 
 [//]: # (METHOD:get_crypto_price_technicals_adi)
 
-[//]: # (RETURN_TYPE:::ApiResponseCryptoAccumulationDistributionIndex)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseCryptoAccumulationDistributionIndex)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -131,6 +131,7 @@ opts <- list(
 )
 
 response <- TechnicalApi$get_crypto_price_technicals_adi(opts)
+
 print(response)
 print(response$content)
 ```
@@ -144,21 +145,20 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pair** | **Character**| Return technicals for the given Crypto Currency Pair. | 
- **exchange** | **Character**| Return technicals for a Crypto Currency on the given Crypto Exchange. | 
- **currency** | **Character**| Return technicals for the given Crypto Currency. | 
- **timeframe** | **Character**| The time interval for the prices when calculating technicals. | [default to d1]
- **timezone** | **Character**| Return technical date/times in this timezone, also interpret start/end date/time parameters in this timezone. | [default to UTC]
- **start_date** | **Date**| Return technicals on or after this date. | 
- **start_time** | **Character**| Return technicals at or after this time (24-hour). | 
- **end_date** | **Date**| Return technicals on or before this date. | 
- **end_time** | **Character**| Return technicals at or before this time (24-hour). | 
- **page_size** | **Integer**| An integer greater than or equal to 1 for specifying the number of results on each page. | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **pair** | Character| Return technicals for the given Crypto Currency Pair. | [optional]  &nbsp;
+ **exchange** | Character| Return technicals for a Crypto Currency on the given Crypto Exchange. | [optional]  &nbsp;
+ **currency** | Character| Return technicals for the given Crypto Currency. | [optional]  &nbsp;
+ **timeframe** | Character| The time interval for the prices when calculating technicals. | [optional] [default to d1] &nbsp;
+ **timezone** | Character| Return technical date/times in this timezone, also interpret start/end date/time parameters in this timezone. | [optional] [default to UTC] &nbsp;
+ **start_date** | Date| Return technicals on or after this date. | [optional]  &nbsp;
+ **start_time** | Character| Return technicals at or after this time (24-hour). | [optional]  &nbsp;
+ **end_date** | Date| Return technicals on or before this date. | [optional]  &nbsp;
+ **end_time** | Character| Return technicals at or before this time (24-hour). | [optional]  &nbsp;
+ **page_size** | Integer| An integer greater than or equal to 1 for specifying the number of results on each page. | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -175,7 +175,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_crypto_price_technicals_adtv)
 
-[//]: # (RETURN_TYPE:::ApiResponseCryptoAverageDailyTradingVolume)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseCryptoAverageDailyTradingVolume)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -232,6 +232,7 @@ opts <- list(
 )
 
 response <- TechnicalApi$get_crypto_price_technicals_adtv(opts)
+
 print(response)
 print(response$content)
 ```
@@ -245,22 +246,21 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pair** | **Character**| Return technicals for the given Crypto Currency Pair. | 
- **exchange** | **Character**| Return technicals for a Crypto Currency on the given Crypto Exchange. | 
- **currency** | **Character**| Return technicals for the given Crypto Currency. | 
- **period** | **Integer**| The number of observations, per period, to calculate Average Daily Trading Volume. | [default to 22]
- **timeframe** | **Character**| The time interval for the prices when calculating technicals. | [default to d1]
- **timezone** | **Character**| Return technical date/times in this timezone, also interpret start/end date/time parameters in this timezone. | [default to UTC]
- **start_date** | **Date**| Return technicals on or after this date. | 
- **start_time** | **Character**| Return technicals at or after this time (24-hour). | 
- **end_date** | **Date**| Return technicals on or before this date. | 
- **end_time** | **Character**| Return technicals at or before this time (24-hour). | 
- **page_size** | **Integer**| An integer greater than or equal to 1 for specifying the number of results on each page. | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **pair** | Character| Return technicals for the given Crypto Currency Pair. | [optional]  &nbsp;
+ **exchange** | Character| Return technicals for a Crypto Currency on the given Crypto Exchange. | [optional]  &nbsp;
+ **currency** | Character| Return technicals for the given Crypto Currency. | [optional]  &nbsp;
+ **period** | Integer| The number of observations, per period, to calculate Average Daily Trading Volume. | [optional] [default to 22] &nbsp;
+ **timeframe** | Character| The time interval for the prices when calculating technicals. | [optional] [default to d1] &nbsp;
+ **timezone** | Character| Return technical date/times in this timezone, also interpret start/end date/time parameters in this timezone. | [optional] [default to UTC] &nbsp;
+ **start_date** | Date| Return technicals on or after this date. | [optional]  &nbsp;
+ **start_time** | Character| Return technicals at or after this time (24-hour). | [optional]  &nbsp;
+ **end_date** | Date| Return technicals on or before this date. | [optional]  &nbsp;
+ **end_time** | Character| Return technicals at or before this time (24-hour). | [optional]  &nbsp;
+ **page_size** | Integer| An integer greater than or equal to 1 for specifying the number of results on each page. | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -277,7 +277,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_crypto_price_technicals_adx)
 
-[//]: # (RETURN_TYPE:::ApiResponseCryptoAverageDirectionalIndex)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseCryptoAverageDirectionalIndex)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -334,6 +334,7 @@ opts <- list(
 )
 
 response <- TechnicalApi$get_crypto_price_technicals_adx(opts)
+
 print(response)
 print(response$content)
 ```
@@ -347,22 +348,21 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pair** | **Character**| Return technicals for the given Crypto Currency Pair. | 
- **exchange** | **Character**| Return technicals for a Crypto Currency on the given Crypto Exchange. | 
- **currency** | **Character**| Return technicals for the given Crypto Currency. | 
- **period** | **Integer**| The number of observations, per period, to calculate Average Directional Index. | [default to 22]
- **timeframe** | **Character**| The time interval for the prices when calculating technicals. | [default to d1]
- **timezone** | **Character**| Return technical date/times in this timezone, also interpret start/end date/time parameters in this timezone. | [default to UTC]
- **start_date** | **Date**| Return technicals on or after this date. | 
- **start_time** | **Character**| Return technicals at or after this time (24-hour). | 
- **end_date** | **Date**| Return technicals on or before this date. | 
- **end_time** | **Character**| Return technicals at or before this time (24-hour). | 
- **page_size** | **Integer**| An integer greater than or equal to 1 for specifying the number of results on each page. | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **pair** | Character| Return technicals for the given Crypto Currency Pair. | [optional]  &nbsp;
+ **exchange** | Character| Return technicals for a Crypto Currency on the given Crypto Exchange. | [optional]  &nbsp;
+ **currency** | Character| Return technicals for the given Crypto Currency. | [optional]  &nbsp;
+ **period** | Integer| The number of observations, per period, to calculate Average Directional Index. | [optional] [default to 22] &nbsp;
+ **timeframe** | Character| The time interval for the prices when calculating technicals. | [optional] [default to d1] &nbsp;
+ **timezone** | Character| Return technical date/times in this timezone, also interpret start/end date/time parameters in this timezone. | [optional] [default to UTC] &nbsp;
+ **start_date** | Date| Return technicals on or after this date. | [optional]  &nbsp;
+ **start_time** | Character| Return technicals at or after this time (24-hour). | [optional]  &nbsp;
+ **end_date** | Date| Return technicals on or before this date. | [optional]  &nbsp;
+ **end_time** | Character| Return technicals at or before this time (24-hour). | [optional]  &nbsp;
+ **page_size** | Integer| An integer greater than or equal to 1 for specifying the number of results on each page. | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -379,7 +379,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_crypto_price_technicals_ao)
 
-[//]: # (RETURN_TYPE:::ApiResponseCryptoAwesomeOscillator)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseCryptoAwesomeOscillator)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -437,6 +437,7 @@ opts <- list(
 )
 
 response <- TechnicalApi$get_crypto_price_technicals_ao(opts)
+
 print(response)
 print(response$content)
 ```
@@ -450,23 +451,22 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pair** | **Character**| Return technicals for the given Crypto Currency Pair. | 
- **exchange** | **Character**| Return technicals for a Crypto Currency on the given Crypto Exchange. | 
- **currency** | **Character**| Return technicals for the given Crypto Currency. | 
- **short_period** | **Integer**| The number of observations, per period, to calculate short period Simple Moving Average of the Awesome Oscillator. | [default to 5]
- **long_period** | **Integer**| The number of observations, per period, to calculate long period Simple Moving Average of the Awesome Oscillator. | [default to 34]
- **timeframe** | **Character**| The time interval for the prices when calculating technicals. | [default to d1]
- **timezone** | **Character**| Return technical date/times in this timezone, also interpret start/end date/time parameters in this timezone. | [default to UTC]
- **start_date** | **Date**| Return technicals on or after this date. | 
- **start_time** | **Character**| Return technicals at or after this time (24-hour). | 
- **end_date** | **Date**| Return technicals on or before this date. | 
- **end_time** | **Character**| Return technicals at or before this time (24-hour). | 
- **page_size** | **Integer**| An integer greater than or equal to 1 for specifying the number of results on each page. | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **pair** | Character| Return technicals for the given Crypto Currency Pair. | [optional]  &nbsp;
+ **exchange** | Character| Return technicals for a Crypto Currency on the given Crypto Exchange. | [optional]  &nbsp;
+ **currency** | Character| Return technicals for the given Crypto Currency. | [optional]  &nbsp;
+ **short_period** | Integer| The number of observations, per period, to calculate short period Simple Moving Average of the Awesome Oscillator. | [optional] [default to 5] &nbsp;
+ **long_period** | Integer| The number of observations, per period, to calculate long period Simple Moving Average of the Awesome Oscillator. | [optional] [default to 34] &nbsp;
+ **timeframe** | Character| The time interval for the prices when calculating technicals. | [optional] [default to d1] &nbsp;
+ **timezone** | Character| Return technical date/times in this timezone, also interpret start/end date/time parameters in this timezone. | [optional] [default to UTC] &nbsp;
+ **start_date** | Date| Return technicals on or after this date. | [optional]  &nbsp;
+ **start_time** | Character| Return technicals at or after this time (24-hour). | [optional]  &nbsp;
+ **end_date** | Date| Return technicals on or before this date. | [optional]  &nbsp;
+ **end_time** | Character| Return technicals at or before this time (24-hour). | [optional]  &nbsp;
+ **page_size** | Integer| An integer greater than or equal to 1 for specifying the number of results on each page. | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -483,7 +483,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_crypto_price_technicals_atr)
 
-[//]: # (RETURN_TYPE:::ApiResponseCryptoAverageTrueRange)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseCryptoAverageTrueRange)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -540,6 +540,7 @@ opts <- list(
 )
 
 response <- TechnicalApi$get_crypto_price_technicals_atr(opts)
+
 print(response)
 print(response$content)
 ```
@@ -553,22 +554,21 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pair** | **Character**| Return technicals for the given Crypto Currency Pair. | 
- **exchange** | **Character**| Return technicals for a Crypto Currency on the given Crypto Exchange. | 
- **currency** | **Character**| Return technicals for the given Crypto Currency. | 
- **period** | **Integer**| The number of observations, per period, to calculate Average True Range. | [default to 22]
- **timeframe** | **Character**| The time interval for the prices when calculating technicals. | [default to d1]
- **timezone** | **Character**| Return technical date/times in this timezone, also interpret start/end date/time parameters in this timezone. | [default to UTC]
- **start_date** | **Date**| Return technicals on or after this date. | 
- **start_time** | **Character**| Return technicals at or after this time (24-hour). | 
- **end_date** | **Date**| Return technicals on or before this date. | 
- **end_time** | **Character**| Return technicals at or before this time (24-hour). | 
- **page_size** | **Integer**| An integer greater than or equal to 1 for specifying the number of results on each page. | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **pair** | Character| Return technicals for the given Crypto Currency Pair. | [optional]  &nbsp;
+ **exchange** | Character| Return technicals for a Crypto Currency on the given Crypto Exchange. | [optional]  &nbsp;
+ **currency** | Character| Return technicals for the given Crypto Currency. | [optional]  &nbsp;
+ **period** | Integer| The number of observations, per period, to calculate Average True Range. | [optional] [default to 22] &nbsp;
+ **timeframe** | Character| The time interval for the prices when calculating technicals. | [optional] [default to d1] &nbsp;
+ **timezone** | Character| Return technical date/times in this timezone, also interpret start/end date/time parameters in this timezone. | [optional] [default to UTC] &nbsp;
+ **start_date** | Date| Return technicals on or after this date. | [optional]  &nbsp;
+ **start_time** | Character| Return technicals at or after this time (24-hour). | [optional]  &nbsp;
+ **end_date** | Date| Return technicals on or before this date. | [optional]  &nbsp;
+ **end_time** | Character| Return technicals at or before this time (24-hour). | [optional]  &nbsp;
+ **page_size** | Integer| An integer greater than or equal to 1 for specifying the number of results on each page. | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -585,7 +585,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_crypto_price_technicals_bb)
 
-[//]: # (RETURN_TYPE:::ApiResponseCryptoBollingerBands)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseCryptoBollingerBands)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -644,6 +644,7 @@ opts <- list(
 )
 
 response <- TechnicalApi$get_crypto_price_technicals_bb(opts)
+
 print(response)
 print(response$content)
 ```
@@ -657,24 +658,23 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pair** | **Character**| Return technicals for the given Crypto Currency Pair. | 
- **exchange** | **Character**| Return technicals for a Crypto Currency on the given Crypto Exchange. | 
- **currency** | **Character**| Return technicals for the given Crypto Currency. | 
- **period** | **Integer**| The number of observations, per period, to calculate Bollinger Bands. | [default to 20]
- **standard_deviations** | **Numeric**| The number of standard deviations to calculate the upper and lower bands of the Bollinger Bands. | [default to 2.0]
- **price_key** | **Character**| The Crypto Currency Price field to use when calculating Bollinger Bands. | [default to close]
- **timeframe** | **Character**| The time interval for the prices when calculating technicals. | [default to d1]
- **timezone** | **Character**| Return technical date/times in this timezone, also interpret start/end date/time parameters in this timezone. | [default to UTC]
- **start_date** | **Date**| Return technicals on or after this date. | 
- **start_time** | **Character**| Return technicals at or after this time (24-hour). | 
- **end_date** | **Date**| Return technicals on or before this date. | 
- **end_time** | **Character**| Return technicals at or before this time (24-hour). | 
- **page_size** | **Integer**| An integer greater than or equal to 1 for specifying the number of results on each page. | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **pair** | Character| Return technicals for the given Crypto Currency Pair. | [optional]  &nbsp;
+ **exchange** | Character| Return technicals for a Crypto Currency on the given Crypto Exchange. | [optional]  &nbsp;
+ **currency** | Character| Return technicals for the given Crypto Currency. | [optional]  &nbsp;
+ **period** | Integer| The number of observations, per period, to calculate Bollinger Bands. | [optional] [default to 20] &nbsp;
+ **standard_deviations** | Numeric| The number of standard deviations to calculate the upper and lower bands of the Bollinger Bands. | [optional] [default to 2.0] &nbsp;
+ **price_key** | Character| The Crypto Currency Price field to use when calculating Bollinger Bands. | [optional] [default to close] &nbsp;
+ **timeframe** | Character| The time interval for the prices when calculating technicals. | [optional] [default to d1] &nbsp;
+ **timezone** | Character| Return technical date/times in this timezone, also interpret start/end date/time parameters in this timezone. | [optional] [default to UTC] &nbsp;
+ **start_date** | Date| Return technicals on or after this date. | [optional]  &nbsp;
+ **start_time** | Character| Return technicals at or after this time (24-hour). | [optional]  &nbsp;
+ **end_date** | Date| Return technicals on or before this date. | [optional]  &nbsp;
+ **end_time** | Character| Return technicals at or before this time (24-hour). | [optional]  &nbsp;
+ **page_size** | Integer| An integer greater than or equal to 1 for specifying the number of results on each page. | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -691,7 +691,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_crypto_price_technicals_cci)
 
-[//]: # (RETURN_TYPE:::ApiResponseCryptoCommodityChannelIndex)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseCryptoCommodityChannelIndex)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -749,6 +749,7 @@ opts <- list(
 )
 
 response <- TechnicalApi$get_crypto_price_technicals_cci(opts)
+
 print(response)
 print(response$content)
 ```
@@ -762,23 +763,22 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pair** | **Character**| Return technicals for the given Crypto Currency Pair. | 
- **exchange** | **Character**| Return technicals for a Crypto Currency on the given Crypto Exchange. | 
- **currency** | **Character**| Return technicals for the given Crypto Currency. | 
- **period** | **Integer**| The number of observations, per period, to calculate Commodity Channel Index. | [default to 20]
- **constant** | **Numeric**| The number of observations, per period, to calculate Commodity Channel Index. | [default to 0.015]
- **timeframe** | **Character**| The time interval for the prices when calculating technicals. | [default to d1]
- **timezone** | **Character**| Return technical date/times in this timezone, also interpret start/end date/time parameters in this timezone. | [default to UTC]
- **start_date** | **Date**| Return technicals on or after this date. | 
- **start_time** | **Character**| Return technicals at or after this time (24-hour). | 
- **end_date** | **Date**| Return technicals on or before this date. | 
- **end_time** | **Character**| Return technicals at or before this time (24-hour). | 
- **page_size** | **Integer**| An integer greater than or equal to 1 for specifying the number of results on each page. | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **pair** | Character| Return technicals for the given Crypto Currency Pair. | [optional]  &nbsp;
+ **exchange** | Character| Return technicals for a Crypto Currency on the given Crypto Exchange. | [optional]  &nbsp;
+ **currency** | Character| Return technicals for the given Crypto Currency. | [optional]  &nbsp;
+ **period** | Integer| The number of observations, per period, to calculate Commodity Channel Index. | [optional] [default to 20] &nbsp;
+ **constant** | Numeric| The number of observations, per period, to calculate Commodity Channel Index. | [optional] [default to 0.015] &nbsp;
+ **timeframe** | Character| The time interval for the prices when calculating technicals. | [optional] [default to d1] &nbsp;
+ **timezone** | Character| Return technical date/times in this timezone, also interpret start/end date/time parameters in this timezone. | [optional] [default to UTC] &nbsp;
+ **start_date** | Date| Return technicals on or after this date. | [optional]  &nbsp;
+ **start_time** | Character| Return technicals at or after this time (24-hour). | [optional]  &nbsp;
+ **end_date** | Date| Return technicals on or before this date. | [optional]  &nbsp;
+ **end_time** | Character| Return technicals at or before this time (24-hour). | [optional]  &nbsp;
+ **page_size** | Integer| An integer greater than or equal to 1 for specifying the number of results on each page. | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -795,7 +795,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_crypto_price_technicals_cmf)
 
-[//]: # (RETURN_TYPE:::ApiResponseCryptoChaikinMoneyFlow)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseCryptoChaikinMoneyFlow)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -852,6 +852,7 @@ opts <- list(
 )
 
 response <- TechnicalApi$get_crypto_price_technicals_cmf(opts)
+
 print(response)
 print(response$content)
 ```
@@ -865,22 +866,21 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pair** | **Character**| Return technicals for the given Crypto Currency Pair. | 
- **exchange** | **Character**| Return technicals for a Crypto Currency on the given Crypto Exchange. | 
- **currency** | **Character**| Return technicals for the given Crypto Currency. | 
- **period** | **Integer**| The number of observations, per period, to calculate Chaikin Money Flow. | [default to 20]
- **timeframe** | **Character**| The time interval for the prices when calculating technicals. | [default to d1]
- **timezone** | **Character**| Return technical date/times in this timezone, also interpret start/end date/time parameters in this timezone. | [default to UTC]
- **start_date** | **Date**| Return technicals on or after this date. | 
- **start_time** | **Character**| Return technicals at or after this time (24-hour). | 
- **end_date** | **Date**| Return technicals on or before this date. | 
- **end_time** | **Character**| Return technicals at or before this time (24-hour). | 
- **page_size** | **Integer**| An integer greater than or equal to 1 for specifying the number of results on each page. | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **pair** | Character| Return technicals for the given Crypto Currency Pair. | [optional]  &nbsp;
+ **exchange** | Character| Return technicals for a Crypto Currency on the given Crypto Exchange. | [optional]  &nbsp;
+ **currency** | Character| Return technicals for the given Crypto Currency. | [optional]  &nbsp;
+ **period** | Integer| The number of observations, per period, to calculate Chaikin Money Flow. | [optional] [default to 20] &nbsp;
+ **timeframe** | Character| The time interval for the prices when calculating technicals. | [optional] [default to d1] &nbsp;
+ **timezone** | Character| Return technical date/times in this timezone, also interpret start/end date/time parameters in this timezone. | [optional] [default to UTC] &nbsp;
+ **start_date** | Date| Return technicals on or after this date. | [optional]  &nbsp;
+ **start_time** | Character| Return technicals at or after this time (24-hour). | [optional]  &nbsp;
+ **end_date** | Date| Return technicals on or before this date. | [optional]  &nbsp;
+ **end_time** | Character| Return technicals at or before this time (24-hour). | [optional]  &nbsp;
+ **page_size** | Integer| An integer greater than or equal to 1 for specifying the number of results on each page. | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -897,7 +897,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_crypto_price_technicals_dc)
 
-[//]: # (RETURN_TYPE:::ApiResponseCryptoDonchianChannel)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseCryptoDonchianChannel)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -955,6 +955,7 @@ opts <- list(
 )
 
 response <- TechnicalApi$get_crypto_price_technicals_dc(opts)
+
 print(response)
 print(response$content)
 ```
@@ -968,23 +969,22 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pair** | **Character**| Return technicals for the given Crypto Currency Pair. | 
- **exchange** | **Character**| Return technicals for a Crypto Currency on the given Crypto Exchange. | 
- **currency** | **Character**| Return technicals for the given Crypto Currency. | 
- **period** | **Integer**| The number of observations, per period, to calculate Donchian Channel. | [default to 20]
- **price_key** | **Character**| The Crypto Currency Price field to use when calculating Donchian Channel. | [default to close]
- **timeframe** | **Character**| The time interval for the prices when calculating technicals. | [default to d1]
- **timezone** | **Character**| Return technical date/times in this timezone, also interpret start/end date/time parameters in this timezone. | [default to UTC]
- **start_date** | **Date**| Return technicals on or after this date. | 
- **start_time** | **Character**| Return technicals at or after this time (24-hour). | 
- **end_date** | **Date**| Return technicals on or before this date. | 
- **end_time** | **Character**| Return technicals at or before this time (24-hour). | 
- **page_size** | **Integer**| An integer greater than or equal to 1 for specifying the number of results on each page. | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **pair** | Character| Return technicals for the given Crypto Currency Pair. | [optional]  &nbsp;
+ **exchange** | Character| Return technicals for a Crypto Currency on the given Crypto Exchange. | [optional]  &nbsp;
+ **currency** | Character| Return technicals for the given Crypto Currency. | [optional]  &nbsp;
+ **period** | Integer| The number of observations, per period, to calculate Donchian Channel. | [optional] [default to 20] &nbsp;
+ **price_key** | Character| The Crypto Currency Price field to use when calculating Donchian Channel. | [optional] [default to close] &nbsp;
+ **timeframe** | Character| The time interval for the prices when calculating technicals. | [optional] [default to d1] &nbsp;
+ **timezone** | Character| Return technical date/times in this timezone, also interpret start/end date/time parameters in this timezone. | [optional] [default to UTC] &nbsp;
+ **start_date** | Date| Return technicals on or after this date. | [optional]  &nbsp;
+ **start_time** | Character| Return technicals at or after this time (24-hour). | [optional]  &nbsp;
+ **end_date** | Date| Return technicals on or before this date. | [optional]  &nbsp;
+ **end_time** | Character| Return technicals at or before this time (24-hour). | [optional]  &nbsp;
+ **page_size** | Integer| An integer greater than or equal to 1 for specifying the number of results on each page. | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -1001,7 +1001,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_crypto_price_technicals_dpo)
 
-[//]: # (RETURN_TYPE:::ApiResponseCryptoDetrendedPriceOscillator)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseCryptoDetrendedPriceOscillator)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -1059,6 +1059,7 @@ opts <- list(
 )
 
 response <- TechnicalApi$get_crypto_price_technicals_dpo(opts)
+
 print(response)
 print(response$content)
 ```
@@ -1072,23 +1073,22 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pair** | **Character**| Return technicals for the given Crypto Currency Pair. | 
- **exchange** | **Character**| Return technicals for a Crypto Currency on the given Crypto Exchange. | 
- **currency** | **Character**| Return technicals for the given Crypto Currency. | 
- **period** | **Integer**| The number of observations, per period, to calculate Detrended Price Oscillator. | [default to 20]
- **price_key** | **Character**| The Crypto Currency Price field to use when calculating Detrended Price Oscillator. | [default to close]
- **timeframe** | **Character**| The time interval for the prices when calculating technicals. | [default to d1]
- **timezone** | **Character**| Return technical date/times in this timezone, also interpret start/end date/time parameters in this timezone. | [default to UTC]
- **start_date** | **Date**| Return technicals on or after this date. | 
- **start_time** | **Character**| Return technicals at or after this time (24-hour). | 
- **end_date** | **Date**| Return technicals on or before this date. | 
- **end_time** | **Character**| Return technicals at or before this time (24-hour). | 
- **page_size** | **Integer**| An integer greater than or equal to 1 for specifying the number of results on each page. | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **pair** | Character| Return technicals for the given Crypto Currency Pair. | [optional]  &nbsp;
+ **exchange** | Character| Return technicals for a Crypto Currency on the given Crypto Exchange. | [optional]  &nbsp;
+ **currency** | Character| Return technicals for the given Crypto Currency. | [optional]  &nbsp;
+ **period** | Integer| The number of observations, per period, to calculate Detrended Price Oscillator. | [optional] [default to 20] &nbsp;
+ **price_key** | Character| The Crypto Currency Price field to use when calculating Detrended Price Oscillator. | [optional] [default to close] &nbsp;
+ **timeframe** | Character| The time interval for the prices when calculating technicals. | [optional] [default to d1] &nbsp;
+ **timezone** | Character| Return technical date/times in this timezone, also interpret start/end date/time parameters in this timezone. | [optional] [default to UTC] &nbsp;
+ **start_date** | Date| Return technicals on or after this date. | [optional]  &nbsp;
+ **start_time** | Character| Return technicals at or after this time (24-hour). | [optional]  &nbsp;
+ **end_date** | Date| Return technicals on or before this date. | [optional]  &nbsp;
+ **end_time** | Character| Return technicals at or before this time (24-hour). | [optional]  &nbsp;
+ **page_size** | Integer| An integer greater than or equal to 1 for specifying the number of results on each page. | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -1105,7 +1105,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_crypto_price_technicals_eom)
 
-[//]: # (RETURN_TYPE:::ApiResponseCryptoEaseOfMovement)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseCryptoEaseOfMovement)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -1162,6 +1162,7 @@ opts <- list(
 )
 
 response <- TechnicalApi$get_crypto_price_technicals_eom(opts)
+
 print(response)
 print(response$content)
 ```
@@ -1175,22 +1176,21 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pair** | **Character**| Return technicals for the given Crypto Currency Pair. | 
- **exchange** | **Character**| Return technicals for a Crypto Currency on the given Crypto Exchange. | 
- **currency** | **Character**| Return technicals for the given Crypto Currency. | 
- **period** | **Integer**| The number of observations, per period, to calculate Ease of Movement. | [default to 20]
- **timeframe** | **Character**| The time interval for the prices when calculating technicals. | [default to d1]
- **timezone** | **Character**| Return technical date/times in this timezone, also interpret start/end date/time parameters in this timezone. | [default to UTC]
- **start_date** | **Date**| Return technicals on or after this date. | 
- **start_time** | **Character**| Return technicals at or after this time (24-hour). | 
- **end_date** | **Date**| Return technicals on or before this date. | 
- **end_time** | **Character**| Return technicals at or before this time (24-hour). | 
- **page_size** | **Integer**| An integer greater than or equal to 1 for specifying the number of results on each page. | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **pair** | Character| Return technicals for the given Crypto Currency Pair. | [optional]  &nbsp;
+ **exchange** | Character| Return technicals for a Crypto Currency on the given Crypto Exchange. | [optional]  &nbsp;
+ **currency** | Character| Return technicals for the given Crypto Currency. | [optional]  &nbsp;
+ **period** | Integer| The number of observations, per period, to calculate Ease of Movement. | [optional] [default to 20] &nbsp;
+ **timeframe** | Character| The time interval for the prices when calculating technicals. | [optional] [default to d1] &nbsp;
+ **timezone** | Character| Return technical date/times in this timezone, also interpret start/end date/time parameters in this timezone. | [optional] [default to UTC] &nbsp;
+ **start_date** | Date| Return technicals on or after this date. | [optional]  &nbsp;
+ **start_time** | Character| Return technicals at or after this time (24-hour). | [optional]  &nbsp;
+ **end_date** | Date| Return technicals on or before this date. | [optional]  &nbsp;
+ **end_time** | Character| Return technicals at or before this time (24-hour). | [optional]  &nbsp;
+ **page_size** | Integer| An integer greater than or equal to 1 for specifying the number of results on each page. | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -1207,7 +1207,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_crypto_price_technicals_fi)
 
-[//]: # (RETURN_TYPE:::ApiResponseCryptoForceIndex)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseCryptoForceIndex)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -1263,6 +1263,7 @@ opts <- list(
 )
 
 response <- TechnicalApi$get_crypto_price_technicals_fi(opts)
+
 print(response)
 print(response$content)
 ```
@@ -1276,21 +1277,20 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pair** | **Character**| Return technicals for the given Crypto Currency Pair. | 
- **exchange** | **Character**| Return technicals for a Crypto Currency on the given Crypto Exchange. | 
- **currency** | **Character**| Return technicals for the given Crypto Currency. | 
- **timeframe** | **Character**| The time interval for the prices when calculating technicals. | [default to d1]
- **timezone** | **Character**| Return technical date/times in this timezone, also interpret start/end date/time parameters in this timezone. | [default to UTC]
- **start_date** | **Date**| Return technicals on or after this date. | 
- **start_time** | **Character**| Return technicals at or after this time (24-hour). | 
- **end_date** | **Date**| Return technicals on or before this date. | 
- **end_time** | **Character**| Return technicals at or before this time (24-hour). | 
- **page_size** | **Integer**| An integer greater than or equal to 1 for specifying the number of results on each page. | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **pair** | Character| Return technicals for the given Crypto Currency Pair. | [optional]  &nbsp;
+ **exchange** | Character| Return technicals for a Crypto Currency on the given Crypto Exchange. | [optional]  &nbsp;
+ **currency** | Character| Return technicals for the given Crypto Currency. | [optional]  &nbsp;
+ **timeframe** | Character| The time interval for the prices when calculating technicals. | [optional] [default to d1] &nbsp;
+ **timezone** | Character| Return technical date/times in this timezone, also interpret start/end date/time parameters in this timezone. | [optional] [default to UTC] &nbsp;
+ **start_date** | Date| Return technicals on or after this date. | [optional]  &nbsp;
+ **start_time** | Character| Return technicals at or after this time (24-hour). | [optional]  &nbsp;
+ **end_date** | Date| Return technicals on or before this date. | [optional]  &nbsp;
+ **end_time** | Character| Return technicals at or before this time (24-hour). | [optional]  &nbsp;
+ **page_size** | Integer| An integer greater than or equal to 1 for specifying the number of results on each page. | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -1307,7 +1307,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_crypto_price_technicals_ichimoku)
 
-[//]: # (RETURN_TYPE:::ApiResponseCryptoIchimokuKinkoHyo)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseCryptoIchimokuKinkoHyo)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -1366,6 +1366,7 @@ opts <- list(
 )
 
 response <- TechnicalApi$get_crypto_price_technicals_ichimoku(opts)
+
 print(response)
 print(response$content)
 ```
@@ -1379,24 +1380,23 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pair** | **Character**| Return technicals for the given Crypto Currency Pair. | 
- **exchange** | **Character**| Return technicals for a Crypto Currency on the given Crypto Exchange. | 
- **currency** | **Character**| Return technicals for the given Crypto Currency. | 
- **low_period** | **Integer**| The number of observations, per period, to calculate Tenkan Sen (Conversion Line) of Ichimoku Kinko Hyo. | [default to 9]
- **medium_period** | **Integer**| The number of observations, per period, to calculate Kijun Sen (Base Line), Senkou Span A (Leading Span A), and Chikou Span (Lagging Span) of Ichimoku Kinko Hyo. | [default to 26]
- **high_period** | **Integer**| The number of observations, per period, to calculate Senkou Span B (Leading Span B) of Ichimoku Kinko Hyo. | [default to 52]
- **timeframe** | **Character**| The time interval for the prices when calculating technicals. | [default to d1]
- **timezone** | **Character**| Return technical date/times in this timezone, also interpret start/end date/time parameters in this timezone. | [default to UTC]
- **start_date** | **Date**| Return technicals on or after this date. | 
- **start_time** | **Character**| Return technicals at or after this time (24-hour). | 
- **end_date** | **Date**| Return technicals on or before this date. | 
- **end_time** | **Character**| Return technicals at or before this time (24-hour). | 
- **page_size** | **Integer**| An integer greater than or equal to 1 for specifying the number of results on each page. | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **pair** | Character| Return technicals for the given Crypto Currency Pair. | [optional]  &nbsp;
+ **exchange** | Character| Return technicals for a Crypto Currency on the given Crypto Exchange. | [optional]  &nbsp;
+ **currency** | Character| Return technicals for the given Crypto Currency. | [optional]  &nbsp;
+ **low_period** | Integer| The number of observations, per period, to calculate Tenkan Sen (Conversion Line) of Ichimoku Kinko Hyo. | [optional] [default to 9] &nbsp;
+ **medium_period** | Integer| The number of observations, per period, to calculate Kijun Sen (Base Line), Senkou Span A (Leading Span A), and Chikou Span (Lagging Span) of Ichimoku Kinko Hyo. | [optional] [default to 26] &nbsp;
+ **high_period** | Integer| The number of observations, per period, to calculate Senkou Span B (Leading Span B) of Ichimoku Kinko Hyo. | [optional] [default to 52] &nbsp;
+ **timeframe** | Character| The time interval for the prices when calculating technicals. | [optional] [default to d1] &nbsp;
+ **timezone** | Character| Return technical date/times in this timezone, also interpret start/end date/time parameters in this timezone. | [optional] [default to UTC] &nbsp;
+ **start_date** | Date| Return technicals on or after this date. | [optional]  &nbsp;
+ **start_time** | Character| Return technicals at or after this time (24-hour). | [optional]  &nbsp;
+ **end_date** | Date| Return technicals on or before this date. | [optional]  &nbsp;
+ **end_time** | Character| Return technicals at or before this time (24-hour). | [optional]  &nbsp;
+ **page_size** | Integer| An integer greater than or equal to 1 for specifying the number of results on each page. | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -1413,7 +1413,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_crypto_price_technicals_kc)
 
-[//]: # (RETURN_TYPE:::ApiResponseCryptoKeltnerChannel)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseCryptoKeltnerChannel)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -1470,6 +1470,7 @@ opts <- list(
 )
 
 response <- TechnicalApi$get_crypto_price_technicals_kc(opts)
+
 print(response)
 print(response$content)
 ```
@@ -1483,22 +1484,21 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pair** | **Character**| Return technicals for the given Crypto Currency Pair. | 
- **exchange** | **Character**| Return technicals for a Crypto Currency on the given Crypto Exchange. | 
- **currency** | **Character**| Return technicals for the given Crypto Currency. | 
- **period** | **Integer**| The number of observations, per period, to calculate Kelter Channel. | [default to 10]
- **timeframe** | **Character**| The time interval for the prices when calculating technicals. | [default to d1]
- **timezone** | **Character**| Return technical date/times in this timezone, also interpret start/end date/time parameters in this timezone. | [default to UTC]
- **start_date** | **Date**| Return technicals on or after this date. | 
- **start_time** | **Character**| Return technicals at or after this time (24-hour). | 
- **end_date** | **Date**| Return technicals on or before this date. | 
- **end_time** | **Character**| Return technicals at or before this time (24-hour). | 
- **page_size** | **Integer**| An integer greater than or equal to 1 for specifying the number of results on each page. | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **pair** | Character| Return technicals for the given Crypto Currency Pair. | [optional]  &nbsp;
+ **exchange** | Character| Return technicals for a Crypto Currency on the given Crypto Exchange. | [optional]  &nbsp;
+ **currency** | Character| Return technicals for the given Crypto Currency. | [optional]  &nbsp;
+ **period** | Integer| The number of observations, per period, to calculate Kelter Channel. | [optional] [default to 10] &nbsp;
+ **timeframe** | Character| The time interval for the prices when calculating technicals. | [optional] [default to d1] &nbsp;
+ **timezone** | Character| Return technical date/times in this timezone, also interpret start/end date/time parameters in this timezone. | [optional] [default to UTC] &nbsp;
+ **start_date** | Date| Return technicals on or after this date. | [optional]  &nbsp;
+ **start_time** | Character| Return technicals at or after this time (24-hour). | [optional]  &nbsp;
+ **end_date** | Date| Return technicals on or before this date. | [optional]  &nbsp;
+ **end_time** | Character| Return technicals at or before this time (24-hour). | [optional]  &nbsp;
+ **page_size** | Integer| An integer greater than or equal to 1 for specifying the number of results on each page. | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -1515,7 +1515,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_crypto_price_technicals_kst)
 
-[//]: # (RETURN_TYPE:::ApiResponseCryptoKnowSureThing)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseCryptoKnowSureThing)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -1580,6 +1580,7 @@ opts <- list(
 )
 
 response <- TechnicalApi$get_crypto_price_technicals_kst(opts)
+
 print(response)
 print(response$content)
 ```
@@ -1593,30 +1594,29 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pair** | **Character**| Return technicals for the given Crypto Currency Pair. | 
- **exchange** | **Character**| Return technicals for a Crypto Currency on the given Crypto Exchange. | 
- **currency** | **Character**| Return technicals for the given Crypto Currency. | 
- **roc1** | **Integer**| The number of observations, per period, to calculate the rate-of-change for RCMA1. | [default to 10]
- **roc2** | **Integer**| The number of observations, per period, to calculate the rate-of-change for RCMA2. | [default to 15]
- **roc3** | **Integer**| The number of observations, per period, to calculate the rate-of-change for RCMA3. | [default to 20]
- **roc4** | **Integer**| The number of observations, per period, to calculate the rate-of-change for RCMA4. | [default to 30]
- **sma1** | **Integer**| The number of observations, per period, to calculate the Simple Moving Average of the rate-of-change for RCMA1. | [default to 10]
- **sma2** | **Integer**| The number of observations, per period, to calculate the Simple Moving Average of the rate-of-change for RCMA2. | [default to 10]
- **sma3** | **Integer**| The number of observations, per period, to calculate the Simple Moving Average of the rate-of-change for RCMA3. | [default to 10]
- **sma4** | **Integer**| The number of observations, per period, to calculate the Simple Moving Average of the rate-of-change for RCMA4. | [default to 15]
- **price_key** | **Character**| The Crypto Currency Price field to use when calculating Know Sure Thing. | [default to close]
- **timeframe** | **Character**| The time interval for the prices when calculating technicals. | [default to d1]
- **timezone** | **Character**| Return technical date/times in this timezone, also interpret start/end date/time parameters in this timezone. | [default to UTC]
- **start_date** | **Date**| Return technicals on or after this date. | 
- **start_time** | **Character**| Return technicals at or after this time (24-hour). | 
- **end_date** | **Date**| Return technicals on or before this date. | 
- **end_time** | **Character**| Return technicals at or before this time (24-hour). | 
- **page_size** | **Integer**| An integer greater than or equal to 1 for specifying the number of results on each page. | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **pair** | Character| Return technicals for the given Crypto Currency Pair. | [optional]  &nbsp;
+ **exchange** | Character| Return technicals for a Crypto Currency on the given Crypto Exchange. | [optional]  &nbsp;
+ **currency** | Character| Return technicals for the given Crypto Currency. | [optional]  &nbsp;
+ **roc1** | Integer| The number of observations, per period, to calculate the rate-of-change for RCMA1. | [optional] [default to 10] &nbsp;
+ **roc2** | Integer| The number of observations, per period, to calculate the rate-of-change for RCMA2. | [optional] [default to 15] &nbsp;
+ **roc3** | Integer| The number of observations, per period, to calculate the rate-of-change for RCMA3. | [optional] [default to 20] &nbsp;
+ **roc4** | Integer| The number of observations, per period, to calculate the rate-of-change for RCMA4. | [optional] [default to 30] &nbsp;
+ **sma1** | Integer| The number of observations, per period, to calculate the Simple Moving Average of the rate-of-change for RCMA1. | [optional] [default to 10] &nbsp;
+ **sma2** | Integer| The number of observations, per period, to calculate the Simple Moving Average of the rate-of-change for RCMA2. | [optional] [default to 10] &nbsp;
+ **sma3** | Integer| The number of observations, per period, to calculate the Simple Moving Average of the rate-of-change for RCMA3. | [optional] [default to 10] &nbsp;
+ **sma4** | Integer| The number of observations, per period, to calculate the Simple Moving Average of the rate-of-change for RCMA4. | [optional] [default to 15] &nbsp;
+ **price_key** | Character| The Crypto Currency Price field to use when calculating Know Sure Thing. | [optional] [default to close] &nbsp;
+ **timeframe** | Character| The time interval for the prices when calculating technicals. | [optional] [default to d1] &nbsp;
+ **timezone** | Character| Return technical date/times in this timezone, also interpret start/end date/time parameters in this timezone. | [optional] [default to UTC] &nbsp;
+ **start_date** | Date| Return technicals on or after this date. | [optional]  &nbsp;
+ **start_time** | Character| Return technicals at or after this time (24-hour). | [optional]  &nbsp;
+ **end_date** | Date| Return technicals on or before this date. | [optional]  &nbsp;
+ **end_time** | Character| Return technicals at or before this time (24-hour). | [optional]  &nbsp;
+ **page_size** | Integer| An integer greater than or equal to 1 for specifying the number of results on each page. | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -1633,7 +1633,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_crypto_price_technicals_macd)
 
-[//]: # (RETURN_TYPE:::ApiResponseCryptoMovingAverageConvergenceDivergence)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseCryptoMovingAverageConvergenceDivergence)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -1693,6 +1693,7 @@ opts <- list(
 )
 
 response <- TechnicalApi$get_crypto_price_technicals_macd(opts)
+
 print(response)
 print(response$content)
 ```
@@ -1706,25 +1707,24 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pair** | **Character**| Return technicals for the given Crypto Currency Pair. | 
- **exchange** | **Character**| Return technicals for a Crypto Currency on the given Crypto Exchange. | 
- **currency** | **Character**| Return technicals for the given Crypto Currency. | 
- **fast_period** | **Integer**| The number of observations, per period, to calculate the fast moving Exponential Moving Average for Moving Average Convergence Divergence. | [default to 12]
- **slow_period** | **Integer**| The number of observations, per period, to calculate the slow moving Exponential Moving Average for Moving Average Convergence Divergence. | [default to 26]
- **signal_period** | **Integer**| The number of observations, per period, to calculate the signal line for Moving Average Convergence Divergence. | [default to 9]
- **price_key** | **Character**| The Crypto Currency Price field to use when calculating Moving Average Convergence Divergence. | [default to close]
- **timeframe** | **Character**| The time interval for the prices when calculating technicals. | [default to d1]
- **timezone** | **Character**| Return technical date/times in this timezone, also interpret start/end date/time parameters in this timezone. | [default to UTC]
- **start_date** | **Date**| Return technicals on or after this date. | 
- **start_time** | **Character**| Return technicals at or after this time (24-hour). | 
- **end_date** | **Date**| Return technicals on or before this date. | 
- **end_time** | **Character**| Return technicals at or before this time (24-hour). | 
- **page_size** | **Integer**| An integer greater than or equal to 1 for specifying the number of results on each page. | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **pair** | Character| Return technicals for the given Crypto Currency Pair. | [optional]  &nbsp;
+ **exchange** | Character| Return technicals for a Crypto Currency on the given Crypto Exchange. | [optional]  &nbsp;
+ **currency** | Character| Return technicals for the given Crypto Currency. | [optional]  &nbsp;
+ **fast_period** | Integer| The number of observations, per period, to calculate the fast moving Exponential Moving Average for Moving Average Convergence Divergence. | [optional] [default to 12] &nbsp;
+ **slow_period** | Integer| The number of observations, per period, to calculate the slow moving Exponential Moving Average for Moving Average Convergence Divergence. | [optional] [default to 26] &nbsp;
+ **signal_period** | Integer| The number of observations, per period, to calculate the signal line for Moving Average Convergence Divergence. | [optional] [default to 9] &nbsp;
+ **price_key** | Character| The Crypto Currency Price field to use when calculating Moving Average Convergence Divergence. | [optional] [default to close] &nbsp;
+ **timeframe** | Character| The time interval for the prices when calculating technicals. | [optional] [default to d1] &nbsp;
+ **timezone** | Character| Return technical date/times in this timezone, also interpret start/end date/time parameters in this timezone. | [optional] [default to UTC] &nbsp;
+ **start_date** | Date| Return technicals on or after this date. | [optional]  &nbsp;
+ **start_time** | Character| Return technicals at or after this time (24-hour). | [optional]  &nbsp;
+ **end_date** | Date| Return technicals on or before this date. | [optional]  &nbsp;
+ **end_time** | Character| Return technicals at or before this time (24-hour). | [optional]  &nbsp;
+ **page_size** | Integer| An integer greater than or equal to 1 for specifying the number of results on each page. | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -1741,7 +1741,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_crypto_price_technicals_mfi)
 
-[//]: # (RETURN_TYPE:::ApiResponseCryptoMoneyFlowIndex)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseCryptoMoneyFlowIndex)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -1798,6 +1798,7 @@ opts <- list(
 )
 
 response <- TechnicalApi$get_crypto_price_technicals_mfi(opts)
+
 print(response)
 print(response$content)
 ```
@@ -1811,22 +1812,21 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pair** | **Character**| Return technicals for the given Crypto Currency Pair. | 
- **exchange** | **Character**| Return technicals for a Crypto Currency on the given Crypto Exchange. | 
- **currency** | **Character**| Return technicals for the given Crypto Currency. | 
- **period** | **Integer**| The number of observations, per period, to calculate Money Flow Index. | [default to 14]
- **timeframe** | **Character**| The time interval for the prices when calculating technicals. | [default to d1]
- **timezone** | **Character**| Return technical date/times in this timezone, also interpret start/end date/time parameters in this timezone. | [default to UTC]
- **start_date** | **Date**| Return technicals on or after this date. | 
- **start_time** | **Character**| Return technicals at or after this time (24-hour). | 
- **end_date** | **Date**| Return technicals on or before this date. | 
- **end_time** | **Character**| Return technicals at or before this time (24-hour). | 
- **page_size** | **Integer**| An integer greater than or equal to 1 for specifying the number of results on each page. | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **pair** | Character| Return technicals for the given Crypto Currency Pair. | [optional]  &nbsp;
+ **exchange** | Character| Return technicals for a Crypto Currency on the given Crypto Exchange. | [optional]  &nbsp;
+ **currency** | Character| Return technicals for the given Crypto Currency. | [optional]  &nbsp;
+ **period** | Integer| The number of observations, per period, to calculate Money Flow Index. | [optional] [default to 14] &nbsp;
+ **timeframe** | Character| The time interval for the prices when calculating technicals. | [optional] [default to d1] &nbsp;
+ **timezone** | Character| Return technical date/times in this timezone, also interpret start/end date/time parameters in this timezone. | [optional] [default to UTC] &nbsp;
+ **start_date** | Date| Return technicals on or after this date. | [optional]  &nbsp;
+ **start_time** | Character| Return technicals at or after this time (24-hour). | [optional]  &nbsp;
+ **end_date** | Date| Return technicals on or before this date. | [optional]  &nbsp;
+ **end_time** | Character| Return technicals at or before this time (24-hour). | [optional]  &nbsp;
+ **page_size** | Integer| An integer greater than or equal to 1 for specifying the number of results on each page. | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -1843,7 +1843,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_crypto_price_technicals_mi)
 
-[//]: # (RETURN_TYPE:::ApiResponseCryptoMassIndex)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseCryptoMassIndex)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -1901,6 +1901,7 @@ opts <- list(
 )
 
 response <- TechnicalApi$get_crypto_price_technicals_mi(opts)
+
 print(response)
 print(response$content)
 ```
@@ -1914,23 +1915,22 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pair** | **Character**| Return technicals for the given Crypto Currency Pair. | 
- **exchange** | **Character**| Return technicals for a Crypto Currency on the given Crypto Exchange. | 
- **currency** | **Character**| Return technicals for the given Crypto Currency. | 
- **ema_period** | **Integer**| The number of observations, per period, to calculate the single Exponential Moving Average and the Double Exponential Moving Average for Mass Index. | [default to 9]
- **sum_period** | **Integer**| The number of observations, per period, to calculate the sum of the Exponetinal Moving Average Ratios for Mass Index. | [default to 25]
- **timeframe** | **Character**| The time interval for the prices when calculating technicals. | [default to d1]
- **timezone** | **Character**| Return technical date/times in this timezone, also interpret start/end date/time parameters in this timezone. | [default to UTC]
- **start_date** | **Date**| Return technicals on or after this date. | 
- **start_time** | **Character**| Return technicals at or after this time (24-hour). | 
- **end_date** | **Date**| Return technicals on or before this date. | 
- **end_time** | **Character**| Return technicals at or before this time (24-hour). | 
- **page_size** | **Integer**| An integer greater than or equal to 1 for specifying the number of results on each page. | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **pair** | Character| Return technicals for the given Crypto Currency Pair. | [optional]  &nbsp;
+ **exchange** | Character| Return technicals for a Crypto Currency on the given Crypto Exchange. | [optional]  &nbsp;
+ **currency** | Character| Return technicals for the given Crypto Currency. | [optional]  &nbsp;
+ **ema_period** | Integer| The number of observations, per period, to calculate the single Exponential Moving Average and the Double Exponential Moving Average for Mass Index. | [optional] [default to 9] &nbsp;
+ **sum_period** | Integer| The number of observations, per period, to calculate the sum of the Exponetinal Moving Average Ratios for Mass Index. | [optional] [default to 25] &nbsp;
+ **timeframe** | Character| The time interval for the prices when calculating technicals. | [optional] [default to d1] &nbsp;
+ **timezone** | Character| Return technical date/times in this timezone, also interpret start/end date/time parameters in this timezone. | [optional] [default to UTC] &nbsp;
+ **start_date** | Date| Return technicals on or after this date. | [optional]  &nbsp;
+ **start_time** | Character| Return technicals at or after this time (24-hour). | [optional]  &nbsp;
+ **end_date** | Date| Return technicals on or before this date. | [optional]  &nbsp;
+ **end_time** | Character| Return technicals at or before this time (24-hour). | [optional]  &nbsp;
+ **page_size** | Integer| An integer greater than or equal to 1 for specifying the number of results on each page. | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -1947,7 +1947,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_crypto_price_technicals_nvi)
 
-[//]: # (RETURN_TYPE:::ApiResponseCryptoNegativeVolumeIndex)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseCryptoNegativeVolumeIndex)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -2003,6 +2003,7 @@ opts <- list(
 )
 
 response <- TechnicalApi$get_crypto_price_technicals_nvi(opts)
+
 print(response)
 print(response$content)
 ```
@@ -2016,21 +2017,20 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pair** | **Character**| Return technicals for the given Crypto Currency Pair. | 
- **exchange** | **Character**| Return technicals for a Crypto Currency on the given Crypto Exchange. | 
- **currency** | **Character**| Return technicals for the given Crypto Currency. | 
- **timeframe** | **Character**| The time interval for the prices when calculating technicals. | [default to d1]
- **timezone** | **Character**| Return technical date/times in this timezone, also interpret start/end date/time parameters in this timezone. | [default to UTC]
- **start_date** | **Date**| Return technicals on or after this date. | 
- **start_time** | **Character**| Return technicals at or after this time (24-hour). | 
- **end_date** | **Date**| Return technicals on or before this date. | 
- **end_time** | **Character**| Return technicals at or before this time (24-hour). | 
- **page_size** | **Integer**| An integer greater than or equal to 1 for specifying the number of results on each page. | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **pair** | Character| Return technicals for the given Crypto Currency Pair. | [optional]  &nbsp;
+ **exchange** | Character| Return technicals for a Crypto Currency on the given Crypto Exchange. | [optional]  &nbsp;
+ **currency** | Character| Return technicals for the given Crypto Currency. | [optional]  &nbsp;
+ **timeframe** | Character| The time interval for the prices when calculating technicals. | [optional] [default to d1] &nbsp;
+ **timezone** | Character| Return technical date/times in this timezone, also interpret start/end date/time parameters in this timezone. | [optional] [default to UTC] &nbsp;
+ **start_date** | Date| Return technicals on or after this date. | [optional]  &nbsp;
+ **start_time** | Character| Return technicals at or after this time (24-hour). | [optional]  &nbsp;
+ **end_date** | Date| Return technicals on or before this date. | [optional]  &nbsp;
+ **end_time** | Character| Return technicals at or before this time (24-hour). | [optional]  &nbsp;
+ **page_size** | Integer| An integer greater than or equal to 1 for specifying the number of results on each page. | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -2047,7 +2047,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_crypto_price_technicals_obv)
 
-[//]: # (RETURN_TYPE:::ApiResponseCryptoOnBalanceVolume)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseCryptoOnBalanceVolume)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -2103,6 +2103,7 @@ opts <- list(
 )
 
 response <- TechnicalApi$get_crypto_price_technicals_obv(opts)
+
 print(response)
 print(response$content)
 ```
@@ -2116,21 +2117,20 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pair** | **Character**| Return technicals for the given Crypto Currency Pair. | 
- **exchange** | **Character**| Return technicals for a Crypto Currency on the given Crypto Exchange. | 
- **currency** | **Character**| Return technicals for the given Crypto Currency. | 
- **timeframe** | **Character**| The time interval for the prices when calculating technicals. | [default to d1]
- **timezone** | **Character**| Return technical date/times in this timezone, also interpret start/end date/time parameters in this timezone. | [default to UTC]
- **start_date** | **Date**| Return technicals on or after this date. | 
- **start_time** | **Character**| Return technicals at or after this time (24-hour). | 
- **end_date** | **Date**| Return technicals on or before this date. | 
- **end_time** | **Character**| Return technicals at or before this time (24-hour). | 
- **page_size** | **Integer**| An integer greater than or equal to 1 for specifying the number of results on each page. | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **pair** | Character| Return technicals for the given Crypto Currency Pair. | [optional]  &nbsp;
+ **exchange** | Character| Return technicals for a Crypto Currency on the given Crypto Exchange. | [optional]  &nbsp;
+ **currency** | Character| Return technicals for the given Crypto Currency. | [optional]  &nbsp;
+ **timeframe** | Character| The time interval for the prices when calculating technicals. | [optional] [default to d1] &nbsp;
+ **timezone** | Character| Return technical date/times in this timezone, also interpret start/end date/time parameters in this timezone. | [optional] [default to UTC] &nbsp;
+ **start_date** | Date| Return technicals on or after this date. | [optional]  &nbsp;
+ **start_time** | Character| Return technicals at or after this time (24-hour). | [optional]  &nbsp;
+ **end_date** | Date| Return technicals on or before this date. | [optional]  &nbsp;
+ **end_time** | Character| Return technicals at or before this time (24-hour). | [optional]  &nbsp;
+ **page_size** | Integer| An integer greater than or equal to 1 for specifying the number of results on each page. | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -2147,7 +2147,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_crypto_price_technicals_obv_mean)
 
-[//]: # (RETURN_TYPE:::ApiResponseCryptoOnBalanceVolumeMean)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseCryptoOnBalanceVolumeMean)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -2204,6 +2204,7 @@ opts <- list(
 )
 
 response <- TechnicalApi$get_crypto_price_technicals_obv_mean(opts)
+
 print(response)
 print(response$content)
 ```
@@ -2217,22 +2218,21 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pair** | **Character**| Return technicals for the given Crypto Currency Pair. | 
- **exchange** | **Character**| Return technicals for a Crypto Currency on the given Crypto Exchange. | 
- **currency** | **Character**| Return technicals for the given Crypto Currency. | 
- **period** | **Integer**| The number of observations, per period, to calculate On-balance Volume Mean. | [default to 10]
- **timeframe** | **Character**| The time interval for the prices when calculating technicals. | [default to d1]
- **timezone** | **Character**| Return technical date/times in this timezone, also interpret start/end date/time parameters in this timezone. | [default to UTC]
- **start_date** | **Date**| Return technicals on or after this date. | 
- **start_time** | **Character**| Return technicals at or after this time (24-hour). | 
- **end_date** | **Date**| Return technicals on or before this date. | 
- **end_time** | **Character**| Return technicals at or before this time (24-hour). | 
- **page_size** | **Integer**| An integer greater than or equal to 1 for specifying the number of results on each page. | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **pair** | Character| Return technicals for the given Crypto Currency Pair. | [optional]  &nbsp;
+ **exchange** | Character| Return technicals for a Crypto Currency on the given Crypto Exchange. | [optional]  &nbsp;
+ **currency** | Character| Return technicals for the given Crypto Currency. | [optional]  &nbsp;
+ **period** | Integer| The number of observations, per period, to calculate On-balance Volume Mean. | [optional] [default to 10] &nbsp;
+ **timeframe** | Character| The time interval for the prices when calculating technicals. | [optional] [default to d1] &nbsp;
+ **timezone** | Character| Return technical date/times in this timezone, also interpret start/end date/time parameters in this timezone. | [optional] [default to UTC] &nbsp;
+ **start_date** | Date| Return technicals on or after this date. | [optional]  &nbsp;
+ **start_time** | Character| Return technicals at or after this time (24-hour). | [optional]  &nbsp;
+ **end_date** | Date| Return technicals on or before this date. | [optional]  &nbsp;
+ **end_time** | Character| Return technicals at or before this time (24-hour). | [optional]  &nbsp;
+ **page_size** | Integer| An integer greater than or equal to 1 for specifying the number of results on each page. | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -2249,7 +2249,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_crypto_price_technicals_rsi)
 
-[//]: # (RETURN_TYPE:::ApiResponseCryptoRelativeStrengthIndex)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseCryptoRelativeStrengthIndex)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -2307,6 +2307,7 @@ opts <- list(
 )
 
 response <- TechnicalApi$get_crypto_price_technicals_rsi(opts)
+
 print(response)
 print(response$content)
 ```
@@ -2320,23 +2321,22 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pair** | **Character**| Return technicals for the given Crypto Currency Pair. | 
- **exchange** | **Character**| Return technicals for a Crypto Currency on the given Crypto Exchange. | 
- **currency** | **Character**| Return technicals for the given Crypto Currency. | 
- **period** | **Integer**| The number of observations, per period, to calculate Relative Strength Index. | [default to 14]
- **price_key** | **Character**| The Crypto Currency Price field to use when calculating Relative Strength Index. | [default to close]
- **timeframe** | **Character**| The time interval for the prices when calculating technicals. | [default to d1]
- **timezone** | **Character**| Return technical date/times in this timezone, also interpret start/end date/time parameters in this timezone. | [default to UTC]
- **start_date** | **Date**| Return technicals on or after this date. | 
- **start_time** | **Character**| Return technicals at or after this time (24-hour). | 
- **end_date** | **Date**| Return technicals on or before this date. | 
- **end_time** | **Character**| Return technicals at or before this time (24-hour). | 
- **page_size** | **Integer**| An integer greater than or equal to 1 for specifying the number of results on each page. | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **pair** | Character| Return technicals for the given Crypto Currency Pair. | [optional]  &nbsp;
+ **exchange** | Character| Return technicals for a Crypto Currency on the given Crypto Exchange. | [optional]  &nbsp;
+ **currency** | Character| Return technicals for the given Crypto Currency. | [optional]  &nbsp;
+ **period** | Integer| The number of observations, per period, to calculate Relative Strength Index. | [optional] [default to 14] &nbsp;
+ **price_key** | Character| The Crypto Currency Price field to use when calculating Relative Strength Index. | [optional] [default to close] &nbsp;
+ **timeframe** | Character| The time interval for the prices when calculating technicals. | [optional] [default to d1] &nbsp;
+ **timezone** | Character| Return technical date/times in this timezone, also interpret start/end date/time parameters in this timezone. | [optional] [default to UTC] &nbsp;
+ **start_date** | Date| Return technicals on or after this date. | [optional]  &nbsp;
+ **start_time** | Character| Return technicals at or after this time (24-hour). | [optional]  &nbsp;
+ **end_date** | Date| Return technicals on or before this date. | [optional]  &nbsp;
+ **end_time** | Character| Return technicals at or before this time (24-hour). | [optional]  &nbsp;
+ **page_size** | Integer| An integer greater than or equal to 1 for specifying the number of results on each page. | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -2353,7 +2353,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_crypto_price_technicals_sma)
 
-[//]: # (RETURN_TYPE:::ApiResponseCryptoSimpleMovingAverage)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseCryptoSimpleMovingAverage)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -2411,6 +2411,7 @@ opts <- list(
 )
 
 response <- TechnicalApi$get_crypto_price_technicals_sma(opts)
+
 print(response)
 print(response$content)
 ```
@@ -2424,23 +2425,22 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pair** | **Character**| Return technicals for the given Crypto Currency Pair. | 
- **exchange** | **Character**| Return technicals for a Crypto Currency on the given Crypto Exchange. | 
- **currency** | **Character**| Return technicals for the given Crypto Currency. | 
- **period** | **Integer**| The number of observations, per period, to calculate Simple Moving Average. | [default to 20]
- **price_key** | **Character**| The Crypto Currency Price field to use when calculating Simple Moving Average. | [default to close]
- **timeframe** | **Character**| The time interval for the prices when calculating technicals. | [default to d1]
- **timezone** | **Character**| Return technical date/times in this timezone, also interpret start/end date/time parameters in this timezone. | [default to UTC]
- **start_date** | **Date**| Return technicals on or after this date. | 
- **start_time** | **Character**| Return technicals at or after this time (24-hour). | 
- **end_date** | **Date**| Return technicals on or before this date. | 
- **end_time** | **Character**| Return technicals at or before this time (24-hour). | 
- **page_size** | **Integer**| An integer greater than or equal to 1 for specifying the number of results on each page. | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **pair** | Character| Return technicals for the given Crypto Currency Pair. | [optional]  &nbsp;
+ **exchange** | Character| Return technicals for a Crypto Currency on the given Crypto Exchange. | [optional]  &nbsp;
+ **currency** | Character| Return technicals for the given Crypto Currency. | [optional]  &nbsp;
+ **period** | Integer| The number of observations, per period, to calculate Simple Moving Average. | [optional] [default to 20] &nbsp;
+ **price_key** | Character| The Crypto Currency Price field to use when calculating Simple Moving Average. | [optional] [default to close] &nbsp;
+ **timeframe** | Character| The time interval for the prices when calculating technicals. | [optional] [default to d1] &nbsp;
+ **timezone** | Character| Return technical date/times in this timezone, also interpret start/end date/time parameters in this timezone. | [optional] [default to UTC] &nbsp;
+ **start_date** | Date| Return technicals on or after this date. | [optional]  &nbsp;
+ **start_time** | Character| Return technicals at or after this time (24-hour). | [optional]  &nbsp;
+ **end_date** | Date| Return technicals on or before this date. | [optional]  &nbsp;
+ **end_time** | Character| Return technicals at or before this time (24-hour). | [optional]  &nbsp;
+ **page_size** | Integer| An integer greater than or equal to 1 for specifying the number of results on each page. | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -2457,7 +2457,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_crypto_price_technicals_sr)
 
-[//]: # (RETURN_TYPE:::ApiResponseCryptoStochasticOscillator)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseCryptoStochasticOscillator)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -2515,6 +2515,7 @@ opts <- list(
 )
 
 response <- TechnicalApi$get_crypto_price_technicals_sr(opts)
+
 print(response)
 print(response$content)
 ```
@@ -2528,23 +2529,22 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pair** | **Character**| Return technicals for the given Crypto Currency Pair. | 
- **exchange** | **Character**| Return technicals for a Crypto Currency on the given Crypto Exchange. | 
- **currency** | **Character**| Return technicals for the given Crypto Currency. | 
- **period** | **Integer**| The number of observations, per period, to calculate %K of Stochastic Oscillator. | [default to 14]
- **signal_period** | **Integer**| The number of observations, per period, to calculate the %D (the Simple Moving Average of %K) as a signal line for Stochastic Oscillator. | [default to 3]
- **timeframe** | **Character**| The time interval for the prices when calculating technicals. | [default to d1]
- **timezone** | **Character**| Return technical date/times in this timezone, also interpret start/end date/time parameters in this timezone. | [default to UTC]
- **start_date** | **Date**| Return technicals on or after this date. | 
- **start_time** | **Character**| Return technicals at or after this time (24-hour). | 
- **end_date** | **Date**| Return technicals on or before this date. | 
- **end_time** | **Character**| Return technicals at or before this time (24-hour). | 
- **page_size** | **Integer**| An integer greater than or equal to 1 for specifying the number of results on each page. | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **pair** | Character| Return technicals for the given Crypto Currency Pair. | [optional]  &nbsp;
+ **exchange** | Character| Return technicals for a Crypto Currency on the given Crypto Exchange. | [optional]  &nbsp;
+ **currency** | Character| Return technicals for the given Crypto Currency. | [optional]  &nbsp;
+ **period** | Integer| The number of observations, per period, to calculate %K of Stochastic Oscillator. | [optional] [default to 14] &nbsp;
+ **signal_period** | Integer| The number of observations, per period, to calculate the %D (the Simple Moving Average of %K) as a signal line for Stochastic Oscillator. | [optional] [default to 3] &nbsp;
+ **timeframe** | Character| The time interval for the prices when calculating technicals. | [optional] [default to d1] &nbsp;
+ **timezone** | Character| Return technical date/times in this timezone, also interpret start/end date/time parameters in this timezone. | [optional] [default to UTC] &nbsp;
+ **start_date** | Date| Return technicals on or after this date. | [optional]  &nbsp;
+ **start_time** | Character| Return technicals at or after this time (24-hour). | [optional]  &nbsp;
+ **end_date** | Date| Return technicals on or before this date. | [optional]  &nbsp;
+ **end_time** | Character| Return technicals at or before this time (24-hour). | [optional]  &nbsp;
+ **page_size** | Integer| An integer greater than or equal to 1 for specifying the number of results on each page. | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -2561,7 +2561,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_crypto_price_technicals_trix)
 
-[//]: # (RETURN_TYPE:::ApiResponseCryptoTripleExponentialAverage)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseCryptoTripleExponentialAverage)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -2618,6 +2618,7 @@ opts <- list(
 )
 
 response <- TechnicalApi$get_crypto_price_technicals_trix(opts)
+
 print(response)
 print(response$content)
 ```
@@ -2631,22 +2632,21 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pair** | **Character**| Return technicals for the given Crypto Currency Pair. | 
- **exchange** | **Character**| Return technicals for a Crypto Currency on the given Crypto Exchange. | 
- **currency** | **Character**| Return technicals for the given Crypto Currency. | 
- **period** | **Integer**| The number of observations, per period, to calculate Exponential Moving Average for Triple Exponential Average. | [default to 15]
- **timeframe** | **Character**| The time interval for the prices when calculating technicals. | [default to d1]
- **timezone** | **Character**| Return technical date/times in this timezone, also interpret start/end date/time parameters in this timezone. | [default to UTC]
- **start_date** | **Date**| Return technicals on or after this date. | 
- **start_time** | **Character**| Return technicals at or after this time (24-hour). | 
- **end_date** | **Date**| Return technicals on or before this date. | 
- **end_time** | **Character**| Return technicals at or before this time (24-hour). | 
- **page_size** | **Integer**| An integer greater than or equal to 1 for specifying the number of results on each page. | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **pair** | Character| Return technicals for the given Crypto Currency Pair. | [optional]  &nbsp;
+ **exchange** | Character| Return technicals for a Crypto Currency on the given Crypto Exchange. | [optional]  &nbsp;
+ **currency** | Character| Return technicals for the given Crypto Currency. | [optional]  &nbsp;
+ **period** | Integer| The number of observations, per period, to calculate Exponential Moving Average for Triple Exponential Average. | [optional] [default to 15] &nbsp;
+ **timeframe** | Character| The time interval for the prices when calculating technicals. | [optional] [default to d1] &nbsp;
+ **timezone** | Character| Return technical date/times in this timezone, also interpret start/end date/time parameters in this timezone. | [optional] [default to UTC] &nbsp;
+ **start_date** | Date| Return technicals on or after this date. | [optional]  &nbsp;
+ **start_time** | Character| Return technicals at or after this time (24-hour). | [optional]  &nbsp;
+ **end_date** | Date| Return technicals on or before this date. | [optional]  &nbsp;
+ **end_time** | Character| Return technicals at or before this time (24-hour). | [optional]  &nbsp;
+ **page_size** | Integer| An integer greater than or equal to 1 for specifying the number of results on each page. | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -2663,7 +2663,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_crypto_price_technicals_tsi)
 
-[//]: # (RETURN_TYPE:::ApiResponseCryptoTrueStrengthIndex)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseCryptoTrueStrengthIndex)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -2722,6 +2722,7 @@ opts <- list(
 )
 
 response <- TechnicalApi$get_crypto_price_technicals_tsi(opts)
+
 print(response)
 print(response$content)
 ```
@@ -2735,24 +2736,23 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pair** | **Character**| Return technicals for the given Crypto Currency Pair. | 
- **exchange** | **Character**| Return technicals for a Crypto Currency on the given Crypto Exchange. | 
- **currency** | **Character**| Return technicals for the given Crypto Currency. | 
- **low_period** | **Integer**| The number of observations, per period, to calculate low period Exponential Moving Average for smoothing in True Strength Index. | [default to 13]
- **high_period** | **Integer**| The number of observations, per period, to calculate high period Exponential Moving Average for smoothing in True Strength Index. | [default to 25]
- **price_key** | **Character**| The Crypto Currency Price field to use when calculating True Strength Index. | [default to close]
- **timeframe** | **Character**| The time interval for the prices when calculating technicals. | [default to d1]
- **timezone** | **Character**| Return technical date/times in this timezone, also interpret start/end date/time parameters in this timezone. | [default to UTC]
- **start_date** | **Date**| Return technicals on or after this date. | 
- **start_time** | **Character**| Return technicals at or after this time (24-hour). | 
- **end_date** | **Date**| Return technicals on or before this date. | 
- **end_time** | **Character**| Return technicals at or before this time (24-hour). | 
- **page_size** | **Integer**| An integer greater than or equal to 1 for specifying the number of results on each page. | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **pair** | Character| Return technicals for the given Crypto Currency Pair. | [optional]  &nbsp;
+ **exchange** | Character| Return technicals for a Crypto Currency on the given Crypto Exchange. | [optional]  &nbsp;
+ **currency** | Character| Return technicals for the given Crypto Currency. | [optional]  &nbsp;
+ **low_period** | Integer| The number of observations, per period, to calculate low period Exponential Moving Average for smoothing in True Strength Index. | [optional] [default to 13] &nbsp;
+ **high_period** | Integer| The number of observations, per period, to calculate high period Exponential Moving Average for smoothing in True Strength Index. | [optional] [default to 25] &nbsp;
+ **price_key** | Character| The Crypto Currency Price field to use when calculating True Strength Index. | [optional] [default to close] &nbsp;
+ **timeframe** | Character| The time interval for the prices when calculating technicals. | [optional] [default to d1] &nbsp;
+ **timezone** | Character| Return technical date/times in this timezone, also interpret start/end date/time parameters in this timezone. | [optional] [default to UTC] &nbsp;
+ **start_date** | Date| Return technicals on or after this date. | [optional]  &nbsp;
+ **start_time** | Character| Return technicals at or after this time (24-hour). | [optional]  &nbsp;
+ **end_date** | Date| Return technicals on or before this date. | [optional]  &nbsp;
+ **end_time** | Character| Return technicals at or before this time (24-hour). | [optional]  &nbsp;
+ **page_size** | Integer| An integer greater than or equal to 1 for specifying the number of results on each page. | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -2769,7 +2769,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_crypto_price_technicals_uo)
 
-[//]: # (RETURN_TYPE:::ApiResponseCryptoUltimateOscillator)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseCryptoUltimateOscillator)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -2831,6 +2831,7 @@ opts <- list(
 )
 
 response <- TechnicalApi$get_crypto_price_technicals_uo(opts)
+
 print(response)
 print(response$content)
 ```
@@ -2844,27 +2845,26 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pair** | **Character**| Return technicals for the given Crypto Currency Pair. | 
- **exchange** | **Character**| Return technicals for a Crypto Currency on the given Crypto Exchange. | 
- **currency** | **Character**| Return technicals for the given Crypto Currency. | 
- **short_period** | **Integer**| The number of observations, per period, to calculate the short period for Ultimate Oscillator. | [default to 7]
- **medium_period** | **Integer**| The number of observations, per period, to calculate the medium period for Ultimate Oscillator. | [default to 14]
- **long_period** | **Integer**| The number of observations, per period, to calculate the long period for Ultimate Oscillator. | [default to 28]
- **short_weight** | **Numeric**| The weight of short Buying Pressure average for Ultimate Oscillator. | [default to 4.0]
- **medium_weight** | **Numeric**| The weight of medium Buying Pressure average for Ultimate Oscillator. | [default to 2.0]
- **long_weight** | **Numeric**| The weight of long Buying Pressure average for Ultimate Oscillator. | [default to 1.0]
- **timeframe** | **Character**| The time interval for the prices when calculating technicals. | [default to d1]
- **timezone** | **Character**| Return technical date/times in this timezone, also interpret start/end date/time parameters in this timezone. | [default to UTC]
- **start_date** | **Date**| Return technicals on or after this date. | 
- **start_time** | **Character**| Return technicals at or after this time (24-hour). | 
- **end_date** | **Date**| Return technicals on or before this date. | 
- **end_time** | **Character**| Return technicals at or before this time (24-hour). | 
- **page_size** | **Integer**| An integer greater than or equal to 1 for specifying the number of results on each page. | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **pair** | Character| Return technicals for the given Crypto Currency Pair. | [optional]  &nbsp;
+ **exchange** | Character| Return technicals for a Crypto Currency on the given Crypto Exchange. | [optional]  &nbsp;
+ **currency** | Character| Return technicals for the given Crypto Currency. | [optional]  &nbsp;
+ **short_period** | Integer| The number of observations, per period, to calculate the short period for Ultimate Oscillator. | [optional] [default to 7] &nbsp;
+ **medium_period** | Integer| The number of observations, per period, to calculate the medium period for Ultimate Oscillator. | [optional] [default to 14] &nbsp;
+ **long_period** | Integer| The number of observations, per period, to calculate the long period for Ultimate Oscillator. | [optional] [default to 28] &nbsp;
+ **short_weight** | Numeric| The weight of short Buying Pressure average for Ultimate Oscillator. | [optional] [default to 4.0] &nbsp;
+ **medium_weight** | Numeric| The weight of medium Buying Pressure average for Ultimate Oscillator. | [optional] [default to 2.0] &nbsp;
+ **long_weight** | Numeric| The weight of long Buying Pressure average for Ultimate Oscillator. | [optional] [default to 1.0] &nbsp;
+ **timeframe** | Character| The time interval for the prices when calculating technicals. | [optional] [default to d1] &nbsp;
+ **timezone** | Character| Return technical date/times in this timezone, also interpret start/end date/time parameters in this timezone. | [optional] [default to UTC] &nbsp;
+ **start_date** | Date| Return technicals on or after this date. | [optional]  &nbsp;
+ **start_time** | Character| Return technicals at or after this time (24-hour). | [optional]  &nbsp;
+ **end_date** | Date| Return technicals on or before this date. | [optional]  &nbsp;
+ **end_time** | Character| Return technicals at or before this time (24-hour). | [optional]  &nbsp;
+ **page_size** | Integer| An integer greater than or equal to 1 for specifying the number of results on each page. | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -2881,7 +2881,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_crypto_price_technicals_vi)
 
-[//]: # (RETURN_TYPE:::ApiResponseCryptoVortexIndicator)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseCryptoVortexIndicator)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -2938,6 +2938,7 @@ opts <- list(
 )
 
 response <- TechnicalApi$get_crypto_price_technicals_vi(opts)
+
 print(response)
 print(response$content)
 ```
@@ -2951,22 +2952,21 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pair** | **Character**| Return technicals for the given Crypto Currency Pair. | 
- **exchange** | **Character**| Return technicals for a Crypto Currency on the given Crypto Exchange. | 
- **currency** | **Character**| Return technicals for the given Crypto Currency. | 
- **period** | **Integer**| The number of observations, per period, to calculate Vortex Indicator. | [default to 14]
- **timeframe** | **Character**| The time interval for the prices when calculating technicals. | [default to d1]
- **timezone** | **Character**| Return technical date/times in this timezone, also interpret start/end date/time parameters in this timezone. | [default to UTC]
- **start_date** | **Date**| Return technicals on or after this date. | 
- **start_time** | **Character**| Return technicals at or after this time (24-hour). | 
- **end_date** | **Date**| Return technicals on or before this date. | 
- **end_time** | **Character**| Return technicals at or before this time (24-hour). | 
- **page_size** | **Integer**| An integer greater than or equal to 1 for specifying the number of results on each page. | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **pair** | Character| Return technicals for the given Crypto Currency Pair. | [optional]  &nbsp;
+ **exchange** | Character| Return technicals for a Crypto Currency on the given Crypto Exchange. | [optional]  &nbsp;
+ **currency** | Character| Return technicals for the given Crypto Currency. | [optional]  &nbsp;
+ **period** | Integer| The number of observations, per period, to calculate Vortex Indicator. | [optional] [default to 14] &nbsp;
+ **timeframe** | Character| The time interval for the prices when calculating technicals. | [optional] [default to d1] &nbsp;
+ **timezone** | Character| Return technical date/times in this timezone, also interpret start/end date/time parameters in this timezone. | [optional] [default to UTC] &nbsp;
+ **start_date** | Date| Return technicals on or after this date. | [optional]  &nbsp;
+ **start_time** | Character| Return technicals at or after this time (24-hour). | [optional]  &nbsp;
+ **end_date** | Date| Return technicals on or before this date. | [optional]  &nbsp;
+ **end_time** | Character| Return technicals at or before this time (24-hour). | [optional]  &nbsp;
+ **page_size** | Integer| An integer greater than or equal to 1 for specifying the number of results on each page. | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -2983,7 +2983,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_crypto_price_technicals_vpt)
 
-[//]: # (RETURN_TYPE:::ApiResponseCryptoVolumePriceTrend)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseCryptoVolumePriceTrend)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -3039,6 +3039,7 @@ opts <- list(
 )
 
 response <- TechnicalApi$get_crypto_price_technicals_vpt(opts)
+
 print(response)
 print(response$content)
 ```
@@ -3052,21 +3053,20 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pair** | **Character**| Return technicals for the given Crypto Currency Pair. | 
- **exchange** | **Character**| Return technicals for a Crypto Currency on the given Crypto Exchange. | 
- **currency** | **Character**| Return technicals for the given Crypto Currency. | 
- **timeframe** | **Character**| The time interval for the prices when calculating technicals. | [default to d1]
- **timezone** | **Character**| Return technical date/times in this timezone, also interpret start/end date/time parameters in this timezone. | [default to UTC]
- **start_date** | **Date**| Return technicals on or after this date. | 
- **start_time** | **Character**| Return technicals at or after this time (24-hour). | 
- **end_date** | **Date**| Return technicals on or before this date. | 
- **end_time** | **Character**| Return technicals at or before this time (24-hour). | 
- **page_size** | **Integer**| An integer greater than or equal to 1 for specifying the number of results on each page. | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **pair** | Character| Return technicals for the given Crypto Currency Pair. | [optional]  &nbsp;
+ **exchange** | Character| Return technicals for a Crypto Currency on the given Crypto Exchange. | [optional]  &nbsp;
+ **currency** | Character| Return technicals for the given Crypto Currency. | [optional]  &nbsp;
+ **timeframe** | Character| The time interval for the prices when calculating technicals. | [optional] [default to d1] &nbsp;
+ **timezone** | Character| Return technical date/times in this timezone, also interpret start/end date/time parameters in this timezone. | [optional] [default to UTC] &nbsp;
+ **start_date** | Date| Return technicals on or after this date. | [optional]  &nbsp;
+ **start_time** | Character| Return technicals at or after this time (24-hour). | [optional]  &nbsp;
+ **end_date** | Date| Return technicals on or before this date. | [optional]  &nbsp;
+ **end_time** | Character| Return technicals at or before this time (24-hour). | [optional]  &nbsp;
+ **page_size** | Integer| An integer greater than or equal to 1 for specifying the number of results on each page. | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -3083,7 +3083,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_crypto_price_technicals_vwap)
 
-[//]: # (RETURN_TYPE:::ApiResponseCryptoVolumeWeightedAveragePrice)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseCryptoVolumeWeightedAveragePrice)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -3139,6 +3139,7 @@ opts <- list(
 )
 
 response <- TechnicalApi$get_crypto_price_technicals_vwap(opts)
+
 print(response)
 print(response$content)
 ```
@@ -3152,21 +3153,20 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pair** | **Character**| Return technicals for the given Crypto Currency Pair. | 
- **exchange** | **Character**| Return technicals for a Crypto Currency on the given Crypto Exchange. | 
- **currency** | **Character**| Return technicals for the given Crypto Currency. | 
- **timeframe** | **Character**| The time interval for the prices when calculating technicals. | [default to d1]
- **timezone** | **Character**| Return technical date/times in this timezone, also interpret start/end date/time parameters in this timezone. | [default to UTC]
- **start_date** | **Date**| Return technicals on or after this date. | 
- **start_time** | **Character**| Return technicals at or after this time (24-hour). | 
- **end_date** | **Date**| Return technicals on or before this date. | 
- **end_time** | **Character**| Return technicals at or before this time (24-hour). | 
- **page_size** | **Integer**| An integer greater than or equal to 1 for specifying the number of results on each page. | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **pair** | Character| Return technicals for the given Crypto Currency Pair. | [optional]  &nbsp;
+ **exchange** | Character| Return technicals for a Crypto Currency on the given Crypto Exchange. | [optional]  &nbsp;
+ **currency** | Character| Return technicals for the given Crypto Currency. | [optional]  &nbsp;
+ **timeframe** | Character| The time interval for the prices when calculating technicals. | [optional] [default to d1] &nbsp;
+ **timezone** | Character| Return technical date/times in this timezone, also interpret start/end date/time parameters in this timezone. | [optional] [default to UTC] &nbsp;
+ **start_date** | Date| Return technicals on or after this date. | [optional]  &nbsp;
+ **start_time** | Character| Return technicals at or after this time (24-hour). | [optional]  &nbsp;
+ **end_date** | Date| Return technicals on or before this date. | [optional]  &nbsp;
+ **end_time** | Character| Return technicals at or before this time (24-hour). | [optional]  &nbsp;
+ **page_size** | Integer| An integer greater than or equal to 1 for specifying the number of results on each page. | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -3183,7 +3183,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_crypto_price_technicals_wr)
 
-[//]: # (RETURN_TYPE:::ApiResponseCryptoWilliamsR)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseCryptoWilliamsR)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -3240,6 +3240,7 @@ opts <- list(
 )
 
 response <- TechnicalApi$get_crypto_price_technicals_wr(opts)
+
 print(response)
 print(response$content)
 ```
@@ -3253,22 +3254,21 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pair** | **Character**| Return technicals for the given Crypto Currency Pair. | 
- **exchange** | **Character**| Return technicals for a Crypto Currency on the given Crypto Exchange. | 
- **currency** | **Character**| Return technicals for the given Crypto Currency. | 
- **period** | **Integer**| The number of observations, per period, to look-back when calculating Williams %R. | [default to 14]
- **timeframe** | **Character**| The time interval for the prices when calculating technicals. | [default to d1]
- **timezone** | **Character**| Return technical date/times in this timezone, also interpret start/end date/time parameters in this timezone. | [default to UTC]
- **start_date** | **Date**| Return technicals on or after this date. | 
- **start_time** | **Character**| Return technicals at or after this time (24-hour). | 
- **end_date** | **Date**| Return technicals on or before this date. | 
- **end_time** | **Character**| Return technicals at or before this time (24-hour). | 
- **page_size** | **Integer**| An integer greater than or equal to 1 for specifying the number of results on each page. | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **pair** | Character| Return technicals for the given Crypto Currency Pair. | [optional]  &nbsp;
+ **exchange** | Character| Return technicals for a Crypto Currency on the given Crypto Exchange. | [optional]  &nbsp;
+ **currency** | Character| Return technicals for the given Crypto Currency. | [optional]  &nbsp;
+ **period** | Integer| The number of observations, per period, to look-back when calculating Williams %R. | [optional] [default to 14] &nbsp;
+ **timeframe** | Character| The time interval for the prices when calculating technicals. | [optional] [default to d1] &nbsp;
+ **timezone** | Character| Return technical date/times in this timezone, also interpret start/end date/time parameters in this timezone. | [optional] [default to UTC] &nbsp;
+ **start_date** | Date| Return technicals on or after this date. | [optional]  &nbsp;
+ **start_time** | Character| Return technicals at or after this time (24-hour). | [optional]  &nbsp;
+ **end_date** | Date| Return technicals on or before this date. | [optional]  &nbsp;
+ **end_time** | Character| Return technicals at or before this time (24-hour). | [optional]  &nbsp;
+ **page_size** | Integer| An integer greater than or equal to 1 for specifying the number of results on each page. | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -3285,7 +3285,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_security_price_technicals_adi)
 
-[//]: # (RETURN_TYPE:::ApiResponseSecurityAccumulationDistributionIndex)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseSecurityAccumulationDistributionIndex)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -3337,6 +3337,7 @@ opts <- list(
 )
 
 response <- TechnicalApi$get_security_price_technicals_adi(identifier, opts)
+
 print(response)
 print(response$content)
 ```
@@ -3350,15 +3351,14 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) | 
- **start_date** | **Character**| Return technical indicator values on or after the date | 
- **end_date** | **Character**| Return technical indicator values on or before the date | 
- **page_size** | **Integer**| The number of results to return | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **identifier** | Character| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) |  &nbsp;
+ **start_date** | Character| Return technical indicator values on or after the date | [optional]  &nbsp;
+ **end_date** | Character| Return technical indicator values on or before the date | [optional]  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -3375,7 +3375,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_security_price_technicals_adtv)
 
-[//]: # (RETURN_TYPE:::ApiResponseSecurityAverageDailyTradingVolume)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseSecurityAverageDailyTradingVolume)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -3428,6 +3428,7 @@ opts <- list(
 )
 
 response <- TechnicalApi$get_security_price_technicals_adtv(identifier, opts)
+
 print(response)
 print(response$content)
 ```
@@ -3441,16 +3442,15 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) | 
- **period** | **Integer**| The number of observations, per period, to calculate Average Daily Trading Volume | [default to 22]
- **start_date** | **Character**| Return technical indicator values on or after the date | 
- **end_date** | **Character**| Return technical indicator values on or before the date | 
- **page_size** | **Integer**| The number of results to return | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **identifier** | Character| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) |  &nbsp;
+ **period** | Integer| The number of observations, per period, to calculate Average Daily Trading Volume | [optional] [default to 22] &nbsp;
+ **start_date** | Character| Return technical indicator values on or after the date | [optional]  &nbsp;
+ **end_date** | Character| Return technical indicator values on or before the date | [optional]  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -3467,7 +3467,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_security_price_technicals_adx)
 
-[//]: # (RETURN_TYPE:::ApiResponseSecurityAverageDirectionalIndex)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseSecurityAverageDirectionalIndex)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -3520,6 +3520,7 @@ opts <- list(
 )
 
 response <- TechnicalApi$get_security_price_technicals_adx(identifier, opts)
+
 print(response)
 print(response$content)
 ```
@@ -3533,16 +3534,15 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) | 
- **period** | **Integer**| The number of observations, per period, to calculate Average Directional Index | [default to 14]
- **start_date** | **Character**| Return technical indicator values on or after the date | 
- **end_date** | **Character**| Return technical indicator values on or before the date | 
- **page_size** | **Integer**| The number of results to return | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **identifier** | Character| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) |  &nbsp;
+ **period** | Integer| The number of observations, per period, to calculate Average Directional Index | [optional] [default to 14] &nbsp;
+ **start_date** | Character| Return technical indicator values on or after the date | [optional]  &nbsp;
+ **end_date** | Character| Return technical indicator values on or before the date | [optional]  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -3559,7 +3559,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_security_price_technicals_ao)
 
-[//]: # (RETURN_TYPE:::ApiResponseSecurityAwesomeOscillator)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseSecurityAwesomeOscillator)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -3613,6 +3613,7 @@ opts <- list(
 )
 
 response <- TechnicalApi$get_security_price_technicals_ao(identifier, opts)
+
 print(response)
 print(response$content)
 ```
@@ -3626,17 +3627,16 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) | 
- **short_period** | **Integer**| The number of observations, per period, to calculate short period Simple Moving Average of the Awesome Oscillator | [default to 5]
- **long_period** | **Integer**| The number of observations, per period, to calculate long period Simple Moving Average of the Awesome Oscillator | [default to 34]
- **start_date** | **Character**| Return technical indicator values on or after the date | 
- **end_date** | **Character**| Return technical indicator values on or before the date | 
- **page_size** | **Integer**| The number of results to return | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **identifier** | Character| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) |  &nbsp;
+ **short_period** | Integer| The number of observations, per period, to calculate short period Simple Moving Average of the Awesome Oscillator | [optional] [default to 5] &nbsp;
+ **long_period** | Integer| The number of observations, per period, to calculate long period Simple Moving Average of the Awesome Oscillator | [optional] [default to 34] &nbsp;
+ **start_date** | Character| Return technical indicator values on or after the date | [optional]  &nbsp;
+ **end_date** | Character| Return technical indicator values on or before the date | [optional]  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -3653,7 +3653,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_security_price_technicals_atr)
 
-[//]: # (RETURN_TYPE:::ApiResponseSecurityAverageTrueRange)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseSecurityAverageTrueRange)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -3706,6 +3706,7 @@ opts <- list(
 )
 
 response <- TechnicalApi$get_security_price_technicals_atr(identifier, opts)
+
 print(response)
 print(response$content)
 ```
@@ -3719,16 +3720,15 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) | 
- **period** | **Integer**| The number of observations, per period, to calculate Average True Range | [default to 14]
- **start_date** | **Character**| Return technical indicator values on or after the date | 
- **end_date** | **Character**| Return technical indicator values on or before the date | 
- **page_size** | **Integer**| The number of results to return | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **identifier** | Character| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) |  &nbsp;
+ **period** | Integer| The number of observations, per period, to calculate Average True Range | [optional] [default to 14] &nbsp;
+ **start_date** | Character| Return technical indicator values on or after the date | [optional]  &nbsp;
+ **end_date** | Character| Return technical indicator values on or before the date | [optional]  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -3745,7 +3745,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_security_price_technicals_bb)
 
-[//]: # (RETURN_TYPE:::ApiResponseSecurityBollingerBands)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseSecurityBollingerBands)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -3800,6 +3800,7 @@ opts <- list(
 )
 
 response <- TechnicalApi$get_security_price_technicals_bb(identifier, opts)
+
 print(response)
 print(response$content)
 ```
@@ -3813,18 +3814,17 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) | 
- **period** | **Integer**| The number of observations, per period, to calculate Bollinger Bands | [default to 20]
- **standard_deviations** | **Numeric**| The number of standard deviations to calculate the upper and lower bands of the Bollinger Bands | [default to 2.0]
- **price_key** | **Character**| The Stock Price field to use when calculating Bollinger Bands | [default to close]
- **start_date** | **Character**| Return technical indicator values on or after the date | 
- **end_date** | **Character**| Return technical indicator values on or before the date | 
- **page_size** | **Integer**| The number of results to return | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **identifier** | Character| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) |  &nbsp;
+ **period** | Integer| The number of observations, per period, to calculate Bollinger Bands | [optional] [default to 20] &nbsp;
+ **standard_deviations** | Numeric| The number of standard deviations to calculate the upper and lower bands of the Bollinger Bands | [optional] [default to 2.0] &nbsp;
+ **price_key** | Character| The Stock Price field to use when calculating Bollinger Bands | [optional] [default to close] &nbsp;
+ **start_date** | Character| Return technical indicator values on or after the date | [optional]  &nbsp;
+ **end_date** | Character| Return technical indicator values on or before the date | [optional]  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -3841,7 +3841,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_security_price_technicals_cci)
 
-[//]: # (RETURN_TYPE:::ApiResponseSecurityCommodityChannelIndex)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseSecurityCommodityChannelIndex)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -3895,6 +3895,7 @@ opts <- list(
 )
 
 response <- TechnicalApi$get_security_price_technicals_cci(identifier, opts)
+
 print(response)
 print(response$content)
 ```
@@ -3908,17 +3909,16 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) | 
- **period** | **Integer**| The number of observations, per period, to calculate Commodity Channel Index | [default to 20]
- **constant** | **Numeric**| The number of observations, per period, to calculate Commodity Channel Index | [default to 0.015]
- **start_date** | **Character**| Return technical indicator values on or after the date | 
- **end_date** | **Character**| Return technical indicator values on or before the date | 
- **page_size** | **Integer**| The number of results to return | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **identifier** | Character| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) |  &nbsp;
+ **period** | Integer| The number of observations, per period, to calculate Commodity Channel Index | [optional] [default to 20] &nbsp;
+ **constant** | Numeric| The number of observations, per period, to calculate Commodity Channel Index | [optional] [default to 0.015] &nbsp;
+ **start_date** | Character| Return technical indicator values on or after the date | [optional]  &nbsp;
+ **end_date** | Character| Return technical indicator values on or before the date | [optional]  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -3935,7 +3935,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_security_price_technicals_cmf)
 
-[//]: # (RETURN_TYPE:::ApiResponseSecurityChaikinMoneyFlow)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseSecurityChaikinMoneyFlow)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -3988,6 +3988,7 @@ opts <- list(
 )
 
 response <- TechnicalApi$get_security_price_technicals_cmf(identifier, opts)
+
 print(response)
 print(response$content)
 ```
@@ -4001,16 +4002,15 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) | 
- **period** | **Integer**| The number of observations, per period, to calculate Chaikin Money Flow | [default to 20]
- **start_date** | **Character**| Return technical indicator values on or after the date | 
- **end_date** | **Character**| Return technical indicator values on or before the date | 
- **page_size** | **Integer**| The number of results to return | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **identifier** | Character| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) |  &nbsp;
+ **period** | Integer| The number of observations, per period, to calculate Chaikin Money Flow | [optional] [default to 20] &nbsp;
+ **start_date** | Character| Return technical indicator values on or after the date | [optional]  &nbsp;
+ **end_date** | Character| Return technical indicator values on or before the date | [optional]  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -4027,7 +4027,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_security_price_technicals_dc)
 
-[//]: # (RETURN_TYPE:::ApiResponseSecurityDonchianChannel)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseSecurityDonchianChannel)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -4081,6 +4081,7 @@ opts <- list(
 )
 
 response <- TechnicalApi$get_security_price_technicals_dc(identifier, opts)
+
 print(response)
 print(response$content)
 ```
@@ -4094,17 +4095,16 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) | 
- **period** | **Integer**| The number of observations, per period, to calculate Donchian Channel | [default to 20]
- **price_key** | **Character**| The Stock Price field to use when calculating Donchian Channel | [default to close]
- **start_date** | **Character**| Return technical indicator values on or after the date | 
- **end_date** | **Character**| Return technical indicator values on or before the date | 
- **page_size** | **Integer**| The number of results to return | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **identifier** | Character| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) |  &nbsp;
+ **period** | Integer| The number of observations, per period, to calculate Donchian Channel | [optional] [default to 20] &nbsp;
+ **price_key** | Character| The Stock Price field to use when calculating Donchian Channel | [optional] [default to close] &nbsp;
+ **start_date** | Character| Return technical indicator values on or after the date | [optional]  &nbsp;
+ **end_date** | Character| Return technical indicator values on or before the date | [optional]  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -4121,7 +4121,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_security_price_technicals_dpo)
 
-[//]: # (RETURN_TYPE:::ApiResponseSecurityDetrendedPriceOscillator)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseSecurityDetrendedPriceOscillator)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -4175,6 +4175,7 @@ opts <- list(
 )
 
 response <- TechnicalApi$get_security_price_technicals_dpo(identifier, opts)
+
 print(response)
 print(response$content)
 ```
@@ -4188,17 +4189,16 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) | 
- **period** | **Integer**| The number of observations, per period, to calculate Detrended Price Oscillator | [default to 20]
- **price_key** | **Character**| The Stock Price field to use when calculating Detrended Price Oscillator | [default to close]
- **start_date** | **Character**| Return technical indicator values on or after the date | 
- **end_date** | **Character**| Return technical indicator values on or before the date | 
- **page_size** | **Integer**| The number of results to return | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **identifier** | Character| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) |  &nbsp;
+ **period** | Integer| The number of observations, per period, to calculate Detrended Price Oscillator | [optional] [default to 20] &nbsp;
+ **price_key** | Character| The Stock Price field to use when calculating Detrended Price Oscillator | [optional] [default to close] &nbsp;
+ **start_date** | Character| Return technical indicator values on or after the date | [optional]  &nbsp;
+ **end_date** | Character| Return technical indicator values on or before the date | [optional]  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -4215,7 +4215,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_security_price_technicals_eom)
 
-[//]: # (RETURN_TYPE:::ApiResponseSecurityEaseOfMovement)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseSecurityEaseOfMovement)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -4268,6 +4268,7 @@ opts <- list(
 )
 
 response <- TechnicalApi$get_security_price_technicals_eom(identifier, opts)
+
 print(response)
 print(response$content)
 ```
@@ -4281,16 +4282,15 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) | 
- **period** | **Integer**| The number of observations, per period, to calculate Ease of Movement | [default to 20]
- **start_date** | **Character**| Return technical indicator values on or after the date | 
- **end_date** | **Character**| Return technical indicator values on or before the date | 
- **page_size** | **Integer**| The number of results to return | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **identifier** | Character| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) |  &nbsp;
+ **period** | Integer| The number of observations, per period, to calculate Ease of Movement | [optional] [default to 20] &nbsp;
+ **start_date** | Character| Return technical indicator values on or after the date | [optional]  &nbsp;
+ **end_date** | Character| Return technical indicator values on or before the date | [optional]  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -4307,7 +4307,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_security_price_technicals_fi)
 
-[//]: # (RETURN_TYPE:::ApiResponseSecurityForceIndex)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseSecurityForceIndex)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -4359,6 +4359,7 @@ opts <- list(
 )
 
 response <- TechnicalApi$get_security_price_technicals_fi(identifier, opts)
+
 print(response)
 print(response$content)
 ```
@@ -4372,15 +4373,14 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) | 
- **start_date** | **Character**| Return technical indicator values on or after the date | 
- **end_date** | **Character**| Return technical indicator values on or before the date | 
- **page_size** | **Integer**| The number of results to return | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **identifier** | Character| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) |  &nbsp;
+ **start_date** | Character| Return technical indicator values on or after the date | [optional]  &nbsp;
+ **end_date** | Character| Return technical indicator values on or before the date | [optional]  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -4397,7 +4397,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_security_price_technicals_ichimoku)
 
-[//]: # (RETURN_TYPE:::ApiResponseSecurityIchimokuKinkoHyo)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseSecurityIchimokuKinkoHyo)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -4452,6 +4452,7 @@ opts <- list(
 )
 
 response <- TechnicalApi$get_security_price_technicals_ichimoku(identifier, opts)
+
 print(response)
 print(response$content)
 ```
@@ -4465,18 +4466,17 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) | 
- **low_period** | **Integer**| The number of observations, per period, to calculate Tenkan Sen (Conversion Line) of Ichimoku Kinko Hyo | [default to 9]
- **medium_period** | **Integer**| The number of observations, per period, to calculate Kijun Sen (Base Line), Senkou Span A (Leading Span A), and Chikou Span (Lagging Span) of Ichimoku Kinko Hyo | [default to 26]
- **high_period** | **Integer**| The number of observations, per period, to calculate Senkou Span B (Leading Span B) of Ichimoku Kinko Hyo | [default to 52]
- **start_date** | **Character**| Return technical indicator values on or after the date | 
- **end_date** | **Character**| Return technical indicator values on or before the date | 
- **page_size** | **Integer**| The number of results to return | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **identifier** | Character| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) |  &nbsp;
+ **low_period** | Integer| The number of observations, per period, to calculate Tenkan Sen (Conversion Line) of Ichimoku Kinko Hyo | [optional] [default to 9] &nbsp;
+ **medium_period** | Integer| The number of observations, per period, to calculate Kijun Sen (Base Line), Senkou Span A (Leading Span A), and Chikou Span (Lagging Span) of Ichimoku Kinko Hyo | [optional] [default to 26] &nbsp;
+ **high_period** | Integer| The number of observations, per period, to calculate Senkou Span B (Leading Span B) of Ichimoku Kinko Hyo | [optional] [default to 52] &nbsp;
+ **start_date** | Character| Return technical indicator values on or after the date | [optional]  &nbsp;
+ **end_date** | Character| Return technical indicator values on or before the date | [optional]  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -4493,7 +4493,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_security_price_technicals_kc)
 
-[//]: # (RETURN_TYPE:::ApiResponseSecurityKeltnerChannel)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseSecurityKeltnerChannel)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -4546,6 +4546,7 @@ opts <- list(
 )
 
 response <- TechnicalApi$get_security_price_technicals_kc(identifier, opts)
+
 print(response)
 print(response$content)
 ```
@@ -4559,16 +4560,15 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) | 
- **period** | **Integer**| The number of observations, per period, to calculate Kelter Channel | [default to 10]
- **start_date** | **Character**| Return technical indicator values on or after the date | 
- **end_date** | **Character**| Return technical indicator values on or before the date | 
- **page_size** | **Integer**| The number of results to return | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **identifier** | Character| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) |  &nbsp;
+ **period** | Integer| The number of observations, per period, to calculate Kelter Channel | [optional] [default to 10] &nbsp;
+ **start_date** | Character| Return technical indicator values on or after the date | [optional]  &nbsp;
+ **end_date** | Character| Return technical indicator values on or before the date | [optional]  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -4585,7 +4585,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_security_price_technicals_kst)
 
-[//]: # (RETURN_TYPE:::ApiResponseSecurityKnowSureThing)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseSecurityKnowSureThing)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -4646,6 +4646,7 @@ opts <- list(
 )
 
 response <- TechnicalApi$get_security_price_technicals_kst(identifier, opts)
+
 print(response)
 print(response$content)
 ```
@@ -4659,24 +4660,23 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) | 
- **roc1** | **Integer**| The number of observations, per period, to calculate the rate-of-change for RCMA1 | [default to 10]
- **roc2** | **Integer**| The number of observations, per period, to calculate the rate-of-change for RCMA2 | [default to 15]
- **roc3** | **Integer**| The number of observations, per period, to calculate the rate-of-change for RCMA3 | [default to 20]
- **roc4** | **Integer**| The number of observations, per period, to calculate the rate-of-change for RCMA4 | [default to 30]
- **sma1** | **Integer**| The number of observations, per period, to calculate the Simple Moving Average of the rate-of-change for RCMA1 | [default to 10]
- **sma2** | **Integer**| The number of observations, per period, to calculate the Simple Moving Average of the rate-of-change for RCMA2 | [default to 10]
- **sma3** | **Integer**| The number of observations, per period, to calculate the Simple Moving Average of the rate-of-change for RCMA3 | [default to 10]
- **sma4** | **Integer**| The number of observations, per period, to calculate the Simple Moving Average of the rate-of-change for RCMA4 | [default to 15]
- **price_key** | **Character**| The Stock Price field to use when calculating Know Sure Thing | [default to close]
- **start_date** | **Character**| Return technical indicator values on or after the date | 
- **end_date** | **Character**| Return technical indicator values on or before the date | 
- **page_size** | **Integer**| The number of results to return | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **identifier** | Character| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) |  &nbsp;
+ **roc1** | Integer| The number of observations, per period, to calculate the rate-of-change for RCMA1 | [optional] [default to 10] &nbsp;
+ **roc2** | Integer| The number of observations, per period, to calculate the rate-of-change for RCMA2 | [optional] [default to 15] &nbsp;
+ **roc3** | Integer| The number of observations, per period, to calculate the rate-of-change for RCMA3 | [optional] [default to 20] &nbsp;
+ **roc4** | Integer| The number of observations, per period, to calculate the rate-of-change for RCMA4 | [optional] [default to 30] &nbsp;
+ **sma1** | Integer| The number of observations, per period, to calculate the Simple Moving Average of the rate-of-change for RCMA1 | [optional] [default to 10] &nbsp;
+ **sma2** | Integer| The number of observations, per period, to calculate the Simple Moving Average of the rate-of-change for RCMA2 | [optional] [default to 10] &nbsp;
+ **sma3** | Integer| The number of observations, per period, to calculate the Simple Moving Average of the rate-of-change for RCMA3 | [optional] [default to 10] &nbsp;
+ **sma4** | Integer| The number of observations, per period, to calculate the Simple Moving Average of the rate-of-change for RCMA4 | [optional] [default to 15] &nbsp;
+ **price_key** | Character| The Stock Price field to use when calculating Know Sure Thing | [optional] [default to close] &nbsp;
+ **start_date** | Character| Return technical indicator values on or after the date | [optional]  &nbsp;
+ **end_date** | Character| Return technical indicator values on or before the date | [optional]  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -4693,7 +4693,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_security_price_technicals_macd)
 
-[//]: # (RETURN_TYPE:::ApiResponseSecurityMovingAverageConvergenceDivergence)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseSecurityMovingAverageConvergenceDivergence)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -4749,6 +4749,7 @@ opts <- list(
 )
 
 response <- TechnicalApi$get_security_price_technicals_macd(identifier, opts)
+
 print(response)
 print(response$content)
 ```
@@ -4762,19 +4763,18 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) | 
- **fast_period** | **Integer**| The number of observations, per period, to calculate the fast moving Exponential Moving Average for Moving Average Convergence Divergence | [default to 12]
- **slow_period** | **Integer**| The number of observations, per period, to calculate the slow moving Exponential Moving Average for Moving Average Convergence Divergence | [default to 26]
- **signal_period** | **Integer**| The number of observations, per period, to calculate the signal line for Moving Average Convergence Divergence | [default to 9]
- **price_key** | **Character**| The Stock Price field to use when calculating Moving Average Convergence Divergence | [default to close]
- **start_date** | **Character**| Return technical indicator values on or after the date | 
- **end_date** | **Character**| Return technical indicator values on or before the date | 
- **page_size** | **Integer**| The number of results to return | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **identifier** | Character| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) |  &nbsp;
+ **fast_period** | Integer| The number of observations, per period, to calculate the fast moving Exponential Moving Average for Moving Average Convergence Divergence | [optional] [default to 12] &nbsp;
+ **slow_period** | Integer| The number of observations, per period, to calculate the slow moving Exponential Moving Average for Moving Average Convergence Divergence | [optional] [default to 26] &nbsp;
+ **signal_period** | Integer| The number of observations, per period, to calculate the signal line for Moving Average Convergence Divergence | [optional] [default to 9] &nbsp;
+ **price_key** | Character| The Stock Price field to use when calculating Moving Average Convergence Divergence | [optional] [default to close] &nbsp;
+ **start_date** | Character| Return technical indicator values on or after the date | [optional]  &nbsp;
+ **end_date** | Character| Return technical indicator values on or before the date | [optional]  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -4791,7 +4791,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_security_price_technicals_mfi)
 
-[//]: # (RETURN_TYPE:::ApiResponseSecurityMoneyFlowIndex)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseSecurityMoneyFlowIndex)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -4844,6 +4844,7 @@ opts <- list(
 )
 
 response <- TechnicalApi$get_security_price_technicals_mfi(identifier, opts)
+
 print(response)
 print(response$content)
 ```
@@ -4857,16 +4858,15 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) | 
- **period** | **Integer**| The number of observations, per period, to calculate Money Flow Index | [default to 14]
- **start_date** | **Character**| Return technical indicator values on or after the date | 
- **end_date** | **Character**| Return technical indicator values on or before the date | 
- **page_size** | **Integer**| The number of results to return | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **identifier** | Character| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) |  &nbsp;
+ **period** | Integer| The number of observations, per period, to calculate Money Flow Index | [optional] [default to 14] &nbsp;
+ **start_date** | Character| Return technical indicator values on or after the date | [optional]  &nbsp;
+ **end_date** | Character| Return technical indicator values on or before the date | [optional]  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -4883,7 +4883,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_security_price_technicals_mi)
 
-[//]: # (RETURN_TYPE:::ApiResponseSecurityMassIndex)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseSecurityMassIndex)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -4937,6 +4937,7 @@ opts <- list(
 )
 
 response <- TechnicalApi$get_security_price_technicals_mi(identifier, opts)
+
 print(response)
 print(response$content)
 ```
@@ -4950,17 +4951,16 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) | 
- **ema_period** | **Integer**| The number of observations, per period, to calculate the single Exponential Moving Average and the Double Exponential Moving Average for Mass Index | [default to 9]
- **sum_period** | **Integer**| The number of observations, per period, to calculate the sum of the Exponetinal Moving Average Ratios for Mass Index | [default to 25]
- **start_date** | **Character**| Return technical indicator values on or after the date | 
- **end_date** | **Character**| Return technical indicator values on or before the date | 
- **page_size** | **Integer**| The number of results to return | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **identifier** | Character| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) |  &nbsp;
+ **ema_period** | Integer| The number of observations, per period, to calculate the single Exponential Moving Average and the Double Exponential Moving Average for Mass Index | [optional] [default to 9] &nbsp;
+ **sum_period** | Integer| The number of observations, per period, to calculate the sum of the Exponetinal Moving Average Ratios for Mass Index | [optional] [default to 25] &nbsp;
+ **start_date** | Character| Return technical indicator values on or after the date | [optional]  &nbsp;
+ **end_date** | Character| Return technical indicator values on or before the date | [optional]  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -4977,7 +4977,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_security_price_technicals_nvi)
 
-[//]: # (RETURN_TYPE:::ApiResponseSecurityNegativeVolumeIndex)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseSecurityNegativeVolumeIndex)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -5029,6 +5029,7 @@ opts <- list(
 )
 
 response <- TechnicalApi$get_security_price_technicals_nvi(identifier, opts)
+
 print(response)
 print(response$content)
 ```
@@ -5042,15 +5043,14 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) | 
- **start_date** | **Character**| Return technical indicator values on or after the date | 
- **end_date** | **Character**| Return technical indicator values on or before the date | 
- **page_size** | **Integer**| The number of results to return | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **identifier** | Character| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) |  &nbsp;
+ **start_date** | Character| Return technical indicator values on or after the date | [optional]  &nbsp;
+ **end_date** | Character| Return technical indicator values on or before the date | [optional]  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -5067,7 +5067,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_security_price_technicals_obv)
 
-[//]: # (RETURN_TYPE:::ApiResponseSecurityOnBalanceVolume)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseSecurityOnBalanceVolume)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -5119,6 +5119,7 @@ opts <- list(
 )
 
 response <- TechnicalApi$get_security_price_technicals_obv(identifier, opts)
+
 print(response)
 print(response$content)
 ```
@@ -5132,15 +5133,14 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) | 
- **start_date** | **Character**| Return technical indicator values on or after the date | 
- **end_date** | **Character**| Return technical indicator values on or before the date | 
- **page_size** | **Integer**| The number of results to return | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **identifier** | Character| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) |  &nbsp;
+ **start_date** | Character| Return technical indicator values on or after the date | [optional]  &nbsp;
+ **end_date** | Character| Return technical indicator values on or before the date | [optional]  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -5157,7 +5157,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_security_price_technicals_obv_mean)
 
-[//]: # (RETURN_TYPE:::ApiResponseSecurityOnBalanceVolumeMean)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseSecurityOnBalanceVolumeMean)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -5210,6 +5210,7 @@ opts <- list(
 )
 
 response <- TechnicalApi$get_security_price_technicals_obv_mean(identifier, opts)
+
 print(response)
 print(response$content)
 ```
@@ -5223,16 +5224,15 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) | 
- **period** | **Integer**| The number of observations, per period, to calculate On-balance Volume Mean | [default to 10]
- **start_date** | **Character**| Return technical indicator values on or after the date | 
- **end_date** | **Character**| Return technical indicator values on or before the date | 
- **page_size** | **Integer**| The number of results to return | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **identifier** | Character| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) |  &nbsp;
+ **period** | Integer| The number of observations, per period, to calculate On-balance Volume Mean | [optional] [default to 10] &nbsp;
+ **start_date** | Character| Return technical indicator values on or after the date | [optional]  &nbsp;
+ **end_date** | Character| Return technical indicator values on or before the date | [optional]  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -5249,7 +5249,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_security_price_technicals_rsi)
 
-[//]: # (RETURN_TYPE:::ApiResponseSecurityRelativeStrengthIndex)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseSecurityRelativeStrengthIndex)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -5303,6 +5303,7 @@ opts <- list(
 )
 
 response <- TechnicalApi$get_security_price_technicals_rsi(identifier, opts)
+
 print(response)
 print(response$content)
 ```
@@ -5316,17 +5317,16 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) | 
- **period** | **Integer**| The number of observations, per period, to calculate Relative Strength Index | [default to 14]
- **price_key** | **Character**| The Stock Price field to use when calculating Relative Strength Index | [default to close]
- **start_date** | **Character**| Return technical indicator values on or after the date | 
- **end_date** | **Character**| Return technical indicator values on or before the date | 
- **page_size** | **Integer**| The number of results to return | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **identifier** | Character| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) |  &nbsp;
+ **period** | Integer| The number of observations, per period, to calculate Relative Strength Index | [optional] [default to 14] &nbsp;
+ **price_key** | Character| The Stock Price field to use when calculating Relative Strength Index | [optional] [default to close] &nbsp;
+ **start_date** | Character| Return technical indicator values on or after the date | [optional]  &nbsp;
+ **end_date** | Character| Return technical indicator values on or before the date | [optional]  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -5343,7 +5343,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_security_price_technicals_sma)
 
-[//]: # (RETURN_TYPE:::ApiResponseSecuritySimpleMovingAverage)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseSecuritySimpleMovingAverage)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -5397,6 +5397,7 @@ opts <- list(
 )
 
 response <- TechnicalApi$get_security_price_technicals_sma(identifier, opts)
+
 print(response)
 print(response$content)
 ```
@@ -5410,17 +5411,16 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) | 
- **period** | **Integer**| The number of observations, per period, to calculate Simple Moving Average | [default to 20]
- **price_key** | **Character**| The Stock Price field to use when calculating Simple Moving Average | [default to close]
- **start_date** | **Character**| Return technical indicator values on or after the date | 
- **end_date** | **Character**| Return technical indicator values on or before the date | 
- **page_size** | **Integer**| The number of results to return | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **identifier** | Character| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) |  &nbsp;
+ **period** | Integer| The number of observations, per period, to calculate Simple Moving Average | [optional] [default to 20] &nbsp;
+ **price_key** | Character| The Stock Price field to use when calculating Simple Moving Average | [optional] [default to close] &nbsp;
+ **start_date** | Character| Return technical indicator values on or after the date | [optional]  &nbsp;
+ **end_date** | Character| Return technical indicator values on or before the date | [optional]  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -5437,7 +5437,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_security_price_technicals_sr)
 
-[//]: # (RETURN_TYPE:::ApiResponseSecurityStochasticOscillator)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseSecurityStochasticOscillator)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -5491,6 +5491,7 @@ opts <- list(
 )
 
 response <- TechnicalApi$get_security_price_technicals_sr(identifier, opts)
+
 print(response)
 print(response$content)
 ```
@@ -5504,17 +5505,16 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) | 
- **period** | **Integer**| The number of observations, per period, to calculate %K of Stochastic Oscillator | [default to 14]
- **signal_period** | **Integer**| The number of observations, per period, to calculate the %D (the Simple Moving Average of %K) as a signal line for Stochastic Oscillator | [default to 3]
- **start_date** | **Character**| Return technical indicator values on or after the date | 
- **end_date** | **Character**| Return technical indicator values on or before the date | 
- **page_size** | **Integer**| The number of results to return | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **identifier** | Character| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) |  &nbsp;
+ **period** | Integer| The number of observations, per period, to calculate %K of Stochastic Oscillator | [optional] [default to 14] &nbsp;
+ **signal_period** | Integer| The number of observations, per period, to calculate the %D (the Simple Moving Average of %K) as a signal line for Stochastic Oscillator | [optional] [default to 3] &nbsp;
+ **start_date** | Character| Return technical indicator values on or after the date | [optional]  &nbsp;
+ **end_date** | Character| Return technical indicator values on or before the date | [optional]  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -5531,7 +5531,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_security_price_technicals_trix)
 
-[//]: # (RETURN_TYPE:::ApiResponseSecurityTripleExponentialAverage)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseSecurityTripleExponentialAverage)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -5584,6 +5584,7 @@ opts <- list(
 )
 
 response <- TechnicalApi$get_security_price_technicals_trix(identifier, opts)
+
 print(response)
 print(response$content)
 ```
@@ -5597,16 +5598,15 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) | 
- **period** | **Integer**| The number of observations, per period, to calculate Exponential Moving Average for Triple Exponential Average | [default to 15]
- **start_date** | **Character**| Return technical indicator values on or after the date | 
- **end_date** | **Character**| Return technical indicator values on or before the date | 
- **page_size** | **Integer**| The number of results to return | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **identifier** | Character| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) |  &nbsp;
+ **period** | Integer| The number of observations, per period, to calculate Exponential Moving Average for Triple Exponential Average | [optional] [default to 15] &nbsp;
+ **start_date** | Character| Return technical indicator values on or after the date | [optional]  &nbsp;
+ **end_date** | Character| Return technical indicator values on or before the date | [optional]  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -5623,7 +5623,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_security_price_technicals_tsi)
 
-[//]: # (RETURN_TYPE:::ApiResponseSecurityTrueStrengthIndex)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseSecurityTrueStrengthIndex)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -5678,6 +5678,7 @@ opts <- list(
 )
 
 response <- TechnicalApi$get_security_price_technicals_tsi(identifier, opts)
+
 print(response)
 print(response$content)
 ```
@@ -5691,18 +5692,17 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) | 
- **low_period** | **Integer**| The number of observations, per period, to calculate low period Exponential Moving Average for smoothing in True Strength Index | [default to 13]
- **high_period** | **Integer**| The number of observations, per period, to calculate high period Exponential Moving Average for smoothing in True Strength Index | [default to 25]
- **price_key** | **Character**| The Stock Price field to use when calculating True Strength Index | [default to close]
- **start_date** | **Character**| Return technical indicator values on or after the date | 
- **end_date** | **Character**| Return technical indicator values on or before the date | 
- **page_size** | **Integer**| The number of results to return | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **identifier** | Character| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) |  &nbsp;
+ **low_period** | Integer| The number of observations, per period, to calculate low period Exponential Moving Average for smoothing in True Strength Index | [optional] [default to 13] &nbsp;
+ **high_period** | Integer| The number of observations, per period, to calculate high period Exponential Moving Average for smoothing in True Strength Index | [optional] [default to 25] &nbsp;
+ **price_key** | Character| The Stock Price field to use when calculating True Strength Index | [optional] [default to close] &nbsp;
+ **start_date** | Character| Return technical indicator values on or after the date | [optional]  &nbsp;
+ **end_date** | Character| Return technical indicator values on or before the date | [optional]  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -5719,7 +5719,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_security_price_technicals_uo)
 
-[//]: # (RETURN_TYPE:::ApiResponseSecurityUltimateOscillator)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseSecurityUltimateOscillator)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -5777,6 +5777,7 @@ opts <- list(
 )
 
 response <- TechnicalApi$get_security_price_technicals_uo(identifier, opts)
+
 print(response)
 print(response$content)
 ```
@@ -5790,21 +5791,20 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) | 
- **short_period** | **Integer**| The number of observations, per period, to calculate the short period for Ultimate Oscillator | [default to 7]
- **medium_period** | **Integer**| The number of observations, per period, to calculate the medium period for Ultimate Oscillator | [default to 14]
- **long_period** | **Integer**| The number of observations, per period, to calculate the long period for Ultimate Oscillator | [default to 28]
- **short_weight** | **Numeric**| The weight of short Buying Pressure average for Ultimate Oscillator | [default to 4.0]
- **medium_weight** | **Numeric**| The weight of medium Buying Pressure average for Ultimate Oscillator | [default to 2.0]
- **long_weight** | **Numeric**| The weight of long Buying Pressure average for Ultimate Oscillator | [default to 1.0]
- **start_date** | **Character**| Return technical indicator values on or after the date | 
- **end_date** | **Character**| Return technical indicator values on or before the date | 
- **page_size** | **Integer**| The number of results to return | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **identifier** | Character| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) |  &nbsp;
+ **short_period** | Integer| The number of observations, per period, to calculate the short period for Ultimate Oscillator | [optional] [default to 7] &nbsp;
+ **medium_period** | Integer| The number of observations, per period, to calculate the medium period for Ultimate Oscillator | [optional] [default to 14] &nbsp;
+ **long_period** | Integer| The number of observations, per period, to calculate the long period for Ultimate Oscillator | [optional] [default to 28] &nbsp;
+ **short_weight** | Numeric| The weight of short Buying Pressure average for Ultimate Oscillator | [optional] [default to 4.0] &nbsp;
+ **medium_weight** | Numeric| The weight of medium Buying Pressure average for Ultimate Oscillator | [optional] [default to 2.0] &nbsp;
+ **long_weight** | Numeric| The weight of long Buying Pressure average for Ultimate Oscillator | [optional] [default to 1.0] &nbsp;
+ **start_date** | Character| Return technical indicator values on or after the date | [optional]  &nbsp;
+ **end_date** | Character| Return technical indicator values on or before the date | [optional]  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -5821,7 +5821,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_security_price_technicals_vi)
 
-[//]: # (RETURN_TYPE:::ApiResponseSecurityVortexIndicator)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseSecurityVortexIndicator)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -5874,6 +5874,7 @@ opts <- list(
 )
 
 response <- TechnicalApi$get_security_price_technicals_vi(identifier, opts)
+
 print(response)
 print(response$content)
 ```
@@ -5887,16 +5888,15 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) | 
- **period** | **Integer**| The number of observations, per period, to calculate Vortex Indicator | [default to 14]
- **start_date** | **Character**| Return technical indicator values on or after the date | 
- **end_date** | **Character**| Return technical indicator values on or before the date | 
- **page_size** | **Integer**| The number of results to return | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **identifier** | Character| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) |  &nbsp;
+ **period** | Integer| The number of observations, per period, to calculate Vortex Indicator | [optional] [default to 14] &nbsp;
+ **start_date** | Character| Return technical indicator values on or after the date | [optional]  &nbsp;
+ **end_date** | Character| Return technical indicator values on or before the date | [optional]  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -5913,7 +5913,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_security_price_technicals_vpt)
 
-[//]: # (RETURN_TYPE:::ApiResponseSecurityVolumePriceTrend)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseSecurityVolumePriceTrend)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -5965,6 +5965,7 @@ opts <- list(
 )
 
 response <- TechnicalApi$get_security_price_technicals_vpt(identifier, opts)
+
 print(response)
 print(response$content)
 ```
@@ -5978,15 +5979,14 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) | 
- **start_date** | **Character**| Return technical indicator values on or after the date | 
- **end_date** | **Character**| Return technical indicator values on or before the date | 
- **page_size** | **Integer**| The number of results to return | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **identifier** | Character| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) |  &nbsp;
+ **start_date** | Character| Return technical indicator values on or after the date | [optional]  &nbsp;
+ **end_date** | Character| Return technical indicator values on or before the date | [optional]  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -6003,7 +6003,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_security_price_technicals_vwap)
 
-[//]: # (RETURN_TYPE:::ApiResponseSecurityVolumeWeightedAveragePrice)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseSecurityVolumeWeightedAveragePrice)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -6055,6 +6055,7 @@ opts <- list(
 )
 
 response <- TechnicalApi$get_security_price_technicals_vwap(identifier, opts)
+
 print(response)
 print(response$content)
 ```
@@ -6068,15 +6069,14 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) | 
- **start_date** | **Character**| Return technical indicator values on or after the date | 
- **end_date** | **Character**| Return technical indicator values on or before the date | 
- **page_size** | **Integer**| The number of results to return | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **identifier** | Character| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) |  &nbsp;
+ **start_date** | Character| Return technical indicator values on or after the date | [optional]  &nbsp;
+ **end_date** | Character| Return technical indicator values on or before the date | [optional]  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -6093,7 +6093,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_security_price_technicals_wr)
 
-[//]: # (RETURN_TYPE:::ApiResponseSecurityWilliamsR)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseSecurityWilliamsR)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -6146,6 +6146,7 @@ opts <- list(
 )
 
 response <- TechnicalApi$get_security_price_technicals_wr(identifier, opts)
+
 print(response)
 print(response$content)
 ```
@@ -6159,16 +6160,15 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) | 
- **period** | **Integer**| The number of observations, per period, to look-back when calculating Williams %R | [default to 14]
- **start_date** | **Character**| Return technical indicator values on or after the date | 
- **end_date** | **Character**| Return technical indicator values on or before the date | 
- **page_size** | **Numeric**| The number of results to return | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **identifier** | Character| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) |  &nbsp;
+ **period** | Integer| The number of observations, per period, to look-back when calculating Williams %R | [optional] [default to 14] &nbsp;
+ **start_date** | Character| Return technical indicator values on or after the date | [optional]  &nbsp;
+ **end_date** | Character| Return technical indicator values on or before the date | [optional]  &nbsp;
+ **page_size** | Numeric| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 

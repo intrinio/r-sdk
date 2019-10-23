@@ -4,8 +4,6 @@ All URIs are relative to *https://api-v2.intrinio.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get8k_filing_by_id**](FilingApi.md#get8k_filing_by_id) | **GET** /filings/8K/{identifier} | Lookup 8-K Filing
-[**get_all8k_filings**](FilingApi.md#get_all8k_filings) | **GET** /filings/8K | All 8-K Filings
 [**get_all_filings**](FilingApi.md#get_all_filings) | **GET** /filings | All Filings
 [**get_all_notes**](FilingApi.md#get_all_notes) | **GET** /filings/notes | All Filing Notes
 [**get_filing_by_id**](FilingApi.md#get_filing_by_id) | **GET** /filings/{id} | Lookup Filing
@@ -13,8 +11,6 @@ Method | HTTP request | Description
 [**get_note**](FilingApi.md#get_note) | **GET** /filings/notes/{identifier} | Filing Note by ID
 [**get_note_html**](FilingApi.md#get_note_html) | **GET** /filings/notes/{identifier}/html | Filing Note HTML
 [**get_note_text**](FilingApi.md#get_note_text) | **GET** /filings/notes/{identifier}/text | Filing Note Text
-[**search8k_filings**](FilingApi.md#search8k_filings) | **GET** /filings/8K/search | Search 8-K Filings
-[**search8k_filings_bulk**](FilingApi.md#search8k_filings_bulk) | **GET** /filings/8K/search/bulk | Search 8-K Filings (Bulk Response)
 [**search_notes**](FilingApi.md#search_notes) | **GET** /filings/notes/search | Search Filing Notes
 
 
@@ -23,185 +19,9 @@ Method | HTTP request | Description
 
 [//]: # (CLASS:IntrinioSDK::FilingApi)
 
-[//]: # (METHOD:get8k_filing_by_id)
-
-[//]: # (RETURN_TYPE:::Filing8k)
-
-[//]: # (RETURN_TYPE_KIND:object)
-
-[//]: # (RETURN_TYPE_DOC:Filing8k.md)
-
-[//]: # (OPERATION:get8k_filing_by_id_v2)
-
-[//]: # (ENDPOINT:/filings/8K/{identifier})
-
-[//]: # (DOCUMENT_LINK:FilingApi.md#get8k_filing_by_id)
-
-# **get8k_filing_by_id**
-
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/r/get8k_filing_by_id_v2)
-
-[//]: # (START_OVERVIEW)
-
-> Filing8k get8k_filing_by_id(identifier, opts)
-
-#### Lookup 8-K Filing
-
-
-Returns the extracted content from the specified 8-K filing
-
-[//]: # (END_OVERVIEW)
-
-### Example
-
-[//]: # (START_CODE_EXAMPLE)
-```r
-# Setup client
-client <- IntrinioSDK::ApiClient$new()
-
-# Configure API key authorization: ApiKeyAuth
-client$configuration$apiKey <- "YOUR_API_KEY"
-
-# Setup API with client
-FilingApi <- IntrinioSDK::FilingApi$new(client)
-
-# Required params
-identifier <- "fil_olrQm6" # Character | The Intrinio ID of an 8-K filing
-
-# Optional params
-opts <- list(
-  format = "html", # Character | Format of the 8-K content to return.
-  query = NULL # Character | Full-text search parameters. These can include logical operators like AND, OR, NOT and parentheses. This is typically the same query used when calling the 8-K Search endpoint. Matching content snippets will be returned in the response when a query is provided.
-)
-
-response <- FilingApi$get8k_filing_by_id(identifier, opts)
-print(response)
-print(response$content)
-```
-
-[//]: # (END_CODE_EXAMPLE)
-
-[//]: # (START_DEFINITION)
-
-### Parameters
-
-[//]: # (START_PARAMETERS)
-
-
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| The Intrinio ID of an 8-K filing | 
- **format** | **Character**| Format of the 8-K content to return. | [default to html]
- **query** | **Character**| Full-text search parameters. These can include logical operators like AND, OR, NOT and parentheses. This is typically the same query used when calling the 8-K Search endpoint. Matching content snippets will be returned in the response when a query is provided. | 
-
-[//]: # (END_PARAMETERS)
-
-### Return type
-
-[**Filing8k**](Filing8k.md)
-
-[//]: # (END_OPERATION)
-
-
-[//]: # (START_OPERATION)
-
-[//]: # (CLASS:IntrinioSDK::FilingApi)
-
-[//]: # (METHOD:get_all8k_filings)
-
-[//]: # (RETURN_TYPE:::ApiResponseFiling8ks)
-
-[//]: # (RETURN_TYPE_KIND:object)
-
-[//]: # (RETURN_TYPE_DOC:ApiResponseFiling8ks.md)
-
-[//]: # (OPERATION:get_all8k_filings_v2)
-
-[//]: # (ENDPOINT:/filings/8K)
-
-[//]: # (DOCUMENT_LINK:FilingApi.md#get_all8k_filings)
-
-# **get_all8k_filings**
-
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/r/get_all8k_filings_v2)
-
-[//]: # (START_OVERVIEW)
-
-> ApiResponseFiling8ks get_all8k_filings(opts)
-
-#### All 8-K Filings
-
-
-Returns all 8-K filings. When parameters are specified, returns matching 8-K filings.
-
-[//]: # (END_OVERVIEW)
-
-### Example
-
-[//]: # (START_CODE_EXAMPLE)
-```r
-# Setup client
-client <- IntrinioSDK::ApiClient$new()
-
-# Configure API key authorization: ApiKeyAuth
-client$configuration$apiKey <- "YOUR_API_KEY"
-
-# Setup API with client
-FilingApi <- IntrinioSDK::FilingApi$new(client)
-
-# Optional params
-opts <- list(
-  company = "AAPL", # Character | A Company identifier (Ticker, CIK, LEI, Intrinio ID)
-  start_date = NULL, # Date | Return 8-K filings filed on or after the given date
-  end_date = NULL, # Date | Return 8-K filings filed on or before the given date
-  item_code = NULL, # Character | Return 8-K filings with the given SEC item codes. More information about these item codes can be found on the <a href=https://www.sec.gov/fast-answers/answersform8khtm.html target=_blank>SEC website</a>.
-  page_size = 100, # Integer | The number of results to return
-  next_page = NULL # Character | Gets the next page of data from a previous API call
-)
-
-response <- FilingApi$get_all8k_filings(opts)
-print(response)
-print(response$content)
-```
-
-[//]: # (END_CODE_EXAMPLE)
-
-[//]: # (START_DEFINITION)
-
-### Parameters
-
-[//]: # (START_PARAMETERS)
-
-
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **company** | **Character**| A Company identifier (Ticker, CIK, LEI, Intrinio ID) | 
- **start_date** | **Date**| Return 8-K filings filed on or after the given date | 
- **end_date** | **Date**| Return 8-K filings filed on or before the given date | 
- **item_code** | **Character**| Return 8-K filings with the given SEC item codes. More information about these item codes can be found on the &lt;a href&#x3D;https://www.sec.gov/fast-answers/answersform8khtm.html target&#x3D;_blank&gt;SEC website&lt;/a&gt;. | 
- **page_size** | **Integer**| The number of results to return | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
-
-[//]: # (END_PARAMETERS)
-
-### Return type
-
-[**ApiResponseFiling8ks**](ApiResponseFiling8ks.md)
-
-[//]: # (END_OPERATION)
-
-
-[//]: # (START_OPERATION)
-
-[//]: # (CLASS:IntrinioSDK::FilingApi)
-
 [//]: # (METHOD:get_all_filings)
 
-[//]: # (RETURN_TYPE:::ApiResponseFilings)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseFilings)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -246,7 +66,7 @@ company <- "AAPL" # Character | Filings for the given `company` identifier (tick
 
 # Optional params
 opts <- list(
-  report_type = NULL, # Character | Filter by report type. Separate values with commas to return multiple The filing <a href=\"/documentation/sec_filing_report_types\" target=\"_blank\">report types</a>.
+  report_type = NULL, # Character | Filter by report type. Separate values with commas to return multiple The filing <a href=\"https://docs.intrinio.com/documentation/sec_filing_report_types\" target=\"_blank\">report types</a>.
   start_date = as.Date("2015-01-01"), # Date | Filed on or after the given date
   end_date = NULL, # Date | Filed before or after the given date
   page_size = 100, # Integer | The number of results to return
@@ -254,6 +74,7 @@ opts <- list(
 )
 
 response <- FilingApi$get_all_filings(company, opts)
+
 print(response)
 print(response$content)
 ```
@@ -267,16 +88,15 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **company** | **Character**| Filings for the given &#x60;company&#x60; identifier (ticker, CIK, LEI, Intrinio ID) | 
- **report_type** | **Character**| Filter by report type. Separate values with commas to return multiple The filing &lt;a href&#x3D;\&quot;/documentation/sec_filing_report_types\&quot; target&#x3D;\&quot;_blank\&quot;&gt;report types&lt;/a&gt;. | 
- **start_date** | **Date**| Filed on or after the given date | 
- **end_date** | **Date**| Filed before or after the given date | 
- **page_size** | **Integer**| The number of results to return | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **company** | Character| Filings for the given &#x60;company&#x60; identifier (ticker, CIK, LEI, Intrinio ID) |  &nbsp;
+ **report_type** | Character| Filter by report type. Separate values with commas to return multiple The filing &lt;a href&#x3D;\&quot;https://docs.intrinio.com/documentation/sec_filing_report_types\&quot; target&#x3D;\&quot;_blank\&quot;&gt;report types&lt;/a&gt;. | [optional]  &nbsp;
+ **start_date** | Date| Filed on or after the given date | [optional]  &nbsp;
+ **end_date** | Date| Filed before or after the given date | [optional]  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -293,7 +113,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_all_notes)
 
-[//]: # (RETURN_TYPE:::ApiResponseFilingNotes)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseFilingNotes)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -336,7 +156,7 @@ FilingApi <- IntrinioSDK::FilingApi$new(client)
 # Optional params
 opts <- list(
   company = "AAPL", # Character | A Company identifier (Ticker, CIK, LEI, Intrinio ID)
-  report_type = "10-Q", # Character | Notes contained in filings that match the given <a href=\"/documentation/sec_filing_report_types\" target=\"_blank\">report type</a>
+  report_type = "10-Q", # Character | Notes contained in filings that match the given <a href=\"https://docs.intrinio.com/documentation/sec_filing_report_types\" target=\"_blank\">report type</a>
   filing_start_date = NULL, # Date | Limit search to filings on or after this date
   filing_end_date = NULL, # Date | Limit search to filings on or before this date
   period_ended_start_date = NULL, # Date | Limit search to filings with a period end date on or after this date
@@ -346,6 +166,7 @@ opts <- list(
 )
 
 response <- FilingApi$get_all_notes(opts)
+
 print(response)
 print(response$content)
 ```
@@ -359,18 +180,17 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **company** | **Character**| A Company identifier (Ticker, CIK, LEI, Intrinio ID) | 
- **report_type** | **Character**| Notes contained in filings that match the given &lt;a href&#x3D;\&quot;/documentation/sec_filing_report_types\&quot; target&#x3D;\&quot;_blank\&quot;&gt;report type&lt;/a&gt; | 
- **filing_start_date** | **Date**| Limit search to filings on or after this date | 
- **filing_end_date** | **Date**| Limit search to filings on or before this date | 
- **period_ended_start_date** | **Date**| Limit search to filings with a period end date on or after this date | 
- **period_ended_end_date** | **Date**| Limit search to filings with a period end date on or before this date | 
- **page_size** | **Integer**| The number of results to return | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **company** | Character| A Company identifier (Ticker, CIK, LEI, Intrinio ID) | [optional]  &nbsp;
+ **report_type** | Character| Notes contained in filings that match the given &lt;a href&#x3D;\&quot;https://docs.intrinio.com/documentation/sec_filing_report_types\&quot; target&#x3D;\&quot;_blank\&quot;&gt;report type&lt;/a&gt; | [optional]  &nbsp;
+ **filing_start_date** | Date| Limit search to filings on or after this date | [optional]  &nbsp;
+ **filing_end_date** | Date| Limit search to filings on or before this date | [optional]  &nbsp;
+ **period_ended_start_date** | Date| Limit search to filings with a period end date on or after this date | [optional]  &nbsp;
+ **period_ended_end_date** | Date| Limit search to filings with a period end date on or before this date | [optional]  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -387,7 +207,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_filing_by_id)
 
-[//]: # (RETURN_TYPE:::Filing)
+[//]: # (RETURN_TYPE:IntrinioSDK::Filing)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -431,6 +251,7 @@ FilingApi <- IntrinioSDK::FilingApi$new(client)
 id <- "fil_7Kn2P6" # Character | The Intrinio ID of the Filing
 
 response <- FilingApi$get_filing_by_id(id)
+
 print(response)
 print(response$content)
 ```
@@ -444,11 +265,10 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **Character**| The Intrinio ID of the Filing | 
+ **id** | Character| The Intrinio ID of the Filing |  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -465,7 +285,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_filing_fundamentals)
 
-[//]: # (RETURN_TYPE:::ApiResponseFilingFundamentals)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseFilingFundamentals)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -520,6 +340,7 @@ opts <- list(
 )
 
 response <- FilingApi$get_filing_fundamentals(identifier, opts)
+
 print(response)
 print(response$content)
 ```
@@ -533,18 +354,17 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| A Filing identifier | 
- **statement_code** | **Character**| Filters fundamentals by statement code | 
- **type** | **Character**| Filters fundamentals by type | 
- **fiscal_year** | **Integer**| Filters fundamentals by fiscal year | 
- **fiscal_period** | **Character**| Filters fundamentals by fiscal period | 
- **start_date** | **Date**| Returns fundamentals on or after the given date | 
- **end_date** | **Date**| Returns fundamentals on or before the given date | 
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **identifier** | Character| A Filing identifier |  &nbsp;
+ **statement_code** | Character| Filters fundamentals by statement code | [optional]  &nbsp;
+ **type** | Character| Filters fundamentals by type | [optional]  &nbsp;
+ **fiscal_year** | Integer| Filters fundamentals by fiscal year | [optional]  &nbsp;
+ **fiscal_period** | Character| Filters fundamentals by fiscal period | [optional]  &nbsp;
+ **start_date** | Date| Returns fundamentals on or after the given date | [optional]  &nbsp;
+ **end_date** | Date| Returns fundamentals on or before the given date | [optional]  &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -561,7 +381,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_note)
 
-[//]: # (RETURN_TYPE:::FilingNote)
+[//]: # (RETURN_TYPE:IntrinioSDK::FilingNote)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -609,6 +429,7 @@ opts <- list(
 )
 
 response <- FilingApi$get_note(identifier, opts)
+
 print(response)
 print(response$content)
 ```
@@ -622,12 +443,11 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| The Intrinio ID of the filing note | 
- **content_format** | **Character**| Returns content in html (as filed) or plain text | [default to text]
+ **identifier** | Character| The Intrinio ID of the filing note |  &nbsp;
+ **content_format** | Character| Returns content in html (as filed) or plain text | [optional] [default to text] &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -687,6 +507,7 @@ FilingApi <- IntrinioSDK::FilingApi$new(client)
 identifier <- "xbn_ydK3QL" # Character | The Intrinio ID of the filing note
 
 response <- FilingApi$get_note_html(identifier)
+
 print(response)
 print(response$content)
 ```
@@ -700,11 +521,10 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| The Intrinio ID of the filing note | 
+ **identifier** | Character| The Intrinio ID of the filing note |  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -764,6 +584,7 @@ FilingApi <- IntrinioSDK::FilingApi$new(client)
 identifier <- "xbn_ydK3QL" # Character | The Intrinio ID of the filing note
 
 response <- FilingApi$get_note_text(identifier)
+
 print(response)
 print(response$content)
 ```
@@ -777,11 +598,10 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| The Intrinio ID of the filing note | 
+ **identifier** | Character| The Intrinio ID of the filing note |  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -796,197 +616,9 @@ Name | Type | Description  | Notes
 
 [//]: # (CLASS:IntrinioSDK::FilingApi)
 
-[//]: # (METHOD:search8k_filings)
-
-[//]: # (RETURN_TYPE:::ApiResponseFiling8ksSummaries)
-
-[//]: # (RETURN_TYPE_KIND:object)
-
-[//]: # (RETURN_TYPE_DOC:ApiResponseFiling8ksSummaries.md)
-
-[//]: # (OPERATION:search8k_filings_v2)
-
-[//]: # (ENDPOINT:/filings/8K/search)
-
-[//]: # (DOCUMENT_LINK:FilingApi.md#search8k_filings)
-
-# **search8k_filings**
-
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/r/search8k_filings_v2)
-
-[//]: # (START_OVERVIEW)
-
-> ApiResponseFiling8ksSummaries search8k_filings(opts)
-
-#### Search 8-K Filings
-
-
-Returns summaries of 8-K filings matching search criteria
-
-[//]: # (END_OVERVIEW)
-
-### Example
-
-[//]: # (START_CODE_EXAMPLE)
-```r
-# Setup client
-client <- IntrinioSDK::ApiClient$new()
-
-# Configure API key authorization: ApiKeyAuth
-client$configuration$apiKey <- "YOUR_API_KEY"
-
-# Setup API with client
-FilingApi <- IntrinioSDK::FilingApi$new(client)
-
-# Optional params
-opts <- list(
-  query = "problem AND research AND engineering", # Character | Full-text search query. This can include logical operators like AND, OR, NOT and parentheses to indicate order of operations.
-  company = "AAPL", # Character | A Company identifier (Ticker, CIK, LEI, Intrinio ID)
-  start_date = NULL, # Date | Return 8-K filings filed on or after the given date
-  end_date = NULL, # Date | Return 8-K filings filed on or before the given date
-  item_code = NULL, # Character | Return 8-K filings with the given SEC item codes. More information about these item codes can be found on the <a href=https://www.sec.gov/fast-answers/answersform8khtm.html target=_blank>SEC website</a>.
-  document_type = "8-K", # Character | Return search results found in the given document Specifing type. \"8-K\" will return search results matching the primary content of 8-K and 8-K/A filings. Specifing \"exhibit\" will return search results matching the exhibit content of 8-K filings. Specifing \"all\" will return search results matching both 8-K and exhibit content.
-  page_size = 100, # Integer | The number of results to return
-  next_page = NULL # Character | Gets the next page of data from a previous API call
-)
-
-response <- FilingApi$search8k_filings(opts)
-print(response)
-print(response$content)
-```
-
-[//]: # (END_CODE_EXAMPLE)
-
-[//]: # (START_DEFINITION)
-
-### Parameters
-
-[//]: # (START_PARAMETERS)
-
-
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **query** | **Character**| Full-text search query. This can include logical operators like AND, OR, NOT and parentheses to indicate order of operations. | 
- **company** | **Character**| A Company identifier (Ticker, CIK, LEI, Intrinio ID) | 
- **start_date** | **Date**| Return 8-K filings filed on or after the given date | 
- **end_date** | **Date**| Return 8-K filings filed on or before the given date | 
- **item_code** | **Character**| Return 8-K filings with the given SEC item codes. More information about these item codes can be found on the &lt;a href&#x3D;https://www.sec.gov/fast-answers/answersform8khtm.html target&#x3D;_blank&gt;SEC website&lt;/a&gt;. | 
- **document_type** | **Character**| Return search results found in the given document Specifing type. \&quot;8-K\&quot; will return search results matching the primary content of 8-K and 8-K/A filings. Specifing \&quot;exhibit\&quot; will return search results matching the exhibit content of 8-K filings. Specifing \&quot;all\&quot; will return search results matching both 8-K and exhibit content. | [default to 8-K]
- **page_size** | **Integer**| The number of results to return | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
-
-[//]: # (END_PARAMETERS)
-
-### Return type
-
-[**ApiResponseFiling8ksSummaries**](ApiResponseFiling8ksSummaries.md)
-
-[//]: # (END_OPERATION)
-
-
-[//]: # (START_OPERATION)
-
-[//]: # (CLASS:IntrinioSDK::FilingApi)
-
-[//]: # (METHOD:search8k_filings_bulk)
-
-[//]: # (RETURN_TYPE:::ApiResponseFiling8ks)
-
-[//]: # (RETURN_TYPE_KIND:object)
-
-[//]: # (RETURN_TYPE_DOC:ApiResponseFiling8ks.md)
-
-[//]: # (OPERATION:search8k_filings_bulk_v2)
-
-[//]: # (ENDPOINT:/filings/8K/search/bulk)
-
-[//]: # (DOCUMENT_LINK:FilingApi.md#search8k_filings_bulk)
-
-# **search8k_filings_bulk**
-
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/r/search8k_filings_bulk_v2)
-
-[//]: # (START_OVERVIEW)
-
-> ApiResponseFiling8ks search8k_filings_bulk(opts)
-
-#### Search 8-K Filings (Bulk Response)
-
-
-Returns full content of 8-K filings matching search criteria. Subject to restricted API call limits depending on plan access.
-
-[//]: # (END_OVERVIEW)
-
-### Example
-
-[//]: # (START_CODE_EXAMPLE)
-```r
-# Setup client
-client <- IntrinioSDK::ApiClient$new()
-
-# Configure API key authorization: ApiKeyAuth
-client$configuration$apiKey <- "YOUR_API_KEY"
-
-# Setup API with client
-FilingApi <- IntrinioSDK::FilingApi$new(client)
-
-# Optional params
-opts <- list(
-  query = "problem AND research AND engineering", # Character | Full-text search query. This can include logical operators like AND, OR, NOT and parentheses to indicate order of operations.
-  company = "AAPL", # Character | A Company identifier (Ticker, CIK, LEI, Intrinio ID)
-  start_date = NULL, # Date | Return 8-K filings filed on or after the given date
-  end_date = NULL, # Date | Return 8-K filings filed on or before the given date
-  item_code = NULL, # Character | Return 8-K filings with the given SEC item codes. More information about these item codes can be found on the <a href=https://www.sec.gov/fast-answers/answersform8khtm.html target=_blank>SEC website</a>.
-  document_type = "8-K", # Character | Return search results found in the given document Specifing type. \"8-K\" will return search results matching the primary content of 8-K and 8-K/A filings. Specifing \"exhibit\" will return search results matching the exhibit content of 8-K filings. Specifing \"all\" will return search results matching both 8-K and exhibit content.
-  page_size = 10, # Integer | The number of results to return.
-  next_page = NULL # Character | Gets the next page of data from a previous API call
-)
-
-response <- FilingApi$search8k_filings_bulk(opts)
-print(response)
-print(response$content)
-```
-
-[//]: # (END_CODE_EXAMPLE)
-
-[//]: # (START_DEFINITION)
-
-### Parameters
-
-[//]: # (START_PARAMETERS)
-
-
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **query** | **Character**| Full-text search query. This can include logical operators like AND, OR, NOT and parentheses to indicate order of operations. | 
- **company** | **Character**| A Company identifier (Ticker, CIK, LEI, Intrinio ID) | 
- **start_date** | **Date**| Return 8-K filings filed on or after the given date | 
- **end_date** | **Date**| Return 8-K filings filed on or before the given date | 
- **item_code** | **Character**| Return 8-K filings with the given SEC item codes. More information about these item codes can be found on the &lt;a href&#x3D;https://www.sec.gov/fast-answers/answersform8khtm.html target&#x3D;_blank&gt;SEC website&lt;/a&gt;. | 
- **document_type** | **Character**| Return search results found in the given document Specifing type. \&quot;8-K\&quot; will return search results matching the primary content of 8-K and 8-K/A filings. Specifing \&quot;exhibit\&quot; will return search results matching the exhibit content of 8-K filings. Specifing \&quot;all\&quot; will return search results matching both 8-K and exhibit content. | [default to 8-K]
- **page_size** | **Integer**| The number of results to return. | [default to 10]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
-
-[//]: # (END_PARAMETERS)
-
-### Return type
-
-[**ApiResponseFiling8ks**](ApiResponseFiling8ks.md)
-
-[//]: # (END_OPERATION)
-
-
-[//]: # (START_OPERATION)
-
-[//]: # (CLASS:IntrinioSDK::FilingApi)
-
 [//]: # (METHOD:search_notes)
 
-[//]: # (RETURN_TYPE:::ApiResponseFilingNotesSearch)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseFilingNotesSearch)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -1037,6 +669,7 @@ opts <- list(
 )
 
 response <- FilingApi$search_notes(query, opts)
+
 print(response)
 print(response$content)
 ```
@@ -1050,14 +683,13 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **query** | **Character**| Search for notes that contain all or parts of this text | 
- **filing_start_date** | **Date**| Limit search to filings on or after this date | 
- **filing_end_date** | **Date**| Limit search to filings on or before this date | 
- **page_size** | **Integer**| The number of results to return | [default to 100]
+ **query** | Character| Search for notes that contain all or parts of this text |  &nbsp;
+ **filing_start_date** | Date| Limit search to filings on or after this date | [optional]  &nbsp;
+ **filing_end_date** | Date| Limit search to filings on or before this date | [optional]  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 

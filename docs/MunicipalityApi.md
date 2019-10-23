@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 [//]: # (METHOD:get_all_municipalities)
 
-[//]: # (RETURN_TYPE:::ApiResponseMunicipalities)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseMunicipalities)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -73,6 +73,7 @@ opts <- list(
 )
 
 response <- MunicipalityApi$get_all_municipalities(opts)
+
 print(response)
 print(response$content)
 ```
@@ -86,23 +87,22 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **has_financials** | **Logical**| Return municipalities with financials | 
- **government_name** | **Character**| Return municipalities with a government name matching the given query | 
- **government_type** | **Character**| Return municipalities with the given government type | 
- **area_name** | **Character**| Return municipalities with an area name matching the given query | 
- **area_type** | **Character**| Return municipalities with the given area type | 
- **city** | **Character**| Return municipalities in the given city | 
- **state** | **Character**| Return municipalities in the given state | 
- **zipcode** | **Numeric**| Return municipalities in the given zipcode | 
- **population_greater_than** | **Numeric**| Return municipalities with a population greater than the given number | 
- **population_less_than** | **Numeric**| Return municipalities with a population less than the given number | 
- **enrollment_greater_than** | **Numeric**| Return municipalities with an enrollment greater than the given number | 
- **enrollment_less_than** | **Numeric**| Return municipalities with an enrollment less than the given number | 
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **has_financials** | Logical| Return municipalities with financials | [optional]  &nbsp;
+ **government_name** | Character| Return municipalities with a government name matching the given query | [optional]  &nbsp;
+ **government_type** | Character| Return municipalities with the given government type | [optional]  &nbsp;
+ **area_name** | Character| Return municipalities with an area name matching the given query | [optional]  &nbsp;
+ **area_type** | Character| Return municipalities with the given area type | [optional]  &nbsp;
+ **city** | Character| Return municipalities in the given city | [optional]  &nbsp;
+ **state** | Character| Return municipalities in the given state | [optional]  &nbsp;
+ **zipcode** | Numeric| Return municipalities in the given zipcode | [optional]  &nbsp;
+ **population_greater_than** | Numeric| Return municipalities with a population greater than the given number | [optional]  &nbsp;
+ **population_less_than** | Numeric| Return municipalities with a population less than the given number | [optional]  &nbsp;
+ **enrollment_greater_than** | Numeric| Return municipalities with an enrollment greater than the given number | [optional]  &nbsp;
+ **enrollment_less_than** | Numeric| Return municipalities with an enrollment less than the given number | [optional]  &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -119,7 +119,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_municipality_by_id)
 
-[//]: # (RETURN_TYPE:::Municipality)
+[//]: # (RETURN_TYPE:IntrinioSDK::Municipality)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -163,6 +163,7 @@ MunicipalityApi <- IntrinioSDK::MunicipalityApi$new(client)
 id <- "mun_Xn7x4z" # Character | An Intrinio ID of a Municipality
 
 response <- MunicipalityApi$get_municipality_by_id(id)
+
 print(response)
 print(response$content)
 ```
@@ -176,11 +177,10 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **Character**| An Intrinio ID of a Municipality | 
+ **id** | Character| An Intrinio ID of a Municipality |  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -197,7 +197,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_municipality_financials)
 
-[//]: # (RETURN_TYPE:::ApiResponseMunicipalitiyFinancials)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseMunicipalitiyFinancials)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -246,6 +246,7 @@ opts <- list(
 )
 
 response <- MunicipalityApi$get_municipality_financials(id, opts)
+
 print(response)
 print(response$content)
 ```
@@ -259,12 +260,11 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **Character**| An Intrinio ID of a Municipality | 
- **fiscal_year** | **Numeric**| Return financials for the given fiscal year | 
+ **id** | Character| An Intrinio ID of a Municipality |  &nbsp;
+ **fiscal_year** | Numeric| Return financials for the given fiscal year | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 

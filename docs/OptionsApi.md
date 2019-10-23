@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 [//]: # (METHOD:get_options)
 
-[//]: # (RETURN_TYPE:::ApiResponseOptions)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseOptions)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -74,6 +74,7 @@ opts <- list(
 )
 
 response <- OptionsApi$get_options(symbol, opts)
+
 print(response)
 print(response$content)
 ```
@@ -87,20 +88,19 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **symbol** | **Character**| The option symbol, corresponding to the underlying security. | 
- **type** | **Character**| The option contract type. | 
- **strike** | **Numeric**| The strike price of the option contract. This will return options contracts with strike price equal to this price. | 
- **strike_greater_than** | **Numeric**| The strike price of the option contract. This will return options contracts with strike prices greater than this price. | 
- **strike_less_than** | **Numeric**| The strike price of the option contract. This will return options contracts with strike prices less than this price. | 
- **expiration** | **Character**| The expiration date of the option contract. This will return options contracts with expiration dates on this date. | 
- **expiration_after** | **Character**| The expiration date of the option contract. This will return options contracts with expiration dates after this date. | 
- **expiration_before** | **Character**| The expiration date of the option contract. This will return options contracts with expiration dates before this date. | 
- **page_size** | **Integer**| The number of results to return | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **symbol** | Character| The option symbol, corresponding to the underlying security. |  &nbsp;
+ **type** | Character| The option contract type. | [optional]  &nbsp;
+ **strike** | Numeric| The strike price of the option contract. This will return options contracts with strike price equal to this price. | [optional]  &nbsp;
+ **strike_greater_than** | Numeric| The strike price of the option contract. This will return options contracts with strike prices greater than this price. | [optional]  &nbsp;
+ **strike_less_than** | Numeric| The strike price of the option contract. This will return options contracts with strike prices less than this price. | [optional]  &nbsp;
+ **expiration** | Character| The expiration date of the option contract. This will return options contracts with expiration dates on this date. | [optional]  &nbsp;
+ **expiration_after** | Character| The expiration date of the option contract. This will return options contracts with expiration dates after this date. | [optional]  &nbsp;
+ **expiration_before** | Character| The expiration date of the option contract. This will return options contracts with expiration dates before this date. | [optional]  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -117,7 +117,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_options_chain)
 
-[//]: # (RETURN_TYPE:::ApiResponseOptionsChain)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseOptionsChain)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -173,6 +173,7 @@ opts <- list(
 )
 
 response <- OptionsApi$get_options_chain(symbol, expiration, opts)
+
 print(response)
 print(response$content)
 ```
@@ -186,19 +187,18 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **symbol** | **Character**| The option symbol, corresponding to the underlying security. | 
- **expiration** | **Character**| The expiration date of the options contract | 
- **date** | **Date**| The date of the option price. Returns option prices on this date. | 
- **type** | **Character**| The option contract type. | 
- **strike** | **Numeric**| The strike price of the option contract. This will return options contracts with strike price equal to this price. | 
- **strike_greater_than** | **Numeric**| The strike price of the option contract. This will return options contracts with strike prices greater than this price. | 
- **strike_less_than** | **Numeric**| The strike price of the option contract. This will return options contracts with strike prices less than this price. | 
- **moneyness** | **Character**| The moneyness of the options contracts to return. &#39;all&#39; will return all options contracts. &#39;in_the_money&#39; will return options contracts that are in the money (call options with strike prices below the current price, put options with strike prices above the current price). &#39;out_of_they_money&#39; will return options contracts that are out of the money (call options with strike prices above the current price, put options with strike prices below the current price). &#39;near_the_money&#39; will return options contracts that are $0.50 or less away from being in the money. | 
- **page_size** | **Integer**| The number of results to return | [default to 100]
+ **symbol** | Character| The option symbol, corresponding to the underlying security. |  &nbsp;
+ **expiration** | Character| The expiration date of the options contract |  &nbsp;
+ **date** | Date| The date of the option price. Returns option prices on this date. | [optional]  &nbsp;
+ **type** | Character| The option contract type. | [optional]  &nbsp;
+ **strike** | Numeric| The strike price of the option contract. This will return options contracts with strike price equal to this price. | [optional]  &nbsp;
+ **strike_greater_than** | Numeric| The strike price of the option contract. This will return options contracts with strike prices greater than this price. | [optional]  &nbsp;
+ **strike_less_than** | Numeric| The strike price of the option contract. This will return options contracts with strike prices less than this price. | [optional]  &nbsp;
+ **moneyness** | Character| The moneyness of the options contracts to return. &#39;all&#39; will return all options contracts. &#39;in_the_money&#39; will return options contracts that are in the money (call options with strike prices below the current price, put options with strike prices above the current price). &#39;out_of_they_money&#39; will return options contracts that are out of the money (call options with strike prices above the current price, put options with strike prices below the current price). &#39;near_the_money&#39; will return options contracts that are $0.50 or less away from being in the money. | [optional]  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -215,7 +215,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_options_expirations)
 
-[//]: # (RETURN_TYPE:::ApiResponseOptionsExpirations)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseOptionsExpirations)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -265,6 +265,7 @@ opts <- list(
 )
 
 response <- OptionsApi$get_options_expirations(symbol, opts)
+
 print(response)
 print(response$content)
 ```
@@ -278,13 +279,12 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **symbol** | **Character**| The option symbol, corresponding to the underlying security. | 
- **after** | **Character**| Return option contract expiration dates after this date. | 
- **before** | **Character**| Return option contract expiration dates before this date. | 
+ **symbol** | Character| The option symbol, corresponding to the underlying security. |  &nbsp;
+ **after** | Character| Return option contract expiration dates after this date. | [optional]  &nbsp;
+ **before** | Character| Return option contract expiration dates before this date. | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -301,7 +301,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_options_prices)
 
-[//]: # (RETURN_TYPE:::ApiResponseOptionPrices)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseOptionPrices)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -353,6 +353,7 @@ opts <- list(
 )
 
 response <- OptionsApi$get_options_prices(identifier, opts)
+
 print(response)
 print(response$content)
 ```
@@ -366,15 +367,14 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| The Intrinio ID or code of the options contract to request prices for. | 
- **start_date** | **Character**| Return option contract prices on or after this date. | 
- **end_date** | **Character**| Return option contract prices on or before this date. | 
- **page_size** | **Integer**| The number of results to return | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **identifier** | Character| The Intrinio ID or code of the options contract to request prices for. |  &nbsp;
+ **start_date** | Character| Return option contract prices on or after this date. | [optional]  &nbsp;
+ **end_date** | Character| Return option contract prices on or before this date. | [optional]  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 

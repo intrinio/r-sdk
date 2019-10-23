@@ -1,11 +1,30 @@
 # ApiResponseCryptoSnapshot
 
+[//]: # (CLASS:IntrinioSDK::ApiResponseCryptoSnapshot)
+
+[//]: # (KIND:object)
+
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**pair** | [***CryptoPairSummary**](CryptoPairSummary.md) |  | [optional] [default to null]
-**exchange** | [***CryptoExchangeSummary**](CryptoExchangeSummary.md) |  | [optional] [default to null]
-**snapshot** | [***CryptoSnapshot**](CryptoSnapshot.md) |  | [optional] [default to null]
+
+[//]: # (START_DEFINITION)
+
+Name | Type | Description
+------------ | ------------- | -------------
+**pair** | [**CryptoPairSummary**](CryptoPairSummary.md) |  &nbsp;
+**exchange** | [**CryptoExchangeSummary**](CryptoExchangeSummary.md) |  &nbsp;
+**snapshot** | [**CryptoSnapshot**](CryptoSnapshot.md) |  &nbsp;
+
+[//]: # (END_DEFINITION)
+
+
+[//]: # (CONTAINED_CLASS:IntrinioSDK::CryptoPairSummary)
+
+
+[//]: # (CONTAINED_CLASS:IntrinioSDK::CryptoExchangeSummary)
+
+
+[//]: # (CONTAINED_CLASS:IntrinioSDK::CryptoSnapshot)
+
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

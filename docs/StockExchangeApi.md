@@ -19,7 +19,7 @@ Method | HTTP request | Description
 
 [//]: # (METHOD:get_all_stock_exchanges)
 
-[//]: # (RETURN_TYPE:::ApiResponseStockExchanges)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseStockExchanges)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -68,6 +68,7 @@ opts <- list(
 )
 
 response <- StockExchangeApi$get_all_stock_exchanges(opts)
+
 print(response)
 print(response$content)
 ```
@@ -81,14 +82,13 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **city** | **Character**| Filter by city | 
- **country** | **Character**| Filter by country | 
- **country_code** | **Character**| Filter by ISO country code | 
- **page_size** | **Integer**| The number of results to return | [default to 100]
+ **city** | Character| Filter by city | [optional]  &nbsp;
+ **country** | Character| Filter by country | [optional]  &nbsp;
+ **country_code** | Character| Filter by ISO country code | [optional]  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -105,7 +105,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_stock_exchange_by_id)
 
-[//]: # (RETURN_TYPE:::StockExchange)
+[//]: # (RETURN_TYPE:IntrinioSDK::StockExchange)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -149,6 +149,7 @@ StockExchangeApi <- IntrinioSDK::StockExchangeApi$new(client)
 identifier <- "USCOMP" # Character | A Stock Exchange identifier (MIC or Intrinio ID)
 
 response <- StockExchangeApi$get_stock_exchange_by_id(identifier)
+
 print(response)
 print(response$content)
 ```
@@ -162,11 +163,10 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| A Stock Exchange identifier (MIC or Intrinio ID) | 
+ **identifier** | Character| A Stock Exchange identifier (MIC or Intrinio ID) |  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -183,7 +183,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_stock_exchange_price_adjustments)
 
-[//]: # (RETURN_TYPE:::ApiResponseStockExchangeStockPriceAdjustments)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseStockExchangeStockPriceAdjustments)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -234,6 +234,7 @@ opts <- list(
 )
 
 response <- StockExchangeApi$get_stock_exchange_price_adjustments(identifier, opts)
+
 print(response)
 print(response$content)
 ```
@@ -247,14 +248,13 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| A Stock Exchange identifier (MIC or Intrinio ID) | 
- **date** | **Date**| The date for which to return price adjustments | 
- **page_size** | **Integer**| The number of results to return | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **identifier** | Character| A Stock Exchange identifier (MIC or Intrinio ID) |  &nbsp;
+ **date** | Date| The date for which to return price adjustments | [optional]  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -271,7 +271,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_stock_exchange_prices)
 
-[//]: # (RETURN_TYPE:::ApiResponseStockExchangeStockPrices)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseStockExchangeStockPrices)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -322,6 +322,7 @@ opts <- list(
 )
 
 response <- StockExchangeApi$get_stock_exchange_prices(identifier, opts)
+
 print(response)
 print(response$content)
 ```
@@ -335,14 +336,13 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| A Stock Exchange identifier (MIC or Intrinio ID) | 
- **date** | **Date**| The date for which to return prices | 
- **page_size** | **Integer**| The number of results to return | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **identifier** | Character| A Stock Exchange identifier (MIC or Intrinio ID) |  &nbsp;
+ **date** | Date| The date for which to return prices | [optional]  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -359,7 +359,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_stock_exchange_realtime_prices)
 
-[//]: # (RETURN_TYPE:::ApiResponseStockExchangeRealtimeStockPrices)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseStockExchangeRealtimeStockPrices)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -410,6 +410,7 @@ opts <- list(
 )
 
 response <- StockExchangeApi$get_stock_exchange_realtime_prices(identifier, opts)
+
 print(response)
 print(response$content)
 ```
@@ -423,14 +424,13 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| A Stock Exchange identifier (MIC or Intrinio ID) | 
- **source** | **Character**| Return realtime prices from the specified data source. If no source is specified, all sources are used. | 
- **page_size** | **Integer**| The number of results to return | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **identifier** | Character| A Stock Exchange identifier (MIC or Intrinio ID) |  &nbsp;
+ **source** | Character| Return realtime prices from the specified data source. If no source is specified, all sources are used. | [optional]  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -447,7 +447,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_stock_exchange_securities)
 
-[//]: # (RETURN_TYPE:::ApiResponseStockExchangeSecurities)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseStockExchangeSecurities)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -497,6 +497,7 @@ opts <- list(
 )
 
 response <- StockExchangeApi$get_stock_exchange_securities(identifier, opts)
+
 print(response)
 print(response$content)
 ```
@@ -510,13 +511,12 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| A Stock Exchange identifier (MIC or Intrinio ID) | 
- **page_size** | **Integer**| The number of results to return | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **identifier** | Character| A Stock Exchange identifier (MIC or Intrinio ID) |  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 

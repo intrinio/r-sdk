@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 [//]: # (METHOD:get_historical_data)
 
-[//]: # (RETURN_TYPE:::ApiResponseHistoricalData)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseHistoricalData)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -70,6 +70,7 @@ opts <- list(
 )
 
 response <- HistoricalDataApi$get_historical_data(identifier, tag, opts)
+
 print(response)
 print(response$content)
 ```
@@ -83,19 +84,18 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| An identifier for an entity such as a Company, Security, Index, etc (Ticker, FIGI, ISIN, CUSIP, CIK, LEI, Intrinio ID) | 
- **tag** | **Character**| An Intrinio data tag ID or code (&lt;a href&#x3D;&#39;https://data.intrinio.com/data-tags&#39;&gt;reference&lt;/a&gt;) | 
- **frequency** | **Character**| Return historical data in the given frequency | [default to daily]
- **type** | **Character**| Filter by type, when applicable | 
- **start_date** | **Date**| Get historical data on or after this date | 
- **end_date** | **Date**| Get historical date on or before this date | 
- **sort_order** | **Character**| Sort by date &#x60;asc&#x60; or &#x60;desc&#x60; | [default to desc]
- **page_size** | **Integer**| The number of results to return | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **identifier** | Character| An identifier for an entity such as a Company, Security, Index, etc (Ticker, FIGI, ISIN, CUSIP, CIK, LEI, Intrinio ID) |  &nbsp;
+ **tag** | Character| An Intrinio data tag ID or code (&lt;a href&#x3D;&#39;https://data.intrinio.com/data-tags&#39;&gt;reference&lt;/a&gt;) |  &nbsp;
+ **frequency** | Character| Return historical data in the given frequency | [optional] [default to daily] &nbsp;
+ **type** | Character| Filter by type, when applicable | [optional]  &nbsp;
+ **start_date** | Date| Get historical data on or after this date | [optional]  &nbsp;
+ **end_date** | Date| Get historical date on or before this date | [optional]  &nbsp;
+ **sort_order** | Character| Sort by date &#x60;asc&#x60; or &#x60;desc&#x60; | [optional] [default to desc] &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 

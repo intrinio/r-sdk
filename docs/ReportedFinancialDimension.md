@@ -1,10 +1,20 @@
 # ReportedFinancialDimension
 
+[//]: # (CLASS:IntrinioSDK::ReportedFinancialDimension)
+
+[//]: # (KIND:object)
+
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**axis** | **Character** | The axis of the dimension | [optional] [default to null]
-**member** | **Character** | The member of the axis | [optional] [default to null]
+
+[//]: # (START_DEFINITION)
+
+Name | Type | Description
+------------ | ------------- | -------------
+**axis** | **Character** | The axis of the dimension &nbsp;
+**member** | **Character** | The member of the axis &nbsp;
+
+[//]: # (END_DEFINITION)
+
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

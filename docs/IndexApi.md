@@ -31,7 +31,7 @@ Method | HTTP request | Description
 
 [//]: # (METHOD:get_all_economic_indices)
 
-[//]: # (RETURN_TYPE:::ApiResponseEconomicIndices)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseEconomicIndices)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -77,6 +77,7 @@ opts <- list(
 )
 
 response <- IndexApi$get_all_economic_indices(opts)
+
 print(response)
 print(response$content)
 ```
@@ -90,12 +91,11 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page_size** | **Integer**| The number of results to return | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -112,7 +112,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_all_sic_indices)
 
-[//]: # (RETURN_TYPE:::ApiResponseSICIndices)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseSICIndices)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -158,6 +158,7 @@ opts <- list(
 )
 
 response <- IndexApi$get_all_sic_indices(opts)
+
 print(response)
 print(response$content)
 ```
@@ -171,12 +172,11 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page_size** | **Integer**| The number of results to return | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -193,7 +193,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_all_stock_market_indices)
 
-[//]: # (RETURN_TYPE:::ApiResponseStockMarketIndices)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseStockMarketIndices)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -239,6 +239,7 @@ opts <- list(
 )
 
 response <- IndexApi$get_all_stock_market_indices(opts)
+
 print(response)
 print(response$content)
 ```
@@ -252,12 +253,11 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page_size** | **Integer**| The number of results to return | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -274,7 +274,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_economic_index_by_id)
 
-[//]: # (RETURN_TYPE:::EconomicIndex)
+[//]: # (RETURN_TYPE:IntrinioSDK::EconomicIndex)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -317,6 +317,7 @@ IndexApi <- IntrinioSDK::IndexApi$new(client)
 identifier <- "$GDP" # Character | An Index Identifier (symbol, Intrinio ID)
 
 response <- IndexApi$get_economic_index_by_id(identifier)
+
 print(response)
 print(response$content)
 ```
@@ -330,11 +331,10 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| An Index Identifier (symbol, Intrinio ID) | 
+ **identifier** | Character| An Index Identifier (symbol, Intrinio ID) |  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -396,6 +396,7 @@ identifier <- "$GDP" # Character | An Index Identifier (symbol, Intrinio ID)
 tag <- "level" # Character | An Intrinio data tag <a href='https://data.intrinio.com/data-tags/economic'>reference</a>
 
 response <- IndexApi$get_economic_index_data_point_number(identifier, tag)
+
 print(response)
 print(response$content)
 ```
@@ -409,12 +410,11 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| An Index Identifier (symbol, Intrinio ID) | 
- **tag** | **Character**| An Intrinio data tag &lt;a href&#x3D;&#39;https://data.intrinio.com/data-tags/economic&#39;&gt;reference&lt;/a&gt; | 
+ **identifier** | Character| An Index Identifier (symbol, Intrinio ID) |  &nbsp;
+ **tag** | Character| An Intrinio data tag &lt;a href&#x3D;&#39;https://data.intrinio.com/data-tags/economic&#39;&gt;reference&lt;/a&gt; |  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -476,6 +476,7 @@ identifier <- "$GDP" # Character | An Index Identifier (symbol, Intrinio ID)
 tag <- "level" # Character | An Intrinio data tag ID or code-name
 
 response <- IndexApi$get_economic_index_data_point_text(identifier, tag)
+
 print(response)
 print(response$content)
 ```
@@ -489,12 +490,11 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| An Index Identifier (symbol, Intrinio ID) | 
- **tag** | **Character**| An Intrinio data tag ID or code-name | 
+ **identifier** | Character| An Index Identifier (symbol, Intrinio ID) |  &nbsp;
+ **tag** | Character| An Intrinio data tag ID or code-name |  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -511,7 +511,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_economic_index_historical_data)
 
-[//]: # (RETURN_TYPE:::ApiResponseEconomicIndexHistoricalData)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseEconomicIndexHistoricalData)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -566,6 +566,7 @@ opts <- list(
 )
 
 response <- IndexApi$get_economic_index_historical_data(identifier, tag, opts)
+
 print(response)
 print(response$content)
 ```
@@ -579,18 +580,17 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| An Index Identifier (symbol, Intrinio ID) | 
- **tag** | **Character**| An Intrinio data tag &lt;a href&#x3D;&#39;https://data.intrinio.com/data-tags/economic&#39;&gt;reference&lt;/a&gt; | 
- **type** | **Character**| Filter by type, when applicable | 
- **start_date** | **Date**| Get historical data on or after this date | 
- **end_date** | **Date**| Get historical data on or before this date | 
- **sort_order** | **Character**| Sort by date &#x60;asc&#x60; or &#x60;desc&#x60; | [default to desc]
- **page_size** | **Integer**| The number of results to return | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **identifier** | Character| An Index Identifier (symbol, Intrinio ID) |  &nbsp;
+ **tag** | Character| An Intrinio data tag &lt;a href&#x3D;&#39;https://data.intrinio.com/data-tags/economic&#39;&gt;reference&lt;/a&gt; |  &nbsp;
+ **type** | Character| Filter by type, when applicable | [optional]  &nbsp;
+ **start_date** | Date| Get historical data on or after this date | [optional]  &nbsp;
+ **end_date** | Date| Get historical data on or before this date | [optional]  &nbsp;
+ **sort_order** | Character| Sort by date &#x60;asc&#x60; or &#x60;desc&#x60; | [optional] [default to desc] &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -607,7 +607,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_sic_index_by_id)
 
-[//]: # (RETURN_TYPE:::SICIndex)
+[//]: # (RETURN_TYPE:IntrinioSDK::SICIndex)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -650,6 +650,7 @@ IndexApi <- IntrinioSDK::IndexApi$new(client)
 identifier <- "$SIC.1" # Character | An Index Identifier (symbol, Intrinio ID)
 
 response <- IndexApi$get_sic_index_by_id(identifier)
+
 print(response)
 print(response$content)
 ```
@@ -663,11 +664,10 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| An Index Identifier (symbol, Intrinio ID) | 
+ **identifier** | Character| An Index Identifier (symbol, Intrinio ID) |  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -729,6 +729,7 @@ identifier <- "$SIC.1" # Character | An Index Identifier (symbol, Intrinio ID)
 tag <- "level" # Character | An Intrinio data tag ID or code-name
 
 response <- IndexApi$get_sic_index_data_point_number(identifier, tag)
+
 print(response)
 print(response$content)
 ```
@@ -742,12 +743,11 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| An Index Identifier (symbol, Intrinio ID) | 
- **tag** | **Character**| An Intrinio data tag ID or code-name | 
+ **identifier** | Character| An Index Identifier (symbol, Intrinio ID) |  &nbsp;
+ **tag** | Character| An Intrinio data tag ID or code-name |  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -809,6 +809,7 @@ identifier <- "$SIC.1" # Character | An Index Identifier (symbol, Intrinio ID)
 tag <- "level" # Character | An Intrinio data tag ID or code-name
 
 response <- IndexApi$get_sic_index_data_point_text(identifier, tag)
+
 print(response)
 print(response$content)
 ```
@@ -822,12 +823,11 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| An Index Identifier (symbol, Intrinio ID) | 
- **tag** | **Character**| An Intrinio data tag ID or code-name | 
+ **identifier** | Character| An Index Identifier (symbol, Intrinio ID) |  &nbsp;
+ **tag** | Character| An Intrinio data tag ID or code-name |  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -844,7 +844,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_sic_index_historical_data)
 
-[//]: # (RETURN_TYPE:::ApiResponseSICIndexHistoricalData)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseSICIndexHistoricalData)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -899,6 +899,7 @@ opts <- list(
 )
 
 response <- IndexApi$get_sic_index_historical_data(identifier, tag, opts)
+
 print(response)
 print(response$content)
 ```
@@ -912,18 +913,17 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| An Index Identifier (symbol, Intrinio ID) | 
- **tag** | **Character**| An Intrinio data tag ID or code-name | 
- **type** | **Character**| Filter by type, when applicable | 
- **start_date** | **Date**| Get historical data on or after this date | 
- **end_date** | **Date**| Get historical data on or before this date | 
- **sort_order** | **Character**| Sort by date &#x60;asc&#x60; or &#x60;desc&#x60; | [default to desc]
- **page_size** | **Integer**| The number of results to return | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **identifier** | Character| An Index Identifier (symbol, Intrinio ID) |  &nbsp;
+ **tag** | Character| An Intrinio data tag ID or code-name |  &nbsp;
+ **type** | Character| Filter by type, when applicable | [optional]  &nbsp;
+ **start_date** | Date| Get historical data on or after this date | [optional]  &nbsp;
+ **end_date** | Date| Get historical data on or before this date | [optional]  &nbsp;
+ **sort_order** | Character| Sort by date &#x60;asc&#x60; or &#x60;desc&#x60; | [optional] [default to desc] &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -940,7 +940,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_stock_market_index_by_id)
 
-[//]: # (RETURN_TYPE:::StockMarketIndex)
+[//]: # (RETURN_TYPE:IntrinioSDK::StockMarketIndex)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -983,6 +983,7 @@ IndexApi <- IntrinioSDK::IndexApi$new(client)
 identifier <- "$DJI" # Character | An Index Identifier (symbol, Intrinio ID)
 
 response <- IndexApi$get_stock_market_index_by_id(identifier)
+
 print(response)
 print(response$content)
 ```
@@ -996,11 +997,10 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| An Index Identifier (symbol, Intrinio ID) | 
+ **identifier** | Character| An Index Identifier (symbol, Intrinio ID) |  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -1062,6 +1062,7 @@ identifier <- "$DJI" # Character | An Index Identifier (symbol, Intrinio ID)
 tag <- "level" # Character | An Intrinio data tag ID or code-name
 
 response <- IndexApi$get_stock_market_index_data_point_number(identifier, tag)
+
 print(response)
 print(response$content)
 ```
@@ -1075,12 +1076,11 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| An Index Identifier (symbol, Intrinio ID) | 
- **tag** | **Character**| An Intrinio data tag ID or code-name | 
+ **identifier** | Character| An Index Identifier (symbol, Intrinio ID) |  &nbsp;
+ **tag** | Character| An Intrinio data tag ID or code-name |  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -1142,6 +1142,7 @@ identifier <- "$DJI" # Character | An Index Identifier (symbol, Intrinio ID)
 tag <- "level" # Character | An Intrinio data tag ID or code-name
 
 response <- IndexApi$get_stock_market_index_data_point_text(identifier, tag)
+
 print(response)
 print(response$content)
 ```
@@ -1155,12 +1156,11 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| An Index Identifier (symbol, Intrinio ID) | 
- **tag** | **Character**| An Intrinio data tag ID or code-name | 
+ **identifier** | Character| An Index Identifier (symbol, Intrinio ID) |  &nbsp;
+ **tag** | Character| An Intrinio data tag ID or code-name |  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -1177,7 +1177,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_stock_market_index_historical_data)
 
-[//]: # (RETURN_TYPE:::ApiResponseStockMarketIndexHistoricalData)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseStockMarketIndexHistoricalData)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -1232,6 +1232,7 @@ opts <- list(
 )
 
 response <- IndexApi$get_stock_market_index_historical_data(identifier, tag, opts)
+
 print(response)
 print(response$content)
 ```
@@ -1245,18 +1246,17 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **Character**| An Index Identifier (symbol, Intrinio ID) | 
- **tag** | **Character**| An Intrinio data tag ID or code-name | 
- **type** | **Character**| Filter by type, when applicable | 
- **start_date** | **Date**| Get historical data on or after this date | 
- **end_date** | **Date**| Get historical data on or before this date | 
- **sort_order** | **Character**| Sort by date &#x60;asc&#x60; or &#x60;desc&#x60; | [default to desc]
- **page_size** | **Integer**| The number of results to return | [default to 100]
- **next_page** | **Character**| Gets the next page of data from a previous API call | 
+ **identifier** | Character| An Index Identifier (symbol, Intrinio ID) |  &nbsp;
+ **tag** | Character| An Intrinio data tag ID or code-name |  &nbsp;
+ **type** | Character| Filter by type, when applicable | [optional]  &nbsp;
+ **start_date** | Date| Get historical data on or after this date | [optional]  &nbsp;
+ **end_date** | Date| Get historical data on or before this date | [optional]  &nbsp;
+ **sort_order** | Character| Sort by date &#x60;asc&#x60; or &#x60;desc&#x60; | [optional] [default to desc] &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -1273,7 +1273,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:search_economic_indices)
 
-[//]: # (RETURN_TYPE:::ApiResponseEconomicIndicesSearch)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseEconomicIndicesSearch)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -1322,6 +1322,7 @@ opts <- list(
 )
 
 response <- IndexApi$search_economic_indices(query, opts)
+
 print(response)
 print(response$content)
 ```
@@ -1335,12 +1336,11 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **query** | **Character**| Search query | 
- **page_size** | **Integer**| The number of results to return | [default to 100]
+ **query** | Character| Search query |  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -1357,7 +1357,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:search_sic_indices)
 
-[//]: # (RETURN_TYPE:::ApiResponseSICIndicesSearch)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseSICIndicesSearch)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -1406,6 +1406,7 @@ opts <- list(
 )
 
 response <- IndexApi$search_sic_indices(query, opts)
+
 print(response)
 print(response$content)
 ```
@@ -1419,12 +1420,11 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **query** | **Character**| Search query | 
- **page_size** | **Integer**| The number of results to return | [default to 100]
+ **query** | Character| Search query |  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
@@ -1441,7 +1441,7 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:search_stock_markets_indices)
 
-[//]: # (RETURN_TYPE:::ApiResponseStockMarketIndicesSearch)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseStockMarketIndicesSearch)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
@@ -1490,6 +1490,7 @@ opts <- list(
 )
 
 response <- IndexApi$search_stock_markets_indices(query, opts)
+
 print(response)
 print(response$content)
 ```
@@ -1503,12 +1504,11 @@ print(response$content)
 [//]: # (START_PARAMETERS)
 
 
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **query** | **Character**| Search query | 
- **page_size** | **Integer**| The number of results to return | [default to 100]
+ **query** | Character| Search query |  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+<br/>
 
 [//]: # (END_PARAMETERS)
 
