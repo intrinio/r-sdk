@@ -68,7 +68,7 @@ CompanyApi <- IntrinioSDK::CompanyApi$new(client)
 
 # Optional params
 opts <- list(
-  latest_filing_date = NULL, # Date | Last filing date
+  latest_filing_date = NULL, # Date | Return companies whose latest 10-Q or 10-K was filed on or after this date
   sic = NULL, # Character | Return companies with the given Standard Industrial Classification code
   template = NULL, # Character | Return companies with the given financial statement template
   sector = NULL, # Character | Return companies in the given industry sector
@@ -97,7 +97,7 @@ print(response$content)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **latest_filing_date** | Date| Last filing date | [optional]  &nbsp;
+ **latest_filing_date** | Date| Return companies whose latest 10-Q or 10-K was filed on or after this date | [optional]  &nbsp;
  **sic** | Character| Return companies with the given Standard Industrial Classification code | [optional]  &nbsp;
  **template** | Character| Return companies with the given financial statement template | [optional]  &nbsp;
  **sector** | Character| Return companies in the given industry sector | [optional]  &nbsp;

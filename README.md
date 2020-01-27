@@ -9,8 +9,8 @@ Welcome to the Intrinio API! Through our Financial Data Marketplace, we offer a 
 
 ## Overview
 
-- API version: 2.8.4
-- Package version: 0.0.1
+- API version: 2.8.8
+- Package version: 0.1.0
 
 The new Intrinio R SDK wraps all API v2 endpoints into an easy-to-use set of classes, methods, and response objects.
 
@@ -97,46 +97,6 @@ Class | Method | HTTP request | Description
 *IntrinioSDK::CompanyApi* | [**get_company_securities**](docs/CompanyApi.md#get_company_securities) | **GET** /companies/{identifier}/securities | All Securities by Company
 *IntrinioSDK::CompanyApi* | [**lookup_company_fundamental**](docs/CompanyApi.md#lookup_company_fundamental) | **GET** /companies/{identifier}/fundamentals/lookup/{statement_code}/{fiscal_year}/{fiscal_period} | Lookup Fundamental by Company
 *IntrinioSDK::CompanyApi* | [**search_companies**](docs/CompanyApi.md#search_companies) | **GET** /companies/search | Search Companies
-*IntrinioSDK::CryptoApi* | [**get_crypto_book_asks**](docs/CryptoApi.md#get_crypto_book_asks) | **GET** /crypto/book/asks | Crypto Book Asks
-*IntrinioSDK::CryptoApi* | [**get_crypto_book_bids**](docs/CryptoApi.md#get_crypto_book_bids) | **GET** /crypto/book/bids | Crypto Book Bids
-*IntrinioSDK::CryptoApi* | [**get_crypto_book_summary**](docs/CryptoApi.md#get_crypto_book_summary) | **GET** /crypto/book | Crypto Book Summary
-*IntrinioSDK::CryptoApi* | [**get_crypto_currencies**](docs/CryptoApi.md#get_crypto_currencies) | **GET** /crypto/currencies | Crypto Currencies
-*IntrinioSDK::CryptoApi* | [**get_crypto_exchanges**](docs/CryptoApi.md#get_crypto_exchanges) | **GET** /crypto/exchanges | Crypto Exchanges
-*IntrinioSDK::CryptoApi* | [**get_crypto_pairs**](docs/CryptoApi.md#get_crypto_pairs) | **GET** /crypto/pairs | Crypto Pairs
-*IntrinioSDK::CryptoApi* | [**get_crypto_price_technicals_adi**](docs/CryptoApi.md#get_crypto_price_technicals_adi) | **GET** /crypto/prices/technicals/adi | Accumulation/Distribution Index
-*IntrinioSDK::CryptoApi* | [**get_crypto_price_technicals_adtv**](docs/CryptoApi.md#get_crypto_price_technicals_adtv) | **GET** /crypto/prices/technicals/adtv | Average Daily Trading Volume
-*IntrinioSDK::CryptoApi* | [**get_crypto_price_technicals_adx**](docs/CryptoApi.md#get_crypto_price_technicals_adx) | **GET** /crypto/prices/technicals/adx | Average Directional Index
-*IntrinioSDK::CryptoApi* | [**get_crypto_price_technicals_ao**](docs/CryptoApi.md#get_crypto_price_technicals_ao) | **GET** /crypto/prices/technicals/ao | Awesome Oscillator
-*IntrinioSDK::CryptoApi* | [**get_crypto_price_technicals_atr**](docs/CryptoApi.md#get_crypto_price_technicals_atr) | **GET** /crypto/prices/technicals/atr | Average True Range
-*IntrinioSDK::CryptoApi* | [**get_crypto_price_technicals_bb**](docs/CryptoApi.md#get_crypto_price_technicals_bb) | **GET** /crypto/prices/technicals/bb | Bollinger Bands
-*IntrinioSDK::CryptoApi* | [**get_crypto_price_technicals_cci**](docs/CryptoApi.md#get_crypto_price_technicals_cci) | **GET** /crypto/prices/technicals/cci | Commodity Channel Index
-*IntrinioSDK::CryptoApi* | [**get_crypto_price_technicals_cmf**](docs/CryptoApi.md#get_crypto_price_technicals_cmf) | **GET** /crypto/prices/technicals/cmf | Chaikin Money Flow
-*IntrinioSDK::CryptoApi* | [**get_crypto_price_technicals_dc**](docs/CryptoApi.md#get_crypto_price_technicals_dc) | **GET** /crypto/prices/technicals/dc | Donchian Channel
-*IntrinioSDK::CryptoApi* | [**get_crypto_price_technicals_dpo**](docs/CryptoApi.md#get_crypto_price_technicals_dpo) | **GET** /crypto/prices/technicals/dpo | Detrended Price Oscillator
-*IntrinioSDK::CryptoApi* | [**get_crypto_price_technicals_eom**](docs/CryptoApi.md#get_crypto_price_technicals_eom) | **GET** /crypto/prices/technicals/eom | Ease of Movement
-*IntrinioSDK::CryptoApi* | [**get_crypto_price_technicals_fi**](docs/CryptoApi.md#get_crypto_price_technicals_fi) | **GET** /crypto/prices/technicals/fi | Force Index
-*IntrinioSDK::CryptoApi* | [**get_crypto_price_technicals_ichimoku**](docs/CryptoApi.md#get_crypto_price_technicals_ichimoku) | **GET** /crypto/prices/technicals/ichimoku | Ichimoku Kinko Hyo
-*IntrinioSDK::CryptoApi* | [**get_crypto_price_technicals_kc**](docs/CryptoApi.md#get_crypto_price_technicals_kc) | **GET** /crypto/prices/technicals/kc | Keltner Channel
-*IntrinioSDK::CryptoApi* | [**get_crypto_price_technicals_kst**](docs/CryptoApi.md#get_crypto_price_technicals_kst) | **GET** /crypto/prices/technicals/kst | Know Sure Thing
-*IntrinioSDK::CryptoApi* | [**get_crypto_price_technicals_macd**](docs/CryptoApi.md#get_crypto_price_technicals_macd) | **GET** /crypto/prices/technicals/macd | Moving Average Convergence Divergence
-*IntrinioSDK::CryptoApi* | [**get_crypto_price_technicals_mfi**](docs/CryptoApi.md#get_crypto_price_technicals_mfi) | **GET** /crypto/prices/technicals/mfi | Money Flow Index
-*IntrinioSDK::CryptoApi* | [**get_crypto_price_technicals_mi**](docs/CryptoApi.md#get_crypto_price_technicals_mi) | **GET** /crypto/prices/technicals/mi | Mass Index
-*IntrinioSDK::CryptoApi* | [**get_crypto_price_technicals_nvi**](docs/CryptoApi.md#get_crypto_price_technicals_nvi) | **GET** /crypto/prices/technicals/nvi | Negative Volume Index
-*IntrinioSDK::CryptoApi* | [**get_crypto_price_technicals_obv**](docs/CryptoApi.md#get_crypto_price_technicals_obv) | **GET** /crypto/prices/technicals/obv | On-balance Volume
-*IntrinioSDK::CryptoApi* | [**get_crypto_price_technicals_obv_mean**](docs/CryptoApi.md#get_crypto_price_technicals_obv_mean) | **GET** /crypto/prices/technicals/obv_mean | On-balance Volume Mean
-*IntrinioSDK::CryptoApi* | [**get_crypto_price_technicals_rsi**](docs/CryptoApi.md#get_crypto_price_technicals_rsi) | **GET** /crypto/prices/technicals/rsi | Relative Strength Index
-*IntrinioSDK::CryptoApi* | [**get_crypto_price_technicals_sma**](docs/CryptoApi.md#get_crypto_price_technicals_sma) | **GET** /crypto/prices/technicals/sma | Simple Moving Average
-*IntrinioSDK::CryptoApi* | [**get_crypto_price_technicals_sr**](docs/CryptoApi.md#get_crypto_price_technicals_sr) | **GET** /crypto/prices/technicals/sr | Stochastic Oscillator
-*IntrinioSDK::CryptoApi* | [**get_crypto_price_technicals_trix**](docs/CryptoApi.md#get_crypto_price_technicals_trix) | **GET** /crypto/prices/technicals/trix | Triple Exponential Average
-*IntrinioSDK::CryptoApi* | [**get_crypto_price_technicals_tsi**](docs/CryptoApi.md#get_crypto_price_technicals_tsi) | **GET** /crypto/prices/technicals/tsi | True Strength Index
-*IntrinioSDK::CryptoApi* | [**get_crypto_price_technicals_uo**](docs/CryptoApi.md#get_crypto_price_technicals_uo) | **GET** /crypto/prices/technicals/uo | Ultimate Oscillator
-*IntrinioSDK::CryptoApi* | [**get_crypto_price_technicals_vi**](docs/CryptoApi.md#get_crypto_price_technicals_vi) | **GET** /crypto/prices/technicals/vi | Vortex Indicator
-*IntrinioSDK::CryptoApi* | [**get_crypto_price_technicals_vpt**](docs/CryptoApi.md#get_crypto_price_technicals_vpt) | **GET** /crypto/prices/technicals/vpt | Volume-price Trend
-*IntrinioSDK::CryptoApi* | [**get_crypto_price_technicals_vwap**](docs/CryptoApi.md#get_crypto_price_technicals_vwap) | **GET** /crypto/prices/technicals/vwap | Volume Weighted Average Price
-*IntrinioSDK::CryptoApi* | [**get_crypto_price_technicals_wr**](docs/CryptoApi.md#get_crypto_price_technicals_wr) | **GET** /crypto/prices/technicals/wr | Williams %R
-*IntrinioSDK::CryptoApi* | [**get_crypto_prices**](docs/CryptoApi.md#get_crypto_prices) | **GET** /crypto/prices | Crypto Prices
-*IntrinioSDK::CryptoApi* | [**get_crypto_snapshot**](docs/CryptoApi.md#get_crypto_snapshot) | **GET** /crypto/snapshot | Crypto Snapshot
-*IntrinioSDK::CryptoApi* | [**get_crypto_stats**](docs/CryptoApi.md#get_crypto_stats) | **GET** /crypto/stats | Crypto Stats
 *IntrinioSDK::DataPointApi* | [**get_data_point_number**](docs/DataPointApi.md#get_data_point_number) | **GET** /data_point/{identifier}/{tag}/number | Data Point (Number)
 *IntrinioSDK::DataPointApi* | [**get_data_point_text**](docs/DataPointApi.md#get_data_point_text) | **GET** /data_point/{identifier}/{tag}/text | Data Point (Text)
 *IntrinioSDK::DataTagApi* | [**get_all_data_tags**](docs/DataTagApi.md#get_all_data_tags) | **GET** /data_tags | All Data Tags
@@ -237,37 +197,6 @@ Class | Method | HTTP request | Description
 *IntrinioSDK::StockExchangeApi* | [**get_stock_exchange_prices**](docs/StockExchangeApi.md#get_stock_exchange_prices) | **GET** /stock_exchanges/{identifier}/prices | Stock Prices by Exchange
 *IntrinioSDK::StockExchangeApi* | [**get_stock_exchange_realtime_prices**](docs/StockExchangeApi.md#get_stock_exchange_realtime_prices) | **GET** /stock_exchanges/{identifier}/prices/realtime | Realtime Stock Prices by Exchange
 *IntrinioSDK::StockExchangeApi* | [**get_stock_exchange_securities**](docs/StockExchangeApi.md#get_stock_exchange_securities) | **GET** /stock_exchanges/{identifier}/securities | Securities by Exchange
-*IntrinioSDK::TechnicalApi* | [**get_crypto_price_technicals_adi**](docs/TechnicalApi.md#get_crypto_price_technicals_adi) | **GET** /crypto/prices/technicals/adi | Accumulation/Distribution Index
-*IntrinioSDK::TechnicalApi* | [**get_crypto_price_technicals_adtv**](docs/TechnicalApi.md#get_crypto_price_technicals_adtv) | **GET** /crypto/prices/technicals/adtv | Average Daily Trading Volume
-*IntrinioSDK::TechnicalApi* | [**get_crypto_price_technicals_adx**](docs/TechnicalApi.md#get_crypto_price_technicals_adx) | **GET** /crypto/prices/technicals/adx | Average Directional Index
-*IntrinioSDK::TechnicalApi* | [**get_crypto_price_technicals_ao**](docs/TechnicalApi.md#get_crypto_price_technicals_ao) | **GET** /crypto/prices/technicals/ao | Awesome Oscillator
-*IntrinioSDK::TechnicalApi* | [**get_crypto_price_technicals_atr**](docs/TechnicalApi.md#get_crypto_price_technicals_atr) | **GET** /crypto/prices/technicals/atr | Average True Range
-*IntrinioSDK::TechnicalApi* | [**get_crypto_price_technicals_bb**](docs/TechnicalApi.md#get_crypto_price_technicals_bb) | **GET** /crypto/prices/technicals/bb | Bollinger Bands
-*IntrinioSDK::TechnicalApi* | [**get_crypto_price_technicals_cci**](docs/TechnicalApi.md#get_crypto_price_technicals_cci) | **GET** /crypto/prices/technicals/cci | Commodity Channel Index
-*IntrinioSDK::TechnicalApi* | [**get_crypto_price_technicals_cmf**](docs/TechnicalApi.md#get_crypto_price_technicals_cmf) | **GET** /crypto/prices/technicals/cmf | Chaikin Money Flow
-*IntrinioSDK::TechnicalApi* | [**get_crypto_price_technicals_dc**](docs/TechnicalApi.md#get_crypto_price_technicals_dc) | **GET** /crypto/prices/technicals/dc | Donchian Channel
-*IntrinioSDK::TechnicalApi* | [**get_crypto_price_technicals_dpo**](docs/TechnicalApi.md#get_crypto_price_technicals_dpo) | **GET** /crypto/prices/technicals/dpo | Detrended Price Oscillator
-*IntrinioSDK::TechnicalApi* | [**get_crypto_price_technicals_eom**](docs/TechnicalApi.md#get_crypto_price_technicals_eom) | **GET** /crypto/prices/technicals/eom | Ease of Movement
-*IntrinioSDK::TechnicalApi* | [**get_crypto_price_technicals_fi**](docs/TechnicalApi.md#get_crypto_price_technicals_fi) | **GET** /crypto/prices/technicals/fi | Force Index
-*IntrinioSDK::TechnicalApi* | [**get_crypto_price_technicals_ichimoku**](docs/TechnicalApi.md#get_crypto_price_technicals_ichimoku) | **GET** /crypto/prices/technicals/ichimoku | Ichimoku Kinko Hyo
-*IntrinioSDK::TechnicalApi* | [**get_crypto_price_technicals_kc**](docs/TechnicalApi.md#get_crypto_price_technicals_kc) | **GET** /crypto/prices/technicals/kc | Keltner Channel
-*IntrinioSDK::TechnicalApi* | [**get_crypto_price_technicals_kst**](docs/TechnicalApi.md#get_crypto_price_technicals_kst) | **GET** /crypto/prices/technicals/kst | Know Sure Thing
-*IntrinioSDK::TechnicalApi* | [**get_crypto_price_technicals_macd**](docs/TechnicalApi.md#get_crypto_price_technicals_macd) | **GET** /crypto/prices/technicals/macd | Moving Average Convergence Divergence
-*IntrinioSDK::TechnicalApi* | [**get_crypto_price_technicals_mfi**](docs/TechnicalApi.md#get_crypto_price_technicals_mfi) | **GET** /crypto/prices/technicals/mfi | Money Flow Index
-*IntrinioSDK::TechnicalApi* | [**get_crypto_price_technicals_mi**](docs/TechnicalApi.md#get_crypto_price_technicals_mi) | **GET** /crypto/prices/technicals/mi | Mass Index
-*IntrinioSDK::TechnicalApi* | [**get_crypto_price_technicals_nvi**](docs/TechnicalApi.md#get_crypto_price_technicals_nvi) | **GET** /crypto/prices/technicals/nvi | Negative Volume Index
-*IntrinioSDK::TechnicalApi* | [**get_crypto_price_technicals_obv**](docs/TechnicalApi.md#get_crypto_price_technicals_obv) | **GET** /crypto/prices/technicals/obv | On-balance Volume
-*IntrinioSDK::TechnicalApi* | [**get_crypto_price_technicals_obv_mean**](docs/TechnicalApi.md#get_crypto_price_technicals_obv_mean) | **GET** /crypto/prices/technicals/obv_mean | On-balance Volume Mean
-*IntrinioSDK::TechnicalApi* | [**get_crypto_price_technicals_rsi**](docs/TechnicalApi.md#get_crypto_price_technicals_rsi) | **GET** /crypto/prices/technicals/rsi | Relative Strength Index
-*IntrinioSDK::TechnicalApi* | [**get_crypto_price_technicals_sma**](docs/TechnicalApi.md#get_crypto_price_technicals_sma) | **GET** /crypto/prices/technicals/sma | Simple Moving Average
-*IntrinioSDK::TechnicalApi* | [**get_crypto_price_technicals_sr**](docs/TechnicalApi.md#get_crypto_price_technicals_sr) | **GET** /crypto/prices/technicals/sr | Stochastic Oscillator
-*IntrinioSDK::TechnicalApi* | [**get_crypto_price_technicals_trix**](docs/TechnicalApi.md#get_crypto_price_technicals_trix) | **GET** /crypto/prices/technicals/trix | Triple Exponential Average
-*IntrinioSDK::TechnicalApi* | [**get_crypto_price_technicals_tsi**](docs/TechnicalApi.md#get_crypto_price_technicals_tsi) | **GET** /crypto/prices/technicals/tsi | True Strength Index
-*IntrinioSDK::TechnicalApi* | [**get_crypto_price_technicals_uo**](docs/TechnicalApi.md#get_crypto_price_technicals_uo) | **GET** /crypto/prices/technicals/uo | Ultimate Oscillator
-*IntrinioSDK::TechnicalApi* | [**get_crypto_price_technicals_vi**](docs/TechnicalApi.md#get_crypto_price_technicals_vi) | **GET** /crypto/prices/technicals/vi | Vortex Indicator
-*IntrinioSDK::TechnicalApi* | [**get_crypto_price_technicals_vpt**](docs/TechnicalApi.md#get_crypto_price_technicals_vpt) | **GET** /crypto/prices/technicals/vpt | Volume-price Trend
-*IntrinioSDK::TechnicalApi* | [**get_crypto_price_technicals_vwap**](docs/TechnicalApi.md#get_crypto_price_technicals_vwap) | **GET** /crypto/prices/technicals/vwap | Volume Weighted Average Price
-*IntrinioSDK::TechnicalApi* | [**get_crypto_price_technicals_wr**](docs/TechnicalApi.md#get_crypto_price_technicals_wr) | **GET** /crypto/prices/technicals/wr | Williams %R
 *IntrinioSDK::TechnicalApi* | [**get_security_price_technicals_adi**](docs/TechnicalApi.md#get_security_price_technicals_adi) | **GET** /securities/{identifier}/prices/technicals/adi | Accumulation/Distribution Index
 *IntrinioSDK::TechnicalApi* | [**get_security_price_technicals_adtv**](docs/TechnicalApi.md#get_security_price_technicals_adtv) | **GET** /securities/{identifier}/prices/technicals/adtv | Average Daily Trading Volume
 *IntrinioSDK::TechnicalApi* | [**get_security_price_technicals_adx**](docs/TechnicalApi.md#get_security_price_technicals_adx) | **GET** /securities/{identifier}/prices/technicals/adx | Average Directional Index
@@ -314,46 +243,6 @@ Class | Method | HTTP request | Description
  - [IntrinioSDK::ApiResponseCompanyHistoricalData](docs/ApiResponseCompanyHistoricalData.md)
  - [IntrinioSDK::ApiResponseCompanyNews](docs/ApiResponseCompanyNews.md)
  - [IntrinioSDK::ApiResponseCompanySecurities](docs/ApiResponseCompanySecurities.md)
- - [IntrinioSDK::ApiResponseCryptoAccumulationDistributionIndex](docs/ApiResponseCryptoAccumulationDistributionIndex.md)
- - [IntrinioSDK::ApiResponseCryptoAverageDailyTradingVolume](docs/ApiResponseCryptoAverageDailyTradingVolume.md)
- - [IntrinioSDK::ApiResponseCryptoAverageDirectionalIndex](docs/ApiResponseCryptoAverageDirectionalIndex.md)
- - [IntrinioSDK::ApiResponseCryptoAverageTrueRange](docs/ApiResponseCryptoAverageTrueRange.md)
- - [IntrinioSDK::ApiResponseCryptoAwesomeOscillator](docs/ApiResponseCryptoAwesomeOscillator.md)
- - [IntrinioSDK::ApiResponseCryptoBollingerBands](docs/ApiResponseCryptoBollingerBands.md)
- - [IntrinioSDK::ApiResponseCryptoBook](docs/ApiResponseCryptoBook.md)
- - [IntrinioSDK::ApiResponseCryptoBookAsks](docs/ApiResponseCryptoBookAsks.md)
- - [IntrinioSDK::ApiResponseCryptoBookBids](docs/ApiResponseCryptoBookBids.md)
- - [IntrinioSDK::ApiResponseCryptoChaikinMoneyFlow](docs/ApiResponseCryptoChaikinMoneyFlow.md)
- - [IntrinioSDK::ApiResponseCryptoCommodityChannelIndex](docs/ApiResponseCryptoCommodityChannelIndex.md)
- - [IntrinioSDK::ApiResponseCryptoCurrencies](docs/ApiResponseCryptoCurrencies.md)
- - [IntrinioSDK::ApiResponseCryptoDetrendedPriceOscillator](docs/ApiResponseCryptoDetrendedPriceOscillator.md)
- - [IntrinioSDK::ApiResponseCryptoDonchianChannel](docs/ApiResponseCryptoDonchianChannel.md)
- - [IntrinioSDK::ApiResponseCryptoEaseOfMovement](docs/ApiResponseCryptoEaseOfMovement.md)
- - [IntrinioSDK::ApiResponseCryptoExchanges](docs/ApiResponseCryptoExchanges.md)
- - [IntrinioSDK::ApiResponseCryptoForceIndex](docs/ApiResponseCryptoForceIndex.md)
- - [IntrinioSDK::ApiResponseCryptoIchimokuKinkoHyo](docs/ApiResponseCryptoIchimokuKinkoHyo.md)
- - [IntrinioSDK::ApiResponseCryptoKeltnerChannel](docs/ApiResponseCryptoKeltnerChannel.md)
- - [IntrinioSDK::ApiResponseCryptoKnowSureThing](docs/ApiResponseCryptoKnowSureThing.md)
- - [IntrinioSDK::ApiResponseCryptoMassIndex](docs/ApiResponseCryptoMassIndex.md)
- - [IntrinioSDK::ApiResponseCryptoMoneyFlowIndex](docs/ApiResponseCryptoMoneyFlowIndex.md)
- - [IntrinioSDK::ApiResponseCryptoMovingAverageConvergenceDivergence](docs/ApiResponseCryptoMovingAverageConvergenceDivergence.md)
- - [IntrinioSDK::ApiResponseCryptoNegativeVolumeIndex](docs/ApiResponseCryptoNegativeVolumeIndex.md)
- - [IntrinioSDK::ApiResponseCryptoOnBalanceVolume](docs/ApiResponseCryptoOnBalanceVolume.md)
- - [IntrinioSDK::ApiResponseCryptoOnBalanceVolumeMean](docs/ApiResponseCryptoOnBalanceVolumeMean.md)
- - [IntrinioSDK::ApiResponseCryptoPairs](docs/ApiResponseCryptoPairs.md)
- - [IntrinioSDK::ApiResponseCryptoPrices](docs/ApiResponseCryptoPrices.md)
- - [IntrinioSDK::ApiResponseCryptoRelativeStrengthIndex](docs/ApiResponseCryptoRelativeStrengthIndex.md)
- - [IntrinioSDK::ApiResponseCryptoSimpleMovingAverage](docs/ApiResponseCryptoSimpleMovingAverage.md)
- - [IntrinioSDK::ApiResponseCryptoSnapshot](docs/ApiResponseCryptoSnapshot.md)
- - [IntrinioSDK::ApiResponseCryptoStats](docs/ApiResponseCryptoStats.md)
- - [IntrinioSDK::ApiResponseCryptoStochasticOscillator](docs/ApiResponseCryptoStochasticOscillator.md)
- - [IntrinioSDK::ApiResponseCryptoTripleExponentialAverage](docs/ApiResponseCryptoTripleExponentialAverage.md)
- - [IntrinioSDK::ApiResponseCryptoTrueStrengthIndex](docs/ApiResponseCryptoTrueStrengthIndex.md)
- - [IntrinioSDK::ApiResponseCryptoUltimateOscillator](docs/ApiResponseCryptoUltimateOscillator.md)
- - [IntrinioSDK::ApiResponseCryptoVolumePriceTrend](docs/ApiResponseCryptoVolumePriceTrend.md)
- - [IntrinioSDK::ApiResponseCryptoVolumeWeightedAveragePrice](docs/ApiResponseCryptoVolumeWeightedAveragePrice.md)
- - [IntrinioSDK::ApiResponseCryptoVortexIndicator](docs/ApiResponseCryptoVortexIndicator.md)
- - [IntrinioSDK::ApiResponseCryptoWilliamsR](docs/ApiResponseCryptoWilliamsR.md)
  - [IntrinioSDK::ApiResponseDataTags](docs/ApiResponseDataTags.md)
  - [IntrinioSDK::ApiResponseDataTagsSearch](docs/ApiResponseDataTagsSearch.md)
  - [IntrinioSDK::ApiResponseEconomicIndexHistoricalData](docs/ApiResponseEconomicIndexHistoricalData.md)
@@ -445,17 +334,6 @@ Class | Method | HTTP request | Description
  - [IntrinioSDK::CompanyNews](docs/CompanyNews.md)
  - [IntrinioSDK::CompanyNewsSummary](docs/CompanyNewsSummary.md)
  - [IntrinioSDK::CompanySummary](docs/CompanySummary.md)
- - [IntrinioSDK::CryptoAsk](docs/CryptoAsk.md)
- - [IntrinioSDK::CryptoBid](docs/CryptoBid.md)
- - [IntrinioSDK::CryptoBookEntry](docs/CryptoBookEntry.md)
- - [IntrinioSDK::CryptoCurrency](docs/CryptoCurrency.md)
- - [IntrinioSDK::CryptoExchange](docs/CryptoExchange.md)
- - [IntrinioSDK::CryptoExchangeSummary](docs/CryptoExchangeSummary.md)
- - [IntrinioSDK::CryptoPair](docs/CryptoPair.md)
- - [IntrinioSDK::CryptoPairSummary](docs/CryptoPairSummary.md)
- - [IntrinioSDK::CryptoPrice](docs/CryptoPrice.md)
- - [IntrinioSDK::CryptoSnapshot](docs/CryptoSnapshot.md)
- - [IntrinioSDK::CryptoStat](docs/CryptoStat.md)
  - [IntrinioSDK::DataTag](docs/DataTag.md)
  - [IntrinioSDK::DataTagSummary](docs/DataTagSummary.md)
  - [IntrinioSDK::DetrendedPriceOscillatorTechnicalValue](docs/DetrendedPriceOscillatorTechnicalValue.md)

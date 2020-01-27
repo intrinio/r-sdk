@@ -19,9 +19,13 @@ Name | Type | Description
 **status** | **Character** | Status of the dividend &nbsp;
 **forward_yield** | **Numeric** | The forward dividend yield &nbsp;
 **forward_rate** | **Numeric** | The forward dividend rate &nbsp;
+**last_ex_dividend_date** | [**Date**](Date.md) | The last reported day the stock starts trading without the value of its next dividend payment &nbsp;
 **security** | [**SecuritySummary**](SecuritySummary.md) |  &nbsp;
 
 [//]: # (END_DEFINITION)
+
+
+[//]: # (CONTAINED_CLASS:IntrinioSDK::Date)
 
 
 [//]: # (CONTAINED_CLASS:IntrinioSDK::Date)

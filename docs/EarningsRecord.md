@@ -32,9 +32,13 @@ Name | Type | Description
 **next_earnings_date** | [**Date**](Date.md) | Next earnings date &nbsp;
 **next_earnings_quarter** | **Character** | The quarter of the next earnings release &nbsp;
 **next_earnings_fiscal_year** | **Integer** | The fiscal year associated with next earnings date and next earnings quarter &nbsp;
+**preliminary_earnings_date** | [**Date**](Date.md) | The release date of a preliminary earnings report &nbsp;
 **security** | [**SecuritySummary**](SecuritySummary.md) |  &nbsp;
 
 [//]: # (END_DEFINITION)
+
+
+[//]: # (CONTAINED_CLASS:IntrinioSDK::Date)
 
 
 [//]: # (CONTAINED_CLASS:IntrinioSDK::Date)
