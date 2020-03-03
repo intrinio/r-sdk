@@ -96,9 +96,9 @@ ApiResponseMunicipalities <- R6::R6Class(
     },
     getAsList = function() {
       listObject = list()
-      listObject[["municipalities"]] <- lapply(self$`municipalities`, function(o) {
-        return(o$getAsList())
-      })
+      # listObject[["municipalities"]] <- lapply(self$`municipalities`, function(o) {
+      #  return(o$getAsList())
+      # })
 
 
 

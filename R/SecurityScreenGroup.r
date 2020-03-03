@@ -133,17 +133,17 @@ SecurityScreenGroup <- R6::R6Class(
     getAsList = function() {
       listObject = list()
       listObject[["operator"]] <- self$`operator`
-      listObject[["clauses"]] <- lapply(self$`clauses`, function(o) {
-        return(o$getAsList())
-      })
+      # listObject[["clauses"]] <- lapply(self$`clauses`, function(o) {
+      #  return(o$getAsList())
+      # })
 
 
 
 
         
-      listObject[["groups"]] <- lapply(self$`groups`, function(o) {
-        return(o$getAsList())
-      })
+      # listObject[["groups"]] <- lapply(self$`groups`, function(o) {
+      #  return(o$getAsList())
+      # })
 
 
 

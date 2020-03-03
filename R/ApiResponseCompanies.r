@@ -96,9 +96,9 @@ ApiResponseCompanies <- R6::R6Class(
     },
     getAsList = function() {
       listObject = list()
-      listObject[["companies"]] <- lapply(self$`companies`, function(o) {
-        return(o$getAsList())
-      })
+      # listObject[["companies"]] <- lapply(self$`companies`, function(o) {
+      #  return(o$getAsList())
+      # })
 
 
 

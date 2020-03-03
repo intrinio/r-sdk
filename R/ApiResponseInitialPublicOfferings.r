@@ -96,9 +96,9 @@ ApiResponseInitialPublicOfferings <- R6::R6Class(
     },
     getAsList = function() {
       listObject = list()
-      listObject[["initial_public_offerings"]] <- lapply(self$`initial_public_offerings`, function(o) {
-        return(o$getAsList())
-      })
+      # listObject[["initial_public_offerings"]] <- lapply(self$`initial_public_offerings`, function(o) {
+      #  return(o$getAsList())
+      # })
 
 
 

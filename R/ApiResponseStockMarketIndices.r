@@ -96,9 +96,9 @@ ApiResponseStockMarketIndices <- R6::R6Class(
     },
     getAsList = function() {
       listObject = list()
-      listObject[["indices"]] <- lapply(self$`indices`, function(o) {
-        return(o$getAsList())
-      })
+      # listObject[["indices"]] <- lapply(self$`indices`, function(o) {
+      #  return(o$getAsList())
+      # })
 
 
 

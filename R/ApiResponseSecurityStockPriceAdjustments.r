@@ -122,9 +122,9 @@ ApiResponseSecurityStockPriceAdjustments <- R6::R6Class(
     },
     getAsList = function() {
       listObject = list()
-      listObject[["stock_price_adjustments"]] <- lapply(self$`stock_price_adjustments`, function(o) {
-        return(o$getAsList())
-      })
+      # listObject[["stock_price_adjustments"]] <- lapply(self$`stock_price_adjustments`, function(o) {
+      #  return(o$getAsList())
+      # })
 
 
 

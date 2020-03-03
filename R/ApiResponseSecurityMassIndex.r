@@ -148,9 +148,9 @@ ApiResponseSecurityMassIndex <- R6::R6Class(
     },
     getAsList = function() {
       listObject = list()
-      listObject[["technicals"]] <- lapply(self$`technicals`, function(o) {
-        return(o$getAsList())
-      })
+      # listObject[["technicals"]] <- lapply(self$`technicals`, function(o) {
+      #  return(o$getAsList())
+      # })
 
 
 

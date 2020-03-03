@@ -122,9 +122,9 @@ ApiResponseCompanyFilings <- R6::R6Class(
     },
     getAsList = function() {
       listObject = list()
-      listObject[["filings"]] <- lapply(self$`filings`, function(o) {
-        return(o$getAsList())
-      })
+      # listObject[["filings"]] <- lapply(self$`filings`, function(o) {
+      #  return(o$getAsList())
+      # })
 
 
 

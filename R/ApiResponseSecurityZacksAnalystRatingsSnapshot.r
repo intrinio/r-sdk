@@ -99,9 +99,9 @@ ApiResponseSecurityZacksAnalystRatingsSnapshot <- R6::R6Class(
     },
     getAsList = function() {
       listObject = list()
-      listObject[["snapshots"]] <- lapply(self$`snapshots`, function(o) {
-        return(o$getAsList())
-      })
+      # listObject[["snapshots"]] <- lapply(self$`snapshots`, function(o) {
+      #  return(o$getAsList())
+      # })
 
 
 

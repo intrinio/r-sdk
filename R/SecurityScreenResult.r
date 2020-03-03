@@ -108,9 +108,9 @@ SecurityScreenResult <- R6::R6Class(
         listObject[[paste("security_",x, sep = "")]] <- self$`security`[[x]]
       }
         
-      listObject[["data"]] <- lapply(self$`data`, function(o) {
-        return(o$getAsList())
-      })
+      # listObject[["data"]] <- lapply(self$`data`, function(o) {
+      #  return(o$getAsList())
+      # })
 
 
 

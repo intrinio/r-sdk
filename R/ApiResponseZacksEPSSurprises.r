@@ -96,9 +96,9 @@ ApiResponseZacksEPSSurprises <- R6::R6Class(
     },
     getAsList = function() {
       listObject = list()
-      listObject[["eps_surprises"]] <- lapply(self$`eps_surprises`, function(o) {
-        return(o$getAsList())
-      })
+      # listObject[["eps_surprises"]] <- lapply(self$`eps_surprises`, function(o) {
+      #  return(o$getAsList())
+      # })
 
 
 

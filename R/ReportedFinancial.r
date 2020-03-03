@@ -132,9 +132,9 @@ ReportedFinancial <- R6::R6Class(
       }
         
       listObject[["value"]] <- self$`value`
-      listObject[["dimensions"]] <- lapply(self$`dimensions`, function(o) {
-        return(o$getAsList())
-      })
+      # listObject[["dimensions"]] <- lapply(self$`dimensions`, function(o) {
+      #  return(o$getAsList())
+      # })
 
 
 

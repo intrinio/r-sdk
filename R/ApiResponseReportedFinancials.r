@@ -122,9 +122,9 @@ ApiResponseReportedFinancials <- R6::R6Class(
     },
     getAsList = function() {
       listObject = list()
-      listObject[["reported_financials"]] <- lapply(self$`reported_financials`, function(o) {
-        return(o$getAsList())
-      })
+      # listObject[["reported_financials"]] <- lapply(self$`reported_financials`, function(o) {
+      #  return(o$getAsList())
+      # })
 
 
 

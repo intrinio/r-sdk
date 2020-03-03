@@ -96,9 +96,9 @@ ApiResponseOptions <- R6::R6Class(
     },
     getAsList = function() {
       listObject = list()
-      listObject[["options"]] <- lapply(self$`options`, function(o) {
-        return(o$getAsList())
-      })
+      # listObject[["options"]] <- lapply(self$`options`, function(o) {
+      #  return(o$getAsList())
+      # })
 
 
 

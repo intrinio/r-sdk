@@ -145,9 +145,9 @@ ApiResponseSecurityIntradayPrices <- R6::R6Class(
     },
     getAsList = function() {
       listObject = list()
-      listObject[["intraday_prices"]] <- lapply(self$`intraday_prices`, function(o) {
-        return(o$getAsList())
-      })
+      # listObject[["intraday_prices"]] <- lapply(self$`intraday_prices`, function(o) {
+      #  return(o$getAsList())
+      # })
 
 
 

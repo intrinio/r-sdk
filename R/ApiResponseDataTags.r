@@ -96,9 +96,9 @@ ApiResponseDataTags <- R6::R6Class(
     },
     getAsList = function() {
       listObject = list()
-      listObject[["tags"]] <- lapply(self$`tags`, function(o) {
-        return(o$getAsList())
-      })
+      # listObject[["tags"]] <- lapply(self$`tags`, function(o) {
+      #  return(o$getAsList())
+      # })
 
 
 

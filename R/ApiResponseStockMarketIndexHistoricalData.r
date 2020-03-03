@@ -122,9 +122,9 @@ ApiResponseStockMarketIndexHistoricalData <- R6::R6Class(
     },
     getAsList = function() {
       listObject = list()
-      listObject[["historical_data"]] <- lapply(self$`historical_data`, function(o) {
-        return(o$getAsList())
-      })
+      # listObject[["historical_data"]] <- lapply(self$`historical_data`, function(o) {
+      #  return(o$getAsList())
+      # })
 
 
 

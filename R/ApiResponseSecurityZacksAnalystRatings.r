@@ -122,9 +122,9 @@ ApiResponseSecurityZacksAnalystRatings <- R6::R6Class(
     },
     getAsList = function() {
       listObject = list()
-      listObject[["analyst_ratings"]] <- lapply(self$`analyst_ratings`, function(o) {
-        return(o$getAsList())
-      })
+      # listObject[["analyst_ratings"]] <- lapply(self$`analyst_ratings`, function(o) {
+      #  return(o$getAsList())
+      # })
 
 
 

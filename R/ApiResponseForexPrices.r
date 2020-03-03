@@ -122,9 +122,9 @@ ApiResponseForexPrices <- R6::R6Class(
     },
     getAsList = function() {
       listObject = list()
-      listObject[["prices"]] <- lapply(self$`prices`, function(o) {
-        return(o$getAsList())
-      })
+      # listObject[["prices"]] <- lapply(self$`prices`, function(o) {
+      #  return(o$getAsList())
+      # })
 
 
 

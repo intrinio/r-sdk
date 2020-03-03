@@ -73,9 +73,9 @@ ApiResponseForexCurrencies <- R6::R6Class(
     },
     getAsList = function() {
       listObject = list()
-      listObject[["currencies"]] <- lapply(self$`currencies`, function(o) {
-        return(o$getAsList())
-      })
+      # listObject[["currencies"]] <- lapply(self$`currencies`, function(o) {
+      #  return(o$getAsList())
+      # })
 
 
 

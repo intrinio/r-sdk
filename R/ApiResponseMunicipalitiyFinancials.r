@@ -99,9 +99,9 @@ ApiResponseMunicipalitiyFinancials <- R6::R6Class(
     },
     getAsList = function() {
       listObject = list()
-      listObject[["financials"]] <- lapply(self$`financials`, function(o) {
-        return(o$getAsList())
-      })
+      # listObject[["financials"]] <- lapply(self$`financials`, function(o) {
+      #  return(o$getAsList())
+      # })
 
 
 

@@ -122,9 +122,9 @@ ApiResponseCompanyFundamentals <- R6::R6Class(
     },
     getAsList = function() {
       listObject = list()
-      listObject[["fundamentals"]] <- lapply(self$`fundamentals`, function(o) {
-        return(o$getAsList())
-      })
+      # listObject[["fundamentals"]] <- lapply(self$`fundamentals`, function(o) {
+      #  return(o$getAsList())
+      # })
 
 
 

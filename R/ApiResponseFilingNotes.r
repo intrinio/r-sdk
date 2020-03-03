@@ -96,9 +96,9 @@ ApiResponseFilingNotes <- R6::R6Class(
     },
     getAsList = function() {
       listObject = list()
-      listObject[["filing_notes"]] <- lapply(self$`filing_notes`, function(o) {
-        return(o$getAsList())
-      })
+      # listObject[["filing_notes"]] <- lapply(self$`filing_notes`, function(o) {
+      #  return(o$getAsList())
+      # })
 
 
 

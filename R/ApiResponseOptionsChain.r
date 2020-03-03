@@ -73,9 +73,9 @@ ApiResponseOptionsChain <- R6::R6Class(
     },
     getAsList = function() {
       listObject = list()
-      listObject[["chain"]] <- lapply(self$`chain`, function(o) {
-        return(o$getAsList())
-      })
+      # listObject[["chain"]] <- lapply(self$`chain`, function(o) {
+      #  return(o$getAsList())
+      # })
 
 
 

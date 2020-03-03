@@ -96,9 +96,9 @@ ApiResponseNews <- R6::R6Class(
     },
     getAsList = function() {
       listObject = list()
-      listObject[["news"]] <- lapply(self$`news`, function(o) {
-        return(o$getAsList())
-      })
+      # listObject[["news"]] <- lapply(self$`news`, function(o) {
+      #  return(o$getAsList())
+      # })
 
 
 

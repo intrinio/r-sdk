@@ -96,9 +96,9 @@ ApiResponseZacksSalesSurprises <- R6::R6Class(
     },
     getAsList = function() {
       listObject = list()
-      listObject[["sales_surprises"]] <- lapply(self$`sales_surprises`, function(o) {
-        return(o$getAsList())
-      })
+      # listObject[["sales_surprises"]] <- lapply(self$`sales_surprises`, function(o) {
+      #  return(o$getAsList())
+      # })
 
 
 

@@ -1,7 +1,5 @@
 # Intrinio R SDK
 
-### ALPHA - Not recommended for Production
-
 To get an API key, [sign up here](https://intrinio.com/).
 
 Welcome to the Intrinio API! Through our Financial Data Marketplace, we offer a wide selection of financial data feed APIs sourced by our own proprietary processes as well as from many data vendors. For a complete API request / response reference please view the [Intrinio API documentation](https://intrinio.com/documentation/api_v2). If you need additional help in using the API, please visit the [Intrinio website](https://intrinio.com) and click on the chat icon in the lower right corner.
@@ -10,7 +8,7 @@ Welcome to the Intrinio API! Through our Financial Data Marketplace, we offer a 
 ## Overview
 
 - API version: 2.8.8
-- Package version: 0.1.0
+- Package version: 1.0.0
 
 The new Intrinio R SDK wraps all API v2 endpoints into an easy-to-use set of classes, methods, and response objects.
 
@@ -408,4 +406,3 @@ Class | Method | HTTP request | Description
  - [IntrinioSDK::ZacksEPSSurpriseSummary](docs/ZacksEPSSurpriseSummary.md)
  - [IntrinioSDK::ZacksSalesSurprise](docs/ZacksSalesSurprise.md)
  - [IntrinioSDK::ZacksSalesSurpriseSummary](docs/ZacksSalesSurpriseSummary.md)
-

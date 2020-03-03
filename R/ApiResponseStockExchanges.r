@@ -96,9 +96,9 @@ ApiResponseStockExchanges <- R6::R6Class(
     },
     getAsList = function() {
       listObject = list()
-      listObject[["stock_exchanges"]] <- lapply(self$`stock_exchanges`, function(o) {
-        return(o$getAsList())
-      })
+      # listObject[["stock_exchanges"]] <- lapply(self$`stock_exchanges`, function(o) {
+      #  return(o$getAsList())
+      # })
 
 
 
