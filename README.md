@@ -7,8 +7,8 @@ Welcome to the Intrinio API! Through our Financial Data Marketplace, we offer a 
 
 ## Overview
 
-- API version: 2.8.8
-- Package version: 1.0.0
+- API version: 2.9.0
+- Package version: 1.1.0
 
 The new Intrinio R SDK wraps all API v2 endpoints into an easy-to-use set of classes, methods, and response objects.
 
@@ -82,6 +82,7 @@ A listing of classes and methods is also provided below:
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*IntrinioSDK::BulkDownloadsApi* | [**get_bulk_download_links**](docs/BulkDownloadsApi.md#get_bulk_download_links) | **GET** /bulk_downloads/links | Bulk Downloads
 *IntrinioSDK::CompanyApi* | [**get_all_companies**](docs/CompanyApi.md#get_all_companies) | **GET** /companies | All Companies
 *IntrinioSDK::CompanyApi* | [**get_all_company_news**](docs/CompanyApi.md#get_all_company_news) | **GET** /companies/news | All News
 *IntrinioSDK::CompanyApi* | [**get_company**](docs/CompanyApi.md#get_company) | **GET** /companies/{identifier} | Lookup Company
@@ -234,6 +235,7 @@ Class | Method | HTTP request | Description
 ## Models
 
  - [IntrinioSDK::AccumulationDistributionIndexTechnicalValue](docs/AccumulationDistributionIndexTechnicalValue.md)
+ - [IntrinioSDK::ApiResponseBulkDownloadLinks](docs/ApiResponseBulkDownloadLinks.md)
  - [IntrinioSDK::ApiResponseCompanies](docs/ApiResponseCompanies.md)
  - [IntrinioSDK::ApiResponseCompaniesSearch](docs/ApiResponseCompaniesSearch.md)
  - [IntrinioSDK::ApiResponseCompanyFilings](docs/ApiResponseCompanyFilings.md)
@@ -324,6 +326,8 @@ Class | Method | HTTP request | Description
  - [IntrinioSDK::AverageTrueRangeTechnicalValue](docs/AverageTrueRangeTechnicalValue.md)
  - [IntrinioSDK::AwesomeOscillatorTechnicalValue](docs/AwesomeOscillatorTechnicalValue.md)
  - [IntrinioSDK::BollingerBandsTechnicalValue](docs/BollingerBandsTechnicalValue.md)
+ - [IntrinioSDK::BulkDownloadLinks](docs/BulkDownloadLinks.md)
+ - [IntrinioSDK::BulkDownloadSummary](docs/BulkDownloadSummary.md)
  - [IntrinioSDK::ChaikinMoneyFlowTechnicalValue](docs/ChaikinMoneyFlowTechnicalValue.md)
  - [IntrinioSDK::CommodityChannelIndexTechnicalValue](docs/CommodityChannelIndexTechnicalValue.md)
  - [IntrinioSDK::Company](docs/Company.md)
@@ -406,3 +410,4 @@ Class | Method | HTTP request | Description
  - [IntrinioSDK::ZacksEPSSurpriseSummary](docs/ZacksEPSSurpriseSummary.md)
  - [IntrinioSDK::ZacksSalesSurprise](docs/ZacksSalesSurprise.md)
  - [IntrinioSDK::ZacksSalesSurpriseSummary](docs/ZacksSalesSurpriseSummary.md)
+
