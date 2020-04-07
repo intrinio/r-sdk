@@ -8,6 +8,8 @@ Method | HTTP request | Description
 [**get_all_notes**](FilingApi.md#get_all_notes) | **GET** /filings/notes | All Filing Notes
 [**get_filing_by_id**](FilingApi.md#get_filing_by_id) | **GET** /filings/{id} | Lookup Filing
 [**get_filing_fundamentals**](FilingApi.md#get_filing_fundamentals) | **GET** /filings/{identifier}/fundamentals | All Fundamentals by Filing
+[**get_filing_html**](FilingApi.md#get_filing_html) | **GET** /filings/{identifier}/html | Filing Html
+[**get_filing_text**](FilingApi.md#get_filing_text) | **GET** /filings/{identifier}/text | Filing Text
 [**get_note**](FilingApi.md#get_note) | **GET** /filings/notes/{identifier} | Filing Note by ID
 [**get_note_html**](FilingApi.md#get_note_html) | **GET** /filings/notes/{identifier}/html | Filing Note HTML
 [**get_note_text**](FilingApi.md#get_note_text) | **GET** /filings/notes/{identifier}/text | Filing Note Text
@@ -69,6 +71,8 @@ opts <- list(
   report_type = NULL, # Character | Filter by report type. Separate values with commas to return multiple The filing <a href=\"https://docs.intrinio.com/documentation/sec_filing_report_types\" target=\"_blank\">report types</a>.
   start_date = as.Date("2015-01-01"), # Date | Filed on or after the given date
   end_date = NULL, # Date | Filed before or after the given date
+  industry_category = NULL, # Character | Return companies in the given industry category
+  industry_group = NULL, # Character | Return companies in the given industry group
   page_size = 100, # Integer | The number of results to return
   next_page = NULL # Character | Gets the next page of data from a previous API call
 )
@@ -94,6 +98,8 @@ Name | Type | Description  | Notes
  **report_type** | Character| Filter by report type. Separate values with commas to return multiple The filing &lt;a href&#x3D;\&quot;https://docs.intrinio.com/documentation/sec_filing_report_types\&quot; target&#x3D;\&quot;_blank\&quot;&gt;report types&lt;/a&gt;. | [optional]  &nbsp;
  **start_date** | Date| Filed on or after the given date | [optional]  &nbsp;
  **end_date** | Date| Filed before or after the given date | [optional]  &nbsp;
+ **industry_category** | Character| Return companies in the given industry category | [optional]  &nbsp;
+ **industry_group** | Character| Return companies in the given industry group | [optional]  &nbsp;
  **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
  **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
 <br/>
@@ -371,6 +377,160 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ApiResponseFilingFundamentals**](ApiResponseFilingFundamentals.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:IntrinioSDK::FilingApi)
+
+[//]: # (METHOD:get_filing_html)
+
+[//]: # (RETURN_TYPE:Character)
+
+[//]: # (RETURN_TYPE_KIND:primitive)
+
+[//]: # (RETURN_TYPE_DOC:)
+
+[//]: # (OPERATION:get_filing_html_v2)
+
+[//]: # (ENDPOINT:/filings/{identifier}/html)
+
+[//]: # (DOCUMENT_LINK:FilingApi.md#get_filing_html)
+
+# **get_filing_html**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/r/get_filing_html_v2)
+
+[//]: # (START_OVERVIEW)
+
+> Character get_filing_html(identifier)
+
+#### Filing Html
+
+
+
+[//]: # (END_OVERVIEW)
+
+### Example
+
+[//]: # (START_CODE_EXAMPLE)
+```r
+# Setup client
+client <- IntrinioSDK::ApiClient$new()
+
+# Configure API key authorization: ApiKeyAuth
+client$configuration$apiKey <- "YOUR_API_KEY"
+
+# Setup API with client
+FilingApi <- IntrinioSDK::FilingApi$new(client)
+
+# Required params
+identifier <- "fil_B73xBG" # Character | A Filing identifier
+
+response <- FilingApi$get_filing_html(identifier)
+
+print(response)
+print(response$content)
+```
+
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **identifier** | Character| A Filing identifier |  &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+**Character**
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:IntrinioSDK::FilingApi)
+
+[//]: # (METHOD:get_filing_text)
+
+[//]: # (RETURN_TYPE:Character)
+
+[//]: # (RETURN_TYPE_KIND:primitive)
+
+[//]: # (RETURN_TYPE_DOC:)
+
+[//]: # (OPERATION:get_filing_text_v2)
+
+[//]: # (ENDPOINT:/filings/{identifier}/text)
+
+[//]: # (DOCUMENT_LINK:FilingApi.md#get_filing_text)
+
+# **get_filing_text**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/r/get_filing_text_v2)
+
+[//]: # (START_OVERVIEW)
+
+> Character get_filing_text(identifier)
+
+#### Filing Text
+
+
+
+[//]: # (END_OVERVIEW)
+
+### Example
+
+[//]: # (START_CODE_EXAMPLE)
+```r
+# Setup client
+client <- IntrinioSDK::ApiClient$new()
+
+# Configure API key authorization: ApiKeyAuth
+client$configuration$apiKey <- "YOUR_API_KEY"
+
+# Setup API with client
+FilingApi <- IntrinioSDK::FilingApi$new(client)
+
+# Required params
+identifier <- "fil_B73xBG" # Character | A Filing identifier
+
+response <- FilingApi$get_filing_text(identifier)
+
+print(response)
+print(response$content)
+```
+
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **identifier** | Character| A Filing identifier |  &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+**Character**
 
 [//]: # (END_OPERATION)
 

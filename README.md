@@ -7,8 +7,8 @@ Welcome to the Intrinio API! Through our Financial Data Marketplace, we offer a 
 
 ## Overview
 
-- API version: 2.9.0
-- Package version: 1.1.0
+- API version: 2.10.0
+- Package version: 1.2.0
 
 The new Intrinio R SDK wraps all API v2 endpoints into an easy-to-use set of classes, methods, and response objects.
 
@@ -82,7 +82,7 @@ A listing of classes and methods is also provided below:
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*IntrinioSDK::BulkDownloadsApi* | [**get_bulk_download_links**](docs/BulkDownloadsApi.md#get_bulk_download_links) | **GET** /bulk_downloads/links | Bulk Downloads
+*IntrinioSDK::BulkDownloadsApi* | [**get_bulk_download_links**](docs/BulkDownloadsApi.md#get_bulk_download_links) | **GET** /bulk_downloads/links | All Links
 *IntrinioSDK::CompanyApi* | [**get_all_companies**](docs/CompanyApi.md#get_all_companies) | **GET** /companies | All Companies
 *IntrinioSDK::CompanyApi* | [**get_all_company_news**](docs/CompanyApi.md#get_all_company_news) | **GET** /companies/news | All News
 *IntrinioSDK::CompanyApi* | [**get_company**](docs/CompanyApi.md#get_company) | **GET** /companies/{identifier} | Lookup Company
@@ -105,6 +105,8 @@ Class | Method | HTTP request | Description
 *IntrinioSDK::FilingApi* | [**get_all_notes**](docs/FilingApi.md#get_all_notes) | **GET** /filings/notes | All Filing Notes
 *IntrinioSDK::FilingApi* | [**get_filing_by_id**](docs/FilingApi.md#get_filing_by_id) | **GET** /filings/{id} | Lookup Filing
 *IntrinioSDK::FilingApi* | [**get_filing_fundamentals**](docs/FilingApi.md#get_filing_fundamentals) | **GET** /filings/{identifier}/fundamentals | All Fundamentals by Filing
+*IntrinioSDK::FilingApi* | [**get_filing_html**](docs/FilingApi.md#get_filing_html) | **GET** /filings/{identifier}/html | Filing Html
+*IntrinioSDK::FilingApi* | [**get_filing_text**](docs/FilingApi.md#get_filing_text) | **GET** /filings/{identifier}/text | Filing Text
 *IntrinioSDK::FilingApi* | [**get_note**](docs/FilingApi.md#get_note) | **GET** /filings/notes/{identifier} | Filing Note by ID
 *IntrinioSDK::FilingApi* | [**get_note_html**](docs/FilingApi.md#get_note_html) | **GET** /filings/notes/{identifier}/html | Filing Note HTML
 *IntrinioSDK::FilingApi* | [**get_note_text**](docs/FilingApi.md#get_note_text) | **GET** /filings/notes/{identifier}/text | Filing Note Text
