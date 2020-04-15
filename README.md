@@ -7,8 +7,8 @@ Welcome to the Intrinio API! Through our Financial Data Marketplace, we offer a 
 
 ## Overview
 
-- API version: 2.10.0
-- Package version: 1.2.0
+- API version: 2.11.0
+- Package version: 1.3.0
 
 The new Intrinio R SDK wraps all API v2 endpoints into an easy-to-use set of classes, methods, and response objects.
 
@@ -230,8 +230,12 @@ Class | Method | HTTP request | Description
 *IntrinioSDK::TechnicalApi* | [**get_security_price_technicals_vwap**](docs/TechnicalApi.md#get_security_price_technicals_vwap) | **GET** /securities/{identifier}/prices/technicals/vwap | Volume Weighted Average Price
 *IntrinioSDK::TechnicalApi* | [**get_security_price_technicals_wr**](docs/TechnicalApi.md#get_security_price_technicals_wr) | **GET** /securities/{identifier}/prices/technicals/wr | Williams %R
 *IntrinioSDK::ZacksApi* | [**get_zacks_analyst_ratings**](docs/ZacksApi.md#get_zacks_analyst_ratings) | **GET** /zacks/analyst_ratings | Zacks Analyst Ratings
+*IntrinioSDK::ZacksApi* | [**get_zacks_eps_estimates**](docs/ZacksApi.md#get_zacks_eps_estimates) | **GET** /zacks/eps_estimates | Zacks EPS Estimates
+*IntrinioSDK::ZacksApi* | [**get_zacks_eps_growth_rates**](docs/ZacksApi.md#get_zacks_eps_growth_rates) | **GET** /zacks/eps_growth_rates | Zacks EPS Growth Rates
 *IntrinioSDK::ZacksApi* | [**get_zacks_eps_surprises**](docs/ZacksApi.md#get_zacks_eps_surprises) | **GET** /zacks/eps_surprises | Zacks EPS Surprises
+*IntrinioSDK::ZacksApi* | [**get_zacks_long_term_growth_rates**](docs/ZacksApi.md#get_zacks_long_term_growth_rates) | **GET** /zacks/long_term_growth_rates | Zacks Long Term Growth Rates
 *IntrinioSDK::ZacksApi* | [**get_zacks_sales_surprises**](docs/ZacksApi.md#get_zacks_sales_surprises) | **GET** /zacks/sales_surprises | Zacks Sales Surprises
+*IntrinioSDK::ZacksApi* | [**get_zacks_target_price_consensuses**](docs/ZacksApi.md#get_zacks_target_price_consensuses) | **GET** /zacks/target_price_consensuses | Zacks Target Price Consensuses
 
 
 ## Models
@@ -321,8 +325,12 @@ Class | Method | HTTP request | Description
  - [IntrinioSDK::ApiResponseStockMarketIndices](docs/ApiResponseStockMarketIndices.md)
  - [IntrinioSDK::ApiResponseStockMarketIndicesSearch](docs/ApiResponseStockMarketIndicesSearch.md)
  - [IntrinioSDK::ApiResponseZacksAnalystRatings](docs/ApiResponseZacksAnalystRatings.md)
+ - [IntrinioSDK::ApiResponseZacksEPSEstimates](docs/ApiResponseZacksEPSEstimates.md)
+ - [IntrinioSDK::ApiResponseZacksEPSGrowthRates](docs/ApiResponseZacksEPSGrowthRates.md)
  - [IntrinioSDK::ApiResponseZacksEPSSurprises](docs/ApiResponseZacksEPSSurprises.md)
+ - [IntrinioSDK::ApiResponseZacksLongTermGrowthRates](docs/ApiResponseZacksLongTermGrowthRates.md)
  - [IntrinioSDK::ApiResponseZacksSalesSurprises](docs/ApiResponseZacksSalesSurprises.md)
+ - [IntrinioSDK::ApiResponseZacksTargetPriceConsensuses](docs/ApiResponseZacksTargetPriceConsensuses.md)
  - [IntrinioSDK::AverageDailyTradingVolumeTechnicalValue](docs/AverageDailyTradingVolumeTechnicalValue.md)
  - [IntrinioSDK::AverageDirectionalIndexTechnicalValue](docs/AverageDirectionalIndexTechnicalValue.md)
  - [IntrinioSDK::AverageTrueRangeTechnicalValue](docs/AverageTrueRangeTechnicalValue.md)
@@ -408,8 +416,12 @@ Class | Method | HTTP request | Description
  - [IntrinioSDK::ZacksAnalystRating](docs/ZacksAnalystRating.md)
  - [IntrinioSDK::ZacksAnalystRatingSnapshot](docs/ZacksAnalystRatingSnapshot.md)
  - [IntrinioSDK::ZacksAnalystRatingSummary](docs/ZacksAnalystRatingSummary.md)
+ - [IntrinioSDK::ZacksEPSEstimate](docs/ZacksEPSEstimate.md)
+ - [IntrinioSDK::ZacksEPSGrowthRate](docs/ZacksEPSGrowthRate.md)
  - [IntrinioSDK::ZacksEPSSurprise](docs/ZacksEPSSurprise.md)
  - [IntrinioSDK::ZacksEPSSurpriseSummary](docs/ZacksEPSSurpriseSummary.md)
+ - [IntrinioSDK::ZacksLongTermGrowthRate](docs/ZacksLongTermGrowthRate.md)
  - [IntrinioSDK::ZacksSalesSurprise](docs/ZacksSalesSurprise.md)
  - [IntrinioSDK::ZacksSalesSurpriseSummary](docs/ZacksSalesSurpriseSummary.md)
+ - [IntrinioSDK::ZacksTargetPriceConsensus](docs/ZacksTargetPriceConsensus.md)
 

@@ -5,8 +5,12 @@ All URIs are relative to *https://api-v2.intrinio.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get_zacks_analyst_ratings**](ZacksApi.md#get_zacks_analyst_ratings) | **GET** /zacks/analyst_ratings | Zacks Analyst Ratings
+[**get_zacks_eps_estimates**](ZacksApi.md#get_zacks_eps_estimates) | **GET** /zacks/eps_estimates | Zacks EPS Estimates
+[**get_zacks_eps_growth_rates**](ZacksApi.md#get_zacks_eps_growth_rates) | **GET** /zacks/eps_growth_rates | Zacks EPS Growth Rates
 [**get_zacks_eps_surprises**](ZacksApi.md#get_zacks_eps_surprises) | **GET** /zacks/eps_surprises | Zacks EPS Surprises
+[**get_zacks_long_term_growth_rates**](ZacksApi.md#get_zacks_long_term_growth_rates) | **GET** /zacks/long_term_growth_rates | Zacks Long Term Growth Rates
 [**get_zacks_sales_surprises**](ZacksApi.md#get_zacks_sales_surprises) | **GET** /zacks/sales_surprises | Zacks Sales Surprises
+[**get_zacks_target_price_consensuses**](ZacksApi.md#get_zacks_target_price_consensuses) | **GET** /zacks/target_price_consensuses | Zacks Target Price Consensuses
 
 
 
@@ -59,8 +63,8 @@ ZacksApi <- IntrinioSDK::ZacksApi$new(client)
 # Optional params
 opts <- list(
   identifier = "AAPL", # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
-  start_date = NULL, # Character | Limit ratings to those on or after this date
-  end_date = NULL, # Character | Limit ratings to those on or before this date
+  start_date = NULL, # Date | Limit ratings to those on or after this date
+  end_date = NULL, # Date | Limit ratings to those on or before this date
   mean_greater = NULL, # Numeric | Return only records with a mean (average) higher than this value
   mean_less = NULL, # Numeric | Return only records with a mean (average) lower than this value
   strong_buys_greater = NULL, # Integer | Return only records with more than this many Strong Buy recommendations
@@ -97,8 +101,8 @@ print(response$content)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **identifier** | Character| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) | [optional]  &nbsp;
- **start_date** | Character| Limit ratings to those on or after this date | [optional]  &nbsp;
- **end_date** | Character| Limit ratings to those on or before this date | [optional]  &nbsp;
+ **start_date** | Date| Limit ratings to those on or after this date | [optional]  &nbsp;
+ **end_date** | Date| Limit ratings to those on or before this date | [optional]  &nbsp;
  **mean_greater** | Numeric| Return only records with a mean (average) higher than this value | [optional]  &nbsp;
  **mean_less** | Numeric| Return only records with a mean (average) lower than this value | [optional]  &nbsp;
  **strong_buys_greater** | Integer| Return only records with more than this many Strong Buy recommendations | [optional]  &nbsp;
@@ -122,6 +126,190 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ApiResponseZacksAnalystRatings**](ApiResponseZacksAnalystRatings.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:IntrinioSDK::ZacksApi)
+
+[//]: # (METHOD:get_zacks_eps_estimates)
+
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseZacksEPSEstimates)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:ApiResponseZacksEPSEstimates.md)
+
+[//]: # (OPERATION:get_zacks_eps_estimates_v2)
+
+[//]: # (ENDPOINT:/zacks/eps_estimates)
+
+[//]: # (DOCUMENT_LINK:ZacksApi.md#get_zacks_eps_estimates)
+
+# **get_zacks_eps_estimates**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/r/get_zacks_eps_estimates_v2)
+
+[//]: # (START_OVERVIEW)
+
+> ApiResponseZacksEPSEstimates get_zacks_eps_estimates(opts)
+
+#### Zacks EPS Estimates
+
+
+Returns Zacks consensus earnings-per-share (EPS) data for all Companies.
+
+[//]: # (END_OVERVIEW)
+
+### Example
+
+[//]: # (START_CODE_EXAMPLE)
+```r
+# Setup client
+client <- IntrinioSDK::ApiClient$new()
+
+# Configure API key authorization: ApiKeyAuth
+client$configuration$apiKey <- "YOUR_API_KEY"
+
+# Setup API with client
+ZacksApi <- IntrinioSDK::ZacksApi$new(client)
+
+# Optional params
+opts <- list(
+  identifier = "AAPL", # Character | A Company identifier (Ticker, CIK, LEI, Intrinio ID)
+  start_date = NULL, # Date | Limit EPS estimates to those on or after this date
+  end_date = NULL, # Date | Limit EPS estimates to those on or before this date
+  fiscal_year = NULL, # Integer | Only for the given fiscal year
+  fiscal_period = NULL, # Character | The fiscal period
+  calendar_year = NULL, # Integer | Only for the given calendar year
+  calendar_period = NULL, # Character | The calendar period
+  page_size = 100, # Integer | The number of results to return
+  next_page = NULL # Character | Gets the next page of data from a previous API call
+)
+
+response <- ZacksApi$get_zacks_eps_estimates(opts)
+
+print(response)
+print(response$content)
+```
+
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **identifier** | Character| A Company identifier (Ticker, CIK, LEI, Intrinio ID) | [optional]  &nbsp;
+ **start_date** | Date| Limit EPS estimates to those on or after this date | [optional]  &nbsp;
+ **end_date** | Date| Limit EPS estimates to those on or before this date | [optional]  &nbsp;
+ **fiscal_year** | Integer| Only for the given fiscal year | [optional]  &nbsp;
+ **fiscal_period** | Character| The fiscal period | [optional]  &nbsp;
+ **calendar_year** | Integer| Only for the given calendar year | [optional]  &nbsp;
+ **calendar_period** | Character| The calendar period | [optional]  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**ApiResponseZacksEPSEstimates**](ApiResponseZacksEPSEstimates.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:IntrinioSDK::ZacksApi)
+
+[//]: # (METHOD:get_zacks_eps_growth_rates)
+
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseZacksEPSGrowthRates)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:ApiResponseZacksEPSGrowthRates.md)
+
+[//]: # (OPERATION:get_zacks_eps_growth_rates_v2)
+
+[//]: # (ENDPOINT:/zacks/eps_growth_rates)
+
+[//]: # (DOCUMENT_LINK:ZacksApi.md#get_zacks_eps_growth_rates)
+
+# **get_zacks_eps_growth_rates**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/r/get_zacks_eps_growth_rates_v2)
+
+[//]: # (START_OVERVIEW)
+
+> ApiResponseZacksEPSGrowthRates get_zacks_eps_growth_rates(opts)
+
+#### Zacks EPS Growth Rates
+
+
+Returns the latest Zacks EPS growth rates
+
+[//]: # (END_OVERVIEW)
+
+### Example
+
+[//]: # (START_CODE_EXAMPLE)
+```r
+# Setup client
+client <- IntrinioSDK::ApiClient$new()
+
+# Configure API key authorization: ApiKeyAuth
+client$configuration$apiKey <- "YOUR_API_KEY"
+
+# Setup API with client
+ZacksApi <- IntrinioSDK::ZacksApi$new(client)
+
+# Optional params
+opts <- list(
+  company = "AAPL", # Character | Filings for the given `company` identifier (ticker, CIK, LEI, Intrinio ID)
+  industry_group_name = NULL, # Character | Return only growth rates for companies in the given Zacks industry group name
+  industry_group_number = NULL, # Character | Return only growth rates for companies in the given Zacks industry group number
+  page_size = 100, # Integer | The number of results to return
+  next_page = NULL # Character | Gets the next page of data from a previous API call
+)
+
+response <- ZacksApi$get_zacks_eps_growth_rates(opts)
+
+print(response)
+print(response$content)
+```
+
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **company** | Character| Filings for the given &#x60;company&#x60; identifier (ticker, CIK, LEI, Intrinio ID) | [optional]  &nbsp;
+ **industry_group_name** | Character| Return only growth rates for companies in the given Zacks industry group name | [optional]  &nbsp;
+ **industry_group_number** | Character| Return only growth rates for companies in the given Zacks industry group number | [optional]  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**ApiResponseZacksEPSGrowthRates**](ApiResponseZacksEPSGrowthRates.md)
 
 [//]: # (END_OPERATION)
 
@@ -174,8 +362,8 @@ ZacksApi <- IntrinioSDK::ZacksApi$new(client)
 
 # Optional params
 opts <- list(
-  start_date = NULL, # Character | Limit EPS surprises to those on or after this date
-  end_date = NULL, # Character | Limit EPS surprises to those on or before this date
+  start_date = NULL, # Date | Limit EPS surprises to those on or after this date
+  end_date = NULL, # Date | Limit EPS surprises to those on or before this date
   eps_actual_greater = NULL, # Numeric | Return only records with an actual EPS higher than this value
   eps_actual_less = NULL, # Numeric | Return only records with an actual EPS lower than this value
   eps_mean_estimate_greater = NULL, # Numeric | Return only records with an EPS mean estimate greater than this value
@@ -209,8 +397,8 @@ print(response$content)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **start_date** | Character| Limit EPS surprises to those on or after this date | [optional]  &nbsp;
- **end_date** | Character| Limit EPS surprises to those on or before this date | [optional]  &nbsp;
+ **start_date** | Date| Limit EPS surprises to those on or after this date | [optional]  &nbsp;
+ **end_date** | Date| Limit EPS surprises to those on or before this date | [optional]  &nbsp;
  **eps_actual_greater** | Numeric| Return only records with an actual EPS higher than this value | [optional]  &nbsp;
  **eps_actual_less** | Numeric| Return only records with an actual EPS lower than this value | [optional]  &nbsp;
  **eps_mean_estimate_greater** | Numeric| Return only records with an EPS mean estimate greater than this value | [optional]  &nbsp;
@@ -232,6 +420,90 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ApiResponseZacksEPSSurprises**](ApiResponseZacksEPSSurprises.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:IntrinioSDK::ZacksApi)
+
+[//]: # (METHOD:get_zacks_long_term_growth_rates)
+
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseZacksLongTermGrowthRates)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:ApiResponseZacksLongTermGrowthRates.md)
+
+[//]: # (OPERATION:get_zacks_long_term_growth_rates_v2)
+
+[//]: # (ENDPOINT:/zacks/long_term_growth_rates)
+
+[//]: # (DOCUMENT_LINK:ZacksApi.md#get_zacks_long_term_growth_rates)
+
+# **get_zacks_long_term_growth_rates**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/r/get_zacks_long_term_growth_rates_v2)
+
+[//]: # (START_OVERVIEW)
+
+> ApiResponseZacksLongTermGrowthRates get_zacks_long_term_growth_rates(opts)
+
+#### Zacks Long Term Growth Rates
+
+
+Returns the latest Zacks long term growth rates
+
+[//]: # (END_OVERVIEW)
+
+### Example
+
+[//]: # (START_CODE_EXAMPLE)
+```r
+# Setup client
+client <- IntrinioSDK::ApiClient$new()
+
+# Configure API key authorization: ApiKeyAuth
+client$configuration$apiKey <- "YOUR_API_KEY"
+
+# Setup API with client
+ZacksApi <- IntrinioSDK::ZacksApi$new(client)
+
+# Optional params
+opts <- list(
+  identifier = "AAPL", # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+  page_size = 100, # Integer | The number of results to return
+  next_page = NULL # Character | Gets the next page of data from a previous API call
+)
+
+response <- ZacksApi$get_zacks_long_term_growth_rates(opts)
+
+print(response)
+print(response$content)
+```
+
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **identifier** | Character| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) | [optional]  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**ApiResponseZacksLongTermGrowthRates**](ApiResponseZacksLongTermGrowthRates.md)
 
 [//]: # (END_OPERATION)
 
@@ -284,8 +556,8 @@ ZacksApi <- IntrinioSDK::ZacksApi$new(client)
 
 # Optional params
 opts <- list(
-  start_date = NULL, # Character | Limit sales surprises to those on or after this date
-  end_date = NULL, # Character | Limit sales surprises to those on or before this date
+  start_date = NULL, # Date | Limit sales surprises to those on or after this date
+  end_date = NULL, # Date | Limit sales surprises to those on or before this date
   sales_actual_greater = NULL, # Numeric | Return only records with an actual sales higher than this value
   sales_actual_less = NULL, # Numeric | Return only records with an actual sales lower than this value
   sales_mean_estimate_greater = NULL, # Numeric | Return only records with a sales mean estimate greater than this value
@@ -319,8 +591,8 @@ print(response$content)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **start_date** | Character| Limit sales surprises to those on or after this date | [optional]  &nbsp;
- **end_date** | Character| Limit sales surprises to those on or before this date | [optional]  &nbsp;
+ **start_date** | Date| Limit sales surprises to those on or after this date | [optional]  &nbsp;
+ **end_date** | Date| Limit sales surprises to those on or before this date | [optional]  &nbsp;
  **sales_actual_greater** | Numeric| Return only records with an actual sales higher than this value | [optional]  &nbsp;
  **sales_actual_less** | Numeric| Return only records with an actual sales lower than this value | [optional]  &nbsp;
  **sales_mean_estimate_greater** | Numeric| Return only records with a sales mean estimate greater than this value | [optional]  &nbsp;
@@ -342,6 +614,92 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ApiResponseZacksSalesSurprises**](ApiResponseZacksSalesSurprises.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:IntrinioSDK::ZacksApi)
+
+[//]: # (METHOD:get_zacks_target_price_consensuses)
+
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseZacksTargetPriceConsensuses)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:ApiResponseZacksTargetPriceConsensuses.md)
+
+[//]: # (OPERATION:get_zacks_target_price_consensuses_v2)
+
+[//]: # (ENDPOINT:/zacks/target_price_consensuses)
+
+[//]: # (DOCUMENT_LINK:ZacksApi.md#get_zacks_target_price_consensuses)
+
+# **get_zacks_target_price_consensuses**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/r/get_zacks_target_price_consensuses_v2)
+
+[//]: # (START_OVERVIEW)
+
+> ApiResponseZacksTargetPriceConsensuses get_zacks_target_price_consensuses(opts)
+
+#### Zacks Target Price Consensuses
+
+
+Returns the latest Zacks target price consensus data
+
+[//]: # (END_OVERVIEW)
+
+### Example
+
+[//]: # (START_CODE_EXAMPLE)
+```r
+# Setup client
+client <- IntrinioSDK::ApiClient$new()
+
+# Configure API key authorization: ApiKeyAuth
+client$configuration$apiKey <- "YOUR_API_KEY"
+
+# Setup API with client
+ZacksApi <- IntrinioSDK::ZacksApi$new(client)
+
+# Optional params
+opts <- list(
+  identifier = "AAPL", # Character | Filings for the given `company` identifier (ticker, CIK, LEI, Intrinio ID)
+  industry_group_number = NULL, # Character | Return only growth rates for companies in the given Zacks industry group number
+  page_size = 100, # Integer | The number of results to return
+  next_page = NULL # Character | Gets the next page of data from a previous API call
+)
+
+response <- ZacksApi$get_zacks_target_price_consensuses(opts)
+
+print(response)
+print(response$content)
+```
+
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **identifier** | Character| Filings for the given &#x60;company&#x60; identifier (ticker, CIK, LEI, Intrinio ID) | [optional]  &nbsp;
+ **industry_group_number** | Character| Return only growth rates for companies in the given Zacks industry group number | [optional]  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**ApiResponseZacksTargetPriceConsensuses**](ApiResponseZacksTargetPriceConsensuses.md)
 
 [//]: # (END_OPERATION)
 
