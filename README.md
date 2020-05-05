@@ -7,8 +7,8 @@ Welcome to the Intrinio API! Through our Financial Data Marketplace, we offer a 
 
 ## Overview
 
-- API version: 2.11.0
-- Package version: 1.3.0
+- API version: 2.13.0
+- Package version: 1.4.0
 
 The new Intrinio R SDK wraps all API v2 endpoints into an easy-to-use set of classes, methods, and response objects.
 
@@ -233,6 +233,10 @@ Class | Method | HTTP request | Description
 *IntrinioSDK::ZacksApi* | [**get_zacks_eps_estimates**](docs/ZacksApi.md#get_zacks_eps_estimates) | **GET** /zacks/eps_estimates | Zacks EPS Estimates
 *IntrinioSDK::ZacksApi* | [**get_zacks_eps_growth_rates**](docs/ZacksApi.md#get_zacks_eps_growth_rates) | **GET** /zacks/eps_growth_rates | Zacks EPS Growth Rates
 *IntrinioSDK::ZacksApi* | [**get_zacks_eps_surprises**](docs/ZacksApi.md#get_zacks_eps_surprises) | **GET** /zacks/eps_surprises | Zacks EPS Surprises
+*IntrinioSDK::ZacksApi* | [**get_zacks_etf_holdings**](docs/ZacksApi.md#get_zacks_etf_holdings) | **GET** /zacks/etf_holdings | Zacks ETF Holdings
+*IntrinioSDK::ZacksApi* | [**get_zacks_institutional_holding_companies**](docs/ZacksApi.md#get_zacks_institutional_holding_companies) | **GET** /zacks/institutional_holdings/companies | Zacks Institutional Holding Companies
+*IntrinioSDK::ZacksApi* | [**get_zacks_institutional_holding_owners**](docs/ZacksApi.md#get_zacks_institutional_holding_owners) | **GET** /zacks/institutional_holdings/owners | Zacks Institutional Holding Owners
+*IntrinioSDK::ZacksApi* | [**get_zacks_institutional_holdings**](docs/ZacksApi.md#get_zacks_institutional_holdings) | **GET** /zacks/institutional_holdings | Zacks Institutional Holdings
 *IntrinioSDK::ZacksApi* | [**get_zacks_long_term_growth_rates**](docs/ZacksApi.md#get_zacks_long_term_growth_rates) | **GET** /zacks/long_term_growth_rates | Zacks Long Term Growth Rates
 *IntrinioSDK::ZacksApi* | [**get_zacks_sales_surprises**](docs/ZacksApi.md#get_zacks_sales_surprises) | **GET** /zacks/sales_surprises | Zacks Sales Surprises
 *IntrinioSDK::ZacksApi* | [**get_zacks_target_price_consensuses**](docs/ZacksApi.md#get_zacks_target_price_consensuses) | **GET** /zacks/target_price_consensuses | Zacks Target Price Consensuses
@@ -328,6 +332,10 @@ Class | Method | HTTP request | Description
  - [IntrinioSDK::ApiResponseZacksEPSEstimates](docs/ApiResponseZacksEPSEstimates.md)
  - [IntrinioSDK::ApiResponseZacksEPSGrowthRates](docs/ApiResponseZacksEPSGrowthRates.md)
  - [IntrinioSDK::ApiResponseZacksEPSSurprises](docs/ApiResponseZacksEPSSurprises.md)
+ - [IntrinioSDK::ApiResponseZacksETFHoldings](docs/ApiResponseZacksETFHoldings.md)
+ - [IntrinioSDK::ApiResponseZacksInstitutionalHoldingCompanies](docs/ApiResponseZacksInstitutionalHoldingCompanies.md)
+ - [IntrinioSDK::ApiResponseZacksInstitutionalHoldingOwners](docs/ApiResponseZacksInstitutionalHoldingOwners.md)
+ - [IntrinioSDK::ApiResponseZacksInstitutionalHoldings](docs/ApiResponseZacksInstitutionalHoldings.md)
  - [IntrinioSDK::ApiResponseZacksLongTermGrowthRates](docs/ApiResponseZacksLongTermGrowthRates.md)
  - [IntrinioSDK::ApiResponseZacksSalesSurprises](docs/ApiResponseZacksSalesSurprises.md)
  - [IntrinioSDK::ApiResponseZacksTargetPriceConsensuses](docs/ApiResponseZacksTargetPriceConsensuses.md)
@@ -420,6 +428,13 @@ Class | Method | HTTP request | Description
  - [IntrinioSDK::ZacksEPSGrowthRate](docs/ZacksEPSGrowthRate.md)
  - [IntrinioSDK::ZacksEPSSurprise](docs/ZacksEPSSurprise.md)
  - [IntrinioSDK::ZacksEPSSurpriseSummary](docs/ZacksEPSSurpriseSummary.md)
+ - [IntrinioSDK::ZacksETFHolding](docs/ZacksETFHolding.md)
+ - [IntrinioSDK::ZacksInstitutionalHolding](docs/ZacksInstitutionalHolding.md)
+ - [IntrinioSDK::ZacksInstitutionalHoldingCompanyDetail](docs/ZacksInstitutionalHoldingCompanyDetail.md)
+ - [IntrinioSDK::ZacksInstitutionalHoldingCompanySummary](docs/ZacksInstitutionalHoldingCompanySummary.md)
+ - [IntrinioSDK::ZacksInstitutionalHoldingHistoricalSummary](docs/ZacksInstitutionalHoldingHistoricalSummary.md)
+ - [IntrinioSDK::ZacksInstitutionalHoldingOwnerDetail](docs/ZacksInstitutionalHoldingOwnerDetail.md)
+ - [IntrinioSDK::ZacksInstitutionalHoldingOwnerSummary](docs/ZacksInstitutionalHoldingOwnerSummary.md)
  - [IntrinioSDK::ZacksLongTermGrowthRate](docs/ZacksLongTermGrowthRate.md)
  - [IntrinioSDK::ZacksSalesSurprise](docs/ZacksSalesSurprise.md)
  - [IntrinioSDK::ZacksSalesSurpriseSummary](docs/ZacksSalesSurpriseSummary.md)
