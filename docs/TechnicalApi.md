@@ -85,7 +85,7 @@ client$configuration$apiKey <- "YOUR_API_KEY"
 TechnicalApi <- IntrinioSDK::TechnicalApi$new(client)
 
 # Required params
-identifier <- "AAPL" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier <- "$$v2_ticker_default$$" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 
 # Optional params
 opts <- list(
@@ -175,7 +175,7 @@ client$configuration$apiKey <- "YOUR_API_KEY"
 TechnicalApi <- IntrinioSDK::TechnicalApi$new(client)
 
 # Required params
-identifier <- "AAPL" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier <- "$$v2_ticker_default$$" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 
 # Optional params
 opts <- list(
@@ -267,7 +267,7 @@ client$configuration$apiKey <- "YOUR_API_KEY"
 TechnicalApi <- IntrinioSDK::TechnicalApi$new(client)
 
 # Required params
-identifier <- "AAPL" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier <- "$$v2_ticker_default$$" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 
 # Optional params
 opts <- list(
@@ -359,7 +359,7 @@ client$configuration$apiKey <- "YOUR_API_KEY"
 TechnicalApi <- IntrinioSDK::TechnicalApi$new(client)
 
 # Required params
-identifier <- "AAPL" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier <- "$$v2_ticker_default$$" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 
 # Optional params
 opts <- list(
@@ -453,7 +453,7 @@ client$configuration$apiKey <- "YOUR_API_KEY"
 TechnicalApi <- IntrinioSDK::TechnicalApi$new(client)
 
 # Required params
-identifier <- "AAPL" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier <- "$$v2_ticker_default$$" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 
 # Optional params
 opts <- list(
@@ -545,7 +545,7 @@ client$configuration$apiKey <- "YOUR_API_KEY"
 TechnicalApi <- IntrinioSDK::TechnicalApi$new(client)
 
 # Required params
-identifier <- "AAPL" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier <- "$$v2_ticker_default$$" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 
 # Optional params
 opts <- list(
@@ -641,7 +641,7 @@ client$configuration$apiKey <- "YOUR_API_KEY"
 TechnicalApi <- IntrinioSDK::TechnicalApi$new(client)
 
 # Required params
-identifier <- "AAPL" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier <- "$$v2_ticker_default$$" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 
 # Optional params
 opts <- list(
@@ -735,7 +735,7 @@ client$configuration$apiKey <- "YOUR_API_KEY"
 TechnicalApi <- IntrinioSDK::TechnicalApi$new(client)
 
 # Required params
-identifier <- "AAPL" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier <- "$$v2_ticker_default$$" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 
 # Optional params
 opts <- list(
@@ -827,7 +827,7 @@ client$configuration$apiKey <- "YOUR_API_KEY"
 TechnicalApi <- IntrinioSDK::TechnicalApi$new(client)
 
 # Required params
-identifier <- "AAPL" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier <- "$$v2_ticker_default$$" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 
 # Optional params
 opts <- list(
@@ -921,7 +921,7 @@ client$configuration$apiKey <- "YOUR_API_KEY"
 TechnicalApi <- IntrinioSDK::TechnicalApi$new(client)
 
 # Required params
-identifier <- "AAPL" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier <- "$$v2_ticker_default$$" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 
 # Optional params
 opts <- list(
@@ -1015,7 +1015,7 @@ client$configuration$apiKey <- "YOUR_API_KEY"
 TechnicalApi <- IntrinioSDK::TechnicalApi$new(client)
 
 # Required params
-identifier <- "AAPL" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier <- "$$v2_ticker_default$$" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 
 # Optional params
 opts <- list(
@@ -1107,7 +1107,7 @@ client$configuration$apiKey <- "YOUR_API_KEY"
 TechnicalApi <- IntrinioSDK::TechnicalApi$new(client)
 
 # Required params
-identifier <- "AAPL" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier <- "$$v2_ticker_default$$" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 
 # Optional params
 opts <- list(
@@ -1197,7 +1197,7 @@ client$configuration$apiKey <- "YOUR_API_KEY"
 TechnicalApi <- IntrinioSDK::TechnicalApi$new(client)
 
 # Required params
-identifier <- "AAPL" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier <- "$$v2_ticker_default$$" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 
 # Optional params
 opts <- list(
@@ -1293,7 +1293,7 @@ client$configuration$apiKey <- "YOUR_API_KEY"
 TechnicalApi <- IntrinioSDK::TechnicalApi$new(client)
 
 # Required params
-identifier <- "AAPL" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier <- "$$v2_ticker_default$$" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 
 # Optional params
 opts <- list(
@@ -1385,7 +1385,7 @@ client$configuration$apiKey <- "YOUR_API_KEY"
 TechnicalApi <- IntrinioSDK::TechnicalApi$new(client)
 
 # Required params
-identifier <- "AAPL" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier <- "$$v2_ticker_default$$" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 
 # Optional params
 opts <- list(
@@ -1493,7 +1493,7 @@ client$configuration$apiKey <- "YOUR_API_KEY"
 TechnicalApi <- IntrinioSDK::TechnicalApi$new(client)
 
 # Required params
-identifier <- "AAPL" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier <- "$$v2_ticker_default$$" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 
 # Optional params
 opts <- list(
@@ -1591,7 +1591,7 @@ client$configuration$apiKey <- "YOUR_API_KEY"
 TechnicalApi <- IntrinioSDK::TechnicalApi$new(client)
 
 # Required params
-identifier <- "AAPL" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier <- "$$v2_ticker_default$$" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 
 # Optional params
 opts <- list(
@@ -1683,7 +1683,7 @@ client$configuration$apiKey <- "YOUR_API_KEY"
 TechnicalApi <- IntrinioSDK::TechnicalApi$new(client)
 
 # Required params
-identifier <- "AAPL" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier <- "$$v2_ticker_default$$" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 
 # Optional params
 opts <- list(
@@ -1777,7 +1777,7 @@ client$configuration$apiKey <- "YOUR_API_KEY"
 TechnicalApi <- IntrinioSDK::TechnicalApi$new(client)
 
 # Required params
-identifier <- "AAPL" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier <- "$$v2_ticker_default$$" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 
 # Optional params
 opts <- list(
@@ -1867,7 +1867,7 @@ client$configuration$apiKey <- "YOUR_API_KEY"
 TechnicalApi <- IntrinioSDK::TechnicalApi$new(client)
 
 # Required params
-identifier <- "AAPL" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier <- "$$v2_ticker_default$$" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 
 # Optional params
 opts <- list(
@@ -1957,7 +1957,7 @@ client$configuration$apiKey <- "YOUR_API_KEY"
 TechnicalApi <- IntrinioSDK::TechnicalApi$new(client)
 
 # Required params
-identifier <- "AAPL" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier <- "$$v2_ticker_default$$" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 
 # Optional params
 opts <- list(
@@ -2049,7 +2049,7 @@ client$configuration$apiKey <- "YOUR_API_KEY"
 TechnicalApi <- IntrinioSDK::TechnicalApi$new(client)
 
 # Required params
-identifier <- "AAPL" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier <- "$$v2_ticker_default$$" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 
 # Optional params
 opts <- list(
@@ -2143,7 +2143,7 @@ client$configuration$apiKey <- "YOUR_API_KEY"
 TechnicalApi <- IntrinioSDK::TechnicalApi$new(client)
 
 # Required params
-identifier <- "AAPL" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier <- "$$v2_ticker_default$$" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 
 # Optional params
 opts <- list(
@@ -2237,7 +2237,7 @@ client$configuration$apiKey <- "YOUR_API_KEY"
 TechnicalApi <- IntrinioSDK::TechnicalApi$new(client)
 
 # Required params
-identifier <- "AAPL" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier <- "$$v2_ticker_default$$" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 
 # Optional params
 opts <- list(
@@ -2331,7 +2331,7 @@ client$configuration$apiKey <- "YOUR_API_KEY"
 TechnicalApi <- IntrinioSDK::TechnicalApi$new(client)
 
 # Required params
-identifier <- "AAPL" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier <- "$$v2_ticker_default$$" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 
 # Optional params
 opts <- list(
@@ -2423,7 +2423,7 @@ client$configuration$apiKey <- "YOUR_API_KEY"
 TechnicalApi <- IntrinioSDK::TechnicalApi$new(client)
 
 # Required params
-identifier <- "AAPL" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier <- "$$v2_ticker_default$$" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 
 # Optional params
 opts <- list(
@@ -2519,7 +2519,7 @@ client$configuration$apiKey <- "YOUR_API_KEY"
 TechnicalApi <- IntrinioSDK::TechnicalApi$new(client)
 
 # Required params
-identifier <- "AAPL" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier <- "$$v2_ticker_default$$" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 
 # Optional params
 opts <- list(
@@ -2621,7 +2621,7 @@ client$configuration$apiKey <- "YOUR_API_KEY"
 TechnicalApi <- IntrinioSDK::TechnicalApi$new(client)
 
 # Required params
-identifier <- "AAPL" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier <- "$$v2_ticker_default$$" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 
 # Optional params
 opts <- list(
@@ -2713,7 +2713,7 @@ client$configuration$apiKey <- "YOUR_API_KEY"
 TechnicalApi <- IntrinioSDK::TechnicalApi$new(client)
 
 # Required params
-identifier <- "AAPL" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier <- "$$v2_ticker_default$$" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 
 # Optional params
 opts <- list(
@@ -2803,7 +2803,7 @@ client$configuration$apiKey <- "YOUR_API_KEY"
 TechnicalApi <- IntrinioSDK::TechnicalApi$new(client)
 
 # Required params
-identifier <- "AAPL" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier <- "$$v2_ticker_default$$" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 
 # Optional params
 opts <- list(
@@ -2893,7 +2893,7 @@ client$configuration$apiKey <- "YOUR_API_KEY"
 TechnicalApi <- IntrinioSDK::TechnicalApi$new(client)
 
 # Required params
-identifier <- "AAPL" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier <- "$$v2_ticker_default$$" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 
 # Optional params
 opts <- list(

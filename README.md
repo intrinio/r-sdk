@@ -7,8 +7,8 @@ Welcome to the Intrinio API! Through our Financial Data Marketplace, we offer a 
 
 ## Overview
 
-- API version: 2.13.0
-- Package version: 1.4.0
+- API version: 2.14.0
+- Package version: 1.5.0
 
 The new Intrinio R SDK wraps all API v2 endpoints into an easy-to-use set of classes, methods, and response objects.
 
@@ -101,6 +101,12 @@ Class | Method | HTTP request | Description
 *IntrinioSDK::DataTagApi* | [**get_all_data_tags**](docs/DataTagApi.md#get_all_data_tags) | **GET** /data_tags | All Data Tags
 *IntrinioSDK::DataTagApi* | [**get_data_tag_by_id**](docs/DataTagApi.md#get_data_tag_by_id) | **GET** /data_tags/{identifier} | Lookup Data Tag
 *IntrinioSDK::DataTagApi* | [**search_data_tags**](docs/DataTagApi.md#search_data_tags) | **GET** /data_tags/search | Search Data Tags
+*IntrinioSDK::ETFsApi* | [**get_all_etfs**](docs/ETFsApi.md#get_all_etfs) | **GET** /etfs | All ETFs
+*IntrinioSDK::ETFsApi* | [**get_etf**](docs/ETFsApi.md#get_etf) | **GET** /etfs/{identifier} | Lookup ETF
+*IntrinioSDK::ETFsApi* | [**get_etf_analytics**](docs/ETFsApi.md#get_etf_analytics) | **GET** /etfs/{identifier}/analytics | ETF Analytics
+*IntrinioSDK::ETFsApi* | [**get_etf_holdings**](docs/ETFsApi.md#get_etf_holdings) | **GET** /etfs/{identifier}/holdings | ETF Holdings
+*IntrinioSDK::ETFsApi* | [**get_etf_stats**](docs/ETFsApi.md#get_etf_stats) | **GET** /etfs/{identifier}/stats | Exchange Traded Fund (ETF) stats
+*IntrinioSDK::ETFsApi* | [**search_etfs**](docs/ETFsApi.md#search_etfs) | **GET** /etfs/search | Search ETFs
 *IntrinioSDK::FilingApi* | [**get_all_filings**](docs/FilingApi.md#get_all_filings) | **GET** /filings | All Filings
 *IntrinioSDK::FilingApi* | [**get_all_notes**](docs/FilingApi.md#get_all_notes) | **GET** /filings/notes | All Filing Notes
 *IntrinioSDK::FilingApi* | [**get_filing_by_id**](docs/FilingApi.md#get_filing_by_id) | **GET** /filings/{id} | Lookup Filing
@@ -255,6 +261,8 @@ Class | Method | HTTP request | Description
  - [IntrinioSDK::ApiResponseCompanySecurities](docs/ApiResponseCompanySecurities.md)
  - [IntrinioSDK::ApiResponseDataTags](docs/ApiResponseDataTags.md)
  - [IntrinioSDK::ApiResponseDataTagsSearch](docs/ApiResponseDataTagsSearch.md)
+ - [IntrinioSDK::ApiResponseETFHoldings](docs/ApiResponseETFHoldings.md)
+ - [IntrinioSDK::ApiResponseETFs](docs/ApiResponseETFs.md)
  - [IntrinioSDK::ApiResponseEconomicIndexHistoricalData](docs/ApiResponseEconomicIndexHistoricalData.md)
  - [IntrinioSDK::ApiResponseEconomicIndices](docs/ApiResponseEconomicIndices.md)
  - [IntrinioSDK::ApiResponseEconomicIndicesSearch](docs/ApiResponseEconomicIndicesSearch.md)
@@ -359,6 +367,11 @@ Class | Method | HTTP request | Description
  - [IntrinioSDK::DetrendedPriceOscillatorTechnicalValue](docs/DetrendedPriceOscillatorTechnicalValue.md)
  - [IntrinioSDK::DividendRecord](docs/DividendRecord.md)
  - [IntrinioSDK::DonchianChannelTechnicalValue](docs/DonchianChannelTechnicalValue.md)
+ - [IntrinioSDK::ETF](docs/ETF.md)
+ - [IntrinioSDK::ETFAnalytics](docs/ETFAnalytics.md)
+ - [IntrinioSDK::ETFHolding](docs/ETFHolding.md)
+ - [IntrinioSDK::ETFStats](docs/ETFStats.md)
+ - [IntrinioSDK::ETFSummary](docs/ETFSummary.md)
  - [IntrinioSDK::EarningsRecord](docs/EarningsRecord.md)
  - [IntrinioSDK::EaseOfMovementTechnicalValue](docs/EaseOfMovementTechnicalValue.md)
  - [IntrinioSDK::EconomicIndex](docs/EconomicIndex.md)
