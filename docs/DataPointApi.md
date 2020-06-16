@@ -38,7 +38,7 @@ Method | HTTP request | Description
 #### Data Point (Number)
 
 
-$$v2_data_point_number_description$$
+Returns a numeric value for the given `tag` and the entity with the given `identifier`
 
 [//]: # (END_OVERVIEW)
 
@@ -56,8 +56,8 @@ client$configuration$apiKey <- "YOUR_API_KEY"
 DataPointApi <- IntrinioSDK::DataPointApi$new(client)
 
 # Required params
-identifier <- "$$v2_data_point_identifier_default$$" # Character | $$v2_data_point_identifier_description$$
-tag <- "$$v2_data_point_item_number_default$$" # Character | $$v2_data_point_item_description$$
+identifier <- "AAPL" # Character | An identifier for an entity such as a Company, Security, Index, etc (Ticker, FIGI, ISIN, CUSIP, CIK, LEI, Intrinio ID)
+tag <- "marketcap" # Character | An Intrinio data tag ID or code (<a href='https://data.intrinio.com/data-tags'>reference</a>)
 
 response <- DataPointApi$get_data_point_number(identifier, tag)
 
@@ -76,8 +76,8 @@ print(response$content)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | Character| $$v2_data_point_identifier_description$$ |  &nbsp;
- **tag** | Character| $$v2_data_point_item_description$$ |  &nbsp;
+ **identifier** | Character| An identifier for an entity such as a Company, Security, Index, etc (Ticker, FIGI, ISIN, CUSIP, CIK, LEI, Intrinio ID) |  &nbsp;
+ **tag** | Character| An Intrinio data tag ID or code (&lt;a href&#x3D;&#39;https://data.intrinio.com/data-tags&#39;&gt;reference&lt;/a&gt;) |  &nbsp;
 <br/>
 
 [//]: # (END_PARAMETERS)
@@ -118,7 +118,7 @@ Name | Type | Description  | Notes
 #### Data Point (Text)
 
 
-$$v2_data_point_text_description$$
+Returns a text value for the given `tag` for the Security with the given `identifier`
 
 [//]: # (END_OVERVIEW)
 
@@ -136,8 +136,8 @@ client$configuration$apiKey <- "YOUR_API_KEY"
 DataPointApi <- IntrinioSDK::DataPointApi$new(client)
 
 # Required params
-identifier <- "$$v2_data_point_identifier_default$$" # Character | $$v2_data_point_identifier_description$$
-tag <- "$$v2_data_point_item_text_default$$" # Character | $$v2_data_point_item_description$$
+identifier <- "AAPL" # Character | An identifier for an entity such as a Company, Security, Index, etc (Ticker, FIGI, ISIN, CUSIP, CIK, LEI, Intrinio ID)
+tag <- "ceo" # Character | An Intrinio data tag ID or code (<a href='https://data.intrinio.com/data-tags'>reference</a>)
 
 response <- DataPointApi$get_data_point_text(identifier, tag)
 
@@ -156,8 +156,8 @@ print(response$content)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | Character| $$v2_data_point_identifier_description$$ |  &nbsp;
- **tag** | Character| $$v2_data_point_item_description$$ |  &nbsp;
+ **identifier** | Character| An identifier for an entity such as a Company, Security, Index, etc (Ticker, FIGI, ISIN, CUSIP, CIK, LEI, Intrinio ID) |  &nbsp;
+ **tag** | Character| An Intrinio data tag ID or code (&lt;a href&#x3D;&#39;https://data.intrinio.com/data-tags&#39;&gt;reference&lt;/a&gt;) |  &nbsp;
 <br/>
 
 [//]: # (END_PARAMETERS)

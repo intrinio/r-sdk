@@ -146,7 +146,7 @@ client$configuration$apiKey <- "YOUR_API_KEY"
 StockExchangeApi <- IntrinioSDK::StockExchangeApi$new(client)
 
 # Required params
-identifier <- "$$v2_mic_default$$" # Character | A Stock Exchange identifier (MIC or Intrinio ID)
+identifier <- "USCOMP" # Character | A Stock Exchange identifier (MIC or Intrinio ID)
 
 response <- StockExchangeApi$get_stock_exchange_by_id(identifier)
 
@@ -224,7 +224,7 @@ client$configuration$apiKey <- "YOUR_API_KEY"
 StockExchangeApi <- IntrinioSDK::StockExchangeApi$new(client)
 
 # Required params
-identifier <- "$$v2_mic_default$$" # Character | A Stock Exchange identifier (MIC or Intrinio ID)
+identifier <- "USCOMP" # Character | A Stock Exchange identifier (MIC or Intrinio ID)
 
 # Optional params
 opts <- list(
@@ -312,7 +312,7 @@ client$configuration$apiKey <- "YOUR_API_KEY"
 StockExchangeApi <- IntrinioSDK::StockExchangeApi$new(client)
 
 # Required params
-identifier <- "$$v2_mic_default$$" # Character | A Stock Exchange identifier (MIC or Intrinio ID)
+identifier <- "USCOMP" # Character | A Stock Exchange identifier (MIC or Intrinio ID)
 
 # Optional params
 opts <- list(
@@ -400,7 +400,7 @@ client$configuration$apiKey <- "YOUR_API_KEY"
 StockExchangeApi <- IntrinioSDK::StockExchangeApi$new(client)
 
 # Required params
-identifier <- "$$v2_mic_default$$" # Character | A Stock Exchange identifier (MIC or Intrinio ID)
+identifier <- "USCOMP" # Character | A Stock Exchange identifier (MIC or Intrinio ID)
 
 # Optional params
 opts <- list(
@@ -488,7 +488,7 @@ client$configuration$apiKey <- "YOUR_API_KEY"
 StockExchangeApi <- IntrinioSDK::StockExchangeApi$new(client)
 
 # Required params
-identifier <- "$$v2_mic_default$$" # Character | A Stock Exchange identifier (MIC or Intrinio ID)
+identifier <- "USCOMP" # Character | A Stock Exchange identifier (MIC or Intrinio ID)
 
 # Optional params
 opts <- list(

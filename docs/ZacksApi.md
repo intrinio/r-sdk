@@ -66,7 +66,7 @@ ZacksApi <- IntrinioSDK::ZacksApi$new(client)
 
 # Optional params
 opts <- list(
-  identifier = "$$v2_ticker_default$$", # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+  identifier = "AAPL", # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
   start_date = NULL, # Date | Limit ratings to those on or after this date
   end_date = NULL, # Date | Limit ratings to those on or before this date
   mean_greater = NULL, # Numeric | Return only records with a mean (average) higher than this value

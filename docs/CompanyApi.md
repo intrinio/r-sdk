@@ -307,7 +307,7 @@ Name | Type | Description  | Notes
 #### Data Point (Number) for Company
 
 
-$$v2_company_data_point_number_description$$
+Returns a numeric value for the given `tag` for the Company with the given `identifier`
 
 [//]: # (END_OVERVIEW)
 
@@ -325,8 +325,8 @@ client$configuration$apiKey <- "YOUR_API_KEY"
 CompanyApi <- IntrinioSDK::CompanyApi$new(client)
 
 # Required params
-identifier <- "$$v2_company_data_point_identifier_default$$" # Character | $$v2_company_data_point_identifier_description$$
-tag <- "$$v2_company_data_point_item_number_default$$" # Character | $$v2_company_data_point_item_description$$
+identifier <- "AAPL" # Character | A Company identifier (Ticker, CIK, LEI, Intrinio ID)
+tag <- "marketcap" # Character | An Intrinio data tag ID or code (<a href='https://data.intrinio.com/data-tags'>reference</a>)
 
 response <- CompanyApi$get_company_data_point_number(identifier, tag)
 
@@ -345,8 +345,8 @@ print(response$content)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | Character| $$v2_company_data_point_identifier_description$$ |  &nbsp;
- **tag** | Character| $$v2_company_data_point_item_description$$ |  &nbsp;
+ **identifier** | Character| A Company identifier (Ticker, CIK, LEI, Intrinio ID) |  &nbsp;
+ **tag** | Character| An Intrinio data tag ID or code (&lt;a href&#x3D;&#39;https://data.intrinio.com/data-tags&#39;&gt;reference&lt;/a&gt;) |  &nbsp;
 <br/>
 
 [//]: # (END_PARAMETERS)
@@ -387,7 +387,7 @@ Name | Type | Description  | Notes
 #### Data Point (Text) for Company
 
 
-$$v2_company_data_point_text_description$$
+Returns a text value for the given `tag` for the Company with the given `identifier`
 
 [//]: # (END_OVERVIEW)
 
@@ -405,8 +405,8 @@ client$configuration$apiKey <- "YOUR_API_KEY"
 CompanyApi <- IntrinioSDK::CompanyApi$new(client)
 
 # Required params
-identifier <- "$$v2_company_data_point_identifier_default$$" # Character | $$v2_company_data_point_identifier_description$$
-tag <- "$$v2_company_data_point_item_text_default$$" # Character | $$v2_company_data_point_item_description$$
+identifier <- "AAPL" # Character | A Company identifier (Ticker, CIK, LEI, Intrinio ID)
+tag <- "ceo" # Character | An Intrinio data tag ID or code (<a href='https://data.intrinio.com/data-tags'>reference</a>)
 
 response <- CompanyApi$get_company_data_point_text(identifier, tag)
 
@@ -425,8 +425,8 @@ print(response$content)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | Character| $$v2_company_data_point_identifier_description$$ |  &nbsp;
- **tag** | Character| $$v2_company_data_point_item_description$$ |  &nbsp;
+ **identifier** | Character| A Company identifier (Ticker, CIK, LEI, Intrinio ID) |  &nbsp;
+ **tag** | Character| An Intrinio data tag ID or code (&lt;a href&#x3D;&#39;https://data.intrinio.com/data-tags&#39;&gt;reference&lt;/a&gt;) |  &nbsp;
 <br/>
 
 [//]: # (END_PARAMETERS)
@@ -661,7 +661,7 @@ Name | Type | Description  | Notes
 #### Historical Data for Company
 
 
-$$v2_company_historical_data_description$$
+Returns historical values for the given `tag` and the Company with the given `identifier`
 
 [//]: # (END_OVERVIEW)
 
@@ -679,8 +679,8 @@ client$configuration$apiKey <- "YOUR_API_KEY"
 CompanyApi <- IntrinioSDK::CompanyApi$new(client)
 
 # Required params
-identifier <- "$$v2_company_historical_data_identifier_default$$" # Character | $$v2_company_historical_data_identifier_description$$
-tag <- "$$v2_company_historical_data_item_default$$" # Character | $$v2_company_historical_data_item_description$$
+identifier <- "AAPL" # Character | A Company identifier (Ticker, CIK, LEI, Intrinio ID)
+tag <- "marketcap" # Character | An Intrinio data tag ID or code (<a href='https://data.intrinio.com/data-tags'>reference</a>)
 
 # Optional params
 opts <- list(
@@ -710,8 +710,8 @@ print(response$content)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | Character| $$v2_company_historical_data_identifier_description$$ |  &nbsp;
- **tag** | Character| $$v2_company_historical_data_item_description$$ |  &nbsp;
+ **identifier** | Character| A Company identifier (Ticker, CIK, LEI, Intrinio ID) |  &nbsp;
+ **tag** | Character| An Intrinio data tag ID or code (&lt;a href&#x3D;&#39;https://data.intrinio.com/data-tags&#39;&gt;reference&lt;/a&gt;) |  &nbsp;
  **frequency** | Character| Return historical data in the given frequency | [optional] [default to daily] &nbsp;
  **type** | Character| Return historical data for given fiscal period type | [optional]  &nbsp;
  **start_date** | Date| Return historical data on or after this date | [optional]  &nbsp;
