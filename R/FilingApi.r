@@ -53,7 +53,7 @@
 FilingApi <- R6::R6Class(
   'FilingApi',
   public = list(
-    userAgent = "Swagger-Codegen/1.5.0/r",
+    userAgent = "Swagger-Codegen/1.5.1/r",
     apiClient = NULL,
     initialize = function(apiClient){
       if (!missing(apiClient)) {
