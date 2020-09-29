@@ -61,30 +61,33 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 ZacksApi <- IntrinioSDK::ZacksApi$new(client)
 
 # Optional params
 opts <- list(
-  identifier = "AAPL", # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
-  start_date = NULL, # Date | Limit ratings to those on or after this date
-  end_date = NULL, # Date | Limit ratings to those on or before this date
-  mean_greater = NULL, # Numeric | Return only records with a mean (average) higher than this value
-  mean_less = NULL, # Numeric | Return only records with a mean (average) lower than this value
-  strong_buys_greater = NULL, # Integer | Return only records with more than this many Strong Buy recommendations
-  strong_buys_less = NULL, # Integer | Return only records with fewer than this many Strong Buy recommendations
-  buys_greater = NULL, # Integer | Return only records with more than this many Buy recommendations
-  buys_less = NULL, # Integer | Return only records with fewer than this many Buy recommendations
-  holds_greater = NULL, # Integer | Return only records with more than this many Hold recommendations
-  holds_less = NULL, # Integer | Return only records with fewer than this many Hold recommendations
-  sells_greater = NULL, # Integer | Return only records with more than this many Sell recommendations
-  sells_less = NULL, # Integer | Return only records with fewer than this many Sell recommendations
-  strong_sells_greater = NULL, # Integer | Return only records with more than this many Strong Sell recommendations
-  strong_sells_less = NULL, # Integer | Return only records with fewer than this many Strong Sell recommendations
-  total_greater = NULL, # Integer | Return only records with more than this many recommendations, regardless of type
-  total_less = NULL, # Integer | Return only records with fewer than this many recommendations, regardless of type
-  page_size = 100, # Integer | The number of results to return
-  next_page = NULL # Character | Gets the next page of data from a previous API call
+  identifier = "AAPL",
+  start_date = NULL,
+  end_date = NULL,
+  mean_greater = NULL,
+  mean_less = NULL,
+  strong_buys_greater = NULL,
+  strong_buys_less = NULL,
+  buys_greater = NULL,
+  buys_less = NULL,
+  holds_greater = NULL,
+  holds_less = NULL,
+  sells_greater = NULL,
+  sells_less = NULL,
+  strong_sells_greater = NULL,
+  strong_sells_less = NULL,
+  total_greater = NULL,
+  total_less = NULL,
+  page_size = 100,
+  next_page = NULL
 )
 
 response <- ZacksApi$get_zacks_analyst_ratings(opts)
@@ -177,20 +180,23 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 ZacksApi <- IntrinioSDK::ZacksApi$new(client)
 
 # Optional params
 opts <- list(
-  identifier = "AAPL", # Character | A Company identifier (Ticker, CIK, LEI, Intrinio ID)
-  start_date = NULL, # Date | Limit EPS estimates to those on or after this date
-  end_date = NULL, # Date | Limit EPS estimates to those on or before this date
-  fiscal_year = NULL, # Integer | Only for the given fiscal year
-  fiscal_period = NULL, # Character | The fiscal period
-  calendar_year = NULL, # Integer | Only for the given calendar year
-  calendar_period = NULL, # Character | The calendar period
-  page_size = 100, # Integer | The number of results to return
-  next_page = NULL # Character | Gets the next page of data from a previous API call
+  identifier = "AAPL",
+  start_date = NULL,
+  end_date = NULL,
+  fiscal_year = NULL,
+  fiscal_period = NULL,
+  calendar_year = NULL,
+  calendar_period = NULL,
+  page_size = 100,
+  next_page = NULL
 )
 
 response <- ZacksApi$get_zacks_eps_estimates(opts)
@@ -273,16 +279,19 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 ZacksApi <- IntrinioSDK::ZacksApi$new(client)
 
 # Optional params
 opts <- list(
-  company = "AAPL", # Character | Filings for the given `company` identifier (ticker, CIK, LEI, Intrinio ID)
-  industry_group_name = NULL, # Character | Return only growth rates for companies in the given Zacks industry group name
-  industry_group_number = NULL, # Character | Return only growth rates for companies in the given Zacks industry group number
-  page_size = 100, # Integer | The number of results to return
-  next_page = NULL # Character | Gets the next page of data from a previous API call
+  company = "AAPL",
+  industry_group_name = NULL,
+  industry_group_number = NULL,
+  page_size = 100,
+  next_page = NULL
 )
 
 response <- ZacksApi$get_zacks_eps_growth_rates(opts)
@@ -361,27 +370,30 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 ZacksApi <- IntrinioSDK::ZacksApi$new(client)
 
 # Optional params
 opts <- list(
-  start_date = NULL, # Date | Limit EPS surprises to those on or after this date
-  end_date = NULL, # Date | Limit EPS surprises to those on or before this date
-  eps_actual_greater = NULL, # Numeric | Return only records with an actual EPS higher than this value
-  eps_actual_less = NULL, # Numeric | Return only records with an actual EPS lower than this value
-  eps_mean_estimate_greater = NULL, # Numeric | Return only records with an EPS mean estimate greater than this value
-  eps_mean_estimate_less = NULL, # Numeric | Return only records with an EPS mean estimate lower than this value
-  eps_amount_diff_greater = NULL, # Numeric | Return only records with an EPS amount difference greater than this value
-  eps_amount_diff_less = NULL, # Numeric | Return only records with an EPS amount difference less than this value
-  eps_percent_diff_greater = NULL, # Numeric | Return only records with an EPS percent difference greater than this value
-  eps_percent_diff_less = NULL, # Numeric | Return only records with an EPS percent difference less than this value
-  eps_count_estimate_greater = NULL, # Numeric | Return only records with an EPS count estimate greater than this value
-  eps_count_estimate_less = NULL, # Numeric | Return only records with an EPS count estimate less than this value
-  eps_std_dev_estimate_greater = NULL, # Numeric | Return only records with an EPS standard deviation greater than this value
-  eps_std_dev_estimate_less = NULL, # Numeric | Return only records with an EPS standard deviation less than this value
-  page_size = 100, # Integer | The number of results to return
-  next_page = NULL # Character | Gets the next page of data from a previous API call
+  start_date = NULL,
+  end_date = NULL,
+  eps_actual_greater = NULL,
+  eps_actual_less = NULL,
+  eps_mean_estimate_greater = NULL,
+  eps_mean_estimate_less = NULL,
+  eps_amount_diff_greater = NULL,
+  eps_amount_diff_less = NULL,
+  eps_percent_diff_greater = NULL,
+  eps_percent_diff_less = NULL,
+  eps_count_estimate_greater = NULL,
+  eps_count_estimate_less = NULL,
+  eps_std_dev_estimate_greater = NULL,
+  eps_std_dev_estimate_less = NULL,
+  page_size = 100,
+  next_page = NULL
 )
 
 response <- ZacksApi$get_zacks_eps_surprises(opts)
@@ -471,17 +483,20 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 ZacksApi <- IntrinioSDK::ZacksApi$new(client)
 
 # Optional params
 opts <- list(
-  etf_ticker = NULL, # Character | Return holdings of the ETF with the given ticker
-  holding_symbol = NULL, # Character | Return holdings where the instrument being held has the given trading symbol
-  weight_greater = NULL, # Numeric | Return on the holdings with a weight greater than
-  weight_less = NULL, # Numeric | Return on the holdings with a weight less than
-  page_size = 100, # Integer | The number of results to return
-  next_page = NULL # Character | Gets the next page of data from a previous API call
+  etf_ticker = "SPY",
+  holding_symbol = "AAPL",
+  weight_greater = NULL,
+  weight_less = NULL,
+  page_size = 100,
+  next_page = NULL
 )
 
 response <- ZacksApi$get_zacks_etf_holdings(opts)
@@ -561,14 +576,17 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 ZacksApi <- IntrinioSDK::ZacksApi$new(client)
 
 # Optional params
 opts <- list(
-  ticker = NULL, # Character | Return companies with the given ticker
-  page_size = 100, # Integer | The number of results to return
-  next_page = NULL # Character | Gets the next page of data from a previous API call
+  ticker = NULL,
+  page_size = 100,
+  next_page = NULL
 )
 
 response <- ZacksApi$get_zacks_institutional_holding_companies(opts)
@@ -645,14 +663,17 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 ZacksApi <- IntrinioSDK::ZacksApi$new(client)
 
 # Optional params
 opts <- list(
-  cik = NULL, # Character | Return owners with the given Central Index Key (CIK)
-  page_size = 100, # Integer | The number of results to return
-  next_page = NULL # Character | Gets the next page of data from a previous API call
+  cik = NULL,
+  page_size = 100,
+  next_page = NULL
 )
 
 response <- ZacksApi$get_zacks_institutional_holding_owners(opts)
@@ -729,15 +750,18 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 ZacksApi <- IntrinioSDK::ZacksApi$new(client)
 
 # Optional params
 opts <- list(
-  ticker = NULL, # Character | Return holdings where the company being held has the given ticker
-  owner_cik = NULL, # Character | Return holdings where the owner/holder has the given Central Index Key (CIK)
-  page_size = 100, # Integer | The number of results to return
-  next_page = NULL # Character | Gets the next page of data from a previous API call
+  ticker = NULL,
+  owner_cik = NULL,
+  page_size = 100,
+  next_page = NULL
 )
 
 response <- ZacksApi$get_zacks_institutional_holdings(opts)
@@ -815,14 +839,17 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 ZacksApi <- IntrinioSDK::ZacksApi$new(client)
 
 # Optional params
 opts <- list(
-  identifier = "AAPL", # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
-  page_size = 100, # Integer | The number of results to return
-  next_page = NULL # Character | Gets the next page of data from a previous API call
+  identifier = "AAPL",
+  page_size = 100,
+  next_page = NULL
 )
 
 response <- ZacksApi$get_zacks_long_term_growth_rates(opts)
@@ -899,27 +926,30 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 ZacksApi <- IntrinioSDK::ZacksApi$new(client)
 
 # Optional params
 opts <- list(
-  start_date = NULL, # Date | Limit sales surprises to those on or after this date
-  end_date = NULL, # Date | Limit sales surprises to those on or before this date
-  sales_actual_greater = NULL, # Numeric | Return only records with an actual sales higher than this value
-  sales_actual_less = NULL, # Numeric | Return only records with an actual sales lower than this value
-  sales_mean_estimate_greater = NULL, # Numeric | Return only records with a sales mean estimate greater than this value
-  sales_mean_estimate_less = NULL, # Numeric | Return only records with a sales mean estimate lower than this value
-  sales_amount_diff_greater = NULL, # Numeric | Return only records with a sales amount difference greater than this value
-  sales_amount_diff_less = NULL, # Numeric | Return only records with a sales amount difference less than this value
-  sales_percent_diff_greater = NULL, # Numeric | Return only records with a sales percent difference greater than this value
-  sales_percent_diff_less = NULL, # Numeric | Return only records with a sales percent difference less than this value
-  sales_count_estimate_greater = NULL, # Numeric | Return only records with a sales count estimate greater than this value
-  sales_count_estimate_less = NULL, # Numeric | Return only records with a sales count estimate less than this value
-  sales_std_dev_estimate_greater = NULL, # Numeric | Return only records with a sales standard deviation greater than this value
-  sales_std_dev_estimate_less = NULL, # Numeric | Return only records with a sales standard deviation less than this value
-  page_size = 100, # Integer | The number of results to return
-  next_page = NULL # Character | Gets the next page of data from a previous API call
+  start_date = NULL,
+  end_date = NULL,
+  sales_actual_greater = NULL,
+  sales_actual_less = NULL,
+  sales_mean_estimate_greater = NULL,
+  sales_mean_estimate_less = NULL,
+  sales_amount_diff_greater = NULL,
+  sales_amount_diff_less = NULL,
+  sales_percent_diff_greater = NULL,
+  sales_percent_diff_less = NULL,
+  sales_count_estimate_greater = NULL,
+  sales_count_estimate_less = NULL,
+  sales_std_dev_estimate_greater = NULL,
+  sales_std_dev_estimate_less = NULL,
+  page_size = 100,
+  next_page = NULL
 )
 
 response <- ZacksApi$get_zacks_sales_surprises(opts)
@@ -1009,15 +1039,18 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 ZacksApi <- IntrinioSDK::ZacksApi$new(client)
 
 # Optional params
 opts <- list(
-  identifier = "AAPL", # Character | Filings for the given `company` identifier (ticker, CIK, LEI, Intrinio ID)
-  industry_group_number = NULL, # Character | Return only growth rates for companies in the given Zacks industry group number
-  page_size = 100, # Integer | The number of results to return
-  next_page = NULL # Character | Gets the next page of data from a previous API call
+  identifier = "AAPL",
+  industry_group_number = NULL,
+  page_size = 100,
+  next_page = NULL
 )
 
 response <- ZacksApi$get_zacks_target_price_consensuses(opts)

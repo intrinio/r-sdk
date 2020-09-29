@@ -67,13 +67,16 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 IndexApi <- IntrinioSDK::IndexApi$new(client)
 
 # Optional params
 opts <- list(
-  page_size = 100, # Integer | The number of results to return
-  next_page = NULL # Character | Gets the next page of data from a previous API call
+  page_size = 100,
+  next_page = NULL
 )
 
 response <- IndexApi$get_all_economic_indices(opts)
@@ -148,13 +151,16 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 IndexApi <- IntrinioSDK::IndexApi$new(client)
 
 # Optional params
 opts <- list(
-  page_size = 100, # Integer | The number of results to return
-  next_page = NULL # Character | Gets the next page of data from a previous API call
+  page_size = 100,
+  next_page = NULL
 )
 
 response <- IndexApi$get_all_sic_indices(opts)
@@ -229,13 +235,16 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 IndexApi <- IntrinioSDK::IndexApi$new(client)
 
 # Optional params
 opts <- list(
-  page_size = 100, # Integer | The number of results to return
-  next_page = NULL # Character | Gets the next page of data from a previous API call
+  page_size = 100,
+  next_page = NULL
 )
 
 response <- IndexApi$get_all_stock_market_indices(opts)
@@ -310,11 +319,14 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 IndexApi <- IntrinioSDK::IndexApi$new(client)
 
 # Required params
-identifier <- "$GDP" # Character | An Index Identifier (symbol, Intrinio ID)
+identifier <- "$GDP"
 
 response <- IndexApi$get_economic_index_by_id(identifier)
 
@@ -388,12 +400,15 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 IndexApi <- IntrinioSDK::IndexApi$new(client)
 
 # Required params
-identifier <- "$GDP" # Character | An Index Identifier (symbol, Intrinio ID)
-tag <- "level" # Character | An Intrinio data tag <a href='https://data.intrinio.com/data-tags/economic'>reference</a>
+identifier <- "$GDP"
+tag <- "level"
 
 response <- IndexApi$get_economic_index_data_point_number(identifier, tag)
 
@@ -468,12 +483,15 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 IndexApi <- IntrinioSDK::IndexApi$new(client)
 
 # Required params
-identifier <- "$GDP" # Character | An Index Identifier (symbol, Intrinio ID)
-tag <- "level" # Character | An Intrinio data tag ID or code-name
+identifier <- "$GDP"
+tag <- "level"
 
 response <- IndexApi$get_economic_index_data_point_text(identifier, tag)
 
@@ -548,21 +566,24 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 IndexApi <- IntrinioSDK::IndexApi$new(client)
 
 # Required params
-identifier <- "$GDP" # Character | An Index Identifier (symbol, Intrinio ID)
-tag <- "level" # Character | An Intrinio data tag <a href='https://data.intrinio.com/data-tags/economic'>reference</a>
+identifier <- "$GDP"
+tag <- "level"
 
 # Optional params
 opts <- list(
-  type = NULL, # Character | Filter by type, when applicable
-  start_date = as.Date("2018-01-01"), # Date | Get historical data on or after this date
-  end_date = NULL, # Date | Get historical data on or before this date
-  sort_order = "desc", # Character | Sort by date `asc` or `desc`
-  page_size = 100, # Integer | The number of results to return
-  next_page = NULL # Character | Gets the next page of data from a previous API call
+  type = NULL,
+  start_date = as.Date("2018-01-01"),
+  end_date = NULL,
+  sort_order = "desc",
+  page_size = 100,
+  next_page = NULL
 )
 
 response <- IndexApi$get_economic_index_historical_data(identifier, tag, opts)
@@ -643,11 +664,14 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 IndexApi <- IntrinioSDK::IndexApi$new(client)
 
 # Required params
-identifier <- "$SIC.1" # Character | An Index Identifier (symbol, Intrinio ID)
+identifier <- "$SIC.2911"
 
 response <- IndexApi$get_sic_index_by_id(identifier)
 
@@ -721,12 +745,15 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 IndexApi <- IntrinioSDK::IndexApi$new(client)
 
 # Required params
-identifier <- "$SIC.1" # Character | An Index Identifier (symbol, Intrinio ID)
-tag <- "level" # Character | An Intrinio data tag ID or code-name
+identifier <- "$SIC.2911"
+tag <- "marketcap"
 
 response <- IndexApi$get_sic_index_data_point_number(identifier, tag)
 
@@ -801,12 +828,15 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 IndexApi <- IntrinioSDK::IndexApi$new(client)
 
 # Required params
-identifier <- "$SIC.1" # Character | An Index Identifier (symbol, Intrinio ID)
-tag <- "level" # Character | An Intrinio data tag ID or code-name
+identifier <- "$SIC.2911"
+tag <- "marketcap"
 
 response <- IndexApi$get_sic_index_data_point_text(identifier, tag)
 
@@ -881,21 +911,24 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 IndexApi <- IntrinioSDK::IndexApi$new(client)
 
 # Required params
-identifier <- "$SIC.1" # Character | An Index Identifier (symbol, Intrinio ID)
-tag <- "marketcap" # Character | An Intrinio data tag ID or code-name
+identifier <- "$SIC.1"
+tag <- "marketcap"
 
 # Optional params
 opts <- list(
-  type = NULL, # Character | Filter by type, when applicable
-  start_date = as.Date("2018-01-01"), # Date | Get historical data on or after this date
-  end_date = NULL, # Date | Get historical data on or before this date
-  sort_order = "desc", # Character | Sort by date `asc` or `desc`
-  page_size = 100, # Integer | The number of results to return
-  next_page = NULL # Character | Gets the next page of data from a previous API call
+  type = NULL,
+  start_date = as.Date("2018-01-01"),
+  end_date = NULL,
+  sort_order = "desc",
+  page_size = 100,
+  next_page = NULL
 )
 
 response <- IndexApi$get_sic_index_historical_data(identifier, tag, opts)
@@ -976,11 +1009,14 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 IndexApi <- IntrinioSDK::IndexApi$new(client)
 
 # Required params
-identifier <- "$DJI" # Character | An Index Identifier (symbol, Intrinio ID)
+identifier <- "$DJI"
 
 response <- IndexApi$get_stock_market_index_by_id(identifier)
 
@@ -1054,12 +1090,15 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 IndexApi <- IntrinioSDK::IndexApi$new(client)
 
 # Required params
-identifier <- "$DJI" # Character | An Index Identifier (symbol, Intrinio ID)
-tag <- "level" # Character | An Intrinio data tag ID or code-name
+identifier <- "$DJI"
+tag <- "level"
 
 response <- IndexApi$get_stock_market_index_data_point_number(identifier, tag)
 
@@ -1134,12 +1173,15 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 IndexApi <- IntrinioSDK::IndexApi$new(client)
 
 # Required params
-identifier <- "$DJI" # Character | An Index Identifier (symbol, Intrinio ID)
-tag <- "level" # Character | An Intrinio data tag ID or code-name
+identifier <- "$DJI"
+tag <- "level"
 
 response <- IndexApi$get_stock_market_index_data_point_text(identifier, tag)
 
@@ -1214,21 +1256,24 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 IndexApi <- IntrinioSDK::IndexApi$new(client)
 
 # Required params
-identifier <- "$DJI" # Character | An Index Identifier (symbol, Intrinio ID)
-tag <- "level" # Character | An Intrinio data tag ID or code-name
+identifier <- "$DJI"
+tag <- "level"
 
 # Optional params
 opts <- list(
-  type = NULL, # Character | Filter by type, when applicable
-  start_date = as.Date("2018-01-01"), # Date | Get historical data on or after this date
-  end_date = NULL, # Date | Get historical data on or before this date
-  sort_order = "desc", # Character | Sort by date `asc` or `desc`
-  page_size = 100, # Integer | The number of results to return
-  next_page = NULL # Character | Gets the next page of data from a previous API call
+  type = NULL,
+  start_date = as.Date("2018-01-01"),
+  end_date = NULL,
+  sort_order = "desc",
+  page_size = 100,
+  next_page = NULL
 )
 
 response <- IndexApi$get_stock_market_index_historical_data(identifier, tag, opts)
@@ -1310,15 +1355,18 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 IndexApi <- IntrinioSDK::IndexApi$new(client)
 
 # Required params
-query <- "GDP" # Character | Search query
+query <- "GDP"
 
 # Optional params
 opts <- list(
-  page_size = 100 # Integer | The number of results to return
+  page_size = 100
 )
 
 response <- IndexApi$search_economic_indices(query, opts)
@@ -1394,15 +1442,18 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 IndexApi <- IntrinioSDK::IndexApi$new(client)
 
 # Required params
-query <- "agriculture" # Character | Search query
+query <- "agriculture"
 
 # Optional params
 opts <- list(
-  page_size = 100 # Integer | The number of results to return
+  page_size = 100
 )
 
 response <- IndexApi$search_sic_indices(query, opts)
@@ -1478,15 +1529,18 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 IndexApi <- IntrinioSDK::IndexApi$new(client)
 
 # Required params
-query <- "dow" # Character | Search query
+query <- "dow"
 
 # Optional params
 opts <- list(
-  page_size = 100 # Integer | The number of results to return
+  page_size = 100
 )
 
 response <- IndexApi$search_stock_markets_indices(query, opts)

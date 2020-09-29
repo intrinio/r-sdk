@@ -10,8 +10,8 @@ Method | HTTP request | Description
 [**get_security_data_point_text**](SecurityApi.md#get_security_data_point_text) | **GET** /securities/{identifier}/data_point/{tag}/text | Data Point (Text) for Security
 [**get_security_historical_data**](SecurityApi.md#get_security_historical_data) | **GET** /securities/{identifier}/historical_data/{tag} | Historical Data for Security
 [**get_security_intraday_prices**](SecurityApi.md#get_security_intraday_prices) | **GET** /securities/{identifier}/prices/intraday | Intraday Stock Prices for Security
-[**get_security_latest_dividend_record**](SecurityApi.md#get_security_latest_dividend_record) | **GET** /securities/{identifier}/dividends/latest | Lastest Dividend Record for Security
-[**get_security_latest_earnings_record**](SecurityApi.md#get_security_latest_earnings_record) | **GET** /securities/{identifier}/earnings/latest | Lastest Earnings Record for Security
+[**get_security_latest_dividend_record**](SecurityApi.md#get_security_latest_dividend_record) | **GET** /securities/{identifier}/dividends/latest | Latest Dividend Record for Security
+[**get_security_latest_earnings_record**](SecurityApi.md#get_security_latest_earnings_record) | **GET** /securities/{identifier}/earnings/latest | Latest Earnings Record for Security
 [**get_security_price_technicals_adi**](SecurityApi.md#get_security_price_technicals_adi) | **GET** /securities/{identifier}/prices/technicals/adi | Accumulation/Distribution Index
 [**get_security_price_technicals_adtv**](SecurityApi.md#get_security_price_technicals_adtv) | **GET** /securities/{identifier}/prices/technicals/adtv | Average Daily Trading Volume
 [**get_security_price_technicals_adx**](SecurityApi.md#get_security_price_technicals_adx) | **GET** /securities/{identifier}/prices/technicals/adx | Average Directional Index
@@ -98,29 +98,32 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Optional params
 opts <- list(
-  active = TRUE, # Logical | When TRUE, return securities that are active. When FALSE, return securities that are not active. A security is considered active if it has traded or has had a corporate action in the past 30 days, and has not been merged into another security (such as due to ticker changes or corporate restructurings).
-  delisted = FALSE, # Logical | When TRUE, return securities that have been delisted from their exchange. Note that there may be a newer security for the same company that has been relisted on a differente exchange. When FALSE, return securities that have not been delisted.
-  code = NULL, # Character | Return securities classified with the given code (<a href=\"https://docs.intrinio.com/documentation/security_codes\" target=\"_blank\">reference</a>).
-  currency = NULL, # Character | Return securities traded in the given 3-digit ISO 4217 currency code (<a href=\"https://en.wikipedia.org/wiki/ISO_4217\" target=\"_blank\">reference</a>).
-  ticker = NULL, # Character | Return securities traded with the given ticker. Note that securities across the world (and through time) may trade with the same ticker but represent different companies. Use this in conjuction with other parameters for more specificity.
-  name = NULL, # Character | Return securities with the given text in their name (not case sensitive).
-  composite_mic = NULL, # Character | Return securities classified under the composite exchange with the given Market Identification Code (MIC). A composite exchange may or may not be a real exchange.  For example, the USCOMP exchange (our only composite exchange to date) is a combination of exchanges with the following MICs: ARCX, XASE, XPOR, FINR, XCIS, XNAS, XNYS, BATS.  This composite grouping is done for user convenience.  At this time, all US securities are classified under the composite exchange with MIC USCOMP.  To query for specific US exchanges, use the exchange_mic parameter below. 
-  exchange_mic = NULL, # Character | The MIC code of the exchange where the security is actually traded.
-  stock_prices_after = NULL, # Date | Return securities with end-of-day stock prices on or after this date.
-  stock_prices_before = NULL, # Date | Return securities with end-of-day stock prices on or before this date.
-  cik = NULL, # Character | Return securities belonging to the company with the given Central Index Key (CIK).
-  figi = NULL, # Character | Return securities with the given Exchange Level FIGI (<a href=\"https://www.openfigi.com/about\" target=\"_blank\">reference</a>).
-  composite_figi = NULL, # Character | Return securities with the given Country Composite FIGI (<a href=\"https://www.openfigi.com/about\" target=\"_blank\">reference</a>).
-  share_class_figi = NULL, # Character | Return securities with the given Global Share Class FIGI (<a href=\"https://www.openfigi.com/about\" target=\"_blank\">reference</a>).
-  figi_unique_id = NULL, # Character | Return securities with the given FIGI Unique ID (<a href=\"https://www.openfigi.com/about\" target=\"_blank\">reference</a>).
-  include_non_figi = FALSE, # Logical | When TRUE, include securities that do not have a FIGI. By default, this is FALSE. If this parameter is not specified, only securities with a FIGI are returned.
-  page_size = 100, # Integer | The number of results to return
-  next_page = NULL # Character | Gets the next page of data from a previous API call
+  active = TRUE,
+  delisted = FALSE,
+  code = NULL,
+  currency = NULL,
+  ticker = NULL,
+  name = NULL,
+  composite_mic = NULL,
+  exchange_mic = NULL,
+  stock_prices_after = NULL,
+  stock_prices_before = NULL,
+  cik = NULL,
+  figi = NULL,
+  composite_figi = NULL,
+  share_class_figi = NULL,
+  figi_unique_id = NULL,
+  include_non_figi = FALSE,
+  page_size = 100,
+  next_page = NULL
 )
 
 response <- SecurityApi$get_all_securities(opts)
@@ -212,11 +215,14 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
-identifier <- "AAPL" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier <- "AAPL"
 
 response <- SecurityApi$get_security_by_id(identifier)
 
@@ -290,12 +296,15 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
-identifier <- "AAPL" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
-tag <- "close_price" # Character | An Intrinio data tag ID or code (<a href='https://data.intrinio.com/data-tags'>reference</a>)
+identifier <- "AAPL"
+tag <- "close_price"
 
 response <- SecurityApi$get_security_data_point_number(identifier, tag)
 
@@ -370,12 +379,15 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
-identifier <- "AAPL" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
-tag <- "figi" # Character | An Intrinio data tag ID or code-name
+identifier <- "AAPL"
+tag <- "figi"
 
 response <- SecurityApi$get_security_data_point_text(identifier, tag)
 
@@ -450,22 +462,25 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
-identifier <- "AAPL" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
-tag <- "adj_close_price" # Character | An Intrinio data tag ID or code (<a href='https://data.intrinio.com/data-tags'>reference</a>)
+identifier <- "AAPL"
+tag <- "adj_close_price"
 
 # Optional params
 opts <- list(
-  frequency = "daily", # Character | Return historical data in the given frequency
-  type = NULL, # Character | Filter by type, when applicable
-  start_date = as.Date("2018-01-01"), # Date | Get historical data on or after this date
-  end_date = NULL, # Date | Get historical date on or before this date
-  sort_order = "desc", # Character | Sort by date `asc` or `desc`
-  page_size = 100, # Integer | The number of results to return
-  next_page = NULL # Character | Gets the next page of data from a previous API call
+  frequency = "daily",
+  type = NULL,
+  start_date = as.Date("2018-01-01"),
+  end_date = NULL,
+  sort_order = "desc",
+  page_size = 100,
+  next_page = NULL
 )
 
 response <- SecurityApi$get_security_historical_data(identifier, tag, opts)
@@ -548,21 +563,24 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
-identifier <- "AAPL" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier <- "AAPL"
 
 # Optional params
 opts <- list(
-  source = NULL, # Character | Return intraday prices from the specified data source
-  start_date = NULL, # Date | Return intraday prices starting at the specified date
-  start_time = NULL, # Character | Return intraday prices starting at the specified time on the `start_date` (timezone is UTC)
-  end_date = NULL, # Date | Return intraday prices stopping at the specified date
-  end_time = NULL, # Character | Return intraday prices stopping at the specified time on the `end_date` (timezone is UTC)
-  page_size = 100, # Integer | The number of results to return
-  next_page = NULL # Character | Gets the next page of data from a previous API call
+  source = NULL,
+  start_date = as.Date("2018-01-01"),
+  start_time = NULL,
+  end_date = as.Date("2019-01-01"),
+  end_time = NULL,
+  page_size = 100,
+  next_page = NULL
 )
 
 response <- SecurityApi$get_security_intraday_prices(identifier, opts)
@@ -585,9 +603,9 @@ Name | Type | Description  | Notes
  **identifier** | Character| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) |  &nbsp;
  **source** | Character| Return intraday prices from the specified data source | [optional]  &nbsp;
  **start_date** | Date| Return intraday prices starting at the specified date | [optional]  &nbsp;
- **start_time** | Character| Return intraday prices starting at the specified time on the &#x60;start_date&#x60; (timezone is UTC) | [optional]  &nbsp;
+ **start_time** | Character| Return intraday prices starting at the specified time on the &#x60;start_date&#x60; (24-hour in &#39;hh:mm&#39; format, UTC timezone) | [optional]  &nbsp;
  **end_date** | Date| Return intraday prices stopping at the specified date | [optional]  &nbsp;
- **end_time** | Character| Return intraday prices stopping at the specified time on the &#x60;end_date&#x60; (timezone is UTC) | [optional]  &nbsp;
+ **end_time** | Character| Return intraday prices stopping at the specified time on the &#x60;end_date&#x60; (24-hour in &#39;hh:mm&#39; format, UTC timezone) | [optional]  &nbsp;
  **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
  **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
 <br/>
@@ -627,7 +645,7 @@ Name | Type | Description  | Notes
 
 > DividendRecord get_security_latest_dividend_record(identifier)
 
-#### Lastest Dividend Record for Security
+#### Latest Dividend Record for Security
 
 
 Returns the latest available dividend information for the Security with the given `identifier`
@@ -644,11 +662,14 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
-identifier <- "AAPL" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier <- "AAPL"
 
 response <- SecurityApi$get_security_latest_dividend_record(identifier)
 
@@ -705,7 +726,7 @@ Name | Type | Description  | Notes
 
 > EarningsRecord get_security_latest_earnings_record(identifier)
 
-#### Lastest Earnings Record for Security
+#### Latest Earnings Record for Security
 
 
 Returns latest available earnings information for the Security with the given `identifier`
@@ -722,11 +743,14 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
-identifier <- "AAPL" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier <- "AAPL"
 
 response <- SecurityApi$get_security_latest_earnings_record(identifier)
 
@@ -800,18 +824,21 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
-identifier <- "AAPL" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier <- "AAPL"
 
 # Optional params
 opts <- list(
-  start_date = "2018-01-01", # Character | Return technical indicator values on or after the date
-  end_date = "2019-01-01", # Character | Return technical indicator values on or before the date
-  page_size = 100, # Integer | The number of results to return
-  next_page = NULL # Character | Gets the next page of data from a previous API call
+  start_date = "2018-01-01",
+  end_date = "2019-01-01",
+  page_size = 100,
+  next_page = NULL
 )
 
 response <- SecurityApi$get_security_price_technicals_adi(identifier, opts)
@@ -890,19 +917,22 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
-identifier <- "AAPL" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier <- "AAPL"
 
 # Optional params
 opts <- list(
-  period = 22, # Integer | The number of observations, per period, to calculate Average Daily Trading Volume
-  start_date = "2018-01-01", # Character | Return technical indicator values on or after the date
-  end_date = "2019-01-01", # Character | Return technical indicator values on or before the date
-  page_size = 100, # Integer | The number of results to return
-  next_page = NULL # Character | Gets the next page of data from a previous API call
+  period = 22,
+  start_date = "2018-01-01",
+  end_date = "2019-01-01",
+  page_size = 100,
+  next_page = NULL
 )
 
 response <- SecurityApi$get_security_price_technicals_adtv(identifier, opts)
@@ -982,19 +1012,22 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
-identifier <- "AAPL" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier <- "AAPL"
 
 # Optional params
 opts <- list(
-  period = 14, # Integer | The number of observations, per period, to calculate Average Directional Index
-  start_date = "2018-01-01", # Character | Return technical indicator values on or after the date
-  end_date = "2019-01-01", # Character | Return technical indicator values on or before the date
-  page_size = 100, # Integer | The number of results to return
-  next_page = NULL # Character | Gets the next page of data from a previous API call
+  period = 14,
+  start_date = "2018-01-01",
+  end_date = "2019-01-01",
+  page_size = 100,
+  next_page = NULL
 )
 
 response <- SecurityApi$get_security_price_technicals_adx(identifier, opts)
@@ -1074,20 +1107,23 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
-identifier <- "AAPL" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier <- "AAPL"
 
 # Optional params
 opts <- list(
-  short_period = 5, # Integer | The number of observations, per period, to calculate short period Simple Moving Average of the Awesome Oscillator
-  long_period = 34, # Integer | The number of observations, per period, to calculate long period Simple Moving Average of the Awesome Oscillator
-  start_date = "2018-01-01", # Character | Return technical indicator values on or after the date
-  end_date = "2019-01-01", # Character | Return technical indicator values on or before the date
-  page_size = 100, # Integer | The number of results to return
-  next_page = NULL # Character | Gets the next page of data from a previous API call
+  short_period = 5,
+  long_period = 34,
+  start_date = "2018-01-01",
+  end_date = "2019-01-01",
+  page_size = 100,
+  next_page = NULL
 )
 
 response <- SecurityApi$get_security_price_technicals_ao(identifier, opts)
@@ -1168,19 +1204,22 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
-identifier <- "AAPL" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier <- "AAPL"
 
 # Optional params
 opts <- list(
-  period = 14, # Integer | The number of observations, per period, to calculate Average True Range
-  start_date = "2018-01-01", # Character | Return technical indicator values on or after the date
-  end_date = "2019-01-01", # Character | Return technical indicator values on or before the date
-  page_size = 100, # Integer | The number of results to return
-  next_page = NULL # Character | Gets the next page of data from a previous API call
+  period = 14,
+  start_date = "2018-01-01",
+  end_date = "2019-01-01",
+  page_size = 100,
+  next_page = NULL
 )
 
 response <- SecurityApi$get_security_price_technicals_atr(identifier, opts)
@@ -1260,21 +1299,24 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
-identifier <- "AAPL" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier <- "AAPL"
 
 # Optional params
 opts <- list(
-  period = 20, # Integer | The number of observations, per period, to calculate Bollinger Bands
-  standard_deviations = 2.0, # Numeric | The number of standard deviations to calculate the upper and lower bands of the Bollinger Bands
-  price_key = "close", # Character | The Stock Price field to use when calculating Bollinger Bands
-  start_date = "2018-01-01", # Character | Return technical indicator values on or after the date
-  end_date = "2019-01-01", # Character | Return technical indicator values on or before the date
-  page_size = 100, # Integer | The number of results to return
-  next_page = NULL # Character | Gets the next page of data from a previous API call
+  period = 20,
+  standard_deviations = 2.0,
+  price_key = "close",
+  start_date = "2018-01-01",
+  end_date = "2019-01-01",
+  page_size = 100,
+  next_page = NULL
 )
 
 response <- SecurityApi$get_security_price_technicals_bb(identifier, opts)
@@ -1356,20 +1398,23 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
-identifier <- "AAPL" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier <- "AAPL"
 
 # Optional params
 opts <- list(
-  period = 20, # Integer | The number of observations, per period, to calculate Commodity Channel Index
-  constant = 0.015, # Numeric | The number of observations, per period, to calculate Commodity Channel Index
-  start_date = "2018-01-01", # Character | Return technical indicator values on or after the date
-  end_date = "2019-01-01", # Character | Return technical indicator values on or before the date
-  page_size = 100, # Integer | The number of results to return
-  next_page = NULL # Character | Gets the next page of data from a previous API call
+  period = 20,
+  constant = 0.015,
+  start_date = "2018-01-01",
+  end_date = "2019-01-01",
+  page_size = 100,
+  next_page = NULL
 )
 
 response <- SecurityApi$get_security_price_technicals_cci(identifier, opts)
@@ -1450,19 +1495,22 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
-identifier <- "AAPL" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier <- "AAPL"
 
 # Optional params
 opts <- list(
-  period = 20, # Integer | The number of observations, per period, to calculate Chaikin Money Flow
-  start_date = "2018-01-01", # Character | Return technical indicator values on or after the date
-  end_date = "2019-01-01", # Character | Return technical indicator values on or before the date
-  page_size = 100, # Integer | The number of results to return
-  next_page = NULL # Character | Gets the next page of data from a previous API call
+  period = 20,
+  start_date = "2018-01-01",
+  end_date = "2019-01-01",
+  page_size = 100,
+  next_page = NULL
 )
 
 response <- SecurityApi$get_security_price_technicals_cmf(identifier, opts)
@@ -1542,20 +1590,23 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
-identifier <- "AAPL" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier <- "AAPL"
 
 # Optional params
 opts <- list(
-  period = 20, # Integer | The number of observations, per period, to calculate Donchian Channel
-  price_key = "close", # Character | The Stock Price field to use when calculating Donchian Channel
-  start_date = "2018-01-01", # Character | Return technical indicator values on or after the date
-  end_date = "2019-01-01", # Character | Return technical indicator values on or before the date
-  page_size = 100, # Integer | The number of results to return
-  next_page = NULL # Character | Gets the next page of data from a previous API call
+  period = 20,
+  price_key = "close",
+  start_date = "2018-01-01",
+  end_date = "2019-01-01",
+  page_size = 100,
+  next_page = NULL
 )
 
 response <- SecurityApi$get_security_price_technicals_dc(identifier, opts)
@@ -1636,20 +1687,23 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
-identifier <- "AAPL" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier <- "AAPL"
 
 # Optional params
 opts <- list(
-  period = 20, # Integer | The number of observations, per period, to calculate Detrended Price Oscillator
-  price_key = "close", # Character | The Stock Price field to use when calculating Detrended Price Oscillator
-  start_date = "2018-01-01", # Character | Return technical indicator values on or after the date
-  end_date = "2019-01-01", # Character | Return technical indicator values on or before the date
-  page_size = 100, # Integer | The number of results to return
-  next_page = NULL # Character | Gets the next page of data from a previous API call
+  period = 20,
+  price_key = "close",
+  start_date = "2018-01-01",
+  end_date = "2019-01-01",
+  page_size = 100,
+  next_page = NULL
 )
 
 response <- SecurityApi$get_security_price_technicals_dpo(identifier, opts)
@@ -1730,19 +1784,22 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
-identifier <- "AAPL" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier <- "AAPL"
 
 # Optional params
 opts <- list(
-  period = 20, # Integer | The number of observations, per period, to calculate Ease of Movement
-  start_date = "2018-01-01", # Character | Return technical indicator values on or after the date
-  end_date = "2019-01-01", # Character | Return technical indicator values on or before the date
-  page_size = 100, # Integer | The number of results to return
-  next_page = NULL # Character | Gets the next page of data from a previous API call
+  period = 20,
+  start_date = "2018-01-01",
+  end_date = "2019-01-01",
+  page_size = 100,
+  next_page = NULL
 )
 
 response <- SecurityApi$get_security_price_technicals_eom(identifier, opts)
@@ -1822,18 +1879,21 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
-identifier <- "AAPL" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier <- "AAPL"
 
 # Optional params
 opts <- list(
-  start_date = "2018-01-01", # Character | Return technical indicator values on or after the date
-  end_date = "2019-01-01", # Character | Return technical indicator values on or before the date
-  page_size = 100, # Integer | The number of results to return
-  next_page = NULL # Character | Gets the next page of data from a previous API call
+  start_date = "2018-01-01",
+  end_date = "2019-01-01",
+  page_size = 100,
+  next_page = NULL
 )
 
 response <- SecurityApi$get_security_price_technicals_fi(identifier, opts)
@@ -1912,21 +1972,24 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
-identifier <- "AAPL" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier <- "AAPL"
 
 # Optional params
 opts <- list(
-  low_period = 9, # Integer | The number of observations, per period, to calculate Tenkan Sen (Conversion Line) of Ichimoku Kinko Hyo
-  medium_period = 26, # Integer | The number of observations, per period, to calculate Kijun Sen (Base Line), Senkou Span A (Leading Span A), and Chikou Span (Lagging Span) of Ichimoku Kinko Hyo
-  high_period = 52, # Integer | The number of observations, per period, to calculate Senkou Span B (Leading Span B) of Ichimoku Kinko Hyo
-  start_date = "2018-01-01", # Character | Return technical indicator values on or after the date
-  end_date = "2019-01-01", # Character | Return technical indicator values on or before the date
-  page_size = 100, # Integer | The number of results to return
-  next_page = NULL # Character | Gets the next page of data from a previous API call
+  low_period = 9,
+  medium_period = 26,
+  high_period = 52,
+  start_date = "2018-01-01",
+  end_date = "2019-01-01",
+  page_size = 100,
+  next_page = NULL
 )
 
 response <- SecurityApi$get_security_price_technicals_ichimoku(identifier, opts)
@@ -2008,19 +2071,22 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
-identifier <- "AAPL" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier <- "AAPL"
 
 # Optional params
 opts <- list(
-  period = 10, # Integer | The number of observations, per period, to calculate Kelter Channel
-  start_date = "2018-01-01", # Character | Return technical indicator values on or after the date
-  end_date = "2019-01-01", # Character | Return technical indicator values on or before the date
-  page_size = 100, # Integer | The number of results to return
-  next_page = NULL # Character | Gets the next page of data from a previous API call
+  period = 10,
+  start_date = "2018-01-01",
+  end_date = "2019-01-01",
+  page_size = 100,
+  next_page = NULL
 )
 
 response <- SecurityApi$get_security_price_technicals_kc(identifier, opts)
@@ -2100,27 +2166,30 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
-identifier <- "AAPL" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier <- "AAPL"
 
 # Optional params
 opts <- list(
-  roc1 = 10, # Integer | The number of observations, per period, to calculate the rate-of-change for RCMA1
-  roc2 = 15, # Integer | The number of observations, per period, to calculate the rate-of-change for RCMA2
-  roc3 = 20, # Integer | The number of observations, per period, to calculate the rate-of-change for RCMA3
-  roc4 = 30, # Integer | The number of observations, per period, to calculate the rate-of-change for RCMA4
-  sma1 = 10, # Integer | The number of observations, per period, to calculate the Simple Moving Average of the rate-of-change for RCMA1
-  sma2 = 10, # Integer | The number of observations, per period, to calculate the Simple Moving Average of the rate-of-change for RCMA2
-  sma3 = 10, # Integer | The number of observations, per period, to calculate the Simple Moving Average of the rate-of-change for RCMA3
-  sma4 = 15, # Integer | The number of observations, per period, to calculate the Simple Moving Average of the rate-of-change for RCMA4
-  price_key = "close", # Character | The Stock Price field to use when calculating Know Sure Thing
-  start_date = "2018-01-01", # Character | Return technical indicator values on or after the date
-  end_date = "2019-01-01", # Character | Return technical indicator values on or before the date
-  page_size = 100, # Integer | The number of results to return
-  next_page = NULL # Character | Gets the next page of data from a previous API call
+  roc1 = 10,
+  roc2 = 15,
+  roc3 = 20,
+  roc4 = 30,
+  sma1 = 10,
+  sma2 = 10,
+  sma3 = 10,
+  sma4 = 15,
+  price_key = "close",
+  start_date = "2018-01-01",
+  end_date = "2019-01-01",
+  page_size = 100,
+  next_page = NULL
 )
 
 response <- SecurityApi$get_security_price_technicals_kst(identifier, opts)
@@ -2208,22 +2277,25 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
-identifier <- "AAPL" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier <- "AAPL"
 
 # Optional params
 opts <- list(
-  fast_period = 12, # Integer | The number of observations, per period, to calculate the fast moving Exponential Moving Average for Moving Average Convergence Divergence
-  slow_period = 26, # Integer | The number of observations, per period, to calculate the slow moving Exponential Moving Average for Moving Average Convergence Divergence
-  signal_period = 9, # Integer | The number of observations, per period, to calculate the signal line for Moving Average Convergence Divergence
-  price_key = "close", # Character | The Stock Price field to use when calculating Moving Average Convergence Divergence
-  start_date = "2018-01-01", # Character | Return technical indicator values on or after the date
-  end_date = "2019-01-01", # Character | Return technical indicator values on or before the date
-  page_size = 100, # Integer | The number of results to return
-  next_page = NULL # Character | Gets the next page of data from a previous API call
+  fast_period = 12,
+  slow_period = 26,
+  signal_period = 9,
+  price_key = "close",
+  start_date = "2018-01-01",
+  end_date = "2019-01-01",
+  page_size = 100,
+  next_page = NULL
 )
 
 response <- SecurityApi$get_security_price_technicals_macd(identifier, opts)
@@ -2306,19 +2378,22 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
-identifier <- "AAPL" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier <- "AAPL"
 
 # Optional params
 opts <- list(
-  period = 14, # Integer | The number of observations, per period, to calculate Money Flow Index
-  start_date = "2018-01-01", # Character | Return technical indicator values on or after the date
-  end_date = "2019-01-01", # Character | Return technical indicator values on or before the date
-  page_size = 100, # Integer | The number of results to return
-  next_page = NULL # Character | Gets the next page of data from a previous API call
+  period = 14,
+  start_date = "2018-01-01",
+  end_date = "2019-01-01",
+  page_size = 100,
+  next_page = NULL
 )
 
 response <- SecurityApi$get_security_price_technicals_mfi(identifier, opts)
@@ -2398,20 +2473,23 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
-identifier <- "AAPL" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier <- "AAPL"
 
 # Optional params
 opts <- list(
-  ema_period = 9, # Integer | The number of observations, per period, to calculate the single Exponential Moving Average and the Double Exponential Moving Average for Mass Index
-  sum_period = 25, # Integer | The number of observations, per period, to calculate the sum of the Exponetinal Moving Average Ratios for Mass Index
-  start_date = "2018-01-01", # Character | Return technical indicator values on or after the date
-  end_date = "2019-01-01", # Character | Return technical indicator values on or before the date
-  page_size = 100, # Integer | The number of results to return
-  next_page = NULL # Character | Gets the next page of data from a previous API call
+  ema_period = 9,
+  sum_period = 25,
+  start_date = "2018-01-01",
+  end_date = "2019-01-01",
+  page_size = 100,
+  next_page = NULL
 )
 
 response <- SecurityApi$get_security_price_technicals_mi(identifier, opts)
@@ -2492,18 +2570,21 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
-identifier <- "AAPL" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier <- "AAPL"
 
 # Optional params
 opts <- list(
-  start_date = "2018-01-01", # Character | Return technical indicator values on or after the date
-  end_date = "2019-01-01", # Character | Return technical indicator values on or before the date
-  page_size = 100, # Integer | The number of results to return
-  next_page = NULL # Character | Gets the next page of data from a previous API call
+  start_date = "2018-01-01",
+  end_date = "2019-01-01",
+  page_size = 100,
+  next_page = NULL
 )
 
 response <- SecurityApi$get_security_price_technicals_nvi(identifier, opts)
@@ -2582,18 +2663,21 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
-identifier <- "AAPL" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier <- "AAPL"
 
 # Optional params
 opts <- list(
-  start_date = "2018-01-01", # Character | Return technical indicator values on or after the date
-  end_date = "2019-01-01", # Character | Return technical indicator values on or before the date
-  page_size = 100, # Integer | The number of results to return
-  next_page = NULL # Character | Gets the next page of data from a previous API call
+  start_date = "2018-01-01",
+  end_date = "2019-01-01",
+  page_size = 100,
+  next_page = NULL
 )
 
 response <- SecurityApi$get_security_price_technicals_obv(identifier, opts)
@@ -2672,19 +2756,22 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
-identifier <- "AAPL" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier <- "AAPL"
 
 # Optional params
 opts <- list(
-  period = 10, # Integer | The number of observations, per period, to calculate On-balance Volume Mean
-  start_date = "2018-01-01", # Character | Return technical indicator values on or after the date
-  end_date = "2019-01-01", # Character | Return technical indicator values on or before the date
-  page_size = 100, # Integer | The number of results to return
-  next_page = NULL # Character | Gets the next page of data from a previous API call
+  period = 10,
+  start_date = "2018-01-01",
+  end_date = "2019-01-01",
+  page_size = 100,
+  next_page = NULL
 )
 
 response <- SecurityApi$get_security_price_technicals_obv_mean(identifier, opts)
@@ -2764,20 +2851,23 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
-identifier <- "AAPL" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier <- "AAPL"
 
 # Optional params
 opts <- list(
-  period = 14, # Integer | The number of observations, per period, to calculate Relative Strength Index
-  price_key = "close", # Character | The Stock Price field to use when calculating Relative Strength Index
-  start_date = "2018-01-01", # Character | Return technical indicator values on or after the date
-  end_date = "2019-01-01", # Character | Return technical indicator values on or before the date
-  page_size = 100, # Integer | The number of results to return
-  next_page = NULL # Character | Gets the next page of data from a previous API call
+  period = 14,
+  price_key = "close",
+  start_date = "2018-01-01",
+  end_date = "2019-01-01",
+  page_size = 100,
+  next_page = NULL
 )
 
 response <- SecurityApi$get_security_price_technicals_rsi(identifier, opts)
@@ -2858,20 +2948,23 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
-identifier <- "AAPL" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier <- "AAPL"
 
 # Optional params
 opts <- list(
-  period = 20, # Integer | The number of observations, per period, to calculate Simple Moving Average
-  price_key = "close", # Character | The Stock Price field to use when calculating Simple Moving Average
-  start_date = "2018-01-01", # Character | Return technical indicator values on or after the date
-  end_date = "2019-01-01", # Character | Return technical indicator values on or before the date
-  page_size = 100, # Integer | The number of results to return
-  next_page = NULL # Character | Gets the next page of data from a previous API call
+  period = 20,
+  price_key = "close",
+  start_date = "2018-01-01",
+  end_date = "2019-01-01",
+  page_size = 100,
+  next_page = NULL
 )
 
 response <- SecurityApi$get_security_price_technicals_sma(identifier, opts)
@@ -2952,20 +3045,23 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
-identifier <- "AAPL" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier <- "AAPL"
 
 # Optional params
 opts <- list(
-  period = 14, # Integer | The number of observations, per period, to calculate %K of Stochastic Oscillator
-  signal_period = 3, # Integer | The number of observations, per period, to calculate the %D (the Simple Moving Average of %K) as a signal line for Stochastic Oscillator
-  start_date = "2018-01-01", # Character | Return technical indicator values on or after the date
-  end_date = "2019-01-01", # Character | Return technical indicator values on or before the date
-  page_size = 100, # Integer | The number of results to return
-  next_page = NULL # Character | Gets the next page of data from a previous API call
+  period = 14,
+  signal_period = 3,
+  start_date = "2018-01-01",
+  end_date = "2019-01-01",
+  page_size = 100,
+  next_page = NULL
 )
 
 response <- SecurityApi$get_security_price_technicals_sr(identifier, opts)
@@ -3046,19 +3142,22 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
-identifier <- "AAPL" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier <- "AAPL"
 
 # Optional params
 opts <- list(
-  period = 15, # Integer | The number of observations, per period, to calculate Exponential Moving Average for Triple Exponential Average
-  start_date = "2018-01-01", # Character | Return technical indicator values on or after the date
-  end_date = "2019-01-01", # Character | Return technical indicator values on or before the date
-  page_size = 100, # Integer | The number of results to return
-  next_page = NULL # Character | Gets the next page of data from a previous API call
+  period = 15,
+  start_date = "2018-01-01",
+  end_date = "2019-01-01",
+  page_size = 100,
+  next_page = NULL
 )
 
 response <- SecurityApi$get_security_price_technicals_trix(identifier, opts)
@@ -3138,21 +3237,24 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
-identifier <- "AAPL" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier <- "AAPL"
 
 # Optional params
 opts <- list(
-  low_period = 13, # Integer | The number of observations, per period, to calculate low period Exponential Moving Average for smoothing in True Strength Index
-  high_period = 25, # Integer | The number of observations, per period, to calculate high period Exponential Moving Average for smoothing in True Strength Index
-  price_key = "close", # Character | The Stock Price field to use when calculating True Strength Index
-  start_date = "2018-01-01", # Character | Return technical indicator values on or after the date
-  end_date = "2019-01-01", # Character | Return technical indicator values on or before the date
-  page_size = 100, # Integer | The number of results to return
-  next_page = NULL # Character | Gets the next page of data from a previous API call
+  low_period = 13,
+  high_period = 25,
+  price_key = "close",
+  start_date = "2018-01-01",
+  end_date = "2019-01-01",
+  page_size = 100,
+  next_page = NULL
 )
 
 response <- SecurityApi$get_security_price_technicals_tsi(identifier, opts)
@@ -3234,24 +3336,27 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
-identifier <- "AAPL" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier <- "AAPL"
 
 # Optional params
 opts <- list(
-  short_period = 7, # Integer | The number of observations, per period, to calculate the short period for Ultimate Oscillator
-  medium_period = 14, # Integer | The number of observations, per period, to calculate the medium period for Ultimate Oscillator
-  long_period = 28, # Integer | The number of observations, per period, to calculate the long period for Ultimate Oscillator
-  short_weight = 4.0, # Numeric | The weight of short Buying Pressure average for Ultimate Oscillator
-  medium_weight = 2.0, # Numeric | The weight of medium Buying Pressure average for Ultimate Oscillator
-  long_weight = 1.0, # Numeric | The weight of long Buying Pressure average for Ultimate Oscillator
-  start_date = "2018-01-01", # Character | Return technical indicator values on or after the date
-  end_date = "2019-01-01", # Character | Return technical indicator values on or before the date
-  page_size = 100, # Integer | The number of results to return
-  next_page = NULL # Character | Gets the next page of data from a previous API call
+  short_period = 7,
+  medium_period = 14,
+  long_period = 28,
+  short_weight = 4.0,
+  medium_weight = 2.0,
+  long_weight = 1.0,
+  start_date = "2018-01-01",
+  end_date = "2019-01-01",
+  page_size = 100,
+  next_page = NULL
 )
 
 response <- SecurityApi$get_security_price_technicals_uo(identifier, opts)
@@ -3336,19 +3441,22 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
-identifier <- "AAPL" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier <- "AAPL"
 
 # Optional params
 opts <- list(
-  period = 14, # Integer | The number of observations, per period, to calculate Vortex Indicator
-  start_date = "2018-01-01", # Character | Return technical indicator values on or after the date
-  end_date = "2019-01-01", # Character | Return technical indicator values on or before the date
-  page_size = 100, # Integer | The number of results to return
-  next_page = NULL # Character | Gets the next page of data from a previous API call
+  period = 14,
+  start_date = "2018-01-01",
+  end_date = "2019-01-01",
+  page_size = 100,
+  next_page = NULL
 )
 
 response <- SecurityApi$get_security_price_technicals_vi(identifier, opts)
@@ -3428,18 +3536,21 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
-identifier <- "AAPL" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier <- "AAPL"
 
 # Optional params
 opts <- list(
-  start_date = "2018-01-01", # Character | Return technical indicator values on or after the date
-  end_date = "2019-01-01", # Character | Return technical indicator values on or before the date
-  page_size = 100, # Integer | The number of results to return
-  next_page = NULL # Character | Gets the next page of data from a previous API call
+  start_date = "2018-01-01",
+  end_date = "2019-01-01",
+  page_size = 100,
+  next_page = NULL
 )
 
 response <- SecurityApi$get_security_price_technicals_vpt(identifier, opts)
@@ -3518,18 +3629,21 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
-identifier <- "AAPL" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier <- "AAPL"
 
 # Optional params
 opts <- list(
-  start_date = "2018-01-01", # Character | Return technical indicator values on or after the date
-  end_date = "2019-01-01", # Character | Return technical indicator values on or before the date
-  page_size = 100, # Integer | The number of results to return
-  next_page = NULL # Character | Gets the next page of data from a previous API call
+  start_date = "2018-01-01",
+  end_date = "2019-01-01",
+  page_size = 100,
+  next_page = NULL
 )
 
 response <- SecurityApi$get_security_price_technicals_vwap(identifier, opts)
@@ -3608,19 +3722,22 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
-identifier <- "AAPL" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier <- "AAPL"
 
 # Optional params
 opts <- list(
-  period = 14, # Integer | The number of observations, per period, to look-back when calculating Williams %R
-  start_date = "2018-01-01", # Character | Return technical indicator values on or after the date
-  end_date = "2019-01-01", # Character | Return technical indicator values on or before the date
-  page_size = 100, # Numeric | The number of results to return
-  next_page = NULL # Character | Gets the next page of data from a previous API call
+  period = 14,
+  start_date = "2018-01-01",
+  end_date = "2019-01-01",
+  page_size = 100,
+  next_page = NULL
 )
 
 response <- SecurityApi$get_security_price_technicals_wr(identifier, opts)
@@ -3700,15 +3817,18 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
-identifier <- "AAPL" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier <- "AAPL"
 
 # Optional params
 opts <- list(
-  source = NULL # Character | Return the realtime price from the specified data source. If no source is specified, the best source available is used.
+  source = NULL
 )
 
 response <- SecurityApi$get_security_realtime_price(identifier, opts)
@@ -3784,18 +3904,21 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
-identifier <- "AAPL" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier <- "AAPL"
 
 # Optional params
 opts <- list(
-  start_date = as.Date("2018-01-01"), # Date | Return price adjustments on or after the date
-  end_date = as.Date("2019-01-01"), # Date | Return price adjustments on or before the date
-  page_size = 100, # Integer | The number of results to return
-  next_page = NULL # Character | Gets the next page of data from a previous API call
+  start_date = as.Date("2018-01-01"),
+  end_date = as.Date("2019-01-01"),
+  page_size = 100,
+  next_page = NULL
 )
 
 response <- SecurityApi$get_security_stock_price_adjustments(identifier, opts)
@@ -3874,19 +3997,22 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
-identifier <- "AAPL" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier <- "AAPL"
 
 # Optional params
 opts <- list(
-  start_date = as.Date("2018-01-01"), # Date | Return prices on or after the date
-  end_date = as.Date("2019-01-01"), # Date | Return prices on or before the date
-  frequency = "daily", # Character | Return stock prices in the given frequency
-  page_size = 100, # Integer | The number of results to return
-  next_page = NULL # Character | Gets the next page of data from a previous API call
+  start_date = as.Date("2018-01-01"),
+  end_date = as.Date("2019-01-01"),
+  frequency = "daily",
+  page_size = 100,
+  next_page = NULL
 )
 
 response <- SecurityApi$get_security_stock_prices(identifier, opts)
@@ -3966,31 +4092,34 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
-identifier <- "AAPL" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier <- "AAPL"
 
 # Optional params
 opts <- list(
-  start_date = NULL, # Character | Limit ratings to those on or after this date
-  end_date = NULL, # Character | Limit ratings to those on or before this date
-  mean_greater = NULL, # Numeric | Return only records with a mean (average) higher than this value
-  mean_less = NULL, # Numeric | Return only records with a mean (average) lower than this value
-  strong_buys_greater = NULL, # Integer | Return only records with more than this many Strong Buy recommendations
-  strong_buys_less = NULL, # Integer | Return only records with fewer than this many Strong Buy recommendations
-  buys_greater = NULL, # Integer | Return only records with more than this many Buy recommendations
-  buys_less = NULL, # Integer | Return only records with fewer than this many Buy recommendations
-  holds_greater = NULL, # Integer | Return only records with more than this many Hold recommendations
-  holds_less = NULL, # Integer | Return only records with fewer than this many Hold recommendations
-  sells_greater = NULL, # Integer | Return only records with more than this many Sell recommendations
-  sells_less = NULL, # Integer | Return only records with fewer than this many Sell recommendations
-  strong_sells_greater = NULL, # Integer | Return only records with more than this many Strong Sell recommendations
-  strong_sells_less = NULL, # Integer | Return only records with fewer than this many Strong Sell recommendations
-  total_greater = NULL, # Integer | Return only records with more than this many recommendations, regardless of type
-  total_less = NULL, # Integer | Return only records with fewer than this many recommendations, regardless of type
-  page_size = 100 # Integer | The number of results to return
+  start_date = NULL,
+  end_date = NULL,
+  mean_greater = NULL,
+  mean_less = NULL,
+  strong_buys_greater = NULL,
+  strong_buys_less = NULL,
+  buys_greater = NULL,
+  buys_less = NULL,
+  holds_greater = NULL,
+  holds_less = NULL,
+  sells_greater = NULL,
+  sells_less = NULL,
+  strong_sells_greater = NULL,
+  strong_sells_less = NULL,
+  total_greater = NULL,
+  total_less = NULL,
+  page_size = 100
 )
 
 response <- SecurityApi$get_security_zacks_analyst_ratings(identifier, opts)
@@ -4082,15 +4211,18 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
-identifier <- "AAPL" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier <- "AAPL"
 
 # Optional params
 opts <- list(
-  date = NULL # Character | Lookup a historical snapshot on the given date
+  date = NULL
 )
 
 response <- SecurityApi$get_security_zacks_analyst_ratings_snapshot(identifier, opts)
@@ -4166,16 +4298,19 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
-identifier <- "AAPL" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier <- "AAPL"
 
 # Optional params
 opts <- list(
-  page_size = 100, # Integer | The number of results to return
-  next_page = NULL # Character | Gets the next page of data from a previous API call
+  page_size = 100,
+  next_page = NULL
 )
 
 response <- SecurityApi$get_security_zacks_eps_surprises(identifier, opts)
@@ -4252,16 +4387,19 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
-identifier <- "AAPL" # Character | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier <- "AAPL"
 
 # Optional params
 opts <- list(
-  page_size = 100, # Integer | The number of results to return
-  next_page = NULL # Character | Gets the next page of data from a previous API call
+  page_size = 100,
+  next_page = NULL
 )
 
 response <- SecurityApi$get_security_zacks_sales_surprises(identifier, opts)
@@ -4338,16 +4476,19 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Optional params
 opts <- list(
-  logic = IntrinioSDK::SecurityScreenGroup$new(), # SecurityScreenGroup | The logic to screen with, consisting of operators, clauses, and nested groups.<br/> See <a href=\"https://docs.intrinio.com/documentation/screener_v2\" target=\"_blank\">screener documentation</a> for details on how to construct conditions.
-  order_column = "marketcap", # Character | Results returned sorted by this column
-  order_direction = "asc", # Character | Sort order to use with the order_column
-  primary_only = FALSE, # Logical | Return only primary securities
-  page_size = 100 # Integer | The number of results to return. Maximum for this endpoint is 50000.
+  logic = IntrinioSDK::SecurityScreenGroup$new(),
+  order_column = "marketcap",
+  order_direction = "asc",
+  primary_only = FALSE,
+  page_size = 100
 )
 
 response <- SecurityApi$screen_securities(opts)
@@ -4426,15 +4567,18 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
-query <- "Apple" # Character | 
+query <- "Apple"
 
 # Optional params
 opts <- list(
-  page_size = 100 # Integer | The number of results to return
+  page_size = 100
 )
 
 response <- SecurityApi$search_securities(query, opts)

@@ -51,22 +51,25 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 HistoricalDataApi <- IntrinioSDK::HistoricalDataApi$new(client)
 
 # Required params
-identifier <- "AAPL" # Character | An identifier for an entity such as a Company, Security, Index, etc (Ticker, FIGI, ISIN, CUSIP, CIK, LEI, Intrinio ID)
-tag <- "marketcap" # Character | An Intrinio data tag ID or code (<a href='https://data.intrinio.com/data-tags'>reference</a>)
+identifier <- "AAPL"
+tag <- "marketcap"
 
 # Optional params
 opts <- list(
-  frequency = "daily", # Character | Return historical data in the given frequency
-  type = NULL, # Character | Filter by type, when applicable
-  start_date = as.Date("2015-01-01"), # Date | Get historical data on or after this date
-  end_date = NULL, # Date | Get historical date on or before this date
-  sort_order = "desc", # Character | Sort by date `asc` or `desc`
-  page_size = 100, # Integer | The number of results to return
-  next_page = NULL # Character | Gets the next page of data from a previous API call
+  frequency = "daily",
+  type = NULL,
+  start_date = as.Date("2015-01-01"),
+  end_date = NULL,
+  sort_order = "desc",
+  page_size = 100,
+  next_page = NULL
 )
 
 response <- HistoricalDataApi$get_historical_data(identifier, tag, opts)

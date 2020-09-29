@@ -56,14 +56,17 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 ETFsApi <- IntrinioSDK::ETFsApi$new(client)
 
 # Optional params
 opts <- list(
-  exchange = "XNAS", # Character | 
-  page_size = 100, # Integer | The number of results to return
-  next_page = NULL # Character | Gets the next page of data from a previous API call
+  exchange = "XNAS",
+  page_size = 100,
+  next_page = NULL
 )
 
 response <- ETFsApi$get_all_etfs(opts)
@@ -140,11 +143,14 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 ETFsApi <- IntrinioSDK::ETFsApi$new(client)
 
 # Required params
-identifier <- "SPY" # Character | An ETF identifier (Ticker, Figi Ticker, ISIN, RIC, Intrinio ID)
+identifier <- "SPY"
 
 response <- ETFsApi$get_etf(identifier)
 
@@ -218,11 +224,14 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 ETFsApi <- IntrinioSDK::ETFsApi$new(client)
 
 # Required params
-identifier <- "SPY" # Character | An ETF identifier (Ticker, Figi Ticker, ISIN, RIC, Intrinio ID)
+identifier <- "SPY"
 
 response <- ETFsApi$get_etf_analytics(identifier)
 
@@ -296,16 +305,19 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 ETFsApi <- IntrinioSDK::ETFsApi$new(client)
 
 # Required params
-identifier <- "SPY" # Character | An ETF identifier (Ticker, Figi Ticker, ISIN, RIC, Intrinio ID)
+identifier <- "SPY"
 
 # Optional params
 opts <- list(
-  page_size = 100, # Integer | The number of results to return
-  next_page = NULL # Character | Gets the next page of data from a previous API call
+  page_size = 100,
+  next_page = NULL
 )
 
 response <- ETFsApi$get_etf_holdings(identifier, opts)
@@ -382,11 +394,14 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 ETFsApi <- IntrinioSDK::ETFsApi$new(client)
 
 # Required params
-identifier <- "SPY" # Character | An ETF identifier (Ticker, Figi Ticker, ISIN, RIC, Intrinio ID)
+identifier <- "SPY"
 
 response <- ETFsApi$get_etf_stats(identifier)
 
@@ -460,11 +475,14 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 ETFsApi <- IntrinioSDK::ETFsApi$new(client)
 
 # Required params
-query <- "iShares" # Character | 
+query <- "iShares"
 
 response <- ETFsApi$search_etfs(query)
 

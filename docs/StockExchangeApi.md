@@ -56,15 +56,18 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 StockExchangeApi <- IntrinioSDK::StockExchangeApi$new(client)
 
 # Optional params
 opts <- list(
-  city = "New York", # Character | Filter by city
-  country = "UNITED STATES OF AMERICA", # Character | Filter by country
-  country_code = "US", # Character | Filter by ISO country code
-  page_size = 100 # Integer | The number of results to return
+  city = "New York",
+  country = "UNITED STATES OF AMERICA",
+  country_code = "US",
+  page_size = 100
 )
 
 response <- StockExchangeApi$get_all_stock_exchanges(opts)
@@ -142,11 +145,14 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 StockExchangeApi <- IntrinioSDK::StockExchangeApi$new(client)
 
 # Required params
-identifier <- "USCOMP" # Character | A Stock Exchange identifier (MIC or Intrinio ID)
+identifier <- "USCOMP"
 
 response <- StockExchangeApi$get_stock_exchange_by_id(identifier)
 
@@ -220,17 +226,20 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 StockExchangeApi <- IntrinioSDK::StockExchangeApi$new(client)
 
 # Required params
-identifier <- "USCOMP" # Character | A Stock Exchange identifier (MIC or Intrinio ID)
+identifier <- "USCOMP"
 
 # Optional params
 opts <- list(
-  date = as.Date("2018-08-14"), # Date | The date for which to return price adjustments
-  page_size = 100, # Integer | The number of results to return
-  next_page = NULL # Character | Gets the next page of data from a previous API call
+  date = as.Date("2018-08-14"),
+  page_size = 100,
+  next_page = NULL
 )
 
 response <- StockExchangeApi$get_stock_exchange_price_adjustments(identifier, opts)
@@ -308,17 +317,20 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 StockExchangeApi <- IntrinioSDK::StockExchangeApi$new(client)
 
 # Required params
-identifier <- "USCOMP" # Character | A Stock Exchange identifier (MIC or Intrinio ID)
+identifier <- "USCOMP"
 
 # Optional params
 opts <- list(
-  date = as.Date("2018-08-14"), # Date | The date for which to return prices
-  page_size = 100, # Integer | The number of results to return
-  next_page = NULL # Character | Gets the next page of data from a previous API call
+  date = as.Date("2018-08-14"),
+  page_size = 100,
+  next_page = NULL
 )
 
 response <- StockExchangeApi$get_stock_exchange_prices(identifier, opts)
@@ -396,17 +408,20 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 StockExchangeApi <- IntrinioSDK::StockExchangeApi$new(client)
 
 # Required params
-identifier <- "USCOMP" # Character | A Stock Exchange identifier (MIC or Intrinio ID)
+identifier <- "USCOMP"
 
 # Optional params
 opts <- list(
-  source = NULL, # Character | Return realtime prices from the specified data source. If no source is specified, all sources are used.
-  page_size = 100, # Integer | The number of results to return
-  next_page = NULL # Character | Gets the next page of data from a previous API call
+  source = NULL,
+  page_size = 100,
+  next_page = NULL
 )
 
 response <- StockExchangeApi$get_stock_exchange_realtime_prices(identifier, opts)
@@ -484,16 +499,19 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 StockExchangeApi <- IntrinioSDK::StockExchangeApi$new(client)
 
 # Required params
-identifier <- "USCOMP" # Character | A Stock Exchange identifier (MIC or Intrinio ID)
+identifier <- "USCOMP"
 
 # Optional params
 opts <- list(
-  page_size = 100, # Integer | The number of results to return
-  next_page = NULL # Character | Gets the next page of data from a previous API call
+  page_size = 100,
+  next_page = NULL
 )
 
 response <- StockExchangeApi$get_stock_exchange_securities(identifier, opts)

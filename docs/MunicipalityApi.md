@@ -39,6 +39,7 @@ Method | HTTP request | Description
 #### All Municipalities
 
 
+Returns all Municipalities. When parameters are specified, returns matching municipalities.
 
 [//]: # (END_OVERVIEW)
 
@@ -52,24 +53,27 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 MunicipalityApi <- IntrinioSDK::MunicipalityApi$new(client)
 
 # Optional params
 opts <- list(
-  has_financials = TRUE, # Logical | Return municipalities with financials
-  government_name = NULL, # Character | Return municipalities with a government name matching the given query
-  government_type = NULL, # Character | Return municipalities with the given government type
-  area_name = NULL, # Character | Return municipalities with an area name matching the given query
-  area_type = NULL, # Character | Return municipalities with the given area type
-  city = NULL, # Character | Return municipalities in the given city
-  state = NULL, # Character | Return municipalities in the given state
-  zipcode = NULL, # Numeric | Return municipalities in the given zipcode
-  population_greater_than = NULL, # Numeric | Return municipalities with a population greater than the given number
-  population_less_than = NULL, # Numeric | Return municipalities with a population less than the given number
-  enrollment_greater_than = NULL, # Numeric | Return municipalities with an enrollment greater than the given number
-  enrollment_less_than = NULL, # Numeric | Return municipalities with an enrollment less than the given number
-  next_page = NULL # Character | Gets the next page of data from a previous API call
+  has_financials = NULL,
+  government_name = NULL,
+  government_type = NULL,
+  area_name = NULL,
+  area_type = NULL,
+  city = NULL,
+  state = NULL,
+  zipcode = NULL,
+  population_greater_than = NULL,
+  population_less_than = NULL,
+  enrollment_greater_than = NULL,
+  enrollment_less_than = NULL,
+  next_page = NULL
 )
 
 response <- MunicipalityApi$get_all_municipalities(opts)
@@ -156,11 +160,14 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 MunicipalityApi <- IntrinioSDK::MunicipalityApi$new(client)
 
 # Required params
-id <- "mun_Xn7x4z" # Character | An Intrinio ID of a Municipality
+id <- "mun_Xn7x4z"
 
 response <- MunicipalityApi$get_municipality_by_id(id)
 
@@ -234,15 +241,18 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 MunicipalityApi <- IntrinioSDK::MunicipalityApi$new(client)
 
 # Required params
-id <- "mun_Xn7x4z" # Character | An Intrinio ID of a Municipality
+id <- "mun_Xn7x4z"
 
 # Optional params
 opts <- list(
-  fiscal_year = 2017 # Numeric | Return financials for the given fiscal year
+  fiscal_year = 2017
 )
 
 response <- MunicipalityApi$get_municipality_financials(id, opts)

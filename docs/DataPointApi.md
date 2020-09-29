@@ -52,12 +52,15 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 DataPointApi <- IntrinioSDK::DataPointApi$new(client)
 
 # Required params
-identifier <- "AAPL" # Character | An identifier for an entity such as a Company, Security, Index, etc (Ticker, FIGI, ISIN, CUSIP, CIK, LEI, Intrinio ID)
-tag <- "marketcap" # Character | An Intrinio data tag ID or code (<a href='https://data.intrinio.com/data-tags'>reference</a>)
+identifier <- "AAPL"
+tag <- "marketcap"
 
 response <- DataPointApi$get_data_point_number(identifier, tag)
 
@@ -132,12 +135,15 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 DataPointApi <- IntrinioSDK::DataPointApi$new(client)
 
 # Required params
-identifier <- "AAPL" # Character | An identifier for an entity such as a Company, Security, Index, etc (Ticker, FIGI, ISIN, CUSIP, CIK, LEI, Intrinio ID)
-tag <- "ceo" # Character | An Intrinio data tag ID or code (<a href='https://data.intrinio.com/data-tags'>reference</a>)
+identifier <- "AAPL"
+tag <- "ceo"
 
 response <- DataPointApi$get_data_point_text(identifier, tag)
 

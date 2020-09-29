@@ -54,11 +54,14 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 FundamentalsApi <- IntrinioSDK::FundamentalsApi$new(client)
 
 # Required params
-id <- "fun_ge9LlE" # Character | The Intrinio ID for the Fundamental
+id <- "fun_ge9LlE"
 
 response <- FundamentalsApi$get_fundamental_by_id(id)
 
@@ -132,11 +135,14 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 FundamentalsApi <- IntrinioSDK::FundamentalsApi$new(client)
 
 # Required params
-id <- "AAPL-income_statement-2018-Q1" # Character | The Intrinio ID or lookup code (ticker-statement-year-period) for the Fundamental
+id <- "AAPL-income_statement-2018-Q1"
 
 response <- FundamentalsApi$get_fundamental_reported_financials(id)
 
@@ -210,11 +216,14 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 FundamentalsApi <- IntrinioSDK::FundamentalsApi$new(client)
 
 # Required params
-id <- "AAPL-income_statement-2018-Q1" # Character | The Intrinio ID or lookup code (ticker-statement-year-period) for the Fundamental
+id <- "AAPL-income_statement-2018-Q1"
 
 response <- FundamentalsApi$get_fundamental_standardized_financials(id)
 
@@ -288,14 +297,17 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 FundamentalsApi <- IntrinioSDK::FundamentalsApi$new(client)
 
 # Required params
-identifier <- "AAPL" # Character | A Company identifier (Ticker, CIK, LEI, Intrinio ID)
-statement_code <- "income_statement" # Character | The statement code
-fiscal_year <- 2017 # Integer | The fiscal year
-fiscal_period <- "FY" # Character | The fiscal period
+identifier <- "AAPL"
+statement_code <- "income_statement"
+fiscal_year <- 2017
+fiscal_period <- "FY"
 
 response <- FundamentalsApi$lookup_fundamental(identifier, statement_code, fiscal_year, fiscal_period)
 

@@ -51,6 +51,9 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 BulkDownloadsApi <- IntrinioSDK::BulkDownloadsApi$new(client)
 response <- BulkDownloadsApi$get_bulk_download_links()

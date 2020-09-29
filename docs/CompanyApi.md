@@ -63,21 +63,24 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 CompanyApi <- IntrinioSDK::CompanyApi$new(client)
 
 # Optional params
 opts <- list(
-  latest_filing_date = NULL, # Date | Return companies whose latest 10-Q or 10-K was filed on or after this date
-  sic = NULL, # Character | Return companies with the given Standard Industrial Classification code
-  template = NULL, # Character | Return companies with the given financial statement template
-  sector = NULL, # Character | Return companies in the given industry sector
-  industry_category = NULL, # Character | Return companies in the given industry category
-  industry_group = NULL, # Character | Return companies in the given industry group
-  has_fundamentals = TRUE, # Logical | Return only companies that have fundamentals when TRUE
-  has_stock_prices = TRUE, # Logical | Return only companies that have stock prices when TRUE
-  page_size = 100, # Integer | The number of results to return
-  next_page = NULL # Character | Gets the next page of data from a previous API call
+  latest_filing_date = NULL,
+  sic = NULL,
+  template = NULL,
+  sector = NULL,
+  industry_category = NULL,
+  industry_group = NULL,
+  has_fundamentals = TRUE,
+  has_stock_prices = TRUE,
+  page_size = 100,
+  next_page = NULL
 )
 
 response <- CompanyApi$get_all_companies(opts)
@@ -161,13 +164,16 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 CompanyApi <- IntrinioSDK::CompanyApi$new(client)
 
 # Optional params
 opts <- list(
-  page_size = 100, # Integer | The number of results to return
-  next_page = NULL # Character | Gets the next page of data from a previous API call
+  page_size = 100,
+  next_page = NULL
 )
 
 response <- CompanyApi$get_all_company_news(opts)
@@ -243,11 +249,14 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 CompanyApi <- IntrinioSDK::CompanyApi$new(client)
 
 # Required params
-identifier <- "AAPL" # Character | A Company identifier (Ticker, CIK, LEI, Intrinio ID)
+identifier <- "AAPL"
 
 response <- CompanyApi$get_company(identifier)
 
@@ -321,12 +330,15 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 CompanyApi <- IntrinioSDK::CompanyApi$new(client)
 
 # Required params
-identifier <- "AAPL" # Character | A Company identifier (Ticker, CIK, LEI, Intrinio ID)
-tag <- "marketcap" # Character | An Intrinio data tag ID or code (<a href='https://data.intrinio.com/data-tags'>reference</a>)
+identifier <- "AAPL"
+tag <- "marketcap"
 
 response <- CompanyApi$get_company_data_point_number(identifier, tag)
 
@@ -401,12 +413,15 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 CompanyApi <- IntrinioSDK::CompanyApi$new(client)
 
 # Required params
-identifier <- "AAPL" # Character | A Company identifier (Ticker, CIK, LEI, Intrinio ID)
-tag <- "ceo" # Character | An Intrinio data tag ID or code (<a href='https://data.intrinio.com/data-tags'>reference</a>)
+identifier <- "AAPL"
+tag <- "ceo"
 
 response <- CompanyApi$get_company_data_point_text(identifier, tag)
 
@@ -481,19 +496,22 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 CompanyApi <- IntrinioSDK::CompanyApi$new(client)
 
 # Required params
-identifier <- "AAPL" # Character | A Company identifier (Ticker, CIK, LEI, Intrinio ID)
+identifier <- "AAPL"
 
 # Optional params
 opts <- list(
-  report_type = NULL, # Character | Filter by <a href=\"https://docs.intrinio.com/documentation/sec_filing_report_types\" target=\"_blank\">report type</a>. Separate values with commas to return multiple report types.
-  start_date = as.Date("2015-01-01"), # Date | Filed on or after the given date
-  end_date = NULL, # Date | Filed before or after the given date
-  page_size = 100, # Integer | The number of results to return
-  next_page = NULL # Character | Gets the next page of data from a previous API call
+  report_type = NULL,
+  start_date = as.Date("2015-01-01"),
+  end_date = NULL,
+  page_size = 100,
+  next_page = NULL
 )
 
 response <- CompanyApi$get_company_filings(identifier, opts)
@@ -573,24 +591,27 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 CompanyApi <- IntrinioSDK::CompanyApi$new(client)
 
 # Required params
-identifier <- "AAPL" # Character | A Company identifier (Ticker, CIK, LEI, Intrinio ID)
+identifier <- "AAPL"
 
 # Optional params
 opts <- list(
-  filed_after = NULL, # Date | Filed on or after this date
-  filed_before = NULL, # Date | Filed on or before this date
-  reported_only = FALSE, # Logical | Only as-reported fundamentals
-  fiscal_year = NULL, # Integer | Only for the given fiscal year
-  statement_code = NULL, # Character | Only of the given statement code
-  type = NULL, # Character | Only of the given type
-  start_date = NULL, # Date | Only on or after the given date
-  end_date = NULL, # Date | Only on or before the given date
-  page_size = 100, # Integer | The number of results to return
-  next_page = NULL # Character | Gets the next page of data from a previous API call
+  filed_after = NULL,
+  filed_before = NULL,
+  reported_only = FALSE,
+  fiscal_year = NULL,
+  statement_code = NULL,
+  type = NULL,
+  start_date = NULL,
+  end_date = NULL,
+  page_size = 100,
+  next_page = NULL
 )
 
 response <- CompanyApi$get_company_fundamentals(identifier, opts)
@@ -675,22 +696,25 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 CompanyApi <- IntrinioSDK::CompanyApi$new(client)
 
 # Required params
-identifier <- "AAPL" # Character | A Company identifier (Ticker, CIK, LEI, Intrinio ID)
-tag <- "marketcap" # Character | An Intrinio data tag ID or code (<a href='https://data.intrinio.com/data-tags'>reference</a>)
+identifier <- "AAPL"
+tag <- "marketcap"
 
 # Optional params
 opts <- list(
-  frequency = "daily", # Character | Return historical data in the given frequency
-  type = NULL, # Character | Return historical data for given fiscal period type
-  start_date = as.Date("2018-01-01"), # Date | Return historical data on or after this date
-  end_date = NULL, # Date | Return historical data on or before this date
-  sort_order = "desc", # Character | Sort by date `asc` or `desc`
-  page_size = 100, # Integer | The number of results to return
-  next_page = NULL # Character | Gets the next page of data from a previous API call
+  frequency = "daily",
+  type = NULL,
+  start_date = as.Date("2018-01-01"),
+  end_date = NULL,
+  sort_order = "desc",
+  page_size = 100,
+  next_page = NULL
 )
 
 response <- CompanyApi$get_company_historical_data(identifier, tag, opts)
@@ -773,19 +797,22 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 CompanyApi <- IntrinioSDK::CompanyApi$new(client)
 
 # Optional params
 opts <- list(
-  ticker = NULL, # Character | Return IPOs with the given ticker (typically the IPO for the company)
-  status = NULL, # Character | Return IPOs with the given status. Upcoming IPOs are scheduled to occur in the future. Priced IPOs have occured and the company should be trading publicly. Withdrawn IPOs were planned to occurr but were withdrawn beforehand
-  start_date = NULL, # Date | Return IPOs on or after the given date
-  end_date = NULL, # Date | Return IPOs on or before the given date
-  offer_amount_greater_than = NULL, # Integer | Return IPOs with an offer dollar amount greater than the given amount
-  offer_amount_less_than = NULL, # Integer | Return IPOs with an offer dollar amount less than the given amount
-  page_size = 100, # Integer | The number of results to return
-  next_page = NULL # Character | Gets the next page of data from a previous API call
+  ticker = "UBER",
+  status = NULL,
+  start_date = NULL,
+  end_date = NULL,
+  offer_amount_greater_than = NULL,
+  offer_amount_less_than = NULL,
+  page_size = 100,
+  next_page = NULL
 )
 
 response <- CompanyApi$get_company_ipos(opts)
@@ -867,16 +894,19 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 CompanyApi <- IntrinioSDK::CompanyApi$new(client)
 
 # Required params
-identifier <- "AAPL" # Character | A Company identifier (Ticker, CIK, LEI, Intrinio ID)
+identifier <- "AAPL"
 
 # Optional params
 opts <- list(
-  page_size = 100, # Integer | The number of results to return
-  next_page = NULL # Character | Gets the next page of data from a previous API call
+  page_size = 100,
+  next_page = NULL
 )
 
 response <- CompanyApi$get_company_news(identifier, opts)
@@ -953,15 +983,18 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 CompanyApi <- IntrinioSDK::CompanyApi$new(client)
 
 # Required params
-identifier <- "AAPL" # Character | A Company identifier (Ticker, CIK, LEI, Intrinio ID)
+identifier <- "AAPL"
 
 # Optional params
 opts <- list(
-  next_page = NULL # Character | Gets the next page of data from a previous API call
+  next_page = NULL
 )
 
 response <- CompanyApi$get_company_securities(identifier, opts)
@@ -1037,14 +1070,17 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 CompanyApi <- IntrinioSDK::CompanyApi$new(client)
 
 # Required params
-identifier <- "AAPL" # Character | A Company identifier (Ticker, CIK, LEI, Intrinio ID)
-statement_code <- "income_statement" # Character | The statement code
-fiscal_period <- "FY" # Character | The fiscal period
-fiscal_year <- 2017 # Integer | The fiscal year
+identifier <- "AAPL"
+statement_code <- "income_statement"
+fiscal_period <- "FY"
+fiscal_year <- 2017
 
 response <- CompanyApi$lookup_company_fundamental(identifier, statement_code, fiscal_period, fiscal_year)
 
@@ -1121,15 +1157,18 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 CompanyApi <- IntrinioSDK::CompanyApi$new(client)
 
 # Required params
-query <- "Apple" # Character | Search parameters
+query <- "Apple"
 
 # Optional params
 opts <- list(
-  page_size = 100 # Integer | The number of results to return
+  page_size = 100
 )
 
 response <- CompanyApi$search_companies(query, opts)

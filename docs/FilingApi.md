@@ -60,21 +60,24 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 FilingApi <- IntrinioSDK::FilingApi$new(client)
 
 # Required params
-company <- "AAPL" # Character | Filings for the given `company` identifier (ticker, CIK, LEI, Intrinio ID)
+company <- "AAPL"
 
 # Optional params
 opts <- list(
-  report_type = NULL, # Character | Filter by report type. Separate values with commas to return multiple The filing <a href=\"https://docs.intrinio.com/documentation/sec_filing_report_types\" target=\"_blank\">report types</a>.
-  start_date = as.Date("2015-01-01"), # Date | Filed on or after the given date
-  end_date = NULL, # Date | Filed before or after the given date
-  industry_category = NULL, # Character | Return companies in the given industry category
-  industry_group = NULL, # Character | Return companies in the given industry group
-  page_size = 100, # Integer | The number of results to return
-  next_page = NULL # Character | Gets the next page of data from a previous API call
+  report_type = "10-Q",
+  start_date = as.Date("2015-01-01"),
+  end_date = NULL,
+  industry_category = NULL,
+  industry_group = NULL,
+  page_size = 100,
+  next_page = NULL
 )
 
 response <- FilingApi$get_all_filings(company, opts)
@@ -156,19 +159,22 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 FilingApi <- IntrinioSDK::FilingApi$new(client)
 
 # Optional params
 opts <- list(
-  company = "AAPL", # Character | A Company identifier (Ticker, CIK, LEI, Intrinio ID)
-  report_type = "10-Q", # Character | Notes contained in filings that match the given <a href=\"https://docs.intrinio.com/documentation/sec_filing_report_types\" target=\"_blank\">report type</a>
-  filing_start_date = NULL, # Date | Limit search to filings on or after this date
-  filing_end_date = NULL, # Date | Limit search to filings on or before this date
-  period_ended_start_date = NULL, # Date | Limit search to filings with a period end date on or after this date
-  period_ended_end_date = NULL, # Date | Limit search to filings with a period end date on or before this date
-  page_size = 100, # Integer | The number of results to return
-  next_page = NULL # Character | Gets the next page of data from a previous API call
+  company = "AAPL",
+  report_type = "10-Q",
+  filing_start_date = NULL,
+  filing_end_date = NULL,
+  period_ended_start_date = NULL,
+  period_ended_end_date = NULL,
+  page_size = 100,
+  next_page = NULL
 )
 
 response <- FilingApi$get_all_notes(opts)
@@ -250,11 +256,14 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 FilingApi <- IntrinioSDK::FilingApi$new(client)
 
 # Required params
-id <- "fil_7Kn2P6" # Character | The Intrinio ID of the Filing
+id <- "fil_7Kn2P6"
 
 response <- FilingApi$get_filing_by_id(id)
 
@@ -328,21 +337,24 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 FilingApi <- IntrinioSDK::FilingApi$new(client)
 
 # Required params
-identifier <- "fil_B73xBG" # Character | A Filing identifier
+identifier <- "fil_B73xBG"
 
 # Optional params
 opts <- list(
-  statement_code = NULL, # Character | Filters fundamentals by statement code
-  type = NULL, # Character | Filters fundamentals by type
-  fiscal_year = NULL, # Integer | Filters fundamentals by fiscal year
-  fiscal_period = NULL, # Character | Filters fundamentals by fiscal period
-  start_date = NULL, # Date | Returns fundamentals on or after the given date
-  end_date = NULL, # Date | Returns fundamentals on or before the given date
-  next_page = NULL # Character | Gets the next page of data from a previous API call
+  statement_code = NULL,
+  type = NULL,
+  fiscal_year = NULL,
+  fiscal_period = NULL,
+  start_date = NULL,
+  end_date = NULL,
+  next_page = NULL
 )
 
 response <- FilingApi$get_filing_fundamentals(identifier, opts)
@@ -423,11 +435,14 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 FilingApi <- IntrinioSDK::FilingApi$new(client)
 
 # Required params
-identifier <- "fil_B73xBG" # Character | A Filing identifier
+identifier <- "fil_B73xBG"
 
 response <- FilingApi$get_filing_html(identifier)
 
@@ -500,11 +515,14 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 FilingApi <- IntrinioSDK::FilingApi$new(client)
 
 # Required params
-identifier <- "fil_B73xBG" # Character | A Filing identifier
+identifier <- "fil_B73xBG"
 
 response <- FilingApi$get_filing_text(identifier)
 
@@ -577,15 +595,18 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 FilingApi <- IntrinioSDK::FilingApi$new(client)
 
 # Required params
-identifier <- "xbn_ydK3QL" # Character | The Intrinio ID of the filing note
+identifier <- "xbn_ydK3QL"
 
 # Optional params
 opts <- list(
-  content_format = "text" # Character | Returns content in html (as filed) or plain text
+  content_format = "text"
 )
 
 response <- FilingApi$get_note(identifier, opts)
@@ -660,11 +681,14 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 FilingApi <- IntrinioSDK::FilingApi$new(client)
 
 # Required params
-identifier <- "xbn_ydK3QL" # Character | The Intrinio ID of the filing note
+identifier <- "xbn_ydK3QL"
 
 response <- FilingApi$get_note_html(identifier)
 
@@ -737,11 +761,14 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 FilingApi <- IntrinioSDK::FilingApi$new(client)
 
 # Required params
-identifier <- "xbn_ydK3QL" # Character | The Intrinio ID of the filing note
+identifier <- "xbn_ydK3QL"
 
 response <- FilingApi$get_note_text(identifier)
 
@@ -815,17 +842,20 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 FilingApi <- IntrinioSDK::FilingApi$new(client)
 
 # Required params
-query <- "inflation" # Character | Search for notes that contain all or parts of this text
+query <- "inflation"
 
 # Optional params
 opts <- list(
-  filing_start_date = as.Date("2018-07-15"), # Date | Limit search to filings on or after this date
-  filing_end_date = as.Date("2018-11-30"), # Date | Limit search to filings on or before this date
-  page_size = 100 # Integer | The number of results to return
+  filing_start_date = as.Date("2018-07-15"),
+  filing_end_date = as.Date("2018-11-30"),
+  page_size = 100
 )
 
 response <- FilingApi$search_notes(query, opts)

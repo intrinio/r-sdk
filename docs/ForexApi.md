@@ -53,6 +53,9 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 ForexApi <- IntrinioSDK::ForexApi$new(client)
 response <- ForexApi$get_forex_currencies()
@@ -123,6 +126,9 @@ client <- IntrinioSDK::ApiClient$new()
 
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
+
+#Configure retries
+client$configuration$allowRetries <- TRUE
 
 # Setup API with client
 ForexApi <- IntrinioSDK::ForexApi$new(client)
@@ -195,22 +201,25 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 ForexApi <- IntrinioSDK::ForexApi$new(client)
 
 # Required params
-pair <- "EURUSD" # Character | The Forex Currency Pair code
-timeframe <- "D1" # Character | The time interval for the quotes
+pair <- "EURUSD"
+timeframe <- "D1"
 
 # Optional params
 opts <- list(
-  timezone = "UTC", # Character | Returns trading times in this timezone
-  start_date = NULL, # Date | Return Forex Prices on or after this date
-  start_time = NULL, # Character | Return Forex Prices at or after this time (24-hour)
-  end_date = NULL, # Date | Return Forex Prices on or before this date
-  end_time = NULL, # Character | Return Forex Prices at or before this time (24-hour)
-  page_size = 100, # Integer | The number of results to return
-  next_page = NULL # Character | Gets the next page of data from a previous API call
+  timezone = "UTC",
+  start_date = as.Date("2018-01-01"),
+  start_time = NULL,
+  end_date = as.Date("2019-01-01"),
+  end_time = NULL,
+  page_size = 100,
+  next_page = NULL
 )
 
 response <- ForexApi$get_forex_prices(pair, timeframe, opts)
@@ -234,9 +243,9 @@ Name | Type | Description  | Notes
  **timeframe** | Character| The time interval for the quotes |  &nbsp;
  **timezone** | Character| Returns trading times in this timezone | [optional] [default to UTC] &nbsp;
  **start_date** | Date| Return Forex Prices on or after this date | [optional]  &nbsp;
- **start_time** | Character| Return Forex Prices at or after this time (24-hour) | [optional]  &nbsp;
+ **start_time** | Character| Return Forex Prices at or after this time (24-hour in &#39;hh:mm&#39; format, UTC timezone) | [optional]  &nbsp;
  **end_date** | Date| Return Forex Prices on or before this date | [optional]  &nbsp;
- **end_time** | Character| Return Forex Prices at or before this time (24-hour) | [optional]  &nbsp;
+ **end_time** | Character| Return Forex Prices at or before this time (24-hour in &#39;hh:mm&#39; format, UTC timezone) | [optional]  &nbsp;
  **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
  **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
 <br/>

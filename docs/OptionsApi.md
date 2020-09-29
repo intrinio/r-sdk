@@ -54,23 +54,26 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 OptionsApi <- IntrinioSDK::OptionsApi$new(client)
 
 # Required params
-symbol <- "MSFT" # Character | The option symbol, corresponding to the underlying security.
+symbol <- "AAPL"
 
 # Optional params
 opts <- list(
-  type = "put", # Character | The option contract type.
-  strike = 170.0, # Numeric | The strike price of the option contract. This will return options contracts with strike price equal to this price.
-  strike_greater_than = 190.0, # Numeric | The strike price of the option contract. This will return options contracts with strike prices greater than this price.
-  strike_less_than = 150.0, # Numeric | The strike price of the option contract. This will return options contracts with strike prices less than this price.
-  expiration = "2019-03-01", # Character | The expiration date of the option contract. This will return options contracts with expiration dates on this date.
-  expiration_after = "2019-01-01", # Character | The expiration date of the option contract. This will return options contracts with expiration dates after this date.
-  expiration_before = "2019-12-31", # Character | The expiration date of the option contract. This will return options contracts with expiration dates before this date.
-  page_size = 100, # Integer | The number of results to return
-  next_page = NULL # Character | Gets the next page of data from a previous API call
+  type = "put",
+  strike = 170,
+  strike_greater_than = 150,
+  strike_less_than = 190,
+  expiration = "2019-03-01",
+  expiration_after = "2019-01-01",
+  expiration_before = "2019-12-31",
+  page_size = 100,
+  next_page = NULL
 )
 
 response <- OptionsApi$get_options(symbol, opts)
@@ -154,22 +157,25 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 OptionsApi <- IntrinioSDK::OptionsApi$new(client)
 
 # Required params
-symbol <- "MSFT" # Character | The option symbol, corresponding to the underlying security.
-expiration <- "2019-04-05" # Character | The expiration date of the options contract
+symbol <- "MSFT"
+expiration <- "2019-04-05"
 
 # Optional params
 opts <- list(
-  date = as.Date("2019-04-05"), # Date | The date of the option price. Returns option prices on this date.
-  type = "put", # Character | The option contract type.
-  strike = 170.0, # Numeric | The strike price of the option contract. This will return options contracts with strike price equal to this price.
-  strike_greater_than = 190.0, # Numeric | The strike price of the option contract. This will return options contracts with strike prices greater than this price.
-  strike_less_than = 150.0, # Numeric | The strike price of the option contract. This will return options contracts with strike prices less than this price.
-  moneyness = "in_the_money", # Character | The moneyness of the options contracts to return. 'all' will return all options contracts. 'in_the_money' will return options contracts that are in the money (call options with strike prices below the current price, put options with strike prices above the current price). 'out_of_they_money' will return options contracts that are out of the money (call options with strike prices above the current price, put options with strike prices below the current price). 'near_the_money' will return options contracts that are $0.50 or less away from being in the money.
-  page_size = 100 # Integer | The number of results to return
+  date = NULL,
+  type = NULL,
+  strike = NULL,
+  strike_greater_than = NULL,
+  strike_less_than = NULL,
+  moneyness = NULL,
+  page_size = 100
 )
 
 response <- OptionsApi$get_options_chain(symbol, expiration, opts)
@@ -252,16 +258,19 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 OptionsApi <- IntrinioSDK::OptionsApi$new(client)
 
 # Required params
-symbol <- "MSFT" # Character | The option symbol, corresponding to the underlying security.
+symbol <- "MSFT"
 
 # Optional params
 opts <- list(
-  after = "2019-01-01", # Character | Return option contract expiration dates after this date.
-  before = "2019-12-31" # Character | Return option contract expiration dates before this date.
+  after = "2019-01-01",
+  before = "2019-12-31"
 )
 
 response <- OptionsApi$get_options_expirations(symbol, opts)
@@ -338,18 +347,21 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 OptionsApi <- IntrinioSDK::OptionsApi$new(client)
 
 # Required params
-identifier <- "identifier_example" # Character | The Intrinio ID or code of the options contract to request prices for.
+identifier <- "MSFT190405C00118000"
 
 # Optional params
 opts <- list(
-  start_date = "2019-01-01", # Character | Return option contract prices on or after this date.
-  end_date = "2019-12-31", # Character | Return option contract prices on or before this date.
-  page_size = 100, # Integer | The number of results to return
-  next_page = NULL # Character | Gets the next page of data from a previous API call
+  start_date = "2019-01-01",
+  end_date = "2019-12-31",
+  page_size = 100,
+  next_page = NULL
 )
 
 response <- OptionsApi$get_options_prices(identifier, opts)

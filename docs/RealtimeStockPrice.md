@@ -12,6 +12,7 @@ Name | Type | Description
 ------------ | ------------- | -------------
 **last_price** | **Numeric** | The price of the last trade. &nbsp;
 **last_time** | [**POSIXlt**](POSIXlt.md) | The date and time when the last trade occurred. &nbsp;
+**last_size** | **Numeric** | The size of the last trade. &nbsp;
 **bid_price** | **Numeric** | The price of the top bid order. &nbsp;
 **bid_size** | **Numeric** | The size of the top bid order. &nbsp;
 **ask_price** | **Numeric** | The price of the top ask order. &nbsp;

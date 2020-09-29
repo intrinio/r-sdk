@@ -53,18 +53,21 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 DataTagApi <- IntrinioSDK::DataTagApi$new(client)
 
 # Optional params
 opts <- list(
-  tag = NULL, # Character | Tag
-  type = NULL, # Character | Type
-  parent = NULL, # Character | ID of tag parent
-  statement_code = "income_statement", # Character | Statement Code
-  fs_template = "industrial", # Character | Template
-  page_size = 100, # Integer | The number of results to return
-  next_page = NULL # Character | Gets the next page of data from a previous API call
+  tag = NULL,
+  type = NULL,
+  parent = NULL,
+  statement_code = "income_statement",
+  fs_template = "industrial",
+  page_size = 100,
+  next_page = NULL
 )
 
 response <- DataTagApi$get_all_data_tags(opts)
@@ -145,11 +148,14 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 DataTagApi <- IntrinioSDK::DataTagApi$new(client)
 
 # Required params
-identifier <- "marketcap" # Character | The Intrinio ID or the code-name of the Data Tag
+identifier <- "marketcap"
 
 response <- DataTagApi$get_data_tag_by_id(identifier)
 
@@ -223,15 +229,18 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 DataTagApi <- IntrinioSDK::DataTagApi$new(client)
 
 # Required params
-query <- "revenue" # Character | 
+query <- "revenue"
 
 # Optional params
 opts <- list(
-  page_size = 100 # Integer | The number of results to return
+  page_size = 100
 )
 
 response <- DataTagApi$search_data_tags(query, opts)

@@ -7,8 +7,8 @@ Welcome to the Intrinio API! Through our Financial Data Marketplace, we offer a 
 
 ## Overview
 
-- API version: 2.14.2
-- Package version: 1.5.2
+- API version: 2.15.3
+- Package version: 1.5.3
 
 The new Intrinio R SDK wraps all API v2 endpoints into an easy-to-use set of classes, methods, and response objects.
 
@@ -60,6 +60,9 @@ client <- IntrinioSDK::ApiClient$new()
 # Configure API key authorization: ApiKeyAuth
 client$configuration$apiKey <- "YOUR_API_KEY"
 
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
 # Setup API with client
 CompanyApi <- IntrinioSDK::CompanyApi$new(client)
 
@@ -71,6 +74,12 @@ response <- CompanyApi$get_company(identifier)
 print(response)
 print(response$content)
 ```
+
+## Retries
+
+By default, automatic retries are enabled for the R SDK. Retries can be enabled/disabled by setting `allowRetries` on the client configuration to `TRUE`/`FALSE` as seen in the code example above.
+
+If set to `TRUE`, all calls to the API will attempt a successful completion up to 5 times with exponential backoff before failing. If set to `FALSE`, calls to the API will attempt one successful call.
 
 ## API Endpoints
 
@@ -156,8 +165,8 @@ Class | Method | HTTP request | Description
 *IntrinioSDK::SecurityApi* | [**get_security_data_point_text**](docs/SecurityApi.md#get_security_data_point_text) | **GET** /securities/{identifier}/data_point/{tag}/text | Data Point (Text) for Security
 *IntrinioSDK::SecurityApi* | [**get_security_historical_data**](docs/SecurityApi.md#get_security_historical_data) | **GET** /securities/{identifier}/historical_data/{tag} | Historical Data for Security
 *IntrinioSDK::SecurityApi* | [**get_security_intraday_prices**](docs/SecurityApi.md#get_security_intraday_prices) | **GET** /securities/{identifier}/prices/intraday | Intraday Stock Prices for Security
-*IntrinioSDK::SecurityApi* | [**get_security_latest_dividend_record**](docs/SecurityApi.md#get_security_latest_dividend_record) | **GET** /securities/{identifier}/dividends/latest | Lastest Dividend Record for Security
-*IntrinioSDK::SecurityApi* | [**get_security_latest_earnings_record**](docs/SecurityApi.md#get_security_latest_earnings_record) | **GET** /securities/{identifier}/earnings/latest | Lastest Earnings Record for Security
+*IntrinioSDK::SecurityApi* | [**get_security_latest_dividend_record**](docs/SecurityApi.md#get_security_latest_dividend_record) | **GET** /securities/{identifier}/dividends/latest | Latest Dividend Record for Security
+*IntrinioSDK::SecurityApi* | [**get_security_latest_earnings_record**](docs/SecurityApi.md#get_security_latest_earnings_record) | **GET** /securities/{identifier}/earnings/latest | Latest Earnings Record for Security
 *IntrinioSDK::SecurityApi* | [**get_security_price_technicals_adi**](docs/SecurityApi.md#get_security_price_technicals_adi) | **GET** /securities/{identifier}/prices/technicals/adi | Accumulation/Distribution Index
 *IntrinioSDK::SecurityApi* | [**get_security_price_technicals_adtv**](docs/SecurityApi.md#get_security_price_technicals_adtv) | **GET** /securities/{identifier}/prices/technicals/adtv | Average Daily Trading Volume
 *IntrinioSDK::SecurityApi* | [**get_security_price_technicals_adx**](docs/SecurityApi.md#get_security_price_technicals_adx) | **GET** /securities/{identifier}/prices/technicals/adx | Average Directional Index
