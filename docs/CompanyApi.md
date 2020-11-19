@@ -1168,6 +1168,7 @@ query <- "Apple"
 
 # Optional params
 opts <- list(
+  active = TRUE,
   page_size = 100
 )
 
@@ -1189,6 +1190,7 @@ print(response$content)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | Character| Search parameters |  &nbsp;
+ **active** | Logical| When TRUE, return companies that are actively traded (having stock prices within the past 14 days). When FALSE, return companies that are not actively traded or never have been traded. | [optional]  &nbsp;
  **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
 <br/>
 
