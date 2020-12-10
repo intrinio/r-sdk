@@ -10,6 +10,7 @@ Method | HTTP request | Description
 [**get_options_expirations**](OptionsApi.md#get_options_expirations) | **GET** /options/expirations/{symbol} | Options Expirations
 [**get_options_prices**](OptionsApi.md#get_options_prices) | **GET** /options/prices/{identifier} | Option Prices
 [**get_options_prices_realtime**](OptionsApi.md#get_options_prices_realtime) | **GET** /options/prices/{identifier}/realtime | Option Prices Realtime
+[**get_options_stats_realtime**](OptionsApi.md#get_options_stats_realtime) | **GET** /options/prices/{identifier}/realtime/stats | Option Stats Realtime
 
 
 
@@ -268,7 +269,7 @@ OptionsApi <- IntrinioSDK::OptionsApi$new(client)
 
 # Required params
 symbol <- "MSFT"
-expiration <- "2021-01-08"
+expiration <- "2023-01-20"
 
 # Optional params
 opts <- list(
@@ -512,11 +513,11 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_options_prices_realtime)
 
-[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseOptionPricesRealtime)
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseOptionsPriceRealtime)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
-[//]: # (RETURN_TYPE_DOC:ApiResponseOptionPricesRealtime.md)
+[//]: # (RETURN_TYPE_DOC:ApiResponseOptionsPriceRealtime.md)
 
 [//]: # (OPERATION:get_options_prices_realtime_v2)
 
@@ -530,7 +531,7 @@ Name | Type | Description  | Notes
 
 [//]: # (START_OVERVIEW)
 
-> ApiResponseOptionPricesRealtime get_options_prices_realtime(identifier, opts)
+> ApiResponseOptionsPriceRealtime get_options_prices_realtime(identifier, opts)
 
 #### Option Prices Realtime
 
@@ -588,7 +589,94 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiResponseOptionPricesRealtime**](ApiResponseOptionPricesRealtime.md)
+[**ApiResponseOptionsPriceRealtime**](ApiResponseOptionsPriceRealtime.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:IntrinioSDK::OptionsApi)
+
+[//]: # (METHOD:get_options_stats_realtime)
+
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseOptionsStatsRealtime)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:ApiResponseOptionsStatsRealtime.md)
+
+[//]: # (OPERATION:get_options_stats_realtime_v2)
+
+[//]: # (ENDPOINT:/options/prices/{identifier}/realtime/stats)
+
+[//]: # (DOCUMENT_LINK:OptionsApi.md#get_options_stats_realtime)
+
+# **get_options_stats_realtime**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/r/get_options_stats_realtime_v2)
+
+[//]: # (START_OVERVIEW)
+
+> ApiResponseOptionsStatsRealtime get_options_stats_realtime(identifier, opts)
+
+#### Option Stats Realtime
+
+
+Returns all option stats (greeks and implied volatility) and factors used to calculate them, for a given option contract identifier.
+
+[//]: # (END_OVERVIEW)
+
+### Example
+
+[//]: # (START_CODE_EXAMPLE)
+```r
+# Setup client
+client <- IntrinioSDK::ApiClient$new()
+
+# Configure API key authorization: ApiKeyAuth
+client$configuration$apiKey <- "YOUR_API_KEY"
+
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
+# Setup API with client
+OptionsApi <- IntrinioSDK::OptionsApi$new(client)
+
+# Required params
+identifier <- "AAPL230120C00090000"
+
+# Optional params
+opts <- list(
+  source = NULL
+)
+
+response <- OptionsApi$get_options_stats_realtime(identifier, opts)
+
+print(response)
+print(response$content)
+```
+
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **identifier** | Character| The Intrinio ID or code of the options contract to request prices for. |  &nbsp;
+ **source** | Character| Realtime or 15-minute delayed contracts. | [optional]  &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**ApiResponseOptionsStatsRealtime**](ApiResponseOptionsStatsRealtime.md)
 
 [//]: # (END_OPERATION)
 

@@ -7,8 +7,8 @@ Welcome to the Intrinio API! Through our Financial Data Marketplace, we offer a 
 
 ## Overview
 
-- API version: 2.16.4
-- Package version: 1.5.4
+- API version: 2.17.0
+- Package version: 1.6.0
 
 The new Intrinio R SDK wraps all API v2 endpoints into an easy-to-use set of classes, methods, and response objects.
 
@@ -161,6 +161,7 @@ Class | Method | HTTP request | Description
 *IntrinioSDK::OptionsApi* | [**get_options_expirations**](docs/OptionsApi.md#get_options_expirations) | **GET** /options/expirations/{symbol} | Options Expirations
 *IntrinioSDK::OptionsApi* | [**get_options_prices**](docs/OptionsApi.md#get_options_prices) | **GET** /options/prices/{identifier} | Option Prices
 *IntrinioSDK::OptionsApi* | [**get_options_prices_realtime**](docs/OptionsApi.md#get_options_prices_realtime) | **GET** /options/prices/{identifier}/realtime | Option Prices Realtime
+*IntrinioSDK::OptionsApi* | [**get_options_stats_realtime**](docs/OptionsApi.md#get_options_stats_realtime) | **GET** /options/prices/{identifier}/realtime/stats | Option Stats Realtime
 *IntrinioSDK::SecurityApi* | [**get_all_securities**](docs/SecurityApi.md#get_all_securities) | **GET** /securities | All Securities
 *IntrinioSDK::SecurityApi* | [**get_security_by_id**](docs/SecurityApi.md#get_security_by_id) | **GET** /securities/{identifier} | Lookup Security
 *IntrinioSDK::SecurityApi* | [**get_security_data_point_number**](docs/SecurityApi.md#get_security_data_point_number) | **GET** /securities/{identifier}/data_point/{tag}/number | Data Point (Number) for Security
@@ -290,11 +291,12 @@ Class | Method | HTTP request | Description
  - [IntrinioSDK::ApiResponseMunicipalitiyFinancials](docs/ApiResponseMunicipalitiyFinancials.md)
  - [IntrinioSDK::ApiResponseNews](docs/ApiResponseNews.md)
  - [IntrinioSDK::ApiResponseOptionPrices](docs/ApiResponseOptionPrices.md)
- - [IntrinioSDK::ApiResponseOptionPricesRealtime](docs/ApiResponseOptionPricesRealtime.md)
  - [IntrinioSDK::ApiResponseOptions](docs/ApiResponseOptions.md)
  - [IntrinioSDK::ApiResponseOptionsChain](docs/ApiResponseOptionsChain.md)
  - [IntrinioSDK::ApiResponseOptionsChainRealtime](docs/ApiResponseOptionsChainRealtime.md)
  - [IntrinioSDK::ApiResponseOptionsExpirations](docs/ApiResponseOptionsExpirations.md)
+ - [IntrinioSDK::ApiResponseOptionsPriceRealtime](docs/ApiResponseOptionsPriceRealtime.md)
+ - [IntrinioSDK::ApiResponseOptionsStatsRealtime](docs/ApiResponseOptionsStatsRealtime.md)
  - [IntrinioSDK::ApiResponseReportedFinancials](docs/ApiResponseReportedFinancials.md)
  - [IntrinioSDK::ApiResponseSICIndexHistoricalData](docs/ApiResponseSICIndexHistoricalData.md)
  - [IntrinioSDK::ApiResponseSICIndices](docs/ApiResponseSICIndices.md)
@@ -416,9 +418,11 @@ Class | Method | HTTP request | Description
  - [IntrinioSDK::Option](docs/Option.md)
  - [IntrinioSDK::OptionChain](docs/OptionChain.md)
  - [IntrinioSDK::OptionChainRealtime](docs/OptionChainRealtime.md)
+ - [IntrinioSDK::OptionFactorsRealtime](docs/OptionFactorsRealtime.md)
  - [IntrinioSDK::OptionPrice](docs/OptionPrice.md)
  - [IntrinioSDK::OptionPriceRealtime](docs/OptionPriceRealtime.md)
  - [IntrinioSDK::OptionRealtime](docs/OptionRealtime.md)
+ - [IntrinioSDK::OptionStatsRealtime](docs/OptionStatsRealtime.md)
  - [IntrinioSDK::RealtimeStockPrice](docs/RealtimeStockPrice.md)
  - [IntrinioSDK::RealtimeStockPriceSecurity](docs/RealtimeStockPriceSecurity.md)
  - [IntrinioSDK::RelativeStrengthIndexTechnicalValue](docs/RelativeStrengthIndexTechnicalValue.md)

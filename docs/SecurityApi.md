@@ -123,6 +123,7 @@ opts <- list(
   figi_unique_id = NULL,
   include_non_figi = FALSE,
   page_size = 100,
+  primary_listing = NULL,
   next_page = NULL
 )
 
@@ -160,6 +161,7 @@ Name | Type | Description  | Notes
  **figi_unique_id** | Character| Return securities with the given FIGI Unique ID (&lt;a href&#x3D;\&quot;https://www.openfigi.com/about\&quot; target&#x3D;\&quot;_blank\&quot;&gt;reference&lt;/a&gt;). | [optional]  &nbsp;
  **include_non_figi** | Logical| When TRUE, include securities that do not have a FIGI. By default, this is FALSE. If this parameter is not specified, only securities with a FIGI are returned. | [optional] [default to FALSE] &nbsp;
  **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **primary_listing** | Logical| If TRUE, the Security is the primary issue for the company, otherwise it is a secondary issue on a secondary stock exchange | [optional]  &nbsp;
  **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
 <br/>
 
@@ -3828,7 +3830,7 @@ identifier <- "AAPL"
 
 # Optional params
 opts <- list(
-  source = NULL
+  source = "bats"
 )
 
 response <- SecurityApi$get_security_realtime_price(identifier, opts)

@@ -1,6 +1,6 @@
-# ApiResponseOptionPricesRealtime
+# ApiResponseOptionsPriceRealtime
 
-[//]: # (CLASS:IntrinioSDK::ApiResponseOptionPricesRealtime)
+[//]: # (CLASS:IntrinioSDK::ApiResponseOptionsPriceRealtime)
 
 [//]: # (KIND:object)
 
@@ -10,13 +10,17 @@
 
 Name | Type | Description
 ------------ | ------------- | -------------
-**price** | [**TODO_OBJECT_MAPPING**](TODO_OBJECT_MAPPING.md) |  &nbsp;
+**price** | [**OptionPriceRealtime**](OptionPriceRealtime.md) |  &nbsp;
+**stats** | [**OptionStatsRealtime**](OptionStatsRealtime.md) |  &nbsp;
 **option** | [**OptionRealtime**](OptionRealtime.md) |  &nbsp;
 
 [//]: # (END_DEFINITION)
 
 
-[//]: # (CONTAINED_CLASS:IntrinioSDK::TODO_OBJECT_MAPPING)
+[//]: # (CONTAINED_CLASS:IntrinioSDK::OptionPriceRealtime)
+
+
+[//]: # (CONTAINED_CLASS:IntrinioSDK::OptionStatsRealtime)
 
 
 [//]: # (CONTAINED_CLASS:IntrinioSDK::OptionRealtime)
