@@ -18,6 +18,7 @@ Name | Type | Description
 **ask_price** | **Numeric** | The price of the top ask order. &nbsp;
 **ask_size** | **Numeric** | The size of the top ask order. &nbsp;
 **open_price** | **Numeric** | The price at the open of the trading day. &nbsp;
+**close_price** | **Numeric** | The price at the close of the trading day. &nbsp;
 **high_price** | **Numeric** | The high price for the trading day. &nbsp;
 **low_price** | **Numeric** | The low price for the trading day. &nbsp;
 **exchange_volume** | **Numeric** | The number of shares exchanged during the trading day on the exchange. &nbsp;

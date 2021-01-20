@@ -7,8 +7,8 @@ Welcome to the Intrinio API! Through our Financial Data Marketplace, we offer a 
 
 ## Overview
 
-- API version: 2.17.0
-- Package version: 1.6.0
+- API version: 2.18.0
+- Package version: 1.7.0
 
 The new Intrinio R SDK wraps all API v2 endpoints into an easy-to-use set of classes, methods, and response objects.
 
@@ -167,6 +167,7 @@ Class | Method | HTTP request | Description
 *IntrinioSDK::SecurityApi* | [**get_security_data_point_number**](docs/SecurityApi.md#get_security_data_point_number) | **GET** /securities/{identifier}/data_point/{tag}/number | Data Point (Number) for Security
 *IntrinioSDK::SecurityApi* | [**get_security_data_point_text**](docs/SecurityApi.md#get_security_data_point_text) | **GET** /securities/{identifier}/data_point/{tag}/text | Data Point (Text) for Security
 *IntrinioSDK::SecurityApi* | [**get_security_historical_data**](docs/SecurityApi.md#get_security_historical_data) | **GET** /securities/{identifier}/historical_data/{tag} | Historical Data for Security
+*IntrinioSDK::SecurityApi* | [**get_security_interval_prices**](docs/SecurityApi.md#get_security_interval_prices) | **GET** /securities/{identifier}/prices/intervals | Interval Stock Prices for Security
 *IntrinioSDK::SecurityApi* | [**get_security_intraday_prices**](docs/SecurityApi.md#get_security_intraday_prices) | **GET** /securities/{identifier}/prices/intraday | Intraday Stock Prices for Security
 *IntrinioSDK::SecurityApi* | [**get_security_latest_dividend_record**](docs/SecurityApi.md#get_security_latest_dividend_record) | **GET** /securities/{identifier}/dividends/latest | Latest Dividend Record for Security
 *IntrinioSDK::SecurityApi* | [**get_security_latest_earnings_record**](docs/SecurityApi.md#get_security_latest_earnings_record) | **GET** /securities/{identifier}/earnings/latest | Latest Earnings Record for Security
@@ -317,6 +318,7 @@ Class | Method | HTTP request | Description
  - [IntrinioSDK::ApiResponseSecurityForceIndex](docs/ApiResponseSecurityForceIndex.md)
  - [IntrinioSDK::ApiResponseSecurityHistoricalData](docs/ApiResponseSecurityHistoricalData.md)
  - [IntrinioSDK::ApiResponseSecurityIchimokuKinkoHyo](docs/ApiResponseSecurityIchimokuKinkoHyo.md)
+ - [IntrinioSDK::ApiResponseSecurityIntervalPrices](docs/ApiResponseSecurityIntervalPrices.md)
  - [IntrinioSDK::ApiResponseSecurityIntradayPrices](docs/ApiResponseSecurityIntradayPrices.md)
  - [IntrinioSDK::ApiResponseSecurityKeltnerChannel](docs/ApiResponseSecurityKeltnerChannel.md)
  - [IntrinioSDK::ApiResponseSecurityKnowSureThing](docs/ApiResponseSecurityKnowSureThing.md)
@@ -445,6 +447,7 @@ Class | Method | HTTP request | Description
  - [IntrinioSDK::StockPrice](docs/StockPrice.md)
  - [IntrinioSDK::StockPriceAdjustment](docs/StockPriceAdjustment.md)
  - [IntrinioSDK::StockPriceAdjustmentSummary](docs/StockPriceAdjustmentSummary.md)
+ - [IntrinioSDK::StockPriceInterval](docs/StockPriceInterval.md)
  - [IntrinioSDK::StockPriceSummary](docs/StockPriceSummary.md)
  - [IntrinioSDK::TechnicalIndicator](docs/TechnicalIndicator.md)
  - [IntrinioSDK::TripleExponentialAverageTechnicalValue](docs/TripleExponentialAverageTechnicalValue.md)
