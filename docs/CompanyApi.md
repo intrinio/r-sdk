@@ -15,6 +15,8 @@ Method | HTTP request | Description
 [**get_company_ipos**](CompanyApi.md#get_company_ipos) | **GET** /companies/ipos | IPOs
 [**get_company_news**](CompanyApi.md#get_company_news) | **GET** /companies/{identifier}/news | All News by Company
 [**get_company_securities**](CompanyApi.md#get_company_securities) | **GET** /companies/{identifier}/securities | All Securities by Company
+[**insider_transaction_filings_by_company**](CompanyApi.md#insider_transaction_filings_by_company) | **GET** /companies/{identifier}/insider_transaction_filings | Insider Transaction Filings by Company
+[**latest_insider_transaction_filing_by_company**](CompanyApi.md#latest_insider_transaction_filing_by_company) | **GET** /companies/{identifier}/insider_transaction_filings/latest | Latest Insider Transaction Filing by Company
 [**lookup_company_fundamental**](CompanyApi.md#lookup_company_fundamental) | **GET** /companies/{identifier}/fundamentals/lookup/{statement_code}/{fiscal_year}/{fiscal_period} | Lookup Fundamental by Company
 [**search_companies**](CompanyApi.md#search_companies) | **GET** /companies/search | Search Companies
 
@@ -1023,6 +1025,196 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ApiResponseCompanySecurities**](ApiResponseCompanySecurities.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:IntrinioSDK::CompanyApi)
+
+[//]: # (METHOD:insider_transaction_filings_by_company)
+
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseInsiderTransactionFilings)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:ApiResponseInsiderTransactionFilings.md)
+
+[//]: # (OPERATION:insider_transaction_filings_by_company_v2)
+
+[//]: # (ENDPOINT:/companies/{identifier}/insider_transaction_filings)
+
+[//]: # (DOCUMENT_LINK:CompanyApi.md#insider_transaction_filings_by_company)
+
+# **insider_transaction_filings_by_company**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/r/insider_transaction_filings_by_company_v2)
+
+[//]: # (START_OVERVIEW)
+
+> ApiResponseInsiderTransactionFilings insider_transaction_filings_by_company(identifier, opts)
+
+#### Insider Transaction Filings by Company
+
+
+Returns a list of all insider transaction filings in a company. Criteria for being an insider include being a director, officer, or 10%+ owner in the company. Transactions are detailed for both non-derivative and derivative transactions by the insider.
+
+[//]: # (END_OVERVIEW)
+
+### Example
+
+[//]: # (START_CODE_EXAMPLE)
+```r
+# Setup client
+client <- IntrinioSDK::ApiClient$new()
+
+# Configure API key authorization: ApiKeyAuth
+client$configuration$apiKey <- "YOUR_API_KEY"
+
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
+# Setup API with client
+CompanyApi <- IntrinioSDK::CompanyApi$new(client)
+
+# Required params
+identifier <- "AAPL"
+
+# Optional params
+opts <- list(
+  start_date = as.Date("2018-01-01"),
+  end_date = as.Date("2019-01-01"),
+  ownership_type = "D",
+  page_size = 100,
+  next_page = NULL
+)
+
+response <- CompanyApi$insider_transaction_filings_by_company(identifier, opts)
+
+print(response)
+print(response$content)
+```
+
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **identifier** | Character| A Company identifier (Ticker, CIK, LEI, Intrinio ID) |  &nbsp;
+ **start_date** | Date| Return Company&#39;s insider transaction filings on or after this date | [optional]  &nbsp;
+ **end_date** | Date| Return Company&#39;s insider transaction filings on or before this date | [optional]  &nbsp;
+ **ownership_type** | Character| The type of ownership to return transaction filings for. &#39;D&#39; is for direct transactions. &#39;I&#39; is for indirect transactions. Omit for both types. | [optional]  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**ApiResponseInsiderTransactionFilings**](ApiResponseInsiderTransactionFilings.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:IntrinioSDK::CompanyApi)
+
+[//]: # (METHOD:latest_insider_transaction_filing_by_company)
+
+[//]: # (RETURN_TYPE:IntrinioSDK::InsiderTransactionFiling)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:InsiderTransactionFiling.md)
+
+[//]: # (OPERATION:latest_insider_transaction_filing_by_company_v2)
+
+[//]: # (ENDPOINT:/companies/{identifier}/insider_transaction_filings/latest)
+
+[//]: # (DOCUMENT_LINK:CompanyApi.md#latest_insider_transaction_filing_by_company)
+
+# **latest_insider_transaction_filing_by_company**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/r/latest_insider_transaction_filing_by_company_v2)
+
+[//]: # (START_OVERVIEW)
+
+> InsiderTransactionFiling latest_insider_transaction_filing_by_company(identifier, opts)
+
+#### Latest Insider Transaction Filing by Company
+
+
+Returns the latest insider transaction filing for a company.
+
+[//]: # (END_OVERVIEW)
+
+### Example
+
+[//]: # (START_CODE_EXAMPLE)
+```r
+# Setup client
+client <- IntrinioSDK::ApiClient$new()
+
+# Configure API key authorization: ApiKeyAuth
+client$configuration$apiKey <- "YOUR_API_KEY"
+
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
+# Setup API with client
+CompanyApi <- IntrinioSDK::CompanyApi$new(client)
+
+# Required params
+identifier <- "AAPL"
+
+# Optional params
+opts <- list(
+  start_date = as.Date("2018-01-01"),
+  end_date = as.Date("2019-01-01"),
+  ownership_type = "D",
+  page_size = 100,
+  next_page = NULL
+)
+
+response <- CompanyApi$latest_insider_transaction_filing_by_company(identifier, opts)
+
+print(response)
+print(response$content)
+```
+
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **identifier** | Character| A Company identifier (Ticker, CIK, LEI, Intrinio ID) |  &nbsp;
+ **start_date** | Date| Return Company&#39;s insider transaction filings on or after this date | [optional]  &nbsp;
+ **end_date** | Date| Return Company&#39;s insider transaction filings on or before this date | [optional]  &nbsp;
+ **ownership_type** | Character| The type of ownership to return transaction filings for. &#39;D&#39; is for direct transactions. &#39;I&#39; is for indirect transactions. Omit for both types. | [optional]  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**InsiderTransactionFiling**](InsiderTransactionFiling.md)
 
 [//]: # (END_OPERATION)
 
