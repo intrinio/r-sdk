@@ -20,6 +20,7 @@ ApiResponseETFHoldings <- R6::R6Class(
   'ApiResponseETFHoldings',
   public = list(
     `holdings` = NA,
+    `holdings_data_frame` = NULL,
     `etf` = NA,
     `next_page` = NA,
     initialize = function(`holdings`, `etf`, `next_page`){
@@ -84,13 +85,22 @@ ApiResponseETFHoldings <- R6::R6Class(
     setFromList = function(listObject) {
 
 
+      self$`holdings` <- lapply(listObject$`holdings`, function(x) {
+      ETFHoldingObject <- ETFHolding$new()
+      ETFHoldingObject$setFromList(x)
+      return(ETFHoldingObject)
+      })
+
+      holdings_list <- lapply(self$`holdings`, function(x) {
+        return(x$getAsList()) 
+      })
+
+      self$`holdings_data_frame` <- do.call(rbind, lapply(holdings_list, data.frame))
 
 
 
 
 
-      self$`holdings` <- TODO_OBJECT_MAPPING$new()
-      self$`holdings`$setFromList(listObject$`holdings`)
 
 
 
@@ -112,14 +122,13 @@ ApiResponseETFHoldings <- R6::R6Class(
     },
     getAsList = function() {
       listObject = list()
+      # listObject[["holdings"]] <- lapply(self$`holdings`, function(o) {
+      #  return(o$getAsList())
+      # })
 
 
 
 
-      holdings_list <- self$`holdings`$getAsList()
-      for (x in names(holdings_list)) {
-        listObject[[paste("holdings_",x, sep = "")]] <- self$`holdings`[[x]]
-      }
         
 
 

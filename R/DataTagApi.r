@@ -32,7 +32,7 @@
 DataTagApi <- R6::R6Class(
   'DataTagApi',
   public = list(
-    userAgent = "Swagger-Codegen/1.8.0/r",
+    userAgent = "Swagger-Codegen/1.8.1/r",
     apiClient = NULL,
     initialize = function(apiClient){
       if (!missing(apiClient)) {

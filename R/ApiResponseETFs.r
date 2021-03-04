@@ -19,6 +19,7 @@ ApiResponseETFs <- R6::R6Class(
   'ApiResponseETFs',
   public = list(
     `etfs` = NA,
+    `etfs_data_frame` = NULL,
     `next_page` = NA,
     initialize = function(`etfs`, `next_page`){
       if (!missing(`etfs`)) {
@@ -68,13 +69,22 @@ ApiResponseETFs <- R6::R6Class(
     setFromList = function(listObject) {
 
 
+      self$`etfs` <- lapply(listObject$`etfs`, function(x) {
+      ETFSummaryObject <- ETFSummary$new()
+      ETFSummaryObject$setFromList(x)
+      return(ETFSummaryObject)
+      })
+
+      etfs_list <- lapply(self$`etfs`, function(x) {
+        return(x$getAsList()) 
+      })
+
+      self$`etfs_data_frame` <- do.call(rbind, lapply(etfs_list, data.frame))
 
 
 
 
 
-      self$`etfs` <- TODO_OBJECT_MAPPING$new()
-      self$`etfs`$setFromList(listObject$`etfs`)
 
       if (!is.null(listObject$`next_page`)) {
         self$`next_page` <- listObject$`next_page`
@@ -86,14 +96,13 @@ ApiResponseETFs <- R6::R6Class(
     },
     getAsList = function() {
       listObject = list()
+      # listObject[["etfs"]] <- lapply(self$`etfs`, function(o) {
+      #  return(o$getAsList())
+      # })
 
 
 
 
-      etfs_list <- self$`etfs`$getAsList()
-      for (x in names(etfs_list)) {
-        listObject[[paste("etfs_",x, sep = "")]] <- self$`etfs`[[x]]
-      }
         
       listObject[["next_page"]] <- self$`next_page`
       return(listObject)
