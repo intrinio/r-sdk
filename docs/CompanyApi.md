@@ -1178,10 +1178,6 @@ identifier <- "AAPL"
 
 # Optional params
 opts <- list(
-  start_date = as.Date("2018-01-01"),
-  end_date = as.Date("2019-01-01"),
-  ownership_type = "D",
-  page_size = 100,
   next_page = NULL
 )
 
@@ -1203,10 +1199,6 @@ print(response$content)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **identifier** | Character| A Company identifier (Ticker, CIK, LEI, Intrinio ID) |  &nbsp;
- **start_date** | Date| Return Company&#39;s insider transaction filings on or after this date | [optional]  &nbsp;
- **end_date** | Date| Return Company&#39;s insider transaction filings on or before this date | [optional]  &nbsp;
- **ownership_type** | Character| The type of ownership to return transaction filings for. &#39;D&#39; is for direct transactions. &#39;I&#39; is for indirect transactions. Omit for both types. | [optional]  &nbsp;
- **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
  **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
 <br/>
 
