@@ -2934,7 +2934,10 @@ SecurityApi <- R6::R6Class(
       if ('page_size' %in% names(opts)) {
         queryParams['page_size'] <- opts['page_size']
       }
-      if ('logic' %in% names(opts)) {
+      if (!is.null(body)) {
+        body <- jsonlite::toJSON(body)
+        body <- gsub("\\\\\"", "", body)
+      } else if ('logic' %in% names(opts)) {
         body <- jsonlite::toJSON(opts['logic']$logic$toJSON(), auto_unbox = TRUE)
         body <- gsub("\\\\\"", "", body)
       } else {

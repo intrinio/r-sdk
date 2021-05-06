@@ -752,7 +752,10 @@ client$configuration$allowRetries <- TRUE
 OptionsApi <- IntrinioSDK::OptionsApi$new(client)
 
 # Required params
-body <- IntrinioSDK::OptionContractsList$new()
+
+body <- list(
+  contracts = c("A220121P00055000", "A220121P00057500", "A220121P00060000")
+)
 
 # Optional params
 opts <- list(

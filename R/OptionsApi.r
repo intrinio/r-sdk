@@ -494,7 +494,10 @@ OptionsApi <- R6::R6Class(
       if ('source' %in% names(opts)) {
         queryParams['source'] <- opts['source']
       }
-      if ('body' %in% names(opts)) {
+      if (!is.null(body)) {
+        body <- jsonlite::toJSON(body)
+        body <- gsub("\\\\\"", "", body)
+      } else if ('body' %in% names(opts)) {
         body <- jsonlite::toJSON(opts['body']$body$toJSON(), auto_unbox = TRUE)
         body <- gsub("\\\\\"", "", body)
       } else {
