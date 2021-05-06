@@ -7,8 +7,8 @@ Welcome to the Intrinio API! Through our Financial Data Marketplace, we offer a 
 
 ## Overview
 
-- API version: 2.20.0
-- Package version: 1.9.0
+- API version: 2.21.1
+- Package version: 1.10.0
 
 The new Intrinio R SDK wraps all API v2 endpoints into an easy-to-use set of classes, methods, and response objects.
 
@@ -107,6 +107,7 @@ Class | Method | HTTP request | Description
 *IntrinioSDK::CompanyApi* | [**latest_insider_transaction_filing_by_company**](docs/CompanyApi.md#latest_insider_transaction_filing_by_company) | **GET** /companies/{identifier}/insider_transaction_filings/latest | Latest Insider Transaction Filing by Company
 *IntrinioSDK::CompanyApi* | [**lookup_company_fundamental**](docs/CompanyApi.md#lookup_company_fundamental) | **GET** /companies/{identifier}/fundamentals/lookup/{statement_code}/{fiscal_year}/{fiscal_period} | Lookup Fundamental by Company
 *IntrinioSDK::CompanyApi* | [**search_companies**](docs/CompanyApi.md#search_companies) | **GET** /companies/search | Search Companies
+*IntrinioSDK::CompanyApi* | [**shares_outstanding_by_company**](docs/CompanyApi.md#shares_outstanding_by_company) | **GET** /companies/{identifier}/shares_outstanding | Shares Outstanding by Company
 *IntrinioSDK::DataPointApi* | [**get_data_point_number**](docs/DataPointApi.md#get_data_point_number) | **GET** /data_point/{identifier}/{tag}/number | Data Point (Number)
 *IntrinioSDK::DataPointApi* | [**get_data_point_text**](docs/DataPointApi.md#get_data_point_text) | **GET** /data_point/{identifier}/{tag}/text | Data Point (Text)
 *IntrinioSDK::DataTagApi* | [**get_all_data_tags**](docs/DataTagApi.md#get_all_data_tags) | **GET** /data_tags | All Data Tags
@@ -165,6 +166,7 @@ Class | Method | HTTP request | Description
 *IntrinioSDK::OptionsApi* | [**get_options_chain_realtime**](docs/OptionsApi.md#get_options_chain_realtime) | **GET** /options/chain/{symbol}/{expiration}/realtime | Options Chain Realtime
 *IntrinioSDK::OptionsApi* | [**get_options_expirations**](docs/OptionsApi.md#get_options_expirations) | **GET** /options/expirations/{symbol} | Options Expirations
 *IntrinioSDK::OptionsApi* | [**get_options_prices**](docs/OptionsApi.md#get_options_prices) | **GET** /options/prices/{identifier} | Option Prices
+*IntrinioSDK::OptionsApi* | [**get_options_prices_batch_realtime**](docs/OptionsApi.md#get_options_prices_batch_realtime) | **POST** /options/prices/realtime/batch | Option Prices Batch Realtime
 *IntrinioSDK::OptionsApi* | [**get_options_prices_realtime**](docs/OptionsApi.md#get_options_prices_realtime) | **GET** /options/prices/{identifier}/realtime | Option Prices Realtime
 *IntrinioSDK::OptionsApi* | [**get_options_stats_realtime**](docs/OptionsApi.md#get_options_stats_realtime) | **GET** /options/prices/{identifier}/realtime/stats | Option Stats Realtime
 *IntrinioSDK::OwnersApi* | [**get_all_owners**](docs/OwnersApi.md#get_all_owners) | **GET** /owners | All Owners
@@ -284,6 +286,7 @@ Class | Method | HTTP request | Description
  - [IntrinioSDK::ApiResponseCompanyInsiderTransactionFilings](docs/ApiResponseCompanyInsiderTransactionFilings.md)
  - [IntrinioSDK::ApiResponseCompanyNews](docs/ApiResponseCompanyNews.md)
  - [IntrinioSDK::ApiResponseCompanySecurities](docs/ApiResponseCompanySecurities.md)
+ - [IntrinioSDK::ApiResponseCompanySharesOutstanding](docs/ApiResponseCompanySharesOutstanding.md)
  - [IntrinioSDK::ApiResponseDataTags](docs/ApiResponseDataTags.md)
  - [IntrinioSDK::ApiResponseDataTagsSearch](docs/ApiResponseDataTagsSearch.md)
  - [IntrinioSDK::ApiResponseETFHoldings](docs/ApiResponseETFHoldings.md)
@@ -310,6 +313,7 @@ Class | Method | HTTP request | Description
  - [IntrinioSDK::ApiResponseOptionsChainRealtime](docs/ApiResponseOptionsChainRealtime.md)
  - [IntrinioSDK::ApiResponseOptionsExpirations](docs/ApiResponseOptionsExpirations.md)
  - [IntrinioSDK::ApiResponseOptionsPriceRealtime](docs/ApiResponseOptionsPriceRealtime.md)
+ - [IntrinioSDK::ApiResponseOptionsPricesBatchRealtime](docs/ApiResponseOptionsPricesBatchRealtime.md)
  - [IntrinioSDK::ApiResponseOptionsRealtime](docs/ApiResponseOptionsRealtime.md)
  - [IntrinioSDK::ApiResponseOptionsStatsRealtime](docs/ApiResponseOptionsStatsRealtime.md)
  - [IntrinioSDK::ApiResponseOwnerInsiderTransactionFilings](docs/ApiResponseOwnerInsiderTransactionFilings.md)
@@ -396,6 +400,7 @@ Class | Method | HTTP request | Description
  - [IntrinioSDK::CompanyInitialPublicOffering](docs/CompanyInitialPublicOffering.md)
  - [IntrinioSDK::CompanyNews](docs/CompanyNews.md)
  - [IntrinioSDK::CompanyNewsSummary](docs/CompanyNewsSummary.md)
+ - [IntrinioSDK::CompanySharesOutstanding](docs/CompanySharesOutstanding.md)
  - [IntrinioSDK::CompanySummary](docs/CompanySummary.md)
  - [IntrinioSDK::DataTag](docs/DataTag.md)
  - [IntrinioSDK::DataTagSummary](docs/DataTagSummary.md)
@@ -442,8 +447,10 @@ Class | Method | HTTP request | Description
  - [IntrinioSDK::Option](docs/Option.md)
  - [IntrinioSDK::OptionChain](docs/OptionChain.md)
  - [IntrinioSDK::OptionChainRealtime](docs/OptionChainRealtime.md)
+ - [IntrinioSDK::OptionContractsList](docs/OptionContractsList.md)
  - [IntrinioSDK::OptionFactorsRealtime](docs/OptionFactorsRealtime.md)
  - [IntrinioSDK::OptionPrice](docs/OptionPrice.md)
+ - [IntrinioSDK::OptionPriceBatchRealtime](docs/OptionPriceBatchRealtime.md)
  - [IntrinioSDK::OptionPriceRealtime](docs/OptionPriceRealtime.md)
  - [IntrinioSDK::OptionRealtime](docs/OptionRealtime.md)
  - [IntrinioSDK::OptionStatsRealtime](docs/OptionStatsRealtime.md)

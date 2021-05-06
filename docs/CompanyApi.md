@@ -19,6 +19,7 @@ Method | HTTP request | Description
 [**latest_insider_transaction_filing_by_company**](CompanyApi.md#latest_insider_transaction_filing_by_company) | **GET** /companies/{identifier}/insider_transaction_filings/latest | Latest Insider Transaction Filing by Company
 [**lookup_company_fundamental**](CompanyApi.md#lookup_company_fundamental) | **GET** /companies/{identifier}/fundamentals/lookup/{statement_code}/{fiscal_year}/{fiscal_period} | Lookup Fundamental by Company
 [**search_companies**](CompanyApi.md#search_companies) | **GET** /companies/search | Search Companies
+[**shares_outstanding_by_company**](CompanyApi.md#shares_outstanding_by_company) | **GET** /companies/{identifier}/shares_outstanding | Shares Outstanding by Company
 
 
 
@@ -1383,6 +1384,87 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ApiResponseCompaniesSearch**](ApiResponseCompaniesSearch.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:IntrinioSDK::CompanyApi)
+
+[//]: # (METHOD:shares_outstanding_by_company)
+
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseCompanySharesOutstanding)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:ApiResponseCompanySharesOutstanding.md)
+
+[//]: # (OPERATION:shares_outstanding_by_company_v2)
+
+[//]: # (ENDPOINT:/companies/{identifier}/shares_outstanding)
+
+[//]: # (DOCUMENT_LINK:CompanyApi.md#shares_outstanding_by_company)
+
+# **shares_outstanding_by_company**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/r/shares_outstanding_by_company_v2)
+
+[//]: # (START_OVERVIEW)
+
+> ApiResponseCompanySharesOutstanding shares_outstanding_by_company(identifier)
+
+#### Shares Outstanding by Company
+
+
+Returns shares outstanding for the Company with the given `identifier`
+
+[//]: # (END_OVERVIEW)
+
+### Example
+
+[//]: # (START_CODE_EXAMPLE)
+```r
+# Setup client
+client <- IntrinioSDK::ApiClient$new()
+
+# Configure API key authorization: ApiKeyAuth
+client$configuration$apiKey <- "YOUR_API_KEY"
+
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
+# Setup API with client
+CompanyApi <- IntrinioSDK::CompanyApi$new(client)
+
+# Required params
+identifier <- "AAPL"
+
+response <- CompanyApi$shares_outstanding_by_company(identifier)
+
+print(response)
+print(response$content)
+```
+
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **identifier** | Character| A Company identifier (Ticker, CIK, LEI, Intrinio ID) |  &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**ApiResponseCompanySharesOutstanding**](ApiResponseCompanySharesOutstanding.md)
 
 [//]: # (END_OPERATION)
 

@@ -11,6 +11,7 @@ Method | HTTP request | Description
 [**get_options_chain_realtime**](OptionsApi.md#get_options_chain_realtime) | **GET** /options/chain/{symbol}/{expiration}/realtime | Options Chain Realtime
 [**get_options_expirations**](OptionsApi.md#get_options_expirations) | **GET** /options/expirations/{symbol} | Options Expirations
 [**get_options_prices**](OptionsApi.md#get_options_prices) | **GET** /options/prices/{identifier} | Option Prices
+[**get_options_prices_batch_realtime**](OptionsApi.md#get_options_prices_batch_realtime) | **POST** /options/prices/realtime/batch | Option Prices Batch Realtime
 [**get_options_prices_realtime**](OptionsApi.md#get_options_prices_realtime) | **GET** /options/prices/{identifier}/realtime | Option Prices Realtime
 [**get_options_stats_realtime**](OptionsApi.md#get_options_stats_realtime) | **GET** /options/prices/{identifier}/realtime/stats | Option Stats Realtime
 
@@ -697,6 +698,93 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ApiResponseOptionPrices**](ApiResponseOptionPrices.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:IntrinioSDK::OptionsApi)
+
+[//]: # (METHOD:get_options_prices_batch_realtime)
+
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseOptionsPricesBatchRealtime)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:ApiResponseOptionsPricesBatchRealtime.md)
+
+[//]: # (OPERATION:get_options_prices_batch_realtime_v2)
+
+[//]: # (ENDPOINT:/options/prices/realtime/batch)
+
+[//]: # (DOCUMENT_LINK:OptionsApi.md#get_options_prices_batch_realtime)
+
+# **get_options_prices_batch_realtime**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/r/get_options_prices_batch_realtime_v2)
+
+[//]: # (START_OVERVIEW)
+
+> ApiResponseOptionsPricesBatchRealtime get_options_prices_batch_realtime(body, opts)
+
+#### Option Prices Batch Realtime
+
+
+Returns options prices for a supplied list of option symbols.
+
+[//]: # (END_OVERVIEW)
+
+### Example
+
+[//]: # (START_CODE_EXAMPLE)
+```r
+# Setup client
+client <- IntrinioSDK::ApiClient$new()
+
+# Configure API key authorization: ApiKeyAuth
+client$configuration$apiKey <- "YOUR_API_KEY"
+
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
+# Setup API with client
+OptionsApi <- IntrinioSDK::OptionsApi$new(client)
+
+# Required params
+body <- IntrinioSDK::OptionContractsList$new()
+
+# Optional params
+opts <- list(
+  source = NULL
+)
+
+response <- OptionsApi$get_options_prices_batch_realtime(body, opts)
+
+print(response)
+print(response$content)
+```
+
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**OptionContractsList**](OptionContractsList.md)| The contract symbols for which to return options prices for. |  &nbsp;
+ **source** | Character| Realtime or 15-minute delayed contracts. | [optional]  &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**ApiResponseOptionsPricesBatchRealtime**](ApiResponseOptionsPricesBatchRealtime.md)
 
 [//]: # (END_OPERATION)
 
