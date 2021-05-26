@@ -7,8 +7,8 @@ Welcome to the Intrinio API! Through our Financial Data Marketplace, we offer a 
 
 ## Overview
 
-- API version: 2.21.1
-- Package version: 1.10.0
+- API version: 2.22.0
+- Package version: 1.11.0
 
 The new Intrinio R SDK wraps all API v2 endpoints into an easy-to-use set of classes, methods, and response objects.
 
@@ -159,6 +159,7 @@ Class | Method | HTTP request | Description
 *IntrinioSDK::MunicipalityApi* | [**get_all_municipalities**](docs/MunicipalityApi.md#get_all_municipalities) | **GET** /municipalities | All Municipalities
 *IntrinioSDK::MunicipalityApi* | [**get_municipality_by_id**](docs/MunicipalityApi.md#get_municipality_by_id) | **GET** /municipalities/{id} | Municipality by ID
 *IntrinioSDK::MunicipalityApi* | [**get_municipality_financials**](docs/MunicipalityApi.md#get_municipality_financials) | **GET** /municipalities/{id}/financials | Financials for a Municipality
+*IntrinioSDK::OptionsApi* | [**get_all_options_tickers**](docs/OptionsApi.md#get_all_options_tickers) | **GET** /options/tickers | Options Tickers
 *IntrinioSDK::OptionsApi* | [**get_option_expirations_realtime**](docs/OptionsApi.md#get_option_expirations_realtime) | **GET** /options/expirations/{symbol}/realtime | Option Expirations Realtime
 *IntrinioSDK::OptionsApi* | [**get_options**](docs/OptionsApi.md#get_options) | **GET** /options/{symbol} | Options
 *IntrinioSDK::OptionsApi* | [**get_options_by_symbol_realtime**](docs/OptionsApi.md#get_options_by_symbol_realtime) | **GET** /options/{symbol}/realtime | Options by Symbol Realtime
@@ -316,6 +317,7 @@ Class | Method | HTTP request | Description
  - [IntrinioSDK::ApiResponseOptionsPricesBatchRealtime](docs/ApiResponseOptionsPricesBatchRealtime.md)
  - [IntrinioSDK::ApiResponseOptionsRealtime](docs/ApiResponseOptionsRealtime.md)
  - [IntrinioSDK::ApiResponseOptionsStatsRealtime](docs/ApiResponseOptionsStatsRealtime.md)
+ - [IntrinioSDK::ApiResponseOptionsTickers](docs/ApiResponseOptionsTickers.md)
  - [IntrinioSDK::ApiResponseOwnerInsiderTransactionFilings](docs/ApiResponseOwnerInsiderTransactionFilings.md)
  - [IntrinioSDK::ApiResponseOwnerInstitutionalHoldings](docs/ApiResponseOwnerInstitutionalHoldings.md)
  - [IntrinioSDK::ApiResponseOwners](docs/ApiResponseOwners.md)

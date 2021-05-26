@@ -23,6 +23,13 @@ Name | Type | Description
 **adj_low** | **Numeric** | The lowest price over the span of the period, adjusted for splits and dividends &nbsp;
 **adj_close** | **Numeric** | The price at the end of the period, adjusted for splits and dividends &nbsp;
 **adj_volume** | **Numeric** | The number of shares exchanged during the period, adjusted for splits and dividends &nbsp;
+**factor** | **Numeric** | The factor by which to multiply stock prices before this date, in order to calculate historically-adjusted stock prices. &nbsp;
+**split_ratio** | **Numeric** | The ratio of the stock split, if a stock split occurred. &nbsp;
+**dividend** | **Numeric** | The dividend amount, if a dividend was paid. &nbsp;
+**change** | **Numeric** | The difference in price from the last price for this frequency &nbsp;
+**percent_change** | **Numeric** | The percent difference in price from the last price for this frequency &nbsp;
+**fifty_two_week_high** | **Numeric** | The 52 week high price (daily only) &nbsp;
+**fifty_two_week_low** | **Numeric** | The 52 week low price (daily only) &nbsp;
 
 [//]: # (END_DEFINITION)
 
