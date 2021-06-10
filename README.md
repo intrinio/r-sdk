@@ -7,8 +7,8 @@ Welcome to the Intrinio API! Through our Financial Data Marketplace, we offer a 
 
 ## Overview
 
-- API version: 2.22.0
-- Package version: 1.11.0
+- API version: 2.23.0
+- Package version: 1.12.0
 
 The new Intrinio R SDK wraps all API v2 endpoints into an easy-to-use set of classes, methods, and response objects.
 
@@ -106,6 +106,7 @@ Class | Method | HTTP request | Description
 *IntrinioSDK::CompanyApi* | [**insider_transaction_filings_by_company**](docs/CompanyApi.md#insider_transaction_filings_by_company) | **GET** /companies/{identifier}/insider_transaction_filings | Insider Transaction Filings by Company
 *IntrinioSDK::CompanyApi* | [**latest_insider_transaction_filing_by_company**](docs/CompanyApi.md#latest_insider_transaction_filing_by_company) | **GET** /companies/{identifier}/insider_transaction_filings/latest | Latest Insider Transaction Filing by Company
 *IntrinioSDK::CompanyApi* | [**lookup_company_fundamental**](docs/CompanyApi.md#lookup_company_fundamental) | **GET** /companies/{identifier}/fundamentals/lookup/{statement_code}/{fiscal_year}/{fiscal_period} | Lookup Fundamental by Company
+*IntrinioSDK::CompanyApi* | [**recognize_company**](docs/CompanyApi.md#recognize_company) | **GET** /companies/recognize | Recognize Company
 *IntrinioSDK::CompanyApi* | [**search_companies**](docs/CompanyApi.md#search_companies) | **GET** /companies/search | Search Companies
 *IntrinioSDK::CompanyApi* | [**shares_outstanding_by_company**](docs/CompanyApi.md#shares_outstanding_by_company) | **GET** /companies/{identifier}/shares_outstanding | Shares Outstanding by Company
 *IntrinioSDK::DataPointApi* | [**get_data_point_number**](docs/DataPointApi.md#get_data_point_number) | **GET** /data_point/{identifier}/{tag}/number | Data Point (Number)
@@ -286,6 +287,7 @@ Class | Method | HTTP request | Description
  - [IntrinioSDK::ApiResponseCompanyHistoricalData](docs/ApiResponseCompanyHistoricalData.md)
  - [IntrinioSDK::ApiResponseCompanyInsiderTransactionFilings](docs/ApiResponseCompanyInsiderTransactionFilings.md)
  - [IntrinioSDK::ApiResponseCompanyNews](docs/ApiResponseCompanyNews.md)
+ - [IntrinioSDK::ApiResponseCompanyRecognize](docs/ApiResponseCompanyRecognize.md)
  - [IntrinioSDK::ApiResponseCompanySecurities](docs/ApiResponseCompanySecurities.md)
  - [IntrinioSDK::ApiResponseCompanySharesOutstanding](docs/ApiResponseCompanySharesOutstanding.md)
  - [IntrinioSDK::ApiResponseDataTags](docs/ApiResponseDataTags.md)
