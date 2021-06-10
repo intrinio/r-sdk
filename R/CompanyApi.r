@@ -27,6 +27,9 @@
 #' get_company Lookup Company
 #'
 #'
+#' get_company_answers Company Answers
+#'
+#'
 #' get_company_data_point_number Data Point (Number) for Company
 #'
 #'
@@ -222,6 +225,50 @@ CompanyApi <- R6::R6Class(
           returnObject <- as.logical(jsonlite::fromJSON(result))
         } else {
           returnObject <- Company$new()
+          returnObject$fromJSONString(result)
+        }
+
+        Response$new(returnObject, resp)
+      } else if (httr::status_code(resp) >= 400 && httr::status_code(resp) <= 499) {
+        result <- jsonlite::fromJSON(httr::content(resp, "text", encoding = "UTF-8"))
+        Response$new(result, resp)
+      } else if (httr::status_code(resp) >= 500 && httr::status_code(resp) <= 599) {
+        result <- httr::content(resp, "text", encoding = "UTF-8")
+        Response$new(result, resp)
+      }
+
+    },
+    get_company_answers = function(identifier, query, opts = list()){
+      queryParams <- list()
+      headerParams <- character()
+
+      if (!missing(`query`)) {
+        queryParams['query'] <- `query`
+      }
+      urlPath <- "/companies/{identifier}/answers"
+      if (!missing(`identifier`)) {
+        urlPath <- gsub(paste0("\\{", "identifier", "\\}"), `identifier`, urlPath)
+      }
+
+      resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
+                                 method = "GET",
+                                 queryParams = queryParams,
+                                 headerParams = headerParams,
+                                 body = body)
+
+      if (httr::status_code(resp) >= 200 && httr::status_code(resp) <= 299) {
+        result <- httr::content(resp, "text", encoding = "UTF-8")
+
+        if ("ApiResponseCompanyAnswers" == "Numeric") {
+          returnObject <- as.numeric(jsonlite::fromJSON(result))
+        } else if ("ApiResponseCompanyAnswers" == "Integer") {
+          returnObject <- as.integer(jsonlite::fromJSON(result))
+        } else if ("ApiResponseCompanyAnswers" == "Character") {
+          returnObject <- gsub("\\\"", "", result)
+        } else if ("ApiResponseCompanyAnswers" == "Logical") {
+          returnObject <- as.logical(jsonlite::fromJSON(result))
+        } else {
+          returnObject <- ApiResponseCompanyAnswers$new()
           returnObject$fromJSONString(result)
         }
 
