@@ -116,7 +116,7 @@
 TechnicalApi <- R6::R6Class(
   'TechnicalApi',
   public = list(
-    userAgent = "Swagger-Codegen/1.12.0/r",
+    userAgent = "Swagger-Codegen/1.12.1/r",
     apiClient = NULL,
     initialize = function(apiClient){
       if (!missing(apiClient)) {
