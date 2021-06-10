@@ -1350,7 +1350,7 @@ client$configuration$allowRetries <- TRUE
 CompanyApi <- IntrinioSDK::CompanyApi$new(client)
 
 # Required params
-text <- Apple
+text <- "Apple"
 
 response <- CompanyApi$recognize_company(text)
 
@@ -1369,7 +1369,7 @@ print(response$content)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **text** | Character| The text sent to the Thea API to analyze | [default to Apple] &nbsp;
+ **text** | Character| The text sent to the Thea API to analyze |  &nbsp;
 <br/>
 
 [//]: # (END_PARAMETERS)

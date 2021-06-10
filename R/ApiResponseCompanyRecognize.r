@@ -54,9 +54,9 @@ ApiResponseCompanyRecognize <- R6::R6Class(
 
 
       self$`companies` <- lapply(listObject$`companies`, function(x) {
-      DefinitionsCompanySummaryObject <- DefinitionsCompanySummary$new()
-      DefinitionsCompanySummaryObject$setFromList(x)
-      return(DefinitionsCompanySummaryObject)
+      CompanySummaryObject <- CompanySummary$new()
+      CompanySummaryObject$setFromList(x)
+      return(CompanySummaryObject)
       })
 
       companies_list <- lapply(self$`companies`, function(x) {
