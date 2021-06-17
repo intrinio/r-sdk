@@ -56,7 +56,7 @@
 OptionsApi <- R6::R6Class(
   'OptionsApi',
   public = list(
-    userAgent = "Swagger-Codegen/1.12.1/r",
+    userAgent = "Swagger-Codegen/1.12.2/r",
     apiClient = NULL,
     initialize = function(apiClient){
       if (!missing(apiClient)) {

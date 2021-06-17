@@ -12,6 +12,7 @@
 #' @field source 
 #' @field query 
 #' @field answers 
+#' @field companies 
 #'
 #' @importFrom R6 R6Class
 #' @importFrom jsonlite fromJSON toJSON
@@ -23,7 +24,9 @@ ApiResponseCompanyAnswers <- R6::R6Class(
     `query` = NA,
     `answers` = NA,
     `answers_data_frame` = NULL,
-    initialize = function(`source`, `query`, `answers`){
+    `companies` = NA,
+    `companies_data_frame` = NULL,
+    initialize = function(`source`, `query`, `answers`, `companies`){
       if (!missing(`source`)) {
         self$`source` <- `source`
       }
@@ -32,6 +35,9 @@ ApiResponseCompanyAnswers <- R6::R6Class(
       }
       if (!missing(`answers`)) {
         self$`answers` <- `answers`
+      }
+      if (!missing(`companies`)) {
+        self$`companies` <- `companies`
       }
     },
     toJSON = function() {
@@ -60,6 +66,14 @@ ApiResponseCompanyAnswers <- R6::R6Class(
           ApiResponseCompanyAnswersObject[['answers']] <- jsonlite::toJSON(self$`answers`, auto_unbox = TRUE)
         }
       }
+      if (!is.null(self$`companies`)) {
+        # If the object is an empty list or a list of R6 Objects
+        if (is.list(self$`companies`) && ((length(self$`companies`) == 0) || ((length(self$`companies`) != 0 && R6::is.R6(self$`companies`[[1]]))))) {
+          ApiResponseCompanyAnswersObject[['companies']] <- lapply(self$`companies`, function(x) x$toJSON())
+        } else {
+          ApiResponseCompanyAnswersObject[['companies']] <- jsonlite::toJSON(self$`companies`, auto_unbox = TRUE)
+        }
+      }
 
       ApiResponseCompanyAnswersObject
     },
@@ -73,6 +87,9 @@ ApiResponseCompanyAnswers <- R6::R6Class(
       }
       if (!is.null(ApiResponseCompanyAnswersObject$`answers`)) {
         self$`answers` <- ApiResponseCompanyAnswersObject$`answers`
+      }
+      if (!is.null(ApiResponseCompanyAnswersObject$`companies`)) {
+        self$`companies` <- ApiResponseCompanyAnswersObject$`companies`
       }
     },
     toJSONString = function() {
@@ -116,12 +133,39 @@ ApiResponseCompanyAnswers <- R6::R6Class(
 
 
 
+
+
+      self$`companies` <- lapply(listObject$`companies`, function(x) {
+      CompanySummaryObject <- CompanySummary$new()
+      CompanySummaryObject$setFromList(x)
+      return(CompanySummaryObject)
+      })
+
+      companies_list <- lapply(self$`companies`, function(x) {
+        return(x$getAsList()) 
+      })
+
+      self$`companies_data_frame` <- do.call(rbind, lapply(companies_list, data.frame))
+
+
+
+
+
+
     },
     getAsList = function() {
       listObject = list()
       listObject[["source"]] <- self$`source`
       listObject[["query"]] <- self$`query`
       # listObject[["answers"]] <- lapply(self$`answers`, function(o) {
+      #  return(o$getAsList())
+      # })
+
+
+
+
+        
+      # listObject[["companies"]] <- lapply(self$`companies`, function(o) {
       #  return(o$getAsList())
       # })
 

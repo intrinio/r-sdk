@@ -343,7 +343,7 @@ CompanyApi <- IntrinioSDK::CompanyApi$new(client)
 
 # Required params
 identifier <- "AAPL"
-query <- "Where is the company headquartered?"
+query <- "What do they believe in?"
 
 response <- CompanyApi$get_company_answers(identifier, query)
 
