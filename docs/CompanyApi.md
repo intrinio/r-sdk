@@ -598,6 +598,7 @@ opts <- list(
   report_type = NULL,
   start_date = as.Date("2015-01-01"),
   end_date = NULL,
+  thea_enabled = NULL,
   page_size = 100,
   next_page = NULL
 )
@@ -623,6 +624,7 @@ Name | Type | Description  | Notes
  **report_type** | Character| Filter by &lt;a href&#x3D;\&quot;https://docs.intrinio.com/documentation/sec_filing_report_types\&quot; target&#x3D;\&quot;_blank\&quot;&gt;report type&lt;/a&gt;. Separate values with commas to return multiple report types. | [optional]  &nbsp;
  **start_date** | Date| Filed on or after the given date | [optional]  &nbsp;
  **end_date** | Date| Filed before or after the given date | [optional]  &nbsp;
+ **thea_enabled** | Logical| Return filings that have been read by our Thea NLP and are ready for our answers endpoint | [optional]  &nbsp;
  **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
  **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
 <br/>

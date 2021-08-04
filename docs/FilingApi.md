@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get_all_filings**](FilingApi.md#get_all_filings) | **GET** /filings | All Filings
 [**get_all_notes**](FilingApi.md#get_all_notes) | **GET** /filings/notes | All Filing Notes
+[**get_filing_answers**](FilingApi.md#get_filing_answers) | **GET** /filings/{identifier}/answers | Filing Answers
 [**get_filing_by_id**](FilingApi.md#get_filing_by_id) | **GET** /filings/{id} | Lookup Filing
 [**get_filing_fundamentals**](FilingApi.md#get_filing_fundamentals) | **GET** /filings/{identifier}/fundamentals | All Fundamentals by Filing
 [**get_filing_html**](FilingApi.md#get_filing_html) | **GET** /filings/{identifier}/html | Filing Html
@@ -76,6 +77,7 @@ opts <- list(
   end_date = NULL,
   industry_category = NULL,
   industry_group = NULL,
+  thea_enabled = NULL,
   page_size = 100,
   next_page = NULL
 )
@@ -103,6 +105,7 @@ Name | Type | Description  | Notes
  **end_date** | Date| Filed before or after the given date | [optional]  &nbsp;
  **industry_category** | Character| Return companies in the given industry category | [optional]  &nbsp;
  **industry_group** | Character| Return companies in the given industry group | [optional]  &nbsp;
+ **thea_enabled** | Logical| Return filings that have been read by our Thea NLP and are ready for our answers endpoint | [optional]  &nbsp;
  **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
  **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
 <br/>
@@ -209,6 +212,88 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ApiResponseFilingNotes**](ApiResponseFilingNotes.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:IntrinioSDK::FilingApi)
+
+[//]: # (METHOD:get_filing_answers)
+
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseFilingAnswers)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:ApiResponseFilingAnswers.md)
+
+[//]: # (OPERATION:get_filing_answers_v2)
+
+[//]: # (ENDPOINT:/filings/{identifier}/answers)
+
+[//]: # (DOCUMENT_LINK:FilingApi.md#get_filing_answers)
+
+# **get_filing_answers**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/r/get_filing_answers_v2)
+
+[//]: # (START_OVERVIEW)
+
+> ApiResponseFilingAnswers get_filing_answers(identifier, query)
+
+#### Filing Answers
+
+
+
+[//]: # (END_OVERVIEW)
+
+### Example
+
+[//]: # (START_CODE_EXAMPLE)
+```r
+# Setup client
+client <- IntrinioSDK::ApiClient$new()
+
+# Configure API key authorization: ApiKeyAuth
+client$configuration$apiKey <- "YOUR_API_KEY"
+
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
+# Setup API with client
+FilingApi <- IntrinioSDK::FilingApi$new(client)
+
+# Required params
+identifier <- "fil_B73xBG"
+query <- "What do they believe in?"
+
+response <- FilingApi$get_filing_answers(identifier, query)
+
+print(response)
+print(response$content)
+```
+
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **identifier** | Character| A Filing identifier |  &nbsp;
+ **query** | Character| The query to ask the Thea API |  &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**ApiResponseFilingAnswers**](ApiResponseFilingAnswers.md)
 
 [//]: # (END_OPERATION)
 
