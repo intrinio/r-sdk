@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get_all_options_tickers**](OptionsApi.md#get_all_options_tickers) | **GET** /options/tickers | Options Tickers
 [**get_option_expirations_realtime**](OptionsApi.md#get_option_expirations_realtime) | **GET** /options/expirations/{symbol}/realtime | Option Expirations Realtime
+[**get_option_strikes_realtime**](OptionsApi.md#get_option_strikes_realtime) | **GET** /options/strikes/{symbol}/{strike}/realtime | Option Strikes Realtime
 [**get_options**](OptionsApi.md#get_options) | **GET** /options/{symbol} | Options
 [**get_options_by_symbol_realtime**](OptionsApi.md#get_options_by_symbol_realtime) | **GET** /options/{symbol}/realtime | Options by Symbol Realtime
 [**get_options_chain**](OptionsApi.md#get_options_chain) | **GET** /options/chain/{symbol}/{expiration} | Options Chain
@@ -16,6 +17,7 @@ Method | HTTP request | Description
 [**get_options_prices_realtime**](OptionsApi.md#get_options_prices_realtime) | **GET** /options/prices/{identifier}/realtime | Option Prices Realtime
 [**get_options_stats_realtime**](OptionsApi.md#get_options_stats_realtime) | **GET** /options/prices/{identifier}/realtime/stats | Option Stats Realtime
 [**get_unusual_activity**](OptionsApi.md#get_unusual_activity) | **GET** /options/unusual_activity/{symbol} | Options Unusual Activity
+[**get_unusual_activity_universal**](OptionsApi.md#get_unusual_activity_universal) | **GET** /options/unusual_activity | Options Unusual Activity Universal
 
 
 
@@ -180,6 +182,89 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ApiResponseOptionsExpirations**](ApiResponseOptionsExpirations.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:IntrinioSDK::OptionsApi)
+
+[//]: # (METHOD:get_option_strikes_realtime)
+
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseOptionsChainRealtime)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:ApiResponseOptionsChainRealtime.md)
+
+[//]: # (OPERATION:get_option_strikes_realtime_v2)
+
+[//]: # (ENDPOINT:/options/strikes/{symbol}/{strike}/realtime)
+
+[//]: # (DOCUMENT_LINK:OptionsApi.md#get_option_strikes_realtime)
+
+# **get_option_strikes_realtime**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/r/get_option_strikes_realtime_v2)
+
+[//]: # (START_OVERVIEW)
+
+> ApiResponseOptionsChainRealtime get_option_strikes_realtime(symbol, strike)
+
+#### Option Strikes Realtime
+
+
+Returns all realtime options contracts and their prices for the given symbol and strike.
+
+[//]: # (END_OVERVIEW)
+
+### Example
+
+[//]: # (START_CODE_EXAMPLE)
+```r
+# Setup client
+client <- IntrinioSDK::ApiClient$new()
+
+# Configure API key authorization: ApiKeyAuth
+client$configuration$apiKey <- "YOUR_API_KEY"
+
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
+# Setup API with client
+OptionsApi <- IntrinioSDK::OptionsApi$new(client)
+
+# Required params
+symbol <- "MSFT"
+strike <- 95
+
+response <- OptionsApi$get_option_strikes_realtime(symbol, strike)
+
+print(response)
+print(response$content)
+```
+
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **symbol** | Character| The option symbol, corresponding to the underlying security. |  &nbsp;
+ **strike** | Numeric| The strike price of the option contract. This will return options contracts with strike price equal to this price. |  &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**ApiResponseOptionsChainRealtime**](ApiResponseOptionsChainRealtime.md)
 
 [//]: # (END_OPERATION)
 
@@ -1117,6 +1202,89 @@ print(response$content)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **symbol** | Character| The option symbol, corresponding to the underlying security. |  &nbsp;
+ **source** | Character| Realtime or 15-minute delayed contracts. | [optional]  &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**ApiResponseOptionsUnusualActivity**](ApiResponseOptionsUnusualActivity.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:IntrinioSDK::OptionsApi)
+
+[//]: # (METHOD:get_unusual_activity_universal)
+
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseOptionsUnusualActivity)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:ApiResponseOptionsUnusualActivity.md)
+
+[//]: # (OPERATION:get_unusual_activity_universal_v2)
+
+[//]: # (ENDPOINT:/options/unusual_activity)
+
+[//]: # (DOCUMENT_LINK:OptionsApi.md#get_unusual_activity_universal)
+
+# **get_unusual_activity_universal**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/r/get_unusual_activity_universal_v2)
+
+[//]: # (START_OVERVIEW)
+
+> ApiResponseOptionsUnusualActivity get_unusual_activity_universal(opts)
+
+#### Options Unusual Activity Universal
+
+
+Returns nusual trades for all underlying security symbols.
+
+[//]: # (END_OVERVIEW)
+
+### Example
+
+[//]: # (START_CODE_EXAMPLE)
+```r
+# Setup client
+client <- IntrinioSDK::ApiClient$new()
+
+# Configure API key authorization: ApiKeyAuth
+client$configuration$apiKey <- "YOUR_API_KEY"
+
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
+# Setup API with client
+OptionsApi <- IntrinioSDK::OptionsApi$new(client)
+
+# Optional params
+opts <- list(
+  source = NULL
+)
+
+response <- OptionsApi$get_unusual_activity_universal(opts)
+
+print(response)
+print(response$content)
+```
+
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
  **source** | Character| Realtime or 15-minute delayed contracts. | [optional]  &nbsp;
 <br/>
 

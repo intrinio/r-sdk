@@ -84,6 +84,7 @@ opts <- list(
   industry_group = NULL,
   has_fundamentals = TRUE,
   has_stock_prices = TRUE,
+  thea_enabled = NULL,
   page_size = 100,
   next_page = NULL
 )
@@ -113,6 +114,7 @@ Name | Type | Description  | Notes
  **industry_group** | Character| Return companies in the given industry group | [optional]  &nbsp;
  **has_fundamentals** | Logical| Return only companies that have fundamentals when TRUE | [optional]  &nbsp;
  **has_stock_prices** | Logical| Return only companies that have stock prices when TRUE | [optional]  &nbsp;
+ **thea_enabled** | Logical| Return companies whose have been read by our Thea NLP and are ready for our company answers endpoint | [optional]  &nbsp;
  **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
  **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
 <br/>

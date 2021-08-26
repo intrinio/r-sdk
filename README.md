@@ -7,8 +7,8 @@ Welcome to the Intrinio API! Through our Financial Data Marketplace, we offer a 
 
 ## Overview
 
-- API version: 2.25.0
-- Package version: 1.13.0
+- API version: 2.25.6
+- Package version: 1.14.0
 
 The new Intrinio R SDK wraps all API v2 endpoints into an easy-to-use set of classes, methods, and response objects.
 
@@ -164,6 +164,7 @@ Class | Method | HTTP request | Description
 *IntrinioSDK::MunicipalityApi* | [**get_municipality_financials**](docs/MunicipalityApi.md#get_municipality_financials) | **GET** /municipalities/{id}/financials | Financials for a Municipality
 *IntrinioSDK::OptionsApi* | [**get_all_options_tickers**](docs/OptionsApi.md#get_all_options_tickers) | **GET** /options/tickers | Options Tickers
 *IntrinioSDK::OptionsApi* | [**get_option_expirations_realtime**](docs/OptionsApi.md#get_option_expirations_realtime) | **GET** /options/expirations/{symbol}/realtime | Option Expirations Realtime
+*IntrinioSDK::OptionsApi* | [**get_option_strikes_realtime**](docs/OptionsApi.md#get_option_strikes_realtime) | **GET** /options/strikes/{symbol}/{strike}/realtime | Option Strikes Realtime
 *IntrinioSDK::OptionsApi* | [**get_options**](docs/OptionsApi.md#get_options) | **GET** /options/{symbol} | Options
 *IntrinioSDK::OptionsApi* | [**get_options_by_symbol_realtime**](docs/OptionsApi.md#get_options_by_symbol_realtime) | **GET** /options/{symbol}/realtime | Options by Symbol Realtime
 *IntrinioSDK::OptionsApi* | [**get_options_chain**](docs/OptionsApi.md#get_options_chain) | **GET** /options/chain/{symbol}/{expiration} | Options Chain
@@ -174,6 +175,7 @@ Class | Method | HTTP request | Description
 *IntrinioSDK::OptionsApi* | [**get_options_prices_realtime**](docs/OptionsApi.md#get_options_prices_realtime) | **GET** /options/prices/{identifier}/realtime | Option Prices Realtime
 *IntrinioSDK::OptionsApi* | [**get_options_stats_realtime**](docs/OptionsApi.md#get_options_stats_realtime) | **GET** /options/prices/{identifier}/realtime/stats | Option Stats Realtime
 *IntrinioSDK::OptionsApi* | [**get_unusual_activity**](docs/OptionsApi.md#get_unusual_activity) | **GET** /options/unusual_activity/{symbol} | Options Unusual Activity
+*IntrinioSDK::OptionsApi* | [**get_unusual_activity_universal**](docs/OptionsApi.md#get_unusual_activity_universal) | **GET** /options/unusual_activity | Options Unusual Activity Universal
 *IntrinioSDK::OwnersApi* | [**get_all_owners**](docs/OwnersApi.md#get_all_owners) | **GET** /owners | All Owners
 *IntrinioSDK::OwnersApi* | [**get_owner_by_id**](docs/OwnersApi.md#get_owner_by_id) | **GET** /owners/{identifier} | Owner by ID
 *IntrinioSDK::OwnersApi* | [**insider_transaction_filings_by_owner**](docs/OwnersApi.md#insider_transaction_filings_by_owner) | **GET** /owners/{identifier}/insider_transaction_filings | Insider Transaction Filings by Owner
