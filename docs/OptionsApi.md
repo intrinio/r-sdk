@@ -10,10 +10,12 @@ Method | HTTP request | Description
 [**get_options**](OptionsApi.md#get_options) | **GET** /options/{symbol} | Options
 [**get_options_by_symbol_realtime**](OptionsApi.md#get_options_by_symbol_realtime) | **GET** /options/{symbol}/realtime | Options by Symbol Realtime
 [**get_options_chain**](OptionsApi.md#get_options_chain) | **GET** /options/chain/{symbol}/{expiration} | Options Chain
+[**get_options_chain_eod**](OptionsApi.md#get_options_chain_eod) | **GET** /options/chain/{symbol}/{expiration}/eod | Options Chain EOD
 [**get_options_chain_realtime**](OptionsApi.md#get_options_chain_realtime) | **GET** /options/chain/{symbol}/{expiration}/realtime | Options Chain Realtime
 [**get_options_expirations**](OptionsApi.md#get_options_expirations) | **GET** /options/expirations/{symbol} | Options Expirations
 [**get_options_prices**](OptionsApi.md#get_options_prices) | **GET** /options/prices/{identifier} | Option Prices
 [**get_options_prices_batch_realtime**](OptionsApi.md#get_options_prices_batch_realtime) | **POST** /options/prices/realtime/batch | Option Prices Batch Realtime
+[**get_options_prices_eod**](OptionsApi.md#get_options_prices_eod) | **GET** /options/prices/{identifier}/eod | Option Prices EOD
 [**get_options_prices_realtime**](OptionsApi.md#get_options_prices_realtime) | **GET** /options/prices/{identifier}/realtime | Option Prices Realtime
 [**get_options_stats_realtime**](OptionsApi.md#get_options_stats_realtime) | **GET** /options/prices/{identifier}/realtime/stats | Option Stats Realtime
 [**get_unusual_activity**](OptionsApi.md#get_unusual_activity) | **GET** /options/unusual_activity/{symbol} | Options Unusual Activity
@@ -578,6 +580,101 @@ Name | Type | Description  | Notes
 
 [//]: # (CLASS:IntrinioSDK::OptionsApi)
 
+[//]: # (METHOD:get_options_chain_eod)
+
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseOptionsChainEod)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:ApiResponseOptionsChainEod.md)
+
+[//]: # (OPERATION:get_options_chain_eod_v2)
+
+[//]: # (ENDPOINT:/options/chain/{symbol}/{expiration}/eod)
+
+[//]: # (DOCUMENT_LINK:OptionsApi.md#get_options_chain_eod)
+
+# **get_options_chain_eod**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/r/get_options_chain_eod_v2)
+
+[//]: # (START_OVERVIEW)
+
+> ApiResponseOptionsChainEod get_options_chain_eod(symbol, expiration, opts)
+
+#### Options Chain EOD
+
+
+Returns all EOD options contracts and their prices for the given symbol and expiration date.
+
+[//]: # (END_OVERVIEW)
+
+### Example
+
+[//]: # (START_CODE_EXAMPLE)
+```r
+# Setup client
+client <- IntrinioSDK::ApiClient$new()
+
+# Configure API key authorization: ApiKeyAuth
+client$configuration$apiKey <- "YOUR_API_KEY"
+
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
+# Setup API with client
+OptionsApi <- IntrinioSDK::OptionsApi$new(client)
+
+# Required params
+symbol <- "AAPL"
+expiration <- "2023-01-20"
+
+# Optional params
+opts <- list(
+  type = NULL,
+  strike = NULL,
+  strike_greater_than = NULL,
+  strike_less_than = NULL
+)
+
+response <- OptionsApi$get_options_chain_eod(symbol, expiration, opts)
+
+print(response)
+print(response$content)
+```
+
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **symbol** | Character| The option symbol, corresponding to the underlying security. |  &nbsp;
+ **expiration** | Character| The expiration date of the options contract |  &nbsp;
+ **type** | Character| The option contract type. | [optional]  &nbsp;
+ **strike** | Numeric| The strike price of the option contract. This will return options contracts with strike price equal to this price. | [optional]  &nbsp;
+ **strike_greater_than** | Numeric| The strike price of the option contract. This will return options contracts with strike prices greater than this price. | [optional]  &nbsp;
+ **strike_less_than** | Numeric| The strike price of the option contract. This will return options contracts with strike prices less than this price. | [optional]  &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**ApiResponseOptionsChainEod**](ApiResponseOptionsChainEod.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:IntrinioSDK::OptionsApi)
+
 [//]: # (METHOD:get_options_chain_realtime)
 
 [//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseOptionsChainRealtime)
@@ -949,6 +1046,87 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ApiResponseOptionsPricesBatchRealtime**](ApiResponseOptionsPricesBatchRealtime.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:IntrinioSDK::OptionsApi)
+
+[//]: # (METHOD:get_options_prices_eod)
+
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseOptionsPricesEod)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:ApiResponseOptionsPricesEod.md)
+
+[//]: # (OPERATION:get_options_prices_eod_v2)
+
+[//]: # (ENDPOINT:/options/prices/{identifier}/eod)
+
+[//]: # (DOCUMENT_LINK:OptionsApi.md#get_options_prices_eod)
+
+# **get_options_prices_eod**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/r/get_options_prices_eod_v2)
+
+[//]: # (START_OVERVIEW)
+
+> ApiResponseOptionsPricesEod get_options_prices_eod(identifier)
+
+#### Option Prices EOD
+
+
+Returns all option prices for a given option contract identifier.
+
+[//]: # (END_OVERVIEW)
+
+### Example
+
+[//]: # (START_CODE_EXAMPLE)
+```r
+# Setup client
+client <- IntrinioSDK::ApiClient$new()
+
+# Configure API key authorization: ApiKeyAuth
+client$configuration$apiKey <- "YOUR_API_KEY"
+
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
+# Setup API with client
+OptionsApi <- IntrinioSDK::OptionsApi$new(client)
+
+# Required params
+identifier <- "AAPL230616P00190000"
+
+response <- OptionsApi$get_options_prices_eod(identifier)
+
+print(response)
+print(response$content)
+```
+
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **identifier** | Character| The Intrinio ID or code of the options contract to request prices for. |  &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**ApiResponseOptionsPricesEod**](ApiResponseOptionsPricesEod.md)
 
 [//]: # (END_OPERATION)
 
