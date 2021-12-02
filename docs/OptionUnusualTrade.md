@@ -16,7 +16,11 @@ Name | Type | Description
 **total_value** | **Numeric** | The aggregated value of all option contract premiums included in the trade\\ &nbsp;
 **total_size** | **Numeric** | The total number of contracts involved in a single transaction &nbsp;
 **average_price** | **Numeric** | The average premium paid per option contract &nbsp;
-**contract** | **Character** |  &nbsp;
+**contract** | **Character** | The option contract symbol &nbsp;
+**ask_at_execution** | **Numeric** | Ask price at execution &nbsp;
+**bid_at_execution** | **Numeric** | Bid price at execution &nbsp;
+**sentiment** | **Character** | Bullish, Bearish, or Neutral Sentiment is estimated based on whether the trade was executed at the bid, ask, or mark price. &nbsp;
+**underlying_price_at_execution** | **Numeric** | Price of the underlying security at execution of trade &nbsp;
 
 [//]: # (END_DEFINITION)
 

@@ -7,8 +7,8 @@ Welcome to the Intrinio API! Through our Financial Data Marketplace, we offer a 
 
 ## Overview
 
-- API version: 2.26.1
-- Package version: 1.15.0
+- API version: 2.26.6
+- Package version: 1.16.0
 
 The new Intrinio R SDK wraps all API v2 endpoints into an easy-to-use set of classes, methods, and response objects.
 
@@ -138,6 +138,7 @@ Class | Method | HTTP request | Description
 *IntrinioSDK::FundamentalsApi* | [**get_fundamental_by_id**](docs/FundamentalsApi.md#get_fundamental_by_id) | **GET** /fundamentals/{id} | Fundamental by ID
 *IntrinioSDK::FundamentalsApi* | [**get_fundamental_reported_financials**](docs/FundamentalsApi.md#get_fundamental_reported_financials) | **GET** /fundamentals/{id}/reported_financials | Reported Financials
 *IntrinioSDK::FundamentalsApi* | [**get_fundamental_standardized_financials**](docs/FundamentalsApi.md#get_fundamental_standardized_financials) | **GET** /fundamentals/{id}/standardized_financials | Standardized Financials
+*IntrinioSDK::FundamentalsApi* | [**get_fundamental_standardized_financials_dimensions**](docs/FundamentalsApi.md#get_fundamental_standardized_financials_dimensions) | **GET** /fundamentals/{id}/standardized_financials/dimensions/{tag} | Standardized Financials Dimensions
 *IntrinioSDK::FundamentalsApi* | [**lookup_fundamental**](docs/FundamentalsApi.md#lookup_fundamental) | **GET** /fundamentals/lookup/{identifier}/{statement_code}/{fiscal_year}/{fiscal_period} | Lookup Fundamental
 *IntrinioSDK::HistoricalDataApi* | [**get_historical_data**](docs/HistoricalDataApi.md#get_historical_data) | **GET** /historical_data/{identifier}/{tag} | Historical Data
 *IntrinioSDK::IndexApi* | [**get_all_economic_indices**](docs/IndexApi.md#get_all_economic_indices) | **GET** /indices/economic | All Economic Indices
@@ -383,6 +384,7 @@ Class | Method | HTTP request | Description
  - [IntrinioSDK::ApiResponseSecurityZacksEPSSurprises](docs/ApiResponseSecurityZacksEPSSurprises.md)
  - [IntrinioSDK::ApiResponseSecurityZacksSalesSurprises](docs/ApiResponseSecurityZacksSalesSurprises.md)
  - [IntrinioSDK::ApiResponseStandardizedFinancials](docs/ApiResponseStandardizedFinancials.md)
+ - [IntrinioSDK::ApiResponseStandardizedFinancialsDimensions](docs/ApiResponseStandardizedFinancialsDimensions.md)
  - [IntrinioSDK::ApiResponseStockExchangeRealtimeStockPrices](docs/ApiResponseStockExchangeRealtimeStockPrices.md)
  - [IntrinioSDK::ApiResponseStockExchangeSecurities](docs/ApiResponseStockExchangeSecurities.md)
  - [IntrinioSDK::ApiResponseStockExchangeStockPriceAdjustments](docs/ApiResponseStockExchangeStockPriceAdjustments.md)
@@ -491,6 +493,7 @@ Class | Method | HTTP request | Description
  - [IntrinioSDK::SecuritySummary](docs/SecuritySummary.md)
  - [IntrinioSDK::SimpleMovingAverageTechnicalValue](docs/SimpleMovingAverageTechnicalValue.md)
  - [IntrinioSDK::StandardizedFinancial](docs/StandardizedFinancial.md)
+ - [IntrinioSDK::StandardizedFinancialsDimension](docs/StandardizedFinancialsDimension.md)
  - [IntrinioSDK::StochasticOscillatorTechnicalValue](docs/StochasticOscillatorTechnicalValue.md)
  - [IntrinioSDK::StockExchange](docs/StockExchange.md)
  - [IntrinioSDK::StockMarketIndex](docs/StockMarketIndex.md)
