@@ -1177,6 +1177,7 @@ opts <- list(
   end_date = as.Date("2019-01-01"),
   ownership_type = "D",
   page_size = 100,
+  sort_by = "updated_on",
   next_page = NULL
 )
 
@@ -1202,6 +1203,7 @@ Name | Type | Description  | Notes
  **end_date** | Date| Return Company&#39;s insider transaction filings on or before this date | [optional]  &nbsp;
  **ownership_type** | Character| The type of ownership to return transaction filings for. &#39;D&#39; is for direct transactions. &#39;I&#39; is for indirect transactions. Omit for both types. | [optional]  &nbsp;
  **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **sort_by** | Character| The field to sort by.  Default is &#39;filing_date&#39;.  Valid values are - &#39;filing_date&#39;, &#39;updated_on&#39;. | [optional]  &nbsp;
  **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
 <br/>
 

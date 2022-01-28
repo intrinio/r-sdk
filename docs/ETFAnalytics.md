@@ -10,6 +10,7 @@
 
 Name | Type | Description
 ------------ | ------------- | -------------
+**date** | [**Date**](Date.md) | The calendar date these analytics represent. &nbsp;
 **fifty_two_week_high** | **Numeric** | Highest trading price for the security in the preceding 52 weeks &nbsp;
 **fifty_two_week_low** | **Numeric** | Lowest trading price for the security in the preceding 52 weeks &nbsp;
 **volume_traded** | **Numeric** | The total quantity of shares traded on the latest trading day &nbsp;
@@ -21,6 +22,9 @@ Name | Type | Description
 **etf** | [**ETFSummary**](ETFSummary.md) |  &nbsp;
 
 [//]: # (END_DEFINITION)
+
+
+[//]: # (CONTAINED_CLASS:IntrinioSDK::Date)
 
 
 [//]: # (CONTAINED_CLASS:IntrinioSDK::ETFSummary)

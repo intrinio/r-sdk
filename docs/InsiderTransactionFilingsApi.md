@@ -62,6 +62,7 @@ opts <- list(
   start_date = as.Date("2015-01-01"),
   end_date = NULL,
   page_size = 100,
+  sort_by = "updated_on",
   next_page = NULL
 )
 
@@ -85,6 +86,7 @@ Name | Type | Description  | Notes
  **start_date** | Date| Filed on or after the given date | [optional]  &nbsp;
  **end_date** | Date| Filed before or after the given date | [optional]  &nbsp;
  **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **sort_by** | Character| The field to sort by.  Default is &#39;filing_date&#39;.  Valid values are - &#39;filing_date&#39;, &#39;updated_on&#39;. | [optional]  &nbsp;
  **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
 <br/>
 
