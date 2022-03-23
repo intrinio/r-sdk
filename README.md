@@ -7,8 +7,8 @@ Welcome to the Intrinio API! Through our Financial Data Marketplace, we offer a 
 
 ## Overview
 
-- API version: 2.27.2
-- Package version: 1.18.0
+- API version: 2.27.5
+- Package version: 1.19.0
 
 The new Intrinio R SDK wraps all API v2 endpoints into an easy-to-use set of classes, methods, and response objects.
 
@@ -178,7 +178,9 @@ Class | Method | HTTP request | Description
 *IntrinioSDK::OptionsApi* | [**get_options_prices_realtime**](docs/OptionsApi.md#get_options_prices_realtime) | **GET** /options/prices/{identifier}/realtime | Option Prices Realtime
 *IntrinioSDK::OptionsApi* | [**get_options_stats_realtime**](docs/OptionsApi.md#get_options_stats_realtime) | **GET** /options/prices/{identifier}/realtime/stats | Option Stats Realtime
 *IntrinioSDK::OptionsApi* | [**get_unusual_activity**](docs/OptionsApi.md#get_unusual_activity) | **GET** /options/unusual_activity/{symbol} | Options Unusual Activity
+*IntrinioSDK::OptionsApi* | [**get_unusual_activity_intraday**](docs/OptionsApi.md#get_unusual_activity_intraday) | **GET** /options/unusual_activity/{symbol}/intraday | Options Unusual Activity Intraday
 *IntrinioSDK::OptionsApi* | [**get_unusual_activity_universal**](docs/OptionsApi.md#get_unusual_activity_universal) | **GET** /options/unusual_activity | Options Unusual Activity Universal
+*IntrinioSDK::OptionsApi* | [**get_unusual_activity_universal_intraday**](docs/OptionsApi.md#get_unusual_activity_universal_intraday) | **GET** /options/unusual_activity/intraday | Options Unusual Activity Universal Intraday
 *IntrinioSDK::OwnersApi* | [**get_all_owners**](docs/OwnersApi.md#get_all_owners) | **GET** /owners | All Owners
 *IntrinioSDK::OwnersApi* | [**get_owner_by_id**](docs/OwnersApi.md#get_owner_by_id) | **GET** /owners/{identifier} | Owner by ID
 *IntrinioSDK::OwnersApi* | [**insider_transaction_filings_by_owner**](docs/OwnersApi.md#insider_transaction_filings_by_owner) | **GET** /owners/{identifier}/insider_transaction_filings | Insider Transaction Filings by Owner
