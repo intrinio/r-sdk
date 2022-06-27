@@ -7,8 +7,8 @@ Welcome to the Intrinio API! Through our Financial Data Marketplace, we offer a 
 
 ## Overview
 
-- API version: 2.27.5
-- Package version: 1.19.0
+- API version: 2.28.0
+- Package version: 1.20.0
 
 The new Intrinio R SDK wraps all API v2 endpoints into an easy-to-use set of classes, methods, and response objects.
 
@@ -115,6 +115,9 @@ Class | Method | HTTP request | Description
 *IntrinioSDK::DataTagApi* | [**get_all_data_tags**](docs/DataTagApi.md#get_all_data_tags) | **GET** /data_tags | All Data Tags
 *IntrinioSDK::DataTagApi* | [**get_data_tag_by_id**](docs/DataTagApi.md#get_data_tag_by_id) | **GET** /data_tags/{identifier} | Lookup Data Tag
 *IntrinioSDK::DataTagApi* | [**search_data_tags**](docs/DataTagApi.md#search_data_tags) | **GET** /data_tags/search | Search Data Tags
+*IntrinioSDK::ESGApi* | [**get_esg_companies**](docs/ESGApi.md#get_esg_companies) | **GET** /esg/companies | ESG Companies
+*IntrinioSDK::ESGApi* | [**get_esg_company_ratings**](docs/ESGApi.md#get_esg_company_ratings) | **GET** /esg/{identifier} | ESG Company Ratings History
+*IntrinioSDK::ESGApi* | [**get_esg_latest**](docs/ESGApi.md#get_esg_latest) | **GET** /esg | ESG Latest
 *IntrinioSDK::ETFsApi* | [**get_all_etfs**](docs/ETFsApi.md#get_all_etfs) | **GET** /etfs | All ETFs
 *IntrinioSDK::ETFsApi* | [**get_etf**](docs/ETFsApi.md#get_etf) | **GET** /etfs/{identifier} | Lookup ETF
 *IntrinioSDK::ETFsApi* | [**get_etf_analytics**](docs/ETFsApi.md#get_etf_analytics) | **GET** /etfs/{identifier}/analytics | ETF Analytics
@@ -135,6 +138,7 @@ Class | Method | HTTP request | Description
 *IntrinioSDK::ForexApi* | [**get_forex_currencies**](docs/ForexApi.md#get_forex_currencies) | **GET** /forex/currencies | Forex Currencies
 *IntrinioSDK::ForexApi* | [**get_forex_pairs**](docs/ForexApi.md#get_forex_pairs) | **GET** /forex/pairs | Forex Currency Pairs
 *IntrinioSDK::ForexApi* | [**get_forex_prices**](docs/ForexApi.md#get_forex_prices) | **GET** /forex/prices/{pair}/{timeframe} | Forex Currency Prices
+*IntrinioSDK::FundamentalsApi* | [**filter_fundamental**](docs/FundamentalsApi.md#filter_fundamental) | **GET** /fundamentals | Filter Fundamental
 *IntrinioSDK::FundamentalsApi* | [**get_fundamental_by_id**](docs/FundamentalsApi.md#get_fundamental_by_id) | **GET** /fundamentals/{id} | Fundamental by ID
 *IntrinioSDK::FundamentalsApi* | [**get_fundamental_reported_financials**](docs/FundamentalsApi.md#get_fundamental_reported_financials) | **GET** /fundamentals/{id}/reported_financials | Reported Financials
 *IntrinioSDK::FundamentalsApi* | [**get_fundamental_standardized_financials**](docs/FundamentalsApi.md#get_fundamental_standardized_financials) | **GET** /fundamentals/{id}/standardized_financials | Standardized Financials
@@ -303,6 +307,9 @@ Class | Method | HTTP request | Description
  - [IntrinioSDK::ApiResponseCompanySharesOutstanding](docs/ApiResponseCompanySharesOutstanding.md)
  - [IntrinioSDK::ApiResponseDataTags](docs/ApiResponseDataTags.md)
  - [IntrinioSDK::ApiResponseDataTagsSearch](docs/ApiResponseDataTagsSearch.md)
+ - [IntrinioSDK::ApiResponseESGCompanies](docs/ApiResponseESGCompanies.md)
+ - [IntrinioSDK::ApiResponseESGCompanyRatingHistory](docs/ApiResponseESGCompanyRatingHistory.md)
+ - [IntrinioSDK::ApiResponseESGLatest](docs/ApiResponseESGLatest.md)
  - [IntrinioSDK::ApiResponseETFHoldings](docs/ApiResponseETFHoldings.md)
  - [IntrinioSDK::ApiResponseETFs](docs/ApiResponseETFs.md)
  - [IntrinioSDK::ApiResponseEconomicIndexHistoricalData](docs/ApiResponseEconomicIndexHistoricalData.md)
@@ -427,6 +434,9 @@ Class | Method | HTTP request | Description
  - [IntrinioSDK::DetrendedPriceOscillatorTechnicalValue](docs/DetrendedPriceOscillatorTechnicalValue.md)
  - [IntrinioSDK::DividendRecord](docs/DividendRecord.md)
  - [IntrinioSDK::DonchianChannelTechnicalValue](docs/DonchianChannelTechnicalValue.md)
+ - [IntrinioSDK::ESGCompanySummary](docs/ESGCompanySummary.md)
+ - [IntrinioSDK::ESGRating](docs/ESGRating.md)
+ - [IntrinioSDK::ESGRatingWithCompany](docs/ESGRatingWithCompany.md)
  - [IntrinioSDK::ETF](docs/ETF.md)
  - [IntrinioSDK::ETFAnalytics](docs/ETFAnalytics.md)
  - [IntrinioSDK::ETFHolding](docs/ETFHolding.md)

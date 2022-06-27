@@ -42,12 +42,12 @@ Method | HTTP request | Description
 
 [//]: # (START_OVERVIEW)
 
-> ApiResponseFilings get_all_filings(company, opts)
+> ApiResponseFilings get_all_filings(opts)
 
 #### All Filings
 
 
-Returns all Filings. Returns Filings matching parameters when supplied.
+Returns pertinent filing reference data for a specific company filing or latest filings for all companies. Useful for tracking the latest filings submitted and updating your database accordingly with the new information.
 
 [//]: # (END_OVERVIEW)
 
@@ -67,11 +67,9 @@ client$configuration$allowRetries <- TRUE
 # Setup API with client
 FilingApi <- IntrinioSDK::FilingApi$new(client)
 
-# Required params
-company <- "AAPL"
-
 # Optional params
 opts <- list(
+  company = "AAPL",
   report_type = "10-Q",
   start_date = as.Date("2015-01-01"),
   end_date = NULL,
@@ -82,7 +80,7 @@ opts <- list(
   next_page = NULL
 )
 
-response <- FilingApi$get_all_filings(company, opts)
+response <- FilingApi$get_all_filings(opts)
 
 print(response)
 print(response$content)
@@ -99,7 +97,7 @@ print(response$content)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **company** | Character| Filings for the given &#x60;company&#x60; identifier (ticker, CIK, LEI, Intrinio ID) |  &nbsp;
+ **company** | Character| Filings for the given &#x60;company&#x60; identifier (ticker, CIK, LEI, Intrinio ID) | [optional]  &nbsp;
  **report_type** | Character| Filter by report type. Separate values with commas to return multiple The filing &lt;a href&#x3D;\&quot;https://docs.intrinio.com/documentation/sec_filing_report_types\&quot; target&#x3D;\&quot;_blank\&quot;&gt;report types&lt;/a&gt;. | [optional]  &nbsp;
  **start_date** | Date| Filed on or after the given date | [optional]  &nbsp;
  **end_date** | Date| Filed before or after the given date | [optional]  &nbsp;
@@ -148,7 +146,7 @@ Name | Type | Description  | Notes
 #### All Filing Notes
 
 
-Return all Notes from all Filings, most-recent first. Returns notes matching parameters when supplied.
+Returns a list of the latest XBRL filing note sections from the SEC 10-K and 10-Q statements. The returned Intrinio XBRL filing note ID can then be utilized with the “Filing Note by ID” endpoint to retrieve the contents of the note in HTML or text format.
 
 [//]: # (END_OVERVIEW)
 
@@ -408,7 +406,7 @@ Name | Type | Description  | Notes
 #### All Fundamentals by Filing
 
 
-Returns all Fundamentals for the SEC Filing with the given `identifier`. Returns Fundamentals matching parameters when supplied.
+Returns a list of fundamentals with unique fundamental IDs associated with a particular `Intrinio Filing ID` (if applicable) that have been updated or created as a result of a company`s latest SEC filing. Useful to ensure your database is up to date with the latest fundamentals.
 
 [//]: # (END_OVERVIEW)
 
@@ -507,6 +505,7 @@ Name | Type | Description  | Notes
 #### Filing Html
 
 
+Returns a SEC filing in HTML Format for a specified filing ID.
 
 [//]: # (END_OVERVIEW)
 
@@ -667,6 +666,7 @@ Name | Type | Description  | Notes
 #### Filing Note by ID
 
 
+Returns the XBRL filing note contents in HTML or text format for a specified Intrinio XBRL filing note ID.
 
 [//]: # (END_OVERVIEW)
 
@@ -913,7 +913,7 @@ Name | Type | Description  | Notes
 #### Search Filing Notes
 
 
-Searches for Filing Notes using the `query`
+Search the XBRL note database and return a list of XBRL note sections containing text from the text query parameter passed through.
 
 [//]: # (END_OVERVIEW)
 

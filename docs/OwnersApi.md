@@ -328,7 +328,7 @@ identifier <- 430692
 # Optional params
 opts <- list(
   page_size = 100,
-  as_of_date = IntrinioSDK::TODO_OBJECT_MAPPING$new(),
+  as_of_date = as.Date("2021-01-05"),
   next_page = NULL
 )
 
@@ -351,7 +351,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **identifier** | Character| The Central Index Key issued by the SEC, which is the unique identifier all owner filings are issued under. |  &nbsp;
  **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
- **as_of_date** | [**TODO_OBJECT_MAPPING**](TODO_OBJECT_MAPPING.md)| Return only holdings filed before this date. | [optional]  &nbsp;
+ **as_of_date** | Date| Return only holdings filed before this date. | [optional]  &nbsp;
  **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
 <br/>
 
