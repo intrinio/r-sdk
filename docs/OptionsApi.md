@@ -18,6 +18,7 @@ Method | HTTP request | Description
 [**get_options_prices_eod**](OptionsApi.md#get_options_prices_eod) | **GET** /options/prices/{identifier}/eod | Option Prices EOD
 [**get_options_prices_realtime**](OptionsApi.md#get_options_prices_realtime) | **GET** /options/prices/{identifier}/realtime | Option Prices Realtime
 [**get_options_stats_realtime**](OptionsApi.md#get_options_stats_realtime) | **GET** /options/prices/{identifier}/realtime/stats | Option Stats Realtime
+[**get_security_snapshots**](OptionsApi.md#get_security_snapshots) | **GET** /options/snapshots | Option Prices Realtime Snapshot
 [**get_unusual_activity**](OptionsApi.md#get_unusual_activity) | **GET** /options/unusual_activity/{symbol} | Options Unusual Activity
 [**get_unusual_activity_intraday**](OptionsApi.md#get_unusual_activity_intraday) | **GET** /options/unusual_activity/{symbol}/intraday | Options Unusual Activity Intraday
 [**get_unusual_activity_universal**](OptionsApi.md#get_unusual_activity_universal) | **GET** /options/unusual_activity | Options Unusual Activity Universal
@@ -1305,6 +1306,91 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ApiResponseOptionsStatsRealtime**](ApiResponseOptionsStatsRealtime.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:IntrinioSDK::OptionsApi)
+
+[//]: # (METHOD:get_security_snapshots)
+
+[//]: # (RETURN_TYPE:IntrinioSDK::OptionSnapshotsResult)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:OptionSnapshotsResult.md)
+
+[//]: # (OPERATION:get_security_snapshots_v2)
+
+[//]: # (ENDPOINT:/options/snapshots)
+
+[//]: # (DOCUMENT_LINK:OptionsApi.md#get_security_snapshots)
+
+# **get_security_snapshots**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/r/get_security_snapshots_v2)
+
+[//]: # (START_OVERVIEW)
+
+> OptionSnapshotsResult get_security_snapshots(opts)
+
+#### Option Prices Realtime Snapshot
+
+
+Returns all options snapshots for the queried interval with links to download.
+
+[//]: # (END_OVERVIEW)
+
+### Example
+
+[//]: # (START_CODE_EXAMPLE)
+```r
+# Setup client
+client <- IntrinioSDK::ApiClient$new()
+
+# Configure API key authorization: ApiKeyAuth
+client$configuration$apiKey <- "YOUR_API_KEY"
+
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
+# Setup API with client
+OptionsApi <- IntrinioSDK::OptionsApi$new(client)
+
+# Optional params
+opts <- list(
+  source = NULL,
+  at_datetime = as.POSIXlt(NULL, tz="UTC")
+)
+
+response <- OptionsApi$get_security_snapshots(opts)
+
+print(response)
+print(response$content)
+```
+
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **source** | Character| Realtime or 15-minute delayed contracts. | [optional]  &nbsp;
+ **at_datetime** | POSIXlt| The UTC date and time (with url-encoded spaces) the snapshot will cover. | [optional]  &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**OptionSnapshotsResult**](OptionSnapshotsResult.md)
 
 [//]: # (END_OPERATION)
 

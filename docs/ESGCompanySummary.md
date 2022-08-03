@@ -10,12 +10,12 @@
 
 Name | Type | Description
 ------------ | ------------- | -------------
-**id** | **Character** |  &nbsp;
-**name** | **Character** |  &nbsp;
-**ticker** | **Character** |  &nbsp;
-**isin** | **Character** |  &nbsp;
-**primary_industry** | **Character** |  &nbsp;
-**country** | **Character** |  &nbsp;
+**id** | **Character** | The Intrinio ID of the company. &nbsp;
+**name** | **Character** | The company’s common name. &nbsp;
+**ticker** | **Character** | The stock market ticker symbol associated with the company’s common stock security. &nbsp;
+**isin** | **Character** | The company&#39;s common securities identification 12-digit alphanumeric code. &nbsp;
+**primary_industry** | **Character** | The primary industry associated with the company based on their main revenue generating operations. &nbsp;
+**country** | **Character** | The country in which the company&#39;s headquarters or primary place of business is located. &nbsp;
 
 [//]: # (END_DEFINITION)
 

@@ -7,8 +7,8 @@ Welcome to the Intrinio API! Through our Financial Data Marketplace, we offer a 
 
 ## Overview
 
-- API version: 2.28.0
-- Package version: 1.20.0
+- API version: 2.28.4
+- Package version: 1.20.1
 
 The new Intrinio R SDK wraps all API v2 endpoints into an easy-to-use set of classes, methods, and response objects.
 
@@ -116,8 +116,10 @@ Class | Method | HTTP request | Description
 *IntrinioSDK::DataTagApi* | [**get_data_tag_by_id**](docs/DataTagApi.md#get_data_tag_by_id) | **GET** /data_tags/{identifier} | Lookup Data Tag
 *IntrinioSDK::DataTagApi* | [**search_data_tags**](docs/DataTagApi.md#search_data_tags) | **GET** /data_tags/search | Search Data Tags
 *IntrinioSDK::ESGApi* | [**get_esg_companies**](docs/ESGApi.md#get_esg_companies) | **GET** /esg/companies | ESG Companies
+*IntrinioSDK::ESGApi* | [**get_esg_company_comprehensive_ratings**](docs/ESGApi.md#get_esg_company_comprehensive_ratings) | **GET** /esg/{identifier}/comprehensive | ESG Company Comprehensive Ratings History
 *IntrinioSDK::ESGApi* | [**get_esg_company_ratings**](docs/ESGApi.md#get_esg_company_ratings) | **GET** /esg/{identifier} | ESG Company Ratings History
 *IntrinioSDK::ESGApi* | [**get_esg_latest**](docs/ESGApi.md#get_esg_latest) | **GET** /esg | ESG Latest
+*IntrinioSDK::ESGApi* | [**get_esg_latest_comprehensive**](docs/ESGApi.md#get_esg_latest_comprehensive) | **GET** /esg/comprehensive | ESG Latest Comprehensive
 *IntrinioSDK::ETFsApi* | [**get_all_etfs**](docs/ETFsApi.md#get_all_etfs) | **GET** /etfs | All ETFs
 *IntrinioSDK::ETFsApi* | [**get_etf**](docs/ETFsApi.md#get_etf) | **GET** /etfs/{identifier} | Lookup ETF
 *IntrinioSDK::ETFsApi* | [**get_etf_analytics**](docs/ETFsApi.md#get_etf_analytics) | **GET** /etfs/{identifier}/analytics | ETF Analytics
@@ -181,6 +183,7 @@ Class | Method | HTTP request | Description
 *IntrinioSDK::OptionsApi* | [**get_options_prices_eod**](docs/OptionsApi.md#get_options_prices_eod) | **GET** /options/prices/{identifier}/eod | Option Prices EOD
 *IntrinioSDK::OptionsApi* | [**get_options_prices_realtime**](docs/OptionsApi.md#get_options_prices_realtime) | **GET** /options/prices/{identifier}/realtime | Option Prices Realtime
 *IntrinioSDK::OptionsApi* | [**get_options_stats_realtime**](docs/OptionsApi.md#get_options_stats_realtime) | **GET** /options/prices/{identifier}/realtime/stats | Option Stats Realtime
+*IntrinioSDK::OptionsApi* | [**get_security_snapshots**](docs/OptionsApi.md#get_security_snapshots) | **GET** /options/snapshots | Option Prices Realtime Snapshot
 *IntrinioSDK::OptionsApi* | [**get_unusual_activity**](docs/OptionsApi.md#get_unusual_activity) | **GET** /options/unusual_activity/{symbol} | Options Unusual Activity
 *IntrinioSDK::OptionsApi* | [**get_unusual_activity_intraday**](docs/OptionsApi.md#get_unusual_activity_intraday) | **GET** /options/unusual_activity/{symbol}/intraday | Options Unusual Activity Intraday
 *IntrinioSDK::OptionsApi* | [**get_unusual_activity_universal**](docs/OptionsApi.md#get_unusual_activity_universal) | **GET** /options/unusual_activity | Options Unusual Activity Universal
@@ -232,6 +235,7 @@ Class | Method | HTTP request | Description
 *IntrinioSDK::SecurityApi* | [**get_security_price_technicals_vwap**](docs/SecurityApi.md#get_security_price_technicals_vwap) | **GET** /securities/{identifier}/prices/technicals/vwap | Volume Weighted Average Price
 *IntrinioSDK::SecurityApi* | [**get_security_price_technicals_wr**](docs/SecurityApi.md#get_security_price_technicals_wr) | **GET** /securities/{identifier}/prices/technicals/wr | Williams %R
 *IntrinioSDK::SecurityApi* | [**get_security_realtime_price**](docs/SecurityApi.md#get_security_realtime_price) | **GET** /securities/{identifier}/prices/realtime | Realtime Stock Price for Security
+*IntrinioSDK::SecurityApi* | [**get_security_snapshots**](docs/SecurityApi.md#get_security_snapshots) | **GET** /securities/snapshots | Realtime Stock Prices Snapshot
 *IntrinioSDK::SecurityApi* | [**get_security_stock_price_adjustments**](docs/SecurityApi.md#get_security_stock_price_adjustments) | **GET** /securities/{identifier}/prices/adjustments | Stock Price Adjustments by Security
 *IntrinioSDK::SecurityApi* | [**get_security_stock_prices**](docs/SecurityApi.md#get_security_stock_prices) | **GET** /securities/{identifier}/prices | Stock Prices by Security
 *IntrinioSDK::SecurityApi* | [**get_security_zacks_analyst_ratings**](docs/SecurityApi.md#get_security_zacks_analyst_ratings) | **GET** /securities/{identifier}/zacks/analyst_ratings | Zacks Analyst Ratings for Security
@@ -308,8 +312,10 @@ Class | Method | HTTP request | Description
  - [IntrinioSDK::ApiResponseDataTags](docs/ApiResponseDataTags.md)
  - [IntrinioSDK::ApiResponseDataTagsSearch](docs/ApiResponseDataTagsSearch.md)
  - [IntrinioSDK::ApiResponseESGCompanies](docs/ApiResponseESGCompanies.md)
+ - [IntrinioSDK::ApiResponseESGCompanyComprehensiveRatingHistory](docs/ApiResponseESGCompanyComprehensiveRatingHistory.md)
  - [IntrinioSDK::ApiResponseESGCompanyRatingHistory](docs/ApiResponseESGCompanyRatingHistory.md)
  - [IntrinioSDK::ApiResponseESGLatest](docs/ApiResponseESGLatest.md)
+ - [IntrinioSDK::ApiResponseESGLatestComprehensive](docs/ApiResponseESGLatestComprehensive.md)
  - [IntrinioSDK::ApiResponseETFHoldings](docs/ApiResponseETFHoldings.md)
  - [IntrinioSDK::ApiResponseETFs](docs/ApiResponseETFs.md)
  - [IntrinioSDK::ApiResponseEconomicIndexHistoricalData](docs/ApiResponseEconomicIndexHistoricalData.md)
@@ -435,6 +441,8 @@ Class | Method | HTTP request | Description
  - [IntrinioSDK::DividendRecord](docs/DividendRecord.md)
  - [IntrinioSDK::DonchianChannelTechnicalValue](docs/DonchianChannelTechnicalValue.md)
  - [IntrinioSDK::ESGCompanySummary](docs/ESGCompanySummary.md)
+ - [IntrinioSDK::ESGComprehensiveRating](docs/ESGComprehensiveRating.md)
+ - [IntrinioSDK::ESGComprehensiveRatingWithCompany](docs/ESGComprehensiveRatingWithCompany.md)
  - [IntrinioSDK::ESGRating](docs/ESGRating.md)
  - [IntrinioSDK::ESGRatingWithCompany](docs/ESGRatingWithCompany.md)
  - [IntrinioSDK::ETF](docs/ETF.md)
@@ -486,6 +494,8 @@ Class | Method | HTTP request | Description
  - [IntrinioSDK::OptionPriceEod](docs/OptionPriceEod.md)
  - [IntrinioSDK::OptionPriceRealtime](docs/OptionPriceRealtime.md)
  - [IntrinioSDK::OptionRealtime](docs/OptionRealtime.md)
+ - [IntrinioSDK::OptionSnapshotGroup](docs/OptionSnapshotGroup.md)
+ - [IntrinioSDK::OptionSnapshotsResult](docs/OptionSnapshotsResult.md)
  - [IntrinioSDK::OptionStatsRealtime](docs/OptionStatsRealtime.md)
  - [IntrinioSDK::OptionUnusualTrade](docs/OptionUnusualTrade.md)
  - [IntrinioSDK::Owner](docs/Owner.md)
@@ -502,6 +512,8 @@ Class | Method | HTTP request | Description
  - [IntrinioSDK::SecurityScreenGroup](docs/SecurityScreenGroup.md)
  - [IntrinioSDK::SecurityScreenResult](docs/SecurityScreenResult.md)
  - [IntrinioSDK::SecurityScreenResultData](docs/SecurityScreenResultData.md)
+ - [IntrinioSDK::SecuritySnapshotGroup](docs/SecuritySnapshotGroup.md)
+ - [IntrinioSDK::SecuritySnapshotsResult](docs/SecuritySnapshotsResult.md)
  - [IntrinioSDK::SecuritySummary](docs/SecuritySummary.md)
  - [IntrinioSDK::SimpleMovingAverageTechnicalValue](docs/SimpleMovingAverageTechnicalValue.md)
  - [IntrinioSDK::StandardizedFinancial](docs/StandardizedFinancial.md)
