@@ -14,7 +14,8 @@ Name | Type | Description
 **name** | **Character** | The common name for the holding &nbsp;
 **ticker** | **Character** | The common exchange ticker for the holding &nbsp;
 **type** | **Character** | The type of instrument for this holding.  Examples (Bond &#x3D; &#39;BOND&#39;, Equity &#x3D; &#39;EQUI&#39;, Options &#x3D; &#39;OPTN&#39;) &nbsp;
-**composite_figi** | **Character** | The OpenFIGI ticker for the holding &nbsp;
+**composite_figi** | **Character** | DEPRECATED &nbsp;
+**share_class_figi** | **Character** | The OpenFIGI symbol for the holding &nbsp;
 **isin** | **Character** | International Securities Identification Number (ISIN) for the holding &nbsp;
 **ric** | **Character** | Reuters Instrument Code (RIC) for the holding &nbsp;
 **sedol** | **Character** | Stock Exchange Daily Official List (SEDOL) for the holding &nbsp;

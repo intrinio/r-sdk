@@ -33,3 +33,7 @@ vignettes/*.pdf
 # Temporary files created by R markdown
 *.utf8.md
 *.knit.md
+
+#jetbrains
+*.DS_Store
+.idea
