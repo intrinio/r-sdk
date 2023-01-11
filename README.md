@@ -7,8 +7,8 @@ Welcome to the Intrinio API! Through our Financial Data Marketplace, we offer a 
 
 ## Overview
 
-- API version: 2.30.0
-- Package version: 1.20.4
+- API version: 2.34.0
+- Package version: 1.20.5
 
 The new Intrinio R SDK wraps all API v2 endpoints into an easy-to-use set of classes, methods, and response objects.
 
@@ -178,6 +178,10 @@ Class | Method | HTTP request | Description
 *IntrinioSDK::OptionsApi* | [**get_options_chain_eod**](docs/OptionsApi.md#get_options_chain_eod) | **GET** /options/chain/{symbol}/{expiration}/eod | Options Chain EOD
 *IntrinioSDK::OptionsApi* | [**get_options_chain_realtime**](docs/OptionsApi.md#get_options_chain_realtime) | **GET** /options/chain/{symbol}/{expiration}/realtime | Options Chain Realtime
 *IntrinioSDK::OptionsApi* | [**get_options_expirations**](docs/OptionsApi.md#get_options_expirations) | **GET** /options/expirations/{symbol} | Options Expirations
+*IntrinioSDK::OptionsApi* | [**get_options_interval_by_contract**](docs/OptionsApi.md#get_options_interval_by_contract) | **GET** /options/interval/{identifier} | Options intervals by contract
+*IntrinioSDK::OptionsApi* | [**get_options_interval_movers**](docs/OptionsApi.md#get_options_interval_movers) | **GET** /options/interval/movers | Options Intervals Movers
+*IntrinioSDK::OptionsApi* | [**get_options_interval_movers_change**](docs/OptionsApi.md#get_options_interval_movers_change) | **GET** /options/interval/movers/change | Options Intervals Movers By Change
+*IntrinioSDK::OptionsApi* | [**get_options_interval_movers_volume**](docs/OptionsApi.md#get_options_interval_movers_volume) | **GET** /options/interval/movers/volume | Options Intervals Movers By Volume
 *IntrinioSDK::OptionsApi* | [**get_options_prices**](docs/OptionsApi.md#get_options_prices) | **GET** /options/prices/{identifier} | Option Prices
 *IntrinioSDK::OptionsApi* | [**get_options_prices_batch_realtime**](docs/OptionsApi.md#get_options_prices_batch_realtime) | **POST** /options/prices/realtime/batch | Option Prices Batch Realtime
 *IntrinioSDK::OptionsApi* | [**get_options_prices_eod**](docs/OptionsApi.md#get_options_prices_eod) | **GET** /options/prices/{identifier}/eod | Option Prices EOD
@@ -489,6 +493,10 @@ Class | Method | HTTP request | Description
  - [IntrinioSDK::OptionContractsList](docs/OptionContractsList.md)
  - [IntrinioSDK::OptionEod](docs/OptionEod.md)
  - [IntrinioSDK::OptionFactorsRealtime](docs/OptionFactorsRealtime.md)
+ - [IntrinioSDK::OptionInterval](docs/OptionInterval.md)
+ - [IntrinioSDK::OptionIntervalMover](docs/OptionIntervalMover.md)
+ - [IntrinioSDK::OptionIntervalsMoversResult](docs/OptionIntervalsMoversResult.md)
+ - [IntrinioSDK::OptionIntervalsResult](docs/OptionIntervalsResult.md)
  - [IntrinioSDK::OptionPrice](docs/OptionPrice.md)
  - [IntrinioSDK::OptionPriceBatchRealtime](docs/OptionPriceBatchRealtime.md)
  - [IntrinioSDK::OptionPriceEod](docs/OptionPriceEod.md)

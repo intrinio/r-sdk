@@ -13,6 +13,10 @@ Method | HTTP request | Description
 [**get_options_chain_eod**](OptionsApi.md#get_options_chain_eod) | **GET** /options/chain/{symbol}/{expiration}/eod | Options Chain EOD
 [**get_options_chain_realtime**](OptionsApi.md#get_options_chain_realtime) | **GET** /options/chain/{symbol}/{expiration}/realtime | Options Chain Realtime
 [**get_options_expirations**](OptionsApi.md#get_options_expirations) | **GET** /options/expirations/{symbol} | Options Expirations
+[**get_options_interval_by_contract**](OptionsApi.md#get_options_interval_by_contract) | **GET** /options/interval/{identifier} | Options intervals by contract
+[**get_options_interval_movers**](OptionsApi.md#get_options_interval_movers) | **GET** /options/interval/movers | Options Intervals Movers
+[**get_options_interval_movers_change**](OptionsApi.md#get_options_interval_movers_change) | **GET** /options/interval/movers/change | Options Intervals Movers By Change
+[**get_options_interval_movers_volume**](OptionsApi.md#get_options_interval_movers_volume) | **GET** /options/interval/movers/volume | Options Intervals Movers By Volume
 [**get_options_prices**](OptionsApi.md#get_options_prices) | **GET** /options/prices/{identifier} | Option Prices
 [**get_options_prices_batch_realtime**](OptionsApi.md#get_options_prices_batch_realtime) | **POST** /options/prices/realtime/batch | Option Prices Batch Realtime
 [**get_options_prices_eod**](OptionsApi.md#get_options_prices_eod) | **GET** /options/prices/{identifier}/eod | Option Prices EOD
@@ -868,6 +872,354 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ApiResponseOptionsExpirations**](ApiResponseOptionsExpirations.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:IntrinioSDK::OptionsApi)
+
+[//]: # (METHOD:get_options_interval_by_contract)
+
+[//]: # (RETURN_TYPE:IntrinioSDK::OptionIntervalsResult)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:OptionIntervalsResult.md)
+
+[//]: # (OPERATION:get_options_interval_by_contract_v2)
+
+[//]: # (ENDPOINT:/options/interval/{identifier})
+
+[//]: # (DOCUMENT_LINK:OptionsApi.md#get_options_interval_by_contract)
+
+# **get_options_interval_by_contract**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/r/get_options_interval_by_contract_v2)
+
+[//]: # (START_OVERVIEW)
+
+> OptionIntervalsResult get_options_interval_by_contract(identifier, interval_size, opts)
+
+#### Options intervals by contract
+
+
+Returns a list of interval data points for a contract.
+
+[//]: # (END_OVERVIEW)
+
+### Example
+
+[//]: # (START_CODE_EXAMPLE)
+```r
+# Setup client
+client <- IntrinioSDK::ApiClient$new()
+
+# Configure API key authorization: ApiKeyAuth
+client$configuration$apiKey <- "YOUR_API_KEY"
+
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
+# Setup API with client
+OptionsApi <- IntrinioSDK::OptionsApi$new(client)
+
+# Required params
+identifier <- "SPY___230103P00380000"
+interval_size <- "5m"
+
+# Optional params
+opts <- list(
+  source = NULL,
+  page_size = 100,
+  end_time = as.POSIXlt(NULL, tz="UTC")
+)
+
+response <- OptionsApi$get_options_interval_by_contract(identifier, interval_size, opts)
+
+print(response)
+print(response$content)
+```
+
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **identifier** | Character| The Intrinio ID or code of the options contract to request intervals for. |  &nbsp;
+ **interval_size** | Character| The time length of the interval. |  &nbsp;
+ **source** | Character| Realtime or 15-minute delayed contracts. | [optional]  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **end_time** | POSIXlt| The inclusive UTC date and time the intervals end at. | [optional]  &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**OptionIntervalsResult**](OptionIntervalsResult.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:IntrinioSDK::OptionsApi)
+
+[//]: # (METHOD:get_options_interval_movers)
+
+[//]: # (RETURN_TYPE:IntrinioSDK::OptionIntervalsMoversResult)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:OptionIntervalsMoversResult.md)
+
+[//]: # (OPERATION:get_options_interval_movers_v2)
+
+[//]: # (ENDPOINT:/options/interval/movers)
+
+[//]: # (DOCUMENT_LINK:OptionsApi.md#get_options_interval_movers)
+
+# **get_options_interval_movers**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/r/get_options_interval_movers_v2)
+
+[//]: # (START_OVERVIEW)
+
+> OptionIntervalsMoversResult get_options_interval_movers(opts)
+
+#### Options Intervals Movers
+
+
+Returns a list of intervals for the biggest movers over the last hour interval.
+
+[//]: # (END_OVERVIEW)
+
+### Example
+
+[//]: # (START_CODE_EXAMPLE)
+```r
+# Setup client
+client <- IntrinioSDK::ApiClient$new()
+
+# Configure API key authorization: ApiKeyAuth
+client$configuration$apiKey <- "YOUR_API_KEY"
+
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
+# Setup API with client
+OptionsApi <- IntrinioSDK::OptionsApi$new(client)
+
+# Optional params
+opts <- list(
+  source = NULL,
+  open_time = as.POSIXlt(NULL, tz="UTC")
+)
+
+response <- OptionsApi$get_options_interval_movers(opts)
+
+print(response)
+print(response$content)
+```
+
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **source** | Character| Realtime or 15-minute delayed contracts. | [optional]  &nbsp;
+ **open_time** | POSIXlt| The inclusive UTC date and time the interval opens at. | [optional]  &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**OptionIntervalsMoversResult**](OptionIntervalsMoversResult.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:IntrinioSDK::OptionsApi)
+
+[//]: # (METHOD:get_options_interval_movers_change)
+
+[//]: # (RETURN_TYPE:IntrinioSDK::OptionIntervalsMoversResult)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:OptionIntervalsMoversResult.md)
+
+[//]: # (OPERATION:get_options_interval_movers_change_v2)
+
+[//]: # (ENDPOINT:/options/interval/movers/change)
+
+[//]: # (DOCUMENT_LINK:OptionsApi.md#get_options_interval_movers_change)
+
+# **get_options_interval_movers_change**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/r/get_options_interval_movers_change_v2)
+
+[//]: # (START_OVERVIEW)
+
+> OptionIntervalsMoversResult get_options_interval_movers_change(opts)
+
+#### Options Intervals Movers By Change
+
+
+Returns a list of intervals for the biggest movers by change over the last hour interval.
+
+[//]: # (END_OVERVIEW)
+
+### Example
+
+[//]: # (START_CODE_EXAMPLE)
+```r
+# Setup client
+client <- IntrinioSDK::ApiClient$new()
+
+# Configure API key authorization: ApiKeyAuth
+client$configuration$apiKey <- "YOUR_API_KEY"
+
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
+# Setup API with client
+OptionsApi <- IntrinioSDK::OptionsApi$new(client)
+
+# Optional params
+opts <- list(
+  source = NULL,
+  open_time = as.POSIXlt(NULL, tz="UTC")
+)
+
+response <- OptionsApi$get_options_interval_movers_change(opts)
+
+print(response)
+print(response$content)
+```
+
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **source** | Character| Realtime or 15-minute delayed contracts. | [optional]  &nbsp;
+ **open_time** | POSIXlt| The inclusive UTC date and time the interval opens at. | [optional]  &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**OptionIntervalsMoversResult**](OptionIntervalsMoversResult.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:IntrinioSDK::OptionsApi)
+
+[//]: # (METHOD:get_options_interval_movers_volume)
+
+[//]: # (RETURN_TYPE:IntrinioSDK::OptionIntervalsMoversResult)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:OptionIntervalsMoversResult.md)
+
+[//]: # (OPERATION:get_options_interval_movers_volume_v2)
+
+[//]: # (ENDPOINT:/options/interval/movers/volume)
+
+[//]: # (DOCUMENT_LINK:OptionsApi.md#get_options_interval_movers_volume)
+
+# **get_options_interval_movers_volume**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/r/get_options_interval_movers_volume_v2)
+
+[//]: # (START_OVERVIEW)
+
+> OptionIntervalsMoversResult get_options_interval_movers_volume(opts)
+
+#### Options Intervals Movers By Volume
+
+
+Returns a list of intervals for the biggest movers by volume over the last hour interval.
+
+[//]: # (END_OVERVIEW)
+
+### Example
+
+[//]: # (START_CODE_EXAMPLE)
+```r
+# Setup client
+client <- IntrinioSDK::ApiClient$new()
+
+# Configure API key authorization: ApiKeyAuth
+client$configuration$apiKey <- "YOUR_API_KEY"
+
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
+# Setup API with client
+OptionsApi <- IntrinioSDK::OptionsApi$new(client)
+
+# Optional params
+opts <- list(
+  source = NULL,
+  open_time = as.POSIXlt(NULL, tz="UTC")
+)
+
+response <- OptionsApi$get_options_interval_movers_volume(opts)
+
+print(response)
+print(response$content)
+```
+
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **source** | Character| Realtime or 15-minute delayed contracts. | [optional]  &nbsp;
+ **open_time** | POSIXlt| The inclusive UTC date and time the interval opens at. | [optional]  &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**OptionIntervalsMoversResult**](OptionIntervalsMoversResult.md)
 
 [//]: # (END_OPERATION)
 
