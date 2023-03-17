@@ -7,8 +7,8 @@ Welcome to the Intrinio API! Through our Financial Data Marketplace, we offer a 
 
 ## Overview
 
-- API version: 2.34.0
-- Package version: 1.20.5
+- API version: 2.39.0
+- Package version: 1.21.0
 
 The new Intrinio R SDK wraps all API v2 endpoints into an easy-to-use set of classes, methods, and response objects.
 
@@ -178,7 +178,7 @@ Class | Method | HTTP request | Description
 *IntrinioSDK::OptionsApi* | [**get_options_chain_eod**](docs/OptionsApi.md#get_options_chain_eod) | **GET** /options/chain/{symbol}/{expiration}/eod | Options Chain EOD
 *IntrinioSDK::OptionsApi* | [**get_options_chain_realtime**](docs/OptionsApi.md#get_options_chain_realtime) | **GET** /options/chain/{symbol}/{expiration}/realtime | Options Chain Realtime
 *IntrinioSDK::OptionsApi* | [**get_options_expirations**](docs/OptionsApi.md#get_options_expirations) | **GET** /options/expirations/{symbol} | Options Expirations
-*IntrinioSDK::OptionsApi* | [**get_options_interval_by_contract**](docs/OptionsApi.md#get_options_interval_by_contract) | **GET** /options/interval/{identifier} | Options intervals by contract
+*IntrinioSDK::OptionsApi* | [**get_options_interval_by_contract**](docs/OptionsApi.md#get_options_interval_by_contract) | **GET** /options/interval/{identifier} | Options Intervals By Contract
 *IntrinioSDK::OptionsApi* | [**get_options_interval_movers**](docs/OptionsApi.md#get_options_interval_movers) | **GET** /options/interval/movers | Options Intervals Movers
 *IntrinioSDK::OptionsApi* | [**get_options_interval_movers_change**](docs/OptionsApi.md#get_options_interval_movers_change) | **GET** /options/interval/movers/change | Options Intervals Movers By Change
 *IntrinioSDK::OptionsApi* | [**get_options_interval_movers_volume**](docs/OptionsApi.md#get_options_interval_movers_volume) | **GET** /options/interval/movers/volume | Options Intervals Movers By Volume
@@ -203,6 +203,9 @@ Class | Method | HTTP request | Description
 *IntrinioSDK::SecurityApi* | [**get_security_data_point_text**](docs/SecurityApi.md#get_security_data_point_text) | **GET** /securities/{identifier}/data_point/{tag}/text | Data Point (Text) for Security
 *IntrinioSDK::SecurityApi* | [**get_security_historical_data**](docs/SecurityApi.md#get_security_historical_data) | **GET** /securities/{identifier}/historical_data/{tag} | Historical Data for Security
 *IntrinioSDK::SecurityApi* | [**get_security_insider_ownership**](docs/SecurityApi.md#get_security_insider_ownership) | **GET** /securities/{identifier}/institutional_ownership | Institutional Ownership by Security
+*IntrinioSDK::SecurityApi* | [**get_security_interval_movers**](docs/SecurityApi.md#get_security_interval_movers) | **GET** /securities/market_movers | Security Intervals Movers
+*IntrinioSDK::SecurityApi* | [**get_security_interval_movers_change**](docs/SecurityApi.md#get_security_interval_movers_change) | **GET** /securities/market_movers/change | Security Intervals Movers By Change
+*IntrinioSDK::SecurityApi* | [**get_security_interval_movers_volume**](docs/SecurityApi.md#get_security_interval_movers_volume) | **GET** /securities/market_movers/volume | Security Intervals Movers By Volume
 *IntrinioSDK::SecurityApi* | [**get_security_interval_prices**](docs/SecurityApi.md#get_security_interval_prices) | **GET** /securities/{identifier}/prices/intervals | Interval Stock Prices for Security
 *IntrinioSDK::SecurityApi* | [**get_security_intraday_prices**](docs/SecurityApi.md#get_security_intraday_prices) | **GET** /securities/{identifier}/prices/intraday | Intraday Stock Prices for Security
 *IntrinioSDK::SecurityApi* | [**get_security_latest_dividend_record**](docs/SecurityApi.md#get_security_latest_dividend_record) | **GET** /securities/{identifier}/dividends/latest | Latest Dividend Record for Security
@@ -516,6 +519,8 @@ Class | Method | HTTP request | Description
  - [IntrinioSDK::ReportedTag](docs/ReportedTag.md)
  - [IntrinioSDK::SICIndex](docs/SICIndex.md)
  - [IntrinioSDK::Security](docs/Security.md)
+ - [IntrinioSDK::SecurityIntervalMover](docs/SecurityIntervalMover.md)
+ - [IntrinioSDK::SecurityIntervalsMoversResult](docs/SecurityIntervalsMoversResult.md)
  - [IntrinioSDK::SecurityScreenClause](docs/SecurityScreenClause.md)
  - [IntrinioSDK::SecurityScreenGroup](docs/SecurityScreenGroup.md)
  - [IntrinioSDK::SecurityScreenResult](docs/SecurityScreenResult.md)

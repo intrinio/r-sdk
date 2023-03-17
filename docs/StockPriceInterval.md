@@ -10,14 +10,21 @@
 
 Name | Type | Description
 ------------ | ------------- | -------------
-**time** | [**POSIXlt**](POSIXlt.md) | The timestamp that the &#x60;last_price&#x60; represents. &nbsp;
-**open** | **Numeric** | The price at the beginning of the period &nbsp;
-**close** | **Numeric** | The price at the end of the period &nbsp;
+**time** | [**POSIXlt**](POSIXlt.md) | The timestamp that represents the start of the interval span. &nbsp;
+**open** | **Numeric** | The first traded price during the period &nbsp;
+**close** | **Numeric** | The last traded price during the period &nbsp;
 **high** | **Numeric** | The highest price over the span of the period &nbsp;
 **low** | **Numeric** | The lowest price over the span of the period &nbsp;
 **volume** | **Numeric** | The number of shares exchanged during the period &nbsp;
+**close_time** | [**POSIXlt**](POSIXlt.md) | The timestamp that represents the end of the interval span. &nbsp;
+**interval** | **Character** | The size of the interval. &nbsp;
+**average** | **Numeric** | The average trade price of an individual stock during the interval. &nbsp;
+**change** | **Numeric** | The change ratio from open to close.  ((Close - Open)/Open). &nbsp;
 
 [//]: # (END_DEFINITION)
+
+
+[//]: # (CONTAINED_CLASS:IntrinioSDK::POSIXlt)
 
 
 [//]: # (CONTAINED_CLASS:IntrinioSDK::POSIXlt)

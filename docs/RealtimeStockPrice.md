@@ -25,6 +25,11 @@ Name | Type | Description
 **market_volume** | **Numeric** | The number of shares exchanged during the trading day for the whole market. &nbsp;
 **updated_on** | [**POSIXlt**](POSIXlt.md) | The date and time when the data was last updated. &nbsp;
 **source** | **Character** | The source of the data. &nbsp;
+**listing_venue** | **Character** | The venue the price came from. &nbsp;
+**sales_conditions** | **Character** | The condition for the sale. &nbsp;
+**quote_conditions** | **Character** | The condition for the quote. &nbsp;
+**market_center_code** | **Character** | The market center character code. &nbsp;
+**is_darkpool** | [**Logical**](Logical.md) | Whether or not the current trade is from a darkpool or not. &nbsp;
 **security** | [**RealtimeStockPriceSecurity**](RealtimeStockPrice_security.md) |  &nbsp;
 
 [//]: # (END_DEFINITION)
@@ -34,6 +39,9 @@ Name | Type | Description
 
 
 [//]: # (CONTAINED_CLASS:IntrinioSDK::POSIXlt)
+
+
+[//]: # (CONTAINED_CLASS:IntrinioSDK::Logical)
 
 
 [//]: # (CONTAINED_CLASS:IntrinioSDK::RealtimeStockPrice_security)

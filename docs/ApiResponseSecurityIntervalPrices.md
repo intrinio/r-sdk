@@ -10,7 +10,7 @@
 
 Name | Type | Description
 ------------ | ------------- | -------------
-**intervals** | [**List of StockPriceInterval**](StockPriceInterval.md) | Open, High, Low, Close, and Volume for a particular interval &nbsp;
+**intervals** | [**List of StockPriceInterval**](StockPriceInterval.md) | Open, close, high, low, volume, average price, and change ratio for a particular interval &nbsp;
 **intervals_data_frame** | Data Frame | Data frame representation of intervals
 **security** | [**SecuritySummary**](SecuritySummary.md) | The Security resolved from the given identifier &nbsp;
 **source** | **Character** | The source of the data &nbsp;

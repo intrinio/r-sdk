@@ -10,6 +10,9 @@ Method | HTTP request | Description
 [**get_security_data_point_text**](SecurityApi.md#get_security_data_point_text) | **GET** /securities/{identifier}/data_point/{tag}/text | Data Point (Text) for Security
 [**get_security_historical_data**](SecurityApi.md#get_security_historical_data) | **GET** /securities/{identifier}/historical_data/{tag} | Historical Data for Security
 [**get_security_insider_ownership**](SecurityApi.md#get_security_insider_ownership) | **GET** /securities/{identifier}/institutional_ownership | Institutional Ownership by Security
+[**get_security_interval_movers**](SecurityApi.md#get_security_interval_movers) | **GET** /securities/market_movers | Security Intervals Movers
+[**get_security_interval_movers_change**](SecurityApi.md#get_security_interval_movers_change) | **GET** /securities/market_movers/change | Security Intervals Movers By Change
+[**get_security_interval_movers_volume**](SecurityApi.md#get_security_interval_movers_volume) | **GET** /securities/market_movers/volume | Security Intervals Movers By Volume
 [**get_security_interval_prices**](SecurityApi.md#get_security_interval_prices) | **GET** /securities/{identifier}/prices/intervals | Interval Stock Prices for Security
 [**get_security_intraday_prices**](SecurityApi.md#get_security_intraday_prices) | **GET** /securities/{identifier}/prices/intraday | Intraday Stock Prices for Security
 [**get_security_latest_dividend_record**](SecurityApi.md#get_security_latest_dividend_record) | **GET** /securities/{identifier}/dividends/latest | Latest Dividend Record for Security
@@ -610,6 +613,261 @@ Name | Type | Description  | Notes
 
 [//]: # (CLASS:IntrinioSDK::SecurityApi)
 
+[//]: # (METHOD:get_security_interval_movers)
+
+[//]: # (RETURN_TYPE:IntrinioSDK::SecurityIntervalsMoversResult)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:SecurityIntervalsMoversResult.md)
+
+[//]: # (OPERATION:get_security_interval_movers_v2)
+
+[//]: # (ENDPOINT:/securities/market_movers)
+
+[//]: # (DOCUMENT_LINK:SecurityApi.md#get_security_interval_movers)
+
+# **get_security_interval_movers**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/r/get_security_interval_movers_v2)
+
+[//]: # (START_OVERVIEW)
+
+> SecurityIntervalsMoversResult get_security_interval_movers(opts)
+
+#### Security Intervals Movers
+
+
+Returns a list of intervals for the biggest movers over the last hour interval.
+
+[//]: # (END_OVERVIEW)
+
+### Example
+
+[//]: # (START_CODE_EXAMPLE)
+```r
+# Setup client
+client <- IntrinioSDK::ApiClient$new()
+
+# Configure API key authorization: ApiKeyAuth
+client$configuration$apiKey <- "YOUR_API_KEY"
+
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
+# Setup API with client
+SecurityApi <- IntrinioSDK::SecurityApi$new(client)
+
+# Optional params
+opts <- list(
+  source = NULL,
+  open_time = as.POSIXlt(NULL, tz="UTC")
+)
+
+response <- SecurityApi$get_security_interval_movers(opts)
+
+print(response)
+print(response$content)
+```
+
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **source** | Character| Realtime or 15-minute delayed contracts. | [optional]  &nbsp;
+ **open_time** | POSIXlt| The inclusive UTC date and time the interval opens at. | [optional]  &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**SecurityIntervalsMoversResult**](SecurityIntervalsMoversResult.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:IntrinioSDK::SecurityApi)
+
+[//]: # (METHOD:get_security_interval_movers_change)
+
+[//]: # (RETURN_TYPE:IntrinioSDK::SecurityIntervalsMoversResult)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:SecurityIntervalsMoversResult.md)
+
+[//]: # (OPERATION:get_security_interval_movers_change_v2)
+
+[//]: # (ENDPOINT:/securities/market_movers/change)
+
+[//]: # (DOCUMENT_LINK:SecurityApi.md#get_security_interval_movers_change)
+
+# **get_security_interval_movers_change**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/r/get_security_interval_movers_change_v2)
+
+[//]: # (START_OVERVIEW)
+
+> SecurityIntervalsMoversResult get_security_interval_movers_change(opts)
+
+#### Security Intervals Movers By Change
+
+
+Returns a list of intervals for the biggest movers by change over the last hour interval.
+
+[//]: # (END_OVERVIEW)
+
+### Example
+
+[//]: # (START_CODE_EXAMPLE)
+```r
+# Setup client
+client <- IntrinioSDK::ApiClient$new()
+
+# Configure API key authorization: ApiKeyAuth
+client$configuration$apiKey <- "YOUR_API_KEY"
+
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
+# Setup API with client
+SecurityApi <- IntrinioSDK::SecurityApi$new(client)
+
+# Optional params
+opts <- list(
+  source = NULL,
+  open_time = as.POSIXlt(NULL, tz="UTC")
+)
+
+response <- SecurityApi$get_security_interval_movers_change(opts)
+
+print(response)
+print(response$content)
+```
+
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **source** | Character| Realtime or 15-minute delayed contracts. | [optional]  &nbsp;
+ **open_time** | POSIXlt| The inclusive UTC date and time the interval opens at. | [optional]  &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**SecurityIntervalsMoversResult**](SecurityIntervalsMoversResult.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:IntrinioSDK::SecurityApi)
+
+[//]: # (METHOD:get_security_interval_movers_volume)
+
+[//]: # (RETURN_TYPE:IntrinioSDK::SecurityIntervalsMoversResult)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:SecurityIntervalsMoversResult.md)
+
+[//]: # (OPERATION:get_security_interval_movers_volume_v2)
+
+[//]: # (ENDPOINT:/securities/market_movers/volume)
+
+[//]: # (DOCUMENT_LINK:SecurityApi.md#get_security_interval_movers_volume)
+
+# **get_security_interval_movers_volume**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/r/get_security_interval_movers_volume_v2)
+
+[//]: # (START_OVERVIEW)
+
+> SecurityIntervalsMoversResult get_security_interval_movers_volume(opts)
+
+#### Security Intervals Movers By Volume
+
+
+Returns a list of intervals for the biggest movers by volume over the last hour interval.
+
+[//]: # (END_OVERVIEW)
+
+### Example
+
+[//]: # (START_CODE_EXAMPLE)
+```r
+# Setup client
+client <- IntrinioSDK::ApiClient$new()
+
+# Configure API key authorization: ApiKeyAuth
+client$configuration$apiKey <- "YOUR_API_KEY"
+
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
+# Setup API with client
+SecurityApi <- IntrinioSDK::SecurityApi$new(client)
+
+# Optional params
+opts <- list(
+  source = NULL,
+  open_time = as.POSIXlt(NULL, tz="UTC")
+)
+
+response <- SecurityApi$get_security_interval_movers_volume(opts)
+
+print(response)
+print(response$content)
+```
+
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **source** | Character| Realtime or 15-minute delayed contracts. | [optional]  &nbsp;
+ **open_time** | POSIXlt| The inclusive UTC date and time the interval opens at. | [optional]  &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**SecurityIntervalsMoversResult**](SecurityIntervalsMoversResult.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:IntrinioSDK::SecurityApi)
+
 [//]: # (METHOD:get_security_interval_prices)
 
 [//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseSecurityIntervalPrices)
@@ -630,12 +888,12 @@ Name | Type | Description  | Notes
 
 [//]: # (START_OVERVIEW)
 
-> ApiResponseSecurityIntervalPrices get_security_interval_prices(identifier, opts)
+> ApiResponseSecurityIntervalPrices get_security_interval_prices(identifier, interval_size, opts)
 
 #### Interval Stock Prices for Security
 
 
-Return Open, High, Low, Close, and Volume for a particular interval for the Security with the given `identifier`
+Return open, close, high, low, volume, average price, and change ratio for a particular interval for the Security with the given `identifier`
 
 [//]: # (END_OVERVIEW)
 
@@ -657,6 +915,7 @@ SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
 identifier <- "AAPL"
+interval_size <- "15m"
 
 # Optional params
 opts <- list(
@@ -666,12 +925,11 @@ opts <- list(
   end_date = as.Date("2019-01-01"),
   end_time = NULL,
   timezone = "UTC",
-  interval_size = 1d,
   page_size = 100,
   next_page = NULL
 )
 
-response <- SecurityApi$get_security_interval_prices(identifier, opts)
+response <- SecurityApi$get_security_interval_prices(identifier, interval_size, opts)
 
 print(response)
 print(response$content)
@@ -689,13 +947,13 @@ print(response$content)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **identifier** | Character| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) |  &nbsp;
+ **interval_size** | Character| The interval for which to return stock prices | [default to 15m] &nbsp;
  **source** | Character| Return intervals from the specified data source | [optional]  &nbsp;
  **start_date** | Date| Return intervals starting at the specified date | [optional]  &nbsp;
- **start_time** | Character| Return intervals starting at the specified time on the &#x60;start_date&#x60; (24-hour in &#39;hh:mm&#39; format, UTC timezone) | [optional]  &nbsp;
+ **start_time** | Character| Return intervals starting at the specified time on the &#x60;start_date&#x60; (24-hour in &#39;hh:mm:ss&#39; format) | [optional]  &nbsp;
  **end_date** | Date| Return intervals stopping at the specified date | [optional]  &nbsp;
- **end_time** | Character| Return intervals stopping at the specified time on the &#x60;end_date&#x60; (24-hour in &#39;hh:mm&#39; format, UTC timezone) | [optional]  &nbsp;
+ **end_time** | Character| Return intervals stopping at the specified time on the &#x60;end_date&#x60; (24-hour in &#39;hh:mm:ss&#39; format) | [optional]  &nbsp;
  **timezone** | Character| Returns trading times in this timezone | [optional] [default to UTC] &nbsp;
- **interval_size** | Character| The interval for which to return stock prices | [optional] [default to 1d] &nbsp;
  **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
  **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
 <br/>
