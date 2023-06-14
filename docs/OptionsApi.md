@@ -5,7 +5,7 @@ All URIs are relative to *https://api-v2.intrinio.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get_all_options_tickers**](OptionsApi.md#get_all_options_tickers) | **GET** /options/tickers | Options Tickers
-[**get_option_expirations_realtime**](OptionsApi.md#get_option_expirations_realtime) | **GET** /options/expirations/{symbol}/realtime | Option Expirations Realtime
+[**get_option_expirations_realtime**](OptionsApi.md#get_option_expirations_realtime) | **GET** /options/expirations/{symbol}/realtime | Options Expirations
 [**get_option_strikes_realtime**](OptionsApi.md#get_option_strikes_realtime) | **GET** /options/strikes/{symbol}/{strike}/realtime | Option Strikes Realtime
 [**get_options**](OptionsApi.md#get_options) | **GET** /options/{symbol} | Options
 [**get_options_by_symbol_realtime**](OptionsApi.md#get_options_by_symbol_realtime) | **GET** /options/{symbol}/realtime | Options by Symbol Realtime
@@ -13,6 +13,7 @@ Method | HTTP request | Description
 [**get_options_chain_eod**](OptionsApi.md#get_options_chain_eod) | **GET** /options/chain/{symbol}/{expiration}/eod | Options Chain EOD
 [**get_options_chain_realtime**](OptionsApi.md#get_options_chain_realtime) | **GET** /options/chain/{symbol}/{expiration}/realtime | Options Chain Realtime
 [**get_options_expirations**](OptionsApi.md#get_options_expirations) | **GET** /options/expirations/{symbol} | Options Expirations
+[**get_options_expirations_eod**](OptionsApi.md#get_options_expirations_eod) | **GET** /options/expirations/{symbol}/eod | Options Expirations
 [**get_options_interval_by_contract**](OptionsApi.md#get_options_interval_by_contract) | **GET** /options/interval/{identifier} | Options Intervals By Contract
 [**get_options_interval_movers**](OptionsApi.md#get_options_interval_movers) | **GET** /options/interval/movers | Options Intervals Movers
 [**get_options_interval_movers_change**](OptionsApi.md#get_options_interval_movers_change) | **GET** /options/interval/movers/change | Options Intervals Movers By Change
@@ -130,10 +131,10 @@ This endpoint does not need any parameter.
 
 > ApiResponseOptionsExpirations get_option_expirations_realtime(symbol, opts)
 
-#### Option Expirations Realtime
+#### Options Expirations
 
 
-Returns a list of all current and upcoming expiration dates for a particular symbol.
+Returns a list of all current and upcoming option contract expiration dates for a particular symbol.
 
 [//]: # (END_OVERVIEW)
 
@@ -307,7 +308,7 @@ Name | Type | Description  | Notes
 #### Options
 
 
-Returns a list of all securities that have options listed and are tradable on a US market exchange. Useful to retrieve the entire universe.
+Returns a list of all securities that have options listed and are tradable on a US market exchange. Useful to retrieve the entire universe.  Available via a 3rd party, contact sales for a trial.
 
 [//]: # (END_OVERVIEW)
 
@@ -511,7 +512,7 @@ Name | Type | Description  | Notes
 #### Options Chain
 
 
-Returns a list of the historical end-of-day top of the order book size and premium (bid / ask), the latest trade size and premium as well as the greeks and implied volatility for all option contracts currently associated with the option chain.
+Returns a list of the historical end-of-day top of the order book size and premium (bid / ask), the latest trade size and premium as well as the greeks and implied volatility for all option contracts currently associated with the option chain.  Available via a 3rd party, contact sales for a trial.
 
 [//]: # (END_OVERVIEW)
 
@@ -816,7 +817,7 @@ Name | Type | Description  | Notes
 #### Options Expirations
 
 
-Returns a list of all current and upcoming option contract expiration dates for a particular symbol.
+Returns a list of all current and upcoming option contract expiration dates for a particular symbol.  Available via a 3rd party, contact sales for a trial.
 
 [//]: # (END_OVERVIEW)
 
@@ -846,6 +847,95 @@ opts <- list(
 )
 
 response <- OptionsApi$get_options_expirations(symbol, opts)
+
+print(response)
+print(response$content)
+```
+
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **symbol** | Character| The option symbol, corresponding to the underlying security. |  &nbsp;
+ **after** | Character| Return option contract expiration dates after this date. | [optional]  &nbsp;
+ **before** | Character| Return option contract expiration dates before this date. | [optional]  &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**ApiResponseOptionsExpirations**](ApiResponseOptionsExpirations.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:IntrinioSDK::OptionsApi)
+
+[//]: # (METHOD:get_options_expirations_eod)
+
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseOptionsExpirations)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:ApiResponseOptionsExpirations.md)
+
+[//]: # (OPERATION:get_options_expirations_eod_v2)
+
+[//]: # (ENDPOINT:/options/expirations/{symbol}/eod)
+
+[//]: # (DOCUMENT_LINK:OptionsApi.md#get_options_expirations_eod)
+
+# **get_options_expirations_eod**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/r/get_options_expirations_eod_v2)
+
+[//]: # (START_OVERVIEW)
+
+> ApiResponseOptionsExpirations get_options_expirations_eod(symbol, opts)
+
+#### Options Expirations
+
+
+Returns a list of all current and upcoming option contract expiration dates for a particular symbol.
+
+[//]: # (END_OVERVIEW)
+
+### Example
+
+[//]: # (START_CODE_EXAMPLE)
+```r
+# Setup client
+client <- IntrinioSDK::ApiClient$new()
+
+# Configure API key authorization: ApiKeyAuth
+client$configuration$apiKey <- "YOUR_API_KEY"
+
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
+# Setup API with client
+OptionsApi <- IntrinioSDK::OptionsApi$new(client)
+
+# Required params
+symbol <- "MSFT"
+
+# Optional params
+opts <- list(
+  after = "2019-01-01",
+  before = "2019-12-31"
+)
+
+response <- OptionsApi$get_options_expirations_eod(symbol, opts)
 
 print(response)
 print(response$content)
