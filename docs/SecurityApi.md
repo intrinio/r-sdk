@@ -49,9 +49,12 @@ Method | HTTP request | Description
 [**get_security_price_technicals_vwap**](SecurityApi.md#get_security_price_technicals_vwap) | **GET** /securities/{identifier}/prices/technicals/vwap | Volume Weighted Average Price
 [**get_security_price_technicals_wr**](SecurityApi.md#get_security_price_technicals_wr) | **GET** /securities/{identifier}/prices/technicals/wr | Williams %R
 [**get_security_realtime_price**](SecurityApi.md#get_security_realtime_price) | **GET** /securities/{identifier}/prices/realtime | Realtime Stock Price for Security
+[**get_security_replay_file**](SecurityApi.md#get_security_replay_file) | **GET** /securities/replay | Security Replay File
 [**get_security_snapshots**](SecurityApi.md#get_security_snapshots) | **GET** /securities/snapshots | Realtime Stock Prices Snapshot
 [**get_security_stock_price_adjustments**](SecurityApi.md#get_security_stock_price_adjustments) | **GET** /securities/{identifier}/prices/adjustments | Stock Price Adjustments by Security
 [**get_security_stock_prices**](SecurityApi.md#get_security_stock_prices) | **GET** /securities/{identifier}/prices | Stock Prices by Security
+[**get_security_trades**](SecurityApi.md#get_security_trades) | **GET** /securities/trades | Security Trades
+[**get_security_trades_by_symbol**](SecurityApi.md#get_security_trades_by_symbol) | **GET** /securities/{identifier}/trades | Security Trades By Symbol
 [**get_security_zacks_analyst_ratings**](SecurityApi.md#get_security_zacks_analyst_ratings) | **GET** /securities/{identifier}/zacks/analyst_ratings | Zacks Analyst Ratings for Security
 [**get_security_zacks_analyst_ratings_snapshot**](SecurityApi.md#get_security_zacks_analyst_ratings_snapshot) | **GET** /securities/{identifier}/zacks/analyst_ratings/snapshot | Zacks Analyst Ratings Snapshot
 [**get_security_zacks_eps_surprises**](SecurityApi.md#get_security_zacks_eps_surprises) | **GET** /securities/{identifier}/zacks/eps_surprises | Zacks EPS Surprises for Security
@@ -4312,6 +4315,89 @@ Name | Type | Description  | Notes
 
 [//]: # (CLASS:IntrinioSDK::SecurityApi)
 
+[//]: # (METHOD:get_security_replay_file)
+
+[//]: # (RETURN_TYPE:IntrinioSDK::SecurityReplayFileResult)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:SecurityReplayFileResult.md)
+
+[//]: # (OPERATION:get_security_replay_file_v2)
+
+[//]: # (ENDPOINT:/securities/replay)
+
+[//]: # (DOCUMENT_LINK:SecurityApi.md#get_security_replay_file)
+
+# **get_security_replay_file**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/r/get_security_replay_file_v2)
+
+[//]: # (START_OVERVIEW)
+
+> SecurityReplayFileResult get_security_replay_file(subsource, date)
+
+#### Security Replay File
+
+
+Returns a url where the requested replay file may be downloaded from.
+
+[//]: # (END_OVERVIEW)
+
+### Example
+
+[//]: # (START_CODE_EXAMPLE)
+```r
+# Setup client
+client <- IntrinioSDK::ApiClient$new()
+
+# Configure API key authorization: ApiKeyAuth
+client$configuration$apiKey <- "YOUR_API_KEY"
+
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
+# Setup API with client
+SecurityApi <- IntrinioSDK::SecurityApi$new(client)
+
+# Required params
+subsource <- NULL
+date <- NULL
+
+response <- SecurityApi$get_security_replay_file(subsource, date)
+
+print(response)
+print(response$content)
+```
+
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **subsource** | Character| The specific source of the data being requested. |  &nbsp;
+ **date** | Date| The date for the data being requested. |  &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**SecurityReplayFileResult**](SecurityReplayFileResult.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:IntrinioSDK::SecurityApi)
+
 [//]: # (METHOD:get_security_snapshots)
 
 [//]: # (RETURN_TYPE:IntrinioSDK::SecuritySnapshotsResult)
@@ -4575,6 +4661,204 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ApiResponseSecurityStockPrices**](ApiResponseSecurityStockPrices.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:IntrinioSDK::SecurityApi)
+
+[//]: # (METHOD:get_security_trades)
+
+[//]: # (RETURN_TYPE:IntrinioSDK::SecurityTradesResult)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:SecurityTradesResult.md)
+
+[//]: # (OPERATION:get_security_trades_v2)
+
+[//]: # (ENDPOINT:/securities/trades)
+
+[//]: # (DOCUMENT_LINK:SecurityApi.md#get_security_trades)
+
+# **get_security_trades**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/r/get_security_trades_v2)
+
+[//]: # (START_OVERVIEW)
+
+> SecurityTradesResult get_security_trades(source, opts)
+
+#### Security Trades
+
+
+Returns all trades between start time and end time, up to seven days ago for the specified source.
+
+[//]: # (END_OVERVIEW)
+
+### Example
+
+[//]: # (START_CODE_EXAMPLE)
+```r
+# Setup client
+client <- IntrinioSDK::ApiClient$new()
+
+# Configure API key authorization: ApiKeyAuth
+client$configuration$apiKey <- "YOUR_API_KEY"
+
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
+# Setup API with client
+SecurityApi <- IntrinioSDK::SecurityApi$new(client)
+
+# Required params
+source <- NULL
+
+# Optional params
+opts <- list(
+  start_date = NULL,
+  start_time = NULL,
+  end_date = NULL,
+  end_time = NULL,
+  timezone = "UTC",
+  page_size = 100,
+  next_page = NULL
+)
+
+response <- SecurityApi$get_security_trades(source, opts)
+
+print(response)
+print(response$content)
+```
+
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **source** | Character| The specific source of the data being requested. |  &nbsp;
+ **start_date** | Date| The start date for the data being requested. | [optional]  &nbsp;
+ **start_time** | Character| The start time for the data being requested. | [optional]  &nbsp;
+ **end_date** | Date| The end date for the data being requested. | [optional]  &nbsp;
+ **end_time** | Character| The end time for the data being requested. | [optional]  &nbsp;
+ **timezone** | Character| The timezone the start and end date/times use. | [optional] [default to UTC] &nbsp;
+ **page_size** | Integer| The maximum number of results to return per page. | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**SecurityTradesResult**](SecurityTradesResult.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:IntrinioSDK::SecurityApi)
+
+[//]: # (METHOD:get_security_trades_by_symbol)
+
+[//]: # (RETURN_TYPE:IntrinioSDK::SecurityTradesResult)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:SecurityTradesResult.md)
+
+[//]: # (OPERATION:get_security_trades_by_symbol_v2)
+
+[//]: # (ENDPOINT:/securities/{identifier}/trades)
+
+[//]: # (DOCUMENT_LINK:SecurityApi.md#get_security_trades_by_symbol)
+
+# **get_security_trades_by_symbol**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/r/get_security_trades_by_symbol_v2)
+
+[//]: # (START_OVERVIEW)
+
+> SecurityTradesResult get_security_trades_by_symbol(source, opts)
+
+#### Security Trades By Symbol
+
+
+Returns all trades for a symbol between start time and end time, up to seven days ago for the specified source.
+
+[//]: # (END_OVERVIEW)
+
+### Example
+
+[//]: # (START_CODE_EXAMPLE)
+```r
+# Setup client
+client <- IntrinioSDK::ApiClient$new()
+
+# Configure API key authorization: ApiKeyAuth
+client$configuration$apiKey <- "YOUR_API_KEY"
+
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
+# Setup API with client
+SecurityApi <- IntrinioSDK::SecurityApi$new(client)
+
+# Required params
+source <- NULL
+
+# Optional params
+opts <- list(
+  start_date = NULL,
+  start_time = NULL,
+  end_date = NULL,
+  end_time = NULL,
+  timezone = "UTC",
+  page_size = 100,
+  next_page = NULL
+)
+
+response <- SecurityApi$get_security_trades_by_symbol(source, opts)
+
+print(response)
+print(response$content)
+```
+
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **source** | Character| The specific source of the data being requested. |  &nbsp;
+ **start_date** | Date| The start date for the data being requested. | [optional]  &nbsp;
+ **start_time** | Character| The start time for the data being requested. | [optional]  &nbsp;
+ **end_date** | Date| The end date for the data being requested. | [optional]  &nbsp;
+ **end_time** | Character| The end time for the data being requested. | [optional]  &nbsp;
+ **timezone** | Character| The timezone the start and end date/times use. | [optional] [default to UTC] &nbsp;
+ **page_size** | Integer| The maximum number of results to return per page. | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**SecurityTradesResult**](SecurityTradesResult.md)
 
 [//]: # (END_OPERATION)
 

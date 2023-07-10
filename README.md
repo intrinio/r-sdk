@@ -7,8 +7,8 @@ Welcome to the Intrinio API! Through our Financial Data Marketplace, we offer a 
 
 ## Overview
 
-- API version: 2.42.0
-- Package version: 1.22.0
+- API version: 2.43.6
+- Package version: 1.22.1
 
 The new Intrinio R SDK wraps all API v2 endpoints into an easy-to-use set of classes, methods, and response objects.
 
@@ -243,9 +243,12 @@ Class | Method | HTTP request | Description
 *IntrinioSDK::SecurityApi* | [**get_security_price_technicals_vwap**](docs/SecurityApi.md#get_security_price_technicals_vwap) | **GET** /securities/{identifier}/prices/technicals/vwap | Volume Weighted Average Price
 *IntrinioSDK::SecurityApi* | [**get_security_price_technicals_wr**](docs/SecurityApi.md#get_security_price_technicals_wr) | **GET** /securities/{identifier}/prices/technicals/wr | Williams %R
 *IntrinioSDK::SecurityApi* | [**get_security_realtime_price**](docs/SecurityApi.md#get_security_realtime_price) | **GET** /securities/{identifier}/prices/realtime | Realtime Stock Price for Security
+*IntrinioSDK::SecurityApi* | [**get_security_replay_file**](docs/SecurityApi.md#get_security_replay_file) | **GET** /securities/replay | Security Replay File
 *IntrinioSDK::SecurityApi* | [**get_security_snapshots**](docs/SecurityApi.md#get_security_snapshots) | **GET** /securities/snapshots | Realtime Stock Prices Snapshot
 *IntrinioSDK::SecurityApi* | [**get_security_stock_price_adjustments**](docs/SecurityApi.md#get_security_stock_price_adjustments) | **GET** /securities/{identifier}/prices/adjustments | Stock Price Adjustments by Security
 *IntrinioSDK::SecurityApi* | [**get_security_stock_prices**](docs/SecurityApi.md#get_security_stock_prices) | **GET** /securities/{identifier}/prices | Stock Prices by Security
+*IntrinioSDK::SecurityApi* | [**get_security_trades**](docs/SecurityApi.md#get_security_trades) | **GET** /securities/trades | Security Trades
+*IntrinioSDK::SecurityApi* | [**get_security_trades_by_symbol**](docs/SecurityApi.md#get_security_trades_by_symbol) | **GET** /securities/{identifier}/trades | Security Trades By Symbol
 *IntrinioSDK::SecurityApi* | [**get_security_zacks_analyst_ratings**](docs/SecurityApi.md#get_security_zacks_analyst_ratings) | **GET** /securities/{identifier}/zacks/analyst_ratings | Zacks Analyst Ratings for Security
 *IntrinioSDK::SecurityApi* | [**get_security_zacks_analyst_ratings_snapshot**](docs/SecurityApi.md#get_security_zacks_analyst_ratings_snapshot) | **GET** /securities/{identifier}/zacks/analyst_ratings/snapshot | Zacks Analyst Ratings Snapshot
 *IntrinioSDK::SecurityApi* | [**get_security_zacks_eps_surprises**](docs/SecurityApi.md#get_security_zacks_eps_surprises) | **GET** /securities/{identifier}/zacks/eps_surprises | Zacks EPS Surprises for Security
@@ -522,6 +525,7 @@ Class | Method | HTTP request | Description
  - [IntrinioSDK::Security](docs/Security.md)
  - [IntrinioSDK::SecurityIntervalMover](docs/SecurityIntervalMover.md)
  - [IntrinioSDK::SecurityIntervalsMoversResult](docs/SecurityIntervalsMoversResult.md)
+ - [IntrinioSDK::SecurityReplayFileResult](docs/SecurityReplayFileResult.md)
  - [IntrinioSDK::SecurityScreenClause](docs/SecurityScreenClause.md)
  - [IntrinioSDK::SecurityScreenGroup](docs/SecurityScreenGroup.md)
  - [IntrinioSDK::SecurityScreenResult](docs/SecurityScreenResult.md)
@@ -529,6 +533,8 @@ Class | Method | HTTP request | Description
  - [IntrinioSDK::SecuritySnapshotGroup](docs/SecuritySnapshotGroup.md)
  - [IntrinioSDK::SecuritySnapshotsResult](docs/SecuritySnapshotsResult.md)
  - [IntrinioSDK::SecuritySummary](docs/SecuritySummary.md)
+ - [IntrinioSDK::SecurityTrades](docs/SecurityTrades.md)
+ - [IntrinioSDK::SecurityTradesResult](docs/SecurityTradesResult.md)
  - [IntrinioSDK::SimpleMovingAverageTechnicalValue](docs/SimpleMovingAverageTechnicalValue.md)
  - [IntrinioSDK::StandardizedFinancial](docs/StandardizedFinancial.md)
  - [IntrinioSDK::StandardizedFinancialsDimension](docs/StandardizedFinancialsDimension.md)
