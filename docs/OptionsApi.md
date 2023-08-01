@@ -220,7 +220,7 @@ Name | Type | Description  | Notes
 
 [//]: # (START_OVERVIEW)
 
-> ApiResponseOptionsChainRealtime get_option_strikes_realtime(symbol, strike)
+> ApiResponseOptionsChainRealtime get_option_strikes_realtime(symbol, strike, opts)
 
 #### Option Strikes Realtime
 
@@ -249,7 +249,13 @@ OptionsApi <- IntrinioSDK::OptionsApi$new(client)
 symbol <- "MSFT"
 strike <- 95
 
-response <- OptionsApi$get_option_strikes_realtime(symbol, strike)
+# Optional params
+opts <- list(
+  stock_price_source = NULL,
+  model = NULL
+)
+
+response <- OptionsApi$get_option_strikes_realtime(symbol, strike, opts)
 
 print(response)
 print(response$content)
@@ -268,6 +274,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **symbol** | Character| The option symbol, corresponding to the underlying security. |  &nbsp;
  **strike** | Numeric| The strike price of the option contract. This will return options contracts with strike price equal to this price. |  &nbsp;
+ **stock_price_source** | Character| Source for underlying price for calculating Greeks. | [optional]  &nbsp;
+ **model** | Character| Model for calculating Greek values. Default is black_scholes. | [optional]  &nbsp;
 <br/>
 
 [//]: # (END_PARAMETERS)
@@ -745,7 +753,9 @@ opts <- list(
   volume_less_than = NULL,
   open_interest_greater_than = NULL,
   open_interest_less_than = NULL,
-  moneyness = NULL
+  moneyness = NULL,
+  stock_price_source = NULL,
+  model = NULL
 )
 
 response <- OptionsApi$get_options_chain_realtime(symbol, expiration, opts)
@@ -777,6 +787,8 @@ Name | Type | Description  | Notes
  **open_interest_greater_than** | Numeric| The open interest of the option contract. This will return options contracts with open interest greater than this amount. | [optional]  &nbsp;
  **open_interest_less_than** | Numeric| The open interest of the option contract. This will return options contracts with open interest less than this amount. | [optional]  &nbsp;
  **moneyness** | Character| The moneyness of the options contracts to return. &#39;all&#39; will return all options contracts. &#39;in_the_money&#39; will return options contracts that are in the money (call options with strike prices below the current price, put options with strike prices above the current price). &#39;out_of_they_money&#39; will return options contracts that are out of the money (call options with strike prices above the current price, put options with strike prices below the current price). &#39;near_the_money&#39; will return options contracts that are $0.50 or less away from being in the money.  Requires subscription to realtime stock price data. | [optional]  &nbsp;
+ **stock_price_source** | Character| Source for underlying price for calculating Greeks. | [optional]  &nbsp;
+ **model** | Character| Model for calculating Greek values. Default is black_scholes. | [optional]  &nbsp;
 <br/>
 
 [//]: # (END_PARAMETERS)
@@ -1464,7 +1476,9 @@ body <- list(
 
 # Optional params
 opts <- list(
-  source = NULL
+  source = NULL,
+  stock_price_source = NULL,
+  model = NULL
 )
 
 response <- OptionsApi$get_options_prices_batch_realtime(body, opts)
@@ -1486,6 +1500,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**OptionContractsList**](OptionContractsList.md)| The contract symbols for which to return options prices for. |  &nbsp;
  **source** | Character| Realtime or 15-minute delayed contracts. | [optional]  &nbsp;
+ **stock_price_source** | Character| Source for underlying price for calculating Greeks. | [optional]  &nbsp;
+ **model** | Character| Model for calculating Greek values. Default is black_scholes. | [optional]  &nbsp;
 <br/>
 
 [//]: # (END_PARAMETERS)
@@ -1632,7 +1648,9 @@ identifier <- "AAPL230120C00090000"
 
 # Optional params
 opts <- list(
-  source = NULL
+  source = NULL,
+  stock_price_source = NULL,
+  model = NULL
 )
 
 response <- OptionsApi$get_options_prices_realtime(identifier, opts)
@@ -1654,6 +1672,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **identifier** | Character| The Intrinio ID or code of the options contract to request prices for. |  &nbsp;
  **source** | Character| Realtime or 15-minute delayed contracts. | [optional]  &nbsp;
+ **stock_price_source** | Character| Source for underlying price for calculating Greeks. | [optional]  &nbsp;
+ **model** | Character| Model for calculating Greek values. Default is black_scholes. | [optional]  &nbsp;
 <br/>
 
 [//]: # (END_PARAMETERS)
