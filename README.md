@@ -7,8 +7,8 @@ Welcome to the Intrinio API! Through our Financial Data Marketplace, we offer a 
 
 ## Overview
 
-- API version: 2.45.0
-- Package version: 1.23.0
+- API version: 2.46.0
+- Package version: 1.24.0
 
 The new Intrinio R SDK wraps all API v2 endpoints into an easy-to-use set of classes, methods, and response objects.
 
@@ -166,6 +166,7 @@ Class | Method | HTTP request | Description
 *IntrinioSDK::IndexApi* | [**search_sic_indices**](docs/IndexApi.md#search_sic_indices) | **GET** /indices/sic/search | Search SIC Indices
 *IntrinioSDK::IndexApi* | [**search_stock_markets_indices**](docs/IndexApi.md#search_stock_markets_indices) | **GET** /indices/stock_market/search | Search Stock Market Indices
 *IntrinioSDK::InsiderTransactionFilingsApi* | [**get_all_insider_transaction_filings**](docs/InsiderTransactionFilingsApi.md#get_all_insider_transaction_filings) | **GET** /insider_transaction_filings | All Insider Transactions Filings
+*IntrinioSDK::MarketApi* | [**get_market_status**](docs/MarketApi.md#get_market_status) | **GET** /market/status | Market Status
 *IntrinioSDK::MunicipalityApi* | [**get_all_municipalities**](docs/MunicipalityApi.md#get_all_municipalities) | **GET** /municipalities | All Municipalities
 *IntrinioSDK::MunicipalityApi* | [**get_municipality_by_id**](docs/MunicipalityApi.md#get_municipality_by_id) | **GET** /municipalities/{id} | Municipality by ID
 *IntrinioSDK::MunicipalityApi* | [**get_municipality_financials**](docs/MunicipalityApi.md#get_municipality_financials) | **GET** /municipalities/{id}/financials | Financials for a Municipality
@@ -485,6 +486,7 @@ Class | Method | HTTP request | Description
  - [IntrinioSDK::IntradayStockPrice](docs/IntradayStockPrice.md)
  - [IntrinioSDK::KeltnerChannelTechnicalValue](docs/KeltnerChannelTechnicalValue.md)
  - [IntrinioSDK::KnowSureThingTechnicalValue](docs/KnowSureThingTechnicalValue.md)
+ - [IntrinioSDK::MarketStatusResult](docs/MarketStatusResult.md)
  - [IntrinioSDK::MassIndexTechnicalValue](docs/MassIndexTechnicalValue.md)
  - [IntrinioSDK::MoneyFlowIndexTechnicalValue](docs/MoneyFlowIndexTechnicalValue.md)
  - [IntrinioSDK::MovingAverageConvergenceDivergenceTechnicalValue](docs/MovingAverageConvergenceDivergenceTechnicalValue.md)

@@ -1586,7 +1586,7 @@ Name | Type | Description  | Notes
 
 [//]: # (START_OVERVIEW)
 
-> ApiResponseCompanySharesOutstanding shares_outstanding_by_company(identifier)
+> ApiResponseCompanySharesOutstanding shares_outstanding_by_company(identifier, opts)
 
 #### Shares Outstanding by Company
 
@@ -1614,7 +1614,13 @@ CompanyApi <- IntrinioSDK::CompanyApi$new(client)
 # Required params
 identifier <- "AAPL"
 
-response <- CompanyApi$shares_outstanding_by_company(identifier)
+# Optional params
+opts <- list(
+  end_date_greater_than = NULL,
+  end_date_less_than = NULL
+)
+
+response <- CompanyApi$shares_outstanding_by_company(identifier, opts)
 
 print(response)
 print(response$content)
@@ -1632,6 +1638,8 @@ print(response$content)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **identifier** | Character| A Company identifier (Ticker, CIK, LEI, Intrinio ID) |  &nbsp;
+ **end_date_greater_than** | Date| Returns shares outstanding after this date. | [optional]  &nbsp;
+ **end_date_less_than** | Date| Returns shares outstanding before this date. | [optional]  &nbsp;
 <br/>
 
 [//]: # (END_PARAMETERS)
