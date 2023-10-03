@@ -251,6 +251,7 @@ strike <- 95
 
 # Optional params
 opts <- list(
+  source = NULL,
   stock_price_source = NULL,
   model = NULL
 )
@@ -274,6 +275,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **symbol** | Character| The option symbol, corresponding to the underlying security. |  &nbsp;
  **strike** | Numeric| The strike price of the option contract. This will return options contracts with strike price equal to this price. |  &nbsp;
+ **source** | Character| Realtime or delayed. | [optional]  &nbsp;
  **stock_price_source** | Character| Source for underlying price for calculating Greeks. | [optional]  &nbsp;
  **model** | Character| Model for calculating Greek values. Default is black_scholes. | [optional]  &nbsp;
 <br/>
@@ -677,7 +679,7 @@ Name | Type | Description  | Notes
  **strike** | Numeric| The strike price of the option contract. This will return options contracts with strike price equal to this price. | [optional]  &nbsp;
  **strike_greater_than** | Numeric| The strike price of the option contract. This will return options contracts with strike prices greater than this price. | [optional]  &nbsp;
  **strike_less_than** | Numeric| The strike price of the option contract. This will return options contracts with strike prices less than this price. | [optional]  &nbsp;
- **date** | Date| The the date to retrieve prices for | [optional]  &nbsp;
+ **date** | Date| The date to retrieve prices for | [optional]  &nbsp;
 <br/>
 
 [//]: # (END_PARAMETERS)
@@ -1477,6 +1479,7 @@ body <- list(
 # Optional params
 opts <- list(
   source = NULL,
+  show_stats = NULL,
   stock_price_source = NULL,
   model = NULL
 )
@@ -1500,6 +1503,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**OptionContractsList**](OptionContractsList.md)| The contract symbols for which to return options prices for. |  &nbsp;
  **source** | Character| Realtime or 15-minute delayed contracts. | [optional]  &nbsp;
+ **show_stats** | Logical| Whether to include Greek calculations or not. | [optional]  &nbsp;
  **stock_price_source** | Character| Source for underlying price for calculating Greeks. | [optional]  &nbsp;
  **model** | Character| Model for calculating Greek values. Default is black_scholes. | [optional]  &nbsp;
 <br/>
@@ -1537,7 +1541,7 @@ Name | Type | Description  | Notes
 
 [//]: # (START_OVERVIEW)
 
-> ApiResponseOptionsPricesEod get_options_prices_eod(identifier)
+> ApiResponseOptionsPricesEod get_options_prices_eod(identifier, opts)
 
 #### Option Prices EOD
 
@@ -1565,7 +1569,14 @@ OptionsApi <- IntrinioSDK::OptionsApi$new(client)
 # Required params
 identifier <- "AAPL230616P00190000"
 
-response <- OptionsApi$get_options_prices_eod(identifier)
+# Optional params
+opts <- list(
+  next_page = NULL,
+  start_date = NULL,
+  end_date = NULL
+)
+
+response <- OptionsApi$get_options_prices_eod(identifier, opts)
 
 print(response)
 print(response$content)
@@ -1583,6 +1594,9 @@ print(response$content)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **identifier** | Character| The Intrinio ID or code of the options contract to request prices for. |  &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+ **start_date** | Date| The start date to retrieve prices for | [optional]  &nbsp;
+ **end_date** | Date| The end date to retrieve prices for | [optional]  &nbsp;
 <br/>
 
 [//]: # (END_PARAMETERS)
