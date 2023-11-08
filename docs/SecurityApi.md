@@ -929,9 +929,9 @@ interval_size <- "15m"
 # Optional params
 opts <- list(
   source = NULL,
-  start_date = as.Date("2018-01-01"),
+  start_date = as.Date("2023-01-01"),
   start_time = NULL,
-  end_date = as.Date("2019-01-01"),
+  end_date = as.Date("2023-02-01"),
   end_time = NULL,
   timezone = "UTC",
   page_size = 100,
@@ -4794,7 +4794,7 @@ Name | Type | Description  | Notes
 
 [//]: # (START_OVERVIEW)
 
-> SecurityTradesResult get_security_trades_by_symbol(source, opts)
+> SecurityTradesResult get_security_trades_by_symbol(identifier, source, opts)
 
 #### Security Trades By Symbol
 
@@ -4820,6 +4820,7 @@ client$configuration$allowRetries <- TRUE
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
+identifier <- "AAPL"
 source <- NULL
 
 # Optional params
@@ -4833,7 +4834,7 @@ opts <- list(
   next_page = NULL
 )
 
-response <- SecurityApi$get_security_trades_by_symbol(source, opts)
+response <- SecurityApi$get_security_trades_by_symbol(identifier, source, opts)
 
 print(response)
 print(response$content)
@@ -4850,6 +4851,7 @@ print(response$content)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **identifier** | Character| The ticker symbol for which trades are being requested. |  &nbsp;
  **source** | Character| The specific source of the data being requested. |  &nbsp;
  **start_date** | Date| The start date for the data being requested. | [optional]  &nbsp;
  **start_time** | Character| The start time for the data being requested. | [optional]  &nbsp;

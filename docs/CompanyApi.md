@@ -15,6 +15,7 @@ Method | HTTP request | Description
 [**get_company_historical_data**](CompanyApi.md#get_company_historical_data) | **GET** /companies/{identifier}/historical_data/{tag} | Historical Data for Company
 [**get_company_ipos**](CompanyApi.md#get_company_ipos) | **GET** /companies/ipos | IPOs
 [**get_company_news**](CompanyApi.md#get_company_news) | **GET** /companies/{identifier}/news | All News by Company
+[**get_company_public_float**](CompanyApi.md#get_company_public_float) | **GET** /companies/{identifier}/public_float | Get Company&#39;s public float
 [**get_company_securities**](CompanyApi.md#get_company_securities) | **GET** /companies/{identifier}/securities | All Securities by Company
 [**insider_transaction_filings_by_company**](CompanyApi.md#insider_transaction_filings_by_company) | **GET** /companies/{identifier}/insider_transaction_filings | Insider Transaction Filings by Company
 [**latest_insider_transaction_filing_by_company**](CompanyApi.md#latest_insider_transaction_filing_by_company) | **GET** /companies/{identifier}/insider_transaction_filings/latest | Latest Insider Transaction Filing by Company
@@ -1028,6 +1029,99 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ApiResponseCompanyNews**](ApiResponseCompanyNews.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:IntrinioSDK::CompanyApi)
+
+[//]: # (METHOD:get_company_public_float)
+
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseCompanyPublicFloatResult)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:ApiResponseCompanyPublicFloatResult.md)
+
+[//]: # (OPERATION:get_company_public_float_v2)
+
+[//]: # (ENDPOINT:/companies/{identifier}/public_float)
+
+[//]: # (DOCUMENT_LINK:CompanyApi.md#get_company_public_float)
+
+# **get_company_public_float**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/r/get_company_public_float_v2)
+
+[//]: # (START_OVERVIEW)
+
+> ApiResponseCompanyPublicFloatResult get_company_public_float(identifier, opts)
+
+#### Get Company's public float
+
+
+Returns a list of public float data tied to a given company identifier.
+
+[//]: # (END_OVERVIEW)
+
+### Example
+
+[//]: # (START_CODE_EXAMPLE)
+```r
+# Setup client
+client <- IntrinioSDK::ApiClient$new()
+
+# Configure API key authorization: ApiKeyAuth
+client$configuration$apiKey <- "YOUR_API_KEY"
+
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
+# Setup API with client
+CompanyApi <- IntrinioSDK::CompanyApi$new(client)
+
+# Required params
+identifier <- "AAPL"
+
+# Optional params
+opts <- list(
+  float_date_greater_than = NULL,
+  float_date_less_than = NULL,
+  next_page = NULL,
+  next_page2 = NULL
+)
+
+response <- CompanyApi$get_company_public_float(identifier, opts)
+
+print(response)
+print(response$content)
+```
+
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **identifier** | Character| A Company identifier (Ticker, CIK, LEI, Intrinio ID) |  &nbsp;
+ **float_date_greater_than** | Date| The lower-bound date for the data being requested. | [optional]  &nbsp;
+ **float_date_less_than** | Date| The upper-bound date for the data being requested. | [optional]  &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+ **next_page2** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**ApiResponseCompanyPublicFloatResult**](ApiResponseCompanyPublicFloatResult.md)
 
 [//]: # (END_OPERATION)
 

@@ -16,6 +16,7 @@ Name | Type | Description
 **security_type** | **Character** | The type of the security &nbsp;
 **title_of_class** | **Character** | The class of stock held &nbsp;
 **stock_exchange** | **Character** | The stock exchange where the security is traded &nbsp;
+**period_ended** | [**Date**](Date.md) | The date of the latest 13-F filing on record with the SEC. &nbsp;
 **filing_date** | [**Date**](Date.md) | The date when the filing was submitted to the SEC by the company &nbsp;
 **value** | **Numeric** | The market value in amount of dollars of the holding in the listed security &nbsp;
 **amount** | **Numeric** | The number of shares held in the listed security &nbsp;
@@ -27,6 +28,9 @@ Name | Type | Description
 **no_voting_authority** | **Numeric** | The number of shares where the insitutional holder has no voting authority &nbsp;
 
 [//]: # (END_DEFINITION)
+
+
+[//]: # (CONTAINED_CLASS:IntrinioSDK::Date)
 
 
 [//]: # (CONTAINED_CLASS:IntrinioSDK::Date)

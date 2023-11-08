@@ -10,6 +10,7 @@
 
 Name | Type | Description
 ------------ | ------------- | -------------
+**filing_date** | [**Date**](Date.md) | The date of the filing with the SEC made by the owner &nbsp;
 **filing_url** | **Character** | The URL of the filing with the SEC &nbsp;
 **issuer_ticker** | **Character** | The ticker of the issuing company. &nbsp;
 **issuer_cik** | **Character** | The Central Index Key (CIK) of the issuing company. &nbsp;
@@ -20,6 +21,9 @@ Name | Type | Description
 **owner** | [**OwnerSummary**](OwnerSummary.md) | The owner associated with the filing &nbsp;
 
 [//]: # (END_DEFINITION)
+
+
+[//]: # (CONTAINED_CLASS:IntrinioSDK::Date)
 
 
 [//]: # (CONTAINED_CLASS:IntrinioSDK::InsiderTransaction)

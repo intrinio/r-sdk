@@ -19,9 +19,13 @@ Name | Type | Description
 **ticker** | **Character** | The ticker symbol for the company’s common stock &nbsp;
 **security_title** | **Character** | The name of the derivative security transacted &nbsp;
 **conversion_exercise_price** | **Numeric** | The conversion or exercise price of the derivative security transacted &nbsp;
+**transaction_date** | [**Date**](Date.md) | The date of the transaction &nbsp;
+**deemed_execution_date** | [**Date**](Date.md) | The date of the transaction had it not a directly identifiable date &nbsp;
 **transaction_type_code** | **Character** | A symbol representing the transaction type; P &#x3D; Purchase | S &#x3D; Sale | A  &#x3D; Award | M &#x3D; Conversion to Common | C &#x3D; Conversion | X &#x3D; Exercise of Derivative More Transaction Codes &nbsp;
 **acquisition_disposition_code** | **Character** | A symbol representing whether or not the derivative securities are Acquired or Disposed; A &#x3D; Acquisition | D &#x3D; Disposition &nbsp;
 **amount_of_shares** | **Numeric** | The number of derivative securities involved in the subject transaction &nbsp;
+**exercise_date** | [**Date**](Date.md) | The exercise date of the derivative securities &nbsp;
+**expiration_date** | [**Date**](Date.md) | The expiration date of the derivative securities &nbsp;
 **underlying_security_title** | **Character** | The name of the underlying non-derivative security related to this derivative transaction &nbsp;
 **underlying_shares** | **Numeric** | The number of non-derivative shares involved in the subject transaction &nbsp;
 **transaction_price** | **Numeric** | The price of the derivative securities &nbsp;
@@ -46,6 +50,18 @@ Name | Type | Description
 
 
 [//]: # (CONTAINED_CLASS:IntrinioSDK::Logical)
+
+
+[//]: # (CONTAINED_CLASS:IntrinioSDK::Date)
+
+
+[//]: # (CONTAINED_CLASS:IntrinioSDK::Date)
+
+
+[//]: # (CONTAINED_CLASS:IntrinioSDK::Date)
+
+
+[//]: # (CONTAINED_CLASS:IntrinioSDK::Date)
 
 
 [//]: # (CONTAINED_CLASS:IntrinioSDK::CompanySummary)
