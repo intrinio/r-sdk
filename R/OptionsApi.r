@@ -95,7 +95,7 @@
 OptionsApi <- R6::R6Class(
   'OptionsApi',
   public = list(
-    userAgent = "Swagger-Codegen/1.24.4/r",
+    userAgent = "Swagger-Codegen/1.24.5/r",
     apiClient = NULL,
     initialize = function(apiClient){
       if (!missing(apiClient)) {
@@ -928,8 +928,8 @@ OptionsApi <- R6::R6Class(
       if ('source' %in% names(opts)) {
         queryParams['source'] <- opts['source']
       }
-      if ('show_extended_price' %in% names(opts)) {
-        queryParams['show_extended_price'] <- opts['show_extended_price']
+      if ('show_stats' %in% names(opts)) {
+        queryParams['show_stats'] <- opts['show_stats']
       }
       if ('stock_price_source' %in% names(opts)) {
         queryParams['stock_price_source'] <- opts['stock_price_source']
@@ -937,8 +937,8 @@ OptionsApi <- R6::R6Class(
       if ('model' %in% names(opts)) {
         queryParams['model'] <- opts['model']
       }
-      if ('show_extended_price2' %in% names(opts)) {
-        queryParams['show_extended_price'] <- opts['show_extended_price2']
+      if ('show_extended_price' %in% names(opts)) {
+        queryParams['show_extended_price'] <- opts['show_extended_price']
       }
       if (!is.null(body)) {
         body <- jsonlite::toJSON(body)
