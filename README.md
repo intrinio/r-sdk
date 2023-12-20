@@ -7,8 +7,8 @@ Welcome to the Intrinio API! Through our Financial Data Marketplace, we offer a 
 
 ## Overview
 
-- API version: 2.47.8
-- Package version: 1.24.3
+- API version: 2.48.1
+- Package version: 1.24.4
 
 The new Intrinio R SDK wraps all API v2 endpoints into an easy-to-use set of classes, methods, and response objects.
 
@@ -516,6 +516,7 @@ Class | Method | HTTP request | Description
  - [IntrinioSDK::OptionPriceBatchRealtime](docs/OptionPriceBatchRealtime.md)
  - [IntrinioSDK::OptionPriceEod](docs/OptionPriceEod.md)
  - [IntrinioSDK::OptionPriceRealtime](docs/OptionPriceRealtime.md)
+ - [IntrinioSDK::OptionPriceRealtimeExtended](docs/OptionPriceRealtimeExtended.md)
  - [IntrinioSDK::OptionRealtime](docs/OptionRealtime.md)
  - [IntrinioSDK::OptionSnapshotGroup](docs/OptionSnapshotGroup.md)
  - [IntrinioSDK::OptionSnapshotsResult](docs/OptionSnapshotsResult.md)

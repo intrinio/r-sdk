@@ -25,17 +25,30 @@ Name | Type | Description
 **ask_high** | **Numeric** | The highest ask over the span of the period &nbsp;
 **ask_low** | **Numeric** | The lowest ask over the span of the period &nbsp;
 **bid_high** | **Numeric** | The highest bid over the span of the period &nbsp;
-**bid_low** | [**TODO_OBJECT_MAPPING**](TODO_OBJECT_MAPPING.md) | The lowest bid over the span of the period &nbsp;
+**bid_low** | **Numeric** | The lowest bid over the span of the period &nbsp;
 **implied_volatility** | **Numeric** | The implied volatility of the contract calculated using the Black-Scholes Model. &nbsp;
 **delta** | **Numeric** | Delta represents the rate of change between the option&#39;s price and a $1 change in the underlying asset&#39;s price. &nbsp;
 **gamma** | **Numeric** | Gamma represents the rate of change between an option&#39;s delta and the underlying asset&#39;s price. &nbsp;
 **theta** | **Numeric** | Theta represents the rate of change between the option price and time, or time sensitivity - sometimes known as an option&#39;s time decay. &nbsp;
 **vega** | **Numeric** | Vega represents the rate of change between an option&#39;s value and the underlying asset&#39;s implied volatility. &nbsp;
+**close_time** | [**POSIXlt**](POSIXlt.md) | The time of the last trade before close. &nbsp;
+**close_size** | **Integer** | The size of the last trade before close. &nbsp;
+**close_bid_time** | [**POSIXlt**](POSIXlt.md) | The time of the last bid before close. &nbsp;
+**close_bid_size** | **Integer** | The size of the last bid before close. &nbsp;
+**close_ask_time** | [**POSIXlt**](POSIXlt.md) | The time of the last ask before close. &nbsp;
+**close_ask_size** | **Integer** | The size of the last ask before close. &nbsp;
+**exercise_style** | **Character** | The exercise style. &nbsp;
 
 [//]: # (END_DEFINITION)
 
 
-[//]: # (CONTAINED_CLASS:IntrinioSDK::TODO_OBJECT_MAPPING)
+[//]: # (CONTAINED_CLASS:IntrinioSDK::POSIXlt)
+
+
+[//]: # (CONTAINED_CLASS:IntrinioSDK::POSIXlt)
+
+
+[//]: # (CONTAINED_CLASS:IntrinioSDK::POSIXlt)
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

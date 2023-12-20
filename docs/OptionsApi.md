@@ -253,7 +253,8 @@ strike <- 95
 opts <- list(
   source = NULL,
   stock_price_source = NULL,
-  model = NULL
+  model = NULL,
+  show_extended_price = NULL
 )
 
 response <- OptionsApi$get_option_strikes_realtime(symbol, strike, opts)
@@ -278,6 +279,7 @@ Name | Type | Description  | Notes
  **source** | Character| Realtime or delayed. | [optional]  &nbsp;
  **stock_price_source** | Character| Source for underlying price for calculating Greeks. | [optional]  &nbsp;
  **model** | Character| Model for calculating Greek values. Default is black_scholes. | [optional]  &nbsp;
+ **show_extended_price** | Logical| Whether to include open close high low type fields. | [optional]  &nbsp;
 <br/>
 
 [//]: # (END_PARAMETERS)
@@ -757,7 +759,8 @@ opts <- list(
   open_interest_less_than = NULL,
   moneyness = NULL,
   stock_price_source = NULL,
-  model = NULL
+  model = NULL,
+  show_extended_price = NULL
 )
 
 response <- OptionsApi$get_options_chain_realtime(symbol, expiration, opts)
@@ -791,6 +794,7 @@ Name | Type | Description  | Notes
  **moneyness** | Character| The moneyness of the options contracts to return. &#39;all&#39; will return all options contracts. &#39;in_the_money&#39; will return options contracts that are in the money (call options with strike prices below the current price, put options with strike prices above the current price). &#39;out_of_they_money&#39; will return options contracts that are out of the money (call options with strike prices above the current price, put options with strike prices below the current price). &#39;near_the_money&#39; will return options contracts that are $0.50 or less away from being in the money.  Requires subscription to realtime stock price data. | [optional]  &nbsp;
  **stock_price_source** | Character| Source for underlying price for calculating Greeks. | [optional]  &nbsp;
  **model** | Character| Model for calculating Greek values. Default is black_scholes. | [optional]  &nbsp;
+ **show_extended_price** | Logical| Whether to include open close high low type fields. | [optional]  &nbsp;
 <br/>
 
 [//]: # (END_PARAMETERS)
@@ -1479,9 +1483,10 @@ body <- list(
 # Optional params
 opts <- list(
   source = NULL,
-  show_stats = NULL,
+  show_extended_price = NULL,
   stock_price_source = NULL,
-  model = NULL
+  model = NULL,
+  show_extended_price2 = NULL
 )
 
 response <- OptionsApi$get_options_prices_batch_realtime(body, opts)
@@ -1503,9 +1508,10 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**OptionContractsList**](OptionContractsList.md)| The contract symbols for which to return options prices for. |  &nbsp;
  **source** | Character| Realtime or 15-minute delayed contracts. | [optional]  &nbsp;
- **show_stats** | Logical| Whether to include Greek calculations or not. | [optional]  &nbsp;
+ **show_extended_price** | Logical| Whether to include open close high low type fields. | [optional]  &nbsp;
  **stock_price_source** | Character| Source for underlying price for calculating Greeks. | [optional]  &nbsp;
  **model** | Character| Model for calculating Greek values. Default is black_scholes. | [optional]  &nbsp;
+ **show_extended_price2** | Logical| Whether to include open close high low type fields. | [optional]  &nbsp;
 <br/>
 
 [//]: # (END_PARAMETERS)
@@ -1664,7 +1670,8 @@ identifier <- "AAPL230120C00090000"
 opts <- list(
   source = NULL,
   stock_price_source = NULL,
-  model = NULL
+  model = NULL,
+  show_extended_price = NULL
 )
 
 response <- OptionsApi$get_options_prices_realtime(identifier, opts)
@@ -1688,6 +1695,7 @@ Name | Type | Description  | Notes
  **source** | Character| Realtime or 15-minute delayed contracts. | [optional]  &nbsp;
  **stock_price_source** | Character| Source for underlying price for calculating Greeks. | [optional]  &nbsp;
  **model** | Character| Model for calculating Greek values. Default is black_scholes. | [optional]  &nbsp;
+ **show_extended_price** | Logical| Whether to include open close high low type fields. | [optional]  &nbsp;
 <br/>
 
 [//]: # (END_PARAMETERS)
@@ -1838,7 +1846,8 @@ identifier <- "AAPL230120C00090000"
 
 # Optional params
 opts <- list(
-  source = NULL
+  source = NULL,
+  show_extended_price = NULL
 )
 
 response <- OptionsApi$get_options_stats_realtime(identifier, opts)
@@ -1860,6 +1869,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **identifier** | Character| The Intrinio ID or code of the options contract to request prices for. |  &nbsp;
  **source** | Character| Realtime or 15-minute delayed contracts. | [optional]  &nbsp;
+ **show_extended_price** | Logical| Whether to include open close high low type fields. | [optional]  &nbsp;
 <br/>
 
 [//]: # (END_PARAMETERS)
