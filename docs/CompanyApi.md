@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**get_all_company_news**](CompanyApi.md#get_all_company_news) | **GET** /companies/news | All News
 [**get_company**](CompanyApi.md#get_company) | **GET** /companies/{identifier} | Lookup Company
 [**get_company_answers**](CompanyApi.md#get_company_answers) | **GET** /companies/{identifier}/answers | Company Answers
+[**get_company_daily_metrics**](CompanyApi.md#get_company_daily_metrics) | **GET** /companies/{identifier}/daily_metrics | Company metrics by Company
 [**get_company_data_point_number**](CompanyApi.md#get_company_data_point_number) | **GET** /companies/{identifier}/data_point/{tag}/number | Data Point (Number) for Company
 [**get_company_data_point_text**](CompanyApi.md#get_company_data_point_text) | **GET** /companies/{identifier}/data_point/{tag}/text | Data Point (Text) for Company
 [**get_company_filings**](CompanyApi.md#get_company_filings) | **GET** /companies/{identifier}/filings | All Filings by Company
@@ -374,6 +375,97 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ApiResponseCompanyAnswers**](ApiResponseCompanyAnswers.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:IntrinioSDK::CompanyApi)
+
+[//]: # (METHOD:get_company_daily_metrics)
+
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseCompanyDailyMetrics)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:ApiResponseCompanyDailyMetrics.md)
+
+[//]: # (OPERATION:get_company_daily_metrics_v2)
+
+[//]: # (ENDPOINT:/companies/{identifier}/daily_metrics)
+
+[//]: # (DOCUMENT_LINK:CompanyApi.md#get_company_daily_metrics)
+
+# **get_company_daily_metrics**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/r/get_company_daily_metrics_v2)
+
+[//]: # (START_OVERVIEW)
+
+> ApiResponseCompanyDailyMetrics get_company_daily_metrics(identifier, opts)
+
+#### Company metrics by Company
+
+
+Returns the latest company metrics.
+
+[//]: # (END_OVERVIEW)
+
+### Example
+
+[//]: # (START_CODE_EXAMPLE)
+```r
+# Setup client
+client <- IntrinioSDK::ApiClient$new()
+
+# Configure API key authorization: ApiKeyAuth
+client$configuration$apiKey <- "YOUR_API_KEY"
+
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
+# Setup API with client
+CompanyApi <- IntrinioSDK::CompanyApi$new(client)
+
+# Required params
+identifier <- "AAPL"
+
+# Optional params
+opts <- list(
+  page_size = 100,
+  next_page = NULL,
+  next_page2 = NULL
+)
+
+response <- CompanyApi$get_company_daily_metrics(identifier, opts)
+
+print(response)
+print(response$content)
+```
+
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **identifier** | Character| A Company identifier (Ticker, CIK, LEI, Intrinio ID) |  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+ **next_page2** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**ApiResponseCompanyDailyMetrics**](ApiResponseCompanyDailyMetrics.md)
 
 [//]: # (END_OPERATION)
 

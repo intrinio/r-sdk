@@ -4994,6 +4994,7 @@ opts <- list(
   end_date = NULL,
   end_time = NULL,
   timezone = "UTC",
+  darkpool_only = FALSE,
   page_size = 100,
   next_page = NULL
 )
@@ -5016,12 +5017,13 @@ print(response$content)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **identifier** | Character| The ticker symbol for which trades are being requested. |  &nbsp;
- **source** | Character| The specific source of the data being requested. |  &nbsp;
+ **source** | Character| The specific source of the data being requested.  Specifying delayed sip will result in the system automatically determining which delayed sip source (cta_delayed, cta_b_delayed, utp_delayed) to use. |  &nbsp;
  **start_date** | Date| The start date for the data being requested. | [optional]  &nbsp;
  **start_time** | Character| The start time for the data being requested. | [optional]  &nbsp;
  **end_date** | Date| The end date for the data being requested. | [optional]  &nbsp;
  **end_time** | Character| The end time for the data being requested. | [optional]  &nbsp;
  **timezone** | Character| The timezone the start and end date/times use. | [optional] [default to UTC] &nbsp;
+ **darkpool_only** | Logical| Set to TRUE to show only darkpool trades | [optional] [default to FALSE] &nbsp;
  **page_size** | Integer| The maximum number of results to return per page. | [optional] [default to 100] &nbsp;
  **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
 <br/>

@@ -7,8 +7,8 @@ Welcome to the Intrinio API! Through our Financial Data Marketplace, we offer a 
 
 ## Overview
 
-- API version: 2.48.1
-- Package version: 1.24.5
+- API version: 2.52.0
+- Package version: 1.24.6
 
 The new Intrinio R SDK wraps all API v2 endpoints into an easy-to-use set of classes, methods, and response objects.
 
@@ -96,6 +96,7 @@ Class | Method | HTTP request | Description
 *IntrinioSDK::CompanyApi* | [**get_all_company_news**](docs/CompanyApi.md#get_all_company_news) | **GET** /companies/news | All News
 *IntrinioSDK::CompanyApi* | [**get_company**](docs/CompanyApi.md#get_company) | **GET** /companies/{identifier} | Lookup Company
 *IntrinioSDK::CompanyApi* | [**get_company_answers**](docs/CompanyApi.md#get_company_answers) | **GET** /companies/{identifier}/answers | Company Answers
+*IntrinioSDK::CompanyApi* | [**get_company_daily_metrics**](docs/CompanyApi.md#get_company_daily_metrics) | **GET** /companies/{identifier}/daily_metrics | Company metrics by Company
 *IntrinioSDK::CompanyApi* | [**get_company_data_point_number**](docs/CompanyApi.md#get_company_data_point_number) | **GET** /companies/{identifier}/data_point/{tag}/number | Data Point (Number) for Company
 *IntrinioSDK::CompanyApi* | [**get_company_data_point_text**](docs/CompanyApi.md#get_company_data_point_text) | **GET** /companies/{identifier}/data_point/{tag}/text | Data Point (Text) for Company
 *IntrinioSDK::CompanyApi* | [**get_company_filings**](docs/CompanyApi.md#get_company_filings) | **GET** /companies/{identifier}/filings | All Filings by Company
@@ -317,6 +318,7 @@ Class | Method | HTTP request | Description
  - [IntrinioSDK::ApiResponseCompanies](docs/ApiResponseCompanies.md)
  - [IntrinioSDK::ApiResponseCompaniesSearch](docs/ApiResponseCompaniesSearch.md)
  - [IntrinioSDK::ApiResponseCompanyAnswers](docs/ApiResponseCompanyAnswers.md)
+ - [IntrinioSDK::ApiResponseCompanyDailyMetrics](docs/ApiResponseCompanyDailyMetrics.md)
  - [IntrinioSDK::ApiResponseCompanyFilings](docs/ApiResponseCompanyFilings.md)
  - [IntrinioSDK::ApiResponseCompanyFundamentals](docs/ApiResponseCompanyFundamentals.md)
  - [IntrinioSDK::ApiResponseCompanyHistoricalData](docs/ApiResponseCompanyHistoricalData.md)
@@ -446,6 +448,7 @@ Class | Method | HTTP request | Description
  - [IntrinioSDK::ChaikinMoneyFlowTechnicalValue](docs/ChaikinMoneyFlowTechnicalValue.md)
  - [IntrinioSDK::CommodityChannelIndexTechnicalValue](docs/CommodityChannelIndexTechnicalValue.md)
  - [IntrinioSDK::Company](docs/Company.md)
+ - [IntrinioSDK::CompanyDailyMetric](docs/CompanyDailyMetric.md)
  - [IntrinioSDK::CompanyFiling](docs/CompanyFiling.md)
  - [IntrinioSDK::CompanyInitialPublicOffering](docs/CompanyInitialPublicOffering.md)
  - [IntrinioSDK::CompanyNews](docs/CompanyNews.md)
