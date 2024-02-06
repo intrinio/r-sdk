@@ -7,8 +7,8 @@ Welcome to the Intrinio API! Through our Financial Data Marketplace, we offer a 
 
 ## Overview
 
-- API version: 2.52.0
-- Package version: 1.24.6
+- API version: 2.52.1
+- Package version: 1.24.7
 
 The new Intrinio R SDK wraps all API v2 endpoints into an easy-to-use set of classes, methods, and response objects.
 
@@ -93,6 +93,7 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *IntrinioSDK::BulkDownloadsApi* | [**get_bulk_download_links**](docs/BulkDownloadsApi.md#get_bulk_download_links) | **GET** /bulk_downloads/links | All Links
 *IntrinioSDK::CompanyApi* | [**get_all_companies**](docs/CompanyApi.md#get_all_companies) | **GET** /companies | All Companies
+*IntrinioSDK::CompanyApi* | [**get_all_companies_daily_metrics**](docs/CompanyApi.md#get_all_companies_daily_metrics) | **GET** /companies/daily_metrics | All Companies daily metrics
 *IntrinioSDK::CompanyApi* | [**get_all_company_news**](docs/CompanyApi.md#get_all_company_news) | **GET** /companies/news | All News
 *IntrinioSDK::CompanyApi* | [**get_company**](docs/CompanyApi.md#get_company) | **GET** /companies/{identifier} | Lookup Company
 *IntrinioSDK::CompanyApi* | [**get_company_answers**](docs/CompanyApi.md#get_company_answers) | **GET** /companies/{identifier}/answers | Company Answers

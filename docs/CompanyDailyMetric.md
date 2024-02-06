@@ -26,11 +26,15 @@ Name | Type | Description
 **ev_to_nopat** | **Numeric** | The enterprise value to normalized operating profit after tax ratio. &nbsp;
 **ev_to_ocf** | **Numeric** | The enterprise value to operating cash flow ratio. &nbsp;
 **ev_to_fcff** | **Numeric** | The enterprise value to free cash flow to the firm ratio. &nbsp;
+**company** | [**CompanySummary**](CompanySummary.md) |  &nbsp;
 
 [//]: # (END_DEFINITION)
 
 
 [//]: # (CONTAINED_CLASS:IntrinioSDK::POSIXlt)
+
+
+[//]: # (CONTAINED_CLASS:IntrinioSDK::CompanySummary)
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
