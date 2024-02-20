@@ -13,6 +13,7 @@ Method | HTTP request | Description
 [**get_zacks_institutional_holding_owners**](ZacksApi.md#get_zacks_institutional_holding_owners) | **GET** /zacks/institutional_holdings/owners | Zacks Institutional Holding Owners
 [**get_zacks_institutional_holdings**](ZacksApi.md#get_zacks_institutional_holdings) | **GET** /zacks/institutional_holdings | Zacks Institutional Holdings
 [**get_zacks_long_term_growth_rates**](ZacksApi.md#get_zacks_long_term_growth_rates) | **GET** /zacks/long_term_growth_rates | Zacks Long Term Growth Rates
+[**get_zacks_sales_estimates**](ZacksApi.md#get_zacks_sales_estimates) | **GET** /zacks/sales_estimates | Zacks Sales Estimates
 [**get_zacks_sales_surprises**](ZacksApi.md#get_zacks_sales_surprises) | **GET** /zacks/sales_surprises | Zacks Sales Surprises
 [**get_zacks_target_price_consensuses**](ZacksApi.md#get_zacks_target_price_consensuses) | **GET** /zacks/target_price_consensuses | Zacks Target Price Consensuses
 
@@ -879,6 +880,107 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ApiResponseZacksLongTermGrowthRates**](ApiResponseZacksLongTermGrowthRates.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:IntrinioSDK::ZacksApi)
+
+[//]: # (METHOD:get_zacks_sales_estimates)
+
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseZacksSalesEstimates)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:ApiResponseZacksSalesEstimates.md)
+
+[//]: # (OPERATION:get_zacks_sales_estimates_v2)
+
+[//]: # (ENDPOINT:/zacks/sales_estimates)
+
+[//]: # (DOCUMENT_LINK:ZacksApi.md#get_zacks_sales_estimates)
+
+# **get_zacks_sales_estimates**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/r/get_zacks_sales_estimates_v2)
+
+[//]: # (START_OVERVIEW)
+
+> ApiResponseZacksSalesEstimates get_zacks_sales_estimates(opts)
+
+#### Zacks Sales Estimates
+
+
+This database offers consensus sales estimates for over 5,000 US and Canadian listed companies.
+
+[//]: # (END_OVERVIEW)
+
+### Example
+
+[//]: # (START_CODE_EXAMPLE)
+```r
+# Setup client
+client <- IntrinioSDK::ApiClient$new()
+
+# Configure API key authorization: ApiKeyAuth
+client$configuration$apiKey <- "YOUR_API_KEY"
+
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
+# Setup API with client
+ZacksApi <- IntrinioSDK::ZacksApi$new(client)
+
+# Optional params
+opts <- list(
+  identifier = "AAPL",
+  start_date = NULL,
+  end_date = NULL,
+  fiscal_year = NULL,
+  fiscal_period = NULL,
+  calendar_year = NULL,
+  calendar_period = NULL,
+  next_page = NULL,
+  page_size = 100,
+  next_page2 = NULL
+)
+
+response <- ZacksApi$get_zacks_sales_estimates(opts)
+
+print(response)
+print(response$content)
+```
+
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **identifier** | Character| A Company identifier (Ticker, CIK, LEI, Intrinio ID) | [optional]  &nbsp;
+ **start_date** | Date| Limit Sales estimates to those on or after this date | [optional]  &nbsp;
+ **end_date** | Date| Limit Sales estimates to those on or before this date | [optional]  &nbsp;
+ **fiscal_year** | Integer| Only for the given fiscal year | [optional]  &nbsp;
+ **fiscal_period** | Character| The fiscal period | [optional]  &nbsp;
+ **calendar_year** | Integer| Only for the given calendar year | [optional]  &nbsp;
+ **calendar_period** | Character| The calendar period | [optional]  &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page2** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**ApiResponseZacksSalesEstimates**](ApiResponseZacksSalesEstimates.md)
 
 [//]: # (END_OPERATION)
 
