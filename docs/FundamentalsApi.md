@@ -73,6 +73,8 @@ opts <- list(
   fiscal_period = "FY",
   start_date = as.Date("2022-01-01"),
   end_date = as.Date("2022-12-01"),
+  updated_after = as.Date("2022-12-01"),
+  updated_before = as.Date("2022-12-01"),
   next_page = NULL
 )
 
@@ -102,6 +104,8 @@ Name | Type | Description  | Notes
  **fiscal_period** | Character| The fiscal period | [optional]  &nbsp;
  **start_date** | Date| Only include fundamentals where covered period is on or after this date. | [optional]  &nbsp;
  **end_date** | Date| Only include fundamentals where covered period is on or before this date. | [optional]  &nbsp;
+ **updated_after** | Date| Only include fundamentals where it was updated after this date. | [optional]  &nbsp;
+ **updated_before** | Date| Only include fundamentals where it was updated before this date. | [optional]  &nbsp;
  **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
 <br/>
 
