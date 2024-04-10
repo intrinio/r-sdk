@@ -7,8 +7,8 @@ Welcome to the Intrinio API! Through our Financial Data Marketplace, we offer a 
 
 ## Overview
 
-- API version: 2.53.1
-- Package version: 1.25.0
+- API version: 2.56.5
+- Package version: 1.25.1
 
 The new Intrinio R SDK wraps all API v2 endpoints into an easy-to-use set of classes, methods, and response objects.
 
@@ -505,6 +505,7 @@ Class | Method | HTTP request | Description
  - [IntrinioSDK::Municipality](docs/Municipality.md)
  - [IntrinioSDK::MunicipalityFinancial](docs/MunicipalityFinancial.md)
  - [IntrinioSDK::NegativeVolumeIndexTechnicalValue](docs/NegativeVolumeIndexTechnicalValue.md)
+ - [IntrinioSDK::NewsTopic](docs/NewsTopic.md)
  - [IntrinioSDK::OnBalanceVolumeMeanTechnicalValue](docs/OnBalanceVolumeMeanTechnicalValue.md)
  - [IntrinioSDK::OnBalanceVolumeTechnicalValue](docs/OnBalanceVolumeTechnicalValue.md)
  - [IntrinioSDK::Option](docs/Option.md)

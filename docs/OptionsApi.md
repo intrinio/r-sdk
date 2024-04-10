@@ -161,7 +161,8 @@ symbol <- "MSFT"
 opts <- list(
   after = "2022-01-01",
   before = "2023-04-01",
-  source = NULL
+  source = NULL,
+  include_related_symbols = FALSE
 )
 
 response <- OptionsApi$get_option_expirations_realtime(symbol, opts)
@@ -185,6 +186,7 @@ Name | Type | Description  | Notes
  **after** | Character| Return option contract expiration dates after this date. | [optional]  &nbsp;
  **before** | Character| Return option contract expiration dates before this date. | [optional]  &nbsp;
  **source** | Character| Realtime or 15-minute delayed contracts. | [optional]  &nbsp;
+ **include_related_symbols** | Logical| Include related symbols that end in a 1 or 2 because of a corporate action. | [optional]  &nbsp;
 <br/>
 
 [//]: # (END_PARAMETERS)
@@ -254,7 +256,8 @@ opts <- list(
   source = NULL,
   stock_price_source = NULL,
   model = NULL,
-  show_extended_price = NULL
+  show_extended_price = NULL,
+  include_related_symbols = FALSE
 )
 
 response <- OptionsApi$get_option_strikes_realtime(symbol, strike, opts)
@@ -280,6 +283,7 @@ Name | Type | Description  | Notes
  **stock_price_source** | Character| Source for underlying price for calculating Greeks. | [optional]  &nbsp;
  **model** | Character| Model for calculating Greek values. Default is black_scholes. | [optional]  &nbsp;
  **show_extended_price** | Logical| Whether to include open close high low type fields. | [optional]  &nbsp;
+ **include_related_symbols** | Logical| Include related symbols that end in a 1 or 2 because of a corporate action. | [optional]  &nbsp;
 <br/>
 
 [//]: # (END_PARAMETERS)
@@ -455,7 +459,8 @@ opts <- list(
   expiration = "2022-04-16",
   expiration_after = "2022-01-01",
   expiration_before = "2023-12-31",
-  source = NULL
+  source = NULL,
+  include_related_symbols = FALSE
 )
 
 response <- OptionsApi$get_options_by_symbol_realtime(symbol, opts)
@@ -484,6 +489,7 @@ Name | Type | Description  | Notes
  **expiration_after** | Character| The expiration date of the option contract. This will return options contracts with expiration dates after this date. | [optional]  &nbsp;
  **expiration_before** | Character| The expiration date of the option contract. This will return options contracts with expiration dates before this date. | [optional]  &nbsp;
  **source** | Character| Realtime or 15-minute delayed contracts. | [optional]  &nbsp;
+ **include_related_symbols** | Logical| Include related symbols that end in a 1 or 2 because of a corporate action. | [optional]  &nbsp;
 <br/>
 
 [//]: # (END_PARAMETERS)
@@ -655,7 +661,8 @@ opts <- list(
   strike = NULL,
   strike_greater_than = NULL,
   strike_less_than = NULL,
-  date = NULL
+  date = NULL,
+  include_related_symbols = FALSE
 )
 
 response <- OptionsApi$get_options_chain_eod(symbol, expiration, opts)
@@ -682,6 +689,7 @@ Name | Type | Description  | Notes
  **strike_greater_than** | Numeric| The strike price of the option contract. This will return options contracts with strike prices greater than this price. | [optional]  &nbsp;
  **strike_less_than** | Numeric| The strike price of the option contract. This will return options contracts with strike prices less than this price. | [optional]  &nbsp;
  **date** | Date| The date to retrieve prices for | [optional]  &nbsp;
+ **include_related_symbols** | Logical| Include related symbols that end in a 1 or 2 because of a corporate action. | [optional]  &nbsp;
 <br/>
 
 [//]: # (END_PARAMETERS)
@@ -760,7 +768,8 @@ opts <- list(
   moneyness = NULL,
   stock_price_source = NULL,
   model = NULL,
-  show_extended_price = NULL
+  show_extended_price = NULL,
+  include_related_symbols = FALSE
 )
 
 response <- OptionsApi$get_options_chain_realtime(symbol, expiration, opts)
@@ -795,6 +804,7 @@ Name | Type | Description  | Notes
  **stock_price_source** | Character| Source for underlying price for calculating Greeks. | [optional]  &nbsp;
  **model** | Character| Model for calculating Greek values. Default is black_scholes. | [optional]  &nbsp;
  **show_extended_price** | Logical| Whether to include open close high low type fields. | [optional]  &nbsp;
+ **include_related_symbols** | Logical| Include related symbols that end in a 1 or 2 because of a corporate action. | [optional]  &nbsp;
 <br/>
 
 [//]: # (END_PARAMETERS)
@@ -950,7 +960,8 @@ symbol <- "MSFT"
 # Optional params
 opts <- list(
   after = "2019-01-01",
-  before = "2019-12-31"
+  before = "2019-12-31",
+  include_related_symbols = FALSE
 )
 
 response <- OptionsApi$get_options_expirations_eod(symbol, opts)
@@ -973,6 +984,7 @@ Name | Type | Description  | Notes
  **symbol** | Character| The option symbol, corresponding to the underlying security. |  &nbsp;
  **after** | Character| Return option contract expiration dates after this date. | [optional]  &nbsp;
  **before** | Character| Return option contract expiration dates before this date. | [optional]  &nbsp;
+ **include_related_symbols** | Logical| Include related symbols that end in a 1 or 2 because of a corporate action. | [optional]  &nbsp;
 <br/>
 
 [//]: # (END_PARAMETERS)

@@ -271,7 +271,20 @@ CompanyApi <- IntrinioSDK::CompanyApi$new(client)
 
 # Optional params
 opts <- list(
+  specific_source = NULL,
   page_size = 100,
+  sentiment = NULL,
+  topic = NULL,
+  company = "AAPL",
+  security = "AAPL",
+  start_date = NULL,
+  end_date = NULL,
+  language = NULL,
+  word_count_greater_than = NULL,
+  word_count_less_than = NULL,
+  is_spam = NULL,
+  business_relevance_greater_than = NULL,
+  business_relevance_less_than = NULL,
   next_page = NULL
 )
 
@@ -292,7 +305,20 @@ print(response$content)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **specific_source** | Character| Only news from this source. | [optional]  &nbsp;
+ **page_size** | Integer| The maximum number of results to return. | [optional] [default to 100] &nbsp;
+ **sentiment** | Character| Filter by sentiment.  Unsupported for yahoo source. | [optional]  &nbsp;
+ **topic** | Character| Filter by topic.  Unsupported for yahoo source. | [optional]  &nbsp;
+ **company** | Character| Filter by &#x60;company&#x60; identifier (ticker, CIK, LEI, Intrinio ID) | [optional]  &nbsp;
+ **security** | Character| Filter by &#x60;security&#x60; identifier (ticker, figi, isin, cusip, Intrinio ID).  Unsupported for yahoo source. | [optional]  &nbsp;
+ **start_date** | Date| Limit news stories to those on or after this date. | [optional]  &nbsp;
+ **end_date** | Date| Limit news stories to those on or before this date. | [optional]  &nbsp;
+ **language** | Character| Filter by language.  Unsupported for yahoo source.  Unsupported for yahoo source. | [optional]  &nbsp;
+ **word_count_greater_than** | Integer| News stories will have a word count greater than this value.  Unsupported for yahoo source. | [optional]  &nbsp;
+ **word_count_less_than** | Integer| News stories will have a word count less than this value.  Unsupported for yahoo source. | [optional]  &nbsp;
+ **is_spam** | Logical| Filter whether it is marked as spam or not.  Unsupported for yahoo source. | [optional]  &nbsp;
+ **business_relevance_greater_than** | Numeric| News stories will have a business relevance score more than this value.  Unsupported for yahoo source. | [optional]  &nbsp;
+ **business_relevance_less_than** | Numeric| News stories will have a business relevance score less than this value.  Unsupported for yahoo source. | [optional]  &nbsp;
  **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
 <br/>
 
@@ -1186,7 +1212,19 @@ identifier <- "AAPL"
 
 # Optional params
 opts <- list(
+  specific_source = NULL,
   page_size = 100,
+  sentiment = NULL,
+  topic = NULL,
+  security = "AAPL",
+  start_date = NULL,
+  end_date = NULL,
+  language = NULL,
+  word_count_greater_than = NULL,
+  word_count_less_than = NULL,
+  is_spam = NULL,
+  business_relevance_greater_than = NULL,
+  business_relevance_less_than = NULL,
   next_page = NULL
 )
 
@@ -1208,7 +1246,19 @@ print(response$content)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **identifier** | Character| A Company identifier (Ticker, CIK, LEI, Intrinio ID) |  &nbsp;
- **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **specific_source** | Character| Only news from this source | [optional]  &nbsp;
+ **page_size** | Integer| The maximum number of results to return | [optional] [default to 100] &nbsp;
+ **sentiment** | Character| Filter by sentiment.  Unsupported for yahoo source. | [optional]  &nbsp;
+ **topic** | Character| Filter by topic.  Unsupported for yahoo source. | [optional]  &nbsp;
+ **security** | Character| Filter by &#x60;security&#x60; identifier (ticker, figi, isin, cusip, Intrinio ID).  Unsupported for yahoo source. | [optional]  &nbsp;
+ **start_date** | Date| Limit news stories to those on or after this date | [optional]  &nbsp;
+ **end_date** | Date| Limit news stories to those on or before this date | [optional]  &nbsp;
+ **language** | Character| Filter by language.  Unsupported for yahoo source. | [optional]  &nbsp;
+ **word_count_greater_than** | Integer| News stories will have a word count greater than this value.  Unsupported for yahoo source. | [optional]  &nbsp;
+ **word_count_less_than** | Integer| News stories will have a word count less than this value.  Unsupported for yahoo source. | [optional]  &nbsp;
+ **is_spam** | Logical| Filter whether it is marked as spam or not.  Unsupported for yahoo source. | [optional]  &nbsp;
+ **business_relevance_greater_than** | Numeric| News stories will have a business relevance score more than this value.  Unsupported for yahoo source. | [optional]  &nbsp;
+ **business_relevance_less_than** | Numeric| News stories will have a business relevance score less than this value.  Unsupported for yahoo source. | [optional]  &nbsp;
  **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
 <br/>
 

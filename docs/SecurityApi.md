@@ -4895,6 +4895,8 @@ opts <- list(
   end_time = NULL,
   timezone = "UTC",
   page_size = 100,
+  darkpool_only = FALSE,
+  min_size = 100,
   next_page = NULL
 )
 
@@ -4922,6 +4924,8 @@ Name | Type | Description  | Notes
  **end_time** | Character| The end time for the data being requested. | [optional]  &nbsp;
  **timezone** | Character| The timezone the start and end date/times use. | [optional] [default to UTC] &nbsp;
  **page_size** | Integer| The maximum number of results to return per page. | [optional] [default to 100] &nbsp;
+ **darkpool_only** | Logical| Set to TRUE to show only darkpool trades | [optional] [default to FALSE] &nbsp;
+ **min_size** | Integer| Trades must be larger or equal to this size. | [optional]  &nbsp;
  **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
 <br/>
 
@@ -4996,6 +5000,7 @@ opts <- list(
   timezone = "UTC",
   darkpool_only = FALSE,
   page_size = 100,
+  min_size = 100,
   next_page = NULL
 )
 
@@ -5025,6 +5030,7 @@ Name | Type | Description  | Notes
  **timezone** | Character| The timezone the start and end date/times use. | [optional] [default to UTC] &nbsp;
  **darkpool_only** | Logical| Set to TRUE to show only darkpool trades | [optional] [default to FALSE] &nbsp;
  **page_size** | Integer| The maximum number of results to return per page. | [optional] [default to 100] &nbsp;
+ **min_size** | Integer| Trades must be larger or equal to this size. | [optional]  &nbsp;
  **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
 <br/>
 
