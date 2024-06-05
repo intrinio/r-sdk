@@ -86,7 +86,7 @@
 CompanyApi <- R6::R6Class(
   'CompanyApi',
   public = list(
-    userAgent = "Swagger-Codegen/1.25.2/r",
+    userAgent = "Swagger-Codegen/1.25.3/r",
     apiClient = NULL,
     initialize = function(apiClient){
       if (!missing(apiClient)) {
