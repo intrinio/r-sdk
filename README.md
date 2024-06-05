@@ -7,7 +7,7 @@ Welcome to the Intrinio API! Through our Financial Data Marketplace, we offer a 
 
 ## Overview
 
-- API version: 2.56.6
+- API version: 2.61.1
 - Package version: 1.25.2
 
 The new Intrinio R SDK wraps all API v2 endpoints into an easy-to-use set of classes, methods, and response objects.
@@ -151,13 +151,18 @@ Class | Method | HTTP request | Description
 *IntrinioSDK::FundamentalsApi* | [**lookup_fundamental**](docs/FundamentalsApi.md#lookup_fundamental) | **GET** /fundamentals/lookup/{identifier}/{statement_code}/{fiscal_year}/{fiscal_period} | Lookup Fundamental
 *IntrinioSDK::HistoricalDataApi* | [**get_historical_data**](docs/HistoricalDataApi.md#get_historical_data) | **GET** /historical_data/{identifier}/{tag} | Historical Data
 *IntrinioSDK::IndexApi* | [**get_all_economic_indices**](docs/IndexApi.md#get_all_economic_indices) | **GET** /indices/economic | All Economic Indices
+*IntrinioSDK::IndexApi* | [**get_all_eod_index_prices**](docs/IndexApi.md#get_all_eod_index_prices) | **GET** /indices/prices/eod | All End of Day Index Prices
+*IntrinioSDK::IndexApi* | [**get_all_index_summaries**](docs/IndexApi.md#get_all_index_summaries) | **GET** /indices | All Index Summaries
+*IntrinioSDK::IndexApi* | [**get_all_realtime_index_prices**](docs/IndexApi.md#get_all_realtime_index_prices) | **GET** /indices/prices/realtime | All Realtime Index Prices
 *IntrinioSDK::IndexApi* | [**get_all_sic_indices**](docs/IndexApi.md#get_all_sic_indices) | **GET** /indices/sic | All SIC Indices
 *IntrinioSDK::IndexApi* | [**get_all_stock_market_indices**](docs/IndexApi.md#get_all_stock_market_indices) | **GET** /indices/stock_market | All Stock Market Indices
 *IntrinioSDK::IndexApi* | [**get_economic_index_by_id**](docs/IndexApi.md#get_economic_index_by_id) | **GET** /indices/economic/{identifier} | Lookup Economic Index
 *IntrinioSDK::IndexApi* | [**get_economic_index_data_point_number**](docs/IndexApi.md#get_economic_index_data_point_number) | **GET** /indices/economic/{identifier}/data_point/{tag}/number | Data Point (Number) for an Economic Index
 *IntrinioSDK::IndexApi* | [**get_economic_index_data_point_text**](docs/IndexApi.md#get_economic_index_data_point_text) | **GET** /indices/economic/{identifier}/data_point/{tag}/text | Data Point (Text) for an Economic Index
 *IntrinioSDK::IndexApi* | [**get_economic_index_historical_data**](docs/IndexApi.md#get_economic_index_historical_data) | **GET** /indices/economic/{identifier}/historical_data/{tag} | Historical Data for an Economic Index
-*IntrinioSDK::IndexApi* | [**get_realtime_index_price_by_id**](docs/IndexApi.md#get_realtime_index_price_by_id) | **GET** /indices/{identifier}/realtime | Realtime Index Price
+*IntrinioSDK::IndexApi* | [**get_eod_index_price_by_id**](docs/IndexApi.md#get_eod_index_price_by_id) | **GET** /indices/{identifier}/eod | End of Day Index Prices By Identifier
+*IntrinioSDK::IndexApi* | [**get_index_summary_by_id**](docs/IndexApi.md#get_index_summary_by_id) | **GET** /indices/{identifier} | Index Summary By Identifier
+*IntrinioSDK::IndexApi* | [**get_realtime_index_price_by_id**](docs/IndexApi.md#get_realtime_index_price_by_id) | **GET** /indices/{identifier}/realtime | Realtime Index Price By Identifier
 *IntrinioSDK::IndexApi* | [**get_sic_index_by_id**](docs/IndexApi.md#get_sic_index_by_id) | **GET** /indices/sic/{identifier} | Lookup SIC Index
 *IntrinioSDK::IndexApi* | [**get_sic_index_data_point_number**](docs/IndexApi.md#get_sic_index_data_point_number) | **GET** /indices/sic/{identifier}/data_point/{tag}/number | Data Point (Number) for an SIC Index
 *IntrinioSDK::IndexApi* | [**get_sic_index_data_point_text**](docs/IndexApi.md#get_sic_index_data_point_text) | **GET** /indices/sic/{identifier}/data_point/{tag}/text | Data Point (Text) for an SIC Index
@@ -175,6 +180,7 @@ Class | Method | HTTP request | Description
 *IntrinioSDK::MunicipalityApi* | [**get_municipality_by_id**](docs/MunicipalityApi.md#get_municipality_by_id) | **GET** /municipalities/{id} | Municipality by ID
 *IntrinioSDK::MunicipalityApi* | [**get_municipality_financials**](docs/MunicipalityApi.md#get_municipality_financials) | **GET** /municipalities/{id}/financials | Financials for a Municipality
 *IntrinioSDK::OptionsApi* | [**get_all_options_tickers**](docs/OptionsApi.md#get_all_options_tickers) | **GET** /options/tickers | Options Tickers
+*IntrinioSDK::OptionsApi* | [**get_option_aggregates**](docs/OptionsApi.md#get_option_aggregates) | **GET** /options/aggregates | Total open interest and volume aggregated by ticker
 *IntrinioSDK::OptionsApi* | [**get_option_expirations_realtime**](docs/OptionsApi.md#get_option_expirations_realtime) | **GET** /options/expirations/{symbol}/realtime | Options Expirations
 *IntrinioSDK::OptionsApi* | [**get_option_strikes_realtime**](docs/OptionsApi.md#get_option_strikes_realtime) | **GET** /options/strikes/{symbol}/{strike}/realtime | Option Strikes Realtime
 *IntrinioSDK::OptionsApi* | [**get_options**](docs/OptionsApi.md#get_options) | **GET** /options/{symbol} | Options
@@ -300,10 +306,13 @@ Class | Method | HTTP request | Description
 *IntrinioSDK::TechnicalApi* | [**get_security_price_technicals_vwap**](docs/TechnicalApi.md#get_security_price_technicals_vwap) | **GET** /securities/{identifier}/prices/technicals/vwap | Volume Weighted Average Price
 *IntrinioSDK::TechnicalApi* | [**get_security_price_technicals_wr**](docs/TechnicalApi.md#get_security_price_technicals_wr) | **GET** /securities/{identifier}/prices/technicals/wr | Williams %R
 *IntrinioSDK::ZacksApi* | [**get_zacks_analyst_ratings**](docs/ZacksApi.md#get_zacks_analyst_ratings) | **GET** /zacks/analyst_ratings | Zacks Analyst Ratings
+*IntrinioSDK::ZacksApi* | [**get_zacks_ebitda_consensus**](docs/ZacksApi.md#get_zacks_ebitda_consensus) | **GET** /zacks/ebitda_consensus | Zacks EBITDA Consensus
 *IntrinioSDK::ZacksApi* | [**get_zacks_eps_estimates**](docs/ZacksApi.md#get_zacks_eps_estimates) | **GET** /zacks/eps_estimates | Zacks EPS Estimates
 *IntrinioSDK::ZacksApi* | [**get_zacks_eps_growth_rates**](docs/ZacksApi.md#get_zacks_eps_growth_rates) | **GET** /zacks/eps_growth_rates | Zacks EPS Growth Rates
 *IntrinioSDK::ZacksApi* | [**get_zacks_eps_surprises**](docs/ZacksApi.md#get_zacks_eps_surprises) | **GET** /zacks/eps_surprises | Zacks EPS Surprises
 *IntrinioSDK::ZacksApi* | [**get_zacks_etf_holdings**](docs/ZacksApi.md#get_zacks_etf_holdings) | **GET** /zacks/etf_holdings | Zacks ETF Holdings
+*IntrinioSDK::ZacksApi* | [**get_zacks_forward_pe**](docs/ZacksApi.md#get_zacks_forward_pe) | **GET** /zacks/forward_pe | Zacks Forward PE Estimates
+*IntrinioSDK::ZacksApi* | [**get_zacks_forward_pe_by_identifier**](docs/ZacksApi.md#get_zacks_forward_pe_by_identifier) | **GET** /zacks/forward_pe/{identifier} | Zacks Forward PE by identifer
 *IntrinioSDK::ZacksApi* | [**get_zacks_institutional_holding_companies**](docs/ZacksApi.md#get_zacks_institutional_holding_companies) | **GET** /zacks/institutional_holdings/companies | Zacks Institutional Holding Companies
 *IntrinioSDK::ZacksApi* | [**get_zacks_institutional_holding_owners**](docs/ZacksApi.md#get_zacks_institutional_holding_owners) | **GET** /zacks/institutional_holdings/owners | Zacks Institutional Holding Owners
 *IntrinioSDK::ZacksApi* | [**get_zacks_institutional_holdings**](docs/ZacksApi.md#get_zacks_institutional_holdings) | **GET** /zacks/institutional_holdings | Zacks Institutional Holdings
@@ -342,6 +351,8 @@ Class | Method | HTTP request | Description
  - [IntrinioSDK::ApiResponseEconomicIndexHistoricalData](docs/ApiResponseEconomicIndexHistoricalData.md)
  - [IntrinioSDK::ApiResponseEconomicIndices](docs/ApiResponseEconomicIndices.md)
  - [IntrinioSDK::ApiResponseEconomicIndicesSearch](docs/ApiResponseEconomicIndicesSearch.md)
+ - [IntrinioSDK::ApiResponseEodIndexPrices](docs/ApiResponseEodIndexPrices.md)
+ - [IntrinioSDK::ApiResponseEodIndexPricesAll](docs/ApiResponseEodIndexPricesAll.md)
  - [IntrinioSDK::ApiResponseFilingAnswers](docs/ApiResponseFilingAnswers.md)
  - [IntrinioSDK::ApiResponseFilingFundamentals](docs/ApiResponseFilingFundamentals.md)
  - [IntrinioSDK::ApiResponseFilingNotes](docs/ApiResponseFilingNotes.md)
@@ -351,6 +362,8 @@ Class | Method | HTTP request | Description
  - [IntrinioSDK::ApiResponseForexPairs](docs/ApiResponseForexPairs.md)
  - [IntrinioSDK::ApiResponseForexPrices](docs/ApiResponseForexPrices.md)
  - [IntrinioSDK::ApiResponseHistoricalData](docs/ApiResponseHistoricalData.md)
+ - [IntrinioSDK::ApiResponseIndex](docs/ApiResponseIndex.md)
+ - [IntrinioSDK::ApiResponseIndices](docs/ApiResponseIndices.md)
  - [IntrinioSDK::ApiResponseInitialPublicOfferings](docs/ApiResponseInitialPublicOfferings.md)
  - [IntrinioSDK::ApiResponseInsiderTransactionFilings](docs/ApiResponseInsiderTransactionFilings.md)
  - [IntrinioSDK::ApiResponseMunicipalities](docs/ApiResponseMunicipalities.md)
@@ -358,6 +371,7 @@ Class | Method | HTTP request | Description
  - [IntrinioSDK::ApiResponseNews](docs/ApiResponseNews.md)
  - [IntrinioSDK::ApiResponseOptionPrices](docs/ApiResponseOptionPrices.md)
  - [IntrinioSDK::ApiResponseOptions](docs/ApiResponseOptions.md)
+ - [IntrinioSDK::ApiResponseOptionsAggregates](docs/ApiResponseOptionsAggregates.md)
  - [IntrinioSDK::ApiResponseOptionsChain](docs/ApiResponseOptionsChain.md)
  - [IntrinioSDK::ApiResponseOptionsChainEod](docs/ApiResponseOptionsChainEod.md)
  - [IntrinioSDK::ApiResponseOptionsChainRealtime](docs/ApiResponseOptionsChainRealtime.md)
@@ -372,6 +386,7 @@ Class | Method | HTTP request | Description
  - [IntrinioSDK::ApiResponseOwnerInsiderTransactionFilings](docs/ApiResponseOwnerInsiderTransactionFilings.md)
  - [IntrinioSDK::ApiResponseOwnerInstitutionalHoldings](docs/ApiResponseOwnerInstitutionalHoldings.md)
  - [IntrinioSDK::ApiResponseOwners](docs/ApiResponseOwners.md)
+ - [IntrinioSDK::ApiResponseRealtimeIndexPrices](docs/ApiResponseRealtimeIndexPrices.md)
  - [IntrinioSDK::ApiResponseReportedFinancials](docs/ApiResponseReportedFinancials.md)
  - [IntrinioSDK::ApiResponseSICIndexHistoricalData](docs/ApiResponseSICIndexHistoricalData.md)
  - [IntrinioSDK::ApiResponseSICIndices](docs/ApiResponseSICIndices.md)
@@ -430,10 +445,12 @@ Class | Method | HTTP request | Description
  - [IntrinioSDK::ApiResponseStockMarketIndices](docs/ApiResponseStockMarketIndices.md)
  - [IntrinioSDK::ApiResponseStockMarketIndicesSearch](docs/ApiResponseStockMarketIndicesSearch.md)
  - [IntrinioSDK::ApiResponseZacksAnalystRatings](docs/ApiResponseZacksAnalystRatings.md)
+ - [IntrinioSDK::ApiResponseZacksEBITDAConsensus](docs/ApiResponseZacksEBITDAConsensus.md)
  - [IntrinioSDK::ApiResponseZacksEPSEstimates](docs/ApiResponseZacksEPSEstimates.md)
  - [IntrinioSDK::ApiResponseZacksEPSGrowthRates](docs/ApiResponseZacksEPSGrowthRates.md)
  - [IntrinioSDK::ApiResponseZacksEPSSurprises](docs/ApiResponseZacksEPSSurprises.md)
  - [IntrinioSDK::ApiResponseZacksETFHoldings](docs/ApiResponseZacksETFHoldings.md)
+ - [IntrinioSDK::ApiResponseZacksForwardPEs](docs/ApiResponseZacksForwardPEs.md)
  - [IntrinioSDK::ApiResponseZacksInstitutionalHoldingCompanies](docs/ApiResponseZacksInstitutionalHoldingCompanies.md)
  - [IntrinioSDK::ApiResponseZacksInstitutionalHoldingOwners](docs/ApiResponseZacksInstitutionalHoldingOwners.md)
  - [IntrinioSDK::ApiResponseZacksInstitutionalHoldings](docs/ApiResponseZacksInstitutionalHoldings.md)
@@ -478,6 +495,8 @@ Class | Method | HTTP request | Description
  - [IntrinioSDK::EaseOfMovementTechnicalValue](docs/EaseOfMovementTechnicalValue.md)
  - [IntrinioSDK::EconomicIndex](docs/EconomicIndex.md)
  - [IntrinioSDK::EconomicIndexSummary](docs/EconomicIndexSummary.md)
+ - [IntrinioSDK::EodIndexPrice](docs/EodIndexPrice.md)
+ - [IntrinioSDK::EodIndexPriceSummary](docs/EodIndexPriceSummary.md)
  - [IntrinioSDK::Filing](docs/Filing.md)
  - [IntrinioSDK::FilingNote](docs/FilingNote.md)
  - [IntrinioSDK::FilingNoteFiling](docs/FilingNoteFiling.md)
@@ -529,6 +548,7 @@ Class | Method | HTTP request | Description
  - [IntrinioSDK::OptionSnapshotsResult](docs/OptionSnapshotsResult.md)
  - [IntrinioSDK::OptionStatsRealtime](docs/OptionStatsRealtime.md)
  - [IntrinioSDK::OptionUnusualTrade](docs/OptionUnusualTrade.md)
+ - [IntrinioSDK::OptionsAggregate](docs/OptionsAggregate.md)
  - [IntrinioSDK::Owner](docs/Owner.md)
  - [IntrinioSDK::OwnerSummary](docs/OwnerSummary.md)
  - [IntrinioSDK::RealtimeIndexPrice](docs/RealtimeIndexPrice.md)
@@ -580,11 +600,13 @@ Class | Method | HTTP request | Description
  - [IntrinioSDK::ZacksAnalystRating](docs/ZacksAnalystRating.md)
  - [IntrinioSDK::ZacksAnalystRatingSnapshot](docs/ZacksAnalystRatingSnapshot.md)
  - [IntrinioSDK::ZacksAnalystRatingSummary](docs/ZacksAnalystRatingSummary.md)
+ - [IntrinioSDK::ZacksEBITDAConsensus](docs/ZacksEBITDAConsensus.md)
  - [IntrinioSDK::ZacksEPSEstimate](docs/ZacksEPSEstimate.md)
  - [IntrinioSDK::ZacksEPSGrowthRate](docs/ZacksEPSGrowthRate.md)
  - [IntrinioSDK::ZacksEPSSurprise](docs/ZacksEPSSurprise.md)
  - [IntrinioSDK::ZacksEPSSurpriseSummary](docs/ZacksEPSSurpriseSummary.md)
  - [IntrinioSDK::ZacksETFHolding](docs/ZacksETFHolding.md)
+ - [IntrinioSDK::ZacksForwardPE](docs/ZacksForwardPE.md)
  - [IntrinioSDK::ZacksInstitutionalHolding](docs/ZacksInstitutionalHolding.md)
  - [IntrinioSDK::ZacksInstitutionalHoldingCompanyDetail](docs/ZacksInstitutionalHoldingCompanyDetail.md)
  - [IntrinioSDK::ZacksInstitutionalHoldingCompanySummary](docs/ZacksInstitutionalHoldingCompanySummary.md)

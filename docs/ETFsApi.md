@@ -456,7 +456,7 @@ Name | Type | Description  | Notes
 
 [//]: # (START_OVERVIEW)
 
-> ApiResponseETFs search_etfs(query)
+> ApiResponseETFs search_etfs(query, opts)
 
 #### Search ETFs
 
@@ -484,7 +484,12 @@ ETFsApi <- IntrinioSDK::ETFsApi$new(client)
 # Required params
 query <- "iShares"
 
-response <- ETFsApi$search_etfs(query)
+# Optional params
+opts <- list(
+  mode = NULL
+)
+
+response <- ETFsApi$search_etfs(query, opts)
 
 print(response)
 print(response$content)
@@ -502,6 +507,7 @@ print(response$content)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | Character|  |  &nbsp;
+ **mode** | Character| When set, changes search mode to the specified mode. Paging is not available in rank_order. | [optional]  &nbsp;
 <br/>
 
 [//]: # (END_PARAMETERS)
