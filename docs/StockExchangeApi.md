@@ -422,6 +422,7 @@ opts <- list(
   source = NULL,
   active_only = NULL,
   page_size = 100,
+  tickers = [NULL],
   next_page = NULL
 )
 
@@ -446,6 +447,7 @@ Name | Type | Description  | Notes
  **source** | Character| Return realtime prices from the specified data source. If no source is specified, all sources are used. | [optional]  &nbsp;
  **active_only** | Logical| Returns prices only from the most recent trading day. | [optional]  &nbsp;
  **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **tickers** | [**Character**](Character.md)| The list of ticker symbols to filter to. | [optional]  &nbsp;
  **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
 <br/>
 

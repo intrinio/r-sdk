@@ -1099,6 +1099,7 @@ opts <- list(
   end_time = NULL,
   timezone = "UTC",
   page_size = 100,
+  split_adjusted = FALSE,
   next_page = NULL
 )
 
@@ -1128,6 +1129,7 @@ Name | Type | Description  | Notes
  **end_time** | Character| Return intervals stopping at the specified time on the &#x60;end_date&#x60; (24-hour in &#39;hh:mm:ss&#39; format) | [optional]  &nbsp;
  **timezone** | Character| Returns trading times in this timezone | [optional] [default to UTC] &nbsp;
  **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **split_adjusted** | Logical| Whether to return the values adjusted for splits or not. Default is FALSE. | [optional] [default to FALSE] &nbsp;
  **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
 <br/>
 

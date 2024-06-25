@@ -784,6 +784,9 @@ SecurityApi <- R6::R6Class(
       if ('page_size' %in% names(opts)) {
         queryParams['page_size'] <- opts['page_size']
       }
+      if ('split_adjusted' %in% names(opts)) {
+        queryParams['split_adjusted'] <- opts['split_adjusted']
+      }
       if ('next_page' %in% names(opts)) {
         queryParams['next_page'] <- opts['next_page']
       }
