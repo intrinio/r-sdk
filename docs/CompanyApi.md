@@ -17,6 +17,7 @@ Method | HTTP request | Description
 [**get_company_historical_data**](CompanyApi.md#get_company_historical_data) | **GET** /companies/{identifier}/historical_data/{tag} | Historical Data for Company
 [**get_company_ipos**](CompanyApi.md#get_company_ipos) | **GET** /companies/ipos | IPOs
 [**get_company_news**](CompanyApi.md#get_company_news) | **GET** /companies/{identifier}/news | All News by Company
+[**get_company_news_body**](CompanyApi.md#get_company_news_body) | **GET** /companies/news/body | The body of a news article
 [**get_company_public_float**](CompanyApi.md#get_company_public_float) | **GET** /companies/{identifier}/public_float | Get Company&#39;s public float
 [**get_company_securities**](CompanyApi.md#get_company_securities) | **GET** /companies/{identifier}/securities | All Securities by Company
 [**insider_transaction_filings_by_company**](CompanyApi.md#insider_transaction_filings_by_company) | **GET** /companies/{identifier}/insider_transaction_filings | Insider Transaction Filings by Company
@@ -1267,6 +1268,97 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ApiResponseCompanyNews**](ApiResponseCompanyNews.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:IntrinioSDK::CompanyApi)
+
+[//]: # (METHOD:get_company_news_body)
+
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseCompanyNewsBody)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:ApiResponseCompanyNewsBody.md)
+
+[//]: # (OPERATION:get_company_news_body_v2)
+
+[//]: # (ENDPOINT:/companies/news/body)
+
+[//]: # (DOCUMENT_LINK:CompanyApi.md#get_company_news_body)
+
+# **get_company_news_body**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/r/get_company_news_body_v2)
+
+[//]: # (START_OVERVIEW)
+
+> ApiResponseCompanyNewsBody get_company_news_body(news_story_id, publication_date, opts)
+
+#### The body of a news article
+
+
+Returns the news article body.
+
+[//]: # (END_OVERVIEW)
+
+### Example
+
+[//]: # (START_CODE_EXAMPLE)
+```r
+# Setup client
+client <- IntrinioSDK::ApiClient$new()
+
+# Configure API key authorization: ApiKeyAuth
+client$configuration$apiKey <- "YOUR_API_KEY"
+
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
+# Setup API with client
+CompanyApi <- IntrinioSDK::CompanyApi$new(client)
+
+# Required params
+news_story_id <- "new_aBcDef"
+publication_date <- as.POSIXlt(NULL, tz="UTC")
+
+# Optional params
+opts <- list(
+  specific_source = NULL,
+  next_page = NULL
+)
+
+response <- CompanyApi$get_company_news_body(news_story_id, publication_date, opts)
+
+print(response)
+print(response$content)
+```
+
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **news_story_id** | Character| The identifier of the news story. |  &nbsp;
+ **publication_date** | POSIXlt| The DateTime of the story. |  &nbsp;
+ **specific_source** | Character| Only news from this source. Defaults to highest available if not present. | [optional]  &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**ApiResponseCompanyNewsBody**](ApiResponseCompanyNewsBody.md)
 
 [//]: # (END_OPERATION)
 

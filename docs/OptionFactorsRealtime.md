@@ -15,7 +15,7 @@ Name | Type | Description
 **strike_price** | **Numeric** | The strike price of the options contract &nbsp;
 **days_to_expiration** | **Numeric** | The number of days to expiration &nbsp;
 **risk_free_interest_rate** | **Numeric** | The current risk-free interest rate, as measured by the 3-month Treasury Bill rate &nbsp;
-**dividend_yield** | **Numeric** | The divident yield of the underlying asset (if applicable) &nbsp;
+**dividend_yield** | **Numeric** | The dividend yield of the underlying asset (if applicable) &nbsp;
 
 [//]: # (END_DEFINITION)
 
