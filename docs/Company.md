@@ -41,7 +41,7 @@ Name | Type | Description
 **industry_category** | **Character** | The company&#39;s operating industry category &nbsp;
 **industry_group** | **Character** | The company&#39;s operating industry group &nbsp;
 **template** | **Character** | The financial statement template used by Intrinio to standardize the as reported data &nbsp;
-**standardized_active** | [**Logical**](Logical.md) | If true, the company has standardized and as reported fundamental data via the Intrinio API; if false, the company has as-reported data only &nbsp;
+**standardized_active** | [**Logical**](Logical.md) | If TRUE, the company has standardized and as reported fundamental data via the Intrinio API; if FALSE, the company has as-reported data only &nbsp;
 **first_fundamental_date** | [**Date**](Date.md) | The period end date of the company&#39;s first reported fundamental &nbsp;
 **last_fundamental_date** | [**Date**](Date.md) | The period end date of the company&#39;s last reported fundamental &nbsp;
 **first_stock_price_date** | [**Date**](Date.md) | The date of the company&#39;s first stock price, based on the company&#39;s primary security, which is typically traded on US exchages &nbsp;

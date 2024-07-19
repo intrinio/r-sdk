@@ -74,24 +74,24 @@ ZacksApi <- IntrinioSDK::ZacksApi$new(client)
 # Optional params
 opts <- list(
   identifier = "AAPL",
-  start_date = as.Date("\"~null\""),
-  end_date = as.Date("\"~null\""),
-  mean_greater = "~null",
-  mean_less = "~null",
-  strong_buys_greater = "~null",
-  strong_buys_less = "~null",
-  buys_greater = "~null",
-  buys_less = "~null",
-  holds_greater = "~null",
-  holds_less = "~null",
-  sells_greater = "~null",
-  sells_less = "~null",
-  strong_sells_greater = "~null",
-  strong_sells_less = "~null",
-  total_greater = "~null",
-  total_less = "~null",
+  start_date = NULL,
+  end_date = NULL,
+  mean_greater = NULL,
+  mean_less = NULL,
+  strong_buys_greater = NULL,
+  strong_buys_less = NULL,
+  buys_greater = NULL,
+  buys_less = NULL,
+  holds_greater = NULL,
+  holds_less = NULL,
+  sells_greater = NULL,
+  sells_less = NULL,
+  strong_sells_greater = NULL,
+  strong_sells_less = NULL,
+  total_greater = NULL,
+  total_less = NULL,
   page_size = 100,
-  next_page = "~null"
+  next_page = NULL
 )
 
 response <- ZacksApi$get_zacks_analyst_ratings(opts)
@@ -193,8 +193,8 @@ ZacksApi <- IntrinioSDK::ZacksApi$new(client)
 # Optional params
 opts <- list(
   identifier = "AAPL",
-  type = "~null",
-  next_page = "~null"
+  type = NULL,
+  next_page = NULL
 )
 
 response <- ZacksApi$get_zacks_ebitda_consensus(opts)
@@ -280,14 +280,14 @@ ZacksApi <- IntrinioSDK::ZacksApi$new(client)
 # Optional params
 opts <- list(
   identifier = "AAPL",
-  start_date = as.Date("\"~null\""),
-  end_date = as.Date("\"~null\""),
-  fiscal_year = "~null",
-  fiscal_period = "\"~null\"",
-  calendar_year = "~null",
-  calendar_period = "\"~null\"",
+  start_date = NULL,
+  end_date = NULL,
+  fiscal_year = NULL,
+  fiscal_period = NULL,
+  calendar_year = NULL,
+  calendar_period = NULL,
   page_size = 100,
-  next_page = "~null"
+  next_page = NULL
 )
 
 response <- ZacksApi$get_zacks_eps_estimates(opts)
@@ -379,10 +379,10 @@ ZacksApi <- IntrinioSDK::ZacksApi$new(client)
 # Optional params
 opts <- list(
   company = "AAPL",
-  industry_group_name = "~null",
-  industry_group_number = "~null",
+  industry_group_name = NULL,
+  industry_group_number = NULL,
   page_size = 100,
-  next_page = "~null"
+  next_page = NULL
 )
 
 response <- ZacksApi$get_zacks_eps_growth_rates(opts)
@@ -469,22 +469,22 @@ ZacksApi <- IntrinioSDK::ZacksApi$new(client)
 
 # Optional params
 opts <- list(
-  start_date = as.Date("\"~null\""),
-  end_date = as.Date("\"~null\""),
-  eps_actual_greater = "~null",
-  eps_actual_less = "~null",
-  eps_mean_estimate_greater = "~null",
-  eps_mean_estimate_less = "~null",
-  eps_amount_diff_greater = "~null",
-  eps_amount_diff_less = "~null",
-  eps_percent_diff_greater = "~null",
-  eps_percent_diff_less = "~null",
-  eps_count_estimate_greater = "~null",
-  eps_count_estimate_less = "~null",
-  eps_std_dev_estimate_greater = "~null",
-  eps_std_dev_estimate_less = "~null",
+  start_date = NULL,
+  end_date = NULL,
+  eps_actual_greater = NULL,
+  eps_actual_less = NULL,
+  eps_mean_estimate_greater = NULL,
+  eps_mean_estimate_less = NULL,
+  eps_amount_diff_greater = NULL,
+  eps_amount_diff_less = NULL,
+  eps_percent_diff_greater = NULL,
+  eps_percent_diff_less = NULL,
+  eps_count_estimate_greater = NULL,
+  eps_count_estimate_less = NULL,
+  eps_std_dev_estimate_greater = NULL,
+  eps_std_dev_estimate_less = NULL,
   page_size = 100,
-  next_page = "~null"
+  next_page = NULL
 )
 
 response <- ZacksApi$get_zacks_eps_surprises(opts)
@@ -584,10 +584,10 @@ ZacksApi <- IntrinioSDK::ZacksApi$new(client)
 opts <- list(
   etf_ticker = "SPY",
   holding_symbol = "AAPL",
-  weight_greater = "~null",
-  weight_less = "~null",
+  weight_greater = NULL,
+  weight_less = NULL,
   page_size = 100,
-  next_page = "~null"
+  next_page = NULL
 )
 
 response <- ZacksApi$get_zacks_etf_holdings(opts)
@@ -675,7 +675,7 @@ ZacksApi <- IntrinioSDK::ZacksApi$new(client)
 
 # Optional params
 opts <- list(
-  next_page = "~null"
+  next_page = NULL
 )
 
 response <- ZacksApi$get_zacks_forward_pe(opts)
@@ -839,9 +839,9 @@ ZacksApi <- IntrinioSDK::ZacksApi$new(client)
 
 # Optional params
 opts <- list(
-  ticker = "~null",
+  ticker = NULL,
   page_size = 100,
-  next_page = "~null"
+  next_page = NULL
 )
 
 response <- ZacksApi$get_zacks_institutional_holding_companies(opts)
@@ -926,9 +926,9 @@ ZacksApi <- IntrinioSDK::ZacksApi$new(client)
 
 # Optional params
 opts <- list(
-  cik = "~null",
+  cik = NULL,
   page_size = 100,
-  next_page = "~null"
+  next_page = NULL
 )
 
 response <- ZacksApi$get_zacks_institutional_holding_owners(opts)
@@ -1013,10 +1013,10 @@ ZacksApi <- IntrinioSDK::ZacksApi$new(client)
 
 # Optional params
 opts <- list(
-  ticker = "~null",
-  owner_cik = "~null",
+  ticker = NULL,
+  owner_cik = NULL,
   page_size = 100,
-  next_page = "~null"
+  next_page = NULL
 )
 
 response <- ZacksApi$get_zacks_institutional_holdings(opts)
@@ -1104,7 +1104,7 @@ ZacksApi <- IntrinioSDK::ZacksApi$new(client)
 opts <- list(
   identifier = "AAPL",
   page_size = 100,
-  next_page = "~null"
+  next_page = NULL
 )
 
 response <- ZacksApi$get_zacks_long_term_growth_rates(opts)
@@ -1190,15 +1190,15 @@ ZacksApi <- IntrinioSDK::ZacksApi$new(client)
 # Optional params
 opts <- list(
   identifier = "AAPL",
-  start_date = as.Date("\"~null\""),
-  end_date = as.Date("\"~null\""),
-  fiscal_year = "~null",
-  fiscal_period = "\"~null\"",
-  calendar_year = "~null",
-  calendar_period = "\"~null\"",
-  next_page = "~null",
+  start_date = NULL,
+  end_date = NULL,
+  fiscal_year = NULL,
+  fiscal_period = NULL,
+  calendar_year = NULL,
+  calendar_period = NULL,
+  next_page = NULL,
   page_size = 100,
-  next_page2 = "~null"
+  next_page2 = NULL
 )
 
 response <- ZacksApi$get_zacks_sales_estimates(opts)
@@ -1290,22 +1290,22 @@ ZacksApi <- IntrinioSDK::ZacksApi$new(client)
 
 # Optional params
 opts <- list(
-  start_date = as.Date("\"~null\""),
-  end_date = as.Date("\"~null\""),
-  sales_actual_greater = "~null",
-  sales_actual_less = "~null",
-  sales_mean_estimate_greater = "~null",
-  sales_mean_estimate_less = "~null",
-  sales_amount_diff_greater = "~null",
-  sales_amount_diff_less = "~null",
-  sales_percent_diff_greater = "~null",
-  sales_percent_diff_less = "~null",
-  sales_count_estimate_greater = "~null",
-  sales_count_estimate_less = "~null",
-  sales_std_dev_estimate_greater = "~null",
-  sales_std_dev_estimate_less = "~null",
+  start_date = NULL,
+  end_date = NULL,
+  sales_actual_greater = NULL,
+  sales_actual_less = NULL,
+  sales_mean_estimate_greater = NULL,
+  sales_mean_estimate_less = NULL,
+  sales_amount_diff_greater = NULL,
+  sales_amount_diff_less = NULL,
+  sales_percent_diff_greater = NULL,
+  sales_percent_diff_less = NULL,
+  sales_count_estimate_greater = NULL,
+  sales_count_estimate_less = NULL,
+  sales_std_dev_estimate_greater = NULL,
+  sales_std_dev_estimate_less = NULL,
   page_size = 100,
-  next_page = "~null"
+  next_page = NULL
 )
 
 response <- ZacksApi$get_zacks_sales_surprises(opts)
@@ -1404,9 +1404,9 @@ ZacksApi <- IntrinioSDK::ZacksApi$new(client)
 # Optional params
 opts <- list(
   identifier = "AAPL",
-  industry_group_number = "~null",
+  industry_group_number = NULL,
   page_size = 100,
-  next_page = "~null"
+  next_page = NULL
 )
 
 response <- ZacksApi$get_zacks_target_price_consensuses(opts)

@@ -83,7 +83,7 @@ IndexApi <- IntrinioSDK::IndexApi$new(client)
 # Optional params
 opts <- list(
   page_size = 100,
-  next_page = "~null"
+  next_page = NULL
 )
 
 response <- IndexApi$get_all_economic_indices(opts)
@@ -167,8 +167,8 @@ IndexApi <- IntrinioSDK::IndexApi$new(client)
 # Optional params
 opts <- list(
   page_size = 100,
-  start_date = as.Date("\"~null\""),
-  end_date = as.Date("\"~null\"")
+  start_date = NULL,
+  end_date = NULL
 )
 
 response <- IndexApi$get_all_eod_index_prices(opts)
@@ -417,7 +417,7 @@ IndexApi <- IntrinioSDK::IndexApi$new(client)
 # Optional params
 opts <- list(
   page_size = 100,
-  next_page = "~null"
+  next_page = NULL
 )
 
 response <- IndexApi$get_all_sic_indices(opts)
@@ -501,7 +501,7 @@ IndexApi <- IntrinioSDK::IndexApi$new(client)
 # Optional params
 opts <- list(
   page_size = 100,
-  next_page = "~null"
+  next_page = NULL
 )
 
 response <- IndexApi$get_all_stock_market_indices(opts)
@@ -836,12 +836,12 @@ tag <- "level"
 
 # Optional params
 opts <- list(
-  type = "~null",
-  start_date = as.Date("\"2018-01-01\""),
-  end_date = as.Date("\"~null\""),
+  type = NULL,
+  start_date = as.Date("2018-01-01"),
+  end_date = NULL,
   sort_order = "desc",
   page_size = 100,
-  next_page = "~null"
+  next_page = NULL
 )
 
 response <- IndexApi$get_economic_index_historical_data(identifier, tag, opts)
@@ -934,8 +934,8 @@ identifier <- "SPX"
 # Optional params
 opts <- list(
   page_size = 100,
-  start_date = as.Date("\"~null\""),
-  end_date = as.Date("\"~null\"")
+  start_date = NULL,
+  end_date = NULL
 )
 
 response <- IndexApi$get_eod_index_price_by_id(identifier, opts)
@@ -1431,12 +1431,12 @@ tag <- "marketcap"
 
 # Optional params
 opts <- list(
-  type = "~null",
-  start_date = as.Date("\"2018-01-01\""),
-  end_date = as.Date("\"~null\""),
+  type = NULL,
+  start_date = as.Date("2018-01-01"),
+  end_date = NULL,
   sort_order = "desc",
   page_size = 100,
-  next_page = "~null"
+  next_page = NULL
 )
 
 response <- IndexApi$get_sic_index_historical_data(identifier, tag, opts)
@@ -1776,12 +1776,12 @@ tag <- "level"
 
 # Optional params
 opts <- list(
-  type = "~null",
-  start_date = as.Date("\"2018-01-01\""),
-  end_date = as.Date("\"~null\""),
+  type = NULL,
+  start_date = as.Date("2018-01-01"),
+  end_date = NULL,
   sort_order = "desc",
   page_size = 100,
-  next_page = "~null"
+  next_page = NULL
 )
 
 response <- IndexApi$get_stock_market_index_historical_data(identifier, tag, opts)

@@ -63,9 +63,9 @@ OwnersApi <- IntrinioSDK::OwnersApi$new(client)
 
 # Optional params
 opts <- list(
-  institutional = "~null",
+  institutional = NULL,
   page_size = 100,
-  next_page = "~null"
+  next_page = NULL
 )
 
 response <- OwnersApi$get_all_owners(opts)
@@ -85,7 +85,7 @@ print(response$content)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **institutional** | Logical| Returns insider owners who have filed forms 3, 4, or 5 with the SEC only. Possible values are true, false, or omit for both. | [optional]  &nbsp;
+ **institutional** | Logical| Returns insider owners who have filed forms 3, 4, or 5 with the SEC only. Possible values are TRUE, FALSE, or omit for both. | [optional]  &nbsp;
  **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
  **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
 <br/>
@@ -234,10 +234,10 @@ identifier <- "0001494730"
 
 # Optional params
 opts <- list(
-  start_date = as.Date("\"2018-01-01\""),
-  end_date = as.Date("\"2019-01-01\""),
+  start_date = as.Date("2018-01-01"),
+  end_date = as.Date("2019-01-01"),
   page_size = 100,
-  next_page = "~null"
+  next_page = NULL
 )
 
 response <- OwnersApi$insider_transaction_filings_by_owner(identifier, opts)
@@ -328,8 +328,8 @@ identifier <- 430692
 # Optional params
 opts <- list(
   page_size = 100,
-  as_of_date = as.Date("\"2021-01-05\""),
-  next_page = "~null"
+  as_of_date = as.Date("2021-01-05"),
+  next_page = NULL
 )
 
 response <- OwnersApi$institutional_holdings_by_owner(identifier, opts)
@@ -418,9 +418,9 @@ query <- "Cook"
 
 # Optional params
 opts <- list(
-  institutional = "~null",
+  institutional = NULL,
   page_size = 100,
-  next_page = "~null"
+  next_page = NULL
 )
 
 response <- OwnersApi$search_owners(query, opts)
@@ -441,7 +441,7 @@ print(response$content)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | Character|  |  &nbsp;
- **institutional** | Logical| Returns insider owners who have filed forms 3, 4, or 5 with the SEC only. Possible values are true, false, or omit for both. | [optional]  &nbsp;
+ **institutional** | Logical| Returns insider owners who have filed forms 3, 4, or 5 with the SEC only. Possible values are TRUE, FALSE, or omit for both. | [optional]  &nbsp;
  **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
  **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
 <br/>

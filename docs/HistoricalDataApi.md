@@ -64,12 +64,12 @@ tag <- "marketcap"
 # Optional params
 opts <- list(
   frequency = "daily",
-  type = "~null",
-  start_date = as.Date("\"2015-01-01\""),
-  end_date = as.Date("\"~null\""),
+  type = NULL,
+  start_date = as.Date("2015-01-01"),
+  end_date = NULL,
   sort_order = "desc",
   page_size = 100,
-  next_page = "~null"
+  next_page = NULL
 )
 
 response <- HistoricalDataApi$get_historical_data(identifier, tag, opts)

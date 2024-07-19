@@ -71,13 +71,13 @@ FilingApi <- IntrinioSDK::FilingApi$new(client)
 opts <- list(
   company = "AAPL",
   report_type = "10-Q",
-  start_date = as.Date("\"2015-01-01\""),
-  end_date = as.Date("\"~null\""),
-  industry_category = "~null",
-  industry_group = "~null",
-  thea_enabled = "~null",
+  start_date = as.Date("2015-01-01"),
+  end_date = NULL,
+  industry_category = NULL,
+  industry_group = NULL,
+  thea_enabled = NULL,
   page_size = 100,
-  next_page = "~null"
+  next_page = NULL
 )
 
 response <- FilingApi$get_all_filings(opts)
@@ -169,13 +169,13 @@ FilingApi <- IntrinioSDK::FilingApi$new(client)
 # Optional params
 opts <- list(
   company = "AAPL",
-  report_type = "\"10-Q\"",
-  filing_start_date = as.Date("\"~null\""),
-  filing_end_date = as.Date("\"~null\""),
-  period_ended_start_date = as.Date("\"~null\""),
-  period_ended_end_date = as.Date("\"~null\""),
+  report_type = "10-Q",
+  filing_start_date = NULL,
+  filing_end_date = NULL,
+  period_ended_start_date = NULL,
+  period_ended_end_date = NULL,
   page_size = 100,
-  next_page = "~null"
+  next_page = NULL
 )
 
 response <- FilingApi$get_all_notes(opts)
@@ -431,13 +431,13 @@ identifier <- "fil_B73xBG"
 
 # Optional params
 opts <- list(
-  statement_code = "\"~null\"",
-  type = "\"~null\"",
-  fiscal_year = "~null",
-  fiscal_period = "\"~null\"",
-  start_date = as.Date("\"~null\""),
-  end_date = as.Date("\"~null\""),
-  next_page = "~null"
+  statement_code = NULL,
+  type = NULL,
+  fiscal_year = NULL,
+  fiscal_period = NULL,
+  start_date = NULL,
+  end_date = NULL,
+  next_page = NULL
 )
 
 response <- FilingApi$get_filing_fundamentals(identifier, opts)
@@ -938,8 +938,8 @@ query <- "inflation"
 
 # Optional params
 opts <- list(
-  filing_start_date = as.Date("\"2018-07-15\""),
-  filing_end_date = as.Date("\"2018-11-30\""),
+  filing_start_date = as.Date("2018-07-15"),
+  filing_end_date = as.Date("2018-11-30"),
   page_size = 100
 )
 

@@ -61,19 +61,19 @@ MunicipalityApi <- IntrinioSDK::MunicipalityApi$new(client)
 
 # Optional params
 opts <- list(
-  has_financials = "~null",
-  government_name = "~null",
-  government_type = "~null",
-  area_name = "~null",
-  area_type = "\"~null\"",
-  city = "~null",
-  state = "~null",
-  zipcode = "~null",
-  population_greater_than = "~null",
-  population_less_than = "~null",
-  enrollment_greater_than = "~null",
-  enrollment_less_than = "~null",
-  next_page = "~null"
+  has_financials = NULL,
+  government_name = NULL,
+  government_type = NULL,
+  area_name = NULL,
+  area_type = NULL,
+  city = NULL,
+  state = NULL,
+  zipcode = NULL,
+  population_greater_than = NULL,
+  population_less_than = NULL,
+  enrollment_greater_than = NULL,
+  enrollment_less_than = NULL,
+  next_page = NULL
 )
 
 response <- MunicipalityApi$get_all_municipalities(opts)

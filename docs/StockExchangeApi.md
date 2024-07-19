@@ -237,9 +237,9 @@ identifier <- "USCOMP"
 
 # Optional params
 opts <- list(
-  date = as.Date("\"2018-08-14\""),
+  date = as.Date("2018-08-14"),
   page_size = 100,
-  next_page = "~null"
+  next_page = NULL
 )
 
 response <- StockExchangeApi$get_stock_exchange_price_adjustments(identifier, opts)
@@ -328,9 +328,9 @@ identifier <- "USCOMP"
 
 # Optional params
 opts <- list(
-  date = as.Date("\"2018-08-14\""),
+  date = as.Date("2018-08-14"),
   page_size = 100,
-  next_page = "~null"
+  next_page = NULL
 )
 
 response <- StockExchangeApi$get_stock_exchange_prices(identifier, opts)
@@ -419,11 +419,11 @@ identifier <- "USCOMP"
 
 # Optional params
 opts <- list(
-  source = ["\"~null\""],
-  active_only = "~null",
+  source = [NULL],
+  active_only = NULL,
   page_size = 100,
-  tickers = ["~null"],
-  next_page = "~null"
+  tickers = [NULL],
+  next_page = NULL
 )
 
 response <- StockExchangeApi$get_stock_exchange_realtime_prices(identifier, opts)
@@ -515,7 +515,7 @@ identifier <- "USCOMP"
 # Optional params
 opts <- list(
   page_size = 100,
-  next_page = "~null"
+  next_page = NULL
 )
 
 response <- StockExchangeApi$get_stock_exchange_securities(identifier, opts)

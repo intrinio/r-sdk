@@ -66,7 +66,7 @@ ETFsApi <- IntrinioSDK::ETFsApi$new(client)
 opts <- list(
   exchange = "XNAS",
   page_size = 100,
-  next_page = "~null"
+  next_page = NULL
 )
 
 response <- ETFsApi$get_all_etfs(opts)
@@ -317,7 +317,7 @@ identifier <- "SPY"
 # Optional params
 opts <- list(
   page_size = 100,
-  next_page = "~null"
+  next_page = NULL
 )
 
 response <- ETFsApi$get_etf_holdings(identifier, opts)
@@ -486,7 +486,7 @@ query <- "iShares"
 
 # Optional params
 opts <- list(
-  mode = "\"~null\""
+  mode = NULL
 )
 
 response <- ETFsApi$search_etfs(query, opts)
