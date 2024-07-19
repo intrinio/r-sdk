@@ -117,25 +117,25 @@ SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Optional params
 opts <- list(
-  active = TRUE,
-  delisted = FALSE,
-  code = NULL,
-  currency = NULL,
-  ticker = NULL,
-  name = NULL,
-  composite_mic = NULL,
-  exchange_mic = NULL,
-  stock_prices_after = NULL,
-  stock_prices_before = NULL,
-  cik = NULL,
-  figi = NULL,
-  composite_figi = NULL,
-  share_class_figi = NULL,
-  figi_unique_id = NULL,
-  include_non_figi = FALSE,
+  active = true,
+  delisted = false,
+  code = "~null",
+  currency = "~null",
+  ticker = "~null",
+  name = "~null",
+  composite_mic = "~null",
+  exchange_mic = "~null",
+  stock_prices_after = as.Date("\"~null\""),
+  stock_prices_before = as.Date("\"~null\""),
+  cik = "~null",
+  figi = "~null",
+  composite_figi = "~null",
+  share_class_figi = "~null",
+  figi_unique_id = "~null",
+  include_non_figi = false,
   page_size = 100,
-  primary_listing = NULL,
-  next_page = NULL
+  primary_listing = "~null",
+  next_page = "~null"
 )
 
 response <- SecurityApi$get_all_securities(opts)
@@ -155,8 +155,8 @@ print(response$content)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **active** | Logical| When TRUE, return securities that are active. When FALSE, return securities that are not active. A security is considered active if it has traded or has had a corporate action in the past 30 days, and has not been merged into another security (such as due to ticker changes or corporate restructurings). | [optional]  &nbsp;
- **delisted** | Logical| When TRUE, return securities that have been delisted from their exchange. Note that there may be a newer security for the same company that has been relisted on a differente exchange. When FALSE, return securities that have not been delisted. | [optional]  &nbsp;
+ **active** | Logical| When true, return securities that are active. When false, return securities that are not active. A security is considered active if it has traded or has had a corporate action in the past 30 days, and has not been merged into another security (such as due to ticker changes or corporate restructurings). | [optional]  &nbsp;
+ **delisted** | Logical| When true, return securities that have been delisted from their exchange. Note that there may be a newer security for the same company that has been relisted on a differente exchange. When false, return securities that have not been delisted. | [optional]  &nbsp;
  **code** | Character| Return securities classified with the given code (&lt;a href&#x3D;\&quot;https://docs.intrinio.com/documentation/security_codes\&quot; target&#x3D;\&quot;_blank\&quot;&gt;reference&lt;/a&gt;). | [optional]  &nbsp;
  **currency** | Character| Return securities traded in the given 3-digit ISO 4217 currency code (&lt;a href&#x3D;\&quot;https://en.wikipedia.org/wiki/ISO_4217\&quot; target&#x3D;\&quot;_blank\&quot;&gt;reference&lt;/a&gt;). | [optional]  &nbsp;
  **ticker** | Character| Return securities traded with the given ticker. Note that securities across the world (and through time) may trade with the same ticker but represent different companies. Use this in conjuction with other parameters for more specificity. | [optional]  &nbsp;
@@ -170,9 +170,9 @@ Name | Type | Description  | Notes
  **composite_figi** | Character| Return securities with the given Country Composite FIGI (&lt;a href&#x3D;\&quot;https://www.openfigi.com/about\&quot; target&#x3D;\&quot;_blank\&quot;&gt;reference&lt;/a&gt;). | [optional]  &nbsp;
  **share_class_figi** | Character| Return securities with the given Global Share Class FIGI (&lt;a href&#x3D;\&quot;https://www.openfigi.com/about\&quot; target&#x3D;\&quot;_blank\&quot;&gt;reference&lt;/a&gt;). | [optional]  &nbsp;
  **figi_unique_id** | Character| Return securities with the given FIGI Unique ID (&lt;a href&#x3D;\&quot;https://www.openfigi.com/about\&quot; target&#x3D;\&quot;_blank\&quot;&gt;reference&lt;/a&gt;). | [optional]  &nbsp;
- **include_non_figi** | Logical| When TRUE, include securities that do not have a FIGI. By default, this is FALSE. If this parameter is not specified, only securities with a FIGI are returned. | [optional] [default to FALSE] &nbsp;
+ **include_non_figi** | Logical| When true, include securities that do not have a FIGI. By default, this is false. If this parameter is not specified, only securities with a FIGI are returned. | [optional] [default to false] &nbsp;
  **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
- **primary_listing** | Logical| If TRUE, the Security is the primary issue for the company, otherwise it is a secondary issue on a secondary stock exchange.  Returns both if omitted. | [optional]  &nbsp;
+ **primary_listing** | Logical| If true, the Security is the primary issue for the company, otherwise it is a secondary issue on a secondary stock exchange.  Returns both if omitted. | [optional]  &nbsp;
  **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
 <br/>
 
@@ -488,12 +488,12 @@ tag <- "adj_close_price"
 # Optional params
 opts <- list(
   frequency = "daily",
-  type = NULL,
-  start_date = as.Date("2018-01-01"),
-  end_date = NULL,
+  type = "~null",
+  start_date = as.Date("\"2018-01-01\""),
+  end_date = as.Date("\"~null\""),
   sort_order = "desc",
   page_size = 100,
-  next_page = NULL
+  next_page = "~null"
 )
 
 response <- SecurityApi$get_security_historical_data(identifier, tag, opts)
@@ -749,7 +749,7 @@ identifier <- "AAPL"
 
 # Optional params
 opts <- list(
-  next_page = NULL
+  next_page = "~null"
 )
 
 response <- SecurityApi$get_security_insider_ownership(identifier, opts)
@@ -833,8 +833,8 @@ SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Optional params
 opts <- list(
-  source = NULL,
-  open_time = as.POSIXlt(NULL, tz="UTC")
+  source = "\"~null\"",
+  open_time = as.POSIXlt("\"~null\"", tz="UTC")
 )
 
 response <- SecurityApi$get_security_interval_movers(opts)
@@ -918,8 +918,8 @@ SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Optional params
 opts <- list(
-  source = NULL,
-  open_time = as.POSIXlt(NULL, tz="UTC")
+  source = "\"~null\"",
+  open_time = as.POSIXlt("\"~null\"", tz="UTC")
 )
 
 response <- SecurityApi$get_security_interval_movers_change(opts)
@@ -1003,8 +1003,8 @@ SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Optional params
 opts <- list(
-  source = NULL,
-  open_time = as.POSIXlt(NULL, tz="UTC")
+  source = "\"~null\"",
+  open_time = as.POSIXlt("\"~null\"", tz="UTC")
 )
 
 response <- SecurityApi$get_security_interval_movers_volume(opts)
@@ -1092,15 +1092,15 @@ interval_size <- "15m"
 
 # Optional params
 opts <- list(
-  source = NULL,
-  start_date = as.Date("2023-01-01"),
-  start_time = NULL,
-  end_date = as.Date("2023-02-01"),
-  end_time = NULL,
+  source = "\"~null\"",
+  start_date = as.Date("\"2023-01-01\""),
+  start_time = "~null",
+  end_date = as.Date("\"2023-02-01\""),
+  end_time = "~null",
   timezone = "UTC",
   page_size = 100,
-  split_adjusted = FALSE,
-  next_page = NULL
+  split_adjusted = false,
+  next_page = "~null"
 )
 
 response <- SecurityApi$get_security_interval_prices(identifier, interval_size, opts)
@@ -1129,7 +1129,7 @@ Name | Type | Description  | Notes
  **end_time** | Character| Return intervals stopping at the specified time on the &#x60;end_date&#x60; (24-hour in &#39;hh:mm:ss&#39; format) | [optional]  &nbsp;
  **timezone** | Character| Returns trading times in this timezone | [optional] [default to UTC] &nbsp;
  **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
- **split_adjusted** | Logical| Whether to return the values adjusted for splits or not. Default is FALSE. | [optional] [default to FALSE] &nbsp;
+ **split_adjusted** | Logical| Whether to return the values adjusted for splits or not. Default is false. | [optional] [default to false] &nbsp;
  **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
 <br/>
 
@@ -1196,13 +1196,13 @@ identifier <- "AAPL"
 
 # Optional params
 opts <- list(
-  source = NULL,
-  start_date = as.Date("2018-01-01"),
-  start_time = NULL,
-  end_date = as.Date("2019-01-01"),
-  end_time = NULL,
+  source = "\"~null\"",
+  start_date = as.Date("\"2018-01-01\""),
+  start_time = "~null",
+  end_date = as.Date("\"2019-01-01\""),
+  end_time = "~null",
   page_size = 100,
-  next_page = NULL
+  next_page = "~null"
 )
 
 response <- SecurityApi$get_security_intraday_prices(identifier, opts)
@@ -1460,7 +1460,7 @@ opts <- list(
   start_date = "2018-01-01",
   end_date = "2019-01-01",
   page_size = 100,
-  next_page = NULL
+  next_page = "~null"
 )
 
 response <- SecurityApi$get_security_price_technicals_adi(identifier, opts)
@@ -1554,7 +1554,7 @@ opts <- list(
   start_date = "2018-01-01",
   end_date = "2019-01-01",
   page_size = 100,
-  next_page = NULL
+  next_page = "~null"
 )
 
 response <- SecurityApi$get_security_price_technicals_adtv(identifier, opts)
@@ -1649,7 +1649,7 @@ opts <- list(
   start_date = "2018-01-01",
   end_date = "2019-01-01",
   page_size = 100,
-  next_page = NULL
+  next_page = "~null"
 )
 
 response <- SecurityApi$get_security_price_technicals_adx(identifier, opts)
@@ -1745,7 +1745,7 @@ opts <- list(
   start_date = "2018-01-01",
   end_date = "2019-01-01",
   page_size = 100,
-  next_page = NULL
+  next_page = "~null"
 )
 
 response <- SecurityApi$get_security_price_technicals_ao(identifier, opts)
@@ -1841,7 +1841,7 @@ opts <- list(
   start_date = "2018-01-01",
   end_date = "2019-01-01",
   page_size = 100,
-  next_page = NULL
+  next_page = "~null"
 )
 
 response <- SecurityApi$get_security_price_technicals_atr(identifier, opts)
@@ -1938,7 +1938,7 @@ opts <- list(
   start_date = "2018-01-01",
   end_date = "2019-01-01",
   page_size = 100,
-  next_page = NULL
+  next_page = "~null"
 )
 
 response <- SecurityApi$get_security_price_technicals_bb(identifier, opts)
@@ -2036,7 +2036,7 @@ opts <- list(
   start_date = "2018-01-01",
   end_date = "2019-01-01",
   page_size = 100,
-  next_page = NULL
+  next_page = "~null"
 )
 
 response <- SecurityApi$get_security_price_technicals_cci(identifier, opts)
@@ -2132,7 +2132,7 @@ opts <- list(
   start_date = "2018-01-01",
   end_date = "2019-01-01",
   page_size = 100,
-  next_page = NULL
+  next_page = "~null"
 )
 
 response <- SecurityApi$get_security_price_technicals_cmf(identifier, opts)
@@ -2228,7 +2228,7 @@ opts <- list(
   start_date = "2018-01-01",
   end_date = "2019-01-01",
   page_size = 100,
-  next_page = NULL
+  next_page = "~null"
 )
 
 response <- SecurityApi$get_security_price_technicals_dc(identifier, opts)
@@ -2325,7 +2325,7 @@ opts <- list(
   start_date = "2018-01-01",
   end_date = "2019-01-01",
   page_size = 100,
-  next_page = NULL
+  next_page = "~null"
 )
 
 response <- SecurityApi$get_security_price_technicals_dpo(identifier, opts)
@@ -2421,7 +2421,7 @@ opts <- list(
   start_date = "2018-01-01",
   end_date = "2019-01-01",
   page_size = 100,
-  next_page = NULL
+  next_page = "~null"
 )
 
 response <- SecurityApi$get_security_price_technicals_eom(identifier, opts)
@@ -2515,7 +2515,7 @@ opts <- list(
   start_date = "2018-01-01",
   end_date = "2019-01-01",
   page_size = 100,
-  next_page = NULL
+  next_page = "~null"
 )
 
 response <- SecurityApi$get_security_price_technicals_fi(identifier, opts)
@@ -2611,7 +2611,7 @@ opts <- list(
   start_date = "2018-01-01",
   end_date = "2019-01-01",
   page_size = 100,
-  next_page = NULL
+  next_page = "~null"
 )
 
 response <- SecurityApi$get_security_price_technicals_ichimoku(identifier, opts)
@@ -2708,7 +2708,7 @@ opts <- list(
   start_date = "2018-01-01",
   end_date = "2019-01-01",
   page_size = 100,
-  next_page = NULL
+  next_page = "~null"
 )
 
 response <- SecurityApi$get_security_price_technicals_kc(identifier, opts)
@@ -2811,7 +2811,7 @@ opts <- list(
   start_date = "2018-01-01",
   end_date = "2019-01-01",
   page_size = 100,
-  next_page = NULL
+  next_page = "~null"
 )
 
 response <- SecurityApi$get_security_price_technicals_kst(identifier, opts)
@@ -2917,7 +2917,7 @@ opts <- list(
   start_date = "2018-01-01",
   end_date = "2019-01-01",
   page_size = 100,
-  next_page = NULL
+  next_page = "~null"
 )
 
 response <- SecurityApi$get_security_price_technicals_macd(identifier, opts)
@@ -3015,7 +3015,7 @@ opts <- list(
   start_date = "2018-01-01",
   end_date = "2019-01-01",
   page_size = 100,
-  next_page = NULL
+  next_page = "~null"
 )
 
 response <- SecurityApi$get_security_price_technicals_mfi(identifier, opts)
@@ -3111,7 +3111,7 @@ opts <- list(
   start_date = "2018-01-01",
   end_date = "2019-01-01",
   page_size = 100,
-  next_page = NULL
+  next_page = "~null"
 )
 
 response <- SecurityApi$get_security_price_technicals_mi(identifier, opts)
@@ -3206,7 +3206,7 @@ opts <- list(
   start_date = "2018-01-01",
   end_date = "2019-01-01",
   page_size = 100,
-  next_page = NULL
+  next_page = "~null"
 )
 
 response <- SecurityApi$get_security_price_technicals_nvi(identifier, opts)
@@ -3299,7 +3299,7 @@ opts <- list(
   start_date = "2018-01-01",
   end_date = "2019-01-01",
   page_size = 100,
-  next_page = NULL
+  next_page = "~null"
 )
 
 response <- SecurityApi$get_security_price_technicals_obv(identifier, opts)
@@ -3393,7 +3393,7 @@ opts <- list(
   start_date = "2018-01-01",
   end_date = "2019-01-01",
   page_size = 100,
-  next_page = NULL
+  next_page = "~null"
 )
 
 response <- SecurityApi$get_security_price_technicals_obv_mean(identifier, opts)
@@ -3489,7 +3489,7 @@ opts <- list(
   start_date = "2018-01-01",
   end_date = "2019-01-01",
   page_size = 100,
-  next_page = NULL
+  next_page = "~null"
 )
 
 response <- SecurityApi$get_security_price_technicals_rsi(identifier, opts)
@@ -3586,7 +3586,7 @@ opts <- list(
   start_date = "2018-01-01",
   end_date = "2019-01-01",
   page_size = 100,
-  next_page = NULL
+  next_page = "~null"
 )
 
 response <- SecurityApi$get_security_price_technicals_sma(identifier, opts)
@@ -3683,7 +3683,7 @@ opts <- list(
   start_date = "2018-01-01",
   end_date = "2019-01-01",
   page_size = 100,
-  next_page = NULL
+  next_page = "~null"
 )
 
 response <- SecurityApi$get_security_price_technicals_sr(identifier, opts)
@@ -3779,7 +3779,7 @@ opts <- list(
   start_date = "2018-01-01",
   end_date = "2019-01-01",
   page_size = 100,
-  next_page = NULL
+  next_page = "~null"
 )
 
 response <- SecurityApi$get_security_price_technicals_trix(identifier, opts)
@@ -3876,7 +3876,7 @@ opts <- list(
   start_date = "2018-01-01",
   end_date = "2019-01-01",
   page_size = 100,
-  next_page = NULL
+  next_page = "~null"
 )
 
 response <- SecurityApi$get_security_price_technicals_tsi(identifier, opts)
@@ -3978,7 +3978,7 @@ opts <- list(
   start_date = "2018-01-01",
   end_date = "2019-01-01",
   page_size = 100,
-  next_page = NULL
+  next_page = "~null"
 )
 
 response <- SecurityApi$get_security_price_technicals_uo(identifier, opts)
@@ -4078,7 +4078,7 @@ opts <- list(
   start_date = "2018-01-01",
   end_date = "2019-01-01",
   page_size = 100,
-  next_page = NULL
+  next_page = "~null"
 )
 
 response <- SecurityApi$get_security_price_technicals_vi(identifier, opts)
@@ -4172,7 +4172,7 @@ opts <- list(
   start_date = "2018-01-01",
   end_date = "2019-01-01",
   page_size = 100,
-  next_page = NULL
+  next_page = "~null"
 )
 
 response <- SecurityApi$get_security_price_technicals_vpt(identifier, opts)
@@ -4265,7 +4265,7 @@ opts <- list(
   start_date = "2018-01-01",
   end_date = "2019-01-01",
   page_size = 100,
-  next_page = NULL
+  next_page = "~null"
 )
 
 response <- SecurityApi$get_security_price_technicals_vwap(identifier, opts)
@@ -4359,7 +4359,7 @@ opts <- list(
   start_date = "2018-01-01",
   end_date = "2019-01-01",
   page_size = 100,
-  next_page = NULL
+  next_page = "~null"
 )
 
 response <- SecurityApi$get_security_price_technicals_wr(identifier, opts)
@@ -4450,7 +4450,7 @@ identifier <- "AAPL"
 
 # Optional params
 opts <- list(
-  source = "bats"
+  source = ["\"iex\""]
 )
 
 response <- SecurityApi$get_security_realtime_price(identifier, opts)
@@ -4471,7 +4471,7 @@ print(response$content)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **identifier** | Character| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) |  &nbsp;
- **source** | Character| Return the realtime price from the specified data source. If no source is specified, the best source available is used. | [optional]  &nbsp;
+ **source** | [**Character**](Character.md)| Return the realtime price from the specified data source. If no source is specified, the best source available is used. | [optional]  &nbsp;
 <br/>
 
 [//]: # (END_PARAMETERS)
@@ -4533,8 +4533,8 @@ client$configuration$allowRetries <- TRUE
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
-subsource <- NULL
-date <- NULL
+subsource <- "\"~null\""
+date <- as.Date("\"~null\"")
 
 response <- SecurityApi$get_security_replay_file(subsource, date)
 
@@ -4617,7 +4617,7 @@ SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Optional params
 opts <- list(
-  at_datetime = as.POSIXlt(NULL, tz="UTC")
+  at_datetime = as.POSIXlt("\"~null\"", tz="UTC")
 )
 
 response <- SecurityApi$get_security_snapshots(opts)
@@ -4703,10 +4703,10 @@ identifier <- "AAPL"
 
 # Optional params
 opts <- list(
-  start_date = as.Date("2018-01-01"),
-  end_date = as.Date("2019-01-01"),
+  start_date = as.Date("\"2018-01-01\""),
+  end_date = as.Date("\"2019-01-01\""),
   page_size = 100,
-  next_page = NULL
+  next_page = "~null"
 )
 
 response <- SecurityApi$get_security_stock_price_adjustments(identifier, opts)
@@ -4796,11 +4796,11 @@ identifier <- "AAPL"
 
 # Optional params
 opts <- list(
-  start_date = as.Date("2018-01-01"),
-  end_date = as.Date("2019-01-01"),
+  start_date = as.Date("\"2018-01-01\""),
+  end_date = as.Date("\"2019-01-01\""),
   frequency = "daily",
   page_size = 100,
-  next_page = NULL
+  next_page = "~null"
 )
 
 response <- SecurityApi$get_security_stock_prices(identifier, opts)
@@ -4887,19 +4887,19 @@ client$configuration$allowRetries <- TRUE
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
-source <- NULL
+source <- "\"~null\""
 
 # Optional params
 opts <- list(
-  start_date = NULL,
-  start_time = NULL,
-  end_date = NULL,
-  end_time = NULL,
+  start_date = as.Date("\"~null\""),
+  start_time = "~null",
+  end_date = as.Date("\"~null\""),
+  end_time = "~null",
   timezone = "UTC",
   page_size = 100,
-  darkpool_only = FALSE,
+  darkpool_only = false,
   min_size = 100,
-  next_page = NULL
+  next_page = "~null"
 )
 
 response <- SecurityApi$get_security_trades(source, opts)
@@ -4926,7 +4926,7 @@ Name | Type | Description  | Notes
  **end_time** | Character| The end time for the data being requested. | [optional]  &nbsp;
  **timezone** | Character| The timezone the start and end date/times use. | [optional] [default to UTC] &nbsp;
  **page_size** | Integer| The maximum number of results to return per page. | [optional] [default to 100] &nbsp;
- **darkpool_only** | Logical| Set to TRUE to show only darkpool trades | [optional] [default to FALSE] &nbsp;
+ **darkpool_only** | Logical| Set to true to show only darkpool trades | [optional] [default to false] &nbsp;
  **min_size** | Integer| Trades must be larger or equal to this size. | [optional]  &nbsp;
  **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
 <br/>
@@ -4991,19 +4991,19 @@ SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
 identifier <- "AAPL"
-source <- NULL
+source <- "\"~null\""
 
 # Optional params
 opts <- list(
-  start_date = NULL,
-  start_time = NULL,
-  end_date = NULL,
-  end_time = NULL,
+  start_date = as.Date("\"~null\""),
+  start_time = "~null",
+  end_date = as.Date("\"~null\""),
+  end_time = "~null",
   timezone = "UTC",
-  darkpool_only = FALSE,
+  darkpool_only = false,
   page_size = 100,
   min_size = 100,
-  next_page = NULL
+  next_page = "~null"
 )
 
 response <- SecurityApi$get_security_trades_by_symbol(identifier, source, opts)
@@ -5024,13 +5024,13 @@ print(response$content)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **identifier** | Character| The ticker symbol for which trades are being requested. |  &nbsp;
- **source** | Character| The specific source of the data being requested.  Specifying delayed sip will result in the system automatically determining which delayed sip source (cta_delayed, cta_b_delayed, utp_delayed) to use. |  &nbsp;
+ **source** | Character| The specific source of the data being requested.  Specifying delayed sip will result in the system automatically determining which delayed sip source (cta_delayed, cta_b_delayed, utp_delayed, otc_delayed) to use. |  &nbsp;
  **start_date** | Date| The start date for the data being requested. | [optional]  &nbsp;
  **start_time** | Character| The start time for the data being requested. | [optional]  &nbsp;
  **end_date** | Date| The end date for the data being requested. | [optional]  &nbsp;
  **end_time** | Character| The end time for the data being requested. | [optional]  &nbsp;
  **timezone** | Character| The timezone the start and end date/times use. | [optional] [default to UTC] &nbsp;
- **darkpool_only** | Logical| Set to TRUE to show only darkpool trades | [optional] [default to FALSE] &nbsp;
+ **darkpool_only** | Logical| Set to true to show only darkpool trades | [optional] [default to false] &nbsp;
  **page_size** | Integer| The maximum number of results to return per page. | [optional] [default to 100] &nbsp;
  **min_size** | Integer| Trades must be larger or equal to this size. | [optional]  &nbsp;
  **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
@@ -5099,22 +5099,22 @@ identifier <- "AAPL"
 
 # Optional params
 opts <- list(
-  start_date = NULL,
-  end_date = NULL,
-  mean_greater = NULL,
-  mean_less = NULL,
-  strong_buys_greater = NULL,
-  strong_buys_less = NULL,
-  buys_greater = NULL,
-  buys_less = NULL,
-  holds_greater = NULL,
-  holds_less = NULL,
-  sells_greater = NULL,
-  sells_less = NULL,
-  strong_sells_greater = NULL,
-  strong_sells_less = NULL,
-  total_greater = NULL,
-  total_less = NULL,
+  start_date = "~null",
+  end_date = "~null",
+  mean_greater = "~null",
+  mean_less = "~null",
+  strong_buys_greater = "~null",
+  strong_buys_less = "~null",
+  buys_greater = "~null",
+  buys_less = "~null",
+  holds_greater = "~null",
+  holds_less = "~null",
+  sells_greater = "~null",
+  sells_less = "~null",
+  strong_sells_greater = "~null",
+  strong_sells_less = "~null",
+  total_greater = "~null",
+  total_less = "~null",
   page_size = 100
 )
 
@@ -5218,7 +5218,7 @@ identifier <- "AAPL"
 
 # Optional params
 opts <- list(
-  date = NULL
+  date = "~null"
 )
 
 response <- SecurityApi$get_security_zacks_analyst_ratings_snapshot(identifier, opts)
@@ -5306,7 +5306,7 @@ identifier <- "AAPL"
 # Optional params
 opts <- list(
   page_size = 100,
-  next_page = NULL
+  next_page = "~null"
 )
 
 response <- SecurityApi$get_security_zacks_eps_surprises(identifier, opts)
@@ -5395,7 +5395,7 @@ identifier <- "AAPL"
 # Optional params
 opts <- list(
   page_size = 100,
-  next_page = NULL
+  next_page = "~null"
 )
 
 response <- SecurityApi$get_security_zacks_sales_surprises(identifier, opts)
@@ -5483,7 +5483,7 @@ opts <- list(
   logic = IntrinioSDK::SecurityScreenGroup$new(),
   order_column = "marketcap",
   order_direction = "asc",
-  primary_only = FALSE,
+  primary_only = false,
   page_size = 100
 )
 
@@ -5507,7 +5507,7 @@ Name | Type | Description  | Notes
  **logic** | [**SecurityScreenGroup**](SecurityScreenGroup.md)| The logic to screen with, consisting of operators, clauses, and nested groups. &lt;/br&gt; See &lt;a href&#x3D;\&quot;https://docs.intrinio.com/documentation/screener_v2\&quot; target&#x3D;\&quot;_blank\&quot;&gt;screener documentation&lt;/a&gt; for details on how to construct conditions. | [optional]  &nbsp;
  **order_column** | Character| Results returned sorted by this column | [optional]  &nbsp;
  **order_direction** | Character| Sort order to use with the order_column | [optional] [default to asc] &nbsp;
- **primary_only** | Logical| Return only primary securities | [optional] [default to FALSE] &nbsp;
+ **primary_only** | Logical| Return only primary securities | [optional] [default to false] &nbsp;
  **page_size** | Integer| The number of results to return. Maximum for this endpoint is 50000. | [optional] [default to 100] &nbsp;
 <br/>
 

@@ -61,13 +61,13 @@ DataTagApi <- IntrinioSDK::DataTagApi$new(client)
 
 # Optional params
 opts <- list(
-  tag = NULL,
-  type = NULL,
-  parent = NULL,
-  statement_code = "income_statement",
+  tag = "~null",
+  type = "~null",
+  parent = "~null",
+  statement_code = "\"income_statement\"",
   fs_template = "industrial",
   page_size = 100,
-  next_page = NULL
+  next_page = "~null"
 )
 
 response <- DataTagApi$get_all_data_tags(opts)

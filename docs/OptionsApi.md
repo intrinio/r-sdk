@@ -23,6 +23,7 @@ Method | HTTP request | Description
 [**get_options_prices_batch_realtime**](OptionsApi.md#get_options_prices_batch_realtime) | **POST** /options/prices/realtime/batch | Option Prices Batch Realtime
 [**get_options_prices_eod**](OptionsApi.md#get_options_prices_eod) | **GET** /options/prices/{identifier}/eod | Option Prices EOD
 [**get_options_prices_realtime**](OptionsApi.md#get_options_prices_realtime) | **GET** /options/prices/{identifier}/realtime | Option Prices Realtime
+[**get_options_prices_realtime_by_ticker**](OptionsApi.md#get_options_prices_realtime_by_ticker) | **GET** /options/prices/by_ticker/{symbol}/realtime | Option Prices Realtime By Ticker
 [**get_options_snapshots**](OptionsApi.md#get_options_snapshots) | **GET** /options/snapshots | Option Prices Realtime Snapshot
 [**get_options_stats_realtime**](OptionsApi.md#get_options_stats_realtime) | **GET** /options/prices/{identifier}/realtime/stats | Option Stats Realtime
 [**get_unusual_activity**](OptionsApi.md#get_unusual_activity) | **GET** /options/unusual_activity/{symbol} | Options Unusual Activity
@@ -245,8 +246,8 @@ symbol <- "MSFT"
 opts <- list(
   after = "2022-01-01",
   before = "2023-04-01",
-  source = NULL,
-  include_related_symbols = FALSE
+  source = "\"~null\"",
+  include_related_symbols = false
 )
 
 response <- OptionsApi$get_option_expirations_realtime(symbol, opts)
@@ -337,11 +338,11 @@ strike <- 95
 
 # Optional params
 opts <- list(
-  source = NULL,
-  stock_price_source = NULL,
-  model = NULL,
-  show_extended_price = NULL,
-  include_related_symbols = FALSE
+  source = "\"~null\"",
+  stock_price_source = "\"~null\"",
+  model = "\"~null\"",
+  show_extended_price = "~null",
+  include_related_symbols = false
 )
 
 response <- OptionsApi$get_option_strikes_realtime(symbol, strike, opts)
@@ -433,7 +434,7 @@ symbol <- "AAPL"
 
 # Optional params
 opts <- list(
-  type = "put",
+  type = "\"put\"",
   strike = 170,
   strike_greater_than = 150,
   strike_less_than = 190,
@@ -441,7 +442,7 @@ opts <- list(
   expiration_after = "2019-01-01",
   expiration_before = "2019-12-31",
   page_size = 100,
-  next_page = NULL
+  next_page = "~null"
 )
 
 response <- OptionsApi$get_options(symbol, opts)
@@ -536,15 +537,15 @@ symbol <- "AAPL"
 
 # Optional params
 opts <- list(
-  type = "put",
+  type = "\"put\"",
   strike = 170,
   strike_greater_than = 150,
   strike_less_than = 190,
   expiration = "2022-04-16",
   expiration_after = "2022-01-01",
   expiration_before = "2023-12-31",
-  source = NULL,
-  include_related_symbols = FALSE
+  source = "\"~null\"",
+  include_related_symbols = false
 )
 
 response <- OptionsApi$get_options_by_symbol_realtime(symbol, opts)
@@ -640,12 +641,12 @@ expiration <- "2019-04-05"
 
 # Optional params
 opts <- list(
-  date = NULL,
-  type = NULL,
-  strike = NULL,
-  strike_greater_than = NULL,
-  strike_less_than = NULL,
-  moneyness = NULL,
+  date = as.Date("\"~null\""),
+  type = "\"~null\"",
+  strike = "~null",
+  strike_greater_than = "~null",
+  strike_less_than = "~null",
+  moneyness = "\"~null\"",
   page_size = 100
 )
 
@@ -741,12 +742,12 @@ expiration <- "2023-01-20"
 
 # Optional params
 opts <- list(
-  type = NULL,
-  strike = NULL,
-  strike_greater_than = NULL,
-  strike_less_than = NULL,
-  date = NULL,
-  include_related_symbols = FALSE
+  type = "\"~null\"",
+  strike = "~null",
+  strike_greater_than = "~null",
+  strike_less_than = "~null",
+  date = as.Date("\"~null\""),
+  include_related_symbols = false
 )
 
 response <- OptionsApi$get_options_chain_eod(symbol, expiration, opts)
@@ -840,20 +841,20 @@ expiration <- "2023-01-20"
 
 # Optional params
 opts <- list(
-  source = NULL,
-  type = NULL,
-  strike = NULL,
-  strike_greater_than = NULL,
-  strike_less_than = NULL,
-  volume_greater_than = NULL,
-  volume_less_than = NULL,
-  open_interest_greater_than = NULL,
-  open_interest_less_than = NULL,
-  moneyness = NULL,
-  stock_price_source = NULL,
-  model = NULL,
-  show_extended_price = NULL,
-  include_related_symbols = FALSE
+  source = "\"~null\"",
+  type = "\"~null\"",
+  strike = "~null",
+  strike_greater_than = "~null",
+  strike_less_than = "~null",
+  volume_greater_than = "~null",
+  volume_less_than = "~null",
+  open_interest_greater_than = "~null",
+  open_interest_less_than = "~null",
+  moneyness = "\"~null\"",
+  stock_price_source = "\"~null\"",
+  model = "\"~null\"",
+  show_extended_price = "~null",
+  include_related_symbols = false
 )
 
 response <- OptionsApi$get_options_chain_realtime(symbol, expiration, opts)
@@ -1045,7 +1046,7 @@ symbol <- "MSFT"
 opts <- list(
   after = "2019-01-01",
   before = "2019-12-31",
-  include_related_symbols = FALSE
+  include_related_symbols = false
 )
 
 response <- OptionsApi$get_options_expirations_eod(symbol, opts)
@@ -1131,13 +1132,13 @@ OptionsApi <- IntrinioSDK::OptionsApi$new(client)
 
 # Required params
 identifier <- "SPY___230103P00380000"
-interval_size <- "5m"
+interval_size <- "\"5m\""
 
 # Optional params
 opts <- list(
-  source = NULL,
+  source = "\"~null\"",
   page_size = 100,
-  end_time = as.POSIXlt(NULL, tz="UTC")
+  end_time = as.POSIXlt("\"~null\"", tz="UTC")
 )
 
 response <- OptionsApi$get_options_interval_by_contract(identifier, interval_size, opts)
@@ -1224,8 +1225,8 @@ OptionsApi <- IntrinioSDK::OptionsApi$new(client)
 
 # Optional params
 opts <- list(
-  source = NULL,
-  open_time = as.POSIXlt(NULL, tz="UTC")
+  source = "\"~null\"",
+  open_time = as.POSIXlt("\"~null\"", tz="UTC")
 )
 
 response <- OptionsApi$get_options_interval_movers(opts)
@@ -1309,8 +1310,8 @@ OptionsApi <- IntrinioSDK::OptionsApi$new(client)
 
 # Optional params
 opts <- list(
-  source = NULL,
-  open_time = as.POSIXlt(NULL, tz="UTC")
+  source = "\"~null\"",
+  open_time = as.POSIXlt("\"~null\"", tz="UTC")
 )
 
 response <- OptionsApi$get_options_interval_movers_change(opts)
@@ -1394,8 +1395,8 @@ OptionsApi <- IntrinioSDK::OptionsApi$new(client)
 
 # Optional params
 opts <- list(
-  source = NULL,
-  open_time = as.POSIXlt(NULL, tz="UTC")
+  source = "\"~null\"",
+  open_time = as.POSIXlt("\"~null\"", tz="UTC")
 )
 
 response <- OptionsApi$get_options_interval_movers_volume(opts)
@@ -1485,7 +1486,7 @@ opts <- list(
   start_date = "2019-01-01",
   end_date = "2019-12-31",
   page_size = 100,
-  next_page = NULL
+  next_page = "~null"
 )
 
 response <- OptionsApi$get_options_prices(identifier, opts)
@@ -1578,11 +1579,11 @@ body <- list(
 
 # Optional params
 opts <- list(
-  source = NULL,
-  show_stats = NULL,
-  stock_price_source = NULL,
-  model = NULL,
-  show_extended_price = NULL
+  source = "\"~null\"",
+  show_stats = "~null",
+  stock_price_source = "\"~null\"",
+  model = "\"~null\"",
+  show_extended_price = "~null"
 )
 
 response <- OptionsApi$get_options_prices_batch_realtime(body, opts)
@@ -1673,9 +1674,9 @@ identifier <- "AAPL230616P00190000"
 
 # Optional params
 opts <- list(
-  next_page = NULL,
-  start_date = NULL,
-  end_date = NULL
+  next_page = "~null",
+  start_date = as.Date("\"~null\""),
+  end_date = as.Date("\"~null\"")
 )
 
 response <- OptionsApi$get_options_prices_eod(identifier, opts)
@@ -1764,10 +1765,10 @@ identifier <- "AAPL230120C00090000"
 
 # Optional params
 opts <- list(
-  source = NULL,
-  stock_price_source = NULL,
-  model = NULL,
-  show_extended_price = NULL
+  source = "\"~null\"",
+  stock_price_source = "\"~null\"",
+  model = "\"~null\"",
+  show_extended_price = "~null"
 )
 
 response <- OptionsApi$get_options_prices_realtime(identifier, opts)
@@ -1799,6 +1800,105 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ApiResponseOptionsPriceRealtime**](ApiResponseOptionsPriceRealtime.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:IntrinioSDK::OptionsApi)
+
+[//]: # (METHOD:get_options_prices_realtime_by_ticker)
+
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseOptionsPricesByTickerRealtime)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:ApiResponseOptionsPricesByTickerRealtime.md)
+
+[//]: # (OPERATION:get_options_prices_realtime_by_ticker_v2)
+
+[//]: # (ENDPOINT:/options/prices/by_ticker/{symbol}/realtime)
+
+[//]: # (DOCUMENT_LINK:OptionsApi.md#get_options_prices_realtime_by_ticker)
+
+# **get_options_prices_realtime_by_ticker**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/r/get_options_prices_realtime_by_ticker_v2)
+
+[//]: # (START_OVERVIEW)
+
+> ApiResponseOptionsPricesByTickerRealtime get_options_prices_realtime_by_ticker(symbol, opts)
+
+#### Option Prices Realtime By Ticker
+
+
+Returns a list of the latest National Best Bid & Offer (NBBO) top of the order book size and premium (bid / ask), the latest trade size and premium as well as the greeks and implied volatility for all option contracts currently associated with the ticker.
+
+[//]: # (END_OVERVIEW)
+
+### Example
+
+[//]: # (START_CODE_EXAMPLE)
+```r
+# Setup client
+client <- IntrinioSDK::ApiClient$new()
+
+# Configure API key authorization: ApiKeyAuth
+client$configuration$apiKey <- "YOUR_API_KEY"
+
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
+# Setup API with client
+OptionsApi <- IntrinioSDK::OptionsApi$new(client)
+
+# Required params
+symbol <- "MSFT"
+
+# Optional params
+opts <- list(
+  source = "\"~null\"",
+  iv_mode = "\"~null\"",
+  next_page = "~null",
+  page_size = 250,
+  stock_price_source = "\"~null\"",
+  model = "\"~null\"",
+  show_extended_price = "~null"
+)
+
+response <- OptionsApi$get_options_prices_realtime_by_ticker(symbol, opts)
+
+print(response)
+print(response$content)
+```
+
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **symbol** | Character| The equities ticker symbol, corresponding to the underlying security. |  &nbsp;
+ **source** | Character| Realtime or 15-minute delayed contracts. | [optional]  &nbsp;
+ **iv_mode** | Character| Change the mode for the implied volatility calculation to out of the money. | [optional]  &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 250] &nbsp;
+ **stock_price_source** | Character| Source for underlying price for calculating Greeks. | [optional]  &nbsp;
+ **model** | Character| Model for calculating Greek values. Default is black_scholes. | [optional]  &nbsp;
+ **show_extended_price** | Logical| Whether to include open close high low type fields. | [optional]  &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**ApiResponseOptionsPricesByTickerRealtime**](ApiResponseOptionsPricesByTickerRealtime.md)
 
 [//]: # (END_OPERATION)
 
@@ -1854,8 +1954,8 @@ OptionsApi <- IntrinioSDK::OptionsApi$new(client)
 
 # Optional params
 opts <- list(
-  source = NULL,
-  at_datetime = as.POSIXlt(NULL, tz="UTC")
+  source = "\"~null\"",
+  at_datetime = as.POSIXlt("\"~null\"", tz="UTC")
 )
 
 response <- OptionsApi$get_options_snapshots(opts)
@@ -1942,8 +2042,8 @@ identifier <- "AAPL230120C00090000"
 
 # Optional params
 opts <- list(
-  source = NULL,
-  show_extended_price = NULL
+  source = "\"~null\"",
+  show_extended_price = "~null"
 )
 
 response <- OptionsApi$get_options_stats_realtime(identifier, opts)
@@ -2031,7 +2131,7 @@ symbol <- "AAPL"
 
 # Optional params
 opts <- list(
-  source = NULL
+  source = "\"~null\""
 )
 
 response <- OptionsApi$get_unusual_activity(symbol, opts)
@@ -2118,12 +2218,12 @@ symbol <- "AAPL"
 
 # Optional params
 opts <- list(
-  next_page = NULL,
+  next_page = "~null",
   page_size = 1000,
-  activity_type = NULL,
-  sentiment = NULL,
-  start_date = as.Date("2022-02-01"),
-  end_date = as.Date("2022-02-03"),
+  activity_type = "\"~null\"",
+  sentiment = "\"~null\"",
+  start_date = as.Date("\"2022-02-01\""),
+  end_date = as.Date("\"2022-02-03\""),
   minimum_total_value = IntrinioSDK::TODO_OBJECT_MAPPING$new(),
   maximum_total_value = IntrinioSDK::TODO_OBJECT_MAPPING$new()
 )
@@ -2216,7 +2316,7 @@ OptionsApi <- IntrinioSDK::OptionsApi$new(client)
 
 # Optional params
 opts <- list(
-  source = NULL
+  source = "\"~null\""
 )
 
 response <- OptionsApi$get_unusual_activity_universal(opts)
@@ -2299,12 +2399,12 @@ OptionsApi <- IntrinioSDK::OptionsApi$new(client)
 
 # Optional params
 opts <- list(
-  next_page = NULL,
+  next_page = "~null",
   page_size = 1000,
-  activity_type = NULL,
-  sentiment = NULL,
-  start_date = as.Date("2022-02-01"),
-  end_date = as.Date("2022-02-03"),
+  activity_type = "\"~null\"",
+  sentiment = "\"~null\"",
+  start_date = as.Date("\"2022-02-01\""),
+  end_date = as.Date("\"2022-02-03\""),
   minimum_total_value = IntrinioSDK::TODO_OBJECT_MAPPING$new(),
   maximum_total_value = IntrinioSDK::TODO_OBJECT_MAPPING$new()
 )

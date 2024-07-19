@@ -95,7 +95,7 @@ opts <- list(
   start_date = "2018-01-01",
   end_date = "2019-01-01",
   page_size = 100,
-  next_page = NULL
+  next_page = "~null"
 )
 
 response <- TechnicalApi$get_security_price_technicals_adi(identifier, opts)
@@ -189,7 +189,7 @@ opts <- list(
   start_date = "2018-01-01",
   end_date = "2019-01-01",
   page_size = 100,
-  next_page = NULL
+  next_page = "~null"
 )
 
 response <- TechnicalApi$get_security_price_technicals_adtv(identifier, opts)
@@ -284,7 +284,7 @@ opts <- list(
   start_date = "2018-01-01",
   end_date = "2019-01-01",
   page_size = 100,
-  next_page = NULL
+  next_page = "~null"
 )
 
 response <- TechnicalApi$get_security_price_technicals_adx(identifier, opts)
@@ -380,7 +380,7 @@ opts <- list(
   start_date = "2018-01-01",
   end_date = "2019-01-01",
   page_size = 100,
-  next_page = NULL
+  next_page = "~null"
 )
 
 response <- TechnicalApi$get_security_price_technicals_ao(identifier, opts)
@@ -476,7 +476,7 @@ opts <- list(
   start_date = "2018-01-01",
   end_date = "2019-01-01",
   page_size = 100,
-  next_page = NULL
+  next_page = "~null"
 )
 
 response <- TechnicalApi$get_security_price_technicals_atr(identifier, opts)
@@ -573,7 +573,7 @@ opts <- list(
   start_date = "2018-01-01",
   end_date = "2019-01-01",
   page_size = 100,
-  next_page = NULL
+  next_page = "~null"
 )
 
 response <- TechnicalApi$get_security_price_technicals_bb(identifier, opts)
@@ -671,7 +671,7 @@ opts <- list(
   start_date = "2018-01-01",
   end_date = "2019-01-01",
   page_size = 100,
-  next_page = NULL
+  next_page = "~null"
 )
 
 response <- TechnicalApi$get_security_price_technicals_cci(identifier, opts)
@@ -767,7 +767,7 @@ opts <- list(
   start_date = "2018-01-01",
   end_date = "2019-01-01",
   page_size = 100,
-  next_page = NULL
+  next_page = "~null"
 )
 
 response <- TechnicalApi$get_security_price_technicals_cmf(identifier, opts)
@@ -863,7 +863,7 @@ opts <- list(
   start_date = "2018-01-01",
   end_date = "2019-01-01",
   page_size = 100,
-  next_page = NULL
+  next_page = "~null"
 )
 
 response <- TechnicalApi$get_security_price_technicals_dc(identifier, opts)
@@ -960,7 +960,7 @@ opts <- list(
   start_date = "2018-01-01",
   end_date = "2019-01-01",
   page_size = 100,
-  next_page = NULL
+  next_page = "~null"
 )
 
 response <- TechnicalApi$get_security_price_technicals_dpo(identifier, opts)
@@ -1056,7 +1056,7 @@ opts <- list(
   start_date = "2018-01-01",
   end_date = "2019-01-01",
   page_size = 100,
-  next_page = NULL
+  next_page = "~null"
 )
 
 response <- TechnicalApi$get_security_price_technicals_eom(identifier, opts)
@@ -1150,7 +1150,7 @@ opts <- list(
   start_date = "2018-01-01",
   end_date = "2019-01-01",
   page_size = 100,
-  next_page = NULL
+  next_page = "~null"
 )
 
 response <- TechnicalApi$get_security_price_technicals_fi(identifier, opts)
@@ -1246,7 +1246,7 @@ opts <- list(
   start_date = "2018-01-01",
   end_date = "2019-01-01",
   page_size = 100,
-  next_page = NULL
+  next_page = "~null"
 )
 
 response <- TechnicalApi$get_security_price_technicals_ichimoku(identifier, opts)
@@ -1343,7 +1343,7 @@ opts <- list(
   start_date = "2018-01-01",
   end_date = "2019-01-01",
   page_size = 100,
-  next_page = NULL
+  next_page = "~null"
 )
 
 response <- TechnicalApi$get_security_price_technicals_kc(identifier, opts)
@@ -1446,7 +1446,7 @@ opts <- list(
   start_date = "2018-01-01",
   end_date = "2019-01-01",
   page_size = 100,
-  next_page = NULL
+  next_page = "~null"
 )
 
 response <- TechnicalApi$get_security_price_technicals_kst(identifier, opts)
@@ -1552,7 +1552,7 @@ opts <- list(
   start_date = "2018-01-01",
   end_date = "2019-01-01",
   page_size = 100,
-  next_page = NULL
+  next_page = "~null"
 )
 
 response <- TechnicalApi$get_security_price_technicals_macd(identifier, opts)
@@ -1650,7 +1650,7 @@ opts <- list(
   start_date = "2018-01-01",
   end_date = "2019-01-01",
   page_size = 100,
-  next_page = NULL
+  next_page = "~null"
 )
 
 response <- TechnicalApi$get_security_price_technicals_mfi(identifier, opts)
@@ -1746,7 +1746,7 @@ opts <- list(
   start_date = "2018-01-01",
   end_date = "2019-01-01",
   page_size = 100,
-  next_page = NULL
+  next_page = "~null"
 )
 
 response <- TechnicalApi$get_security_price_technicals_mi(identifier, opts)
@@ -1841,7 +1841,7 @@ opts <- list(
   start_date = "2018-01-01",
   end_date = "2019-01-01",
   page_size = 100,
-  next_page = NULL
+  next_page = "~null"
 )
 
 response <- TechnicalApi$get_security_price_technicals_nvi(identifier, opts)
@@ -1934,7 +1934,7 @@ opts <- list(
   start_date = "2018-01-01",
   end_date = "2019-01-01",
   page_size = 100,
-  next_page = NULL
+  next_page = "~null"
 )
 
 response <- TechnicalApi$get_security_price_technicals_obv(identifier, opts)
@@ -2028,7 +2028,7 @@ opts <- list(
   start_date = "2018-01-01",
   end_date = "2019-01-01",
   page_size = 100,
-  next_page = NULL
+  next_page = "~null"
 )
 
 response <- TechnicalApi$get_security_price_technicals_obv_mean(identifier, opts)
@@ -2124,7 +2124,7 @@ opts <- list(
   start_date = "2018-01-01",
   end_date = "2019-01-01",
   page_size = 100,
-  next_page = NULL
+  next_page = "~null"
 )
 
 response <- TechnicalApi$get_security_price_technicals_rsi(identifier, opts)
@@ -2221,7 +2221,7 @@ opts <- list(
   start_date = "2018-01-01",
   end_date = "2019-01-01",
   page_size = 100,
-  next_page = NULL
+  next_page = "~null"
 )
 
 response <- TechnicalApi$get_security_price_technicals_sma(identifier, opts)
@@ -2318,7 +2318,7 @@ opts <- list(
   start_date = "2018-01-01",
   end_date = "2019-01-01",
   page_size = 100,
-  next_page = NULL
+  next_page = "~null"
 )
 
 response <- TechnicalApi$get_security_price_technicals_sr(identifier, opts)
@@ -2414,7 +2414,7 @@ opts <- list(
   start_date = "2018-01-01",
   end_date = "2019-01-01",
   page_size = 100,
-  next_page = NULL
+  next_page = "~null"
 )
 
 response <- TechnicalApi$get_security_price_technicals_trix(identifier, opts)
@@ -2511,7 +2511,7 @@ opts <- list(
   start_date = "2018-01-01",
   end_date = "2019-01-01",
   page_size = 100,
-  next_page = NULL
+  next_page = "~null"
 )
 
 response <- TechnicalApi$get_security_price_technicals_tsi(identifier, opts)
@@ -2613,7 +2613,7 @@ opts <- list(
   start_date = "2018-01-01",
   end_date = "2019-01-01",
   page_size = 100,
-  next_page = NULL
+  next_page = "~null"
 )
 
 response <- TechnicalApi$get_security_price_technicals_uo(identifier, opts)
@@ -2713,7 +2713,7 @@ opts <- list(
   start_date = "2018-01-01",
   end_date = "2019-01-01",
   page_size = 100,
-  next_page = NULL
+  next_page = "~null"
 )
 
 response <- TechnicalApi$get_security_price_technicals_vi(identifier, opts)
@@ -2807,7 +2807,7 @@ opts <- list(
   start_date = "2018-01-01",
   end_date = "2019-01-01",
   page_size = 100,
-  next_page = NULL
+  next_page = "~null"
 )
 
 response <- TechnicalApi$get_security_price_technicals_vpt(identifier, opts)
@@ -2900,7 +2900,7 @@ opts <- list(
   start_date = "2018-01-01",
   end_date = "2019-01-01",
   page_size = 100,
-  next_page = NULL
+  next_page = "~null"
 )
 
 response <- TechnicalApi$get_security_price_technicals_vwap(identifier, opts)
@@ -2994,7 +2994,7 @@ opts <- list(
   start_date = "2018-01-01",
   end_date = "2019-01-01",
   page_size = 100,
-  next_page = NULL
+  next_page = "~null"
 )
 
 response <- TechnicalApi$get_security_price_technicals_wr(identifier, opts)

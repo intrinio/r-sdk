@@ -14,7 +14,7 @@ Name | Type | Description
 **name** | **Character** | The tag name &nbsp;
 **balance** | **Character** | Whether the tag represents a credit or debit &nbsp;
 **unit** | **Character** | The unit of the tag &nbsp;
-**abstract** | [**Logical**](Logical.md) | If TRUE, the tag is an abstract and does not represent a nominal value &nbsp;
+**abstract** | [**Logical**](Logical.md) | If true, the tag is an abstract and does not represent a nominal value &nbsp;
 **sequence** | **Integer** | The vertical sequence of the tag when displayed in the financial statement &nbsp;
 **depth** | **Integer** | The horizontal depth of the tag when displayed in the financial statement &nbsp;
 

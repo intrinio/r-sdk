@@ -80,17 +80,17 @@ CompanyApi <- IntrinioSDK::CompanyApi$new(client)
 
 # Optional params
 opts <- list(
-  latest_filing_date = NULL,
-  sic = NULL,
-  template = NULL,
-  sector = NULL,
-  industry_category = NULL,
-  industry_group = NULL,
-  has_fundamentals = TRUE,
-  has_stock_prices = TRUE,
-  thea_enabled = NULL,
+  latest_filing_date = as.Date("\"~null\""),
+  sic = "~null",
+  template = "\"~null\"",
+  sector = "~null",
+  industry_category = "~null",
+  industry_group = "~null",
+  has_fundamentals = true,
+  has_stock_prices = true,
+  thea_enabled = "~null",
   page_size = 100,
-  next_page = NULL
+  next_page = "~null"
 )
 
 response <- CompanyApi$get_all_companies(opts)
@@ -116,8 +116,8 @@ Name | Type | Description  | Notes
  **sector** | Character| Return companies in the given industry sector | [optional]  &nbsp;
  **industry_category** | Character| Return companies in the given industry category | [optional]  &nbsp;
  **industry_group** | Character| Return companies in the given industry group | [optional]  &nbsp;
- **has_fundamentals** | Logical| Return only companies that have fundamentals when TRUE | [optional]  &nbsp;
- **has_stock_prices** | Logical| Return only companies that have stock prices when TRUE | [optional]  &nbsp;
+ **has_fundamentals** | Logical| Return only companies that have fundamentals when true | [optional]  &nbsp;
+ **has_stock_prices** | Logical| Return only companies that have stock prices when true | [optional]  &nbsp;
  **thea_enabled** | Logical| Return companies whose have been read by our Thea NLP and are ready for our company answers endpoint | [optional]  &nbsp;
  **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
  **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
@@ -185,8 +185,8 @@ CompanyApi <- IntrinioSDK::CompanyApi$new(client)
 opts <- list(
   on_date = as.Date("2013-10-20"),
   page_size = 100,
-  next_page = NULL,
-  next_page2 = NULL
+  next_page = "~null",
+  next_page2 = "~null"
 )
 
 response <- CompanyApi$get_all_companies_daily_metrics(opts)
@@ -272,21 +272,21 @@ CompanyApi <- IntrinioSDK::CompanyApi$new(client)
 
 # Optional params
 opts <- list(
-  specific_source = NULL,
+  specific_source = "\"~null\"",
   page_size = 100,
-  sentiment = NULL,
-  topic = NULL,
+  sentiment = "\"~null\"",
+  topic = "~null",
   company = "AAPL",
   security = "AAPL",
-  start_date = NULL,
-  end_date = NULL,
-  language = NULL,
-  word_count_greater_than = NULL,
-  word_count_less_than = NULL,
-  is_spam = NULL,
-  business_relevance_greater_than = NULL,
-  business_relevance_less_than = NULL,
-  next_page = NULL
+  start_date = as.Date("\"~null\""),
+  end_date = as.Date("\"~null\""),
+  language = "~null",
+  word_count_greater_than = "~null",
+  word_count_less_than = "~null",
+  is_spam = "~null",
+  business_relevance_greater_than = "~null",
+  business_relevance_less_than = "~null",
+  next_page = "~null"
 )
 
 response <- CompanyApi$get_all_company_news(opts)
@@ -312,9 +312,9 @@ Name | Type | Description  | Notes
  **topic** | Character| Filter by topic.  Unsupported for yahoo source. | [optional]  &nbsp;
  **company** | Character| Filter by &#x60;company&#x60; identifier (ticker, CIK, LEI, Intrinio ID) | [optional]  &nbsp;
  **security** | Character| Filter by &#x60;security&#x60; identifier (ticker, figi, isin, cusip, Intrinio ID).  Unsupported for yahoo source. | [optional]  &nbsp;
- **start_date** | Date| Limit news stories to those on or after this date. | [optional]  &nbsp;
+ **start_date** | Date| Limit news stories to those on or after this date. Defaults to yesterday if unspecified. | [optional]  &nbsp;
  **end_date** | Date| Limit news stories to those on or before this date. | [optional]  &nbsp;
- **language** | Character| Filter by language.  Unsupported for yahoo source.  Unsupported for yahoo source. | [optional]  &nbsp;
+ **language** | Character| Filter by language.  Unsupported for yahoo source. | [optional]  &nbsp;
  **word_count_greater_than** | Integer| News stories will have a word count greater than this value.  Unsupported for yahoo source. | [optional]  &nbsp;
  **word_count_less_than** | Integer| News stories will have a word count less than this value.  Unsupported for yahoo source. | [optional]  &nbsp;
  **is_spam** | Logical| Filter whether it is marked as spam or not.  Unsupported for yahoo source. | [optional]  &nbsp;
@@ -552,8 +552,8 @@ identifier <- "AAPL"
 opts <- list(
   on_date = as.Date("2013-10-20"),
   page_size = 100,
-  next_page = NULL,
-  next_page2 = NULL
+  next_page = "~null",
+  next_page2 = "~null"
 )
 
 response <- CompanyApi$get_company_daily_metrics(identifier, opts)
@@ -809,12 +809,12 @@ identifier <- "AAPL"
 
 # Optional params
 opts <- list(
-  report_type = NULL,
-  start_date = as.Date("2015-01-01"),
-  end_date = NULL,
-  thea_enabled = NULL,
+  report_type = "~null",
+  start_date = as.Date("\"2015-01-01\""),
+  end_date = as.Date("\"~null\""),
+  thea_enabled = "~null",
   page_size = 100,
-  next_page = NULL
+  next_page = "~null"
 )
 
 response <- CompanyApi$get_company_filings(identifier, opts)
@@ -906,18 +906,18 @@ identifier <- "AAPL"
 
 # Optional params
 opts <- list(
-  filed_after = NULL,
-  filed_before = NULL,
-  reported_only = FALSE,
-  fiscal_year = NULL,
-  statement_code = NULL,
-  type = NULL,
-  start_date = NULL,
-  end_date = NULL,
-  updated_after = as.Date("2022-12-01"),
-  updated_before = as.Date("2022-12-01"),
+  filed_after = as.Date("\"~null\""),
+  filed_before = as.Date("\"~null\""),
+  reported_only = false,
+  fiscal_year = "~null",
+  statement_code = "\"~null\"",
+  type = "\"~null\"",
+  start_date = as.Date("\"~null\""),
+  end_date = as.Date("\"~null\""),
+  updated_after = as.Date("\"2022-12-01\""),
+  updated_before = as.Date("\"2022-12-01\""),
   page_size = 100,
-  next_page = NULL
+  next_page = "~null"
 )
 
 response <- CompanyApi$get_company_fundamentals(identifier, opts)
@@ -1017,12 +1017,12 @@ tag <- "marketcap"
 # Optional params
 opts <- list(
   frequency = "daily",
-  type = NULL,
-  start_date = as.Date("2018-01-01"),
-  end_date = NULL,
+  type = "\"~null\"",
+  start_date = as.Date("\"2018-01-01\""),
+  end_date = as.Date("\"~null\""),
   sort_order = "desc",
   page_size = 100,
-  next_page = NULL
+  next_page = "~null"
 )
 
 response <- CompanyApi$get_company_historical_data(identifier, tag, opts)
@@ -1114,13 +1114,13 @@ CompanyApi <- IntrinioSDK::CompanyApi$new(client)
 # Optional params
 opts <- list(
   ticker = "UBER",
-  status = NULL,
-  start_date = NULL,
-  end_date = NULL,
-  offer_amount_greater_than = NULL,
-  offer_amount_less_than = NULL,
+  status = "\"~null\"",
+  start_date = as.Date("\"~null\""),
+  end_date = as.Date("\"~null\""),
+  offer_amount_greater_than = "~null",
+  offer_amount_less_than = "~null",
   page_size = 100,
-  next_page = NULL
+  next_page = "~null"
 )
 
 response <- CompanyApi$get_company_ipos(opts)
@@ -1213,20 +1213,20 @@ identifier <- "AAPL"
 
 # Optional params
 opts <- list(
-  specific_source = NULL,
+  specific_source = "\"~null\"",
   page_size = 100,
-  sentiment = NULL,
-  topic = NULL,
+  sentiment = "\"~null\"",
+  topic = "~null",
   security = "AAPL",
-  start_date = NULL,
-  end_date = NULL,
-  language = NULL,
-  word_count_greater_than = NULL,
-  word_count_less_than = NULL,
-  is_spam = NULL,
-  business_relevance_greater_than = NULL,
-  business_relevance_less_than = NULL,
-  next_page = NULL
+  start_date = as.Date("\"~null\""),
+  end_date = as.Date("\"~null\""),
+  language = "~null",
+  word_count_greater_than = "~null",
+  word_count_less_than = "~null",
+  is_spam = "~null",
+  business_relevance_greater_than = "~null",
+  business_relevance_less_than = "~null",
+  next_page = "~null"
 )
 
 response <- CompanyApi$get_company_news(identifier, opts)
@@ -1252,7 +1252,7 @@ Name | Type | Description  | Notes
  **sentiment** | Character| Filter by sentiment.  Unsupported for yahoo source. | [optional]  &nbsp;
  **topic** | Character| Filter by topic.  Unsupported for yahoo source. | [optional]  &nbsp;
  **security** | Character| Filter by &#x60;security&#x60; identifier (ticker, figi, isin, cusip, Intrinio ID).  Unsupported for yahoo source. | [optional]  &nbsp;
- **start_date** | Date| Limit news stories to those on or after this date | [optional]  &nbsp;
+ **start_date** | Date| Limit news stories to those on or after this date. Defaults to yesterday if unspecified. | [optional]  &nbsp;
  **end_date** | Date| Limit news stories to those on or before this date | [optional]  &nbsp;
  **language** | Character| Filter by language.  Unsupported for yahoo source. | [optional]  &nbsp;
  **word_count_greater_than** | Integer| News stories will have a word count greater than this value.  Unsupported for yahoo source. | [optional]  &nbsp;
@@ -1323,12 +1323,12 @@ CompanyApi <- IntrinioSDK::CompanyApi$new(client)
 
 # Required params
 news_story_id <- "new_aBcDef"
-publication_date <- as.POSIXlt(NULL, tz="UTC")
+publication_date <- as.POSIXlt("\"~null\"", tz="UTC")
 
 # Optional params
 opts <- list(
-  specific_source = NULL,
-  next_page = NULL
+  specific_source = "\"~null\"",
+  next_page = "~null"
 )
 
 response <- CompanyApi$get_company_news_body(news_story_id, publication_date, opts)
@@ -1417,10 +1417,10 @@ identifier <- "AAPL"
 
 # Optional params
 opts <- list(
-  float_date_greater_than = NULL,
-  float_date_less_than = NULL,
-  next_page = NULL,
-  next_page2 = NULL
+  float_date_greater_than = as.Date("\"~null\""),
+  float_date_less_than = as.Date("\"~null\""),
+  next_page = "~null",
+  next_page2 = "~null"
 )
 
 response <- CompanyApi$get_company_public_float(identifier, opts)
@@ -1510,7 +1510,7 @@ identifier <- "AAPL"
 
 # Optional params
 opts <- list(
-  next_page = NULL
+  next_page = "~null"
 )
 
 response <- CompanyApi$get_company_securities(identifier, opts)
@@ -1597,13 +1597,13 @@ identifier <- "AAPL"
 
 # Optional params
 opts <- list(
-  start_date = as.Date("2018-01-01"),
-  end_date = as.Date("2019-01-01"),
+  start_date = as.Date("\"2018-01-01\""),
+  end_date = as.Date("\"2019-01-01\""),
   ownership_type = "D",
-  next_page = NULL,
+  next_page = "~null",
   page_size = 1000,
-  sort_by = "updated_on",
-  next_page2 = NULL
+  sort_by = "\"updated_on\"",
+  next_page2 = "~null"
 )
 
 response <- CompanyApi$insider_transaction_filings_by_company(identifier, opts)
@@ -1696,7 +1696,7 @@ identifier <- "AAPL"
 
 # Optional params
 opts <- list(
-  next_page = NULL
+  next_page = "~null"
 )
 
 response <- CompanyApi$latest_insider_transaction_filing_by_company(identifier, opts)
@@ -1780,8 +1780,8 @@ CompanyApi <- IntrinioSDK::CompanyApi$new(client)
 
 # Required params
 identifier <- "AAPL"
-statement_code <- "income_statement"
-fiscal_period <- "FY"
+statement_code <- "\"income_statement\""
+fiscal_period <- "\"FY\""
 fiscal_year <- 2017
 
 response <- CompanyApi$lookup_company_fundamental(identifier, statement_code, fiscal_period, fiscal_year)
@@ -1951,8 +1951,8 @@ query <- "Apple"
 
 # Optional params
 opts <- list(
-  active = TRUE,
-  mode = NULL,
+  active = true,
+  mode = "\"~null\"",
   page_size = 100
 )
 
@@ -1974,7 +1974,7 @@ print(response$content)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | Character| Search parameters |  &nbsp;
- **active** | Logical| When TRUE, return companies that are actively traded (having stock prices within the past 14 days). When FALSE, return companies that are not actively traded or never have been traded. Not setting this value returns all. Not used when mode is set. | [optional]  &nbsp;
+ **active** | Logical| When true, return companies that are actively traded (having stock prices within the past 14 days). When false, return companies that are not actively traded or never have been traded. Not setting this value returns all. Not used when mode is set. | [optional]  &nbsp;
  **mode** | Character| When set, changes search mode to the specified mode. | [optional]  &nbsp;
  **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
 <br/>
@@ -2042,8 +2042,8 @@ identifier <- "AAPL"
 
 # Optional params
 opts <- list(
-  end_date_greater_than = NULL,
-  end_date_less_than = NULL
+  end_date_greater_than = as.Date("\"~null\""),
+  end_date_less_than = as.Date("\"~null\"")
 )
 
 response <- CompanyApi$shares_outstanding_by_company(identifier, opts)

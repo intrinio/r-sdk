@@ -10,12 +10,12 @@
 
 Name | Type | Description
 ------------ | ------------- | -------------
-**director** | [**Logical**](Logical.md) | (TRUE/FALSE) A boolean indicating whether or not the owner is a director in the company &nbsp;
-**officer** | [**Logical**](Logical.md) | (TRUE/FALSE) A boolean indicating whether or not the owner is a officer in the company &nbsp;
-**ten_percent_owner** | [**Logical**](Logical.md) | (TRUE/FALSE) A boolean indicating whether or not the owner has a ten percent or greater interest in the company &nbsp;
-**other_relation** | [**Logical**](Logical.md) | (TRUE/FALSE) A boolean indicating whether or not the owner has another relationship with the company beside, direct, officer, or significant owner in the company &nbsp;
+**director** | [**Logical**](Logical.md) | (true/false) A boolean indicating whether or not the owner is a director in the company &nbsp;
+**officer** | [**Logical**](Logical.md) | (true/false) A boolean indicating whether or not the owner is a officer in the company &nbsp;
+**ten_percent_owner** | [**Logical**](Logical.md) | (true/false) A boolean indicating whether or not the owner has a ten percent or greater interest in the company &nbsp;
+**other_relation** | [**Logical**](Logical.md) | (true/false) A boolean indicating whether or not the owner has another relationship with the company beside, direct, officer, or significant owner in the company &nbsp;
 **officer_title** | **Character** | The officer title of the owner in the company &nbsp;
-**derivative_transaction** | [**Logical**](Logical.md) | (TRUE) A boolean indicating the transaction is a derivative transaction, which may or may not become common stock due to various possible exercise or conversion requirements &nbsp;
+**derivative_transaction** | [**Logical**](Logical.md) | (true) A boolean indicating the transaction is a derivative transaction, which may or may not become common stock due to various possible exercise or conversion requirements &nbsp;
 **ticker** | **Character** | The ticker symbol for the company’s common stock &nbsp;
 **security_title** | **Character** | The name of the derivative security transacted &nbsp;
 **conversion_exercise_price** | **Numeric** | The conversion or exercise price of the derivative security transacted &nbsp;

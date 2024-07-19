@@ -59,11 +59,11 @@ InsiderTransactionFilingsApi <- IntrinioSDK::InsiderTransactionFilingsApi$new(cl
 
 # Optional params
 opts <- list(
-  start_date = as.Date("2015-01-01"),
-  end_date = NULL,
+  start_date = as.Date("\"2015-01-01\""),
+  end_date = as.Date("\"~null\""),
   page_size = 100,
   sort_by = "updated_on",
-  next_page = NULL
+  next_page = "~null"
 )
 
 response <- InsiderTransactionFilingsApi$get_all_insider_transaction_filings(opts)

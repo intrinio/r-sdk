@@ -237,9 +237,9 @@ identifier <- "USCOMP"
 
 # Optional params
 opts <- list(
-  date = as.Date("2018-08-14"),
+  date = as.Date("\"2018-08-14\""),
   page_size = 100,
-  next_page = NULL
+  next_page = "~null"
 )
 
 response <- StockExchangeApi$get_stock_exchange_price_adjustments(identifier, opts)
@@ -328,9 +328,9 @@ identifier <- "USCOMP"
 
 # Optional params
 opts <- list(
-  date = as.Date("2018-08-14"),
+  date = as.Date("\"2018-08-14\""),
   page_size = 100,
-  next_page = NULL
+  next_page = "~null"
 )
 
 response <- StockExchangeApi$get_stock_exchange_prices(identifier, opts)
@@ -419,11 +419,11 @@ identifier <- "USCOMP"
 
 # Optional params
 opts <- list(
-  source = NULL,
-  active_only = NULL,
+  source = ["\"~null\""],
+  active_only = "~null",
   page_size = 100,
-  tickers = [NULL],
-  next_page = NULL
+  tickers = ["~null"],
+  next_page = "~null"
 )
 
 response <- StockExchangeApi$get_stock_exchange_realtime_prices(identifier, opts)
@@ -444,7 +444,7 @@ print(response$content)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **identifier** | Character| A Stock Exchange identifier (MIC or Intrinio ID) |  &nbsp;
- **source** | Character| Return realtime prices from the specified data source. If no source is specified, all sources are used. | [optional]  &nbsp;
+ **source** | [**Character**](Character.md)| Return realtime prices from the specified data source. If no source is specified, all sources are used. | [optional]  &nbsp;
  **active_only** | Logical| Returns prices only from the most recent trading day. | [optional]  &nbsp;
  **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
  **tickers** | [**Character**](Character.md)| The list of ticker symbols to filter to. | [optional]  &nbsp;
@@ -515,7 +515,7 @@ identifier <- "USCOMP"
 # Optional params
 opts <- list(
   page_size = 100,
-  next_page = NULL
+  next_page = "~null"
 )
 
 response <- StockExchangeApi$get_stock_exchange_securities(identifier, opts)

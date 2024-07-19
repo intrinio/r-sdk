@@ -209,17 +209,17 @@ ForexApi <- IntrinioSDK::ForexApi$new(client)
 
 # Required params
 pair <- "EURUSD"
-timeframe <- "D1"
+timeframe <- "\"D1\""
 
 # Optional params
 opts <- list(
   timezone = "UTC",
-  start_date = as.Date("2018-01-01"),
-  start_time = NULL,
-  end_date = as.Date("2019-01-01"),
-  end_time = NULL,
+  start_date = as.Date("\"2018-01-01\""),
+  start_time = "~null",
+  end_date = as.Date("\"2019-01-01\""),
+  end_time = "~null",
   page_size = 100,
-  next_page = NULL
+  next_page = "~null"
 )
 
 response <- ForexApi$get_forex_prices(pair, timeframe, opts)

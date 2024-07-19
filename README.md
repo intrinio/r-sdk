@@ -7,8 +7,8 @@ Welcome to the Intrinio API! Through our Financial Data Marketplace, we offer a 
 
 ## Overview
 
-- API version: 2.62.3
-- Package version: 1.25.4
+- API version: 2.63.1
+- Package version: 1.26.0
 
 The new Intrinio R SDK wraps all API v2 endpoints into an easy-to-use set of classes, methods, and response objects.
 
@@ -199,6 +199,7 @@ Class | Method | HTTP request | Description
 *IntrinioSDK::OptionsApi* | [**get_options_prices_batch_realtime**](docs/OptionsApi.md#get_options_prices_batch_realtime) | **POST** /options/prices/realtime/batch | Option Prices Batch Realtime
 *IntrinioSDK::OptionsApi* | [**get_options_prices_eod**](docs/OptionsApi.md#get_options_prices_eod) | **GET** /options/prices/{identifier}/eod | Option Prices EOD
 *IntrinioSDK::OptionsApi* | [**get_options_prices_realtime**](docs/OptionsApi.md#get_options_prices_realtime) | **GET** /options/prices/{identifier}/realtime | Option Prices Realtime
+*IntrinioSDK::OptionsApi* | [**get_options_prices_realtime_by_ticker**](docs/OptionsApi.md#get_options_prices_realtime_by_ticker) | **GET** /options/prices/by_ticker/{symbol}/realtime | Option Prices Realtime By Ticker
 *IntrinioSDK::OptionsApi* | [**get_options_snapshots**](docs/OptionsApi.md#get_options_snapshots) | **GET** /options/snapshots | Option Prices Realtime Snapshot
 *IntrinioSDK::OptionsApi* | [**get_options_stats_realtime**](docs/OptionsApi.md#get_options_stats_realtime) | **GET** /options/prices/{identifier}/realtime/stats | Option Stats Realtime
 *IntrinioSDK::OptionsApi* | [**get_unusual_activity**](docs/OptionsApi.md#get_unusual_activity) | **GET** /options/unusual_activity/{symbol} | Options Unusual Activity
@@ -380,6 +381,7 @@ Class | Method | HTTP request | Description
  - [IntrinioSDK::ApiResponseOptionsExpirations](docs/ApiResponseOptionsExpirations.md)
  - [IntrinioSDK::ApiResponseOptionsPriceRealtime](docs/ApiResponseOptionsPriceRealtime.md)
  - [IntrinioSDK::ApiResponseOptionsPricesBatchRealtime](docs/ApiResponseOptionsPricesBatchRealtime.md)
+ - [IntrinioSDK::ApiResponseOptionsPricesByTickerRealtime](docs/ApiResponseOptionsPricesByTickerRealtime.md)
  - [IntrinioSDK::ApiResponseOptionsPricesEod](docs/ApiResponseOptionsPricesEod.md)
  - [IntrinioSDK::ApiResponseOptionsRealtime](docs/ApiResponseOptionsRealtime.md)
  - [IntrinioSDK::ApiResponseOptionsStatsRealtime](docs/ApiResponseOptionsStatsRealtime.md)

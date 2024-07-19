@@ -66,7 +66,7 @@ opts <- list(
   industry = "Retail",
   ticker = "SHOP",
   page_size = 100,
-  next_page = NULL
+  next_page = "~null"
 )
 
 response <- ESGApi$get_esg_companies(opts)
@@ -156,7 +156,7 @@ identifier <- "AAPL"
 # Optional params
 opts <- list(
   page_size = 100,
-  next_page = NULL
+  next_page = "~null"
 )
 
 response <- ESGApi$get_esg_company_comprehensive_ratings(identifier, opts)
@@ -244,7 +244,7 @@ identifier <- "AAPL"
 # Optional params
 opts <- list(
   page_size = 100,
-  next_page = NULL
+  next_page = "~null"
 )
 
 response <- ESGApi$get_esg_company_ratings(identifier, opts)
@@ -330,7 +330,7 @@ ESGApi <- IntrinioSDK::ESGApi$new(client)
 opts <- list(
   country = "USA",
   page_size = 100,
-  next_page = NULL
+  next_page = "~null"
 )
 
 response <- ESGApi$get_esg_latest(opts)
@@ -416,7 +416,7 @@ ESGApi <- IntrinioSDK::ESGApi$new(client)
 opts <- list(
   country = "USA",
   page_size = 100,
-  next_page = NULL
+  next_page = "~null"
 )
 
 response <- ESGApi$get_esg_latest_comprehensive(opts)

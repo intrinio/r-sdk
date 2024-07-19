@@ -64,19 +64,19 @@ FundamentalsApi <- IntrinioSDK::FundamentalsApi$new(client)
 
 # Optional params
 opts <- list(
-  filed_after = as.Date("2022-01-01"),
-  filed_before = as.Date("2022-12-01"),
-  reported_only = FALSE,
+  filed_after = as.Date("\"2022-01-01\""),
+  filed_before = as.Date("\"2022-12-01\""),
+  reported_only = false,
   fiscal_year = 2017,
-  statement_code = NULL,
-  type = "FALSE",
-  fiscal_period = "FY",
-  start_date = as.Date("2022-01-01"),
-  end_date = as.Date("2022-12-01"),
-  updated_after = as.Date("2022-12-01"),
-  updated_before = as.Date("2022-12-01"),
-  template = "indu",
-  next_page = NULL
+  statement_code = "\"~null\"",
+  type = "false",
+  fiscal_period = "\"FY\"",
+  start_date = as.Date("\"2022-01-01\""),
+  end_date = as.Date("\"2022-12-01\""),
+  updated_after = as.Date("\"2022-12-01\""),
+  updated_before = as.Date("\"2022-12-01\""),
+  template = "\"indu\"",
+  next_page = "~null"
 )
 
 response <- FundamentalsApi$filter_fundamental(opts)
@@ -497,9 +497,9 @@ FundamentalsApi <- IntrinioSDK::FundamentalsApi$new(client)
 
 # Required params
 identifier <- "AAPL"
-statement_code <- "income_statement"
+statement_code <- "\"income_statement\""
 fiscal_year <- 2017
-fiscal_period <- "FY"
+fiscal_period <- "\"FY\""
 
 response <- FundamentalsApi$lookup_fundamental(identifier, statement_code, fiscal_year, fiscal_period)
 
