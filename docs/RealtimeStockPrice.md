@@ -15,8 +15,10 @@ Name | Type | Description
 **last_size** | **Numeric** | The size of the last trade. &nbsp;
 **bid_price** | **Numeric** | The price of the top bid order. &nbsp;
 **bid_size** | **Numeric** | The size of the top bid order. &nbsp;
+**bid_time** | [**POSIXlt**](POSIXlt.md) | The date and time when the last bid occurred. &nbsp;
 **ask_price** | **Numeric** | The price of the top ask order. &nbsp;
 **ask_size** | **Numeric** | The size of the top ask order. &nbsp;
+**ask_time** | [**POSIXlt**](POSIXlt.md) | The date and time when the last ask occurred. &nbsp;
 **open_price** | **Numeric** | The price at the open of the trading day. &nbsp;
 **close_price** | **Numeric** | The price at the close of the trading day. (IEX only) &nbsp;
 **high_price** | **Numeric** | The high price for the trading day. &nbsp;
@@ -33,6 +35,12 @@ Name | Type | Description
 **security** | [**RealtimeStockPriceSecurity**](RealtimeStockPrice_security.md) |  &nbsp;
 
 [//]: # (END_DEFINITION)
+
+
+[//]: # (CONTAINED_CLASS:IntrinioSDK::POSIXlt)
+
+
+[//]: # (CONTAINED_CLASS:IntrinioSDK::POSIXlt)
 
 
 [//]: # (CONTAINED_CLASS:IntrinioSDK::POSIXlt)
