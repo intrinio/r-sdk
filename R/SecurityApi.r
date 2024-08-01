@@ -203,7 +203,7 @@
 SecurityApi <- R6::R6Class(
   'SecurityApi',
   public = list(
-    userAgent = "Swagger-Codegen/1.26.1/r",
+    userAgent = "Swagger-Codegen/1.27.0/r",
     apiClient = NULL,
     initialize = function(apiClient){
       if (!missing(apiClient)) {
