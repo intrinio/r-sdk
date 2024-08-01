@@ -50,6 +50,7 @@ Method | HTTP request | Description
 [**get_security_price_technicals_vpt**](SecurityApi.md#get_security_price_technicals_vpt) | **GET** /securities/{identifier}/prices/technicals/vpt | Volume-price Trend
 [**get_security_price_technicals_vwap**](SecurityApi.md#get_security_price_technicals_vwap) | **GET** /securities/{identifier}/prices/technicals/vwap | Volume Weighted Average Price
 [**get_security_price_technicals_wr**](SecurityApi.md#get_security_price_technicals_wr) | **GET** /securities/{identifier}/prices/technicals/wr | Williams %R
+[**get_security_quote**](SecurityApi.md#get_security_quote) | **GET** /securities/{identifier}/quote | Quote for a Security
 [**get_security_realtime_price**](SecurityApi.md#get_security_realtime_price) | **GET** /securities/{identifier}/prices/realtime | Realtime Stock Price for Security
 [**get_security_replay_file**](SecurityApi.md#get_security_replay_file) | **GET** /securities/replay | Security Replay File
 [**get_security_snapshots**](SecurityApi.md#get_security_snapshots) | **GET** /securities/snapshots | Realtime Stock Prices Snapshot
@@ -4392,6 +4393,95 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ApiResponseSecurityWilliamsR**](ApiResponseSecurityWilliamsR.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:IntrinioSDK::SecurityApi)
+
+[//]: # (METHOD:get_security_quote)
+
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseSecurityQuote)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:ApiResponseSecurityQuote.md)
+
+[//]: # (OPERATION:get_security_quote_v2)
+
+[//]: # (ENDPOINT:/securities/{identifier}/quote)
+
+[//]: # (DOCUMENT_LINK:SecurityApi.md#get_security_quote)
+
+# **get_security_quote**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/r/get_security_quote_v2)
+
+[//]: # (START_OVERVIEW)
+
+> ApiResponseSecurityQuote get_security_quote(identifier, opts)
+
+#### Quote for a Security
+
+
+Return a current pricing quote for a security across multiple sources.
+
+[//]: # (END_OVERVIEW)
+
+### Example
+
+[//]: # (START_CODE_EXAMPLE)
+```r
+# Setup client
+client <- IntrinioSDK::ApiClient$new()
+
+# Configure API key authorization: ApiKeyAuth
+client$configuration$apiKey <- "YOUR_API_KEY"
+
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
+# Setup API with client
+SecurityApi <- IntrinioSDK::SecurityApi$new(client)
+
+# Required params
+identifier <- "AAPL"
+
+# Optional params
+opts <- list(
+  active_only = FALSE,
+  next_page = NULL
+)
+
+response <- SecurityApi$get_security_quote(identifier, opts)
+
+print(response)
+print(response$content)
+```
+
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **identifier** | Character| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) |  &nbsp;
+ **active_only** | Logical| Whether to return only realtime prices from today. | [optional] [default to FALSE] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**ApiResponseSecurityQuote**](ApiResponseSecurityQuote.md)
 
 [//]: # (END_OPERATION)
 

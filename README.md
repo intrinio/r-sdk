@@ -7,7 +7,7 @@ Welcome to the Intrinio API! Through our Financial Data Marketplace, we offer a 
 
 ## Overview
 
-- API version: 2.63.2
+- API version: 2.63.6
 - Package version: 1.26.1
 
 The new Intrinio R SDK wraps all API v2 endpoints into an easy-to-use set of classes, methods, and response objects.
@@ -257,6 +257,7 @@ Class | Method | HTTP request | Description
 *IntrinioSDK::SecurityApi* | [**get_security_price_technicals_vpt**](docs/SecurityApi.md#get_security_price_technicals_vpt) | **GET** /securities/{identifier}/prices/technicals/vpt | Volume-price Trend
 *IntrinioSDK::SecurityApi* | [**get_security_price_technicals_vwap**](docs/SecurityApi.md#get_security_price_technicals_vwap) | **GET** /securities/{identifier}/prices/technicals/vwap | Volume Weighted Average Price
 *IntrinioSDK::SecurityApi* | [**get_security_price_technicals_wr**](docs/SecurityApi.md#get_security_price_technicals_wr) | **GET** /securities/{identifier}/prices/technicals/wr | Williams %R
+*IntrinioSDK::SecurityApi* | [**get_security_quote**](docs/SecurityApi.md#get_security_quote) | **GET** /securities/{identifier}/quote | Quote for a Security
 *IntrinioSDK::SecurityApi* | [**get_security_realtime_price**](docs/SecurityApi.md#get_security_realtime_price) | **GET** /securities/{identifier}/prices/realtime | Realtime Stock Price for Security
 *IntrinioSDK::SecurityApi* | [**get_security_replay_file**](docs/SecurityApi.md#get_security_replay_file) | **GET** /securities/replay | Security Replay File
 *IntrinioSDK::SecurityApi* | [**get_security_snapshots**](docs/SecurityApi.md#get_security_snapshots) | **GET** /securities/snapshots | Realtime Stock Prices Snapshot
@@ -422,6 +423,7 @@ Class | Method | HTTP request | Description
  - [IntrinioSDK::ApiResponseSecurityNegativeVolumeIndex](docs/ApiResponseSecurityNegativeVolumeIndex.md)
  - [IntrinioSDK::ApiResponseSecurityOnBalanceVolume](docs/ApiResponseSecurityOnBalanceVolume.md)
  - [IntrinioSDK::ApiResponseSecurityOnBalanceVolumeMean](docs/ApiResponseSecurityOnBalanceVolumeMean.md)
+ - [IntrinioSDK::ApiResponseSecurityQuote](docs/ApiResponseSecurityQuote.md)
  - [IntrinioSDK::ApiResponseSecurityRelativeStrengthIndex](docs/ApiResponseSecurityRelativeStrengthIndex.md)
  - [IntrinioSDK::ApiResponseSecuritySimpleMovingAverage](docs/ApiResponseSecuritySimpleMovingAverage.md)
  - [IntrinioSDK::ApiResponseSecurityStochasticOscillator](docs/ApiResponseSecurityStochasticOscillator.md)

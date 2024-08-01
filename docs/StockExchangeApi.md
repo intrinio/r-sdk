@@ -329,8 +329,12 @@ identifier <- "USCOMP"
 # Optional params
 opts <- list(
   date = as.Date("2018-08-14"),
+  start_date = as.Date("2020-08-14"),
+  end_date = as.Date("2022-08-14"),
   page_size = 100,
-  next_page = NULL
+  next_page = NULL,
+  tickers = [NULL],
+  next_page2 = NULL
 )
 
 response <- StockExchangeApi$get_stock_exchange_prices(identifier, opts)
@@ -351,9 +355,13 @@ print(response$content)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **identifier** | Character| A Stock Exchange identifier (MIC or Intrinio ID) |  &nbsp;
- **date** | Date| The date for which to return prices | [optional]  &nbsp;
+ **date** | Date| The date for which to return prices. May not be used with the start_date and end_date parameters. | [optional]  &nbsp;
+ **start_date** | Date| The start of the date range you&#39;re querying. May not be used with date parameter. | [optional]  &nbsp;
+ **end_date** | Date| The end of the date range you&#39;re querying. May not be used with date parameter. | [optional]  &nbsp;
  **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
  **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+ **tickers** | [**Character**](Character.md)| The list of ticker symbols to filter to. | [optional]  &nbsp;
+ **next_page2** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
 <br/>
 
 [//]: # (END_PARAMETERS)
