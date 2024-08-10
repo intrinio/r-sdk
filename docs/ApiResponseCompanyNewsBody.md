@@ -10,7 +10,7 @@
 
 Name | Type | Description
 ------------ | ------------- | -------------
-**body** | **Character** | The article body. Requires additional access. &nbsp;
+**body** | **Character** | The article body. &nbsp;
 
 [//]: # (END_DEFINITION)
 

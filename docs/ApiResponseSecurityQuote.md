@@ -18,6 +18,7 @@ Name | Type | Description
 **high** | **Numeric** | The highest price from the latest day of trading. &nbsp;
 **low** | **Numeric** | The lowest price from the latest day of trading. &nbsp;
 **exchange_volume** | **Numeric** | The volume of the security from the source. &nbsp;
+**market_volume** | **Numeric** | The volume of the security for the entire market. &nbsp;
 **eod_fifty_two_week_high** | **Numeric** | The 52 week high price. &nbsp;
 **eod_fifty_two_week_low** | **Numeric** | The 52 week low price. &nbsp;
 **marketcap** | **Numeric** | The current market cap. &nbsp;

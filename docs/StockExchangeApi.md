@@ -333,7 +333,7 @@ opts <- list(
   end_date = as.Date("2022-08-14"),
   page_size = 100,
   next_page = NULL,
-  tickers = [NULL],
+  tickers = ["AAPL,MSFT,NVDA"],
   next_page2 = NULL
 )
 
@@ -360,7 +360,7 @@ Name | Type | Description  | Notes
  **end_date** | Date| The end of the date range you&#39;re querying. May not be used with date parameter. | [optional]  &nbsp;
  **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
  **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
- **tickers** | [**Character**](Character.md)| The list of ticker symbols to filter to. | [optional]  &nbsp;
+ **tickers** | [**Character**](Character.md)| The comma-delimited list of ticker symbols to filter down to. If not provided, the entire stock exchange is returned. | [optional]  &nbsp;
  **next_page2** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
 <br/>
 
@@ -427,10 +427,10 @@ identifier <- "USCOMP"
 
 # Optional params
 opts <- list(
-  source = [NULL],
+  source = ["iex,delayed_sip"],
   active_only = NULL,
   page_size = 100,
-  tickers = [NULL],
+  tickers = ["AAPL,MSFT,NVDA"],
   next_page = NULL
 )
 
@@ -452,10 +452,10 @@ print(response$content)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **identifier** | Character| A Stock Exchange identifier (MIC or Intrinio ID) |  &nbsp;
- **source** | [**Character**](Character.md)| Return realtime prices from the specified data source. If no source is specified, all sources are used. | [optional]  &nbsp;
+ **source** | [**Character**](Character.md)| Return realtime prices from the specified comma-delimited data sources. If no source is specified, all sources available to user are used. | [optional]  &nbsp;
  **active_only** | Logical| Returns prices only from the most recent trading day. | [optional]  &nbsp;
  **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
- **tickers** | [**Character**](Character.md)| The list of ticker symbols to filter to. | [optional]  &nbsp;
+ **tickers** | [**Character**](Character.md)| The comma-delimited list of ticker symbols to filter to. If not provided, the entire stock exchange is returned. | [optional]  &nbsp;
  **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
 <br/>
 

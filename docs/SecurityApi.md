@@ -4540,7 +4540,7 @@ identifier <- "AAPL"
 
 # Optional params
 opts <- list(
-  source = ["iex"]
+  source = ["iex,delayed_sip"]
 )
 
 response <- SecurityApi$get_security_realtime_price(identifier, opts)
@@ -4561,7 +4561,7 @@ print(response$content)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **identifier** | Character| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) |  &nbsp;
- **source** | [**Character**](Character.md)| Return the realtime price from the specified data source. If no source is specified, the best source available is used. | [optional]  &nbsp;
+ **source** | [**Character**](Character.md)| Return the realtime price from the specified comma-delimited data sources. If no source is specified, the best source available is used. | [optional]  &nbsp;
 <br/>
 
 [//]: # (END_PARAMETERS)
