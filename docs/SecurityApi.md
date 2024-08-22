@@ -1095,12 +1095,13 @@ interval_size <- "15m"
 opts <- list(
   source = NULL,
   start_date = as.Date("2023-01-01"),
-  start_time = NULL,
+  start_time = 33300,
   end_date = as.Date("2023-02-01"),
-  end_time = NULL,
+  end_time = 33300,
   timezone = "UTC",
   page_size = 100,
   split_adjusted = FALSE,
+  include_quote_only_bars = FALSE,
   next_page = NULL
 )
 
@@ -1131,6 +1132,7 @@ Name | Type | Description  | Notes
  **timezone** | Character| Returns trading times in this timezone | [optional] [default to UTC] &nbsp;
  **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
  **split_adjusted** | Logical| Whether to return the values adjusted for splits or not. Default is FALSE. | [optional] [default to FALSE] &nbsp;
+ **include_quote_only_bars** | Logical| If TRUE, also include bars where no trades occurred but quotes did. | [optional] [default to FALSE] &nbsp;
  **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
 <br/>
 
@@ -1172,7 +1174,7 @@ Name | Type | Description  | Notes
 #### Intraday Stock Prices for Security
 
 
-Return intraday stock prices for the Security with the given `identifier`
+Deprecated.  Return intraday stock prices for the Security with the given `identifier`
 
 [//]: # (END_OVERVIEW)
 
@@ -4452,6 +4454,7 @@ identifier <- "AAPL"
 # Optional params
 opts <- list(
   active_only = FALSE,
+  source = "delayed_sip",
   next_page = NULL
 )
 
@@ -4474,6 +4477,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **identifier** | Character| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) |  &nbsp;
  **active_only** | Logical| Whether to return only realtime prices from today. | [optional] [default to FALSE] &nbsp;
+ **source** | Character| Return the realtime price from the specified source instead of the most recent. | [optional]  &nbsp;
  **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
 <br/>
 
