@@ -574,12 +574,19 @@ ApiResponseSecurityQuote <- R6::R6Class(
         self$`previous_close` <- NA 
       }
 
+
+
+
       if (!is.null(listObject$`previous_close_date`)) {
-        self$`previous_close_date` <- listObject$`previous_close_date`
+        self$`previous_close_date` <- self$`previous_close_date` <- as.Date(listObject$`previous_close_date`, "%Y-%m-%d")
       }
       else {
         self$`previous_close_date` <- NA 
       }
+
+
+
+
 
       if (!is.null(listObject$`change`)) {
         self$`change` <- listObject$`change`
@@ -695,7 +702,12 @@ ApiResponseSecurityQuote <- R6::R6Class(
       listObject[["marketcap"]] <- self$`marketcap`
       listObject[["pricetoearnings"]] <- self$`pricetoearnings`
       listObject[["previous_close"]] <- self$`previous_close`
+
       listObject[["previous_close_date"]] <- self$`previous_close_date`
+
+
+
+        
       listObject[["change"]] <- self$`change`
       listObject[["change_percent"]] <- self$`change_percent`
       listObject[["adj_close_5_days_ago"]] <- self$`adj_close_5_days_ago`

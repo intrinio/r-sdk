@@ -24,7 +24,7 @@ Name | Type | Description
 **marketcap** | **Numeric** | The current market cap. &nbsp;
 **pricetoearnings** | **Numeric** | The current price to earnings. &nbsp;
 **previous_close** | **Numeric** | The previous close price. &nbsp;
-**previous_close_date** | **Numeric** | The date of the previous close. &nbsp;
+**previous_close_date** | [**Date**](Date.md) | The date of the previous close. &nbsp;
 **change** | **Numeric** | The difference in last price from the last close price &nbsp;
 **change_percent** | **Numeric** | The percent difference in last price from the last close price &nbsp;
 **adj_close_5_days_ago** | **Numeric** | The adjusted close price 5 days ago. &nbsp;
@@ -45,6 +45,9 @@ Name | Type | Description
 
 
 [//]: # (CONTAINED_CLASS:IntrinioSDK::POSIXlt)
+
+
+[//]: # (CONTAINED_CLASS:IntrinioSDK::Date)
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
