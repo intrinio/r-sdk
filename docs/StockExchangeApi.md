@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**get_stock_exchange_by_id**](StockExchangeApi.md#get_stock_exchange_by_id) | **GET** /stock_exchanges/{identifier} | Lookup Stock Exchange
 [**get_stock_exchange_price_adjustments**](StockExchangeApi.md#get_stock_exchange_price_adjustments) | **GET** /stock_exchanges/{identifier}/prices/adjustments | Stock Price Adjustments by Exchange
 [**get_stock_exchange_prices**](StockExchangeApi.md#get_stock_exchange_prices) | **GET** /stock_exchanges/{identifier}/prices | Stock Prices by Exchange
+[**get_stock_exchange_quote**](StockExchangeApi.md#get_stock_exchange_quote) | **GET** /stock_exchanges/{identifier}/quote | Realtime Quote Prices by Exchange
 [**get_stock_exchange_realtime_prices**](StockExchangeApi.md#get_stock_exchange_realtime_prices) | **GET** /stock_exchanges/{identifier}/prices/realtime | Realtime Stock Prices by Exchange
 [**get_stock_exchange_securities**](StockExchangeApi.md#get_stock_exchange_securities) | **GET** /stock_exchanges/{identifier}/securities | Securities by Exchange
 
@@ -377,6 +378,97 @@ Name | Type | Description  | Notes
 
 [//]: # (CLASS:IntrinioSDK::StockExchangeApi)
 
+[//]: # (METHOD:get_stock_exchange_quote)
+
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseStockExchangeQuote)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:ApiResponseStockExchangeQuote.md)
+
+[//]: # (OPERATION:get_stock_exchange_quote_v2)
+
+[//]: # (ENDPOINT:/stock_exchanges/{identifier}/quote)
+
+[//]: # (DOCUMENT_LINK:StockExchangeApi.md#get_stock_exchange_quote)
+
+# **get_stock_exchange_quote**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/r/get_stock_exchange_quote_v2)
+
+[//]: # (START_OVERVIEW)
+
+> ApiResponseStockExchangeQuote get_stock_exchange_quote(identifier, tickers, opts)
+
+#### Realtime Quote Prices by Exchange
+
+
+Returns quote prices for the Stock Exchange with the given `identifier`
+
+[//]: # (END_OVERVIEW)
+
+### Example
+
+[//]: # (START_CODE_EXAMPLE)
+```r
+# Setup client
+client <- IntrinioSDK::ApiClient$new()
+
+# Configure API key authorization: ApiKeyAuth
+client$configuration$apiKey <- "YOUR_API_KEY"
+
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
+# Setup API with client
+StockExchangeApi <- IntrinioSDK::StockExchangeApi$new(client)
+
+# Required params
+identifier <- "USCOMP"
+tickers <- ["AAPL,MSFT,NVDA"]
+
+# Optional params
+opts <- list(
+  source = "delayed_sip",
+  active_only = NULL
+)
+
+response <- StockExchangeApi$get_stock_exchange_quote(identifier, tickers, opts)
+
+print(response)
+print(response$content)
+```
+
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **identifier** | Character| A Stock Exchange identifier (MIC or Intrinio ID) |  &nbsp;
+ **tickers** | [**Character**](Character.md)| The comma-delimited list of ticker symbols to return quotes for. |  &nbsp;
+ **source** | Character| Return the realtime price from the specified source instead of the most recent. | [optional]  &nbsp;
+ **active_only** | Logical| Returns prices only from the most recent trading day. | [optional]  &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**ApiResponseStockExchangeQuote**](ApiResponseStockExchangeQuote.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:IntrinioSDK::StockExchangeApi)
+
 [//]: # (METHOD:get_stock_exchange_realtime_prices)
 
 [//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseStockExchangeRealtimeStockPrices)
@@ -429,6 +521,7 @@ identifier <- "USCOMP"
 opts <- list(
   source = ["iex,delayed_sip"],
   active_only = NULL,
+  traded_today = NULL,
   page_size = 100,
   tickers = ["AAPL,MSFT,NVDA"],
   next_page = NULL
@@ -454,6 +547,7 @@ Name | Type | Description  | Notes
  **identifier** | Character| A Stock Exchange identifier (MIC or Intrinio ID) |  &nbsp;
  **source** | [**Character**](Character.md)| Return realtime prices from the specified comma-delimited data sources. If no source is specified, all sources available to user are used. | [optional]  &nbsp;
  **active_only** | Logical| Returns prices only from the most recent trading day. | [optional]  &nbsp;
+ **traded_today** | Logical| Returns prices only from securities which have traded on the most recent trading day. | [optional]  &nbsp;
  **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
  **tickers** | [**Character**](Character.md)| The comma-delimited list of ticker symbols to filter to. If not provided, the entire stock exchange is returned. | [optional]  &nbsp;
  **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;

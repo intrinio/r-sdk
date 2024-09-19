@@ -7,8 +7,8 @@ Welcome to the Intrinio API! Through our Financial Data Marketplace, we offer a 
 
 ## Overview
 
-- API version: 2.66.2
-- Package version: 1.28.0
+- API version: 2.70.0
+- Package version: 1.29.0
 
 The new Intrinio R SDK wraps all API v2 endpoints into an easy-to-use set of classes, methods, and response objects.
 
@@ -105,7 +105,7 @@ Class | Method | HTTP request | Description
 *IntrinioSDK::CompanyApi* | [**get_company_historical_data**](docs/CompanyApi.md#get_company_historical_data) | **GET** /companies/{identifier}/historical_data/{tag} | Historical Data for Company
 *IntrinioSDK::CompanyApi* | [**get_company_ipos**](docs/CompanyApi.md#get_company_ipos) | **GET** /companies/ipos | IPOs
 *IntrinioSDK::CompanyApi* | [**get_company_news**](docs/CompanyApi.md#get_company_news) | **GET** /companies/{identifier}/news | All News by Company
-*IntrinioSDK::CompanyApi* | [**get_company_news_body**](docs/CompanyApi.md#get_company_news_body) | **GET** /companies/news/body | The body of a news article.  This endpoint requires additional authorization beyond basic news access. Please see a representative for details.
+*IntrinioSDK::CompanyApi* | [**get_company_news_body**](docs/CompanyApi.md#get_company_news_body) | **GET** /companies/news/body | News Article Body
 *IntrinioSDK::CompanyApi* | [**get_company_public_float**](docs/CompanyApi.md#get_company_public_float) | **GET** /companies/{identifier}/public_float | Get Company's public float
 *IntrinioSDK::CompanyApi* | [**get_company_securities**](docs/CompanyApi.md#get_company_securities) | **GET** /companies/{identifier}/securities | All Securities by Company
 *IntrinioSDK::CompanyApi* | [**insider_transaction_filings_by_company**](docs/CompanyApi.md#insider_transaction_filings_by_company) | **GET** /companies/{identifier}/insider_transaction_filings | Insider Transaction Filings by Company
@@ -275,6 +275,7 @@ Class | Method | HTTP request | Description
 *IntrinioSDK::StockExchangeApi* | [**get_stock_exchange_by_id**](docs/StockExchangeApi.md#get_stock_exchange_by_id) | **GET** /stock_exchanges/{identifier} | Lookup Stock Exchange
 *IntrinioSDK::StockExchangeApi* | [**get_stock_exchange_price_adjustments**](docs/StockExchangeApi.md#get_stock_exchange_price_adjustments) | **GET** /stock_exchanges/{identifier}/prices/adjustments | Stock Price Adjustments by Exchange
 *IntrinioSDK::StockExchangeApi* | [**get_stock_exchange_prices**](docs/StockExchangeApi.md#get_stock_exchange_prices) | **GET** /stock_exchanges/{identifier}/prices | Stock Prices by Exchange
+*IntrinioSDK::StockExchangeApi* | [**get_stock_exchange_quote**](docs/StockExchangeApi.md#get_stock_exchange_quote) | **GET** /stock_exchanges/{identifier}/quote | Realtime Quote Prices by Exchange
 *IntrinioSDK::StockExchangeApi* | [**get_stock_exchange_realtime_prices**](docs/StockExchangeApi.md#get_stock_exchange_realtime_prices) | **GET** /stock_exchanges/{identifier}/prices/realtime | Realtime Stock Prices by Exchange
 *IntrinioSDK::StockExchangeApi* | [**get_stock_exchange_securities**](docs/StockExchangeApi.md#get_stock_exchange_securities) | **GET** /stock_exchanges/{identifier}/securities | Securities by Exchange
 *IntrinioSDK::TechnicalApi* | [**get_security_price_technicals_adi**](docs/TechnicalApi.md#get_security_price_technicals_adi) | **GET** /securities/{identifier}/prices/technicals/adi | Accumulation/Distribution Index
@@ -442,6 +443,7 @@ Class | Method | HTTP request | Description
  - [IntrinioSDK::ApiResponseSecurityZacksSalesSurprises](docs/ApiResponseSecurityZacksSalesSurprises.md)
  - [IntrinioSDK::ApiResponseStandardizedFinancials](docs/ApiResponseStandardizedFinancials.md)
  - [IntrinioSDK::ApiResponseStandardizedFinancialsDimensions](docs/ApiResponseStandardizedFinancialsDimensions.md)
+ - [IntrinioSDK::ApiResponseStockExchangeQuote](docs/ApiResponseStockExchangeQuote.md)
  - [IntrinioSDK::ApiResponseStockExchangeRealtimeStockPrices](docs/ApiResponseStockExchangeRealtimeStockPrices.md)
  - [IntrinioSDK::ApiResponseStockExchangeSecurities](docs/ApiResponseStockExchangeSecurities.md)
  - [IntrinioSDK::ApiResponseStockExchangeStockPriceAdjustments](docs/ApiResponseStockExchangeStockPriceAdjustments.md)

@@ -158,7 +158,9 @@ OptionsApi <- IntrinioSDK::OptionsApi$new(client)
 
 # Optional params
 opts <- list(
-  date = IntrinioSDK::TODO_OBJECT_MAPPING$new()
+  date = IntrinioSDK::TODO_OBJECT_MAPPING$new(),
+  page_size = 100,
+  next_page = NULL
 )
 
 response <- OptionsApi$get_option_aggregates(opts)
@@ -179,6 +181,8 @@ print(response$content)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **date** | [**TODO_OBJECT_MAPPING**](TODO_OBJECT_MAPPING.md)| Return aggregated data for this date | [optional]  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
 <br/>
 
 [//]: # (END_PARAMETERS)
