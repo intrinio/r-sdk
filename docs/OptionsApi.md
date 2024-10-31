@@ -1868,7 +1868,9 @@ opts <- list(
   page_size = 250,
   stock_price_source = NULL,
   model = NULL,
-  show_extended_price = NULL
+  show_extended_price = NULL,
+  expiration_start_date = IntrinioSDK::TODO_OBJECT_MAPPING$new(),
+  expiration_end_date = IntrinioSDK::TODO_OBJECT_MAPPING$new()
 )
 
 response <- OptionsApi$get_options_prices_realtime_by_ticker(symbol, opts)
@@ -1896,6 +1898,8 @@ Name | Type | Description  | Notes
  **stock_price_source** | Character| Source for underlying price for calculating Greeks. | [optional]  &nbsp;
  **model** | Character| Model for calculating Greek values. Default is black_scholes. | [optional]  &nbsp;
  **show_extended_price** | Logical| Whether to include open close high low type fields. | [optional]  &nbsp;
+ **expiration_start_date** | [**TODO_OBJECT_MAPPING**](TODO_OBJECT_MAPPING.md)| Filter out contracts that expire before this date. | [optional]  &nbsp;
+ **expiration_end_date** | [**TODO_OBJECT_MAPPING**](TODO_OBJECT_MAPPING.md)| Filter out contracts that expire after this date. | [optional]  &nbsp;
 <br/>
 
 [//]: # (END_PARAMETERS)

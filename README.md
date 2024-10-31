@@ -7,8 +7,8 @@ Welcome to the Intrinio API! Through our Financial Data Marketplace, we offer a 
 
 ## Overview
 
-- API version: 2.70.0
-- Package version: 1.29.0
+- API version: 2.72.2
+- Package version: 1.30.0
 
 The new Intrinio R SDK wraps all API v2 endpoints into an easy-to-use set of classes, methods, and response objects.
 
@@ -273,6 +273,8 @@ Class | Method | HTTP request | Description
 *IntrinioSDK::SecurityApi* | [**search_securities**](docs/SecurityApi.md#search_securities) | **GET** /securities/search | Search Securities
 *IntrinioSDK::StockExchangeApi* | [**get_all_stock_exchanges**](docs/StockExchangeApi.md#get_all_stock_exchanges) | **GET** /stock_exchanges | All Stock Exchanges
 *IntrinioSDK::StockExchangeApi* | [**get_stock_exchange_by_id**](docs/StockExchangeApi.md#get_stock_exchange_by_id) | **GET** /stock_exchanges/{identifier} | Lookup Stock Exchange
+*IntrinioSDK::StockExchangeApi* | [**get_stock_exchange_gainers**](docs/StockExchangeApi.md#get_stock_exchange_gainers) | **GET** /stock_exchanges/{identifier}/gainers | Top Gainers by Exchange
+*IntrinioSDK::StockExchangeApi* | [**get_stock_exchange_losers**](docs/StockExchangeApi.md#get_stock_exchange_losers) | **GET** /stock_exchanges/{identifier}/losers | Top Losers by Exchange
 *IntrinioSDK::StockExchangeApi* | [**get_stock_exchange_price_adjustments**](docs/StockExchangeApi.md#get_stock_exchange_price_adjustments) | **GET** /stock_exchanges/{identifier}/prices/adjustments | Stock Price Adjustments by Exchange
 *IntrinioSDK::StockExchangeApi* | [**get_stock_exchange_prices**](docs/StockExchangeApi.md#get_stock_exchange_prices) | **GET** /stock_exchanges/{identifier}/prices | Stock Prices by Exchange
 *IntrinioSDK::StockExchangeApi* | [**get_stock_exchange_quote**](docs/StockExchangeApi.md#get_stock_exchange_quote) | **GET** /stock_exchanges/{identifier}/quote | Realtime Quote Prices by Exchange
@@ -443,6 +445,7 @@ Class | Method | HTTP request | Description
  - [IntrinioSDK::ApiResponseSecurityZacksSalesSurprises](docs/ApiResponseSecurityZacksSalesSurprises.md)
  - [IntrinioSDK::ApiResponseStandardizedFinancials](docs/ApiResponseStandardizedFinancials.md)
  - [IntrinioSDK::ApiResponseStandardizedFinancialsDimensions](docs/ApiResponseStandardizedFinancialsDimensions.md)
+ - [IntrinioSDK::ApiResponseStockExchangeMovers](docs/ApiResponseStockExchangeMovers.md)
  - [IntrinioSDK::ApiResponseStockExchangeQuote](docs/ApiResponseStockExchangeQuote.md)
  - [IntrinioSDK::ApiResponseStockExchangeRealtimeStockPrices](docs/ApiResponseStockExchangeRealtimeStockPrices.md)
  - [IntrinioSDK::ApiResponseStockExchangeSecurities](docs/ApiResponseStockExchangeSecurities.md)
@@ -588,6 +591,7 @@ Class | Method | HTTP request | Description
  - [IntrinioSDK::StandardizedFinancialsDimension](docs/StandardizedFinancialsDimension.md)
  - [IntrinioSDK::StochasticOscillatorTechnicalValue](docs/StochasticOscillatorTechnicalValue.md)
  - [IntrinioSDK::StockExchange](docs/StockExchange.md)
+ - [IntrinioSDK::StockExchangeMover](docs/StockExchangeMover.md)
  - [IntrinioSDK::StockMarketIndex](docs/StockMarketIndex.md)
  - [IntrinioSDK::StockMarketIndexSummary](docs/StockMarketIndexSummary.md)
  - [IntrinioSDK::StockPrice](docs/StockPrice.md)

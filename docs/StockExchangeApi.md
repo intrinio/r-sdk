@@ -6,6 +6,8 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get_all_stock_exchanges**](StockExchangeApi.md#get_all_stock_exchanges) | **GET** /stock_exchanges | All Stock Exchanges
 [**get_stock_exchange_by_id**](StockExchangeApi.md#get_stock_exchange_by_id) | **GET** /stock_exchanges/{identifier} | Lookup Stock Exchange
+[**get_stock_exchange_gainers**](StockExchangeApi.md#get_stock_exchange_gainers) | **GET** /stock_exchanges/{identifier}/gainers | Top Gainers by Exchange
+[**get_stock_exchange_losers**](StockExchangeApi.md#get_stock_exchange_losers) | **GET** /stock_exchanges/{identifier}/losers | Top Losers by Exchange
 [**get_stock_exchange_price_adjustments**](StockExchangeApi.md#get_stock_exchange_price_adjustments) | **GET** /stock_exchanges/{identifier}/prices/adjustments | Stock Price Adjustments by Exchange
 [**get_stock_exchange_prices**](StockExchangeApi.md#get_stock_exchange_prices) | **GET** /stock_exchanges/{identifier}/prices | Stock Prices by Exchange
 [**get_stock_exchange_quote**](StockExchangeApi.md#get_stock_exchange_quote) | **GET** /stock_exchanges/{identifier}/quote | Realtime Quote Prices by Exchange
@@ -180,6 +182,188 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**StockExchange**](StockExchange.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:IntrinioSDK::StockExchangeApi)
+
+[//]: # (METHOD:get_stock_exchange_gainers)
+
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseStockExchangeMovers)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:ApiResponseStockExchangeMovers.md)
+
+[//]: # (OPERATION:get_stock_exchange_gainers_v2)
+
+[//]: # (ENDPOINT:/stock_exchanges/{identifier}/gainers)
+
+[//]: # (DOCUMENT_LINK:StockExchangeApi.md#get_stock_exchange_gainers)
+
+# **get_stock_exchange_gainers**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/r/get_stock_exchange_gainers_v2)
+
+[//]: # (START_OVERVIEW)
+
+> ApiResponseStockExchangeMovers get_stock_exchange_gainers(identifier, opts)
+
+#### Top Gainers by Exchange
+
+
+Returns securities with the highest gain percent change traded on the chosen stock exchange.
+
+[//]: # (END_OVERVIEW)
+
+### Example
+
+[//]: # (START_CODE_EXAMPLE)
+```r
+# Setup client
+client <- IntrinioSDK::ApiClient$new()
+
+# Configure API key authorization: ApiKeyAuth
+client$configuration$apiKey <- "YOUR_API_KEY"
+
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
+# Setup API with client
+StockExchangeApi <- IntrinioSDK::StockExchangeApi$new(client)
+
+# Required params
+identifier <- "USCOMP"
+
+# Optional params
+opts <- list(
+  min_price = 8.14,
+  page_size = 100,
+  source = "delayed_sip"
+)
+
+response <- StockExchangeApi$get_stock_exchange_gainers(identifier, opts)
+
+print(response)
+print(response$content)
+```
+
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **identifier** | Character| A Stock Exchange identifier (MIC or Intrinio ID) |  &nbsp;
+ **min_price** | Numeric| The minimum price filter | [optional]  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **source** | Character| Return the realtime price from the specified source instead of the most recent. | [optional]  &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**ApiResponseStockExchangeMovers**](ApiResponseStockExchangeMovers.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:IntrinioSDK::StockExchangeApi)
+
+[//]: # (METHOD:get_stock_exchange_losers)
+
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseStockExchangeMovers)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:ApiResponseStockExchangeMovers.md)
+
+[//]: # (OPERATION:get_stock_exchange_losers_v2)
+
+[//]: # (ENDPOINT:/stock_exchanges/{identifier}/losers)
+
+[//]: # (DOCUMENT_LINK:StockExchangeApi.md#get_stock_exchange_losers)
+
+# **get_stock_exchange_losers**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/r/get_stock_exchange_losers_v2)
+
+[//]: # (START_OVERVIEW)
+
+> ApiResponseStockExchangeMovers get_stock_exchange_losers(identifier, opts)
+
+#### Top Losers by Exchange
+
+
+Returns securities with the highest loss percent change traded on the chosen stock exchange.
+
+[//]: # (END_OVERVIEW)
+
+### Example
+
+[//]: # (START_CODE_EXAMPLE)
+```r
+# Setup client
+client <- IntrinioSDK::ApiClient$new()
+
+# Configure API key authorization: ApiKeyAuth
+client$configuration$apiKey <- "YOUR_API_KEY"
+
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
+# Setup API with client
+StockExchangeApi <- IntrinioSDK::StockExchangeApi$new(client)
+
+# Required params
+identifier <- "USCOMP"
+
+# Optional params
+opts <- list(
+  min_price = 8.14,
+  page_size = 100,
+  source = "delayed_sip"
+)
+
+response <- StockExchangeApi$get_stock_exchange_losers(identifier, opts)
+
+print(response)
+print(response$content)
+```
+
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **identifier** | Character| A Stock Exchange identifier (MIC or Intrinio ID) |  &nbsp;
+ **min_price** | Numeric| The minimum price filter | [optional]  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **source** | Character| Return the realtime price from the specified source instead of the most recent. | [optional]  &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**ApiResponseStockExchangeMovers**](ApiResponseStockExchangeMovers.md)
 
 [//]: # (END_OPERATION)
 
@@ -403,7 +587,7 @@ Name | Type | Description  | Notes
 #### Realtime Quote Prices by Exchange
 
 
-Returns quote prices for the Stock Exchange with the given `identifier`
+Returns many popular metrics for securities from a given exchange 'identifier' from multiple products conveniently in one API. Realtime stock price data requires at least one realtime product subscription (IEX, NASDAQ Basic, and/or Delayed SIP).  If you are subscribed to multiple realtime stock price products, the api will return the most recent realtime stock price. Previous close price and percent change fields require both an EoD US Stock Price subscription and a realtime stock price subscription. Market_cap, price_to_earnings, and dividendyield data fields require a fundamentals subscription.
 
 [//]: # (END_OVERVIEW)
 
