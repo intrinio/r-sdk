@@ -236,7 +236,7 @@ client$configuration$allowRetries <- TRUE
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
-identifier <- "AAPL"
+identifier <- "$$v2_ticker_default$$"
 
 response <- SecurityApi$get_security_by_id(identifier)
 
@@ -296,7 +296,7 @@ Name | Type | Description  | Notes
 #### Data Point (Number) for Security
 
 
-Returns a numeric value for the given `tag` for the Security with the given `identifier`
+$$v2_security_data_point_number_description$$
 
 [//]: # (END_OVERVIEW)
 
@@ -317,8 +317,8 @@ client$configuration$allowRetries <- TRUE
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
-identifier <- "AAPL"
-tag <- "close_price"
+identifier <- "$$v2_security_data_point_identifier_default$$"
+tag <- "$$v2_security_data_point_item_number_default$$"
 
 response <- SecurityApi$get_security_data_point_number(identifier, tag)
 
@@ -337,8 +337,8 @@ print(response$content)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | Character| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) |  &nbsp;
- **tag** | Character| An Intrinio data tag ID or code (&lt;a href&#x3D;&#39;https://data.intrinio.com/data-tags&#39;&gt;reference&lt;/a&gt;) |  &nbsp;
+ **identifier** | Character| $$v2_security_data_point_identifier_description$$ |  &nbsp;
+ **tag** | Character| $$v2_security_data_point_item_description$$ |  &nbsp;
 <br/>
 
 [//]: # (END_PARAMETERS)
@@ -379,7 +379,7 @@ Name | Type | Description  | Notes
 #### Data Point (Text) for Security
 
 
-Returns a text value for the given `tag` for the Security with the given `identifier`
+$$v2_security_data_point_text_description$$
 
 [//]: # (END_OVERVIEW)
 
@@ -400,8 +400,8 @@ client$configuration$allowRetries <- TRUE
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
-identifier <- "AAPL"
-tag <- "figi"
+identifier <- "$$v2_security_data_point_identifier_default$$"
+tag <- "$$v2_security_data_point_item_text_default$$"
 
 response <- SecurityApi$get_security_data_point_text(identifier, tag)
 
@@ -420,7 +420,7 @@ print(response$content)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | Character| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) |  &nbsp;
+ **identifier** | Character| $$v2_security_data_point_identifier_description$$ |  &nbsp;
  **tag** | Character| An Intrinio data tag ID or code-name |  &nbsp;
 <br/>
 
@@ -462,7 +462,7 @@ Name | Type | Description  | Notes
 #### Historical Data for Security
 
 
-Returns historical values for the given `tag` and the Security with the given `identifier`
+$$v2_security_historical_data_description$$
 
 [//]: # (END_OVERVIEW)
 
@@ -483,8 +483,8 @@ client$configuration$allowRetries <- TRUE
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
-identifier <- "AAPL"
-tag <- "adj_close_price"
+identifier <- "$$v2_security_historical_data_identifier_default$$"
+tag <- "$$v2_security_historical_data_item_default$$"
 
 # Optional params
 opts <- list(
@@ -514,8 +514,8 @@ print(response$content)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | Character| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) |  &nbsp;
- **tag** | Character| An Intrinio data tag ID or code (&lt;a href&#x3D;&#39;https://data.intrinio.com/data-tags&#39;&gt;reference&lt;/a&gt;) |  &nbsp;
+ **identifier** | Character| $$v2_security_historical_data_identifier_description$$ |  &nbsp;
+ **tag** | Character| $$v2_security_data_point_item_description$$ |  &nbsp;
  **frequency** | Character| Return historical data in the given frequency | [optional] [default to daily] &nbsp;
  **type** | Character| Filter by type, when applicable | [optional]  &nbsp;
  **start_date** | Date| Get historical data on or after this date | [optional]  &nbsp;
@@ -746,7 +746,7 @@ client$configuration$allowRetries <- TRUE
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
-identifier <- "AAPL"
+identifier <- "$$v2_ticker_default$$"
 
 # Optional params
 opts <- list(
@@ -1088,7 +1088,7 @@ client$configuration$allowRetries <- TRUE
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
-identifier <- "AAPL"
+identifier <- "$$v2_ticker_default$$"
 interval_size <- "15m"
 
 # Optional params
@@ -1174,7 +1174,7 @@ Name | Type | Description  | Notes
 #### Intraday Stock Prices for Security
 
 
-Deprecated.  Return intraday stock prices for the Security with the given `identifier`
+Deprecated.  $$v2_security_intraday_prices_description$$
 
 [//]: # (END_OVERVIEW)
 
@@ -1195,7 +1195,7 @@ client$configuration$allowRetries <- TRUE
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
-identifier <- "AAPL"
+identifier <- "$$v2_ticker_default$$"
 
 # Optional params
 opts <- list(
@@ -1294,7 +1294,7 @@ client$configuration$allowRetries <- TRUE
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
-identifier <- "AAPL"
+identifier <- "$$v2_ticker_default$$"
 
 response <- SecurityApi$get_security_latest_dividend_record(identifier)
 
@@ -1375,7 +1375,7 @@ client$configuration$allowRetries <- TRUE
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
-identifier <- "AAPL"
+identifier <- "$$v2_ticker_default$$"
 
 response <- SecurityApi$get_security_latest_earnings_record(identifier)
 
@@ -1456,7 +1456,7 @@ client$configuration$allowRetries <- TRUE
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
-identifier <- "AAPL"
+identifier <- "$$v2_ticker_default$$"
 
 # Optional params
 opts <- list(
@@ -1549,7 +1549,7 @@ client$configuration$allowRetries <- TRUE
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
-identifier <- "AAPL"
+identifier <- "$$v2_ticker_default$$"
 
 # Optional params
 opts <- list(
@@ -1644,7 +1644,7 @@ client$configuration$allowRetries <- TRUE
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
-identifier <- "AAPL"
+identifier <- "$$v2_ticker_default$$"
 
 # Optional params
 opts <- list(
@@ -1739,7 +1739,7 @@ client$configuration$allowRetries <- TRUE
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
-identifier <- "AAPL"
+identifier <- "$$v2_ticker_default$$"
 
 # Optional params
 opts <- list(
@@ -1836,7 +1836,7 @@ client$configuration$allowRetries <- TRUE
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
-identifier <- "AAPL"
+identifier <- "$$v2_ticker_default$$"
 
 # Optional params
 opts <- list(
@@ -1931,7 +1931,7 @@ client$configuration$allowRetries <- TRUE
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
-identifier <- "AAPL"
+identifier <- "$$v2_ticker_default$$"
 
 # Optional params
 opts <- list(
@@ -2030,7 +2030,7 @@ client$configuration$allowRetries <- TRUE
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
-identifier <- "AAPL"
+identifier <- "$$v2_ticker_default$$"
 
 # Optional params
 opts <- list(
@@ -2127,7 +2127,7 @@ client$configuration$allowRetries <- TRUE
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
-identifier <- "AAPL"
+identifier <- "$$v2_ticker_default$$"
 
 # Optional params
 opts <- list(
@@ -2222,7 +2222,7 @@ client$configuration$allowRetries <- TRUE
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
-identifier <- "AAPL"
+identifier <- "$$v2_ticker_default$$"
 
 # Optional params
 opts <- list(
@@ -2319,7 +2319,7 @@ client$configuration$allowRetries <- TRUE
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
-identifier <- "AAPL"
+identifier <- "$$v2_ticker_default$$"
 
 # Optional params
 opts <- list(
@@ -2416,7 +2416,7 @@ client$configuration$allowRetries <- TRUE
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
-identifier <- "AAPL"
+identifier <- "$$v2_ticker_default$$"
 
 # Optional params
 opts <- list(
@@ -2511,7 +2511,7 @@ client$configuration$allowRetries <- TRUE
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
-identifier <- "AAPL"
+identifier <- "$$v2_ticker_default$$"
 
 # Optional params
 opts <- list(
@@ -2604,7 +2604,7 @@ client$configuration$allowRetries <- TRUE
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
-identifier <- "AAPL"
+identifier <- "$$v2_ticker_default$$"
 
 # Optional params
 opts <- list(
@@ -2703,7 +2703,7 @@ client$configuration$allowRetries <- TRUE
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
-identifier <- "AAPL"
+identifier <- "$$v2_ticker_default$$"
 
 # Optional params
 opts <- list(
@@ -2798,7 +2798,7 @@ client$configuration$allowRetries <- TRUE
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
-identifier <- "AAPL"
+identifier <- "$$v2_ticker_default$$"
 
 # Optional params
 opts <- list(
@@ -2909,7 +2909,7 @@ client$configuration$allowRetries <- TRUE
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
-identifier <- "AAPL"
+identifier <- "$$v2_ticker_default$$"
 
 # Optional params
 opts <- list(
@@ -3010,7 +3010,7 @@ client$configuration$allowRetries <- TRUE
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
-identifier <- "AAPL"
+identifier <- "$$v2_ticker_default$$"
 
 # Optional params
 opts <- list(
@@ -3105,7 +3105,7 @@ client$configuration$allowRetries <- TRUE
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
-identifier <- "AAPL"
+identifier <- "$$v2_ticker_default$$"
 
 # Optional params
 opts <- list(
@@ -3202,7 +3202,7 @@ client$configuration$allowRetries <- TRUE
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
-identifier <- "AAPL"
+identifier <- "$$v2_ticker_default$$"
 
 # Optional params
 opts <- list(
@@ -3295,7 +3295,7 @@ client$configuration$allowRetries <- TRUE
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
-identifier <- "AAPL"
+identifier <- "$$v2_ticker_default$$"
 
 # Optional params
 opts <- list(
@@ -3388,7 +3388,7 @@ client$configuration$allowRetries <- TRUE
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
-identifier <- "AAPL"
+identifier <- "$$v2_ticker_default$$"
 
 # Optional params
 opts <- list(
@@ -3483,7 +3483,7 @@ client$configuration$allowRetries <- TRUE
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
-identifier <- "AAPL"
+identifier <- "$$v2_ticker_default$$"
 
 # Optional params
 opts <- list(
@@ -3580,7 +3580,7 @@ client$configuration$allowRetries <- TRUE
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
-identifier <- "AAPL"
+identifier <- "$$v2_ticker_default$$"
 
 # Optional params
 opts <- list(
@@ -3677,7 +3677,7 @@ client$configuration$allowRetries <- TRUE
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
-identifier <- "AAPL"
+identifier <- "$$v2_ticker_default$$"
 
 # Optional params
 opts <- list(
@@ -3774,7 +3774,7 @@ client$configuration$allowRetries <- TRUE
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
-identifier <- "AAPL"
+identifier <- "$$v2_ticker_default$$"
 
 # Optional params
 opts <- list(
@@ -3869,7 +3869,7 @@ client$configuration$allowRetries <- TRUE
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
-identifier <- "AAPL"
+identifier <- "$$v2_ticker_default$$"
 
 # Optional params
 opts <- list(
@@ -3968,7 +3968,7 @@ client$configuration$allowRetries <- TRUE
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
-identifier <- "AAPL"
+identifier <- "$$v2_ticker_default$$"
 
 # Optional params
 opts <- list(
@@ -4073,7 +4073,7 @@ client$configuration$allowRetries <- TRUE
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
-identifier <- "AAPL"
+identifier <- "$$v2_ticker_default$$"
 
 # Optional params
 opts <- list(
@@ -4168,7 +4168,7 @@ client$configuration$allowRetries <- TRUE
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
-identifier <- "AAPL"
+identifier <- "$$v2_ticker_default$$"
 
 # Optional params
 opts <- list(
@@ -4261,7 +4261,7 @@ client$configuration$allowRetries <- TRUE
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
-identifier <- "AAPL"
+identifier <- "$$v2_ticker_default$$"
 
 # Optional params
 opts <- list(
@@ -4354,7 +4354,7 @@ client$configuration$allowRetries <- TRUE
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
-identifier <- "AAPL"
+identifier <- "$$v2_ticker_default$$"
 
 # Optional params
 opts <- list(
@@ -4449,7 +4449,7 @@ client$configuration$allowRetries <- TRUE
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
-identifier <- "AAPL"
+identifier <- "$$v2_ticker_default$$"
 
 # Optional params
 opts <- list(
@@ -4540,7 +4540,7 @@ client$configuration$allowRetries <- TRUE
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
-identifier <- "AAPL"
+identifier <- "$$v2_ticker_default$$"
 
 # Optional params
 opts <- list(
@@ -4793,7 +4793,7 @@ client$configuration$allowRetries <- TRUE
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
-identifier <- "AAPL"
+identifier <- "$$v2_ticker_default$$"
 
 # Optional params
 opts <- list(
@@ -4886,7 +4886,7 @@ client$configuration$allowRetries <- TRUE
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
-identifier <- "AAPL"
+identifier <- "$$v2_ticker_default$$"
 
 # Optional params
 opts <- list(
@@ -5189,7 +5189,7 @@ client$configuration$allowRetries <- TRUE
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
-identifier <- "AAPL"
+identifier <- "$$v2_ticker_default$$"
 
 # Optional params
 opts <- list(
@@ -5308,7 +5308,7 @@ client$configuration$allowRetries <- TRUE
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
-identifier <- "AAPL"
+identifier <- "$$v2_ticker_default$$"
 
 # Optional params
 opts <- list(
@@ -5395,7 +5395,7 @@ client$configuration$allowRetries <- TRUE
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
-identifier <- "AAPL"
+identifier <- "$$v2_ticker_default$$"
 
 # Optional params
 opts <- list(
@@ -5484,7 +5484,7 @@ client$configuration$allowRetries <- TRUE
 SecurityApi <- IntrinioSDK::SecurityApi$new(client)
 
 # Required params
-identifier <- "AAPL"
+identifier <- "$$v2_ticker_default$$"
 
 # Optional params
 opts <- list(

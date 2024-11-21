@@ -88,7 +88,7 @@ client$configuration$allowRetries <- TRUE
 TechnicalApi <- IntrinioSDK::TechnicalApi$new(client)
 
 # Required params
-identifier <- "AAPL"
+identifier <- "$$v2_ticker_default$$"
 
 # Optional params
 opts <- list(
@@ -181,7 +181,7 @@ client$configuration$allowRetries <- TRUE
 TechnicalApi <- IntrinioSDK::TechnicalApi$new(client)
 
 # Required params
-identifier <- "AAPL"
+identifier <- "$$v2_ticker_default$$"
 
 # Optional params
 opts <- list(
@@ -276,7 +276,7 @@ client$configuration$allowRetries <- TRUE
 TechnicalApi <- IntrinioSDK::TechnicalApi$new(client)
 
 # Required params
-identifier <- "AAPL"
+identifier <- "$$v2_ticker_default$$"
 
 # Optional params
 opts <- list(
@@ -371,7 +371,7 @@ client$configuration$allowRetries <- TRUE
 TechnicalApi <- IntrinioSDK::TechnicalApi$new(client)
 
 # Required params
-identifier <- "AAPL"
+identifier <- "$$v2_ticker_default$$"
 
 # Optional params
 opts <- list(
@@ -468,7 +468,7 @@ client$configuration$allowRetries <- TRUE
 TechnicalApi <- IntrinioSDK::TechnicalApi$new(client)
 
 # Required params
-identifier <- "AAPL"
+identifier <- "$$v2_ticker_default$$"
 
 # Optional params
 opts <- list(
@@ -563,7 +563,7 @@ client$configuration$allowRetries <- TRUE
 TechnicalApi <- IntrinioSDK::TechnicalApi$new(client)
 
 # Required params
-identifier <- "AAPL"
+identifier <- "$$v2_ticker_default$$"
 
 # Optional params
 opts <- list(
@@ -662,7 +662,7 @@ client$configuration$allowRetries <- TRUE
 TechnicalApi <- IntrinioSDK::TechnicalApi$new(client)
 
 # Required params
-identifier <- "AAPL"
+identifier <- "$$v2_ticker_default$$"
 
 # Optional params
 opts <- list(
@@ -759,7 +759,7 @@ client$configuration$allowRetries <- TRUE
 TechnicalApi <- IntrinioSDK::TechnicalApi$new(client)
 
 # Required params
-identifier <- "AAPL"
+identifier <- "$$v2_ticker_default$$"
 
 # Optional params
 opts <- list(
@@ -854,7 +854,7 @@ client$configuration$allowRetries <- TRUE
 TechnicalApi <- IntrinioSDK::TechnicalApi$new(client)
 
 # Required params
-identifier <- "AAPL"
+identifier <- "$$v2_ticker_default$$"
 
 # Optional params
 opts <- list(
@@ -951,7 +951,7 @@ client$configuration$allowRetries <- TRUE
 TechnicalApi <- IntrinioSDK::TechnicalApi$new(client)
 
 # Required params
-identifier <- "AAPL"
+identifier <- "$$v2_ticker_default$$"
 
 # Optional params
 opts <- list(
@@ -1048,7 +1048,7 @@ client$configuration$allowRetries <- TRUE
 TechnicalApi <- IntrinioSDK::TechnicalApi$new(client)
 
 # Required params
-identifier <- "AAPL"
+identifier <- "$$v2_ticker_default$$"
 
 # Optional params
 opts <- list(
@@ -1143,7 +1143,7 @@ client$configuration$allowRetries <- TRUE
 TechnicalApi <- IntrinioSDK::TechnicalApi$new(client)
 
 # Required params
-identifier <- "AAPL"
+identifier <- "$$v2_ticker_default$$"
 
 # Optional params
 opts <- list(
@@ -1236,7 +1236,7 @@ client$configuration$allowRetries <- TRUE
 TechnicalApi <- IntrinioSDK::TechnicalApi$new(client)
 
 # Required params
-identifier <- "AAPL"
+identifier <- "$$v2_ticker_default$$"
 
 # Optional params
 opts <- list(
@@ -1335,7 +1335,7 @@ client$configuration$allowRetries <- TRUE
 TechnicalApi <- IntrinioSDK::TechnicalApi$new(client)
 
 # Required params
-identifier <- "AAPL"
+identifier <- "$$v2_ticker_default$$"
 
 # Optional params
 opts <- list(
@@ -1430,7 +1430,7 @@ client$configuration$allowRetries <- TRUE
 TechnicalApi <- IntrinioSDK::TechnicalApi$new(client)
 
 # Required params
-identifier <- "AAPL"
+identifier <- "$$v2_ticker_default$$"
 
 # Optional params
 opts <- list(
@@ -1541,7 +1541,7 @@ client$configuration$allowRetries <- TRUE
 TechnicalApi <- IntrinioSDK::TechnicalApi$new(client)
 
 # Required params
-identifier <- "AAPL"
+identifier <- "$$v2_ticker_default$$"
 
 # Optional params
 opts <- list(
@@ -1642,7 +1642,7 @@ client$configuration$allowRetries <- TRUE
 TechnicalApi <- IntrinioSDK::TechnicalApi$new(client)
 
 # Required params
-identifier <- "AAPL"
+identifier <- "$$v2_ticker_default$$"
 
 # Optional params
 opts <- list(
@@ -1737,7 +1737,7 @@ client$configuration$allowRetries <- TRUE
 TechnicalApi <- IntrinioSDK::TechnicalApi$new(client)
 
 # Required params
-identifier <- "AAPL"
+identifier <- "$$v2_ticker_default$$"
 
 # Optional params
 opts <- list(
@@ -1834,7 +1834,7 @@ client$configuration$allowRetries <- TRUE
 TechnicalApi <- IntrinioSDK::TechnicalApi$new(client)
 
 # Required params
-identifier <- "AAPL"
+identifier <- "$$v2_ticker_default$$"
 
 # Optional params
 opts <- list(
@@ -1927,7 +1927,7 @@ client$configuration$allowRetries <- TRUE
 TechnicalApi <- IntrinioSDK::TechnicalApi$new(client)
 
 # Required params
-identifier <- "AAPL"
+identifier <- "$$v2_ticker_default$$"
 
 # Optional params
 opts <- list(
@@ -2020,7 +2020,7 @@ client$configuration$allowRetries <- TRUE
 TechnicalApi <- IntrinioSDK::TechnicalApi$new(client)
 
 # Required params
-identifier <- "AAPL"
+identifier <- "$$v2_ticker_default$$"
 
 # Optional params
 opts <- list(
@@ -2115,7 +2115,7 @@ client$configuration$allowRetries <- TRUE
 TechnicalApi <- IntrinioSDK::TechnicalApi$new(client)
 
 # Required params
-identifier <- "AAPL"
+identifier <- "$$v2_ticker_default$$"
 
 # Optional params
 opts <- list(
@@ -2212,7 +2212,7 @@ client$configuration$allowRetries <- TRUE
 TechnicalApi <- IntrinioSDK::TechnicalApi$new(client)
 
 # Required params
-identifier <- "AAPL"
+identifier <- "$$v2_ticker_default$$"
 
 # Optional params
 opts <- list(
@@ -2309,7 +2309,7 @@ client$configuration$allowRetries <- TRUE
 TechnicalApi <- IntrinioSDK::TechnicalApi$new(client)
 
 # Required params
-identifier <- "AAPL"
+identifier <- "$$v2_ticker_default$$"
 
 # Optional params
 opts <- list(
@@ -2406,7 +2406,7 @@ client$configuration$allowRetries <- TRUE
 TechnicalApi <- IntrinioSDK::TechnicalApi$new(client)
 
 # Required params
-identifier <- "AAPL"
+identifier <- "$$v2_ticker_default$$"
 
 # Optional params
 opts <- list(
@@ -2501,7 +2501,7 @@ client$configuration$allowRetries <- TRUE
 TechnicalApi <- IntrinioSDK::TechnicalApi$new(client)
 
 # Required params
-identifier <- "AAPL"
+identifier <- "$$v2_ticker_default$$"
 
 # Optional params
 opts <- list(
@@ -2600,7 +2600,7 @@ client$configuration$allowRetries <- TRUE
 TechnicalApi <- IntrinioSDK::TechnicalApi$new(client)
 
 # Required params
-identifier <- "AAPL"
+identifier <- "$$v2_ticker_default$$"
 
 # Optional params
 opts <- list(
@@ -2705,7 +2705,7 @@ client$configuration$allowRetries <- TRUE
 TechnicalApi <- IntrinioSDK::TechnicalApi$new(client)
 
 # Required params
-identifier <- "AAPL"
+identifier <- "$$v2_ticker_default$$"
 
 # Optional params
 opts <- list(
@@ -2800,7 +2800,7 @@ client$configuration$allowRetries <- TRUE
 TechnicalApi <- IntrinioSDK::TechnicalApi$new(client)
 
 # Required params
-identifier <- "AAPL"
+identifier <- "$$v2_ticker_default$$"
 
 # Optional params
 opts <- list(
@@ -2893,7 +2893,7 @@ client$configuration$allowRetries <- TRUE
 TechnicalApi <- IntrinioSDK::TechnicalApi$new(client)
 
 # Required params
-identifier <- "AAPL"
+identifier <- "$$v2_ticker_default$$"
 
 # Optional params
 opts <- list(
@@ -2986,7 +2986,7 @@ client$configuration$allowRetries <- TRUE
 TechnicalApi <- IntrinioSDK::TechnicalApi$new(client)
 
 # Required params
-identifier <- "AAPL"
+identifier <- "$$v2_ticker_default$$"
 
 # Optional params
 opts <- list(

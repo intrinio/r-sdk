@@ -155,7 +155,7 @@ client$configuration$allowRetries <- TRUE
 StockExchangeApi <- IntrinioSDK::StockExchangeApi$new(client)
 
 # Required params
-identifier <- "USCOMP"
+identifier <- "$$v2_mic_default$$"
 
 response <- StockExchangeApi$get_stock_exchange_by_id(identifier)
 
@@ -236,7 +236,7 @@ client$configuration$allowRetries <- TRUE
 StockExchangeApi <- IntrinioSDK::StockExchangeApi$new(client)
 
 # Required params
-identifier <- "USCOMP"
+identifier <- "$$v2_mic_default$$"
 
 # Optional params
 opts <- list(
@@ -327,7 +327,7 @@ client$configuration$allowRetries <- TRUE
 StockExchangeApi <- IntrinioSDK::StockExchangeApi$new(client)
 
 # Required params
-identifier <- "USCOMP"
+identifier <- "$$v2_mic_default$$"
 
 # Optional params
 opts <- list(
@@ -418,7 +418,7 @@ client$configuration$allowRetries <- TRUE
 StockExchangeApi <- IntrinioSDK::StockExchangeApi$new(client)
 
 # Required params
-identifier <- "USCOMP"
+identifier <- "$$v2_mic_default$$"
 
 # Optional params
 opts <- list(
@@ -509,7 +509,7 @@ client$configuration$allowRetries <- TRUE
 StockExchangeApi <- IntrinioSDK::StockExchangeApi$new(client)
 
 # Required params
-identifier <- "USCOMP"
+identifier <- "$$v2_mic_default$$"
 
 # Optional params
 opts <- list(
@@ -608,7 +608,7 @@ client$configuration$allowRetries <- TRUE
 StockExchangeApi <- IntrinioSDK::StockExchangeApi$new(client)
 
 # Required params
-identifier <- "USCOMP"
+identifier <- "$$v2_mic_default$$"
 tickers <- ["AAPL,MSFT,NVDA"]
 
 # Optional params
@@ -699,7 +699,7 @@ client$configuration$allowRetries <- TRUE
 StockExchangeApi <- IntrinioSDK::StockExchangeApi$new(client)
 
 # Required params
-identifier <- "USCOMP"
+identifier <- "$$v2_mic_default$$"
 
 # Optional params
 opts <- list(
@@ -796,7 +796,7 @@ client$configuration$allowRetries <- TRUE
 StockExchangeApi <- IntrinioSDK::StockExchangeApi$new(client)
 
 # Required params
-identifier <- "USCOMP"
+identifier <- "$$v2_mic_default$$"
 
 # Optional params
 opts <- list(

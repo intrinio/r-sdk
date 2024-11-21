@@ -8,6 +8,8 @@ Method | HTTP request | Description
 [**get_option_aggregates**](OptionsApi.md#get_option_aggregates) | **GET** /options/aggregates | Total open interest and volume aggregated by ticker
 [**get_option_expirations_realtime**](OptionsApi.md#get_option_expirations_realtime) | **GET** /options/expirations/{symbol}/realtime | Options Expirations
 [**get_option_strikes_realtime**](OptionsApi.md#get_option_strikes_realtime) | **GET** /options/strikes/{symbol}/{strike}/realtime | Option Strikes Realtime
+[**get_option_trades**](OptionsApi.md#get_option_trades) | **GET** /options/trades | Option Trades
+[**get_option_trades_by_contract**](OptionsApi.md#get_option_trades_by_contract) | **GET** /options/{identifier}/trades | Option Trades By Contract
 [**get_options**](OptionsApi.md#get_options) | **GET** /options/{symbol} | Options
 [**get_options_by_symbol_realtime**](OptionsApi.md#get_options_by_symbol_realtime) | **GET** /options/{symbol}/realtime | Options by Symbol Realtime
 [**get_options_chain**](OptionsApi.md#get_options_chain) | **GET** /options/chain/{symbol}/{expiration} | Options Chain
@@ -22,6 +24,7 @@ Method | HTTP request | Description
 [**get_options_prices**](OptionsApi.md#get_options_prices) | **GET** /options/prices/{identifier} | Option Prices
 [**get_options_prices_batch_realtime**](OptionsApi.md#get_options_prices_batch_realtime) | **POST** /options/prices/realtime/batch | Option Prices Batch Realtime
 [**get_options_prices_eod**](OptionsApi.md#get_options_prices_eod) | **GET** /options/prices/{identifier}/eod | Option Prices EOD
+[**get_options_prices_eod_by_ticker**](OptionsApi.md#get_options_prices_eod_by_ticker) | **GET** /options/prices/by_ticker/{symbol}/eod | Option Prices End of Day By Ticker
 [**get_options_prices_realtime**](OptionsApi.md#get_options_prices_realtime) | **GET** /options/prices/{identifier}/realtime | Option Prices Realtime
 [**get_options_prices_realtime_by_ticker**](OptionsApi.md#get_options_prices_realtime_by_ticker) | **GET** /options/prices/by_ticker/{symbol}/realtime | Option Prices Realtime By Ticker
 [**get_options_snapshots**](OptionsApi.md#get_options_snapshots) | **GET** /options/snapshots | Option Prices Realtime Snapshot
@@ -380,6 +383,210 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ApiResponseOptionsChainRealtime**](ApiResponseOptionsChainRealtime.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:IntrinioSDK::OptionsApi)
+
+[//]: # (METHOD:get_option_trades)
+
+[//]: # (RETURN_TYPE:IntrinioSDK::OptionTradesResult)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:OptionTradesResult.md)
+
+[//]: # (OPERATION:get_option_trades_v2)
+
+[//]: # (ENDPOINT:/options/trades)
+
+[//]: # (DOCUMENT_LINK:OptionsApi.md#get_option_trades)
+
+# **get_option_trades**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/r/get_option_trades_v2)
+
+[//]: # (START_OVERVIEW)
+
+> OptionTradesResult get_option_trades(opts)
+
+#### Option Trades
+
+
+Returns all trades between start time and end time, up to seven days ago for the specified source.
+
+[//]: # (END_OVERVIEW)
+
+### Example
+
+[//]: # (START_CODE_EXAMPLE)
+```r
+# Setup client
+client <- IntrinioSDK::ApiClient$new()
+
+# Configure API key authorization: ApiKeyAuth
+client$configuration$apiKey <- "YOUR_API_KEY"
+
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
+# Setup API with client
+OptionsApi <- IntrinioSDK::OptionsApi$new(client)
+
+# Optional params
+opts <- list(
+  source = NULL,
+  start_date = NULL,
+  start_time = NULL,
+  end_date = NULL,
+  end_time = NULL,
+  timezone = "UTC",
+  page_size = 100,
+  min_size = 100,
+  security = "AAPL",
+  next_page = NULL
+)
+
+response <- OptionsApi$get_option_trades(opts)
+
+print(response)
+print(response$content)
+```
+
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **source** | Character| The specific source of the data being requested. | [optional]  &nbsp;
+ **start_date** | Date| The start date for the data being requested. | [optional]  &nbsp;
+ **start_time** | Character| The start time for the data being requested. | [optional]  &nbsp;
+ **end_date** | Date| The end date for the data being requested. | [optional]  &nbsp;
+ **end_time** | Character| The end time for the data being requested. | [optional]  &nbsp;
+ **timezone** | Character| The timezone the start and end date/times use. | [optional] [default to UTC] &nbsp;
+ **page_size** | Integer| The maximum number of results to return per page. | [optional] [default to 100] &nbsp;
+ **min_size** | Integer| Trades must be larger or equal to this size. | [optional]  &nbsp;
+ **security** | Character| The ticker symbol for which trades are being requested. | [optional]  &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**OptionTradesResult**](OptionTradesResult.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:IntrinioSDK::OptionsApi)
+
+[//]: # (METHOD:get_option_trades_by_contract)
+
+[//]: # (RETURN_TYPE:IntrinioSDK::OptionTradesResult)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:OptionTradesResult.md)
+
+[//]: # (OPERATION:get_option_trades_by_contract_v2)
+
+[//]: # (ENDPOINT:/options/{identifier}/trades)
+
+[//]: # (DOCUMENT_LINK:OptionsApi.md#get_option_trades_by_contract)
+
+# **get_option_trades_by_contract**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/r/get_option_trades_by_contract_v2)
+
+[//]: # (START_OVERVIEW)
+
+> OptionTradesResult get_option_trades_by_contract(identifier, opts)
+
+#### Option Trades By Contract
+
+
+Returns all trades for a contract between start time and end time, up to seven days ago for the specified source.
+
+[//]: # (END_OVERVIEW)
+
+### Example
+
+[//]: # (START_CODE_EXAMPLE)
+```r
+# Setup client
+client <- IntrinioSDK::ApiClient$new()
+
+# Configure API key authorization: ApiKeyAuth
+client$configuration$apiKey <- "YOUR_API_KEY"
+
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
+# Setup API with client
+OptionsApi <- IntrinioSDK::OptionsApi$new(client)
+
+# Required params
+identifier <- "AAPL__261218C00230000"
+
+# Optional params
+opts <- list(
+  source = NULL,
+  start_date = NULL,
+  start_time = NULL,
+  end_date = NULL,
+  end_time = NULL,
+  timezone = "UTC",
+  page_size = 100,
+  min_size = 100,
+  next_page = NULL
+)
+
+response <- OptionsApi$get_option_trades_by_contract(identifier, opts)
+
+print(response)
+print(response$content)
+```
+
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **identifier** | Character| The option contract for which trades are being requested. |  &nbsp;
+ **source** | Character| The specific source of the data being requested. | [optional]  &nbsp;
+ **start_date** | Date| The start date for the data being requested. | [optional]  &nbsp;
+ **start_time** | Character| The start time for the data being requested. | [optional]  &nbsp;
+ **end_date** | Date| The end date for the data being requested. | [optional]  &nbsp;
+ **end_time** | Character| The end time for the data being requested. | [optional]  &nbsp;
+ **timezone** | Character| The timezone the start and end date/times use. | [optional] [default to UTC] &nbsp;
+ **page_size** | Integer| The maximum number of results to return per page. | [optional] [default to 100] &nbsp;
+ **min_size** | Integer| Trades must be larger or equal to this size. | [optional]  &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**OptionTradesResult**](OptionTradesResult.md)
 
 [//]: # (END_OPERATION)
 
@@ -1719,6 +1926,107 @@ Name | Type | Description  | Notes
 
 [//]: # (CLASS:IntrinioSDK::OptionsApi)
 
+[//]: # (METHOD:get_options_prices_eod_by_ticker)
+
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseOptionsPricesByTickerEod)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:ApiResponseOptionsPricesByTickerEod.md)
+
+[//]: # (OPERATION:get_options_prices_eod_by_ticker_v2)
+
+[//]: # (ENDPOINT:/options/prices/by_ticker/{symbol}/eod)
+
+[//]: # (DOCUMENT_LINK:OptionsApi.md#get_options_prices_eod_by_ticker)
+
+# **get_options_prices_eod_by_ticker**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/r/get_options_prices_eod_by_ticker_v2)
+
+[//]: # (START_OVERVIEW)
+
+> ApiResponseOptionsPricesByTickerEod get_options_prices_eod_by_ticker(symbol, opts)
+
+#### Option Prices End of Day By Ticker
+
+
+Returns a list of end of day pricing information for all option contracts currently associated with the ticker.
+
+[//]: # (END_OVERVIEW)
+
+### Example
+
+[//]: # (START_CODE_EXAMPLE)
+```r
+# Setup client
+client <- IntrinioSDK::ApiClient$new()
+
+# Configure API key authorization: ApiKeyAuth
+client$configuration$apiKey <- "YOUR_API_KEY"
+
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
+# Setup API with client
+OptionsApi <- IntrinioSDK::OptionsApi$new(client)
+
+# Required params
+symbol <- "MSFT"
+
+# Optional params
+opts <- list(
+  page_size = 250,
+  date = IntrinioSDK::TODO_OBJECT_MAPPING$new(),
+  type = NULL,
+  strike = NULL,
+  strike_greater_than = NULL,
+  strike_less_than = NULL,
+  include_related_symbols = FALSE,
+  next_page = NULL
+)
+
+response <- OptionsApi$get_options_prices_eod_by_ticker(symbol, opts)
+
+print(response)
+print(response$content)
+```
+
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **symbol** | Character| The equities ticker symbol, corresponding to the underlying security. |  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 250] &nbsp;
+ **date** | [**TODO_OBJECT_MAPPING**](TODO_OBJECT_MAPPING.md)| The date to get pricing data for. Defaults to today in Eastern time zone. | [optional]  &nbsp;
+ **type** | Character| The option contract type. | [optional]  &nbsp;
+ **strike** | Numeric| The strike price of the option contract. This will return options contracts with strike price equal to this price. | [optional]  &nbsp;
+ **strike_greater_than** | Numeric| The strike price of the option contract. This will return options contracts with strike prices greater than this price. | [optional]  &nbsp;
+ **strike_less_than** | Numeric| The strike price of the option contract. This will return options contracts with strike prices less than this price. | [optional]  &nbsp;
+ **include_related_symbols** | Logical| Include related symbols that end in a 1 or 2 because of a corporate action. | [optional]  &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**ApiResponseOptionsPricesByTickerEod**](ApiResponseOptionsPricesByTickerEod.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:IntrinioSDK::OptionsApi)
+
 [//]: # (METHOD:get_options_prices_realtime)
 
 [//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseOptionsPriceRealtime)
@@ -1765,7 +2073,7 @@ client$configuration$allowRetries <- TRUE
 OptionsApi <- IntrinioSDK::OptionsApi$new(client)
 
 # Required params
-identifier <- "AAPL230120C00090000"
+identifier <- "AAPL__261218C00230000"
 
 # Optional params
 opts <- list(

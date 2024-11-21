@@ -76,6 +76,7 @@ opts <- list(
   industry_category = NULL,
   industry_group = NULL,
   thea_enabled = NULL,
+  earnings_release = NULL,
   page_size = 100,
   next_page = NULL
 )
@@ -104,6 +105,7 @@ Name | Type | Description  | Notes
  **industry_category** | Character| Return companies in the given industry category | [optional]  &nbsp;
  **industry_group** | Character| Return companies in the given industry group | [optional]  &nbsp;
  **thea_enabled** | Logical| Return filings that have been read by our Thea NLP and are ready for our answers endpoint | [optional]  &nbsp;
+ **earnings_release** | Logical| Return filings that have been tagged as having Results of Operations and Financial Conditions | [optional]  &nbsp;
  **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
  **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
 <br/>
