@@ -22,6 +22,7 @@ ApiResponseIndexConstituents <- R6::R6Class(
     `index` = NA,
     `date` = NA,
     `constituents` = NA,
+    `constituents_data_frame` = NULL,
     initialize = function(`index`, `date`, `constituents`){
       if (!missing(`index`)) {
         self$`index` <- `index`
@@ -108,13 +109,22 @@ ApiResponseIndexConstituents <- R6::R6Class(
 
 
 
+      self$`constituents` <- lapply(listObject$`constituents`, function(x) {
+      SecuritySummaryObject <- SecuritySummary$new()
+      SecuritySummaryObject$setFromList(x)
+      return(SecuritySummaryObject)
+      })
+
+      constituents_list <- lapply(self$`constituents`, function(x) {
+        return(x$getAsList()) 
+      })
+
+      self$`constituents_data_frame` <- do.call(rbind, lapply(constituents_list, data.frame))
 
 
 
 
 
-      self$`constituents` <- IndexConstituents$new()
-      self$`constituents`$setFromList(listObject$`constituents`)
 
     },
     getAsList = function() {
@@ -134,14 +144,13 @@ ApiResponseIndexConstituents <- R6::R6Class(
 
 
         
+      # listObject[["constituents"]] <- lapply(self$`constituents`, function(o) {
+      #  return(o$getAsList())
+      # })
 
 
 
 
-      constituents_list <- self$`constituents`$getAsList()
-      for (x in names(constituents_list)) {
-        listObject[[paste("constituents_",x, sep = "")]] <- self$`constituents`[[x]]
-      }
         
       return(listObject)
     }

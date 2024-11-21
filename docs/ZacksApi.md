@@ -73,7 +73,7 @@ ZacksApi <- IntrinioSDK::ZacksApi$new(client)
 
 # Optional params
 opts <- list(
-  identifier = "$$v2_ticker_default$$",
+  identifier = "AAPL",
   start_date = NULL,
   end_date = NULL,
   mean_greater = NULL,
