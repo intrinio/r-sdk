@@ -60,7 +60,7 @@ Method | HTTP request | Description
 
 [//]: # (START_OVERVIEW)
 
-> ApiResponseOptionsTickers get_all_options_tickers()
+> ApiResponseOptionsTickers get_all_options_tickers(opts)
 
 #### Options Tickers
 
@@ -84,7 +84,13 @@ client$configuration$allowRetries <- TRUE
 
 # Setup API with client
 OptionsApi <- IntrinioSDK::OptionsApi$new(client)
-response <- OptionsApi$get_all_options_tickers()
+
+# Optional params
+opts <- list(
+  use_underlying_symbols = FALSE
+)
+
+response <- OptionsApi$get_all_options_tickers(opts)
 
 print(response)
 print(response$content)
@@ -98,7 +104,10 @@ print(response$content)
 
 [//]: # (START_PARAMETERS)
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **use_underlying_symbols** | Logical| Use underlying symbol vs contract symbol | [optional] [default to FALSE] &nbsp;
 <br/>
 
 [//]: # (END_PARAMETERS)

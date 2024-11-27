@@ -7,8 +7,8 @@ Welcome to the Intrinio API! Through our Financial Data Marketplace, we offer a 
 
 ## Overview
 
-- API version: 2.75.0
-- Package version: 1.31.0
+- API version: 2.76.3
+- Package version: 1.32.0
 
 The new Intrinio R SDK wraps all API v2 endpoints into an easy-to-use set of classes, methods, and response objects.
 
@@ -276,6 +276,7 @@ Class | Method | HTTP request | Description
 *IntrinioSDK::SecurityApi* | [**screen_securities**](docs/SecurityApi.md#screen_securities) | **POST** /securities/screen | Screen Securities
 *IntrinioSDK::SecurityApi* | [**search_securities**](docs/SecurityApi.md#search_securities) | **GET** /securities/search | Search Securities
 *IntrinioSDK::StockExchangeApi* | [**get_all_stock_exchanges**](docs/StockExchangeApi.md#get_all_stock_exchanges) | **GET** /stock_exchanges | All Stock Exchanges
+*IntrinioSDK::StockExchangeApi* | [**get_stock_exchange_betas**](docs/StockExchangeApi.md#get_stock_exchange_betas) | **GET** /stock_exchanges/{identifier}/betas | Security Betas
 *IntrinioSDK::StockExchangeApi* | [**get_stock_exchange_by_id**](docs/StockExchangeApi.md#get_stock_exchange_by_id) | **GET** /stock_exchanges/{identifier} | Lookup Stock Exchange
 *IntrinioSDK::StockExchangeApi* | [**get_stock_exchange_gainers**](docs/StockExchangeApi.md#get_stock_exchange_gainers) | **GET** /stock_exchanges/{identifier}/gainers | Top Gainers by Exchange
 *IntrinioSDK::StockExchangeApi* | [**get_stock_exchange_losers**](docs/StockExchangeApi.md#get_stock_exchange_losers) | **GET** /stock_exchanges/{identifier}/losers | Top Losers by Exchange
@@ -451,6 +452,7 @@ Class | Method | HTTP request | Description
  - [IntrinioSDK::ApiResponseSecurityZacksSalesSurprises](docs/ApiResponseSecurityZacksSalesSurprises.md)
  - [IntrinioSDK::ApiResponseStandardizedFinancials](docs/ApiResponseStandardizedFinancials.md)
  - [IntrinioSDK::ApiResponseStandardizedFinancialsDimensions](docs/ApiResponseStandardizedFinancialsDimensions.md)
+ - [IntrinioSDK::ApiResponseStockExchangeBetas](docs/ApiResponseStockExchangeBetas.md)
  - [IntrinioSDK::ApiResponseStockExchangeMovers](docs/ApiResponseStockExchangeMovers.md)
  - [IntrinioSDK::ApiResponseStockExchangeQuote](docs/ApiResponseStockExchangeQuote.md)
  - [IntrinioSDK::ApiResponseStockExchangeRealtimeStockPrices](docs/ApiResponseStockExchangeRealtimeStockPrices.md)
@@ -479,6 +481,7 @@ Class | Method | HTTP request | Description
  - [IntrinioSDK::AverageDirectionalIndexTechnicalValue](docs/AverageDirectionalIndexTechnicalValue.md)
  - [IntrinioSDK::AverageTrueRangeTechnicalValue](docs/AverageTrueRangeTechnicalValue.md)
  - [IntrinioSDK::AwesomeOscillatorTechnicalValue](docs/AwesomeOscillatorTechnicalValue.md)
+ - [IntrinioSDK::Beta](docs/Beta.md)
  - [IntrinioSDK::BollingerBandsTechnicalValue](docs/BollingerBandsTechnicalValue.md)
  - [IntrinioSDK::BulkDownloadLinks](docs/BulkDownloadLinks.md)
  - [IntrinioSDK::BulkDownloadSummary](docs/BulkDownloadSummary.md)

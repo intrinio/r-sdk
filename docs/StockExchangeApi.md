@@ -5,6 +5,7 @@ All URIs are relative to *https://api-v2.intrinio.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get_all_stock_exchanges**](StockExchangeApi.md#get_all_stock_exchanges) | **GET** /stock_exchanges | All Stock Exchanges
+[**get_stock_exchange_betas**](StockExchangeApi.md#get_stock_exchange_betas) | **GET** /stock_exchanges/{identifier}/betas | Security Betas
 [**get_stock_exchange_by_id**](StockExchangeApi.md#get_stock_exchange_by_id) | **GET** /stock_exchanges/{identifier} | Lookup Stock Exchange
 [**get_stock_exchange_gainers**](StockExchangeApi.md#get_stock_exchange_gainers) | **GET** /stock_exchanges/{identifier}/gainers | Top Gainers by Exchange
 [**get_stock_exchange_losers**](StockExchangeApi.md#get_stock_exchange_losers) | **GET** /stock_exchanges/{identifier}/losers | Top Losers by Exchange
@@ -101,6 +102,99 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ApiResponseStockExchanges**](ApiResponseStockExchanges.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:IntrinioSDK::StockExchangeApi)
+
+[//]: # (METHOD:get_stock_exchange_betas)
+
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseStockExchangeBetas)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:ApiResponseStockExchangeBetas.md)
+
+[//]: # (OPERATION:get_stock_exchange_betas_v2)
+
+[//]: # (ENDPOINT:/stock_exchanges/{identifier}/betas)
+
+[//]: # (DOCUMENT_LINK:StockExchangeApi.md#get_stock_exchange_betas)
+
+# **get_stock_exchange_betas**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/r/get_stock_exchange_betas_v2)
+
+[//]: # (START_OVERVIEW)
+
+> ApiResponseStockExchangeBetas get_stock_exchange_betas(identifier, opts)
+
+#### Security Betas
+
+
+Returns security beta data in the Stock Exchange with the given `identifier`
+
+[//]: # (END_OVERVIEW)
+
+### Example
+
+[//]: # (START_CODE_EXAMPLE)
+```r
+# Setup client
+client <- IntrinioSDK::ApiClient$new()
+
+# Configure API key authorization: ApiKeyAuth
+client$configuration$apiKey <- "YOUR_API_KEY"
+
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
+# Setup API with client
+StockExchangeApi <- IntrinioSDK::StockExchangeApi$new(client)
+
+# Required params
+identifier <- "USCOMP"
+
+# Optional params
+opts <- list(
+  type = "weekly",
+  date = IntrinioSDK::TODO_OBJECT_MAPPING$new(),
+  page_size = 100,
+  next_page = NULL
+)
+
+response <- StockExchangeApi$get_stock_exchange_betas(identifier, opts)
+
+print(response)
+print(response$content)
+```
+
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **identifier** | Character| A Stock Exchange identifier (MIC or Intrinio ID) |  &nbsp;
+ **type** | Character| Only of the given type | [optional] [default to weekly] &nbsp;
+ **date** | [**TODO_OBJECT_MAPPING**](TODO_OBJECT_MAPPING.md)| Return data for this period end date. | [optional]  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**ApiResponseStockExchangeBetas**](ApiResponseStockExchangeBetas.md)
 
 [//]: # (END_OPERATION)
 
