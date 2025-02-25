@@ -2280,7 +2280,10 @@ OptionsApi <- IntrinioSDK::OptionsApi$new(client)
 # Optional params
 opts <- list(
   source = NULL,
-  at_datetime = as.POSIXlt(NULL, tz="UTC")
+  at_datetime = as.POSIXlt(NULL, tz="UTC"),
+  with_greeks = NULL,
+  stock_price_source = NULL,
+  with_underlying_price = NULL
 )
 
 response <- OptionsApi$get_options_snapshots(opts)
@@ -2302,6 +2305,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **source** | Character| Realtime or 15-minute delayed contracts. | [optional]  &nbsp;
  **at_datetime** | POSIXlt| The UTC date and time (with url-encoded spaces) the snapshot will cover. | [optional]  &nbsp;
+ **with_greeks** | Logical| Whether to include Greek calculations fields when available. | [optional]  &nbsp;
+ **stock_price_source** | Character| Source for underlying price for calculating Greeks. | [optional]  &nbsp;
+ **with_underlying_price** | Logical| Whether to include the underlying price of the security in the file. | [optional]  &nbsp;
 <br/>
 
 [//]: # (END_PARAMETERS)
