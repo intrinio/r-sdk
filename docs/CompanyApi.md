@@ -912,9 +912,11 @@ opts <- list(
   fiscal_year = NULL,
   statement_code = NULL,
   type = NULL,
+  fundamental_type = NULL,
   start_date = NULL,
   end_date = NULL,
   updated_after = as.Date("2022-12-01"),
+  latest_only = TRUE,
   updated_before = as.Date("2022-12-01"),
   page_size = 100,
   next_page = NULL
@@ -944,9 +946,11 @@ Name | Type | Description  | Notes
  **fiscal_year** | Integer| Only for the given fiscal year | [optional]  &nbsp;
  **statement_code** | Character| Only of the given statement code | [optional]  &nbsp;
  **type** | Character| Only of the given type | [optional]  &nbsp;
+ **fundamental_type** | Character| Only of the given fundamental type | [optional]  &nbsp;
  **start_date** | Date| Only on or after the given date | [optional]  &nbsp;
  **end_date** | Date| Only on or before the given date | [optional]  &nbsp;
  **updated_after** | Date| Only include fundamentals where it was updated after this date. | [optional]  &nbsp;
+ **latest_only** | Logical| Only the most-recently reported fundamental for the period | [optional]  &nbsp;
  **updated_before** | Date| Only include fundamentals where it was updated before this date. | [optional]  &nbsp;
  **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
  **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
