@@ -414,7 +414,7 @@ FundamentalsApi <- IntrinioSDK::FundamentalsApi$new(client)
 
 # Required params
 id <- "AAPL-income_statement-2020-FY"
-tag <- "ceo"
+tag <- "$$v2_data_point_item_text_default$$"
 
 response <- FundamentalsApi$get_fundamental_standardized_financials_dimensions(id, tag)
 
@@ -434,7 +434,7 @@ print(response$content)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | Character| The Intrinio ID or lookup code (ticker-statement-year-period) for the Fundamental |  &nbsp;
- **tag** | Character| An Intrinio data tag ID or code (&lt;a href&#x3D;&#39;https://data.intrinio.com/data-tags&#39;&gt;reference&lt;/a&gt;) |  &nbsp;
+ **tag** | Character| $$v2_data_point_item_description$$ |  &nbsp;
 <br/>
 
 [//]: # (END_PARAMETERS)
