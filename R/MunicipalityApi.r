@@ -32,7 +32,7 @@
 MunicipalityApi <- R6::R6Class(
   'MunicipalityApi',
   public = list(
-    userAgent = "Swagger-Codegen/1.34.0/r",
+    userAgent = "Swagger-Codegen/1.35.0/r",
     apiClient = NULL,
     initialize = function(apiClient){
       if (!missing(apiClient)) {
