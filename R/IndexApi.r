@@ -54,6 +54,9 @@
 #' get_index_constituents_by_id Index Constituents By Index Identifier
 #'
 #'
+#' get_index_intervals Index Intervals
+#'
+#'
 #' get_index_summary_by_id Index Summary By Identifier
 #'
 #'
@@ -635,6 +638,68 @@ IndexApi <- R6::R6Class(
           returnObject <- as.logical(jsonlite::fromJSON(result))
         } else {
           returnObject <- ApiResponseIndexConstituents$new()
+          returnObject$fromJSONString(result)
+        }
+
+        Response$new(returnObject, resp)
+      } else if (httr::status_code(resp) >= 400 && httr::status_code(resp) <= 499) {
+        result <- jsonlite::fromJSON(httr::content(resp, "text", encoding = "UTF-8"))
+        Response$new(result, resp)
+      } else if (httr::status_code(resp) >= 500 && httr::status_code(resp) <= 599) {
+        result <- httr::content(resp, "text", encoding = "UTF-8")
+        Response$new(result, resp)
+      }
+
+    },
+    get_index_intervals = function(identifier, interval_size, opts = list()){
+      queryParams <- list()
+      headerParams <- character()
+
+      if (!missing(`interval_size`)) {
+        queryParams['interval_size'] <- `interval_size`
+      }
+      if ('start_date' %in% names(opts)) {
+        queryParams['start_date'] <- opts['start_date']
+      }
+      if ('start_time' %in% names(opts)) {
+        queryParams['start_time'] <- opts['start_time']
+      }
+      if ('end_date' %in% names(opts)) {
+        queryParams['end_date'] <- opts['end_date']
+      }
+      if ('end_time' %in% names(opts)) {
+        queryParams['end_time'] <- opts['end_time']
+      }
+      if ('timezone' %in% names(opts)) {
+        queryParams['timezone'] <- opts['timezone']
+      }
+      if ('page_size' %in% names(opts)) {
+        queryParams['page_size'] <- opts['page_size']
+      }
+      urlPath <- "/indices/{identifier}/intervals"
+      if (!missing(`identifier`)) {
+        urlPath <- gsub(paste0("\\{", "identifier", "\\}"), `identifier`, urlPath)
+      }
+
+      resp <- self$apiClient$callApi(url = paste0(self$apiClient$basePath, urlPath),
+                                 method = "GET",
+                                 queryParams = queryParams,
+                                 headerParams = headerParams,
+                                 body = body)
+
+      if (httr::status_code(resp) >= 200 && httr::status_code(resp) <= 299) {
+        result <- httr::content(resp, "text", encoding = "UTF-8")
+
+        if ("ApiResponseIndexIntervals" == "Numeric") {
+          returnObject <- as.numeric(jsonlite::fromJSON(result))
+        } else if ("ApiResponseIndexIntervals" == "Integer") {
+          returnObject <- as.integer(jsonlite::fromJSON(result))
+        } else if ("ApiResponseIndexIntervals" == "Character") {
+          returnObject <- gsub("\\\"", "", result)
+        } else if ("ApiResponseIndexIntervals" == "Logical") {
+          returnObject <- as.logical(jsonlite::fromJSON(result))
+        } else {
+          returnObject <- ApiResponseIndexIntervals$new()
           returnObject$fromJSONString(result)
         }
 
