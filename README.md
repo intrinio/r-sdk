@@ -7,8 +7,8 @@ Welcome to the Intrinio API! Through our Financial Data Marketplace, we offer a 
 
 ## Overview
 
-- API version: 2.100.0
-- Package version: 1.35.0
+- API version: 2.101.0
+- Package version: 1.36.0
 
 The new Intrinio R SDK wraps all API v2 endpoints into an easy-to-use set of classes, methods, and response objects.
 
@@ -195,6 +195,8 @@ Class | Method | HTTP request | Description
 *IntrinioSDK::OptionsApi* | [**get_options_chain_realtime**](docs/OptionsApi.md#get_options_chain_realtime) | **GET** /options/chain/{symbol}/{expiration}/realtime | Options Chain Realtime
 *IntrinioSDK::OptionsApi* | [**get_options_expirations**](docs/OptionsApi.md#get_options_expirations) | **GET** /options/expirations/{symbol} | Options Expirations
 *IntrinioSDK::OptionsApi* | [**get_options_expirations_eod**](docs/OptionsApi.md#get_options_expirations_eod) | **GET** /options/expirations/{symbol}/eod | Options Expirations
+*IntrinioSDK::OptionsApi* | [**get_options_greeks_by_contract**](docs/OptionsApi.md#get_options_greeks_by_contract) | **GET** /options/greeks/{contract}/realtime | Get realtime options greeks for a specific contract
+*IntrinioSDK::OptionsApi* | [**get_options_greeks_by_ticker**](docs/OptionsApi.md#get_options_greeks_by_ticker) | **GET** /options/greeks/by_ticker/{identifier}/realtime | Get realtime options greeks by ticker
 *IntrinioSDK::OptionsApi* | [**get_options_implied_move_by_symbol**](docs/OptionsApi.md#get_options_implied_move_by_symbol) | **GET** /options/implied_move/{symbol}/{expiration_date} | Options Implied Move By Symbol
 *IntrinioSDK::OptionsApi* | [**get_options_interval_by_contract**](docs/OptionsApi.md#get_options_interval_by_contract) | **GET** /options/interval/{identifier} | Options Intervals By Contract
 *IntrinioSDK::OptionsApi* | [**get_options_interval_movers**](docs/OptionsApi.md#get_options_interval_movers) | **GET** /options/interval/movers | Options Intervals Movers
@@ -212,8 +214,6 @@ Class | Method | HTTP request | Description
 *IntrinioSDK::OptionsApi* | [**get_unusual_activity_intraday**](docs/OptionsApi.md#get_unusual_activity_intraday) | **GET** /options/unusual_activity/{symbol}/intraday | Options Unusual Activity Intraday
 *IntrinioSDK::OptionsApi* | [**get_unusual_activity_universal**](docs/OptionsApi.md#get_unusual_activity_universal) | **GET** /options/unusual_activity | Options Unusual Activity Universal
 *IntrinioSDK::OptionsApi* | [**get_unusual_activity_universal_intraday**](docs/OptionsApi.md#get_unusual_activity_universal_intraday) | **GET** /options/unusual_activity/intraday | Options Unusual Activity Universal Intraday
-*IntrinioSDK::OptionsApi* | [**options_greeks_by_ticker_identifier_realtime_get**](docs/OptionsApi.md#options_greeks_by_ticker_identifier_realtime_get) | **GET** /options/greeks/by_ticker/{identifier}/realtime | Get realtime options greeks by ticker
-*IntrinioSDK::OptionsApi* | [**options_greeks_contract_realtime_get**](docs/OptionsApi.md#options_greeks_contract_realtime_get) | **GET** /options/greeks/{contract}/realtime | Get realtime options greeks for a specific contract
 *IntrinioSDK::OwnersApi* | [**get_all_owners**](docs/OwnersApi.md#get_all_owners) | **GET** /owners | All Owners
 *IntrinioSDK::OwnersApi* | [**get_owner_by_id**](docs/OwnersApi.md#get_owner_by_id) | **GET** /owners/{identifier} | Owner by ID
 *IntrinioSDK::OwnersApi* | [**insider_transaction_filings_by_owner**](docs/OwnersApi.md#insider_transaction_filings_by_owner) | **GET** /owners/{identifier}/insider_transaction_filings | Insider Transaction Filings by Owner
