@@ -100,24 +100,12 @@ ETFHistoricalStats <- R6::R6Class(
       self$setFromList(ETFHistoricalStatsObject)
     },
     setFromList = function(listObject) {
-
-
-      self$`messages` <- lapply(listObject$`messages`, function(x) {
-      ERRORUNKNOWNObject <- ERRORUNKNOWN$new()
-      ERRORUNKNOWNObject$setFromList(x)
-      return(ERRORUNKNOWNObject)
-      })
-
-      messages_list <- lapply(self$`messages`, function(x) {
-        return(x$getAsList()) 
-      })
-
-      self$`messages_data_frame` <- do.call(rbind, lapply(messages_list, data.frame))
-
-
-
-
-
+      if (!is.null(listObject$`messages`)) {
+        self$`messages` <- listObject$`messages`
+      }
+      else {
+        self$`messages` <- NA 
+      }
 
 
 
@@ -158,14 +146,6 @@ ETFHistoricalStats <- R6::R6Class(
     },
     getAsList = function() {
       listObject = list()
-      # listObject[["messages"]] <- lapply(self$`messages`, function(o) {
-      #  return(o$getAsList())
-      # })
-
-
-
-
-        
 
 
 
