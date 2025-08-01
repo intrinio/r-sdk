@@ -8,7 +8,7 @@ Welcome to the Intrinio API! Through our Financial Data Marketplace, we offer a 
 ## Overview
 
 - API version: 2.107.0
-- Package version: 1.38.0
+- Package version: 1.39.0
 
 The new Intrinio R SDK wraps all API v2 endpoints into an easy-to-use set of classes, methods, and response objects.
 

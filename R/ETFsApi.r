@@ -44,7 +44,7 @@
 ETFsApi <- R6::R6Class(
   'ETFsApi',
   public = list(
-    userAgent = "Swagger-Codegen/1.38.0/r",
+    userAgent = "Swagger-Codegen/1.39.0/r",
     apiClient = NULL,
     initialize = function(apiClient){
       if (!missing(apiClient)) {
