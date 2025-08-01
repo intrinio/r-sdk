@@ -7,8 +7,8 @@ Welcome to the Intrinio API! Through our Financial Data Marketplace, we offer a 
 
 ## Overview
 
-- API version: 2.103.0
-- Package version: 1.37.0
+- API version: 2.107.0
+- Package version: 1.38.0
 
 The new Intrinio R SDK wraps all API v2 endpoints into an easy-to-use set of classes, methods, and response objects.
 
@@ -127,6 +127,7 @@ Class | Method | HTTP request | Description
 *IntrinioSDK::ETFsApi* | [**get_all_etfs**](docs/ETFsApi.md#get_all_etfs) | **GET** /etfs | All ETFs
 *IntrinioSDK::ETFsApi* | [**get_etf**](docs/ETFsApi.md#get_etf) | **GET** /etfs/{identifier} | Lookup ETF
 *IntrinioSDK::ETFsApi* | [**get_etf_analytics**](docs/ETFsApi.md#get_etf_analytics) | **GET** /etfs/{identifier}/analytics | ETF Analytics
+*IntrinioSDK::ETFsApi* | [**get_etf_historical_stats**](docs/ETFsApi.md#get_etf_historical_stats) | **GET** /etfs/{identifier}/historical_stats | Exchange Traded Fund (ETF) stats
 *IntrinioSDK::ETFsApi* | [**get_etf_holdings**](docs/ETFsApi.md#get_etf_holdings) | **GET** /etfs/{identifier}/holdings | ETF Holdings
 *IntrinioSDK::ETFsApi* | [**get_etf_stats**](docs/ETFsApi.md#get_etf_stats) | **GET** /etfs/{identifier}/stats | Exchange Traded Fund (ETF) stats
 *IntrinioSDK::ETFsApi* | [**search_etfs**](docs/ETFsApi.md#search_etfs) | **GET** /etfs/search | Search ETFs
@@ -269,6 +270,8 @@ Class | Method | HTTP request | Description
 *IntrinioSDK::SecurityApi* | [**get_security_replay_file**](docs/SecurityApi.md#get_security_replay_file) | **GET** /securities/replay | Security Replay File
 *IntrinioSDK::SecurityApi* | [**get_security_snapshots**](docs/SecurityApi.md#get_security_snapshots) | **GET** /securities/snapshots | Realtime Stock Prices Snapshot
 *IntrinioSDK::SecurityApi* | [**get_security_stock_price_adjustments**](docs/SecurityApi.md#get_security_stock_price_adjustments) | **GET** /securities/{identifier}/prices/adjustments | Stock Price Adjustments by Security
+*IntrinioSDK::SecurityApi* | [**get_security_stock_price_adjustments_dividends**](docs/SecurityApi.md#get_security_stock_price_adjustments_dividends) | **GET** /securities/{identifier}/prices/adjustments/dividends | Dividends by Security
+*IntrinioSDK::SecurityApi* | [**get_security_stock_price_adjustments_splits**](docs/SecurityApi.md#get_security_stock_price_adjustments_splits) | **GET** /securities/{identifier}/prices/adjustments/splits | Splits by Security
 *IntrinioSDK::SecurityApi* | [**get_security_stock_prices**](docs/SecurityApi.md#get_security_stock_prices) | **GET** /securities/{identifier}/prices | Stock Prices by Security
 *IntrinioSDK::SecurityApi* | [**get_security_trades**](docs/SecurityApi.md#get_security_trades) | **GET** /securities/trades | Security Trades
 *IntrinioSDK::SecurityApi* | [**get_security_trades_by_symbol**](docs/SecurityApi.md#get_security_trades_by_symbol) | **GET** /securities/{identifier}/trades | Security Trades By Symbol
@@ -284,6 +287,8 @@ Class | Method | HTTP request | Description
 *IntrinioSDK::StockExchangeApi* | [**get_stock_exchange_gainers**](docs/StockExchangeApi.md#get_stock_exchange_gainers) | **GET** /stock_exchanges/{identifier}/gainers | Top Gainers by Exchange
 *IntrinioSDK::StockExchangeApi* | [**get_stock_exchange_losers**](docs/StockExchangeApi.md#get_stock_exchange_losers) | **GET** /stock_exchanges/{identifier}/losers | Top Losers by Exchange
 *IntrinioSDK::StockExchangeApi* | [**get_stock_exchange_price_adjustments**](docs/StockExchangeApi.md#get_stock_exchange_price_adjustments) | **GET** /stock_exchanges/{identifier}/prices/adjustments | Stock Price Adjustments by Exchange
+*IntrinioSDK::StockExchangeApi* | [**get_stock_exchange_price_adjustments_dividends**](docs/StockExchangeApi.md#get_stock_exchange_price_adjustments_dividends) | **GET** /stock_exchanges/{identifier}/prices/adjustments/dividends | Dividends by date for exchange
+*IntrinioSDK::StockExchangeApi* | [**get_stock_exchange_price_adjustments_splits**](docs/StockExchangeApi.md#get_stock_exchange_price_adjustments_splits) | **GET** /stock_exchanges/{identifier}/prices/adjustments/splits | Splits by date for exchange
 *IntrinioSDK::StockExchangeApi* | [**get_stock_exchange_prices**](docs/StockExchangeApi.md#get_stock_exchange_prices) | **GET** /stock_exchanges/{identifier}/prices | Stock Prices by Exchange
 *IntrinioSDK::StockExchangeApi* | [**get_stock_exchange_quote**](docs/StockExchangeApi.md#get_stock_exchange_quote) | **GET** /stock_exchanges/{identifier}/quote | Realtime Quote Prices by Exchange
 *IntrinioSDK::StockExchangeApi* | [**get_stock_exchange_realtime_prices**](docs/StockExchangeApi.md#get_stock_exchange_realtime_prices) | **GET** /stock_exchanges/{identifier}/prices/realtime | Realtime Stock Prices by Exchange
@@ -514,6 +519,7 @@ Class | Method | HTTP request | Description
  - [IntrinioSDK::ESGRatingWithCompany](docs/ESGRatingWithCompany.md)
  - [IntrinioSDK::ETF](docs/ETF.md)
  - [IntrinioSDK::ETFAnalytics](docs/ETFAnalytics.md)
+ - [IntrinioSDK::ETFHistoricalStats](docs/ETFHistoricalStats.md)
  - [IntrinioSDK::ETFHolding](docs/ETFHolding.md)
  - [IntrinioSDK::ETFStats](docs/ETFStats.md)
  - [IntrinioSDK::ETFSummary](docs/ETFSummary.md)

@@ -22,6 +22,9 @@ Name | Type | Description
 **industry_category** | **Character** | The company&#39;s operating industry category &nbsp;
 **industry_group** | **Character** | The company&#39;s operating industry group &nbsp;
 **word_count** | **Integer** | The number of words in the filing &nbsp;
+**earnings_disclosed_at** | [**POSIXlt**](POSIXlt.md) | The date and time when the earnings information was first disclosed via 8-K filing &nbsp;
+**earnings_disclosed_8k_id** | **Character** | The Intrinio ID of the 8-K filing where earnings were first disclosed &nbsp;
+**earnings_8k_url** | **Character** | The URL to the 8-K filing page on the SEC site where earnings were first disclosed &nbsp;
 **company** | [**CompanySummary**](CompanySummary.md) |  &nbsp;
 
 [//]: # (END_DEFINITION)
@@ -34,6 +37,9 @@ Name | Type | Description
 
 
 [//]: # (CONTAINED_CLASS:IntrinioSDK::Date)
+
+
+[//]: # (CONTAINED_CLASS:IntrinioSDK::POSIXlt)
 
 
 [//]: # (CONTAINED_CLASS:IntrinioSDK::CompanySummary)

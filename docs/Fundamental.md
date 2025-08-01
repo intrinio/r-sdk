@@ -20,6 +20,8 @@ Name | Type | Description
 **filing_date** | [**POSIXlt**](POSIXlt.md) | The date and time when the Fundamental was filed with the SEC &nbsp;
 **is_latest** | [**Logical**](Logical.md) | Is this the latest fundamental available based on the company&#39;s most recent filings? Use the Lookup Fundamental endpoint to find the latest fundamental (&lt;a href&#x3D;\&quot;https://docs.intrinio.com/documentation/web_api/lookup_fundamental_v2\&quot; target&#x3D;\&quot;_blank\&quot;&gt;reference&lt;/a&gt;) &nbsp;
 **updated_date** | [**POSIXlt**](POSIXlt.md) | The date and time when the fundamental was last updated &nbsp;
+**first_calculable** | [**POSIXlt**](POSIXlt.md) | The date and time when the fundamental was first calculable &nbsp;
+**earnings_disclosed_at** | [**POSIXlt**](POSIXlt.md) | The date and time when the earnings information was first disclosed via 8-K filing &nbsp;
 **company** | [**CompanySummary**](CompanySummary.md) | The Company that the Fundamental was belongs to &nbsp;
 
 [//]: # (END_DEFINITION)
@@ -35,6 +37,12 @@ Name | Type | Description
 
 
 [//]: # (CONTAINED_CLASS:IntrinioSDK::Logical)
+
+
+[//]: # (CONTAINED_CLASS:IntrinioSDK::POSIXlt)
+
+
+[//]: # (CONTAINED_CLASS:IntrinioSDK::POSIXlt)
 
 
 [//]: # (CONTAINED_CLASS:IntrinioSDK::POSIXlt)

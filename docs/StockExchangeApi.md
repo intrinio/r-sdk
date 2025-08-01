@@ -10,6 +10,8 @@ Method | HTTP request | Description
 [**get_stock_exchange_gainers**](StockExchangeApi.md#get_stock_exchange_gainers) | **GET** /stock_exchanges/{identifier}/gainers | Top Gainers by Exchange
 [**get_stock_exchange_losers**](StockExchangeApi.md#get_stock_exchange_losers) | **GET** /stock_exchanges/{identifier}/losers | Top Losers by Exchange
 [**get_stock_exchange_price_adjustments**](StockExchangeApi.md#get_stock_exchange_price_adjustments) | **GET** /stock_exchanges/{identifier}/prices/adjustments | Stock Price Adjustments by Exchange
+[**get_stock_exchange_price_adjustments_dividends**](StockExchangeApi.md#get_stock_exchange_price_adjustments_dividends) | **GET** /stock_exchanges/{identifier}/prices/adjustments/dividends | Dividends by date for exchange
+[**get_stock_exchange_price_adjustments_splits**](StockExchangeApi.md#get_stock_exchange_price_adjustments_splits) | **GET** /stock_exchanges/{identifier}/prices/adjustments/splits | Splits by date for exchange
 [**get_stock_exchange_prices**](StockExchangeApi.md#get_stock_exchange_prices) | **GET** /stock_exchanges/{identifier}/prices | Stock Prices by Exchange
 [**get_stock_exchange_quote**](StockExchangeApi.md#get_stock_exchange_quote) | **GET** /stock_exchanges/{identifier}/quote | Realtime Quote Prices by Exchange
 [**get_stock_exchange_realtime_prices**](StockExchangeApi.md#get_stock_exchange_realtime_prices) | **GET** /stock_exchanges/{identifier}/prices/realtime | Realtime Stock Prices by Exchange
@@ -540,6 +542,188 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **identifier** | Character| A Stock Exchange identifier (MIC or Intrinio ID) |  &nbsp;
  **date** | Date| The date for which to return price adjustments | [optional]  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**ApiResponseStockExchangeStockPriceAdjustments**](ApiResponseStockExchangeStockPriceAdjustments.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:IntrinioSDK::StockExchangeApi)
+
+[//]: # (METHOD:get_stock_exchange_price_adjustments_dividends)
+
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseStockExchangeStockPriceAdjustments)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:ApiResponseStockExchangeStockPriceAdjustments.md)
+
+[//]: # (OPERATION:get_stock_exchange_price_adjustments_dividends_v2)
+
+[//]: # (ENDPOINT:/stock_exchanges/{identifier}/prices/adjustments/dividends)
+
+[//]: # (DOCUMENT_LINK:StockExchangeApi.md#get_stock_exchange_price_adjustments_dividends)
+
+# **get_stock_exchange_price_adjustments_dividends**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/r/get_stock_exchange_price_adjustments_dividends_v2)
+
+[//]: # (START_OVERVIEW)
+
+> ApiResponseStockExchangeStockPriceAdjustments get_stock_exchange_price_adjustments_dividends(identifier, opts)
+
+#### Dividends by date for exchange
+
+
+Returns dividend adjustments for the Stock Exchange with the given `identifier`
+
+[//]: # (END_OVERVIEW)
+
+### Example
+
+[//]: # (START_CODE_EXAMPLE)
+```r
+# Setup client
+client <- IntrinioSDK::ApiClient$new()
+
+# Configure API key authorization: ApiKeyAuth
+client$configuration$apiKey <- "YOUR_API_KEY"
+
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
+# Setup API with client
+StockExchangeApi <- IntrinioSDK::StockExchangeApi$new(client)
+
+# Required params
+identifier <- "USCOMP"
+
+# Optional params
+opts <- list(
+  date = as.Date("2025-06-01"),
+  page_size = 100,
+  next_page = NULL
+)
+
+response <- StockExchangeApi$get_stock_exchange_price_adjustments_dividends(identifier, opts)
+
+print(response)
+print(response$content)
+```
+
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **identifier** | Character| A Stock Exchange identifier (MIC or Intrinio ID) |  &nbsp;
+ **date** | Date| The date for which to return dividends | [optional]  &nbsp;
+ **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**ApiResponseStockExchangeStockPriceAdjustments**](ApiResponseStockExchangeStockPriceAdjustments.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:IntrinioSDK::StockExchangeApi)
+
+[//]: # (METHOD:get_stock_exchange_price_adjustments_splits)
+
+[//]: # (RETURN_TYPE:IntrinioSDK::ApiResponseStockExchangeStockPriceAdjustments)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:ApiResponseStockExchangeStockPriceAdjustments.md)
+
+[//]: # (OPERATION:get_stock_exchange_price_adjustments_splits_v2)
+
+[//]: # (ENDPOINT:/stock_exchanges/{identifier}/prices/adjustments/splits)
+
+[//]: # (DOCUMENT_LINK:StockExchangeApi.md#get_stock_exchange_price_adjustments_splits)
+
+# **get_stock_exchange_price_adjustments_splits**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/r/get_stock_exchange_price_adjustments_splits_v2)
+
+[//]: # (START_OVERVIEW)
+
+> ApiResponseStockExchangeStockPriceAdjustments get_stock_exchange_price_adjustments_splits(identifier, opts)
+
+#### Splits by date for exchange
+
+
+Returns split adjustments for the Stock Exchange with the given `identifier`
+
+[//]: # (END_OVERVIEW)
+
+### Example
+
+[//]: # (START_CODE_EXAMPLE)
+```r
+# Setup client
+client <- IntrinioSDK::ApiClient$new()
+
+# Configure API key authorization: ApiKeyAuth
+client$configuration$apiKey <- "YOUR_API_KEY"
+
+#Configure retries
+client$configuration$allowRetries <- TRUE
+
+# Setup API with client
+StockExchangeApi <- IntrinioSDK::StockExchangeApi$new(client)
+
+# Required params
+identifier <- "USCOMP"
+
+# Optional params
+opts <- list(
+  date = as.Date("2025-06-01"),
+  page_size = 100,
+  next_page = NULL
+)
+
+response <- StockExchangeApi$get_stock_exchange_price_adjustments_splits(identifier, opts)
+
+print(response)
+print(response$content)
+```
+
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **identifier** | Character| A Stock Exchange identifier (MIC or Intrinio ID) |  &nbsp;
+ **date** | Date| The date for which to return splits | [optional]  &nbsp;
  **page_size** | Integer| The number of results to return | [optional] [default to 100] &nbsp;
  **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
 <br/>

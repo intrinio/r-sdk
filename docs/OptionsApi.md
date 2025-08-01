@@ -1077,7 +1077,8 @@ opts <- list(
   stock_price_source = NULL,
   model = NULL,
   show_extended_price = NULL,
-  include_related_symbols = FALSE
+  include_related_symbols = FALSE,
+  show_stats = NULL
 )
 
 response <- OptionsApi$get_options_chain_realtime(symbol, expiration, opts)
@@ -1113,6 +1114,7 @@ Name | Type | Description  | Notes
  **model** | Character| Model for calculating Greek values. Default is black_scholes. | [optional]  &nbsp;
  **show_extended_price** | Logical| Whether to include open close high low type fields. | [optional]  &nbsp;
  **include_related_symbols** | Logical| Include related symbols that end in a 1 or 2 because of a corporate action. | [optional]  &nbsp;
+ **show_stats** | Logical| Whether to include Greek calculations or not. | [optional]  &nbsp;
 <br/>
 
 [//]: # (END_PARAMETERS)
@@ -1460,7 +1462,8 @@ opts <- list(
   strike = 3.4,
   strike_greater_than = 3.4,
   strike_less_than = 3.4,
-  page_size = 250
+  page_size = 250,
+  next_page = NULL
 )
 
 response <- OptionsApi$get_options_greeks_by_ticker(identifier, opts)
@@ -1491,6 +1494,7 @@ Name | Type | Description  | Notes
  **strike_greater_than** | Numeric| Filter options by minimum strike price | [optional]  &nbsp;
  **strike_less_than** | Numeric| Filter options by maximum strike price | [optional]  &nbsp;
  **page_size** | Integer| Number of results to return per page | [optional] [default to 250] &nbsp;
+ **next_page** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
 <br/>
 
 [//]: # (END_PARAMETERS)
@@ -2480,7 +2484,9 @@ opts <- list(
   show_extended_price = NULL,
   expiration_start_date = IntrinioSDK::TODO_OBJECT_MAPPING$new(),
   expiration_end_date = IntrinioSDK::TODO_OBJECT_MAPPING$new(),
-  strike = 100.0
+  strike = 100.0,
+  show_stats = NULL,
+  next_page2 = NULL
 )
 
 response <- OptionsApi$get_options_prices_realtime_by_ticker(symbol, opts)
@@ -2511,6 +2517,8 @@ Name | Type | Description  | Notes
  **expiration_start_date** | [**TODO_OBJECT_MAPPING**](TODO_OBJECT_MAPPING.md)| Filter out contracts that expire before this date. | [optional]  &nbsp;
  **expiration_end_date** | [**TODO_OBJECT_MAPPING**](TODO_OBJECT_MAPPING.md)| Filter out contracts that expire after this date. | [optional]  &nbsp;
  **strike** | Numeric| Filter out contracts that have this strike price. | [optional]  &nbsp;
+ **show_stats** | Logical| Whether to include Greek calculations or not. | [optional]  &nbsp;
+ **next_page2** | Character| Gets the next page of data from a previous API call | [optional]  &nbsp;
 <br/>
 
 [//]: # (END_PARAMETERS)
