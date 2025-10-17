@@ -7,8 +7,8 @@ Welcome to the Intrinio API! Through our Financial Data Marketplace, we offer a 
 
 ## Overview
 
-- API version: 2.107.0
-- Package version: 1.39.0
+- API version: 2.108.0
+- Package version: 1.40.0
 
 The new Intrinio R SDK wraps all API v2 endpoints into an easy-to-use set of classes, methods, and response objects.
 
@@ -127,9 +127,9 @@ Class | Method | HTTP request | Description
 *IntrinioSDK::ETFsApi* | [**get_all_etfs**](docs/ETFsApi.md#get_all_etfs) | **GET** /etfs | All ETFs
 *IntrinioSDK::ETFsApi* | [**get_etf**](docs/ETFsApi.md#get_etf) | **GET** /etfs/{identifier} | Lookup ETF
 *IntrinioSDK::ETFsApi* | [**get_etf_analytics**](docs/ETFsApi.md#get_etf_analytics) | **GET** /etfs/{identifier}/analytics | ETF Analytics
-*IntrinioSDK::ETFsApi* | [**get_etf_historical_stats**](docs/ETFsApi.md#get_etf_historical_stats) | **GET** /etfs/{identifier}/historical_stats | Exchange Traded Fund (ETF) stats
+*IntrinioSDK::ETFsApi* | [**get_etf_historical_stats**](docs/ETFsApi.md#get_etf_historical_stats) | **GET** /etfs/{identifier}/historical_stats | Exchange Traded Fund (ETF) Historical Stats
 *IntrinioSDK::ETFsApi* | [**get_etf_holdings**](docs/ETFsApi.md#get_etf_holdings) | **GET** /etfs/{identifier}/holdings | ETF Holdings
-*IntrinioSDK::ETFsApi* | [**get_etf_stats**](docs/ETFsApi.md#get_etf_stats) | **GET** /etfs/{identifier}/stats | Exchange Traded Fund (ETF) stats
+*IntrinioSDK::ETFsApi* | [**get_etf_stats**](docs/ETFsApi.md#get_etf_stats) | **GET** /etfs/{identifier}/stats | Exchange Traded Fund (ETF) Stats
 *IntrinioSDK::ETFsApi* | [**search_etfs**](docs/ETFsApi.md#search_etfs) | **GET** /etfs/search | Search ETFs
 *IntrinioSDK::FilingApi* | [**get_all_filings**](docs/FilingApi.md#get_all_filings) | **GET** /filings | All Filings
 *IntrinioSDK::FilingApi* | [**get_all_notes**](docs/FilingApi.md#get_all_notes) | **GET** /filings/notes | All Filing Notes
@@ -221,6 +221,7 @@ Class | Method | HTTP request | Description
 *IntrinioSDK::OwnersApi* | [**institutional_holdings_by_owner**](docs/OwnersApi.md#institutional_holdings_by_owner) | **GET** /owners/{identifier}/institutional_holdings | Institutional Holdings by Owner
 *IntrinioSDK::OwnersApi* | [**search_owners**](docs/OwnersApi.md#search_owners) | **GET** /owners/search | Search Owners
 *IntrinioSDK::SecurityApi* | [**get_all_securities**](docs/SecurityApi.md#get_all_securities) | **GET** /securities | All Securities
+*IntrinioSDK::SecurityApi* | [**get_securities_short_interest**](docs/SecurityApi.md#get_securities_short_interest) | **GET** /securities/short_interest | Latest Short Interest
 *IntrinioSDK::SecurityApi* | [**get_security_by_id**](docs/SecurityApi.md#get_security_by_id) | **GET** /securities/{identifier} | Lookup Security
 *IntrinioSDK::SecurityApi* | [**get_security_data_point_number**](docs/SecurityApi.md#get_security_data_point_number) | **GET** /securities/{identifier}/data_point/{tag}/number | Data Point (Number) for Security
 *IntrinioSDK::SecurityApi* | [**get_security_data_point_text**](docs/SecurityApi.md#get_security_data_point_text) | **GET** /securities/{identifier}/data_point/{tag}/text | Data Point (Text) for Security
@@ -268,6 +269,7 @@ Class | Method | HTTP request | Description
 *IntrinioSDK::SecurityApi* | [**get_security_quote**](docs/SecurityApi.md#get_security_quote) | **GET** /securities/{identifier}/quote | Quote for a Security
 *IntrinioSDK::SecurityApi* | [**get_security_realtime_price**](docs/SecurityApi.md#get_security_realtime_price) | **GET** /securities/{identifier}/prices/realtime | Realtime Stock Price for Security
 *IntrinioSDK::SecurityApi* | [**get_security_replay_file**](docs/SecurityApi.md#get_security_replay_file) | **GET** /securities/replay | Security Replay File
+*IntrinioSDK::SecurityApi* | [**get_security_short_interest**](docs/SecurityApi.md#get_security_short_interest) | **GET** /securities/{identifier}/short_interest | Short Interest by Security
 *IntrinioSDK::SecurityApi* | [**get_security_snapshots**](docs/SecurityApi.md#get_security_snapshots) | **GET** /securities/snapshots | Realtime Stock Prices Snapshot
 *IntrinioSDK::SecurityApi* | [**get_security_stock_price_adjustments**](docs/SecurityApi.md#get_security_stock_price_adjustments) | **GET** /securities/{identifier}/prices/adjustments | Stock Price Adjustments by Security
 *IntrinioSDK::SecurityApi* | [**get_security_stock_price_adjustments_dividends**](docs/SecurityApi.md#get_security_stock_price_adjustments_dividends) | **GET** /securities/{identifier}/prices/adjustments/dividends | Dividends by Security
@@ -420,6 +422,7 @@ Class | Method | HTTP request | Description
  - [IntrinioSDK::ApiResponseSICIndicesSearch](docs/ApiResponseSICIndicesSearch.md)
  - [IntrinioSDK::ApiResponseSecurities](docs/ApiResponseSecurities.md)
  - [IntrinioSDK::ApiResponseSecuritiesSearch](docs/ApiResponseSecuritiesSearch.md)
+ - [IntrinioSDK::ApiResponseSecuritiesShortInterest](docs/ApiResponseSecuritiesShortInterest.md)
  - [IntrinioSDK::ApiResponseSecurityAccumulationDistributionIndex](docs/ApiResponseSecurityAccumulationDistributionIndex.md)
  - [IntrinioSDK::ApiResponseSecurityAverageDailyTradingVolume](docs/ApiResponseSecurityAverageDailyTradingVolume.md)
  - [IntrinioSDK::ApiResponseSecurityAverageDirectionalIndex](docs/ApiResponseSecurityAverageDirectionalIndex.md)
@@ -446,6 +449,7 @@ Class | Method | HTTP request | Description
  - [IntrinioSDK::ApiResponseSecurityOnBalanceVolumeMean](docs/ApiResponseSecurityOnBalanceVolumeMean.md)
  - [IntrinioSDK::ApiResponseSecurityQuote](docs/ApiResponseSecurityQuote.md)
  - [IntrinioSDK::ApiResponseSecurityRelativeStrengthIndex](docs/ApiResponseSecurityRelativeStrengthIndex.md)
+ - [IntrinioSDK::ApiResponseSecurityShortInterest](docs/ApiResponseSecurityShortInterest.md)
  - [IntrinioSDK::ApiResponseSecuritySimpleMovingAverage](docs/ApiResponseSecuritySimpleMovingAverage.md)
  - [IntrinioSDK::ApiResponseSecurityStochasticOscillator](docs/ApiResponseSecurityStochasticOscillator.md)
  - [IntrinioSDK::ApiResponseSecurityStockPriceAdjustments](docs/ApiResponseSecurityStockPriceAdjustments.md)
@@ -612,6 +616,8 @@ Class | Method | HTTP request | Description
  - [IntrinioSDK::SecuritySummary](docs/SecuritySummary.md)
  - [IntrinioSDK::SecurityTrades](docs/SecurityTrades.md)
  - [IntrinioSDK::SecurityTradesResult](docs/SecurityTradesResult.md)
+ - [IntrinioSDK::ShortInterest](docs/ShortInterest.md)
+ - [IntrinioSDK::ShortInterestWithSecurity](docs/ShortInterestWithSecurity.md)
  - [IntrinioSDK::SimpleMovingAverageTechnicalValue](docs/SimpleMovingAverageTechnicalValue.md)
  - [IntrinioSDK::StandardizedFinancial](docs/StandardizedFinancial.md)
  - [IntrinioSDK::StandardizedFinancialsDimension](docs/StandardizedFinancialsDimension.md)

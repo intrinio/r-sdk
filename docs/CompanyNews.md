@@ -16,7 +16,11 @@ Name | Type | Description
 **url** | **Character** | The url of the news article &nbsp;
 **summary** | **Character** | A summary of the news article &nbsp;
 **source** | **Character** | The news source. &nbsp;
-**company** | [**CompanySummary**](CompanySummary.md) | The Company to which the new article pertains &nbsp;
+**company** | [**CompanySummary**](CompanySummary.md) | The Company to which the new article pertains. &nbsp;
+**companies** | [**List of CompanySummary**](CompanySummary.md) | The Companies to which the new article pertains &nbsp;
+**companies_data_frame** | Data Frame | Data frame representation of companies
+**securities** | [**List of SecuritySummary**](SecuritySummary.md) | The Securities to which the new article pertains &nbsp;
+**securities_data_frame** | Data Frame | Data frame representation of securities
 **topics** | [**List of NewsTopic**](NewsTopic.md) |  &nbsp;
 **topics_data_frame** | Data Frame | Data frame representation of topics
 **copyright** | **Character** | The copyright of the news article &nbsp;
@@ -26,6 +30,10 @@ Name | Type | Description
 **business_relevance** | **Numeric** | How strongly correlated the news article is to the business &nbsp;
 **article_sentiment** | **Character** | The news sentiment. &nbsp;
 **article_sentiment_confidence** | **Numeric** | The confidence score of the sentiment rating &nbsp;
+**issuer** | **Character** | The issuer of the story. &nbsp;
+**issuer_name** | **Character** | The issuer of the story. &nbsp;
+**issuer_company** | [**CompanySummary**](CompanySummary.md) | The company that issued the story. &nbsp;
+**issuer_security** | [**SecuritySummary**](SecuritySummary.md) | The security that issued the story. &nbsp;
 
 [//]: # (END_DEFINITION)
 
@@ -36,10 +44,22 @@ Name | Type | Description
 [//]: # (CONTAINED_CLASS:IntrinioSDK::CompanySummary)
 
 
+[//]: # (CONTAINED_CLASS:IntrinioSDK::CompanySummary)
+
+
+[//]: # (CONTAINED_CLASS:IntrinioSDK::SecuritySummary)
+
+
 [//]: # (CONTAINED_CLASS:IntrinioSDK::NewsTopic)
 
 
 [//]: # (CONTAINED_CLASS:IntrinioSDK::Logical)
+
+
+[//]: # (CONTAINED_CLASS:IntrinioSDK::CompanySummary)
+
+
+[//]: # (CONTAINED_CLASS:IntrinioSDK::SecuritySummary)
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
